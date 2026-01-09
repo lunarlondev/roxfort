@@ -1,0 +1,47 @@
+/* ===== WIZBURGER – NAMESPACE ===== */
+
+.wizburger-root {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 12px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* LOGÓ */
+.wizburger-logo {
+  font-family: 'Rubik Mono One', sans-serif;
+  font-size: 70px;
+  margin-bottom: 14px;
+  white-space: nowrap;
+}
+
+/* BETŰK */
+.wizburger-logo .letter {
+  display: inline-block;
+  margin-right: 0.15em;
+  opacity: 0;
+}
+
+/* TAGLINE */
+.wizburger-tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ANIMÁCIÓ */
+@keyframes wizburger-popIn {
+  from {
+    opacity: 0;
+    transform: translateY(-80px) scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

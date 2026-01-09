@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Debodor Frizuráló Főzet</title>
+    <link rel="stylesheet" href="debodor.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Eagle+Lake&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="ad-frame">
+        <div class="inner-glow"></div>
+        
+        <header>
+            <h1 class="product-title">Debodor Frizuráló Főzet</h1>
+            <p class="motto">"Két csepp elég, és a legmakacsabb haj is engedelmeskedik."</p>
+        </header>
+
+        <div class="main-content">
+            <div class="potion-container">
+                <div id="potion-bottle" class="bottle-flask" onclick="applyPotion()">
+                    <div class="cork"></div>
+                    <div class="neck"></div>
+                    <div class="flask-body">
+                        <div class="liquid"></div>
+                        <div class="bubbles"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visual-container" id="visual-target">
+                <img src="https://i.imgur.com/sw40uLQ.png?text=KÓCOS" 
+                     alt="Kócos" class="hair-img img-before">
+                <img src="https://i.imgur.com/MADywfn.png?text=TÖKÉLETES" 
+                     alt="Sima" class="hair-img img-after">
+                
+                <div class="magic-overlay"></div>
+            </div>
+        </div>
+
+        <button id="reset-btn" class="reset-link" onclick="resetPotion()">Finite Incantatem!</button>
+    </div>
+
+    <script src="debodor.js"></script>
+</body>
+</html>

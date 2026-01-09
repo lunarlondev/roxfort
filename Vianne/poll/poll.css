@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  background: transparent;
+  font-family: system-ui, sans-serif;
+}
+
+.poll {
+  width: 260px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.question {
+  font-size: 17px;
+  font-weight: 700;
+  color: #ff4fd8;
+  text-shadow: 0 0 6px rgba(255,79,216,.6);
+}
+
+.subtitle {
+  font-size: 12px;
+  color: #ffb7e8;
+  margin-bottom: 12px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.option {
+  position: relative;
+  border: none;
+  padding: 12px 10px 10px;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 14px;
+  background: linear-gradient(135deg,#ff5fd8,#ff96ec);
+  box-shadow:
+    0 0 10px rgba(255,79,216,.6),
+    inset 0 0 12px rgba(255,255,255,.25);
+  transition: transform .15s ease, box-shadow .15s ease;
+  overflow: hidden;
+}
+
+.option.peadar {
+  background: linear-gradient(135deg,#ff3fa6,#ff7ac8);
+}
+
+.option:hover {
+  transform: scale(1.03);
+}
+
+.option:active {
+  transform: scale(0.97);
+}
+
+/* ---- DNS EASTER EGG ---- */
+.dna {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  opacity: 0.75;
+  filter:
+    drop-shadow(0 0 4px rgba(255, 255, 255, 0.5))
+    saturate(1.2);
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* finom easter egg */
+.option:hover .dna {
+  transform: rotate(-6deg) scale(1.08);
+  opacity: 0.95;
+}
+
+
+.option:active .dna {
+  transform: scale(0.9);
+}
+
+/* ---- TEXT ---- */
+.name {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.hint {
+  display: block;
+  font-size: 11px;
+  opacity: .85;
+}
+
+/* ---- VOTE FEEDBACK ---- */
+.option.voted {
+  animation: pulse .45s ease;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 rgba(255,79,216,0); }
+  50% { box-shadow: 0 0 20px rgba(255,79,216,.9); }
+  100% { box-shadow: 0 0 0 rgba(255,79,216,0); }
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+}

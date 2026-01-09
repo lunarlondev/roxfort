@@ -1,0 +1,105 @@
+/* ===== Skower interaktív reklám ===== */
+
+.skowerAd-root {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 14px 12px;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.skowerAd-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+/* KATTINTHATÓ IKON */
+.skowerAd-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.22);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.skowerAd-icon:active {
+  transform: scale(0.92);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+/* BLOKK */
+.skowerAd-block {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* CÍM */
+.skowerAd-title {
+  position: relative;
+  font-family: 'Rubik Mono One', sans-serif;
+  font-size: 26px;
+  line-height: 1.15;
+  overflow: hidden;
+}
+
+/* ERŐSEN KOSZOS ALAPÁLLAPOT */
+.skowerAd-text {
+  display: inline-block;
+  color: rgb(120, 135, 110);
+  filter: blur(1.4px) saturate(0.6) brightness(0.9);
+  transition:
+    color 4s linear,
+    filter 4s linear;
+}
+
+/* TISZTA ÁLLAPOT */
+.skowerAd-root.is-clean .skowerAd-text {
+  color: rgba(255,255,255,0.96);
+  filter: none;
+  transition:
+    color 0.5s ease,
+    filter 0.5s ease;
+}
+
+/* WIPE CSÍK – világoskék */
+.skowerAd-wipe {
+  position: absolute;
+  top: -15%;
+  left: -40%;
+  width: 38%;
+  height: 130%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(140, 210, 255, 0.9) 50%,
+    transparent 100%
+  );
+  transform: skewX(-15deg);
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* WIPE ANIM */
+@keyframes skowerWipe {
+  from { left: -40%; opacity: 1; }
+  to   { left: 120%; opacity: 1; }
+}
+
+/* ALCÍM */
+.skowerAd-tagline {
+  margin-top: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.78);
+}
