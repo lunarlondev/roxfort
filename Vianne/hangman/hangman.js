@@ -60,7 +60,7 @@ const data = [
     },
     {
         category: "ARANYKÖPÉSEK",
-        word: "VIHETNEK AZ UFO-K",
+        word: "VIHETNEK AZ UFOK",
         hint: "51-ES KÖRZET"
     },
     {
@@ -154,7 +154,7 @@ function renderKeyboard() {
     const kb = document.getElementById("keyboard");
     kb.innerHTML = "";
 
-    const letters = "AÁBCDEÉFGHIÍJKLMNOÓÖŐPQRSTUÚÜŰVWXYZ-";
+    const letters = "AÁBCDEÉFGHIÍJKLMNOÓÖŐPQRSTUÚÜŰVWXYZ";
     letters.split("").forEach(l => {
         const btn = document.createElement("button");
         btn.textContent = l;
