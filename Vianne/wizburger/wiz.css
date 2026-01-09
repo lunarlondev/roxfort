@@ -2,7 +2,7 @@
 
 .wizburger-root {
   position: relative;
-  max-width: 500px;
+  max-width: 300px;
   width: 100%;
   margin: 0 auto;
   padding: 0 12px;
@@ -13,7 +13,7 @@
 /* LOGÓ */
 .wizburger-logo {
   font-family: 'Rubik Mono One', sans-serif;
-  font-size: 70px;
+  font-size: 42px;
   margin-bottom: 14px;
   white-space: nowrap;
 }
