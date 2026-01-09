@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wiz Ads – WizBurger · Skower · Debodor</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Eagle+Lake&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="wizards.css" />
+</head>
+<body>
+  <main class="wizads-stage">
+    <div class="wizads-shell" role="group" aria-label="Varázsvilág reklámok">
+      <!-- FENT: WIZBURGER -->
+      <section class="wizads-card wizads-card--wizburger" aria-label="WizBurger">
+        <div class="wizburger-root">
+          <div class="wizburger-logo" id="wizburger-logo" aria-label="WizBurger logó"></div>
+          <div class="wizburger-tagline">Nyugi, jól átsütöttük.</div>
+        </div>
+      </section>
+
+      <!-- KÖZÉPEN: SKOWER -->
+      <section class="wizads-card wizads-card--skower" aria-label="Mrs. Skower mágikus kosztalanítója">
+        <div class="skowerAd-root" data-skower-ad>
+          <div class="skowerAd-row">
+            <button class="skowerAd-icon" type="button" aria-label="Tisztítás indítása">
+              <svg viewBox="0 0 64 64" width="36" height="36" focusable="false" aria-hidden="true">
+                <path d="M26 6h12v6l6 4v6H20v-6l6-4V6z" fill="currentColor"/>
+                <rect x="22" y="22" width="20" height="30" rx="4" fill="currentColor"/>
+                <path d="M46 10l4-4m0 10l4 4m6-6h-6"
+                      stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </button>
+
+            <div class="skowerAd-block">
+              <div class="skowerAd-title">
+                <span class="skowerAd-text">Mrs. Skower mágikus kosztalanítója</span>
+                <span class="skowerAd-wipe" aria-hidden="true"></span>
+              </div>
+
+              <div class="skowerAd-tagline">Minden boszorkány kedvence 1492 óta</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ALUL: DEBODOR -->
+      <section class="wizads-card wizads-card--debodor" aria-label="Debodor Frizuráló Főzet">
+        <div class="ad-frame" data-debodor>
+          <header>
+            <h1 class="product-title">Debodor Frizuráló Főzet</h1>
+            <p class="motto">"Két csepp elég, és a legmakacsabb haj is engedelmeskedik."</p>
+          </header>
+
+          <div class="main-content">
+            <div class="potion-container">
+              <div id="potion-bottle" class="bottle-flask" role="button" tabindex="0" aria-label="Főzet alkalmazása">
+                <div class="cork"></div>
+                <div class="neck"></div>
+                <div class="flask-body">
+                  <div class="liquid"></div>
+                  <div class="bubbles"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="visual-container" id="visual-target">
+              <img src="https://i.imgur.com/sw40uLQ.png?text=K%C3%93COS" alt="Kócos" class="hair-img img-before">
+              <img src="https://i.imgur.com/MADywfn.png?text=T%C3%96K%C3%89LETES" alt="Sima" class="hair-img img-after">
+              <div class="magic-overlay" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <button id="reset-btn" class="reset-link" type="button">Finite Incantatem!</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="wizads.js"></script>
+</body>
+</html>
