@@ -95,6 +95,11 @@ const data = [
     },
     {
         category: "CIFRA SZAVAK BY ROKURO™",
+        word: "KOPULÁL",
+        hint: "családbarát tevékenység"
+    },
+    {
+        category: "CIFRA SZAVAK BY ROKURO™",
         word: "PESZKTARIÁNUS",
         hint: "táplálkozásos dolog?"
     }
