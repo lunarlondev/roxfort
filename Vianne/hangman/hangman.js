@@ -39,11 +39,6 @@ const data = [
     },
     {
         category: "VIANNE ÉS A VILÁG",
-        word: "JOVIÁLIS",
-        hint: "KEDÉLYES, DERŰS"
-    },
-    {
-        category: "VIANNE ÉS A VILÁG",
         word: "EIFFEL TORONY",
         hint: "EURÓPAI LÁTVÁNYOSSÁG"
     },
@@ -82,6 +77,26 @@ const data = [
         category: "ARANYKÖPÉSEK",
         word: "ÍÍÍÍÍÍ EGY KUTYA ÉS MENNYI FEJE VAN",
         hint: "CERBERUS"
+    },
+    {
+        category: "CIFRA SZAVAK BY ROKURO™",
+        word: "JOVIÁLIS",
+        hint: "OVÁLIS"
+    },
+    {
+        category: "CIFRA SZAVAK BY ROKURO™",
+        word: "ABHORRESZKÁL",
+        hint: "???"
+    },
+    {
+        category: "CIFRA SZAVAK BY ROKURO™",
+        word: "GRACILIS",
+        hint: "???"
+    },
+    {
+        category: "CIFRA SZAVAK BY ROKURO™",
+        word: "PESZKTARIÁNUS",
+        hint: "táplálkozásos dolog?"
     }
 ];
 
