@@ -1,15 +1,35 @@
+/* --- GLOBAL WRAPPER --- */
 body {
   margin: 0;
-  background: transparent;
+  background: #1b1418; /* sötét, nem fekete */
   font-family: system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
+/* --- BOX --- */
 .poll {
-  width: 260px;
-  margin: 0 auto;
+  width: 280px;
+  padding: 18px 16px 16px;
   text-align: center;
+
+  background: linear-gradient(
+    180deg,
+    #2a1d24,
+    #1f161b
+  );
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 0 0 1px rgba(255,79,216,0.18),
+    0 12px 40px rgba(0,0,0,0.6),
+    inset 0 0 24px rgba(255,79,216,0.08);
 }
 
+/* --- TEXT --- */
 .question {
   font-size: 17px;
   font-weight: 700;
@@ -20,14 +40,15 @@ body {
 .subtitle {
   font-size: 12px;
   color: #ffb7e8;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
+/* --- BUTTONS --- */
 .buttons {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .option {
@@ -38,9 +59,11 @@ body {
   color: #fff;
   border-radius: 14px;
   background: linear-gradient(135deg,#ff5fd8,#ff96ec);
+
   box-shadow:
     0 0 10px rgba(255,79,216,.6),
     inset 0 0 12px rgba(255,255,255,.25);
+
   transition: transform .15s ease, box-shadow .15s ease;
   overflow: hidden;
 }
@@ -57,7 +80,7 @@ body {
   transform: scale(0.97);
 }
 
-/* ---- DNS EASTER EGG ---- */
+/* --- DNA ICON --- */
 .dna {
   position: absolute;
   top: 6px;
@@ -67,24 +90,22 @@ body {
   object-fit: contain;
   opacity: 0.75;
   filter:
-    drop-shadow(0 0 4px rgba(255, 255, 255, 0.5))
+    drop-shadow(0 0 4px rgba(255,255,255,0.5))
     saturate(1.2);
   pointer-events: none;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-/* finom easter egg */
 .option:hover .dna {
   transform: rotate(-6deg) scale(1.08);
   opacity: 0.95;
 }
 
-
 .option:active .dna {
   transform: scale(0.9);
 }
 
-/* ---- TEXT ---- */
+/* --- BUTTON TEXT --- */
 .name {
   display: block;
   font-size: 15px;
@@ -97,7 +118,7 @@ body {
   opacity: .85;
 }
 
-/* ---- VOTE FEEDBACK ---- */
+/* --- VOTE FEEDBACK --- */
 .option.voted {
   animation: pulse .45s ease;
 }
@@ -108,7 +129,8 @@ body {
   100% { box-shadow: 0 0 0 rgba(255,79,216,0); }
 }
 
+/* --- CHART --- */
 canvas {
   display: block;
-  margin: 0 auto;
+  margin: 6px auto 0;
 }
