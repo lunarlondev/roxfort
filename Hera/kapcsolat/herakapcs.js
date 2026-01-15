@@ -64,8 +64,10 @@ const heraKapcsBuildExport=()=>{
 [/html]`;
 };
 
-heraKapcsCopy.addEventListener("click",async()=>{
-  const html=heraKapcsBuildExport();
-  heraKapcsOutput.value=html;
-  try{await navigator.clipboard.writeText(html);}catch(e){}
+heraKapcsCopy.addEventListener("click",()=>{
+  const html = heraKapcsBuildExport();
+  heraKapcsOutput.value = html;
+  heraKapcsOutput.focus();
+  heraKapcsOutput.select();
 });
+
