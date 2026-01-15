@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <title>Heranoush Fletcher kapcsolatok</title>
+  <link rel="stylesheet" href="./herakapcs.css">
+</head>
+<body>
+
+  <div class="heraKapcsApp">
+
+    <div class="heraKapcsMacska">
+      <div class="heraKapcsMacskaCard">
+        <img class="heraKapcsMacskaImg" src="https://i.imgur.com/w95QceX.jpeg" alt="A Macska">
+
+        <div class="heraKapcsMacskaTitle">
+          <div class="heraKapcsMacskaH1">A MACSKA</div>
+          <div class="heraKapcsMacskaH2">Կ Ա Տ Ո Ւ Ն</div>
+          <div class="heraKapcsMacskaLine"></div>
+        </div>
+
+        <div class="heraKapcsMacskaOverlay">
+          <div class="heraKapcsMacskaOverlayText">
+<p>Nem vagyok az a fajta, aki csak úgy odaszalad bárkihez. Hozzám kapcsolódni épp olyan, mint bizalmat építeni egy macskával: nem siettetheted, nem kényszerítheted.</p>
+<p>Figyellek téged biztonságos, magas rejtekemből. Csendben nézlek onnan a magasból, ahová talán csak egy pillantást vetsz, nem többet. Közönyösnek tűnhetek, valójában azonban megjegyzek rólad mindent. A hangod lejtését, mozdulataid folyamát, pillantásod környezetedre és reakciód, ha történik valami rendkívüli.</p>
+<p>Talán ha elég ideig nem zavarsz, magadtól megyek oda hozzád.</p>
+<p>A macska nem mindig tudja, hogy a kirakott étel vajon jó szándék vagy csapda. A kézhez, ami egyszer megsimogat, tartozik egy láb is, ami beléd rúg.</p>
+<p>Elég egy rossz mozdulat, még ha nem is szándékos, hogy a macska bizalmát örökre elveszítsd. Nem kapsz második esélyt, ha akaratod rá akarod kényszeríteni. Az én bosszúm nem éles karmok fájdalmas csapásában érkezik, hanem a rideg, precíz szótlan ítéletben. Az árulók és ellenségek nem érdemelnek kegyelmet. A bosszú azonban sohasem jöhet érzelemből.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="heraKapcsLabel">Cím</div>
+    <input class="heraKapcsInput" id="heraKapcsTitle" type="text">
+
+    <div class="heraKapcsLabel">Leírás</div>
+    <textarea class="heraKapcsTextarea" id="heraKapcsText"></textarea>
+
+    <div class="heraKapcsLabel">Bizalmi szint</div>
+    <div class="heraKapcsRangeWrap">
+      <input class="heraKapcsRange" id="heraKapcsRange" type="range" min="0" max="100" value="50">
+      <div class="heraKapcsRangeLabel" id="heraKapcsRangeLabel"></div>
+    </div>
+
+    <div class="heraKapcsPreviewWrap">
+      <div class="heraKapcsPreviewTitle">ELŐNÉZET</div>
+
+      <div class="kapcsolat-box">
+        <div class="kapcsolat-title" id="heraKapcsPTitle">—</div>
+        <div class="kapcsolat-content">
+          <div id="heraKapcsPText">—</div>
+          <div class="scale-bar"><div class="scale-fill" id="heraKapcsPFill"></div></div>
+          <div class="scale-text" id="heraKapcsPScale"></div>
+        </div>
+      </div>
+    </div>
+
+    <button class="heraKapcsCopyBtn" id="heraKapcsCopy">Kód másolása</button>
+    <textarea class="heraKapcsOutput" id="heraKapcsOutput" readonly></textarea>
+
+  </div>
+
+  <script src="./herakapcs.js"></script>
+</body>
+</html>
