@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<title>Burn Book</title>
+<link rel="stylesheet" href="./burnbook.css">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="bb-book">
+
+  <div class="bb-spiral">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- FEDLAP -->
+  <div class="bb-page bb-cover active">
+
+    <div class="bb-cover-scribbles">
+      <div>LIAR</div>
+      <div>FAKE</div>
+      <div>EWWW</div>
+      <div>A WOLF IS A WOLF, EVEN IN A CAGE, EVEN DRESSED IN SILK</div>
+      <div>TRUST NO ONE</div>
+      <div>XOXO</div>
+      <div>MEAN</div>
+      <div><s>WEREWOLF</s>
+<br>MOONSICK</div>
+    </div>
+
+    <img class="bb-cover-img i1" src="https://i.imgur.com/E5Od0dd.png">
+    <img class="bb-cover-img i2" src="https://i.imgur.com/6VDkbtE.png">
+    <img class="bb-cover-img i3" src="https://i.imgur.com/Nb3MVcS.png">
+    <img class="bb-cover-img i4" src="https://i.imgur.com/d6sGHLs.png">
+    <img class="bb-cover-img i5" src="https://i.imgur.com/64FRsPo.png">
+
+<div class="bb-cover-title burn">
+  <span class="cut light hand2">B</span>
+  <span class="cut dark hand4">U</span>
+  <span class="cut light hand1">R</span>
+  <span class="cut dark hand3">N</span>
+</div>
+
+<img class="bb-lips" src="https://i.imgur.com/UZvaCgf.png" alt="">
+
+<div class="bb-cover-title book">
+  <span class="cut dark hand3">B</span>
+  <span class="cut light hand1">O</span>
+  <span class="cut dark hand2">O</span>
+  <span class="cut light hand4">K</span>
+</div>
+
+
+
+
+  </div>
+
+
+
+<!-- ENEMIES -->
+<div class="bb-page">
+  <div class="bb-paper enemies">
+
+    <div class="bb-title">ENEMIES</div>
+
+    <div class="bb-photo-wrap enemies tape-corners" style="transform:rotate(-7deg)">
+      <img src="https://placehold.co/200x240" alt="">
+      <img class="overlay" src="https://i.imgur.com/oyJ4Wbd.png" alt="">
+      <span></span>
+    </div>
+
+    <div class="bb-notes">
+      <div>fake smile</div>
+      <div>liar</div>
+      <div>never trusted</div><br>
+<div>People can do worse things than kill you</div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+<!-- CONFIDANTS -->
+<div class="bb-page">
+  <div class="bb-paper friends">
+
+    <div class="bb-title">CONFIDANTS</div>
+
+    <div class="bb-photo-wrap friends tape-corners" style="transform:rotate(4deg)">
+      <!-- külső doodle / keret -->
+      <img class="doodle" src="https://i.imgur.com/dnfrbRd.png" alt="">
+
+      <!-- kisebb, védett kép -->
+      <img src="https://placehold.co/180x220" alt="">
+
+      <!-- szükséges a 4 sarok celluxhoz -->
+      <span></span>
+    </div>
+
+    <div class="bb-notes">
+      <div>mostly safe</div>
+      <div>knows too much</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- LOVERS -->
+<div class="bb-page">
+  <div class="bb-paper lovers">
+
+    <div class="bb-title">LOVERS</div>
+
+    <div class="bb-photo-wrap lovers tape-corners" style="transform:rotate(-2deg)">
+      
+      <!-- felhő felülről, rálóg -->
+      <img class="cloud" src="https://i.imgur.com/LCGG2UA.png" alt="">
+
+      <!-- fotó -->
+      <img src="https://placehold.co/200x220" alt="">
+
+      <!-- szükséges a 4 sarok celluxhoz -->
+      <span></span>
+    </div>
+
+    <div class="bb-notes">
+      <div>soft but dangerous</div>
+      <div>too close</div>
+      <div>hard to forget</div><br>
+      <div>sorry for having great tits &</div>
+      <div>correct opinions</div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<!-- OTHER -->
+<div class="bb-page">
+  <div class="bb-paper other">
+
+    <div class="bb-title">OTHER</div>
+
+    <div class="bb-photo-wrap other tape-corners" style="transform:rotate(6deg)">
+      
+      <!-- nagy doodle, háttérbe -->
+      <img class="scribble" src="https://i.imgur.com/HvmxUhT.png" alt="">
+
+      <!-- fotó elöl -->
+      <img src="https://placehold.co/200x240" alt="">
+
+      <!-- 4 sarok celluxhoz -->
+      <span></span>
+    </div>
+
+    <div class="bb-notes">
+<br>
+      <div>complicated</div>
+      <div>useful</div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+  <!-- WRITE -->
+  <div class="bb-page">
+    <div class="bb-paper write">
+
+  <div class="bb-write-head">
+    <div class="bb-title">WRITE ABOUT ME</div>
+    <img class="bb-write-icon" src="https://i.imgur.com/N4oZ0GF.png">
+  </div>
+
+  <input class="bb-field" id="bbTitle" placeholder="relationship title">
+  <textarea class="bb-field area" id="bbText" placeholder="write messy thoughts"></textarea>
+  <button class="bb-generate" id="bbGenerate">GENERATE</button>
+<div class="bb-preview" id="bbPreview"></div>
+  <textarea class="bb-output" id="bbOutput" readonly></textarea>
+
+</div>
+
+  </div>
+
+  <!-- NAV -->
+  <div class="bb-nav">
+    <button class="bb-home">⟲</button>
+    <button class="bb-prev">←</button>
+    <button class="bb-next">→</button>
+  </div>
+
+</div>
+
+<script src="./burnbook.js"></script>
+</body>
+</html>

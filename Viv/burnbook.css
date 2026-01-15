@@ -1,0 +1,312 @@
+.bb-book{
+  width:460px;
+  aspect-ratio:210/297;
+  background:#e56a8b;
+  margin:30px auto;
+  position:relative;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 25px 50px rgba(0,0,0,.4);
+}
+
+/* SPIRÁL */
+.bb-spiral{
+  position:absolute;left:8px;top:18px;bottom:18px;
+  display:flex;flex-direction:column;justify-content:space-around;
+}
+.bb-spiral span{
+  width:14px;height:14px;border-radius:50%;
+  background:#ccc;border:2px solid #555;
+}
+
+/* OLDAL */
+.bb-page{display:none;height:100%}
+.bb-page.active{display:block}
+
+/* FEDLAP */
+.bb-cover{text-align:center;padding-top:50px;cursor:pointer;position:relative}
+.bb-cover-title{display:flex;justify-content:center;gap:6px;margin:16px 0}
+.cut{font-size:38px;font-weight:900;padding:6px 10px}
+.cut.dark{background:#000;color:#fff}
+.cut.light{background:#fff;color:#000}
+
+.hand1{font-family:'Permanent Marker',cursive}
+.hand2{font-family:'Segoe Script',cursive}
+.hand3{font-family:'Lucida Handwriting',cursive}
+.hand4{font-family:'Brush Script MT',cursive}
+
+.bb-lips{width:100px;margin:10px auto;display:block}
+
+.bb-cover-scribbles div{
+  position:absolute;font-size:24px;font-weight:900;color:#000;font-family: "Permanent Marker", cursive;
+}
+.bb-cover-scribbles div:nth-child(1){top:5%;left:12%;transform: rotate(18deg);}
+.bb-cover-scribbles div:nth-child(2){top:22%;right:12%;transform: rotate(-30deg);}
+.bb-cover-scribbles div:nth-child(3){bottom:34%;left:10%;transform: rotate(13deg);}
+.bb-cover-scribbles div:nth-child(4){bottom:13%;right:3%;transform: rotate(-5deg);}
+.bb-cover-scribbles div:nth-child(5){top:66%;left:30%;transform: rotate(-10deg);}
+.bb-cover-scribbles div:nth-child(6){top:50%;right:9%;transform: rotate(8deg);}
+.bb-cover-scribbles div:nth-child(7){top:3%;right:22%;transform: rotate(-13deg);}
+.bb-cover-scribbles div:nth-child(8){top:28%;left:65%;transform: rotate(-9deg);}
+
+.bb-cover-img{position:absolute;width:80px}
+.i1{top:8%;right:10%;transform:rotate(12deg)}
+.i2{top:18%;left:8%;transform:rotate(-8deg)}
+.i3{bottom:25%;right:14%;transform:rotate(-12deg)}
+.i4{bottom:37%;left:12%;transform:rotate(6deg)}
+.i5{bottom:35%;left:53%;transform:rotate(-8deg)}
+
+/* PAPÍR */
+.bb-paper{
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #fff,
+      #fff 22px,
+      #e6dbf7 23px
+    );
+  margin:22px 20px 20px 44px;
+  height:calc(100% - 42px);
+  padding:16px;
+  box-sizing:border-box;
+  overflow:auto;
+}
+
+/* TITLE */
+.bb-title{
+  font-size:32px;
+  font-family:'Permanent Marker',cursive;
+  font-weight:900;
+  margin-bottom:6px;
+}
+
+/* PHOTO */
+.bb-photo-wrap{
+  position:relative;
+  width:260px;
+  margin:10px auto;
+  transform:rotate(-3deg);
+}
+.bb-photo-wrap img{width:100%}
+.bb-photo-wrap .overlay,
+.bb-photo-wrap .doodle,
+.bb-photo-wrap .cloud,
+.bb-photo-wrap .scribble{
+  position:absolute;top:0;left:0;width:100%;pointer-events:none;
+}
+.bb-photo-wrap .overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  pointer-events:none;
+  opacity:.95;
+}
+
+.bb-photo-wrap .cloud{opacity:.9}
+.bb-photo-wrap .scribble{width:120px;right:-20px;top:20px}
+
+
+.bb-photo-wrap img{
+  display:block;
+}
+
+/* NOTES */
+.bb-notes div{
+  font-size:20px;
+  font-family:'Permanent Marker',cursive;
+  font-weight:700;
+  margin:4px 0;
+}
+
+/* WRITE */
+.write-img{
+  width:180px;
+  margin:10px auto;
+  display:block;
+}
+
+.bb-field{
+  width:100%;
+  box-sizing:border-box;
+  margin:6px 0;
+  padding:10px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:13px;
+}
+
+.area{
+  min-height:120px;
+}
+
+.bb-generate{
+  background:#e56a8b;
+  color:#fff;
+  border:0;
+  padding:10px;
+  margin:8px 0;
+  width:100%;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:12px;
+  letter-spacing:0.05em;
+}
+
+.bb-output{
+  width:100%;
+  min-height:160px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:13px;
+}
+
+
+/* NAV */
+.bb-nav{
+  position:absolute;bottom:12px;right:12px;
+}
+.bb-nav button{
+  width:34px;height:34px;border-radius:50%;
+  border:0;background:#e56a8b;color:#fff;
+}
+
+
+.bb-write-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:10px;
+}
+
+.bb-write-head .bb-title{
+  margin:0;
+}
+
+.bb-write-icon{
+  width:90px;
+  height:auto;
+  transform:rotate(4deg);
+}
+
+
+
+
+/* RAGASZTÓSZALAG */
+
+.tape-corners::before,
+.tape-corners::after,
+.tape-corners span::before,
+.tape-corners span::after{
+  content:"";
+  position:absolute;
+  width:42px;
+  height:20px;
+  background:rgba(245,170,195,.85);
+  box-shadow:
+    0 2px 4px rgba(0,0,0,.25),
+    inset 0 0 4px rgba(255,255,255,.35);
+  border-radius:3px;
+  z-index:6;
+}
+
+/* bal felső */
+.tape-corners::before{
+  top:-10px;
+  left:-8px;
+  transform:rotate(-25deg);
+}
+
+/* jobb felső */
+.tape-corners::after{
+  top:-10px;
+  right:-8px;
+  transform:rotate(22deg);
+}
+
+/* bal alsó */
+.tape-corners span::before{
+  bottom:-10px;
+  left:-8px;
+  transform:rotate(18deg);
+}
+
+/* jobb alsó */
+.tape-corners span::after{
+  bottom:-10px;
+  right:-8px;
+  transform:rotate(-20deg);
+}
+
+
+
+.friends .bb-photo-wrap{
+  width:200px;
+  transform:rotate(5deg);
+}
+
+.friends .doodle{
+  transform:scale(1.6) translate(10px,-10px);
+  opacity:.8;
+}
+
+
+.lovers .cloud{
+  top:-36px;
+  left:50%;
+  transform:translateX(-50%);
+  width:100%;
+  z-index:2;
+}
+
+
+
+.other .scribble{
+  position:absolute;
+  width:320px;
+  left:-23px;
+  bottom:0px;
+
+  opacity:.85;
+  z-index:0;          /* kép mögött */
+  pointer-events:none;
+}
+
+.other img:not(.scribble){
+  position:relative;
+  z-index:2;          /* kép előrébb */
+}
+
+
+
+.bb-notes div:nth-child(1){transform:rotate(-2deg)}
+.bb-notes div:nth-child(2){transform:rotate(3deg);margin-left:12px}
+.bb-notes div:nth-child(3){transform:rotate(-4deg)}
+
+
+
+
+.cut{
+  display:inline-block;
+  transition:transform .2s ease;
+}
+
+/* ELŐNÉZET */
+.bb-preview{margin:12px 0;padding:0}
+.bb-preview .bb-statement{margin:0 auto}
+
+.bb-statement{width:360px;margin:26px auto;background:#e56a8b;border:2px solid #b03a63;font-family:Arial,Helvetica,sans-serif;box-shadow:0 0 0 3px rgba(255,255,255,.35),inset 0 -4px 0 rgba(176,58,99,.35)}
+.bb-statement-title{padding:10px 12px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.35);color:#5a2240;border-bottom:1px solid #b03a63}
+.bb-statement-body{padding:14px 12px;font-size:13px;line-height:1.55;color:#4a1d35}
+.bb-preview{margin:12px 0}
+
+
+/* SCROLLBAR utsó oldalon */
+.bb-paper.write::-webkit-scrollbar{width:8px}
+.bb-paper.write::-webkit-scrollbar-track{background:rgba(255,255,255,.35);border-radius:6px}
+.bb-paper.write::-webkit-scrollbar-thumb{background:#c65a86;border-radius:6px;border:2px solid rgba(255,255,255,.4)}
+.bb-paper.write::-webkit-scrollbar-thumb:hover{background:#b24c73}
+.bb-paper.write{scrollbar-width:thin;scrollbar-color:#c65a86 rgba(255,255,255,.35)}
+
+/* LAPOZÁS */
+
+
+
