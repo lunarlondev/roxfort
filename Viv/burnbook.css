@@ -306,7 +306,7 @@
 .bb-paper.write::-webkit-scrollbar-thumb:hover{background:#b24c73}
 .bb-paper.write{scrollbar-width:thin;scrollbar-color:#c65a86 rgba(255,255,255,.35)}
 
-/* LAPOZÁS */
+/* FIX random */
 
-
+.cut{line-height:1;vertical-align:middle}
 

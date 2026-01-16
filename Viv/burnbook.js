@@ -45,16 +45,94 @@ document.getElementById("bbGenerate").addEventListener("click",()=>{
 });
 
 /* BORÍTÓ BETŰ RANDOMIZÁLÁS */
+/* BORÍTÓ BETŰ RANDOMIZÁLÁS */
 (function(){
-  const letters=document.querySelectorAll(".bb-cover-title .cut");
-  if(!letters.length)return;
+  const letters = document.querySelectorAll(".bb-cover-title .cut");
+  if(!letters.length) return;
 
-  letters.forEach(el=>{
-    const rot=Math.floor(Math.random()*21)-10;
-    el.style.transform=`rotate(${rot}deg)`;
+  const fonts = [
+    "'Permanent Marker', cursive",
+    "'Bebas Neue', sans-serif",
+    "'Anton', sans-serif",
+    "'Oswald', sans-serif",
+    "'Roboto Slab', serif",
+    "'Playfair Display', serif",
+    "'DM Serif Display', serif",
+    "'Abril Fatface', serif",
+    "'Alfa Slab One', serif",
+    "'Ultra', serif",
+    "'Black Ops One', system-ui",
+    "'Special Elite', monospace",
+    "'Creepster', system-ui",
+    "'Ewert', serif",
+    "'Rubik Mono One', sans-serif",
+    "'Monoton', system-ui",
+    "'Fredericka the Great', serif",
+    "'Luckiest Guy', system-ui",
+    "'Rock Salt', cursive",
+    "'Caveat', cursive",
+    "'Kalam', cursive",
+    "'Gloria Hallelujah', cursive",
+    "'Indie Flower', cursive",
+    "'Shadows Into Light', cursive",
+    "'Patrick Hand', cursive",
+    "'Handlee', cursive",
+    "'Nothing You Could Do', cursive",
+    "'Architects Daughter', cursive",
+    "'Neucha', cursive",
+    "'Gaegu', cursive",
+    "'Amatic SC', cursive",
+    "'Press Start 2P', monospace",
+    "'VT323', monospace",
+    "'Orbitron', sans-serif",
+    "'Righteous', system-ui",
+    "'Fugaz One', system-ui",
+    "'Boogaloo', system-ui",
+    "'Changa One', system-ui",
+    "'PT Sans Narrow', sans-serif",
+
+    /* biztonsági (ha valami nem tölt be) */
+    "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif",
+    "'Segoe Script', cursive",
+    "'Lucida Handwriting', cursive",
+    "'Brush Script MT', cursive",
+    "Georgia, serif",
+    "Arial, Helvetica, sans-serif"
+  ];
+
+  const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+  const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+
+  letters.forEach(el => {
+    /* reset: ne a hand1/2/3/4 class döntsön */
+    el.style.fontFamily = pick(fonts);
+
+    /* random fekete/fehér “cut-out” */
+    const dark = Math.random() < 0.5;
+    el.style.background = dark ? "#000" : "#fff";
+    el.style.color = dark ? "#fff" : "#000";
+
+    /* random kis/nagybetű vegyesen */
+    const raw = (el.textContent || "").trim();
+    if(raw) {
+      el.textContent = Math.random() < 0.55 ? raw.toUpperCase() : raw.toLowerCase();
+    }
+
+    /* random “papír” méret érzet */
+    el.style.fontSize = rand(30, 44) + "px";
+    el.style.padding = rand(4, 9) + "px " + rand(7, 13) + "px";
+    el.style.letterSpacing = (Math.random() < 0.4 ? rand(-2, 2) : 0) + "px";
+
+    /* random rotáció (marad a meglévő logika, csak itt pontosítva) */
+    const rot = rand(-12, 12);
+    el.dataset.rot = String(rot);
+    el.dataset.flip = "0";
+    el.style.transform = "rotate(" + rot + "deg)";
   });
 
-  const pick=letters[Math.floor(Math.random()*letters.length)];
-  const cur=pick.style.transform||"";
-  pick.style.transform=cur+" scaleX(-1)";
+  /* 1 random betű tükrözése (már megvolt, itt stabilan együtt kezeli a rotációval) */
+  const chosen = letters[Math.floor(Math.random() * letters.length)];
+  const baseRot = chosen.dataset.rot || "0";
+  chosen.dataset.flip = "1";
+  chosen.style.transform = "rotate(" + baseRot + "deg) scaleX(-1)";
 })();
