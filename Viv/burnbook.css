@@ -244,16 +244,16 @@
 }
 
 .friends .doodle{
-  transform:scale(1.6) translate(10px,-10px);
-  opacity:.8;
+  transform:scale(1.6) translate(12px,220px);
+  opacity:.9;
 }
 
 
 .lovers .cloud{
-  top:-36px;
-  left:50%;
-  transform:translateX(-50%);
-  width:100%;
+  top:-69px;
+  left:87px;
+  transform:rotate(10deg);
+  width:55%;
   z-index:2;
 }
 
