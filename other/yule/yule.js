@@ -13,7 +13,7 @@ const timelineData = [
       {
         characters: ["Gemma Jenkins", "Connor O'Hara"],
         location: "Folyosók",
-        text: "Felkészülés a bevonulásra",
+        text: "FFelkészülés a bevonulásra (aka zugivás 1.0)",
         date: "17:30–17:45",
         imgs: [
           "./images/gemma.png",
@@ -93,7 +93,7 @@ const timelineData = [
         ],
         location: "Padok, asztalok",
         text: "Koccintás",
-        date: "19:30–20:00",
+        date: "20:00–20:30",
         imgs: [
           "./images/gemma.png",
           "./images/connor.jpg",
@@ -112,8 +112,6 @@ const timelineData = [
         characters: [
           "Gemma Jenkins",
           "Connor O'Hara",
-          "Solace Barbon",
-          "Anne-Rose Tuffin"
         ],
         location: "Tánctér",
         text: "Nyitótánc",
@@ -121,6 +119,17 @@ const timelineData = [
         imgs: [
           "./images/gemma.png",
           "./images/connor.jpg",
+        ]
+      },
+ {
+        characters: [
+          "Solace Barbon",
+          "Anne-Rose Tuffin"
+        ],
+        location: "Tánctér",
+        text: "Nyitótánc",
+        date: "20:30–21:00",
+        imgs: [
           "./images/solace.jpg",
           "./images/annie.jpg"
         ]
@@ -135,7 +144,7 @@ const timelineData = [
     {
       characters: ["Gemma Jenkins", "Connor O'Hara"],
       location: "Udvar",
-      text: "Pihenés, zugivás",
+      text: "Pihenés, zugivás 2.0",
       date: "21:00–21:30",
       imgs: [
         "./images/gemma.png",
@@ -153,6 +162,16 @@ const timelineData = [
       ]
     },
     {
+      characters: ["Solace Barbon", "Gwendolyn P. Jadisland"],
+      location: "Tánctér",
+      text: "Interjú",
+      date: "21:30–22:00",
+      imgs: [
+        "./images/solace.jpg",
+        "./images/gwen.jpg"
+      ]
+    },
+    {
       characters: ["Anne-Rose Tuffin", "Ophelia Langley"],
       location: "Tánctér",
       text: "Oph és Annie tánca",
@@ -165,8 +184,8 @@ const timelineData = [
     {
       characters: ["Gemma Jenkins", "Chikara Tetsuya"],
       location: "Udvar",
-      text: "Haverozás",
-      date: "21:30–21:45",
+      text: "Haveri csevegés (és ivás)",
+      date: "21:30–22:15",
       imgs: [
         "./images/gemma.png",
         "./images/tetsu.jpg"
@@ -184,7 +203,7 @@ const timelineData = [
         characters: ["Gemma Jenkins", "Connor O'Hara"],
         location: "Tánctér",
         text: "Tánc, koncert élvezése",
-        date: "21:45–23:00",
+        date: "22:15–22:45",
         imgs: [
           "./images/gemma.png",
           "./images/connor.jpg"
@@ -204,31 +223,45 @@ const timelineData = [
   },
 
   {
-    time: "23:00",
-    main: { title: "Koncert II. rész", color: "color-concert2" },
-    events: [
-      {
-        characters: ["Daphné d'Aboville", "María Teresa Salamanca"],
-        location: "Udvar",
-        text: "Passzív-agresszívkodás, Maria genyó",
-        date: "22:45–23:00",
-        imgs: [
-          "./images/daph.jpg",
-          "./images/maria.jpg"
-        ]
-      },
-      {
-        characters: ["Gemma Jenkins", "Connor O'Hara"],
-        location: "Eldugott, csillagporos kis zug",
-        text: "Még több zugivás",
-        date: "23:00–23:30",
-        imgs: [
-          "./images/gemma.png",
-          "./images/connor.jpg"
-        ]
-      }
-    ]
-  },
+  time: "23:00",
+  main: { title: "Koncert II. rész", color: "color-concert2" },
+  events: [
+    {
+      characters: ["Daphné d'Aboville", "María Teresa Salamanca"],
+      location: "Udvar",
+      text: "Passzív-agresszívkodás, Maria genyó",
+      date: "22:45–23:00",
+      imgs: [
+        "./images/daph.jpg",
+        "./images/maria.jpg"
+      ]
+    },
+    {
+      characters: ["Gemma Jenkins", "Connor O'Hara"],
+      location: "Eldugott, csillagporos kis zug",
+      text: "Még több zugivás",
+      date: "22:45–23:00",
+      imgs: [
+        "./images/gemma.png",
+        "./images/connor.jpg"
+      ]
+    },
+
+
+    {
+      characters: ["Gemma Jenkins", "Connor O'Hara"],
+      location: "Tánctér",
+      text: "Este baráti lezárása",
+      date: "23:00",
+      imgs: [
+        "./images/gemma.png",
+        "./images/connor.jpg"
+      ]
+    }
+  ]
+},
+
+
 
   {
     time: "23:45",
@@ -245,13 +278,13 @@ const timelineData = [
         ]
       },
       {
-        characters: ["Gemma Jenkins", "Connor O'Hara"],
-        location: "Eldugott, csillagporos kis zug",
-        text: "Csók",
-        date: "23:30",
+        characters: ["Gemma Jenkins", "Malachi Maddock"],
+        location: "Udvar",
+        text: "Mardosó bűntudat és mérges zavartság",
+        date: "23:15",
         imgs: [
           "./images/gemma.png",
-          "./images/connor.jpg"
+          "./images/mal.jpg"
         ]
       }
     ]
