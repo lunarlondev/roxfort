@@ -1,3 +1,15 @@
+function normalizeDate(date) {
+  if (!date) return "";
+
+  // "00:00-tól" → "00:00"
+  return date
+    .replace(/-tól$/i, "")
+    .replace(/\s*–\s*/g, "–")
+    .trim();
+}
+
+
+
 /* ==============================
    YULE TIMELINE – DATA
 ============================== */
@@ -13,7 +25,7 @@ const timelineData = [
       {
         characters: ["Gemma Jenkins", "Connor O'Hara"],
         location: "Folyosók",
-        text: "FFelkészülés a bevonulásra (aka zugivás 1.0)",
+        text: "Felkészülés a bevonulásra (aka zugivás 1.0)",
         date: "17:30–17:45",
         imgs: [
           "./images/gemma.png",
@@ -391,11 +403,15 @@ function renderTimeline() {
 
       const ce = document.createElement("div");
       ce.className = "char-event";
-      ce.dataset.date = e.date || "";
+      ce.dataset.date = normalizeDate(e.date);
+      ce.dataset.characters = e.characters.join("|");
 
-      const avatars = e.imgs
-        .map(src => `<img src="${src}">`)
-        .join("");
+     const avatars = e.imgs
+       .map((src, i) =>
+    `     <img src="${src}" data-char="${e.characters[i]}">`
+       )
+       .join("");
+
 
       ce.innerHTML = `
         <div class="char-avatars">${avatars}</div>
@@ -428,6 +444,34 @@ buildFilters();
 if (charFilter) charFilter.addEventListener("change", renderTimeline);
 if (locFilter) locFilter.addEventListener("change", renderTimeline);
 renderTimeline();
+
+
+
+document.addEventListener("mouseover", e => {
+  const img = e.target.closest("img[data-char]");
+  if (!img) return;
+
+  const char = img.dataset.char;
+  document.body.classList.add("char-focus");
+
+  document.querySelectorAll(".char-event").forEach(ev => {
+    const chars = ev.dataset.characters || "";
+    ev.classList.toggle("focused", chars.includes(char));
+  });
+});
+
+document.addEventListener("mouseout", e => {
+  if (e.target.closest("img[data-char]")) {
+    document.body.classList.remove("char-focus");
+    document
+      .querySelectorAll(".char-event")
+      .forEach(ev => ev.classList.remove("focused"));
+  }
+});
+
+
+
+
 
 /* ==============================
    STARFIELD EFFECT
