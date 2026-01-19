@@ -129,58 +129,52 @@ const timelineData = [
   },
 
   {
-    time: "21:00",
-    main: { title: "Szabad tánc", color: "color-dance" },
-    events: [
-      {
-        characters: ["Gemma Jenkins", "Connor O'Hara"],
-        location: "Udvar",
-        text: "Pihenés, zugivás",
-        date: "21:00–21:30",
-        imgs: [
-          "./images/gemma.png",
-          "./images/connor.jpg"
-        ]
-      }
-    ]
-  },
+  time: "21:00",
+  main: { title: "Szabad tánc", color: "color-dance" },
+  events: [
+    {
+      characters: ["Gemma Jenkins", "Connor O'Hara"],
+      location: "Udvar",
+      text: "Pihenés, zugivás",
+      date: "21:00–21:30",
+      imgs: [
+        "./images/gemma.png",
+        "./images/connor.jpg"
+      ]
+    },
+    {
+      characters: ["Heranoush Fletcher", "Vivien M. Smithe"],
+      location: "Tánctér",
+      text: "Hera és Viv tánca",
+      date: "21:30–21:45",
+      imgs: [
+        "./images/hera.jpg",
+        "./images/viv.jpg"
+      ]
+    },
+    {
+      characters: ["Anne-Rose Tuffin", "Ophelia Langley"],
+      location: "Tánctér",
+      text: "Oph és Annie tánca",
+      date: "21:30–21:45",
+      imgs: [
+        "./images/annie.jpg",
+        "./images/oph.png"
+      ]
+    },
+    {
+      characters: ["Gemma Jenkins", "Chikara Tetsuya"],
+      location: "Udvar",
+      text: "Haverozás",
+      date: "21:30–21:45",
+      imgs: [
+        "./images/gemma.png",
+        "./images/tetsu.jpg"
+      ]
+    }
+  ]
+},
 
-  {
-    time: "21:30",
-    main: { title: "Szabad tánc", color: "color-dance" },
-    events: [
-      {
-        characters: ["Heranoush Fletcher", "Vivien M. Smithe"],
-        location: "Tánctér",
-        text: "Hera és Viv tánca",
-        date: "21:30–21:45",
-        imgs: [
-          "./images/hera.jpg",
-          "./images/viv.jpg"
-        ]
-      },
-      {
-        characters: ["Anne-Rose Tuffin", "Ophelia Langley"],
-        location: "Tánctér",
-        text: "Oph és Annie tánca",
-        date: "21:30–21:45",
-        imgs: [
-          "./images/annie.jpg",
-          "./images/oph.png"
-        ]
-      },
-      {
-        characters: ["Gemma Jenkins", "Chikara Tetsuya"],
-        location: "Udvar",
-        text: "Haverozás",
-        date: "21:30–21:45",
-        imgs: [
-          "./images/gemma.png",
-          "./images/tetsu.jpg"
-        ]
-      }
-    ]
-  },
 
   {
     time: "22:00",
