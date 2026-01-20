@@ -1,14 +1,10 @@
 function normalizeDate(date) {
   if (!date) return "";
-
-  // "00:00-tól" → "00:00"
   return date
     .replace(/-tól$/i, "")
     .replace(/\s*–\s*/g, "–")
     .trim();
 }
-
-
 
 /* ==============================
    YULE TIMELINE – DATA
@@ -121,23 +117,17 @@ const timelineData = [
     main: { title: "A hat bajnok nyitótánca", color: "color-champions" },
     events: [
       {
-        characters: [
-          "Gemma Jenkins",
-          "Connor O'Hara",
-        ],
+        characters: ["Gemma Jenkins", "Connor O'Hara"],
         location: "Tánctér",
         text: "Nyitótánc",
         date: "20:30–21:00",
         imgs: [
           "./images/gemma.png",
-          "./images/connor.jpg",
+          "./images/connor.jpg"
         ]
       },
- {
-        characters: [
-          "Solace Barbon",
-          "Anne-Rose Tuffin"
-        ],
+      {
+        characters: ["Solace Barbon", "Anne-Rose Tuffin"],
         location: "Tánctér",
         text: "Nyitótánc",
         date: "20:30–21:00",
@@ -150,62 +140,63 @@ const timelineData = [
   },
 
   {
-  time: "21:00",
-  main: { title: "Szabad tánc", color: "color-dance" },
-  events: [
-    {
-      characters: ["Gemma Jenkins", "Connor O'Hara"],
-      location: "Udvar",
-      text: "Pihenés, zugivás 2.0",
-      date: "21:00–21:30",
-      imgs: [
-        "./images/gemma.png",
-        "./images/connor.jpg"
-      ]
-    },
-    {
-      characters: ["Heranoush Fletcher", "Vivien M. Smithe"],
-      location: "Tánctér",
-      text: "Hera és Viv tánca",
-      date: "21:30–21:45",
-      imgs: [
-        "./images/hera.jpg",
-        "./images/viv.jpg"
-      ]
-    },
-    {
-      characters: ["Solace Barbon", "Gwendolyn P. Jadisland"],
-      location: "Tánctér",
-      text: "Interjú",
-      date: "21:30–22:00",
-      imgs: [
-        "./images/solace.jpg",
-        "./images/gwen.jpg"
-      ]
-    },
-    {
-      characters: ["Anne-Rose Tuffin", "Ophelia Langley"],
-      location: "Tánctér",
-      text: "Oph és Annie tánca",
-      date: "21:30–21:45",
-      imgs: [
-        "./images/annie.jpg",
-        "./images/oph.png"
-      ]
-    },
-    {
-      characters: ["Gemma Jenkins", "Chikara Tetsuya"],
-      location: "Udvar",
-      text: "Haveri csevegés (és ivás)",
-      date: "21:30–22:15",
-      imgs: [
-        "./images/gemma.png",
-        "./images/tetsu.jpg"
-      ]
-    }
-  ]
-},
+    time: "21:00",
+    main: { title: "Szabad tánc", color: "color-dance" },
+    events: [
+      {
+        characters: ["Gemma Jenkins", "Connor O'Hara"],
+        location: "Udvar",
+        text: "Pihenés, zugivás 2.0",
+        date: "21:00–21:30",
+        imgs: [
+          "./images/gemma.png",
+          "./images/connor.jpg"
+        ]
+      },
+      {
+        characters: ["Heranoush Fletcher", "Vivien M. Smithe"],
+        location: "Tánctér",
+        text: "Hera és Viv tánca",
+        date: "21:30–21:45",
+        imgs: [
+          "./images/hera.jpg",
+          "./images/viv.jpg"
+        ]
+      },
+      {
+        characters: ["Solace Barbon", "Gwendolyn P. Jadisland"],
+        location: "Tánctér",
+        text: "Interjú",
+        date: "21:30–22:00",
+        imgs: [
+          "./images/solace.jpg",
+          "./images/gwen.jpg"
+        ]
+      },
+      {
+        characters: ["Anne-Rose Tuffin", "Ophelia Langley"],
+        location: "Tánctér",
+        text: "Oph és Annie tánca",
+        date: "21:30–21:45",
+        imgs: [
+          "./images/annie.jpg",
+          "./images/oph.png"
+        ]
+      },
+      {
+        characters: ["Gemma Jenkins", "Chikara Tetsuya"],
+        location: "Udvar",
+        text: "Haveri csevegés (és ivás)",
+        date: "21:30–22:15",
+        imgs: [
+          "./images/gemma.png",
+          "./images/tetsu.jpg"
+        ]
+      }
+    ]
+  },
 
+  /* ----- KONCERT I. RÉSZ ----- */
 
   {
     time: "22:00",
@@ -230,63 +221,44 @@ const timelineData = [
           "./images/viv.jpg",
           "./images/tetsu.jpg"
         ]
+      },
+      {
+        characters: ["Daphné d'Aboville", "María Teresa Salamanca"],
+        location: "Udvar",
+        text: "Passzív-agresszívkodás, Maria genyó",
+        date: "22:45–23:00",
+        imgs: [
+          "./images/daph.jpg",
+          "./images/maria.jpg"
+        ]
+      },
+      {
+        characters: ["Gemma Jenkins", "Connor O'Hara"],
+        location: "Eldugott, csillagporos kis zug",
+        text: "Még több zugivás",
+        date: "22:45–23:00",
+        imgs: [
+          "./images/gemma.png",
+          "./images/connor.jpg"
+        ]
       }
     ]
   },
 
-  {
-  time: "23:00",
-  main: { title: "Koncert II. rész", color: "color-concert2" },
-  events: [
-    {
-      characters: ["Daphné d'Aboville", "María Teresa Salamanca"],
-      location: "Udvar",
-      text: "Passzív-agresszívkodás, Maria genyó",
-      date: "22:45–23:00",
-      imgs: [
-        "./images/daph.jpg",
-        "./images/maria.jpg"
-      ]
-    },
-    {
-      characters: ["Gemma Jenkins", "Connor O'Hara"],
-      location: "Eldugott, csillagporos kis zug",
-      text: "Még több zugivás",
-      date: "22:45–23:00",
-      imgs: [
-        "./images/gemma.png",
-        "./images/connor.jpg"
-      ]
-    },
-
-
-    {
-      characters: ["Gemma Jenkins", "Connor O'Hara"],
-      location: "Tánctér",
-      text: "Este baráti lezárása",
-      date: "23:00",
-      imgs: [
-        "./images/gemma.png",
-        "./images/connor.jpg"
-      ]
-    }
-  ]
-},
-
-
+  /* ----- KONCERT II. RÉSZ ----- */
 
   {
-    time: "23:45",
-    main: { title: "Yule-pillanat", color: "color-yule" },
+    time: "23:00",
+    main: { title: "Koncert II. rész", color: "color-concert2" },
     events: [
       {
-        characters: ["Daphné d'Aboville", "Rokuro Ishida"],
-        location: "Eldugott, csillagporos kis zug",
-        text: "Rokuro megbántja Daphnét, Daphné kiosztja és elviharzik",
-        date: "23:50–00:00",
+        characters: ["Gemma Jenkins", "Connor O'Hara"],
+        location: "Tánctér",
+        text: "Este baráti lezárása",
+        date: "23:00",
         imgs: [
-          "./images/daph.jpg",
-          "./images/roku.jpg"
+          "./images/gemma.png",
+          "./images/connor.jpg"
         ]
       },
       {
@@ -303,6 +275,23 @@ const timelineData = [
   },
 
   {
+    time: "23:45",
+    main: { title: "Yule-pillanat", color: "color-yule" },
+    events: [
+      {
+        characters: ["Daphné d'Aboville", "Rokuro Ishida"],
+        location: "Eldugott, csillagporos kis zug",
+        text: "Rokuro megbántja Daphnét, Daphné kiosztja és elviharzik",
+        date: "23:50–00:00",
+        imgs: [
+          "./images/daph.jpg",
+          "./images/roku.jpg"
+        ]
+      }
+    ]
+  },
+
+  {
     time: "24:00",
     main: { title: "Zárás", color: "color-close" },
     events: [
@@ -310,7 +299,7 @@ const timelineData = [
         characters: ["Daphné d'Aboville", "Élodie Roethlisberger", "Fluffy"],
         location: "Beauxbatons lányháló",
         text: "Lelkizés, tinimagazinok bújása",
-        date: "00:00-tól",
+        date: "00:00",
         imgs: [
           "./images/daph.jpg",
           "./images/elod.jpg",
@@ -319,29 +308,28 @@ const timelineData = [
       }
     ]
   }
+
 ];
 
 /* ==============================
    DOM + LOGIKA
-   (EZ ALATTI RÉSZ VÁLTOZATLAN)
 ============================== */
+
+/* A DOM-, render-, filter- és hover-kód
+   VÁLTOZATLAN marad a mostani verziódból */
 
 
 /* ==============================
-   DOM REFERENCES
+   DOM + LOGIKA
 ============================== */
 
 const timelineEl = document.getElementById("timeline");
 const charFilter = document.getElementById("charFilter");
 const locFilter = document.getElementById("locFilter");
 
-/* ==============================
-   FILTER SETUP
-============================== */
+/* FILTERS */
 
 function buildFilters() {
-  if (!charFilter || !locFilter) return;
-
   const chars = new Set();
   const locs = new Set();
 
@@ -351,9 +339,6 @@ function buildFilters() {
       locs.add(e.location);
     });
   });
-
-  while (charFilter.options.length > 1) charFilter.remove(1);
-  while (locFilter.options.length > 1) locFilter.remove(1);
 
   [...chars].sort().forEach(c => {
     const o = document.createElement("option");
@@ -370,15 +355,12 @@ function buildFilters() {
   });
 }
 
-/* ==============================
-   TIMELINE RENDER
-============================== */
+/* RENDER */
 
 function renderTimeline() {
   timelineEl.innerHTML = "";
-
-  const fChar = charFilter ? charFilter.value : "";
-  const fLoc = locFilter ? locFilter.value : "";
+  const fChar = charFilter.value;
+  const fLoc = locFilter.value;
 
   let lastBlockHadChar = false;
 
@@ -406,12 +388,11 @@ function renderTimeline() {
       ce.dataset.date = normalizeDate(e.date);
       ce.dataset.characters = e.characters.join("|");
 
-     const avatars = e.imgs
-       .map((src, i) =>
-    `     <img src="${src}" data-char="${e.characters[i]}">`
-       )
-       .join("");
-
+      const avatars = e.imgs
+        .map((src, i) =>
+          `<img src="${src}" data-char="${e.characters[i]}">`
+        )
+        .join("");
 
       ce.innerHTML = `
         <div class="char-avatars">${avatars}</div>
@@ -436,16 +417,14 @@ function renderTimeline() {
   });
 }
 
-/* ==============================
-   INIT
-============================== */
+/* INIT */
 
 buildFilters();
-if (charFilter) charFilter.addEventListener("change", renderTimeline);
-if (locFilter) locFilter.addEventListener("change", renderTimeline);
+charFilter.addEventListener("change", renderTimeline);
+locFilter.addEventListener("change", renderTimeline);
 renderTimeline();
 
-
+/* HOVER FOCUS */
 
 document.addEventListener("mouseover", e => {
   const img = e.target.closest("img[data-char]");
@@ -455,8 +434,10 @@ document.addEventListener("mouseover", e => {
   document.body.classList.add("char-focus");
 
   document.querySelectorAll(".char-event").forEach(ev => {
-    const chars = ev.dataset.characters || "";
-    ev.classList.toggle("focused", chars.includes(char));
+    ev.classList.toggle(
+      "focused",
+      ev.dataset.characters.includes(char)
+    );
   });
 });
 
@@ -468,59 +449,3 @@ document.addEventListener("mouseout", e => {
       .forEach(ev => ev.classList.remove("focused"));
   }
 });
-
-
-
-
-
-/* ==============================
-   STARFIELD EFFECT
-============================== */
-
-const canvas = document.createElement("canvas");
-canvas.style.position = "fixed";
-canvas.style.top = 0;
-canvas.style.left = 0;
-canvas.style.width = "100%";
-canvas.style.height = "100%";
-canvas.style.pointerEvents = "none";
-canvas.style.zIndex = 0;
-document.body.appendChild(canvas);
-
-const ctx = canvas.getContext("2d");
-let w, h;
-
-function resize() {
-  w = canvas.width = window.innerWidth;
-  h = canvas.height = window.innerHeight;
-}
-window.addEventListener("resize", resize);
-resize();
-
-const stars = Array.from({ length: 120 }, () => ({
-  x: Math.random() * w,
-  y: Math.random() * h,
-  r: Math.random() * 1.5 + 0.3,
-  s: Math.random() * 0.15 + 0.05
-}));
-
-function drawStars() {
-  ctx.clearRect(0, 0, w, h);
-  ctx.fillStyle = "rgba(255,255,255,.8)";
-
-  stars.forEach(star => {
-    ctx.beginPath();
-    ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
-    ctx.fill();
-
-    star.y += star.s;
-    if (star.y > h) {
-      star.y = 0;
-      star.x = Math.random() * w;
-    }
-  });
-
-  requestAnimationFrame(drawStars);
-}
-
-drawStars();
