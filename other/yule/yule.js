@@ -378,7 +378,7 @@ const timelineData = [
         text: "Segítségfelajánlás",
         date: "23:30",
         imgs: [
-          "./images/solace.jőg",
+          "./images/solace.jpg",
           "./images/vale.jpg"
         ]
       }
