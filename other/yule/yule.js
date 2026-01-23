@@ -21,7 +21,7 @@ const timelineData = [
       {
         characters: ["Gemma Jenkins", "Connor O'Hara"],
         location: "Folyosók",
-        text: "Felkészülés a bevonulásra (aka zugivás 1.0)",
+	text: '<a href="https://www.roxfort.frpg.hu/index.php/topic,20961.msg128535.html#msg128535">Felkészülés a bevonulásra (aka zugivás 1.0)</a>',
         date: "17:30–17:45",
         imgs: [
           "./images/gemma.png",
@@ -78,7 +78,7 @@ const timelineData = [
       {
         characters: ["Vianne M. Gardner", "Varvara Chernov"],
         location: "Folyosók",
-        text: "Közszeméremsértés, belépés megtagadása a bálra",
+	text: '<a href="https://www.roxfort.frpg.hu/index.php/topic,20961.msg128490.html#msg128490">Közszeméremsértés, belépés megtagadása a bálra</a>',
         date: "19:00",
         imgs: [
           "./images/vianne.jpg",
@@ -95,7 +95,7 @@ const timelineData = [
       {
         characters: ["Gemma Jenkins", "Connor O'Hara"],
         location: "Svédasztalok",
-        text: "Vacsora",
+        text: '<a href="https://www.roxfort.frpg.hu/index.php/topic,20957.msg128592.html#msg128592">Vacsora</a>',
         date: "19:30–20:00",
         imgs: [
           "./images/gemma.png",
@@ -120,7 +120,7 @@ const timelineData = [
           "Anne-Rose Tuffin"
         ],
         location: "Padok, asztalok",
-        text: "Koccintás",
+        text: "<a href=https://www.roxfort.frpg.hu/index.php/topic,20956.msg128597.html#msg128597>Koccintás</a>",
         date: "20:00–20:30",
         imgs: [
           "./images/gemma.png",
@@ -161,7 +161,7 @@ const timelineData = [
       {
         characters: ["Gemma Jenkins", "Connor O'Hara"],
         location: "Tánctér",
-        text: "Nyitótánc",
+        text: '<a href="https://www.roxfort.frpg.hu/index.php/topic,20955.msg128634.html#msg128634">Nyitótánc</a>',
         date: "20:30–21:00",
         imgs: [
           "./images/gemma.png",
@@ -181,7 +181,7 @@ const timelineData = [
       {
         characters: ["Malachi Maddock"],
         location: "Padok, asztalok",
-        text: "Búcsú",
+        text: "<a href=\"https://www.roxfort.frpg.hu/index.php/topic,20956.msg128646.html#msg128646\" target=\"_blank\">Búcsú</a>",
         date: "21:00",
         imgs: [
           "./images/mal.jpg",
@@ -217,7 +217,7 @@ const timelineData = [
       {
         characters: ["Heranoush Fletcher", "Vivien M. Smithe"],
         location: "Tánctér",
-        text: "Hera és Viv tánca",
+        text: '<a href="https://www.roxfort.frpg.hu/index.php/topic,20955.msg128534.html#msg128534">Hera és Viv tánca</a>',
         date: "21:30–21:45",
         imgs: [
           "./images/hera.jpg",
@@ -237,7 +237,7 @@ const timelineData = [
       {
         characters: ["Solace Barbon", "Gwendolyn P. Jadisland"],
         location: "Padok, asztalok",
-        text: "Interjú",
+        text: "<a href=\"https://www.roxfort.frpg.hu/index.php/topic,20956.msg128567.html#msg128567\" target=\"_blank\">Interjú</a>",
         date: "21:30–22:00",
         imgs: [
           "./images/solace.jpg",
@@ -286,7 +286,7 @@ const timelineData = [
       },
       {
         characters: ["Anne-Rose Tuffin", "Solace Barbon"],
-        location: "Udvar",
+        location: "Tánctér",
         text: "Tánc az interjú után",
         date: "21:45–21:55",
         imgs: [
@@ -316,7 +316,7 @@ const timelineData = [
       {
         characters: ["Vivien M. Smithe", "Chikara Tetsuya"],
         location: "Eldugott, csillagporos kis zug",
-        text: "Viv being Viv",
+                text: '<a href="https://www.roxfort.frpg.hu/index.php/topic,20958.msg128564.html#msg128564">Viv being Viv</a>',
         date: "22:30",
         imgs: [
           "./images/viv.jpg",
@@ -326,7 +326,7 @@ const timelineData = [
       {
         characters: ["Daphné d'Aboville", "María Teresa Salamanca"],
         location: "Udvar",
-        text: "Passzív-agresszívkodás, Maria genyó",
+	text: '<a href="https://www.roxfort.frpg.hu/index.php/topic,20960.msg128541.html#msg128541">Udvarias small talk</a>',
         date: "22:45–23:00",
         imgs: [
           "./images/daph.jpg",
@@ -392,7 +392,7 @@ const timelineData = [
       {
         characters: ["Daphné d'Aboville", "Rokuro Ishida"],
         location: "Eldugott, csillagporos kis zug",
-        text: "Rokuro megbántja Daphnét, Daphné kiosztja és elviharzik",
+        text: "<a href=\"https://www.roxfort.frpg.hu/index.php/topic,20958.msg128493.html#msg128493\" target=\"_blank\">Roku megbántja Daphnét. Daphné elviharzik.</a>",
         date: "23:50–00:00",
         imgs: [
           "./images/daph.jpg",
@@ -409,7 +409,7 @@ const timelineData = [
       {
         characters: ["Daphné d'Aboville", "Elodie Roethlisberger", "Fluffy"],
         location: "Beauxbatons lányháló",
-        text: "Lelkizés, tinimagazinok bújása",
+        text: '<a href="https://www.roxfort.frpg.hu/index.php/topic,20676.msg128624/topicseen.html#msg128624">Lelkizés, tinimagazinok bújása</a>',
         date: "00:14",
         imgs: [
           "./images/daph.jpg",
@@ -559,4 +559,14 @@ document.addEventListener("mouseout", e => {
       .querySelectorAll(".char-event")
       .forEach(ev => ev.classList.remove("focused"));
   }
+});
+
+
+
+// biztosítsuk, hogy minden timeline-link új lapon nyíljon
+document.addEventListener("click", e => {
+  const a = e.target.closest(".char-info a");
+  if (!a) return;
+  a.setAttribute("target", "_blank");
+  a.setAttribute("rel", "noopener noreferrer");
 });

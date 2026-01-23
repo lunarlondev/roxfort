@@ -292,3 +292,83 @@ body.char-focus .char-connector{
 body.char-focus .timeline::before{
   box-shadow:0 0 18px rgba(155,179,255,.9);
 }
+
+
+
+/* LINKEK */
+
+/* ===============================
+   TIMELINE LINK STÍLUS
+   csillag + fény téma
+================================ */
+
+.char-info a{
+  color:#cfd9ff;
+  text-decoration:none;
+  font-weight:600;
+  position:relative;
+  transition:
+    color .25s ease,
+    text-shadow .25s ease,
+    background .25s ease;
+}
+
+/* finom fény aura */
+.char-info a::before{
+  content:"✦";
+  margin-right:6px;
+  color:#a9b9ff;
+  opacity:.75;
+}
+
+/* hover: csillagfény */
+.char-info a:hover{
+  color:#ffffff;
+  text-shadow:
+    0 0 6px rgba(200,220,255,.9),
+    0 0 16px rgba(160,190,255,.8),
+    0 0 28px rgba(120,160,255,.6);
+}
+
+/* aktív kattintás */
+.char-info a:active{
+  transform:translateY(1px);
+}
+
+/* link ikon finom animáció */
+.char-info a:hover::before{
+  animation:twinkle 1.6s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+  0%{opacity:.5}
+  50%{opacity:1}
+  100%{opacity:.5}
+}
+
+
+
+/* EXTRÁK */
+
+.timeline{
+  animation:aurabreathe 14s ease-in-out infinite;
+}
+
+@keyframes aurabreathe{
+  0%,100%{ filter:drop-shadow(0 0 6px rgba(140,170,255,.2)); }
+  50%{ filter:drop-shadow(0 0 14px rgba(180,210,255,.35)); }
+}
+
+.char-event{
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size:40px 40px;
+  animation:drift 30s linear infinite;
+}
+
+@keyframes drift{
+  from{ background-position:0 0 }
+  to{ background-position:80px 160px }
+}
+
+
