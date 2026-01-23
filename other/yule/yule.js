@@ -57,6 +57,16 @@ const timelineData = [
           "./images/gemma.png",
           "./images/connor.jpg"
         ]
+      },
+{
+        characters: ["Solace Barbon", "Anne-Rose Tuffin"],
+        location: "Nagyterem",
+        text: "Bevonulás a bálra",
+        date: "18:15",
+        imgs: [
+          "./images/solace.jpg",
+          "./images/annie.jpg"
+        ]
       }
     ]
   },
@@ -93,6 +103,16 @@ const timelineData = [
         ]
       },
       {
+        characters: ["Anne-Rose Tuffin", "Solace Barbon"],
+        location: "Svédasztalok",
+        text: "Vacsora",
+        date: "19:30–20:00",
+        imgs: [
+          "./images/annie.jpg",
+          "./images/solace.jpg"
+        ]
+      },
+      {
         characters: [
           "Gemma Jenkins",
           "Connor O'Hara",
@@ -108,7 +128,29 @@ const timelineData = [
           "./images/solace.jpg",
           "./images/annie.jpg"
         ]
-      }
+      },
+{
+        characters: ["Varvara Chernov", "Vianne M. Gardner"],
+        location: "Nagyterem",
+        text: "Visszatérés outfit csere után",
+        date: "20:00",
+        imgs: [
+          "./images/varvara.jpg",
+          "./images/vianne.jpg"
+        ]
+      },
+{
+        characters: ["Varvara Chernov", "Vianne M. Gardner", "Vale Bate"],
+        location: "Nagyterem",
+        text: "Ünneplés, koccintás",
+        date: "20:05-20:30",
+        imgs: [
+          "./images/varvara.jpg",
+          "./images/vianne.jpg",
+          "./images/vale.jpg"
+        ]
+      },
+
     ]
   },
 
@@ -135,7 +177,16 @@ const timelineData = [
           "./images/solace.jpg",
           "./images/annie.jpg"
         ]
-      }
+      },
+      {
+        characters: ["Malachi Maddock"],
+        location: "Padok, asztalok",
+        text: "Búcsú",
+        date: "21:00",
+        imgs: [
+          "./images/mal.jpg",
+        ]
+      },
     ]
   },
 
@@ -154,6 +205,16 @@ const timelineData = [
         ]
       },
       {
+        characters: ["Daphné d'Aboville", "Anne-Rose Tuffin"],
+        location: "Tánctér",
+        text: "Annie és Daphné tánca",
+        date: "21:00–21:15",
+        imgs: [
+          "./images/daph.jpg",
+          "./images/annie.jpg"
+        ]
+      },
+      {
         characters: ["Heranoush Fletcher", "Vivien M. Smithe"],
         location: "Tánctér",
         text: "Hera és Viv tánca",
@@ -164,13 +225,33 @@ const timelineData = [
         ]
       },
       {
-        characters: ["Solace Barbon", "Gwendolyn P. Jadisland"],
+        characters: ["Daphné d'Aboville", "Miguel Fuentes"],
         location: "Tánctér",
+        text: "Miguel és Daphné tánca",
+        date: "21:15–21:30",
+        imgs: [
+          "./images/daph.jpg",
+          "./images/miguel.jpg"
+        ]
+      },
+      {
+        characters: ["Solace Barbon", "Gwendolyn P. Jadisland"],
+        location: "Padok, asztalok",
         text: "Interjú",
         date: "21:30–22:00",
         imgs: [
           "./images/solace.jpg",
           "./images/gwen.jpg"
+        ]
+      },
+      {
+        characters: ["Daphné d'Aboville", "Elodie Roethlisberger"],
+        location: "Tánctér",
+        text: "Elodie és Daphné tánca",
+        date: "21:30–21:45",
+        imgs: [
+          "./images/daph.jpg",
+          "./images/elod.jpg"
         ]
       },
       {
@@ -184,6 +265,16 @@ const timelineData = [
         ]
       },
       {
+        characters: ["Daphné d'Aboville", "Rokuro Ishida"],
+        location: "Tánctér",
+        text: "Rokuro és Daphné tánca",
+        date: "21:45–21:55",
+        imgs: [
+          "./images/daph.jpg",
+          "./images/roku.jpg"
+        ]
+      },
+      {
         characters: ["Gemma Jenkins", "Chikara Tetsuya"],
         location: "Udvar",
         text: "Haveri csevegés (és ivás)",
@@ -192,7 +283,17 @@ const timelineData = [
           "./images/gemma.png",
           "./images/tetsu.jpg"
         ]
-      }
+      },
+      {
+        characters: ["Anne-Rose Tuffin", "Solace Barbon"],
+        location: "Udvar",
+        text: "Tánc az interjú után",
+        date: "21:45–21:55",
+        imgs: [
+          "./images/annie.jpg",
+          "./images/solace.jpg"
+        ]
+      },
     ]
   },
 
@@ -215,7 +316,7 @@ const timelineData = [
       {
         characters: ["Vivien M. Smithe", "Chikara Tetsuya"],
         location: "Eldugott, csillagporos kis zug",
-        text: "Mély beszélgetés, Viv being Viv",
+        text: "Viv being Viv",
         date: "22:30",
         imgs: [
           "./images/viv.jpg",
@@ -270,6 +371,16 @@ const timelineData = [
           "./images/gemma.png",
           "./images/mal.jpg"
         ]
+      },
+      {
+        characters: ["Solace Barbon", "Vale Bate"],
+        location: "Udvar",
+        text: "Segítségfelajánlás",
+        date: "23:30",
+        imgs: [
+          "./images/solace.jőg",
+          "./images/vale.jpg"
+        ]
       }
     ]
   },
@@ -296,10 +407,10 @@ const timelineData = [
     main: { title: "Zárás", color: "color-close" },
     events: [
       {
-        characters: ["Daphné d'Aboville", "Élodie Roethlisberger", "Fluffy"],
+        characters: ["Daphné d'Aboville", "Elodie Roethlisberger", "Fluffy"],
         location: "Beauxbatons lányháló",
         text: "Lelkizés, tinimagazinok bújása",
-        date: "00:00",
+        date: "00:14",
         imgs: [
           "./images/daph.jpg",
           "./images/elod.jpg",
