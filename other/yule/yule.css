@@ -376,8 +376,8 @@ body.char-focus .timeline::before{
    YULE SCROLLBAR
 ================================ */
 
-html::-webkit-scrollbar{width:14px}
-html::-webkit-scrollbar-track{background:linear-gradient(to bottom,rgba(8,12,35,.75),rgba(18,26,65,.9));border-radius:12px}
-html::-webkit-scrollbar-thumb{background:radial-gradient(circle at 50% 35%,rgba(255,255,255,1) 10%,#c2ceff 26%,#7a8cff 52%,rgba(0,0,0,0) 60%);border-radius:12px;box-shadow:0 0 10px rgba(210,225,255,1),0 0 26px rgba(160,190,255,.9)}
-html::-webkit-scrollbar-thumb:hover{box-shadow:0 0 16px rgba(240,245,255,1),0 0 36px rgba(180,205,255,1)}
-html::-webkit-scrollbar-thumb:active{box-shadow:0 0 22px rgba(255,255,255,1),0 0 52px rgba(200,220,255,1)}
+html::-webkit-scrollbar{width:10px}
+html::-webkit-scrollbar-track{background:transparent}
+html::-webkit-scrollbar-thumb{background:linear-gradient(to bottom,rgba(190,205,255,.35),rgba(140,160,230,.35));border-radius:8px}
+html::-webkit-scrollbar-thumb:hover{background:linear-gradient(to bottom,rgba(220,230,255,.55),rgba(160,180,245,.55))}
+html::-webkit-scrollbar-thumb:active{background:linear-gradient(to bottom,rgba(240,245,255,.75),rgba(180,200,255,.75))}
