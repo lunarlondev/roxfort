@@ -380,6 +380,16 @@ const timelineData = [
     main: { title: "Yule-pillanat", color: "color-yule" },
     events: [
       {
+        characters: ["Gemma Jenkins", "Connor O'Hara"],
+        location: "Udvar",
+        text: "Utóhatás",
+        date: "23:50–00:00",
+        imgs: [
+          "./images/gemma.png",
+          "./images/connor.jpg"
+        ]
+  },
+      {
         characters: ["Daphné d'Aboville", "Rokuro Ishida"],
         location: "Eldugott, csillagporos kis zug",
         text: "<a href=\"https://www.roxfort.frpg.hu/index.php/topic,20958.msg128493.html#msg128493\" target=\"_blank\">Roku megbántja Daphnét. Daphné elviharzik.</a>",
@@ -396,16 +406,6 @@ const timelineData = [
     time: "24:00",
     main: { title: "Zárás", color: "color-close" },
     events: [
-      {
-        characters: ["Gemma Jenkins", "Connor O'Hara"],
-        location: "Udvar",
-        text: "Utóhatás",
-        date: "23:50–00:00",
-        imgs: [
-          "./images/gemma.png",
-          "./images/connor.jpg"
-        ]
-  },
       {
         characters: ["Daphné d'Aboville", "Elodie Roethlisberger", "Fluffy"],
         location: "Beauxbatons lányháló",
