@@ -278,7 +278,7 @@ const timelineData = [
         characters: ["Gemma Jenkins", "Chikara Tetsuya"],
         location: "Udvar",
         text: "Haveri csevegés (és ivás)",
-        date: "21:30–22:15",
+        date: "21:30–22:30",
         imgs: [
           "./images/gemma.png",
           "./images/tetsu.jpg"
@@ -307,7 +307,7 @@ const timelineData = [
         characters: ["Gemma Jenkins", "Connor O'Hara"],
         location: "Tánctér",
         text: "Tánc, koncert élvezése",
-        date: "22:15–22:45",
+        date: "22:30–23:00",
         imgs: [
           "./images/gemma.png",
           "./images/connor.jpg"
@@ -337,7 +337,7 @@ const timelineData = [
         characters: ["Gemma Jenkins", "Connor O'Hara"],
         location: "Eldugott, csillagporos kis zug",
         text: "Még több zugivás",
-        date: "22:45–23:00",
+        date: "23:00–23:30",
         imgs: [
           "./images/gemma.png",
           "./images/connor.jpg"
@@ -355,21 +355,11 @@ const timelineData = [
       {
         characters: ["Gemma Jenkins", "Connor O'Hara"],
         location: "Tánctér",
-        text: "Este baráti lezárása",
-        date: "23:00",
+        text: "A shooting star! Any wishes?",
+        date: "23:30",
         imgs: [
           "./images/gemma.png",
           "./images/connor.jpg"
-        ]
-      },
-      {
-        characters: ["Gemma Jenkins", "Malachi Maddock"],
-        location: "Udvar",
-        text: "Mardosó bűntudat és mérges zavartság",
-        date: "23:15",
-        imgs: [
-          "./images/gemma.png",
-          "./images/mal.jpg"
         ]
       },
       {
@@ -406,6 +396,16 @@ const timelineData = [
     time: "24:00",
     main: { title: "Zárás", color: "color-close" },
     events: [
+      {
+        characters: ["Gemma Jenkins", "Connor O'Hara"],
+        location: "Udvar",
+        text: "Utóhatás",
+        date: "23:50–00:00",
+        imgs: [
+          "./images/gemma.png",
+          "./images/connor.jpg"
+        ]
+  },
       {
         characters: ["Daphné d'Aboville", "Elodie Roethlisberger", "Fluffy"],
         location: "Beauxbatons lányháló",
