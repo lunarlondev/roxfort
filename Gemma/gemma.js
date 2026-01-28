@@ -134,7 +134,8 @@ output.value=`[center][html]
 .gemmaGift{display:flex;gap:10px;align-items:flex-start;width:280px;background:#121613;border:1px solid rgba(125,170,99,.45);border-radius:14px;padding:10px;box-shadow:0 0 0 1px rgba(125,170,99,.2),0 12px 28px rgba(0,0,0,.6)}
 .gemmaGiftText{margin-left:6px}
 .gemmaGift h4{margin:0;font-size:12px;color:#d7e6d1}
-.gemmaGift p{margin:4px 0 0;font-size:11px;line-height:1.4;color:#a9b9a4;white-space:pre-line}
+.gemmaGift p{margin:4px 0 0;font-size:11px;line-height:1.4;color:#a9b9a4;white-space:pre-line;min-height:60px}
+
 
 /* POHÁR ALAP */
 .glass{position:relative;margin:0;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.35);overflow:hidden}
