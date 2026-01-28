@@ -717,8 +717,13 @@ box-shadow:0 0 1px rgba(255,255,255,.4);
   background:var(--panel);
   border:1px solid var(--border);
   border-radius:16px;
+	min-height:120px;
 }
 
+
+#previewText{
+  white-space:pre-line;
+}
 
 
 .genDrink .glass{
