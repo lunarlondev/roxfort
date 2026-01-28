@@ -130,39 +130,37 @@ output.value=`[center][html]
 <style>
 :root{--main:#7daa63}
 
-/* DOBOZ */
+
 .gemmaGift{display:flex;gap:10px;align-items:flex-start;width:280px;background:#121613;border:1px solid rgba(125,170,99,.45);border-radius:14px;padding:10px;box-shadow:0 0 0 1px rgba(125,170,99,.2),0 12px 28px rgba(0,0,0,.6)}
-.gemmaGiftText{margin-left:6px}
+.gemmaGiftText{margin-left:6px;text-align: justify;}
 .gemmaGift h4{margin:0;font-size:12px;color:#d7e6d1}
 .gemmaGift p{margin:4px 0 0;font-size:11px;line-height:1.4;color:#a9b9a4;white-space:pre-line;min-height:60px}
 
+.gemmaGiftDrink{flex-shrink:0;min-width:56px;display:flex;align-items:flex-start;justify-content:center;}
 
-/* POHÁR ALAP */
+
 .glass{position:relative;margin:0;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.35);overflow:hidden}
 .liquid{position:absolute;left:2px;right:2px;bottom:2px;height:var(--fill,60%);background:var(--liquid,#555)}
 
-/* FORMÁK */
+
 .lowball{width:40px;height:42px;border-radius:8px}
 .shot{width:26px;height:36px;clip-path:polygon(10% 0%,90% 0%,80% 100%,20% 100%)}
 .cup{width:30px;height:52px;clip-path:polygon(8% 0%,92% 0%,82% 100%,18% 100%)}
 .mug{width:34px;height:44px;border-radius:4px;overflow:visible}
 
-/* KORSÓ FÜL */
+
 .mug::before{content:"";position:absolute;right:-14px;top:8px;width:16px;height:28px;border:3px solid rgba(255,255,255,.45);border-left:0;border-radius:0 14px 14px 0}
 .mug::after{content:"";position:absolute;right:-9px;top:13px;width:8px;height:18px;background:#121613;border-radius:0 9px 9px 0}
 
-/* === ALAP ITALSZÍNEK (EZ A KULCS) === */
 .fire{--liquid:linear-gradient(#ffdb57,#ff6a00,#b00000);--fill:58%}
 .red{--liquid:linear-gradient(#7b0000,#ff0000,#2a0000);--fill:52%}
 .clear{--liquid:rgba(220,245,255,.6);--fill:56%}
 .green{--liquid:linear-gradient(#1f7a3a,#2ecc71,#6aff9a);--fill:60%}
 
-/* JÉG – WHISKEY */
 .fireIce::before{content:"";position:absolute;width:9px;height:9px;background:rgba(255,255,255,.65);border-radius:2px;top:8px;left:8px;animation:iceFloat 3.6s ease-in-out infinite}
 .fireIce::after{content:"";position:absolute;width:9px;height:9px;background:rgba(255,255,255,.65);border-radius:2px;top:14px;left:18px;animation:iceFloat 3.6s ease-in-out infinite;animation-delay:1.4s}
 @keyframes iceFloat{0%{transform:translateY(0)}50%{transform:translateY(-4px)}100%{transform:translateY(0)}}
 
-/* SÖR */
 .beer{position:absolute;left:2px;right:2px;bottom:2px;top:16px;overflow:hidden}
 .guinness .beer{background:#0b0b0b}
 .butterscotch .beer{background:linear-gradient(#e3b857,#f3d27a,#f8e6a8)}
@@ -193,8 +191,11 @@ output.value=`[center][html]
 @keyframes stohlPulse{0%,40%,100%{opacity:1}55%,70%{opacity:0}}
 </style>
 <div class="gemmaGift">
-${selectedDrinkHTML}
-<div class="gemmaGiftText">
+  <div class="gemmaGiftDrink">
+    ${selectedDrinkHTML}
+  </div>
+  <div class="gemmaGiftText">
+
 <h4>${titleInput.value}</h4>
 <p>${textInput.value}</p>
 </div>
