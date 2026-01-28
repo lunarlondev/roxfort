@@ -5,9 +5,9 @@ const desc=document.getElementById('infoDesc');
 const sections=document.querySelectorAll('.bk-section');
 
 const map={
-friends:{t:'Barátok',d:'Akinek rengeteg barátja van, annak tulajdonképpen egy barátja sincs'},
+friends:{t:'Barátok',d:'akinek sok barátja van, annak tulajdonképpen egy barátja sincs'},
 enemies:{t:'Ellenségek',d:'barbonfóbiások'},
-other:{t:'Egyéb',d:'Nevezd, ahogy szeretnéd'}
+other:{t:'Egyéb',d:'nevezd, ahogy szeretnéd'}
 };
 
 function show(id){
