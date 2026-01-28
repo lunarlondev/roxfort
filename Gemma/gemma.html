@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<title>Hívj meg egy italra</title>
+<link rel="stylesheet" href="./gemma.css">
+</head>
+<body>
+
+<div class="gemmaApp">
+
+  <div class="gemmaCard">
+  <div class="gemmaTitle">Kapcsolat</div>
+  <div class="gemmaTabs">
+  <button data-cat="friend" class="active">🤝 Barát</button>
+  <button data-cat="enemy">⚔️ Ellenség</button>
+  <button data-cat="love">🖤 Szerelem</button>
+  <button data-cat="other">❓ Egyéb</button>
+</div>
+  <div class="relationBox" id="relationBox"></div>
+</div>
+
+  <div class="gemmaCard">
+    <div class="gemmaTitle">Hívj meg egy italra</div>
+    <div class="barShelf" id="barShelf"></div>
+  </div>
+
+  <div class="gemmaCard">
+    <div class="gemmaTitle">Amit neki mondasz</div>
+    <input id="title" placeholder="Cím">
+    <textarea id="text" placeholder="Mit mondasz neki az ital mellé?"></textarea>
+    <button id="generate">Kód generálása</button>
+    <div id="preview"></div>
+    <textarea id="output" readonly></textarea>
+  </div>
+
+</div>
+
+<script src="./gemma.js"></script>
+</body>
+</html>
