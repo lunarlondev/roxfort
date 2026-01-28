@@ -725,6 +725,10 @@ box-shadow:0 0 1px rgba(255,255,255,.4);
   white-space:pre-line;
 }
 
+.genBody{
+  min-height:90px;
+}
+
 
 .genDrink .glass{
   transform:scale(.9);
