@@ -5,9 +5,9 @@ const desc=document.getElementById('infoDesc');
 const sections=document.querySelectorAll('.bk-section');
 
 const map={
-friends:{t:'Barátok',d:'Akikhez vissza lehet térni.'},
-enemies:{t:'Ellenségek',d:'Akik nyomot hagytak.'},
-other:{t:'Egyéb',d:'A szürkezóna figurái.'}
+friends:{t:'Barátok',d:'Akinek rengeteg barátja van, annak tulajdonképpen egy barátja sincs'},
+enemies:{t:'Ellenségek',d:'barbonfóbiások'},
+other:{t:'Egyéb',d:'Nevezd, ahogy szeretnéd'}
 };
 
 function show(id){
