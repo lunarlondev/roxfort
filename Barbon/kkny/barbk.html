@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Kapcsolati archívum</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Roboto+Mono:wght@300;400&family=Nosifer&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="barbk.css">
+</head>
+<body>
+
+<div class="bk-wrap">
+
+  <!-- BAL OLDAL -->
+  <div class="bk-panel">
+
+    <div class="bk-signature">
+      <div class="bk-monogram">B</div>
+      <div class="bk-tagline">bare to the bone</div>
+    </div>
+
+    <div class="bk-ringbox">
+      <svg class="bk-ring" viewBox="0 0 200 200">
+        <path class="seg seg-f" d="M100 20 A80 80 0 0 1 169.28 140"></path>
+        <path class="seg seg-e" d="M169.28 140 A80 80 0 0 1 30.72 140"></path>
+        <path class="seg seg-o" d="M30.72 140 A80 80 0 0 1 100 20"></path>
+      </svg>
+
+      <div class="bk-hit f" data-type="friends"></div>
+      <div class="bk-hit e" data-type="enemies"></div>
+      <div class="bk-hit o" data-type="other"></div>
+
+      <div class="bk-ring-core"></div>
+    </div>
+
+    <div class="bk-gen">
+      <div class="bk-genhead">
+        <div class="bk-gentitle">Vendégbejegyzés</div>
+        <div class="bk-gensub">Gondolatok, sérelmek, érzelmek.</div>
+      </div>
+
+      <input id="gen-title" class="bk-gen-input" placeholder="Cím">
+
+      <textarea id="gen-text" class="bk-gen-textarea" placeholder="Leírás"></textarea>
+
+      <button id="gen-btn" class="bk-gen-btn">Kód generálása</button>
+
+      <textarea id="gen-output" class="bk-gen-output" readonly placeholder="Ide kerül a generált kód"></textarea>
+    </div>
+
+  </div>
+
+  <!-- JOBB OLDAL -->
+  <div class="bk-image">
+    <div class="bk-info" id="info">
+      <div class="bk-info-title" id="infoTitle"></div>
+      <div class="bk-info-desc" id="infoDesc"></div>
+    </div>
+  </div>
+
+</div>
+
+<script src="barbk.js"></script>
+</body>
+</html>
