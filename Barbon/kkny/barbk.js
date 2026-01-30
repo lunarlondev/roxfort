@@ -37,7 +37,7 @@ const d=document.getElementById('gen-text').value.trim();
 const out=document.getElementById('gen-output');
 if(!t||!d){out.value='';return;}
 out.value=
-'[center][html]<style>.bk-entry{background:rgba(10,10,12,0.88);border-left:3px solid #be2f37;text-align:justify;width:300px;padding:8px 10px;margin-bottom:8px;}.bk-name{font-size:12px;color:#f0ece6;margin-bottom:3px;}.bk-text{font-size:11px;line-height:1.5;color:#cfc9c2;}</style>\n'+
+'[center][html]<style>.bk-entry{background:rgba(10,10,12,0.88);border-left:3px solid #be2f37;text-align:justify;width:300px;padding:8px 10px;margin-bottom:8px;}.bk-name{font-size:12px;color:#f0ece6;margin-bottom:3px;}.bk-text{font-size:11px;line-height:1.5;color:#cfc9c2;white-space:pre-wrap;}</style>\n'+
 '<div class="bk-entry">\n'+
 '  <div class="bk-name">'+t+'</div>\n'+
 '  <div class="bk-text">'+d+'</div>\n'+
