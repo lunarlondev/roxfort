@@ -1,0 +1,103 @@
+.confessional{max-width:560px;margin:24px auto;padding:16px;background:#070707;border:1px solid #1a1a1a;font-family:Georgia,serif;color:#e5e5e5}
+
+.crosses{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  margin-bottom:6px;
+}
+.cross-label{
+  display:none;
+}
+
+
+.cross-box{text-align:center;cursor:pointer}
+
+.cross{
+  width:12px;
+  height:30px;
+  position:relative;
+  margin:0 auto;
+  opacity:.5;
+}
+.cross:before,.cross:after{
+  content:"";
+  position:absolute;
+  background:#888;
+  border-radius:1px;
+}
+.cross:before{
+  width:2px;
+  height:30px;
+  left:5px;
+  top:0;
+}
+.cross:after{
+  width:12px;
+  height:2px;
+  left:0;
+  top:10px;
+}
+.cross-box.active .cross{
+  opacity:1;
+}
+.cross-box.active .cross:before{
+  background:#f3efd1;
+  box-shadow:0 -4px 8px rgba(243,239,209,.6);
+}
+.cross-box.active .cross:after{
+  background:#d6d1a6;
+}
+
+
+.window{position:relative;margin-bottom:16px}
+.image{width:100%;height:360px;background-size:cover;background-position:center;position:relative;opacity:0;transition:opacity .8s}
+.image.active{opacity:1}
+.image:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at center,rgba(0,0,0,.35),rgba(0,0,0,.85))}
+
+
+.category{
+  position:absolute;
+  top:18px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:13px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#e6e0c8;
+  font-family:Georgia,serif;
+  opacity:.85;
+}
+
+
+
+.quote{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  max-width:80%;
+  padding:16px 20px;
+  text-align:center;
+  font-family:"Courier New",monospace;
+  font-size:15px;
+  letter-spacing:.6px;
+  color:#fff;
+  background:rgba(0,0,0,.55);
+  backdrop-filter:blur(2px);
+}
+
+.flicker span{animation:flicker 3.2s infinite}
+@keyframes flicker{0%{opacity:1}6%{opacity:.4}12%{opacity:1}18%{opacity:.6}24%{opacity:1}}
+
+.confession{display:grid;gap:10px;margin-bottom:12px}
+.confession input,.confession textarea{background:#0e0e0e;border:1px solid #222;color:#eee;padding:8px;font-family:inherit}
+.confession textarea{min-height:90px;resize:none}
+.confession button{background:#111;border:1px solid #333;color:#eee;padding:10px;cursor:pointer}
+
+.output{width:100%;min-height:160px;background:#050505;border:1px solid #222;color:#ccc;font-family:monospace;font-size:12px}
+
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#070707}
+::-webkit-scrollbar-thumb{background:#333;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:#555}
