@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Vianne – Kapcsolat Könyv</title>
+<link rel="stylesheet" href="viannekkny.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="vk-shell">
+  <div class="vk-card" id="vkCard">
+
+    <div class="vk-grid">
+      <div class="vk-left">
+        <div class="vk-image" id="vkImage">
+          <div class="vk-whisper" id="vkWhisper"></div>
+        </div>
+
+        <div class="vk-id">
+          <div class="vk-name">Vianne</div>
+          <div class="vk-tag">mindreader-barbie</div>
+          <div class="vk-micro">mi van a fejedben?</div>
+        </div>
+      </div>
+
+      <div class="vk-right">
+        <div class="vk-field">
+          <div class="vk-label">Cím</div>
+          <input id="vkTitle" class="vk-input" type="text" placeholder="csodás címed">
+        </div>
+
+        <div class="vk-field">
+          <div class="vk-label">Üzenet</div>
+          <textarea id="vkMessage" class="vk-textarea" placeholder="vallomásod"></textarea>
+        </div>
+
+        <div class="vk-actions">
+          <button id="vkGenerate" class="vk-btn">Kódgenerálás</button>
+          <div class="vk-hint">csak másold ki és posztold</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="vk-result">
+      <textarea id="vkOutput" class="vk-output" readonly placeholder="A kód itt jelenik majd meg"></textarea>
+    </div>
+
+  </div>
+</div>
+
+<script src="viannekkny.js"></script>
+</body>
+</html>
