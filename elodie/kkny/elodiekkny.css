@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  background: #f6f3f7;
+  font-family: Georgia, serif;
+}
+
+/* iframe-barát középre rendezés */
+.kkny-frame {
+  display: flex;
+  justify-content: center;
+  padding: 20px 14px;
+}
+
+.kkny-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border: 1px solid #96769c;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+}
+
+/* FEJLÉC – egyetlen kép */
+.kkny-hero {
+  height: 150px;
+  background-image:
+    linear-gradient(
+      rgba(150,118,156,0.35),
+      rgba(118,156,133,0.35)
+    ),
+    url("https://i.pinimg.com/736x/de/0d/fd/de0dfd86b58ddba2af3883889c6ff8b8.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* ŰRLAP */
+.kkny-form {
+  padding: 18px;
+}
+
+.kkny-form input,
+.kkny-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #769c85;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  font-family: inherit;
+  font-size: 14px;
+  background: #ffffff;
+  color: #333;
+}
+
+.kkny-form textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* VIRÁG GOMB */
+.kkny-action {
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+#flowerBtn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid #96769c;
+  background: #769c85;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+#flowerBtn:hover {
+  background: #96769c;
+  transform: scale(1.1);
+}
+
+/* OUTPUT */
+#outputCode {
+  min-height: 150px;
+  font-family: monospace;
+  font-size: 12px;
+  border: 1px dashed #96769c;
+  border-radius: 10px;
+  padding: 10px;
+  background: #ffffff;
+  overflow-y: auto;
+}
+
+/* STÍLUSOS SCROLLBAR */
+#outputCode::-webkit-scrollbar {
+  width: 8px;
+}
+
+#outputCode::-webkit-scrollbar-track {
+  background: #f0ebf3;
+  border-radius: 8px;
+}
+
+#outputCode::-webkit-scrollbar-thumb {
+  background: #96769c;
+  border-radius: 8px;
+}
+
+#outputCode::-webkit-scrollbar-thumb:hover {
+  background: #769c85;
+}
