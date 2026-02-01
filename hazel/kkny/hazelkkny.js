@@ -12,7 +12,7 @@ i:"https://i.imgur.com/bTTQhZ5.png"
 enemies:{
 m:"Ellenségek",
 q:"Don't mistake my kindness for weakness.",
-i:"https://i.imgur.com/4DeVeoz.png"
+i:"https://i.imgur.com/M8R64gN.png"
 },
 loves:{
 m:"Szerelmek",
