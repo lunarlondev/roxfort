@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap');
+
+body{
+margin:0;
+font-family:Georgia,serif;
+background:#e9e3d6;
+}
+
+.hk-wrap{
+max-width:520px;
+margin:48px auto;
+position:relative;
+z-index:0;
+}
+
+.hk-cat{
+position:absolute;
+top:-35px;
+right:-45px;
+width:150px;
+opacity:.9;
+cursor:pointer;
+z-index:10;
+}
+
+.hk-card{
+position:relative;
+background:#faf7f0;
+border:1px solid #bdaF92;
+box-shadow:0 10px 24px rgba(0,0,0,.18);
+overflow:hidden;
+padding:36px 18px 18px;
+}
+
+/* PATCHWORK TEXTÚRA CSAK A KÁRTYÁN */
+.hk-card::before{
+content:"";
+position:absolute;
+inset:0;
+background:url("https://i.pinimg.com/736x/28/3c/51/283c51b1f3179c391c95063cd4ab2a8a.jpg");
+background-size:260px;
+opacity:.18;
+pointer-events:none;
+z-index:0;
+}
+
+/* TARTALOM A TEXTÚRA FELETT */
+.hk-card > *{
+position:relative;
+z-index:1;
+}
+
+.hk-menu{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+margin-bottom:20px;
+}
+
+.hk-menu button{
+font-family:'Moo Lah Lah',cursive;
+font-size:22px;
+letter-spacing:1px;
+padding:14px 10px;
+background:
+linear-gradient(180deg,#f3eedf,#e3dcc7);
+border:1px solid #b5a887;
+cursor:pointer;
+position:relative;
+box-shadow:
+inset 0 0 0 1px rgba(255,255,255,.4),
+0 4px 10px rgba(0,0,0,.18);
+}
+
+.hk-menu button::after{
+content:"";
+position:absolute;
+inset:6px;
+border:1px dashed rgba(120,100,70,.35);
+pointer-events:none;
+}
+
+.hk-menu button.active{
+background:
+linear-gradient(180deg,#dfd3b7,#cfc3a6);
+box-shadow:
+inset 0 0 0 1px rgba(255,255,255,.5),
+0 6px 12px rgba(0,0,0,.22);
+}
+
+.hk-view{
+display:flex;
+gap:16px;
+align-items:flex-start;
+margin-bottom:18px;
+}
+
+.hk-thumb{
+width:140px;
+height:90px;
+object-fit:cover;
+border:1px solid #b5a887;
+background:#ddd;
+box-shadow:0 4px 8px rgba(0,0,0,.15);
+}
+
+.hk-text{
+flex:1;
+}
+
+.hk-title{
+font-family:'Moo Lah Lah',cursive;
+font-size:34px;
+line-height:1;
+margin:6px 0 10px;
+}
+
+.hk-quote{
+font-family:Georgia,serif;
+font-style:italic;
+line-height:1.35;
+opacity:.85;
+}
+
+.hk-form{
+border-top:1px dashed #bdaF92;
+padding-top:14px;
+margin-top:10px;
+}
+
+.hk-form input,
+.hk-form textarea{
+width:100%;
+box-sizing:border-box;
+margin-bottom:8px;
+padding:8px;
+font-family:Georgia,serif;
+background:
+linear-gradient(#fffefb,#f6f1e6);
+border:1px solid #bdaF92;
+box-shadow:
+inset 0 2px 4px rgba(0,0,0,.08);
+}
+
+.hk-form textarea{
+resize:vertical;
+}
+
+.hk-broccoli{
+text-align:center;
+margin:16px 0 12px;
+}
+
+.hk-broccoli img{
+width:40px;
+cursor:pointer;
+opacity:.9;
+transition:transform .15s ease;
+}
+
+.hk-broccoli img:hover{
+transform:scale(1.05) rotate(-2deg);
+}
+
+.hk-broccoli-hint{
+font-size:12px;
+opacity:.7;
+margin-top:2px;
+}
+
+.hk-code{
+background:#2a2a2a;
+color:#eee;
+padding:8px;
+font-size:12px;
+white-space:pre-wrap;
+max-height:220px;
+overflow:auto;
+}
+
+/* SCROLLBAR – IFRAME-BARÁT */
+.hk-code::-webkit-scrollbar{
+width:8px;
+}
+
+.hk-code::-webkit-scrollbar-track{
+background:#e3dcc7;
+}
+
+.hk-code::-webkit-scrollbar-thumb{
+background:#b5a887;
+border-radius:4px;
+border:1px solid #8f8163;
+}
+
+.hk-code::-webkit-scrollbar-thumb:hover{
+background:#a79776;
+}
+
+
+.hk-hero{
+position:relative;
+width:100%;
+height:180px;
+overflow:hidden;
+border:1px solid #b5a887;
+box-shadow:0 6px 14px rgba(0,0,0,.18);
+margin-bottom:10px;
+}
+
+.hk-hero img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+.hk-hero-overlay{
+position:absolute;
+inset:0;
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
+padding:12px;
+background:
+linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.45));
+}
+
+.hk-hero-quote{
+font-family:Georgia,serif;
+font-style:italic;
+color:#fff;
+line-height:1.35;
+font-size:15px;
+text-shadow:0 2px 4px rgba(0,0,0,.6);
+}
+
+
+.hk-hero-mode{
+font-family:Georgia,serif;
+font-size:12px;
+letter-spacing:.08em;
+text-transform:uppercase;
+color:#fff;
+opacity:.9;
+margin-bottom:6px;
+}
