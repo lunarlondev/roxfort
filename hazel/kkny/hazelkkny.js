@@ -16,7 +16,7 @@ i:"https://i.imgur.com/4DeVeoz.png"
 },
 loves:{
 m:"Szerelmek",
-q:"Idézet helye.",
+q:"You deserve a forever love from a heart as full as yours.",
 i:"https://i.imgur.com/MoVOwDi.png"
 },
 other:{
