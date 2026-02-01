@@ -247,3 +247,35 @@ color:#fff;
 opacity:.9;
 margin-bottom:6px;
 }
+
+
+/* FÜGGŐLEGES SCROLLBAR – COTTAGECORE */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar{
+width:10px;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track{
+background:#e3dcc7;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb{
+background:#b5a887;
+border-radius:6px;
+border:2px solid #e3dcc7;
+}
+
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover{
+background:#a79776;
+}
+
+/* Firefox */
+html,
+body{
+scrollbar-width:thin;
+scrollbar-color:#b5a887 #e3dcc7;
+}
+
