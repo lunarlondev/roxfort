@@ -20,7 +20,7 @@ quote: '„Some hearts understand each other even in silence.”'
 },
 egyeb: {
 img: 'https://i.imgur.com/F8OurLz.jpeg',
-quote: '„Van, ami nem fér kategóriába.”'
+quote: '„Are there still beautiful things?”'
 }
 };
 
