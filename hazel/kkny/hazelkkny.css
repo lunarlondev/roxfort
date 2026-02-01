@@ -4,6 +4,7 @@ body{
 margin:0;
 font-family:Georgia,serif;
 background:#e9e3d6;
+overflow-x:hidden;
 }
 
 .hk-wrap{
@@ -11,6 +12,7 @@ max-width:520px;
 margin:48px auto;
 position:relative;
 z-index:0;
+overflow-x:hidden;
 }
 
 .hk-cat{
