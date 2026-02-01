@@ -6,7 +6,7 @@ i:"https://i.imgur.com/Lg1IUUD.png"
 },
 friends:{
 m:"Barátok",
-q:"Idézet helye.",
+q:"When you can't look at the bright side, I will sit with you in the dark.",
 i:"https://i.imgur.com/bTTQhZ5.png"
 },
 enemies:{
