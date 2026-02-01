@@ -1,0 +1,41 @@
+<div class="dk-wrap" id="dkApp">
+  <div class="dk-panel dk-left">
+<div class="dk-tabs">
+
+  <div class="dk-tabs-head">
+    <div class="dk-mode">Kapcsolatok</div>
+    <button class="dk-reset" type="button">✕</button>
+  </div>
+
+  <button class="dk-tab active" type="button" data-type="baratok">barátok</button>
+  <button class="dk-tab" type="button" data-type="ellensegek">ellenségek</button>
+  <button class="dk-tab" type="button" data-type="szerelmek">szerelmek</button>
+  <button class="dk-tab" type="button" data-type="egyeb">egyéb</button>
+
+</div>
+
+    <div class="dk-preview">
+      <img id="dkImage" src="https://i.imgur.com/xmJA2tB.jpeg" class="dk-image" alt="">
+      <div id="dkQuote" class="dk-quote">„Itt majd egy idézet lesz.”</div>
+    </div>
+  </div>
+
+  <div class="dk-panel dk-right">
+    <div class="dk-field">
+      <div class="dk-label">Title</div>
+      <input type="text" id="dkTitle" class="dk-input">
+    </div>
+
+    <div class="dk-field">
+      <div class="dk-label">Üzenet</div>
+      <textarea id="dkMessage" class="dk-textarea"></textarea>
+    </div>
+
+    <button class="dk-generate" id="dkGenerate" type="button">Kód generálása</button>
+
+    <textarea id="dkOutput" class="dk-output" readonly></textarea>
+  </div>
+</div>
+
+<link rel="stylesheet" href="daphkkny.css">
+<script src="daphkkny.js"></script>
