@@ -1,0 +1,205 @@
+:root {
+    --mardekar-bb: #486400;
+    --hollohat-bb: #254586;
+    --mardekar-web: #a3d900;
+    --hollohat-web: #7aa1ff;
+    --bg: #0f0f0f;
+    --card: #1a1a1a;
+    --accent: #262626;
+    --gold: #d4af37;
+    --text: #e0e0e0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 20px;
+}
+
+.main-container { max-width: 1300px; margin: 0 auto; }
+
+header h1 {
+    text-align: center;
+    color: var(--gold);
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 15px;
+    letter-spacing: 3px;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 30px;
+}
+
+.card {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.icon { margin-right: 10px; }
+
+textarea {
+    width: 100%; height: 200px;
+    background: #000; color: #0f0;
+    border: 1px solid var(--accent);
+    border-radius: 5px; padding: 10px;
+    font-family: 'Consolas', monospace;
+}
+
+/* Eredményjelző */
+.score-inputs {
+    display: flex; justify-content: space-around; align-items: center;
+    background: var(--accent); padding: 15px; border-radius: 8px; margin: 20px 0;
+}
+
+.score-divider { font-weight: bold; color: var(--gold); }
+
+input[type="number"] {
+    background: #000; color: #fff; border: 1px solid #444;
+    padding: 10px; width: 80px; text-align: center; font-size: 1.5rem;
+}
+
+button {
+    width: 100%; padding: 15px; background: var(--gold);
+    color: #000; border: none; border-radius: 5px;
+    font-weight: bold; cursor: pointer; text-transform: uppercase;
+}
+
+button.secondary { background: transparent; color: #888; border: 1px solid #444; margin-top: 10px; }
+
+/* Taktika Kártya */
+.tactics-card {
+    border: 1px solid var(--mardekar-web);
+    background: linear-gradient(145deg, #1a1a1a, #111a00);
+}
+
+.tactics-header {
+    color: var(--mardekar-web);
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid var(--mardekar-web);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.tactics-content p { font-size: 0.9rem; margin-bottom: 10px; color: #ccc; }
+.tactics-content strong { color: var(--mardekar-web); }
+
+/* Játékos statok */
+.team-title { text-align: center; margin-bottom: 20px; text-transform: uppercase; }
+.mardekar .team-title { color: var(--mardekar-web); }
+.hollohat .team-title { color: var(--hollohat-web); }
+
+.player-box { margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+.p-name { display: block; font-weight: bold; margin-bottom: 5px; }
+.mardekar .p-name { color: var(--mardekar-web); }
+.hollohat .p-name { color: var(--hollohat-web); }
+
+.stat-row { display: flex; flex-wrap: wrap; gap: 5px; }
+.stat {
+    background: #2a2a2a; padding: 2px 8px; border-radius: 4px;
+    font-size: 0.75rem; color: #aaa; border: 1px solid #333;
+}
+.stat span { color: #fff; font-weight: bold; }
+
+/* Mobil nézet */
+@media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+    .info-section { order: 2; }
+}
+
+
+
+/* ... (korábbi CSS-ek után add hozzá) ... */
+
+/* Chat/Üzenőfal stílus */
+.chat-card {
+    border-top: 3px solid var(--mardekar-web);
+}
+
+.chat-messages {
+    height: 150px;
+    overflow-y: auto;
+    background: #0a0a0a;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.chat-msg-entry {
+    font-size: 0.85rem;
+    padding: 5px 8px;
+    border-radius: 4px;
+    background: #1a1a1a;
+    border-left: 3px solid var(--mardekar-web);
+}
+
+.chat-msg-entry .author {
+    color: var(--mardekar-web);
+    font-weight: bold;
+    margin-right: 5px;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.chat-msg-entry .time {
+    color: #555;
+    font-size: 0.7rem;
+    float: right;
+}
+
+.chat-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#chatNick {
+    background: #111;
+    color: var(--gold);
+    border: 1px solid #444;
+    padding: 8px;
+    border-radius: 4px;
+    width: 120px;
+}
+
+.input-with-button {
+    display: flex;
+    gap: 10px;
+}
+
+#chatMsg {
+    flex-grow: 1;
+    background: #111;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+#sendChatBtn {
+    width: auto;
+    padding: 8px 20px;
+}
+
+/* Görgetősáv stílusa */
+.chat-messages::-webkit-scrollbar {
+    width: 5px;
+}
+.chat-messages::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
+}
