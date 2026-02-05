@@ -21,7 +21,7 @@ const SLY_COLOR = "#486400";
 const RAV_COLOR = "#254586";
 
 const mardekar = [
-    { p: "Fogó", n: "Gemma Jenkins", l: "Jenkins", u: 5, t: 4, gy: 3, f: 3 },
+    { p: "Fogó", n: "Gemma Jenkins", l: "Jenkins", u: 5, t: 4, gy: 4, f: 3 },
     { p: "Őrző", n: "Heranoush Fletcher", l: "Fletcher", u: 4, t: 2, gy: 4, f: 3 },
     { p: "1. Terelő", n: "Nialen Travers", l: "Travers", u: 5, t: 3, gy: 4, f: 2 },
     { p: "2. Terelő", n: "Octavia Selwyn", l: "Selwyn", u: 3, t: 4, gy: 3, f: 4 },
