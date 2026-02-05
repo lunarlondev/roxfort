@@ -127,7 +127,7 @@ button.secondary { background: transparent; color: #888; border: 1px solid #444;
 }
 
 .chat-messages {
-    height: 150px;
+    height: 450px;
     overflow-y: auto;
     background: #0a0a0a;
     border: 1px solid #333;
