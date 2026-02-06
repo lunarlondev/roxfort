@@ -8,85 +8,107 @@
 </head>
 <body>
 
-<div class="main-container">
-    <header>
+<div class="app">
+
+    <header class="app-header">
         <h1>Slytherin Team HQ</h1>
     </header>
 
     <div class="layout">
-        <main class="generator-section">
-            <div class="card">
-                <h3><span class="icon">📝</span> Meccs adatok</h3>
-                <label for="matchText" class="input-label">Tudósítás szövege:</label>
-                <textarea id="matchText" placeholder="Ide jöhet a meccs leírása..."></textarea>
 
-               <div class="score-inputs">
-    <div class="input-group ravenclaw-group">
-        <label>Hollóhát</label>
-        <input type="number" id="ravenclawScore" value="0" step="10" min="0">
-    </div>
-    <div class="score-divider">VS</div>
-    <div class="input-group slytherin-group">
-        <label>Mardekár</label>
-        <input type="number" id="slytherinScore" value="0" step="10" min="0">
-    </div>
-</div>
-
-                <button id="generateBtn">BBCODE Generálása</button>
-            </div>
-
-            <div class="card">
-                <h3><span class="icon">📜</span> Generált BBCODE</h3>
-                <textarea id="outputCode" readonly placeholder="A kód itt fog megjelenni..."></textarea>
-                <button id="copyBtn" class="secondary">Másolás a vágólapra</button>
-            </div>
-
-            <div class="card chat-card">
-                <h3><span class="icon">🐍</span> Taktikai Üzenőtábla</h3>
-                <div id="chatMessages" class="chat-messages">
-                    </div>
-                <div class="chat-inputs">
-                    <input type="text" id="chatNick" placeholder="Név" maxlength="30">
-                    <div class="input-with-button">
-                        <input type="text" id="chatMsg" placeholder="Üzenet" maxlength="1500">
-                        <button id="sendChatBtn">Küldés</button>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <aside class="info-section">
-            <div class="card tactics-card">
-                <div class="tactics-header">MARDEKÁR STRATÉGIA</div>
-                <div class="tactics-content">
-                    <p><strong>HAJTÓK:</strong><p>
+        <!-- BAL: STRATÉGIA -->
+        <section class="column strategy">
+            <section class="strategy-section">
+  <div class="card tactics-card">
+    <div class="tactics-header">MARDEKÁR STRATÉGIA</div>
+    <div class="tactics-content">
+      <p><strong>HAJTÓK:</strong><p>
 <b style=color:#486400>O'HARA</b> irányítja a kvaffos játékot, feladata a labdatartás, a játék lassítása/gyorsítása, ritmusváltás és cselek.<br>
 <b style=color:#486400>FLORANCE</b> feladata a póznák elé való betörés és az őrző zavarása.<br>
 <b style=color:#486400>SHAFIQ</b> a test-test elleni játékra megy rá, blokkol, embert fog, tördeli a játékot, akár szabálytalankodhat is.</p>
-                    <p><strong>TERELŐK:</strong><br>
+      <p><strong>TERELŐK:</strong><br>
 <b style=color:#486400>TRAVERS</b> a dominánsabb, az ő 5-ös ügyességére és 2-es fairplayére megyünk rá, feladata az agresszív, pontos ütésekkel való zavarkeltés, fő célpontja <b style=color:#254586>McLaggen</b>, akinek az 5-ös sebességét kell kicsit visszafognunk, valamint <b style=color:#254586>Suduri</b>.<br>
 <b style=color:#486400>SELWYN</b> eközben biztosít, a 4-es taktikájával inkább jól helyezkedik, és a hajtókat támogatja, valamint neki kell célba vennie <b style=color:#254586>Tavisht</b>, akit minden bizonnyal ezúttal is <b style=color:#254586>Lowe</b> fog védeni, így <b style=color:#486400>Travers</b> kiesik, mint támadó, mert ő <b style=color:#254586>Soffit</b> nem fogja bántani.
 </p>
-                    <p><strong>ŐRZŐ:</strong><br> <b style=color:#486400>FLETCHER</b> a kapuban mély pozíciót vesz fel, nem támad ki. Ha emberelőnyben hoznák rá, akkor <b style=color:#486400>Travers</b> feladata, hogy szétzavarja őket egy jól irányzott gurkóval (itt is arra kell figyelni, hogy <b style=color:#254586>Soffit</b> ő elvből nem fogja bántani).</p>
-                    <p><strong>FOGÓ:</strong><br> <b style=color:#486400>JENKINS</b> kivár, nem siet, főleg mert a sebessége rosszabb, viszont ügyességben felveszi a versenyt <b style=color:#254586>Tavishsel</b>. Utóbbit zavarhatja, blokkolhatja a cikeszvadászatban.</p>
+      <p><strong>ŐRZŐ:</strong><br> <b style=color:#486400>FLETCHER</b> a kapuban mély pozíciót vesz fel, nem támad ki. Ha emberelőnyben hoznák rá, akkor <b style=color:#486400>Travers</b> feladata, hogy szétzavarja őket egy jól irányzott gurkóval (itt is arra kell figyelni, hogy <b style=color:#254586>Soffit</b> ő elvből nem fogja bántani).</p>
+      <p><strong>FOGÓ:</strong><br> <b style=color:#486400>JENKINS</b> kivár, nem siet, főleg mert a sebessége rosszabb, viszont ügyességben felveszi a versenyt <b style=color:#254586>Tavishsel</b>. Utóbbit zavarhatja, blokkolhatja a cikeszvadászatban.</p>
+    </div>
+  </div>
+</section>
+        </section>
+
+        <!-- KÖZÉP: MECCS + CHAT -->
+        <section class="column main">
+
+            <div class="card">
+                <h3>Meccs adatok</h3>
+
+                <textarea id="matchText" placeholder="Ide jöhet a meccs leírása..."></textarea>
+
+                <div class="score-board">
+                    <div class="team-score">
+                        <span class="team-name raven">Hollóhát</span>
+                        <div class="score-control">
+                            <button type="button" data-team="ravenclaw" data-dir="-1">−</button>
+                            <input type="number" id="ravenclawScore" value="0" step="10" min="0">
+                            <button type="button" data-team="ravenclaw" data-dir="1">+</button>
+                        </div>
+                    </div>
+
+                    <div class="vs">VS</div>
+
+                    <div class="team-score">
+                        <span class="team-name sly">Mardekár</span>
+                        <div class="score-control">
+                            <button type="button" data-team="slytherin" data-dir="-1">−</button>
+                            <input type="number" id="slytherinScore" value="0" step="10" min="0">
+                            <button type="button" data-team="slytherin" data-dir="1">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="generateBtn">BBCODE generálása</button>
+            </div>
+
+            <div class="card">
+                <h3>Generált BBCODE</h3>
+                <textarea id="outputCode" readonly></textarea>
+                <button id="copyBtn" class="secondary">Másolás</button>
+            </div>
+
+            <div class="card chat-card">
+                <h3>Taktikai üzenőtábla</h3>
+
+                <div id="chatMessages" class="chat-messages"></div>
+
+                <input type="text" id="chatNick" placeholder="Név">
+                <div class="chat-send">
+                    <input type="text" id="chatMsg" placeholder="Üzenet">
+                    <button id="sendChatBtn">Küldés</button>
                 </div>
             </div>
 
+        </section>
+
+        <!-- JOBB: CSAPAT STATOK -->
+        <section class="column stats">
             <div class="card team-card mardekar">
-                <h3 class="team-title">Mardekár</h3>
+                <h3>Mardekár</h3>
                 <div id="slytherinPlayers"></div>
             </div>
 
             <div class="card team-card hollohat">
-                <h3 class="team-title">Hollóhát</h3>
+                <h3>Hollóhát</h3>
                 <div id="ravenclawPlayers"></div>
             </div>
-        </aside>
+        </section>
+
     </div>
 </div>
 
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 <script src="kviddics.js"></script>
+
 </body>
 </html>

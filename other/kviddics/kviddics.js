@@ -113,12 +113,14 @@ chatRef.limitToLast(20).on('value', (snapshot) => {
     }
 
     chatContainer.innerHTML = Object.values(data).map(m => `
-        <div class="chat-msg-entry">
+    <div class="chat-msg-entry">
+        <div class="chat-meta">
+            <span class="author">${m.user}</span>
             <span class="time">${m.time}</span>
-            <span class="author">${m.user}:</span>
-            <span class="text">${m.text}</span>
         </div>
-    `).join('');
+        <div class="chat-text">${m.text}</div>
+    </div>
+`).join('');
     chatContainer.scrollTop = chatContainer.scrollHeight;
 });
 
@@ -144,3 +146,51 @@ chatMsg.addEventListener('keypress', (e) => {
 
 // Indítás
 render();
+
+
+
+// --- 6. PONTÁLLÁS MENTÉSE / VISSZATÖLTÉSE ---
+
+const ravenInput = document.getElementById('ravenclawScore');
+const slyInput = document.getElementById('slytherinScore');
+
+function saveScores() {
+    localStorage.setItem('kviddicsScore', JSON.stringify({
+        ravenclaw: ravenInput.value,
+        slytherin: slyInput.value
+    }));
+}
+
+function loadScores() {
+    const saved = localStorage.getItem('kviddicsScore');
+    if (!saved) return;
+
+    try {
+        const data = JSON.parse(saved);
+        if (data.ravenclaw !== undefined) ravenInput.value = data.ravenclaw;
+        if (data.slytherin !== undefined) slyInput.value = data.slytherin;
+    } catch {}
+}
+
+// Gombos léptetés (10-esével)
+document.querySelectorAll('.score-control button').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const team = btn.dataset.team;
+        const dir = parseInt(btn.dataset.dir, 10);
+        const input = team === 'ravenclaw' ? ravenInput : slyInput;
+
+        let val = parseInt(input.value || 0, 10);
+        val += dir * 10;
+        if (val < 0) val = 0;
+
+        input.value = val;
+        saveScores();
+    });
+});
+
+// Kézi beírásnál is ment
+ravenInput.addEventListener('change', saveScores);
+slyInput.addEventListener('change', saveScores);
+
+// Oldal betöltésekor visszatölt
+loadScores();
