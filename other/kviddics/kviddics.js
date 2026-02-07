@@ -104,6 +104,21 @@ const chatNick = document.getElementById('chatNick');
 const chatMsg = document.getElementById('chatMsg');
 const sendBtn = document.getElementById('sendChatBtn');
 
+// --- CHAT NÉV BETÖLTÉSE ---
+const savedNick = localStorage.getItem('chatNick');
+if (savedNick) {
+    chatNick.value = savedNick;
+}
+
+// --- CHAT NÉV MENTÉSE ---
+chatNick.addEventListener('input', () => {
+    const v = chatNick.value.trim();
+    if (v) {
+        localStorage.setItem('chatNick', v);
+    }
+});
+
+
 // Üzenetek figyelése
 chatRef.limitToLast(20).on('value', (snapshot) => {
     const data = snapshot.val();
