@@ -1,0 +1,159 @@
+:root{
+  --mardekar-bb:#486400;
+  --hollohat-bb:#254586;
+  --mardekar-web:#a3d900;
+  --hollohat-web:#7aa1ff;
+  --bg:#0f0f0f;
+  --card:#1a1a1a;
+  --accent:#262626;
+  --gold:#d4af37;
+  --text:#e0e0e0;
+}
+
+*{box-sizing:border-box}
+
+body{
+  font-family:"Segoe UI",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  margin:0;
+  padding:20px;
+}
+
+.app{max-width:1500px;margin:0 auto}
+
+.app-header h1{
+  text-align:center;
+  margin:0 0 18px 0;
+  padding:8px 0 16px 0;
+  border-bottom:2px solid transparent;
+  border-image:linear-gradient(90deg,transparent,var(--mardekar-web),transparent) 1;
+}
+
+.layout{
+  display:grid;
+  grid-template-columns:360px 1fr 360px;
+  gap:26px;
+  align-items:start;
+}
+
+.column{display:flex;flex-direction:column;gap:22px}
+
+.card{
+  background:linear-gradient(160deg,#1a1a1a,#121212);
+  padding:20px;
+  border-radius:14px;
+  border:1px solid #333;
+  box-shadow:0 10px 30px rgba(0,0,0,.5);
+}
+
+h3{margin:0 0 14px 0;font-size:1.05rem}
+
+textarea{
+  width:100%;
+  min-height:190px;
+  background:#000;
+  color:#fff;
+  border:1px solid var(--accent);
+  border-radius:8px;
+  padding:10px;
+  font-family:Consolas,monospace;
+  line-height:1.45;
+  resize:vertical;
+}
+
+.score-board{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  background:var(--accent);
+  padding:16px;
+  border-radius:12px;
+  margin:18px 0 0 0;
+}
+
+.team-score{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:155px}
+.team-name{font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.team-name.sly{color:var(--mardekar-web)}
+.team-name.raven{color:var(--hollohat-web)}
+
+.vs{font-weight:800;color:var(--gold);letter-spacing:.08em}
+
+.score-control{display:flex;align-items:center;gap:12px;padding:10px 12px;background:#111;border:1px solid #333;border-radius:10px}
+.score-control input{width:92px;text-align:center;font-size:1.55rem;background:#000;color:#fff;border:1px solid #444;border-radius:6px;padding:6px 8px}
+.score-control button{width:42px;height:42px;font-size:1.4rem;background:var(--gold);color:#000;border:0;border-radius:6px;cursor:pointer}
+
+button{
+  cursor:pointer;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:10px;
+  padding:12px 14px;
+  font-weight:700;
+  background:linear-gradient(180deg,var(--gold),#bfa033);
+  color:#000;
+}
+
+button.secondary{
+  background:transparent;
+  color:var(--text);
+  border:2px solid var(--mardekar-web);
+}
+
+#generateBtn{
+  font-size:1.05rem;
+  padding:16px;
+  width:100%;
+  margin-top:16px;
+  box-shadow:0 0 0 1px rgba(163,217,0,.25),0 6px 18px rgba(0,0,0,.6);
+}
+
+#outputCode{min-height:230px;font-size:.9rem}
+
+.team-card{padding-top:18px}
+.team-title{
+  text-align:center;
+  margin:0 0 14px 0;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-weight:800;
+}
+
+.team-card.mardekar .team-title{color:var(--mardekar-web)}
+.team-card.hollohat .team-title{color:var(--hollohat-web)}
+
+.player-box{
+  margin-bottom:14px;
+  border-bottom:1px solid #333;
+  padding-bottom:10px;
+}
+
+.player-box:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+
+.p-name{display:block;font-weight:800;margin-bottom:6px}
+.team-card.mardekar .p-name{color:var(--mardekar-web)}
+.team-card.hollohat .p-name{color:var(--hollohat-web)}
+
+.stat-row{display:flex;flex-wrap:wrap;gap:6px}
+.stat{
+  background:#2a2a2a;
+  padding:2px 8px;
+  border-radius:4px;
+  font-size:.75rem;
+  color:#aaa;
+  border:1px solid #333;
+}
+.stat span{color:#fff;font-weight:800}
+
+textarea::-webkit-scrollbar{width:6px}
+textarea::-webkit-scrollbar-track{background:#0b0b0b;border-radius:10px}
+textarea::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--mardekar-web),#5c7f00);border-radius:10px}
+textarea::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#c6ff2f,var(--mardekar-web))}
+textarea{scrollbar-width:thin;scrollbar-color:var(--mardekar-web) #0b0b0b}
+
+@media (max-width:1100px){
+  .layout{grid-template-columns:1fr}
+  .column.left{order:1}
+  .column.center{order:2}
+  .column.right{order:3}
+}

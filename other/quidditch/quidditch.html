@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quidditch</title>
+  <link rel="stylesheet" href="quidditch.css">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Quidditch</h1>
+    </header>
+
+    <div class="layout">
+      <section class="column left">
+        <div class="card team-card mardekar">
+          <div class="team-title">Mardekár</div>
+          <div id="slytherinPlayers"></div>
+        </div>
+      </section>
+
+      <section class="column center">
+        <div class="card">
+          <h3>Meccs adatok</h3>
+          <textarea id="matchText" placeholder="Ide jöhet a meccs leírása..."></textarea>
+
+          <div class="score-board">
+            <div class="team-score">
+              <span class="team-name raven">Hollóhát</span>
+              <div class="score-control">
+                <button type="button" data-team="ravenclaw" data-dir="-1">-</button>
+                <input type="number" id="ravenclawScore" value="0" step="10" min="0">
+                <button type="button" data-team="ravenclaw" data-dir="1">+</button>
+              </div>
+            </div>
+
+            <div class="vs">VS</div>
+
+            <div class="team-score">
+              <span class="team-name sly">Mardekár</span>
+              <div class="score-control">
+                <button type="button" data-team="slytherin" data-dir="-1">-</button>
+                <input type="number" id="slytherinScore" value="0" step="10" min="0">
+                <button type="button" data-team="slytherin" data-dir="1">+</button>
+              </div>
+            </div>
+          </div>
+
+          <button id="generateBtn" type="button">BBCODE generálása</button>
+        </div>
+
+        <div class="card">
+          <h3>Generált BBCODE</h3>
+          <textarea id="outputCode" readonly></textarea>
+          <button id="copyBtn" class="secondary" type="button">Másolás</button>
+        </div>
+      </section>
+
+      <section class="column right">
+        <div class="card team-card hollohat">
+          <div class="team-title">Hollóhát</div>
+          <div id="ravenclawPlayers"></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="quidditch.js"></script>
+</body>
+</html>
