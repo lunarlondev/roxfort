@@ -4,19 +4,18 @@ const firebaseConfig = {
     authDomain: "slytherin-hq.firebaseapp.com",
     projectId: "slytherin-hq",
     storageBucket: "slytherin-hq.firebasestorage.app",
-    messagingSenderId: "428769735717"fv,
+    messagingSenderId: "428769735717",
     appId: "1:428769735717:web:028f626319c08832bb3bcc",
     measurementId: "G-5C9DRR1XXF",
-    // Megjegyzés: A Realtime Database-hez szükség lehet a databaseURL-re:
-    databaseURL: "https://slytherin-hq-default-rtdb.europe-west1.firebasedatabase.app" 
+    databaseURL: "https://slytherin-hq-default-rtdb.europe-west1.firebasedatabase.app"
 };
 
-// Firebase inicializálása (Compat verzió)
+// Firebase inicializálása
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 const chatRef = database.ref('messages');
 
-// --- 2. ADATOK (Játékosok) ---
+// --- 2. ADATOK ---
 const SLY_COLOR = "#486400";
 const RAV_COLOR = "#254586";
 
@@ -40,11 +39,12 @@ const hollohat = [
     { p: "3. Hajtó", n: "Magnus Fairchild", l: "Fairchild", u: 3, t: 4, gy: 3, f: 5 }
 ];
 
-// --- 3. MEGJELENÍTÉS (Renderelés) ---
+// --- 3. RENDER ---
 function render() {
     const renderTeam = (list, targetId) => {
         const container = document.getElementById(targetId);
-        if(!container) return;
+        if (!container) return;
+
         container.innerHTML = list.map(player => `
             <div class="player-box">
                 <span class="p-name">${player.p}: ${player.n}</span>
@@ -57,17 +57,16 @@ function render() {
             </div>
         `).join('');
     };
+
     renderTeam(mardekar, 'slytherinPlayers');
     renderTeam(hollohat, 'ravenclawPlayers');
 }
 
-// --- 4. BBCODE GENERÁLÁS ---
+// --- 4. BBCODE ---
 function highlightNames(text, team, color) {
     team.forEach(player => {
         const regex = new RegExp(`\\b${player.l}([a-záéíóöőúüű]*)\\b`, 'gi');
-        text = text.replace(regex, (match) => {
-            return `[color=${color}][b]${match.toUpperCase()}[/b][/color]`;
-        });
+        text = text.replace(regex, m => `[color=${color}][b]${m.toUpperCase()}[/b][/color]`);
     });
     return text;
 }
@@ -80,83 +79,68 @@ document.getElementById('generateBtn').addEventListener('click', () => {
     text = highlightNames(text, mardekar, SLY_COLOR);
     text = highlightNames(text, hollohat, RAV_COLOR);
 
-    const result = `[box][justify]${text}[/justify]
+    document.getElementById('outputCode').value =
+`[box][justify]${text}[/justify]
 
-[center][font=georgia][size=20pt][color=${RAV_COLOR}]${rS}[/color] [color=#FFFFFF][b][i] - [/i][/b][/color] [color=${SLY_COLOR}]${sS}[/color][/size][/font][/center][/box]`;
-
-    document.getElementById('outputCode').value = result;
+[center][font=georgia][size=20pt][color=${RAV_COLOR}]${rS}[/color] [b][i]-[/i][/b] [color=${SLY_COLOR}]${sS}[/color][/size][/font][/center][/box]`;
 });
 
 document.getElementById('copyBtn').addEventListener('click', () => {
     const out = document.getElementById('outputCode');
     out.select();
     document.execCommand('copy');
-    
-    const btn = document.getElementById('copyBtn');
-    const original = btn.innerText;
-    btn.innerText = "Másolva!";
-    setTimeout(() => btn.innerText = original, 2000);
 });
 
-// --- 5. ÜZENŐFAL (Firebase Realtime) ---
+// --- 5. CHAT ---
 const chatContainer = document.getElementById('chatMessages');
 const chatNick = document.getElementById('chatNick');
 const chatMsg = document.getElementById('chatMsg');
 const sendBtn = document.getElementById('sendChatBtn');
 
-// --- CHAT NÉV BETÖLTÉSE ---
+// nick betöltése
 const savedNick = localStorage.getItem('chatNick');
-if (savedNick) {
-    chatNick.value = savedNick;
-}
+if (savedNick) chatNick.value = savedNick;
 
-// Üzenetek figyelése
-chatRef.limitToLast(20).on('value', (snapshot) => {
+// üzenetek figyelése
+chatRef.limitToLast(20).on('value', snapshot => {
     const data = snapshot.val();
-    if (!data) {
-        chatContainer.innerHTML = '<div style="color: #444; text-align:center; padding: 20px;">Nincs még üzenet...</div>';
-        return;
-    }
+    if (!data) return;
 
     chatContainer.innerHTML = Object.values(data).map(m => `
-    <div class="chat-msg-entry">
-        <div class="chat-meta">
-            <span class="author">${m.user}</span>
-            <span class="time">${m.time}</span>
+        <div class="chat-msg-entry">
+            <div class="chat-meta">
+                <span class="author">${m.user}</span>
+                <span class="time">${m.time}</span>
+            </div>
+            <div class="chat-text">${m.text}</div>
         </div>
-        <div class="chat-text">${m.text}</div>
-    </div>
-`).join('');
+    `).join('');
+
     chatContainer.scrollTop = chatContainer.scrollHeight;
 });
 
-// Küldés funkció
+// küldés
 sendBtn.addEventListener('click', () => {
     const user = chatNick.value.trim() || "Névtelen";
     const text = chatMsg.value.trim();
-    
-    if (text === "") return;
+    if (!text) return;
+
+    localStorage.setItem('chatNick', user);
 
     chatRef.push({
-        user: user,
-        text: text,
+        user,
+        text,
         time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     });
 
     chatMsg.value = "";
 });
 
-chatMsg.addEventListener('keypress', (e) => {
+chatMsg.addEventListener('keypress', e => {
     if (e.key === 'Enter') sendBtn.click();
 });
 
-// Indítás
-render();
-
-
-
-// --- 6. PONTÁLLÁS MENTÉSE / VISSZATÖLTÉSE ---
-
+// --- 6. PONTÁLLÁS ---
 const ravenInput = document.getElementById('ravenclawScore');
 const slyInput = document.getElementById('slytherinScore');
 
@@ -170,33 +154,21 @@ function saveScores() {
 function loadScores() {
     const saved = localStorage.getItem('kviddicsScore');
     if (!saved) return;
-
-    try {
-        const data = JSON.parse(saved);
-        if (data.ravenclaw !== undefined) ravenInput.value = data.ravenclaw;
-        if (data.slytherin !== undefined) slyInput.value = data.slytherin;
-    } catch {}
+    const d = JSON.parse(saved);
+    ravenInput.value = d.ravenclaw ?? 0;
+    slyInput.value = d.slytherin ?? 0;
 }
 
-// Gombos léptetés (10-esével)
 document.querySelectorAll('.score-control button').forEach(btn => {
     btn.addEventListener('click', () => {
-        const team = btn.dataset.team;
-        const dir = parseInt(btn.dataset.dir, 10);
-        const input = team === 'ravenclaw' ? ravenInput : slyInput;
-
-        let val = parseInt(input.value || 0, 10);
-        val += dir * 10;
-        if (val < 0) val = 0;
-
-        input.value = val;
+        const input = btn.dataset.team === 'ravenclaw' ? ravenInput : slyInput;
+        input.value = Math.max(0, Number(input.value) + Number(btn.dataset.dir) * 10);
         saveScores();
     });
 });
 
-// Kézi beírásnál is ment
 ravenInput.addEventListener('change', saveScores);
 slyInput.addEventListener('change', saveScores);
 
-// Oldal betöltésekor visszatölt
 loadScores();
+render();
