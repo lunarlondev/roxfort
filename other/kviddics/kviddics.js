@@ -4,7 +4,7 @@ const firebaseConfig = {
     authDomain: "slytherin-hq.firebaseapp.com",
     projectId: "slytherin-hq",
     storageBucket: "slytherin-hq.firebasestorage.app",
-    messagingSenderId: "428769735717",
+    messagingSenderId: "428769735717"fv,
     appId: "1:428769735717:web:028f626319c08832bb3bcc",
     measurementId: "G-5C9DRR1XXF",
     // Megjegyzés: A Realtime Database-hez szükség lehet a databaseURL-re:
@@ -103,6 +103,12 @@ const chatContainer = document.getElementById('chatMessages');
 const chatNick = document.getElementById('chatNick');
 const chatMsg = document.getElementById('chatMsg');
 const sendBtn = document.getElementById('sendChatBtn');
+
+// --- CHAT NÉV BETÖLTÉSE ---
+const savedNick = localStorage.getItem('chatNick');
+if (savedNick) {
+    chatNick.value = savedNick;
+}
 
 // Üzenetek figyelése
 chatRef.limitToLast(20).on('value', (snapshot) => {
