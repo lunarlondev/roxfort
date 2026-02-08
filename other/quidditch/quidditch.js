@@ -52,7 +52,11 @@ function escapeRegExp(str) {
 
 function highlightNames(text, team, color) {
   team.forEach(player => {
-    const last = escapeRegExp(player.l);
+    let last = escapeRegExp(player.l);
+
+    // O'Hara és O’Hara (tipográfiai aposztróf) kezelése
+    last = last.replace("'", "['’]");
+
     const regex = new RegExp(`\\b${last}([a-záéíóöőúüű]*)\\b`, "gi");
     text = text.replace(regex, match => `[color=${color}][b]${match.toUpperCase()}[/b][/color]`);
   });
@@ -62,9 +66,11 @@ function highlightNames(text, team, color) {
 function buildBbCode(text, rScore, sScore) {
   const r = String(rScore ?? "0");
   const s = String(sScore ?? "0");
+
+  // Mardekár elöl, Hollóhát utána
   return `[box][justify]${text}[/justify]
 
-[center][font=georgia][size=20pt][color=${RAV_COLOR}]${r}[/color] [color=#FFFFFF][b][i] - [/i][/b][/color] [color=${SLY_COLOR}]${s}[/color][/size][/font][/center][/box]`;
+[center][font=georgia][size=20pt][color=${SLY_COLOR}]${s}[/color] [color=#FFFFFF][b][i] - [/i][/b][/color] [color=${RAV_COLOR}]${r}[/color][/size][/font][/center][/box]`;
 }
 
 // --- 4. PONTÁLLÁS MENTÉSE / VISSZATÖLTÉSE ---
