@@ -64,7 +64,8 @@ function render() {
 // --- 4. BBCODE GENERÁLÁS ---
 function highlightNames(text, team, color) {
     team.forEach(player => {
-        const regex = new RegExp(`\\b${player.l}([a-záéíóöőúüű]*)\\b`, 'gi');
+        const safeLastName = player.l.replace("'", "['’]");
+const regex = new RegExp(`\\b${safeLastName}([a-záéíóöőúüű]*)\\b`, 'gi');
         text = text.replace(regex, (match) => {
             return `[color=${color}][b]${match.toUpperCase()}[/b][/color]`;
         });
@@ -82,7 +83,7 @@ document.getElementById('generateBtn').addEventListener('click', () => {
 
     const result = `[box][justify]${text}[/justify]
 
-[center][font=georgia][size=20pt][color=${RAV_COLOR}]${rS}[/color] [color=#FFFFFF][b][i] - [/i][/b][/color] [color=${SLY_COLOR}]${sS}[/color][/size][/font][/center][/box]`;
+[center][font=georgia][size=20pt][color=${SLY_COLOR}]${sS}[/color] [color=#FFFFFF][b][i] - [/i][/b][/color] [color=${RAV_COLOR}]${rS}[/color][/size][/font][/center][/box]`;
 
     document.getElementById('outputCode').value = result;
 });
