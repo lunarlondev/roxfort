@@ -1,26 +1,26 @@
 const backImage = "https://i.imgur.com/GIOQEMw.png";
 
 const cards = [
-{ name: "Ace of Blades", img: "https://i.imgur.com/57AfjcY.png", fortune: "Jóslat szövege ide." },
-{ name: "Ace of Chalices", img: "https://i.imgur.com/GTC2zRj.png", fortune: "Jóslat szövege ide." },
-{ name: "Death", img: "https://i.imgur.com/U0I4uZf.png", fortune: "Jóslat szövege ide." },
-{ name: "The Hermit", img: "https://i.imgur.com/pF4OslD.png", fortune: "Jóslat szövege ide." },
-{ name: "III. Blades", img: "https://i.imgur.com/mTYr74O.png", fortune: "Jóslat szövege ide." },
-{ name: "IX. Chalices", img: "https://i.imgur.com/FAJlujH.png", fortune: "Jóslat szövege ide." },
-{ name: "Judgement", img: "https://i.imgur.com/LVifz7V.png", fortune: "Jóslat szövege ide." },
-{ name: "Queen of Blades", img: "https://i.imgur.com/jnKrtrA.png", fortune: "Jóslat szövege ide." },
-{ name: "Strength", img: "https://i.imgur.com/OcDGQqK.png", fortune: "Jóslat szövege ide." },
-{ name: "The Empress", img: "https://i.imgur.com/qQKsUO0.png", fortune: "Jóslat szövege ide." },
-{ name: "The Fool", img: "https://i.imgur.com/y5L9Txx.png", fortune: "Jóslat szövege ide." },
-{ name: "The Hanged Man", img: "https://i.imgur.com/PryHI1P.png", fortune: "Jóslat szövege ide." },
-{ name: "The Lovers", img: "https://i.imgur.com/SI5onTQ.png", fortune: "Jóslat szövege ide." },
-{ name: "The Stars", img: "https://i.imgur.com/5jcVrZC.png", fortune: "Jóslat szövege ide." },
-{ name: "The Sun", img: "https://i.imgur.com/Ag8I9nL.png", fortune: "Jóslat szövege ide." },
-{ name: "Time", img: "https://i.imgur.com/Znvi0pW.png", fortune: "Jóslat szövege ide." },
-{ name: "V. Chalices", img: "https://i.imgur.com/m0a8atj.png", fortune: "Jóslat szövege ide." },
-{ name: "VIII. Blades", img: "https://i.imgur.com/zsFjANj.png", fortune: "Jóslat szövege ide." },
-{ name: "Wheel of Fortune", img: "https://i.imgur.com/TZI0lyL.png", fortune: "Jóslat szövege ide." },
-{ name: "X. Blades", img: "https://i.imgur.com/yDKV7NW.png", fortune: "Jóslat szövege ide." }
+{ name: "Ace of Blades", img: "https://i.imgur.com/57AfjcY.png", fortune: "Új lehetőségek, új ötletek. De csak ésszel!" },
+{ name: "Ace of Chalices", img: "https://i.imgur.com/GTC2zRj.png", fortune: "Új kapcsolat a láthatáron. Na de szerelem vagy csalódás?" },
+{ name: "Death", img: "https://i.imgur.com/U0I4uZf.png", fortune: "A régi szereped meghal, ne sajnáld, nem állt jól!" },
+{ name: "The Hermit", img: "https://i.imgur.com/pF4OslD.png", fortune: "Ne törődj azokkal, akik nem akarnak megérteni. Jobb neked egyedül, mint magadban!" },
+{ name: "III. Blades", img: "https://i.imgur.com/mTYr74O.png", fortune: " Amit elveszítesz, az valójában csak illúzió volt." },
+{ name: "IX. Chalices", img: "https://i.imgur.com/FAJlujH.png", fortune: "Nincs más dolgod, mint ölbe tett kézzel várni azt, amire amúgy is számítanál." },
+{ name: "Judgement", img: "https://i.imgur.com/LVifz7V.png", fortune: "Végítélet? Szállj egy kicsit magadba, csillagom!" },
+{ name: "Queen of Blades", img: "https://i.imgur.com/jnKrtrA.png", fortune: "Szükséged lesz egy kis tisztánlátásra és igazságosságra, hogy megoldódjanak a gondjaid!" },
+{ name: "Strength", img: "https://i.imgur.com/OcDGQqK.png", fortune: "Menni fog, csak tanusíts egy kis önfegyelmet!" },
+{ name: "The Empress", img: "https://i.imgur.com/qQKsUO0.png", fortune: "Nem te vagy túl sok szívem,ők túl kevések." },
+{ name: "The Fool", img: "https://i.imgur.com/y5L9Txx.png", fortune: "Egy „miért ne?” többet ér, mint száz „mi lesz, ha…"." },
+{ name: "The Hanged Man", img: "https://i.imgur.com/PryHI1P.png", fortune: "A helyzet csak akkor mozdul, ha te végre helyben maradsz." },
+{ name: "The Lovers", img: "https://i.imgur.com/SI5onTQ.png", fortune: "Egy kapcsolat tükröt tart eléd,de nem minden szög előnyös, amit megmutat. "},
+{ name: "The Stars", img: "https://i.imgur.com/5jcVrZC.png", fortune: "Nem mindenki örül annak, hogy ragyogsz, de ez nem a te problémád." },
+{ name: "The Sun", img: "https://i.imgur.com/Ag8I9nL.png", fortune: "Nem azért süt rád a nap, mert szerencséd van, hanem mert kiléptél az árnyékból." },
+{ name: "Time", img: "https://i.imgur.com/Znvi0pW.png", fortune: "Mindennek megvan a maga helye és ideje. Ne fuss, mert elesel!" },
+{ name: "V. Chalices", img: "https://i.imgur.com/m0a8atj.png", fortune: "Ha három kehely kiömlött, azzal a kettővel foglalkozz, ami még tele van." },
+{ name: "VIII. Blades", img: "https://i.imgur.com/zsFjANj.png", fortune: "Nyomd le a kilincset, valójában nem te vagy bezárva, hanem az ajtó." },
+{ name: "Wheel of Fortune", img: "https://i.imgur.com/TZI0lyL.png", fortune: "A kontroll illúzió, a mozgás állandó, erre nincs hatásod." },
+{ name: "X. Blades", img: "https://i.imgur.com/yDKV7NW.png", fortune: "Babája, ennél lejjebb már nem lesz és ez egy jó hír." }
 ];
 
 const fan = document.getElementById("fan");
