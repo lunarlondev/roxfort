@@ -1,6 +1,6 @@
 html, body{margin: 0;padding: 0;overflow-x: hidden;}
 .tarot-wrapper{display:flex;flex-direction:column;align-items:center;gap:30px;padding:30px;box-sizing: border-box;overflow: visible;}
-.tarot-fan{position:relative;height:320px;max-width:600px;width:100%;}
+.tarot-fan{position:relative;height:320px;max-width:600px;width:100%;overflow: hidden;}
 .tarot-card{position:absolute;width:110px;height:165px;cursor:pointer;transition:transform .4s ease, box-shadow .4s ease, filter .4s ease;transform:translateX(var(--x)) rotate(var(--r));}
 .tarot-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .6s ease;}
 .tarot-card.flipped .tarot-inner{transform:rotateY(180deg);}
