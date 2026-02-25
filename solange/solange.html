@@ -10,57 +10,75 @@
   <main class="sheet" id="top">
 
     <header class="hero">
-      <div class="hero-left">
-        <div class="sigil" aria-hidden="true"></div>
-        <div class="hero-title">
-          <h1>Solange Laveau</h1>
-          <div class="subtitle">
-            New Orleans-i hagyomány, családi örökség, és az a rész, amit a város sosem mond ki hangosan.
+      <div class="hero-top">
+        <div class="hero-left">
+          <div class="sigil" aria-hidden="true">
+            <img src="https://i.pinimg.com/736x/18/7b/03/187b0378bf8863ead79be692631f5f52.jpg" alt="">
+          </div>
+
+          <div class="hero-title">
+            <h1>Solange Laveau</h1>
+            <div class="hero-sub">
+              <span class="hero-subline">Laveau-ház</span>
+              <span class="hero-subdot" aria-hidden="true"></span>
+              <span class="hero-subline">Ilvermorny</span>
+              <span class="hero-subdot" aria-hidden="true"></span>
+              <span class="hero-subline">New Orleans</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="hero-right">
-        <div class="badge-row">
-          <span class="badge">New Orleans</span>
-          <span class="badge">Voodoo</span>
-          <span class="badge">Ilvermorny</span>
+      <div class="hero-data" aria-label="Alapadatok">
+        <div class="hd">
+          <div class="hdk">Jelszó</div>
+          <div class="hdv" contenteditable="true">[ide]</div>
+        </div>
+        <div class="hd">
+          <div class="hdk">Nem</div>
+          <div class="hdv" contenteditable="true">[ide]</div>
+        </div>
+        <div class="hd">
+          <div class="hdk">Születési hely</div>
+          <div class="hdv" contenteditable="true">[ide]</div>
+        </div>
+        <div class="hd">
+          <div class="hdk">Születési idő</div>
+          <div class="hdv" contenteditable="true">[ide]</div>
+        </div>
+        <div class="hd">
+          <div class="hdk">Kor</div>
+          <div class="hdv" contenteditable="true">[ide]</div>
+        </div>
+        <div class="hd">
+          <div class="hdk">Vér</div>
+          <div class="hdv" contenteditable="true">[ide]</div>
+        </div>
+        <div class="hd">
+          <div class="hdk">Iskola</div>
+          <div class="hdv" contenteditable="true">[ide]</div>
+        </div>
+        <div class="hd">
+          <div class="hdk">Évfolyam</div>
+          <div class="hdv" contenteditable="true">[ide]</div>
         </div>
       </div>
     </header>
 
-    <!-- ====================== ALAPOK ====================== -->
-    <section class="card" id="alapok">
-      <h2>Alapok</h2>
-      <div class="kv-grid">
-        <div class="kv"><div class="k">Jelszó</div><div class="v" contenteditable="true">[ide]</div></div>
-        <div class="kv"><div class="k">Nem</div><div class="v" contenteditable="true">[ide]</div></div>
-        <div class="kv"><div class="k">Születési hely</div><div class="v" contenteditable="true">[ide]</div></div>
-        <div class="kv"><div class="k">Születési idő</div><div class="v" contenteditable="true">[ide]</div></div>
-        <div class="kv"><div class="k">Kor</div><div class="v" contenteditable="true">[ide]</div></div>
-        <div class="kv"><div class="k">Vér</div><div class="v" contenteditable="true">[ide]</div></div>
-        <div class="kv"><div class="k">Iskola</div><div class="v" contenteditable="true">[ide]</div></div>
-        <div class="kv"><div class="k">Évfolyam</div><div class="v" contenteditable="true">[ide]</div></div>
-      </div>
-      <div class="hint">A mezők szerkeszthetők helyben (csak vizuális). Nyugodtan töröld a contenteditable-t, ha nem kell.</div>
-    </section>
-
-    <!-- ====================== A MÚLT ====================== -->
     <section class="card" id="mult">
       <div class="section-head">
         <h2>A múlt</h2>
-        <div class="section-actions">
-          <button class="btn ghost" id="historyBackBtn" type="button" aria-label="Vissza a nézőpontokhoz">
-            Vissza a nézőpontokhoz
-          </button>
-        </div>
+      </div>
+
+      <div class="history-intro">
+        A történet több perspektíva szerint olvasható, tetszőleges sorrendben.
+        <br><br>
+        <strong>TW:</strong> vérábrázolás, szerv, halál, káros ideológiák.
       </div>
 
       <div class="history-selector" id="historySelector" aria-label="Nézőpont választó">
-        <!-- JS tölti -->
       </div>
 
-      <!-- Egységes átvezető sáv: a kártyák alatt, a szöveg felett -->
       <div class="history-transition hidden" id="historyTransition" aria-hidden="true">
         <div class="transition-shell">
           <img id="transitionGif" alt="" />
@@ -68,7 +86,6 @@
         </div>
       </div>
 
-      <!-- Szöveg külön olvasóboxban -->
       <div class="history-reader hidden" id="historyReader" aria-label="Történet olvasó">
         <div class="reader-top">
           <div class="reader-meta">
@@ -79,16 +96,10 @@
         </div>
 
         <div class="history-textbox justify" id="historyTextbox" tabindex="0">
-          <!-- JS tölti -->
         </div>
-      </div>
-
-      <div class="hint">
-        Bármilyen sorrendben olvasható. Kiemeltek: Solange → Naya → Jackson → Kígyó.
       </div>
     </section>
 
-    <!-- ====================== IDŐVONAL ====================== -->
     <section class="card" id="idovonal">
       <h2>Idővonal</h2>
 
@@ -129,7 +140,6 @@
       <div class="hint">Másold a titem blokkokat, ha több bejegyzés kell.</div>
     </section>
 
-    <!-- ====================== SZEMÉLYISÉG ====================== -->
     <section class="card" id="szemelyiseg">
       <h2>Személyiség</h2>
 
@@ -162,7 +172,6 @@
       </div>
     </section>
 
-    <!-- ====================== APRÓSÁGOK ====================== -->
     <section class="card" id="apro">
       <h2>Apróságok</h2>
       <div class="facts">
@@ -177,7 +186,6 @@
       </div>
     </section>
 
-    <!-- ====================== A CSALÁD ====================== -->
     <section class="card" id="csalad">
       <h2>A család</h2>
       <div class="family-grid">
@@ -211,7 +219,6 @@
       </div>
     </section>
 
-    <!-- ====================== CSALÁDTÖRTÉNET ====================== -->
     <section class="card" id="csaladtortenet">
       <h2>Családtörténet</h2>
       <div class="prose justify" contenteditable="true">
@@ -219,7 +226,6 @@
       </div>
     </section>
 
-    <!-- ====================== MEGJELENÉS ====================== -->
     <section class="card" id="megjelenes">
       <h2>Megjelenés</h2>
 
@@ -228,14 +234,17 @@
         <div class="kv"><div class="k">Testalkat</div><div class="v" contenteditable="true">[ide]</div></div>
         <div class="kv"><div class="k">Szemszín</div><div class="v" contenteditable="true">[ide]</div></div>
         <div class="kv"><div class="k">Hajszín</div><div class="v" contenteditable="true">[ide]</div></div>
-        <div class="kv"><div class="k">PB</div><div class="v" contenteditable="true">[ide]</div></div>
+
+        <div class="pb-full">
+          <div class="k">PB</div>
+          <div class="v" contenteditable="true">[ide]</div>
+        </div>
       </div>
 
       <h3>Kinézet</h3>
       <div class="prose justify" contenteditable="true">[Ide a leírás.]</div>
     </section>
 
-    <!-- ====================== A TUDÁS ====================== -->
     <section class="card" id="tudas">
       <h2>A tudás</h2>
 
@@ -264,100 +273,109 @@
       <div class="rbf" aria-label="RBF eredmények">
         <div class="rbf-row">
           <div class="rbf-subj">
-            <span class="subj-ico" data-ico="dada" aria-hidden="true"></span>
-            <span class="subj-name" contenteditable="true">Sötét Varázslatok Kivédése</span>
+            <span class="subj-ico" aria-hidden="true">🦋</span>
+            <span class="subj-name" contenteditable="true">Transzfiguráció</span>
           </div>
-          <div class="rbf-grade"><span class="grade" contenteditable="true">[E]</span></div>
+          <div class="rbf-grade"><span class="grade" contenteditable="true">E</span></div>
         </div>
 
         <div class="rbf-row">
           <div class="rbf-subj">
-            <span class="subj-ico" data-ico="potions" aria-hidden="true"></span>
-            <span class="subj-name" contenteditable="true">Bájitaltan</span>
+            <span class="subj-ico" aria-hidden="true">🛡️</span>
+            <span class="subj-name" contenteditable="true">Defenzív Mágia</span>
           </div>
-          <div class="rbf-grade"><span class="grade" contenteditable="true">[V]</span></div>
+          <div class="rbf-grade"><span class="grade" contenteditable="true">E</span></div>
         </div>
 
         <div class="rbf-row">
           <div class="rbf-subj">
-            <span class="subj-ico" data-ico="charms" aria-hidden="true"></span>
+            <span class="subj-ico" aria-hidden="true">🌿</span>
+            <span class="subj-name" contenteditable="true">Herbeológia</span>
+          </div>
+          <div class="rbf-grade"><span class="grade" contenteditable="true">K</span></div>
+        </div>
+
+        <div class="rbf-row">
+          <div class="rbf-subj">
+            <span class="subj-ico" aria-hidden="true">🧪</span>
+            <span class="subj-name" contenteditable="true">Főzettan</span>
+          </div>
+          <div class="rbf-grade"><span class="grade" contenteditable="true">V</span></div>
+        </div>
+
+        <div class="rbf-row">
+          <div class="rbf-subj">
+            <span class="subj-ico" aria-hidden="true">✨</span>
             <span class="subj-name" contenteditable="true">Bűbájtan</span>
           </div>
-          <div class="rbf-grade"><span class="grade" contenteditable="true">[K]</span></div>
+          <div class="rbf-grade"><span class="grade" contenteditable="true">E</span></div>
         </div>
 
         <div class="rbf-row">
           <div class="rbf-subj">
-            <span class="subj-ico" data-ico="herb" aria-hidden="true"></span>
-            <span class="subj-name" contenteditable="true">Gyógynövénytan</span>
+            <span class="subj-ico" aria-hidden="true">📜</span>
+            <span class="subj-name" contenteditable="true">Mágiatörténet</span>
           </div>
-          <div class="rbf-grade"><span class="grade" contenteditable="true">[E]</span></div>
+          <div class="rbf-grade"><span class="grade" contenteditable="true">E</span></div>
+        </div>
+
+        <div class="rbf-row">
+          <div class="rbf-subj">
+            <span class="subj-ico" aria-hidden="true">🔢</span>
+            <span class="subj-name" contenteditable="true">Számmisztika</span>
+          </div>
+          <div class="rbf-grade"><span class="grade" contenteditable="true">E</span></div>
+        </div>
+
+        <div class="rbf-row">
+          <div class="rbf-subj">
+            <span class="subj-ico" aria-hidden="true">🔮</span>
+            <span class="subj-name" contenteditable="true">Futurisztika</span>
+          </div>
+          <div class="rbf-grade"><span class="grade" contenteditable="true">V</span></div>
+        </div>
+
+        <div class="rbf-row">
+          <div class="rbf-subj">
+            <span class="subj-ico" aria-hidden="true">🕯️</span>
+            <span class="subj-name" contenteditable="true">Háztartásmágia</span>
+          </div>
+          <div class="rbf-grade"><span class="grade" contenteditable="true">V</span></div>
         </div>
       </div>
     </section>
 
-    <!-- ====================== INSPIRÁCIÓK ====================== -->
     <section class="card" id="inspo">
       <h2>Inspiráció, források</h2>
 
-      <div class="hint">
-        A címek szerkeszthetők: kattints rájuk és írd át, ha pontosítod.
-      </div>
-
       <ul class="links">
         <li class="link-item">
-          <div class="link-title" contenteditable="true">[YouTube] Video 1 címe</div>
-          <a href="https://www.youtube.com/watch?v=qDC5SsqRc44" target="_blank" rel="noopener">https://www.youtube.com/watch?v=qDC5SsqRc44</a>
+          <a href="https://www.youtube.com/watch?v=qDC5SsqRc44" target="_blank" rel="noopener">[YouTube] Video 1 címe</a>
         </li>
-
         <li class="link-item">
-          <div class="link-title" contenteditable="true">[YouTube] Video 2 címe</div>
-          <a href="https://www.youtube.com/watch?v=j9h2-ZVDLB8" target="_blank" rel="noopener">https://www.youtube.com/watch?v=j9h2-ZVDLB8</a>
+          <a href="https://www.youtube.com/watch?v=j9h2-ZVDLB8" target="_blank" rel="noopener">[YouTube] Video 2 címe</a>
         </li>
-
         <li class="link-item">
-          <div class="link-title" contenteditable="true">[YouTube] Video 3 címe</div>
-          <a href="https://www.youtube.com/watch?v=njn5QUJrhUE" target="_blank" rel="noopener">https://www.youtube.com/watch?v=njn5QUJrhUE</a>
+          <a href="https://www.youtube.com/watch?v=njn5QUJrhUE" target="_blank" rel="noopener">[YouTube] Video 3 címe</a>
         </li>
-
         <li class="link-item">
-          <div class="link-title" contenteditable="true">Ten Facts About the Racist History of Voodoo</div>
-          <a href="https://www.anthropology-news.org/articles/ten-facts-about-the-racist-history-of-voodoo/" target="_blank" rel="noopener">
-            https://www.anthropology-news.org/articles/ten-facts-about-the-racist-history-of-voodoo/
-          </a>
+          <a href="https://www.anthropology-news.org/articles/ten-facts-about-the-racist-history-of-voodoo/" target="_blank" rel="noopener">Ten Facts About the Racist History of Voodoo</a>
         </li>
-
         <li class="link-item">
-          <div class="link-title" contenteditable="true">Fantastic Beasts – újságkivágás (Voodoo említés)</div>
-          <a href="https://static.wikia.nocookie.net/harrypotter/images/f/f1/The_New_York_Ghost_Nov_28.jpg/revision/latest?cb=20170609223434" target="_blank" rel="noopener">
-            https://static.wikia.nocookie.net/harrypotter/images/f/f1/The_New_York_Ghost_Nov_28.jpg/revision/latest?cb=20170609223434
-          </a>
+          <a href="https://static.wikia.nocookie.net/harrypotter/images/f/f1/The_New_York_Ghost_Nov_28.jpg/revision/latest?cb=20170609223434" target="_blank" rel="noopener">Fantastic Beasts – újságkivágás (Voodoo említés)</a>
         </li>
-
         <li class="link-item">
-          <div class="link-title" contenteditable="true">Fantastic Beasts – screenshot (Voodoo említés)</div>
-          <a href="https://static.wikia.nocookie.net/harrypotter/images/1/1a/VoodooLeniency.png/revision/latest?cb=20161014213740" target="_blank" rel="noopener">
-            https://static.wikia.nocookie.net/harrypotter/images/1/1a/VoodooLeniency.png/revision/latest?cb=20161014213740
-          </a>
+          <a href="https://static.wikia.nocookie.net/harrypotter/images/1/1a/VoodooLeniency.png/revision/latest?cb=20161014213740" target="_blank" rel="noopener">Fantastic Beasts – screenshot (Voodoo említés)</a>
         </li>
-
         <li class="link-item">
-          <div class="link-title" contenteditable="true">Gabriel Knight: Sins of the Fathers (20th Anniversary)</div>
-          <a href="https://store.steampowered.com/app/262000/Gabriel_Knight_Sins_of_the_Fathers_20th_Anniversary_Edition/" target="_blank" rel="noopener">
-            https://store.steampowered.com/app/262000/Gabriel_Knight_Sins_of_the_Fathers_20th_Anniversary_Edition/
-          </a>
+          <a href="https://store.steampowered.com/app/262000/Gabriel_Knight_Sins_of_the_Fathers_20th_Anniversary_Edition/" target="_blank" rel="noopener">Gabriel Knight: Sins of the Fathers (20th Anniversary)</a>
         </li>
-
         <li class="link-item">
-          <div class="link-title" contenteditable="true">St. John’s Eve, Voodoo and More</div>
-          <a href="https://travsd.wordpress.com/2023/06/23/st-johns-eve-voodoo-and-more/" target="_blank" rel="noopener">
-            https://travsd.wordpress.com/2023/06/23/st-johns-eve-voodoo-and-more/
-          </a>
+          <a href="https://travsd.wordpress.com/2023/06/23/st-johns-eve-voodoo-and-more/" target="_blank" rel="noopener">St. John’s Eve, Voodoo and More</a>
         </li>
       </ul>
     </section>
 
-    <!-- ====================== EGYÉB ====================== -->
     <section class="card" id="egyeb">
       <h2>Egyéb</h2>
       <div class="prose justify" contenteditable="true">

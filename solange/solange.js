@@ -27,8 +27,6 @@ const transitionGif = document.getElementById("transitionGif");
 const reader = document.getElementById("historyReader");
 const readerTitle = document.getElementById("readerTitle");
 const textbox = document.getElementById("historyTextbox");
-
-const backBtn = document.getElementById("historyBackBtn");
 const collapseBtn = document.getElementById("historyCollapseBtn");
 
 let activeId = null;
@@ -101,12 +99,6 @@ function collapse() {
   activeId = null;
 }
 
-function backToSelector() {
-  collapse();
-  selector.scrollIntoView({ behavior: "smooth", block: "start" });
-}
-
 collapseBtn.addEventListener("click", collapse);
-backBtn.addEventListener("click", backToSelector);
 
 renderSelector();
