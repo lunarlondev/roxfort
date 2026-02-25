@@ -34,11 +34,18 @@ let activeId = null;
 function renderSelector() {
   selector.innerHTML = "";
 
+  const mainWrap = document.createElement("div");
+  mainWrap.className = "history-main";
+
+  const sideWrap = document.createElement("div");
+  sideWrap.className = "history-side";
+
   PERSPECTIVES.forEach((p, idx) => {
     const card = document.createElement("button");
     card.type = "button";
     card.className = "history-card";
     if (p.priority) card.classList.add("history-priority");
+    else card.classList.add("small");
 
     const img = document.createElement("img");
     img.className = "hc-img";
@@ -51,14 +58,20 @@ function renderSelector() {
     const name = document.createElement("div");
     name.className = "history-name";
     name.textContent = p.name;
+name.setAttribute("data-text", p.name);
 
     overlay.appendChild(name);
     card.appendChild(img);
     card.appendChild(overlay);
 
     card.addEventListener("click", () => openPerspective(p.id, idx));
-    selector.appendChild(card);
+
+    if (p.priority) mainWrap.appendChild(card);
+    else sideWrap.appendChild(card);
   });
+
+  selector.appendChild(mainWrap);
+  selector.appendChild(sideWrap);
 }
 
 async function loadTextFile(id) {

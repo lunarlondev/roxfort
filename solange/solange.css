@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Uncial+Antiqua&family=Inter:wght@300;400;500;600&display=swap');
 
 :root{
   --w: 580px;
@@ -9,9 +9,9 @@
   --cardA: rgba(20, 15, 20, 0.86);
   --cardB: rgba(12, 10, 14, 0.66);
 
-  --ink: rgba(245, 240, 232, 0.92);
-  --muted: rgba(245, 240, 232, 0.72);
-  --faint: rgba(245, 240, 232, 0.48);
+  --ink: rgba(230, 214, 195, 0.92);
+  --muted: rgba(200, 181, 154, 0.74);
+  --faint: rgba(155, 137, 113, 0.55);
 
   --line: rgba(232, 214, 176, 0.18);
   --shadow: rgba(0,0,0,0.62);
@@ -46,6 +46,8 @@ body{
     radial-gradient(820px 520px at 50% 100%, rgba(139,59,59,0.10), transparent 64%),
     linear-gradient(180deg, var(--bg0), var(--bg1));
   overflow-x: hidden;
+ background-attachment: fixed;
+  background-size: cover;
 }
 
 .sheet{
@@ -175,7 +177,7 @@ body{
 
 .hdv{
   font-size: 12px;
-  color: rgba(245,240,232,0.92);
+  color: var(--ink);
   line-height: 1.35;
 }
 
@@ -220,7 +222,7 @@ h3{
   font-family: Cinzel, serif;
   font-weight: 600;
   font-size: 13px;
-  color: rgba(245,240,232,0.88);
+  color: rgba(230, 214, 195, 0.86);
   position: relative;
   z-index: 1;
 }
@@ -228,7 +230,7 @@ h3{
 .hint{
   margin-top: 10px;
   font-size: 11px;
-  color: rgba(245,240,232,0.52);
+  color: var(--faint);
   position: relative;
   z-index: 1;
 }
@@ -246,7 +248,7 @@ h3{
   appearance:none;
   border: 1px solid rgba(232,214,176,0.18);
   background: rgba(0,0,0,0.28);
-  color: rgba(245,240,232,0.86);
+  color: rgba(230, 214, 195, 0.86);
   border-radius: 999px;
   padding: 8px 12px;
   font-size: 12px;
@@ -262,7 +264,7 @@ h3{
 
 .btn.subtle{
   border-color: rgba(232,214,176,0.12);
-  color: rgba(245,240,232,0.72);
+  color: var(--muted);
 }
 
 .prose{
@@ -270,7 +272,7 @@ h3{
   z-index: 1;
   font-size: 12px;
   line-height: 1.65;
-  color: rgba(245,240,232,0.86);
+  color: rgba(230, 214, 195, 0.86);
   border: 1px solid rgba(232,214,176,0.12);
   background: rgba(0,0,0,0.20);
   border-radius: 12px;
@@ -285,7 +287,7 @@ h3{
 .history-intro{
   font-size: 12px;
   line-height: 1.65;
-  color: rgba(245,240,232,0.74);
+  color: var(--muted);
   margin-bottom: 14px;
   border-left: 2px solid rgba(182,144,78,0.45);
   padding-left: 12px;
@@ -293,12 +295,25 @@ h3{
   z-index: 2;
 }
 
+/* Múlt: 4 fő (2x2) + 3 vendég (1 sor) */
 .history-selector{
-  display:grid;
-  grid-template-columns: repeat(2, 1fr);
+  display:flex;
+  flex-direction: column;
   gap: 12px;
   position: relative;
   z-index: 2;
+}
+
+.history-main{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.history-side{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
 }
 
 .history-card{
@@ -313,6 +328,10 @@ h3{
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
+.history-card.small{
+  height: 110px;
+}
+
 .history-card:hover{
   transform: translateY(-3px);
   border-color: rgba(182,144,78,0.40);
@@ -323,11 +342,12 @@ h3{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(1) contrast(1.08) brightness(0.62) saturate(0.85);
-  transform: scale(1.02);
-  transition: filter 220ms ease, transform 220ms ease;
+  filter: grayscale(1) contrast(1.05) brightness(0.55) saturate(0.8);
+  transform: scale(1.03);
+  transition: 
+    filter 320ms ease,
+    transform 320ms ease;
 }
-
 .history-card:hover .hc-img{
   filter: grayscale(0) contrast(1.03) brightness(0.88) saturate(1.02);
   transform: scale(1.05);
@@ -350,16 +370,83 @@ h3{
   position:absolute;
   inset:0;
   display:flex;
-  align-items:flex-end;
-  padding: 12px;
-  background: linear-gradient(to top, rgba(0,0,0,0.76), transparent 70%);
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+  overflow:hidden;
 }
 
 .history-name{
-  font-family: Cinzel, serif;
-  font-size: 14px;
-  letter-spacing: 0.2px;
-  color: rgba(245,240,232,0.92);
+  font-family: "Uncial Antiqua", Cinzel, serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(230, 214, 195, 0.95);
+
+  opacity:0;
+  transform: scale(0.85) rotate(-2deg);
+  filter: blur(4px);
+
+  transition:
+    opacity 200ms ease,
+    transform 240ms cubic-bezier(.2,.9,.2,1.2),
+    filter 200ms ease;
+}
+
+.history-card:hover .history-name{
+  opacity:1;
+  transform: scale(1.15) rotate(0deg);
+  filter: blur(0px);
+  animation: namePulse 1.6s ease-in-out infinite alternate;
+}
+
+
+@keyframes namePulse{
+  0%{
+    text-shadow:
+      0 0 6px rgba(182,144,78,0.6),
+      0 0 18px rgba(62,154,161,0.3);
+  }
+  50%{
+    text-shadow:
+      0 0 12px rgba(182,144,78,0.9),
+      0 0 28px rgba(62,154,161,0.4);
+  }
+  100%{
+    text-shadow:
+      0 0 8px rgba(182,144,78,0.7),
+      0 0 20px rgba(62,154,161,0.3);
+  }
+}
+
+.history-name::after{
+  content: attr(data-text);
+  position:absolute;
+  left:0;
+  top:0;
+  color: rgba(139,59,59,0.6);
+  opacity:0;
+}
+
+.history-card:hover .history-name::after{
+  opacity:0.6;
+  transform: translateX(2px);
+}
+
+@keyframes smokeShift{
+  0%{
+    transform: translateY(0px) scale(1);
+    opacity:0.8;
+  }
+  100%{
+    transform: translateY(-4px) scale(1.05);
+    opacity:1;
+  }
+}
+
+.history-card:hover .history-name{
+  opacity:1;
+  transform: translateY(0);
 }
 
 .history-priority{
@@ -369,11 +456,6 @@ h3{
 
 .history-priority:hover{
   border-color: rgba(182,144,78,0.62);
-}
-
-.history-card:last-child{
-  grid-column: 1 / -1;
-  height: 200px;
 }
 
 .history-transition{
@@ -439,13 +521,13 @@ h3{
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.7px;
-  color: rgba(245,240,232,0.55);
+  color: var(--faint);
 }
 
 .reader-title{
   font-family: Cinzel, serif;
   font-size: 16px;
-  color: rgba(245,240,232,0.92);
+  color: rgba(230, 214, 195, 0.92);
 }
 
 .history-textbox{
@@ -465,6 +547,7 @@ h3{
   box-shadow: inset 0 0 44px rgba(0,0,0,0.65);
   outline: none;
   white-space: normal;
+  color: rgba(215, 198, 173, 0.94);
 }
 
 .history-textbox p{
@@ -569,14 +652,14 @@ h3{
 .tdate{
   font-size: 11px;
   letter-spacing: 0.4px;
-  color: rgba(245,240,232,0.72);
+  color: var(--muted);
 }
 
 .tdesc{
   margin-top: 6px;
   font-size: 12px;
   line-height: 1.5;
-  color: rgba(245,240,232,0.86);
+  color: rgba(230, 214, 195, 0.86);
 }
 
 .prompt-grid{
@@ -598,7 +681,7 @@ h3{
 .prompt-head{
   font-family: Cinzel, serif;
   font-size: 12px;
-  color: rgba(245,240,232,0.90);
+  color: rgba(230, 214, 195, 0.90);
   margin-bottom: 8px;
 }
 
@@ -606,14 +689,14 @@ h3{
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.6px;
-  color: rgba(245,240,232,0.55);
+  color: var(--faint);
   margin-bottom: 6px;
 }
 
 .prompt-v{
   font-size: 12px;
   line-height: 1.5;
-  color: rgba(245,240,232,0.86);
+  color: rgba(230, 214, 195, 0.86);
 }
 
 .facts{
@@ -635,14 +718,14 @@ h3{
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.6px;
-  color: rgba(245,240,232,0.55);
+  color: var(--faint);
   margin-bottom: 6px;
 }
 
 .fv{
   font-size: 12px;
   line-height: 1.5;
-  color: rgba(245,240,232,0.86);
+  color: rgba(230, 214, 195, 0.86);
 }
 
 .family-grid{
@@ -682,7 +765,7 @@ h3{
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.6px;
-  color: rgba(245,240,232,0.55);
+  color: var(--faint);
   margin-bottom: 6px;
   position: relative;
   z-index: 1;
@@ -691,7 +774,7 @@ h3{
 .family-name{
   font-family: Cinzel, serif;
   font-size: 13px;
-  color: rgba(245,240,232,0.92);
+  color: rgba(230, 214, 195, 0.92);
   margin-bottom: 6px;
   position: relative;
   z-index: 1;
@@ -708,9 +791,28 @@ h3{
 .family-desc{
   font-size: 12px;
   line-height: 1.55;
-  color: rgba(245,240,232,0.86);
+  color: rgba(230, 214, 195, 0.86);
   position: relative;
   z-index: 1;
+}
+
+.family-image{
+  width:100%;
+  border-radius:14px;
+  overflow:hidden;
+  margin-bottom:14px;
+  border:1px solid rgba(232,214,176,0.18);
+  box-shadow:0 12px 28px rgba(0,0,0,0.55);
+  position: relative;
+  z-index: 1;
+}
+
+.family-image img{
+  width:100%;
+  height:380px;              /* magasabb */
+  object-fit:cover;
+  object-position: center 20%; /* feljebb tolja a fókuszt */
+  filter: contrast(1.05) saturate(0.92) brightness(0.95);
 }
 
 .kv-grid{
@@ -732,13 +834,13 @@ h3{
   font-size: 10px;
   letter-spacing: 0.6px;
   text-transform: uppercase;
-  color: rgba(245,240,232,0.55);
+  color: var(--faint);
   margin-bottom: 6px;
 }
 
 .v{
   font-size: 12px;
-  color: rgba(245,240,232,0.90);
+  color: rgba(230, 214, 195, 0.90);
   line-height: 1.4;
 }
 
@@ -769,20 +871,20 @@ h3{
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.6px;
-  color: rgba(245,240,232,0.55);
+  color: var(--faint);
   margin-bottom: 6px;
 }
 
 .mini-v{
   font-size: 12px;
-  color: rgba(245,240,232,0.90);
+  color: rgba(230, 214, 195, 0.90);
   line-height: 1.4;
 }
 
+/* RBF: 3x3 */
 .rbf{
   margin-top: 10px;
   display:grid;
-  grid-template-columns: 1fr 1fr;
   gap: 10px;
   padding: 12px;
   border: 1px solid rgba(232,214,176,0.14);
@@ -792,18 +894,23 @@ h3{
   z-index: 1;
 }
 
-.rbf-row{
+.rbf.rbf-3x3{
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.rbf-item{
   display:flex;
-  align-items:center;
+   align-items: flex-start;
   justify-content: space-between;
   gap: 10px;
   padding: 10px 10px;
   border: 1px solid rgba(232,214,176,0.12);
   border-radius: 12px;
   background: rgba(0,0,0,0.18);
+  min-width: 0;
 }
 
-.rbf-subj{
+.rbf-left{
   display:flex;
   align-items:center;
   gap: 10px;
@@ -812,11 +919,11 @@ h3{
 
 .subj-name{
   font-size: 12px;
-  color: rgba(245,240,232,0.88);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 220px;
+  color: rgba(230, 214, 195, 0.88);
+  white-space: normal;     /* törhet */
+  overflow: visible;
+  text-overflow: unset;
+  line-height: 1.3;
 }
 
 .subj-ico{
@@ -841,7 +948,7 @@ h3{
   border: 1px solid rgba(232,214,176,0.16);
   background: rgba(0,0,0,0.18);
   font-size: 12px;
-  color: rgba(245,240,232,0.90);
+  color: rgba(230, 214, 195, 0.90);
 }
 
 .links{
@@ -885,8 +992,8 @@ h3{
 
 .to-top{
   font-size: 12px;
-  color: rgba(245,240,232,0.72);
-  border-bottom: 1px solid rgba(245,240,232,0.18);
+  color: var(--muted);
+  border-bottom: 1px solid rgba(232,214,176,0.18);
   text-decoration: none;
 }
 
@@ -896,11 +1003,22 @@ h3{
   .prompt-grid,
   .facts,
   .family-grid,
-  .two-col,
-  .history-selector,
-  .rbf{
+  .two-col{
     grid-template-columns: 1fr;
   }
+
+  .history-main{
+    grid-template-columns: 1fr;
+  }
+
+  .history-side{
+    grid-template-columns: 1fr;
+  }
+
+  .rbf.rbf-3x3{
+    grid-template-columns: 1fr;
+  }
+
   .subj-name{
     max-width: 260px;
   }

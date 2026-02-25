@@ -23,7 +23,7 @@
               <span class="hero-subdot" aria-hidden="true"></span>
               <span class="hero-subline">Ilvermorny</span>
               <span class="hero-subdot" aria-hidden="true"></span>
-              <span class="hero-subline">New Orleans</span>
+              <span class="hero-subline">Noctua Tenebrosa</span>
             </div>
           </div>
         </div>
@@ -32,35 +32,35 @@
       <div class="hero-data" aria-label="Alapadatok">
         <div class="hd">
           <div class="hdk">Jelszó</div>
-          <div class="hdv" contenteditable="true">[ide]</div>
+          <div class="hdv" contenteditable="true">a madár az ász</div>
         </div>
         <div class="hd">
           <div class="hdk">Nem</div>
-          <div class="hdv" contenteditable="true">[ide]</div>
+          <div class="hdv" contenteditable="true">nő</div>
         </div>
         <div class="hd">
           <div class="hdk">Születési hely</div>
-          <div class="hdv" contenteditable="true">[ide]</div>
+          <div class="hdv" contenteditable="true">New Orleans, USA</div>
         </div>
         <div class="hd">
           <div class="hdk">Születési idő</div>
-          <div class="hdv" contenteditable="true">[ide]</div>
+          <div class="hdv" contenteditable="true">1988. 04. 08.</div>
         </div>
         <div class="hd">
           <div class="hdk">Kor</div>
-          <div class="hdv" contenteditable="true">[ide]</div>
+          <div class="hdv" contenteditable="true">17</div>
         </div>
         <div class="hd">
           <div class="hdk">Vér</div>
-          <div class="hdv" contenteditable="true">[ide]</div>
+          <div class="hdv" contenteditable="true">arany</div>
         </div>
         <div class="hd">
           <div class="hdk">Iskola</div>
-          <div class="hdv" contenteditable="true">[ide]</div>
+          <div class="hdv" contenteditable="true">Ilvermony</div>
         </div>
         <div class="hd">
           <div class="hdk">Évfolyam</div>
-          <div class="hdv" contenteditable="true">[ide]</div>
+          <div class="hdv" contenteditable="true">Hetedik</div>
         </div>
       </div>
     </header>
@@ -71,13 +71,12 @@
       </div>
 
       <div class="history-intro">
-        A történet több perspektíva szerint olvasható, tetszőleges sorrendben.
+        A történet több perspektíva szerint olvasható tetszőleges sorrendben.
         <br><br>
         <strong>TW:</strong> vérábrázolás, szerv, halál, káros ideológiák.
       </div>
 
-      <div class="history-selector" id="historySelector" aria-label="Nézőpont választó">
-      </div>
+      <div class="history-selector" id="historySelector" aria-label="Nézőpont választó"></div>
 
       <div class="history-transition hidden" id="historyTransition" aria-hidden="true">
         <div class="transition-shell">
@@ -89,14 +88,13 @@
       <div class="history-reader hidden" id="historyReader" aria-label="Történet olvasó">
         <div class="reader-top">
           <div class="reader-meta">
-            <div class="reader-label">Nézőpont</div>
+            <div class="reader-label">POV</div>
             <div class="reader-title" id="readerTitle">[név]</div>
           </div>
           <button class="btn subtle" id="historyCollapseBtn" type="button">Összecsukás</button>
         </div>
 
-        <div class="history-textbox justify" id="historyTextbox" tabindex="0">
-        </div>
+        <div class="history-textbox justify" id="historyTextbox" tabindex="0"></div>
       </div>
     </section>
 
@@ -221,6 +219,11 @@
 
     <section class="card" id="csaladtortenet">
       <h2>Családtörténet</h2>
+
+      <div class="family-image">
+        <img src="https://i.pinimg.com/1200x/b4/bb/0b/b4bb0bf63b5cd922797bc36dded266e4.jpg" alt="">
+      </div>
+
       <div class="prose justify" contenteditable="true">
         [Hosszú szöveg, justify.]
       </div>
@@ -270,76 +273,49 @@
       </div>
 
       <h3>RBF</h3>
-      <div class="rbf" aria-label="RBF eredmények">
-        <div class="rbf-row">
-          <div class="rbf-subj">
-            <span class="subj-ico" aria-hidden="true">🦋</span>
-            <span class="subj-name" contenteditable="true">Transzfiguráció</span>
-          </div>
+      <div class="rbf rbf-3x3" aria-label="RBF eredmények">
+        <div class="rbf-item">
+          <div class="rbf-left"><span class="subj-ico" aria-hidden="true">🦋</span><span class="subj-name" contenteditable="true">Transzfiguráció</span></div>
           <div class="rbf-grade"><span class="grade" contenteditable="true">E</span></div>
         </div>
 
-        <div class="rbf-row">
-          <div class="rbf-subj">
-            <span class="subj-ico" aria-hidden="true">🛡️</span>
-            <span class="subj-name" contenteditable="true">Defenzív Mágia</span>
-          </div>
+        <div class="rbf-item">
+          <div class="rbf-left"><span class="subj-ico" aria-hidden="true">🛡️</span><span class="subj-name" contenteditable="true">Defenzív Mágia</span></div>
           <div class="rbf-grade"><span class="grade" contenteditable="true">E</span></div>
         </div>
 
-        <div class="rbf-row">
-          <div class="rbf-subj">
-            <span class="subj-ico" aria-hidden="true">🌿</span>
-            <span class="subj-name" contenteditable="true">Herbeológia</span>
-          </div>
+        <div class="rbf-item">
+          <div class="rbf-left"><span class="subj-ico" aria-hidden="true">🌿</span><span class="subj-name" contenteditable="true">Herbeológia</span></div>
           <div class="rbf-grade"><span class="grade" contenteditable="true">K</span></div>
         </div>
 
-        <div class="rbf-row">
-          <div class="rbf-subj">
-            <span class="subj-ico" aria-hidden="true">🧪</span>
-            <span class="subj-name" contenteditable="true">Főzettan</span>
-          </div>
+        <div class="rbf-item">
+          <div class="rbf-left"><span class="subj-ico" aria-hidden="true">🧪</span><span class="subj-name" contenteditable="true">Főzettan</span></div>
           <div class="rbf-grade"><span class="grade" contenteditable="true">V</span></div>
         </div>
 
-        <div class="rbf-row">
-          <div class="rbf-subj">
-            <span class="subj-ico" aria-hidden="true">✨</span>
-            <span class="subj-name" contenteditable="true">Bűbájtan</span>
-          </div>
+        <div class="rbf-item">
+          <div class="rbf-left"><span class="subj-ico" aria-hidden="true">✨</span><span class="subj-name" contenteditable="true">Bűbájtan</span></div>
           <div class="rbf-grade"><span class="grade" contenteditable="true">E</span></div>
         </div>
 
-        <div class="rbf-row">
-          <div class="rbf-subj">
-            <span class="subj-ico" aria-hidden="true">📜</span>
-            <span class="subj-name" contenteditable="true">Mágiatörténet</span>
-          </div>
+        <div class="rbf-item">
+          <div class="rbf-left"><span class="subj-ico" aria-hidden="true">📜</span><span class="subj-name" contenteditable="true">Mágiatörténet</span></div>
           <div class="rbf-grade"><span class="grade" contenteditable="true">E</span></div>
         </div>
 
-        <div class="rbf-row">
-          <div class="rbf-subj">
-            <span class="subj-ico" aria-hidden="true">🔢</span>
-            <span class="subj-name" contenteditable="true">Számmisztika</span>
-          </div>
+        <div class="rbf-item">
+          <div class="rbf-left"><span class="subj-ico" aria-hidden="true">🔢</span><span class="subj-name" contenteditable="true">Számmisztika</span></div>
           <div class="rbf-grade"><span class="grade" contenteditable="true">E</span></div>
         </div>
 
-        <div class="rbf-row">
-          <div class="rbf-subj">
-            <span class="subj-ico" aria-hidden="true">🔮</span>
-            <span class="subj-name" contenteditable="true">Futurisztika</span>
-          </div>
+        <div class="rbf-item">
+          <div class="rbf-left"><span class="subj-ico" aria-hidden="true">🔮</span><span class="subj-name" contenteditable="true">Futurisztika</span></div>
           <div class="rbf-grade"><span class="grade" contenteditable="true">V</span></div>
         </div>
 
-        <div class="rbf-row">
-          <div class="rbf-subj">
-            <span class="subj-ico" aria-hidden="true">🕯️</span>
-            <span class="subj-name" contenteditable="true">Háztartásmágia</span>
-          </div>
+        <div class="rbf-item">
+          <div class="rbf-left"><span class="subj-ico" aria-hidden="true">🕯️</span><span class="subj-name" contenteditable="true">Háztartásmágia</span></div>
           <div class="rbf-grade"><span class="grade" contenteditable="true">V</span></div>
         </div>
       </div>
