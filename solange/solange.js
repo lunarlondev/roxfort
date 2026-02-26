@@ -16,51 +16,51 @@ const PERSPECTIVES = [
     id: "solange",
     name: "Solange Laveau",
     priority: true,
-    image: "https://i.pinimg.com/736x/cb/ae/f9/cbaef9faaf1866e7917e8d887357404e.jpg"
+    image: "images/solange.jpg"
   },
   {
     id: "naya",
     name: "Naya Laveau",
     priority: true,
-    image: "https://i.pinimg.com/736x/be/13/fa/be13fa4baf492bdf9339d43b96dd4a14.jpg"
+    image: "images/naya.jpg"
   },
   {
     id: "jackson",
     name: "Jackson",
     priority: true,
-    image: "https://i.pinimg.com/736x/9f/84/aa/9f84aac0a469ef49180a5fe1d4a2e767.jpg"
+    image: "images/jackson.jpg"
   },
   {
     id: "damballah",
     name: "Damballah",
     priority: true,
-    image: "https://i.pinimg.com/1200x/75/b8/00/75b8008b4a17a580d3045493ad956f97.jpg"
+    image: "images/damballah.jpg"
   },
   {
     id: "elspeth",
     name: "Elspeth Mordrake",
-    image: "https://i.pinimg.com/1200x/5b/fc/45/5bfc45bcd561bface8fd919136dca3aa.jpg"
+    image: "images/elspeth.jpg"
   },
   {
     id: "nox",
     name: "Nathaniel Nox",
-    image: "https://i.pinimg.com/736x/b3/b5/4a/b3b54abe505d50380cb30b1358f47340.jpg"
+    image: "images/nathaniel.jpg"
   },
   {
     id: "lucinda",
     name: "Lucinda Yaxley",
-    image: "https://i.pinimg.com/736x/09/22/5e/09225eceb1d59f633268d12c196784b9.jpg"
+    image: "images/lucinda.jpg"
   }
 ];
 
 const GIFS = [
-  "https://i.pinimg.com/originals/ee/d1/f3/eed1f39f680461896717af4e7f40a2c3.gif",
-  "https://i.pinimg.com/originals/7f/08/84/7f0884bb284ff2fdd6ab3dcdcdc3c897.gif",
-  "https://i.pinimg.com/originals/18/30/65/183065c8ff5436ef9560dda6e161870e.gif",
-  "https://i.pinimg.com/originals/c7/9c/0b/c79c0bf517f00fb273de863c9c1fc8d5.gif",
-  "https://i.pinimg.com/originals/fc/4d/39/fc4d3904f730badf5ab103d12f5c2419.gif",
-  "https://i.pinimg.com/originals/ba/e6/a8/bae6a89bfbd5feaf7e7917542d77c4b7.gif",
-  "https://i.pinimg.com/originals/3b/04/6b/3b046bf6bda248af1b80b3f74366af3f.gif"
+  "images/gif/anim1.gif",
+  "images/gif/anim2.gif",
+  "images/gif/anim3.gif",
+  "images/gif/anim4.gif",
+  "images/gif/anim5.gif",
+  "images/gif/anim6.gif",
+  "images/gif/anim7.gif",
 ];
 
 

@@ -26,11 +26,9 @@
   --pad: 16px;
   --pad2: 18px;
 
-  --veveA: url("https://i.pinimg.com/736x/1c/ae/cc/1caeccbcb8c1c5805a43683d380a9d78.jpg");
-  --veveB: url("https://i.pinimg.com/736x/6d/d2/06/6dd2069cf5a91b7ccd19f0cea5d5edfd.jpg");
-  --snake: url("https://i.pinimg.com/1200x/c8/7f/19/c87f197431503c6e15b826de07e1b6a4.jpg");
-
-  --placeholderCard: url("https://i.pinimg.com/1200x/5f/9e/e2/5f9ee2406ee9dfec3252630933e51b88.jpg");
+  --veveA: url("images/veveA.jpg");
+  --veveB: url("images/veveB.jpg");
+  --snake: url("images/snake1.jpg");
 }
 
 *{ box-sizing: border-box; }
