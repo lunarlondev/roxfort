@@ -31,8 +31,8 @@ const PERSPECTIVES = [
     image: "https://i.pinimg.com/736x/9f/84/aa/9f84aac0a469ef49180a5fe1d4a2e767.jpg"
   },
   {
-    id: "kigyo",
-    name: "Kígyó",
+    id: "damballah",
+    name: "Damballah",
     priority: true,
     image: "https://i.pinimg.com/1200x/75/b8/00/75b8008b4a17a580d3045493ad956f97.jpg"
   },
