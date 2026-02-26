@@ -794,6 +794,7 @@ h3{
   color: rgba(230, 214, 195, 0.86);
   position: relative;
   z-index: 1;
+text-align:justify;
 }
 
 .family-image{
