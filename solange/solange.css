@@ -1283,7 +1283,7 @@ h3{
    ========================= */
 
 .scroll-box{
-  max-height:420px;
+  max-height:300px;
   overflow-y:auto;
   padding-right:8px;
   font-size:10px;
