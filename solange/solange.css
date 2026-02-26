@@ -559,15 +559,48 @@ h3{
   color: rgba(182,144,78,0.88);
 }
 
-.history-textbox::-webkit-scrollbar{ width: 10px; }
-.history-textbox::-webkit-scrollbar-thumb{
-  background: rgba(232,214,176,0.22);
+
+/* =========================
+   UNIFIED SCROLLBAR
+   ========================= */
+
+.history-textbox,
+.scroll-box{
+  scrollbar-width: thin;
+  scrollbar-color: rgba(182,144,78,0.55) rgba(0,0,0,0.15);
+}
+
+.history-textbox::-webkit-scrollbar,
+.scroll-box::-webkit-scrollbar{
+  width: 8px;
+}
+
+.history-textbox::-webkit-scrollbar-track,
+.scroll-box::-webkit-scrollbar-track{
+  background: rgba(0,0,0,0.15);
   border-radius: 999px;
 }
-.history-textbox::-webkit-scrollbar-track{
-  background: rgba(0,0,0,0.12);
+
+.history-textbox::-webkit-scrollbar-thumb,
+.scroll-box::-webkit-scrollbar-thumb{
+  background: linear-gradient(
+    180deg,
+    rgba(182,144,78,0.65),
+    rgba(232,214,176,0.35)
+  );
   border-radius: 999px;
+  border: 1px solid rgba(232,214,176,0.25);
 }
+
+.history-textbox::-webkit-scrollbar-thumb:hover,
+.scroll-box::-webkit-scrollbar-thumb:hover{
+  background: linear-gradient(
+    180deg,
+    rgba(182,144,78,0.85),
+    rgba(232,214,176,0.55)
+  );
+}
+
 
 .history-textbox b[data-role="jackson"]{ color: #b6904e; }
 .history-textbox b[data-role="solange"]{ color: #3e9aa1; }
