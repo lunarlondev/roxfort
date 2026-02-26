@@ -5,7 +5,6 @@
 const randomBtn = document.getElementById("randomBtn");
 
 let readSet = new Set();
-let randomQueue = [];
 
 
 /* ==============================
@@ -135,27 +134,7 @@ function renderSelector() {
    RANDOM LOGIC
 ================================ */
 
-function getAvailablePerspectives() {
 
-  const unlocked = [];
-
-  const hasCore =
-    readSet.has("solange") ||
-    readSet.has("naya");
-
-  PERSPECTIVES.forEach(p => {
-
-    if (["elspeth", "nox", "lucinda"].includes(p.id) && !hasCore) {
-      return;
-    }
-
-    if (!readSet.has(p.id)) {
-      unlocked.push(p);
-    }
-  });
-
-  return unlocked;
-}
 
 function shuffleArray(arr) {
   const copy = [...arr];
@@ -168,19 +147,33 @@ function shuffleArray(arr) {
 
 function handleRandom() {
 
-  if (randomQueue.length === 0) {
-    const available = getAvailablePerspectives();
-    randomQueue = shuffleArray(available);
+  const hasCore =
+    readSet.has("solange") ||
+    readSet.has("naya");
+
+  let pool = PERSPECTIVES.filter(p => {
+
+    if (["elspeth","nox","lucinda"].includes(p.id) && !hasCore) {
+      return false;
+    }
+
+    if (readSet.has(p.id)) {
+      return false;
+    }
+
+    return true;
+  });
+
+  if (pool.length === 0) {
+    return;
   }
 
-  if (randomQueue.length === 0) return;
-
-  const next = randomQueue.shift();
+  const randomIndex = Math.floor(Math.random() * pool.length);
+  const next = pool[randomIndex];
   const index = PERSPECTIVES.findIndex(p => p.id === next.id);
 
   openPerspective(next.id, index);
 }
-
 
 /* ==============================
    FILE LOAD
