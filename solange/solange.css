@@ -1307,3 +1307,39 @@ background: linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.62)), var(--sna
 .scroll-box::-webkit-scrollbar-thumb:hover{
   background:rgba(182,144,78,0.65);
 }
+
+
+
+/* =========================
+   STORY DIVIDER (HR)
+   ========================= */
+
+.history-textbox hr{
+  border: none;
+  height: 1px;
+  margin: 24px 0;
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(182,144,78,0.45),
+    transparent
+  );
+}
+
+.history-textbox hr::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle,
+    rgba(182,144,78,0.9),
+    rgba(182,144,78,0.2)
+  );
+  box-shadow: 0 0 10px rgba(182,144,78,0.6);
+}
