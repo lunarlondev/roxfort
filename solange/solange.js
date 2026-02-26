@@ -1,14 +1,43 @@
-const PLACEHOLDER_IMAGE =
-  "https://i.pinimg.com/1200x/5f/9e/e2/5f9ee2406ee9dfec3252630933e51b88.jpg";
-
 const PERSPECTIVES = [
-  { id: "solange", name: "Solange Laveau", priority: true },
-  { id: "naya", name: "Naya Laveau", priority: true },
-  { id: "jackson", name: "Jackson", priority: true },
-  { id: "kigyo", name: "Kígyó", priority: true },
-  { id: "elspeth", name: "Elspeth Mordrake" },
-  { id: "nox", name: "Nathaniel Nox" },
-  { id: "lucinda", name: "Lucinda Yaxley" }
+  {
+    id: "solange",
+    name: "Solange Laveau",
+    priority: true,
+    image: "https://i.pinimg.com/736x/cb/ae/f9/cbaef9faaf1866e7917e8d887357404e.jpg"
+  },
+  {
+    id: "naya",
+    name: "Naya Laveau",
+    priority: true,
+    image: "https://i.pinimg.com/736x/be/13/fa/be13fa4baf492bdf9339d43b96dd4a14.jpg"
+  },
+  {
+    id: "jackson",
+    name: "Jackson",
+    priority: true,
+    image: "https://i.pinimg.com/736x/9f/84/aa/9f84aac0a469ef49180a5fe1d4a2e767.jpg"
+  },
+  {
+    id: "kigyo",
+    name: "Kígyó",
+    priority: true,
+    image: "https://i.pinimg.com/1200x/75/b8/00/75b8008b4a17a580d3045493ad956f97.jpg"
+  },
+  {
+    id: "elspeth",
+    name: "Elspeth Mordrake",
+    image: "https://i.pinimg.com/1200x/5b/fc/45/5bfc45bcd561bface8fd919136dca3aa.jpg"
+  },
+  {
+    id: "nox",
+    name: "Nathaniel Nox",
+    image: "https://i.pinimg.com/736x/b3/b5/4a/b3b54abe505d50380cb30b1358f47340.jpg"
+  },
+  {
+    id: "lucinda",
+    name: "Lucinda Yaxley",
+    image: "https://i.pinimg.com/736x/09/22/5e/09225eceb1d59f633268d12c196784b9.jpg"
+  }
 ];
 
 const GIFS = [
@@ -49,7 +78,7 @@ function renderSelector() {
 
     const img = document.createElement("img");
     img.className = "hc-img";
-    img.src = PLACEHOLDER_IMAGE;
+    img.src = p.image || PLACEHOLDER_IMAGE;
     img.alt = "";
 
     const overlay = document.createElement("div");
