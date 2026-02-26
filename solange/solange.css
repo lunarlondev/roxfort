@@ -1064,18 +1064,6 @@ h3{
 }
 
 
-#tudas .prose::after{
-      content: "";
-    position: absolute;
-    inset: 0;
-    background: url("https://i.pinimg.com/736x/8a/e0/12/8ae012772bae7f139ebb56a8f772d5da.jpg");
-    background-size: contain;
-    background-repeat: repeat-y;
-    background-position: center;
-    opacity: 0.06;
-    mix-blend-mode: screen;
-    pointer-events: none;
-}
 
 
 
@@ -1268,6 +1256,7 @@ h3{
   overflow-y:auto;
   padding-right:8px;
   font-size:10px;
+background: linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.62)), var(--snake);
 }
 
 /* finomabb scrollbar */
