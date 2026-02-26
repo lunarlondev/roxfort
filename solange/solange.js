@@ -1,3 +1,17 @@
+/* ==============================
+   RANDOM STATE
+================================ */
+
+const randomBtn = document.getElementById("randomBtn");
+
+let readSet = new Set();
+let randomQueue = [];
+
+
+/* ==============================
+   PERSPECTIVES
+================================ */
+
 const PERSPECTIVES = [
   {
     id: "solange",
@@ -50,6 +64,11 @@ const GIFS = [
   "https://i.pinimg.com/originals/3b/04/6b/3b046bf6bda248af1b80b3f74366af3f.gif"
 ];
 
+
+/* ==============================
+   DOM REFERENCES
+================================ */
+
 const selector = document.getElementById("historySelector");
 const transition = document.getElementById("historyTransition");
 const transitionGif = document.getElementById("transitionGif");
@@ -60,7 +79,13 @@ const collapseBtn = document.getElementById("historyCollapseBtn");
 
 let activeId = null;
 
+
+/* ==============================
+   SELECTOR RENDER
+================================ */
+
 function renderSelector() {
+
   selector.innerHTML = "";
 
   const mainWrap = document.createElement("div");
@@ -70,15 +95,17 @@ function renderSelector() {
   sideWrap.className = "history-side";
 
   PERSPECTIVES.forEach((p, idx) => {
+
     const card = document.createElement("button");
     card.type = "button";
     card.className = "history-card";
+
     if (p.priority) card.classList.add("history-priority");
     else card.classList.add("small");
 
     const img = document.createElement("img");
     img.className = "hc-img";
-    img.src = p.image || PLACEHOLDER_IMAGE;
+    img.src = p.image;
     img.alt = "";
 
     const overlay = document.createElement("div");
@@ -87,7 +114,7 @@ function renderSelector() {
     const name = document.createElement("div");
     name.className = "history-name";
     name.textContent = p.name;
-name.setAttribute("data-text", p.name);
+    name.setAttribute("data-text", p.name);
 
     overlay.appendChild(name);
     card.appendChild(img);
@@ -103,17 +130,79 @@ name.setAttribute("data-text", p.name);
   selector.appendChild(sideWrap);
 }
 
+
+/* ==============================
+   RANDOM LOGIC
+================================ */
+
+function getAvailablePerspectives() {
+
+  const unlocked = [];
+
+  const hasCore =
+    readSet.has("solange") ||
+    readSet.has("naya");
+
+  PERSPECTIVES.forEach(p => {
+
+    if (["elspeth", "nox", "lucinda"].includes(p.id) && !hasCore) {
+      return;
+    }
+
+    if (!readSet.has(p.id)) {
+      unlocked.push(p);
+    }
+  });
+
+  return unlocked;
+}
+
+function shuffleArray(arr) {
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+function handleRandom() {
+
+  if (randomQueue.length === 0) {
+    const available = getAvailablePerspectives();
+    randomQueue = shuffleArray(available);
+  }
+
+  if (randomQueue.length === 0) return;
+
+  const next = randomQueue.shift();
+  const index = PERSPECTIVES.findIndex(p => p.id === next.id);
+
+  openPerspective(next.id, index);
+}
+
+
+/* ==============================
+   FILE LOAD
+================================ */
+
 async function loadTextFile(id) {
   try {
     const response = await fetch(`perspectives/${id}.txt`);
-    if (!response.ok) throw new Error("Nem található a fájl.");
+    if (!response.ok) throw new Error();
     return await response.text();
-  } catch (err) {
+  } catch {
     return "Hiba történt a szöveg betöltésekor.";
   }
 }
 
+
+/* ==============================
+   OPEN / CLOSE
+================================ */
+
 async function openPerspective(id, idx) {
+
   activeId = id;
 
   transitionGif.src = GIFS[idx] || GIFS[0];
@@ -121,7 +210,9 @@ async function openPerspective(id, idx) {
 
   reader.classList.add("hidden");
 
-  const title = PERSPECTIVES.find(x => x.id === id)?.name || "Nézőpont";
+  const title =
+    PERSPECTIVES.find(x => x.id === id)?.name || "Nézőpont";
+
   readerTitle.textContent = title;
 
   const text = await loadTextFile(id);
@@ -129,9 +220,14 @@ async function openPerspective(id, idx) {
   textbox.innerHTML = text;
   textbox.scrollTop = 0;
 
+  readSet.add(id);
+
   reader.classList.remove("hidden");
 
-  transition.scrollIntoView({ behavior: "smooth", block: "start" });
+  transition.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
 }
 
 function collapse() {
@@ -141,29 +237,33 @@ function collapse() {
   activeId = null;
 }
 
+
+/* ==============================
+   INIT
+================================ */
+
 collapseBtn.addEventListener("click", collapse);
+
+if (randomBtn) {
+  randomBtn.addEventListener("click", handleRandom);
+}
 
 renderSelector();
 
 
+/* ==============================
+   RBF COLORING
+================================ */
 
-document.querySelectorAll(".grade").forEach(g=>{
+document.querySelectorAll(".grade").forEach(g => {
+
   const val = g.textContent.trim();
-
   const parent = g.closest(".rbf-item");
 
-  if(val==="K"){
-    parent.classList.add("grade-k");
-  }
-  if(val==="V"){
-    parent.classList.add("grade-v");
-  }
-  if(val==="E"){
-    parent.classList.add("grade-e");
-  }
-  if(val==="H"){
-    parent.classList.add("grade-h");
-  }
+  if (val === "K") parent.classList.add("grade-k");
+  if (val === "V") parent.classList.add("grade-v");
+  if (val === "E") parent.classList.add("grade-e");
+  if (val === "H") parent.classList.add("grade-h");
 
-  g.style.display="none";
+  g.style.display = "none";
 });

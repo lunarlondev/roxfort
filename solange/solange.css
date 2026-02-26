@@ -1128,3 +1128,47 @@ text-align:justify;
   border: 1px solid #c94a4a;
   color: #ffd6d6;
 }
+
+
+
+/* =========================
+   RANDOM BUTTON
+   ========================= */
+
+.random-block{
+  margin: 16px 0 6px 0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+  text-align:center;
+}
+
+.random-instructions{
+  font-size:12px;
+  line-height:1.5;
+  color:var(--muted);
+  max-width:420px;
+}
+
+.random-btn{
+  appearance:none;
+  border:none;
+  background:none;
+  cursor:pointer;
+  padding:0;
+  transition: transform 180ms ease;
+}
+
+.random-btn img{
+  width:70px;
+  height:70px;
+  object-fit:cover;
+  border-radius:999px;
+  border:1px solid rgba(182,144,78,0.35);
+  box-shadow:0 0 16px rgba(182,144,78,0.25);
+}
+
+.random-btn:hover{
+  transform:scale(1.08);
+}
