@@ -115,3 +115,26 @@ function collapse() {
 collapseBtn.addEventListener("click", collapse);
 
 renderSelector();
+
+
+
+document.querySelectorAll(".grade").forEach(g=>{
+  const val = g.textContent.trim();
+
+  const parent = g.closest(".rbf-item");
+
+  if(val==="K"){
+    parent.classList.add("grade-k");
+  }
+  if(val==="V"){
+    parent.classList.add("grade-v");
+  }
+  if(val==="E"){
+    parent.classList.add("grade-e");
+  }
+  if(val==="H"){
+    parent.classList.add("grade-h");
+  }
+
+  g.style.display="none";
+});
