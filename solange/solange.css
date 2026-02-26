@@ -1089,7 +1089,7 @@ text-align:justify;
 .leg{
   border-radius: 999px;
   padding: 6px 12px;
-  font-size: 13px;
+  font-size: 9px;
   font-weight: 600;
   letter-spacing: 0.4px;
   border: 1px solid transparent;
@@ -1171,4 +1171,86 @@ text-align:justify;
 
 .random-btn:hover{
   transform:scale(1.08);
+}
+
+
+
+/* =========================
+   APRÓSÁGOK – FULL WIDTH ITEMS
+   ========================= */
+
+.facts{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:16px;
+}
+
+.fact.full{
+  grid-column: 1 / -1;
+}
+
+
+.fact.full .fv ul{
+  padding-left:18px;
+  margin:6px 0 0 0;
+}
+
+
+/* =========================
+   ZEBRA LIST – TITKOK
+   ========================= */
+
+.fact.full .fv ul{
+  list-style:none;
+  padding:0;
+  margin:8px 0 0 0;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.fact.full .fv li{
+  padding:10px 12px;
+  border-radius:6px;
+  font-size:13px;
+  line-height:1.5;
+}
+
+/* váltakozó háttér */
+.fact.full .fv li:nth-child(odd){
+  background:rgba(182,144,78,0.08);
+}
+
+.fact.full .fv li:nth-child(even){
+  background:rgba(182,144,78,0.16);
+}
+
+
+
+/* =========================
+   INTERNAL SCROLL SECTIONS
+   ========================= */
+
+.scroll-box{
+  max-height:420px;
+  overflow-y:auto;
+  padding-right:8px;
+}
+
+/* finomabb scrollbar */
+.scroll-box::-webkit-scrollbar{
+  width:6px;
+}
+
+.scroll-box::-webkit-scrollbar-track{
+  background:transparent;
+}
+
+.scroll-box::-webkit-scrollbar-thumb{
+  background:rgba(182,144,78,0.4);
+  border-radius:6px;
+}
+
+.scroll-box::-webkit-scrollbar-thumb:hover{
+  background:rgba(182,144,78,0.65);
 }
