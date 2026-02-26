@@ -260,3 +260,21 @@ document.querySelectorAll(".grade").forEach(g => {
 
   g.style.display = "none";
 });
+
+
+document.querySelectorAll(".rbf-item").forEach(item => {
+
+  const gradeEl = item.querySelector(".grade");
+  if (!gradeEl) return;
+
+  const val = gradeEl.textContent.trim();
+
+  let fullText = "";
+
+  if (val === "K") fullText = "Kiváló";
+  if (val === "V") fullText = "Várakozáson felüli";
+  if (val === "E") fullText = "Elfogadható";
+  if (val === "H") fullText = "Hitvány";
+
+  item.setAttribute("data-grade-label", fullText);
+});

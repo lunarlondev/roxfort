@@ -282,6 +282,7 @@ h3{
 .justify{
   text-align: justify;
   text-justify: inter-word;
+  font-size:10px;
 }
 
 .history-intro{
@@ -723,9 +724,10 @@ h3{
 }
 
 .fv{
-  font-size: 12px;
+  font-size: 10px;
   line-height: 1.5;
   color: rgba(230, 214, 195, 0.86);
+  text-align: justify;
 }
 
 .family-grid{
@@ -789,12 +791,12 @@ h3{
 }
 
 .family-desc{
-  font-size: 12px;
+  font-size: 10px;
   line-height: 1.55;
   color: rgba(230, 214, 195, 0.86);
   position: relative;
   z-index: 1;
-text-align:justify;
+  text-align:justify;
 }
 
 .family-image{
@@ -876,7 +878,7 @@ text-align:justify;
 }
 
 .mini-v{
-  font-size: 12px;
+  font-size: 10px;
   color: rgba(230, 214, 195, 0.90);
   line-height: 1.4;
 }
@@ -1132,6 +1134,36 @@ text-align:justify;
 
 
 /* =========================
+   RBF HOVER LABEL
+   ========================= */
+
+.rbf-item{
+  position:relative;
+}
+
+.rbf-item::after{
+  content:attr(data-grade-label);
+  position:absolute;
+  bottom:110%;
+  left:50%;
+  transform:translateX(-50%);
+  background:rgba(20,20,20,0.95);
+  color:#fff;
+  font-size:11px;
+  padding:4px 8px;
+  border-radius:4px;
+  white-space:nowrap;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 120ms ease;
+}
+
+.rbf-item:hover::after{
+  opacity:1;
+}
+
+
+/* =========================
    RANDOM BUTTON
    ========================= */
 
@@ -1197,7 +1229,7 @@ text-align:justify;
 
 
 /* =========================
-   ZEBRA LIST – TITKOK
+   LIST
    ========================= */
 
 .fact.full .fv ul{
@@ -1212,7 +1244,7 @@ text-align:justify;
 .fact.full .fv li{
   padding:10px 12px;
   border-radius:6px;
-  font-size:11px;
+  font-size:10px;
   line-height:1.5;
 }
 
@@ -1235,6 +1267,7 @@ text-align:justify;
   max-height:420px;
   overflow-y:auto;
   padding-right:8px;
+  font-size:10px;
 }
 
 /* finomabb scrollbar */
