@@ -658,7 +658,7 @@ h3{
 
 .tdesc{
   margin-top: 6px;
-  font-size: 12px;
+  font-size: 10px;
   line-height: 1.5;
   color: rgba(230, 214, 195, 0.86);
 }
@@ -695,7 +695,7 @@ h3{
 }
 
 .prompt-v{
-  font-size: 12px;
+  font-size: 10px;
   line-height: 1.5;
   color: rgba(230, 214, 195, 0.86);
 }
