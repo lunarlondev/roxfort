@@ -42,7 +42,7 @@ const PERSPECTIVES = [
     image: "images/elspeth.jpg"
   },
   {
-    id: "nox",
+    id: "nathaniel",
     name: "Nathaniel Nox",
     image: "images/nathaniel.jpg"
   },
