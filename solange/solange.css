@@ -603,9 +603,12 @@ h3{
 
 
 .history-textbox b[data-role="jackson"]{ color: #b6904e; }
-.history-textbox b[data-role="solange"]{ color: #3e9aa1; }
-.history-textbox b[data-role="naya"]{ color: #c96b6b; }
-.history-textbox b[data-role="kigyo"]{ color: #4dbb76; }
+.history-textbox b[data-role="solange"]{ color: #bf34ca; }
+.history-textbox b[data-role="naya"]{ color: #d8e041; }
+.history-textbox b[data-role="kigyo"]{ color: #107b35; }
+.history-textbox b[data-role="nate"]{ color: #BD1F42; }
+.history-textbox b[data-role="npc"]{ color: #f8ffc7; }
+
 
 .hidden{ display:none; }
 
