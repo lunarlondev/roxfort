@@ -278,3 +278,8 @@ document.querySelectorAll(".rbf-item").forEach(item => {
 
   item.setAttribute("data-grade-label", fullText);
 });
+
+
+
+document.querySelectorAll(".history-card")[idx]
+  .classList.add("read");
