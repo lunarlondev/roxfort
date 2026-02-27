@@ -51,6 +51,11 @@ const PERSPECTIVES = [
     name: "Lucinda Yaxley",
     image: "images/lucinda.jpg"
   }
+  {
+    id: "orville",
+    name: "Orville Morris",
+    image: "images/orville.jpg"
+  }
 ];
 
 const GIFS = [
@@ -150,22 +155,7 @@ function shuffleArray(arr) {
 
 function handleRandom() {
 
-  const hasCore =
-    readSet.has("solange") ||
-    readSet.has("naya");
-
-  let pool = PERSPECTIVES.filter(p => {
-
-    if (["elspeth","nox","lucinda"].includes(p.id) && !hasCore) {
-      return false;
-    }
-
-    if (readSet.has(p.id)) {
-      return false;
-    }
-
-    return true;
-  });
+  const pool = PERSPECTIVES.filter(p => !readSet.has(p.id));
 
   if (pool.length === 0) {
     return;
@@ -177,6 +167,8 @@ function handleRandom() {
 
   openPerspective(next.id, index);
 }
+
+
 
 /* ==============================
    FILE LOAD
