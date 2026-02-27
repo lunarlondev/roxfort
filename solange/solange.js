@@ -66,6 +66,7 @@ const GIFS = [
   "images/gif/anim5.gif",
   "images/gif/anim6.gif",
   "images/gif/anim7.gif",
+  "images/gif/anim8.gif",
 ];
 
 
