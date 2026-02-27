@@ -127,6 +127,8 @@ function renderSelector() {
 
   selector.appendChild(mainWrap);
   selector.appendChild(sideWrap);
+
+
 }
 
 
@@ -215,6 +217,12 @@ async function openPerspective(id, idx) {
 
   readSet.add(id);
 
+const cards = document.querySelectorAll(".history-card");
+if (cards[idx]) {
+  cards[idx].classList.add("read");
+}
+
+
   reader.classList.remove("hidden");
 
   transition.scrollIntoView({
@@ -278,8 +286,3 @@ document.querySelectorAll(".rbf-item").forEach(item => {
 
   item.setAttribute("data-grade-label", fullText);
 });
-
-
-
-document.querySelectorAll(".history-card")[idx]
-  .classList.add("read");
