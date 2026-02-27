@@ -50,7 +50,7 @@ const PERSPECTIVES = [
     id: "lucinda",
     name: "Lucinda Yaxley",
     image: "images/lucinda.jpg"
-  }
+  },
   {
     id: "orville",
     name: "Orville Morris",
