@@ -553,11 +553,6 @@ h3{
   margin: 0 0 14px 0;
 }
 
-.history-textbox p:first-child::first-letter{
-  font-size: 22px;
-  font-family: Cinzel, serif;
-  color: rgba(182,144,78,0.88);
-}
 
 
 /* =========================

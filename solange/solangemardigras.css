@@ -208,7 +208,7 @@ body{
   font-size: 10px;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  color: rgba(182,144,78,0.80);
+  color: rgba(31,170,89,0.85);
   margin-bottom: 6px;
 }
 
@@ -595,11 +595,6 @@ h3{
   margin: 0 0 14px 0;
 }
 
-.history-textbox p:first-child::first-letter{
-  font-size: 22px;
-  font-family: Cinzel, serif;
-  color: rgba(182,144,78,0.88);
-}
 
 
 /* =========================
@@ -901,7 +896,7 @@ h3{
 
 .family-blood{
   font-size: 11px;
-  color: rgba(182,144,78,0.85);
+  color: rgba(31,170,89,0.85);
   margin-bottom: 10px;
   position: relative;
   z-index: 1;
