@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solange Laveau – karakterlap</title>
+  <link rel="stylesheet" href="solange.css">
+</head>
+<body>
+  <main class="sheet" id="top">
+
+    <header class="hero">
+      <div class="hero-top">
+        <div class="hero-left">
+          <div class="sigil" aria-hidden="true">
+            <img src="images/snake2.jpg" alt="">
+          </div>
+
+          <div class="hero-title">
+            <h1>Solange Laveau</h1>
+            <div class="hero-sub">
+              <span class="hero-subline">Laveau-ház</span>
+              <span class="hero-subdot" aria-hidden="true"></span>
+              <span class="hero-subline">Ilvermorny</span>
+              <span class="hero-subdot" aria-hidden="true"></span>
+              <span class="hero-subline">Noctua Tenebrosa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-data" aria-label="Alapadatok">
+        <div class="hd">
+          <div class="hdk">Jelszó</div>
+          <div class="hdv" ">a madár az ász</div>
+        </div>
+        <div class="hd">
+          <div class="hdk">Nem</div>
+          <div class="hdv" ">nő</div>
+        </div>
+        <div class="hd">
+          <div class="hdk">Születési hely</div>
+          <div class="hdv" ">New Orleans, USA</div>
+        </div>
+        <div class="hd">
+          <div class="hdk">Születési idő</div>
+          <div class="hdv" ">1988. 04. 08.</div>
+        </div>
+        <div class="hd">
+          <div class="hdk">Kor</div>
+          <div class="hdv" ">17</div>
+        </div>
+        <div class="hd">
+          <div class="hdk">Vér</div>
+          <div class="hdv" ">arany</div>
+        </div>
+        <div class="hd">
+          <div class="hdk">Iskola</div>
+          <div class="hdv" ">Ilvermony</div>
+        </div>
+        <div class="hd">
+          <div class="hdk">Évfolyam</div>
+          <div class="hdv" ">Hetedik</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="card" id="mult">
+      <div class="section-head">
+        <h2>A múlt</h2>
+      </div>
+
+      <div class="history-intro">
+        <strong>TW:</strong> vérábrázolás, szerv, halál, káros ideológiák.
+      </div>
+
+      <div class="history-selector" id="historySelector" aria-label="Nézőpont választó"></div>
+
+<div class="random-block">
+  <div class="random-instructions">
+A történet több perspektíva szerint olvasható tetszőleges sorrendben.<br><br>
+    Ha a Sorsra bíznád az olvasási sorrendet, kattints a kígyós ikonra.
+    <br><br>
+    Egyébiránt a karakterek portréira kattintva is választhatsz sorrendet.
+  </div>
+
+  <button id="randomBtn" class="random-btn" type="button" aria-label="Véletlenszerű nézőpont">
+    <img src="images/gif/snakebutton.gif" alt="">
+  </button>
+</div>
+
+
+      <div class="history-transition hidden" id="historyTransition" aria-hidden="true">
+        <div class="transition-shell">
+          <img id="transitionGif" alt="" />
+          <div class="transition-vignette" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="history-reader hidden" id="historyReader" aria-label="Történet olvasó">
+        <div class="reader-top">
+          <div class="reader-meta">
+            <div class="reader-label">POV</div>
+            <div class="reader-title" id="readerTitle">[név]</div>
+          </div>
+          <button class="btn subtle" id="historyCollapseBtn" type="button">Összecsukás</button>
+        </div>
+
+        <div class="history-textbox justify" id="historyTextbox" tabindex="0"></div>
+      </div>
+    </section>
+
+    <section class="card" id="idovonal">
+      <h2>Idővonal</h2>
+
+      <div class="ornament">
+        <div class="ornament-line"></div>
+        <div class="ornament-mark"></div>
+        <div class="ornament-line"></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-line" aria-hidden="true"></div>
+
+        <article class="titem">
+          <div class="tdot" aria-hidden="true"></div>
+          <div class="tcontent">
+            <div class="tdate" ">1988.04.08</div>
+            <div class="tdesc" ">Solange és Naya Laveau születése.</div>
+          </div>
+        </article>
+
+        <article class="titem">
+          <div class="tdot" aria-hidden="true"></div>
+          <div class="tcontent">
+            <div class="tdate" ">1999. 09. 01.</div>
+            <div class="tdesc" ">Tanulmányaik megkezdése az Ilvermornyban. Barátságot köt Lucinda Yaxley-val, Elspeth Mordrake-kel, Orville Morrissal és Nathaniel Nox-szal. Az új barátság hatással van rá, elkezdi elhinni az ideológiájukat.</div>
+          </div>
+        </article>
+
+        <article class="titem">
+          <div class="tdot" aria-hidden="true"></div>
+          <div class="tcontent">
+            <div class="tdate" ">2005. 06. 23.</div>
+            <div class="tdesc" ">Naya halála.</div>
+          </div>
+        </article>
+
+        <article class="titem">
+          <div class="tdot" aria-hidden="true"></div>
+          <div class="tcontent">
+            <div class="tdate" ">2005. 08. 19.</div>
+            <div class="tdesc" ">Sikeresen teljesíti a beavatást a Noctua Tenebrosába a Fészekben.</div>
+          </div>
+        </article>
+
+        <article class="titem">
+          <div class="tdot" aria-hidden="true"></div>
+          <div class="tcontent">
+            <div class="tdate" ">2005. 09. 01.</div>
+            <div class="tdesc" ">Trimágus Tusa. Társai támogatása és a gyász előli menekülés miatt jön el a Roxfortba.</div>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+    <section class="card" id="szemelyiseg">
+      <h2>Személyiség</h2>
+
+      <div class="prose justify" ">
+        [Jellemleírás 2–4 bekezdésben.]
+      </div>
+
+      <div class="prompt-grid">
+        <div class="prompt-card">
+          <div class="prompt-head">Merengő</div>
+          <div class="prompt-k">Legjobb emlék</div>
+          <div class="prompt-v" ">Mardi Gras ünnepségek gyerekkorából színes ruhákkal, maszkokkal, játékkal, parádéval és varázslattal.</div>
+        </div>
+
+        <div class="prompt-card">
+          <div class="prompt-head">Merengő</div>
+          <div class="prompt-k">Legrosszabb emlék</div>
+          <div class="prompt-v" ">Naya halála.</div>
+        </div>
+
+        <div class="prompt-card">
+          <div class="prompt-head">Edevis tükre</div>
+          <div class="prompt-v" ">Feltámasztja benne ikerhúgát.</div>
+        </div>
+
+        <div class="prompt-card">
+          <div class="prompt-head">Mumus</div>
+          <div class="prompt-v" ">Ikertestvére dühös szelleme.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="apro">
+      <h2>Apróságok</h2>
+      <div class="facts">
+        <div class="fact"><div class="fk">Mindig</div><div class="fv" "><ul>
+<li>zene</li>
+<li>New Orleans hangulata</li>
+<li>a baráti köre</li>
+<li>hüllők</li>
+<li>déli konyha</li>
+</ul></div></div>
+        <div class="fact"><div class="fk">Soha</div><div class="fv" "><ul>
+<li>turisták</li>
+<li>ízetlen kaják</li>
+<li>vámpírok</li>
+<li>rasszizmus</li>
+<li>Vale Bate</li>
+</ul></div></div>
+        <div class="fact"><div class="fk">Hobbik</div><div class="fv" ">Főzés, tánc.</div></div>
+        <div class="fact"><div class="fk">Malíciamutató</div><div class="fv" ">Mindazok, akiket Naya halála miatt felelősnek tart.</div></div>
+        <div class="fact"><div class="fk">Százfűlé-főzet</div><div class="fv" ">Olyan, mintha két különböző folyadék lenne: egy méregzöld és egy sötétlila, melyek kavarognak egymásban, de sosem vegyülnek. Könnyen fogyasztható, enyhén rumos aromájú, édes-fanyar ital.</div></div>
+        <div class="fact"><div class="fk">Amortentia</div><div class="fv" ">Gazdag, gyógynövényes illat, melyben érezhető a tábortűz és a friss ropogós fa, a magnólia és a frissen őrölt robusta kávé is.</div></div>
+<div class="fact full">
+  <div class="fk">Titkok</div>
+  <div class="fv"><ul>
+	<li>A szerepe Naya halálában</li>
+	<li>Nem annyira szeret és mer a voodooval kísérletezni nyár óta</li>
+	<li>Nem szeretné átvenni anyja helyét voodooinette-ként</li>
+</ul>			
+</div>
+</div>
+
+	<div class="fact full">
+  	<div class="fk">Azt beszélik, hogy...</div>
+  	<div class="fv"><ul>
+  	<li>Marie Laveau maga (egyes változatokban a reinkarnációja), ismét egy női leszármazott jelmezében</li>
+  	<li>A voodoo csak egy kifogás a fura perverzióira, valójában másra használja azokat a babákat</li>
+  	<li>Mind a ketten meghaltak az ikrével. Ő csak egy inferus/mimic/élő voodoo baba</li>
+	<li>Előszeretettel döfköd tűvel embereket is</li>
+	<li>Lucindát drótokon rángatja valami sötét voodoo praktikával, valójában ő irányít mindent a háttérből</li>
+	<li>Nem tud varázsolni, azért használja a voodoo-t</li>
+	<li>Szeret kígyókat melengetni a keblén - legyen az bármilyen kígyó</li>
+	<li>A családjában megeszik/feláldozzák a férfiakat, azért van matriarchátus. Volt egy harmadik, fiú ikrük, vele is ez történt.</li>
+	<li>Az elsőszülött gyermekét odaígérte Papa Legbának (és ehhez kapcsolódóan az összes negatív sztereotípia a voodooról)</li>
+	<li>A családja amazonok leszármazottja</li>
+	<li>Yaxley-éknél különböző, sötét rítusokat vezet, mint például szüzek vérében való fürdést, hogy sikeresebbek legyenek</li>
+	<li>Helyi ínyencség náluk emberi és állati szíveket venni</li>
+	</ul></div>
+	</div>
+    </section>
+
+    <section class="card" id="csalad">
+      <h2>A család</h2>
+      <div class="family-grid">
+        <article class="family-card">
+          <div class="family-role">Anya</div>
+          <div class="family-name" ">Marcéline Laveau (40)</div>
+          <div class="family-blood" ">Aranyvérű</div>
+          <div class="family-desc" ">New Orleans legfőbb voodooinette-je, a tradicionálisan matriarchátus Laveau ház vezetője. Mélyen empatikus, karakán asszony, aki mindig szakít időt az elesettek megsegítésére, és hű neves elődje örökségéhez. Mint a közösség egyik legfontosabb alakja, a fő ünnepségeken rendszeresen vezeti a szertartásokat is, ahol turisták, magnixok is részt vehetnek - igaz, ők inkább műsort kapnak a pénzükért cserébe, mert számukra ez inkább hit, mint valóság. Naya halálának körülményeit jól ismeri, a tragédia pedig megbélyegezte kapcsolatukat. A veszteség ellenére felkészült arra, hogy idővel másik lányának kell átadja azt a bizonyos stafétabotot.</div>
+        </article>
+
+        <article class="family-card">
+          <div class="family-role">Apa</div>
+          <div class="family-name" ">Elphege Volant (42)</div>
+          <div class="family-blood" ">Aranyvérű</div>
+          <div class="family-desc" ">Távoli rokona az eredeti, európai ágnak, akik a francia gyarmatosítások idején telepedtek Lousianába. Kreol identitású varázsló, aki az elmúlt években politikai szerepet kezdett vállalni Louisiana államban. A helyi MACUSA kirendeltségnél tölt be kiemelt pozíciót. A Laveau családban hagyományosan a matriarchátus dominál, mindettől függetlenül Elphege is kivette a részét a gyermekei nevelésében. Naya halála erősen megviselte, ennek ellenére igyekszik megtenni a tőle telhetőt azért, hogy mind a másik lányának, mind feleségének stabil támaszt tudjon nyújtani ezekben az időkben.</div>
+        </article>
+
+        <article class="family-card">
+          <div class="family-role">Testvér</div>
+          <div class="family-name" ">Naya Laveau (17) †</div>
+          <div class="family-blood" ">Aranyvérű</div>
+          <div class="family-desc" ">Ikertestvére majdnem megszólalásig hasonlított rá - azért nem megszólalásig, mert az ő lágyabb, finomabb stílusa azonnal elárulta őt. Naya volt a megfontoltabb és empatikusabb köztük, ezért családfőnek is őt szánták. Ha Solange a tűz, akkor ő a víz. Soha nem nézte jó szemmel Solange társaságát, és azokat az új nézeteket, amiket hangoztatni kezdett, a különbségeik ellenére azonban mindig szoros volt a viszonyuk. Egyenesen elválaszthatatlanok voltak, egészen a 2005 nyarában bekövetkezett haláláig.</div>
+        </article>
+
+        <article class="family-card">
+          <div class="family-role">Háziállat</div>
+          <div class="family-name" ">Calypso</div>
+          <div class="family-blood" ">Leucisztikus királypiton</div>
+          <div class="family-desc" ">Egyelőre rendkívül apró, tenyérben is elférő, fehér kiskígyó kék szemekkel. Teljesen ártalmatlan, mérge nincs. Ha veszélyben érzi magát, apró labdává zsugorodik. Faji jellegzetesség, ezért angolul ball pythonnak is nevezik.</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="card" id="csaladtortenet">
+      <h2>Családtörténet</h2>
+
+      <div class="family-image">
+        <img src="images/marie.jpg" alt="">
+      </div>
+
+      <div class="prose justify scroll-box">
+        <p>A Trudeau család egy kisebb, de ősi és aranyvérű varázslócsalád volt Franciaországban. Egyik nagy európai házhoz sem tartozott, nem volt kötődésük a Malfoyokhoz, Lestrange-ekhez, vagy akár a Flamelekhez, vérvonaluk azonban több ágon is visszavezethető a kora újkor mágikus közösségeihez, köztük olyan polgári és gyarmati eredetű családokra, melyek Franciaország különböző kikötővárosain keresztül érkeztek, és etnikailag is sokszínűbb hátteret képviseltek, mint a klasszikus európai aranyvérű házak.</p>
+<p>A Trudeaukat a francia varázslótársadalom soha nem tartotta számon hatalmi tényezőként, de mindig hasznosak voltak, különösen, ha halálhoz köthető mágiákról volt szó. Nevük rendre felbukkant a járványok és más tömegpusztítások idején, a nagy felkelések és társadalmi összeomlások alatt, és a legsúlyosabb boszorkányüldözéseknél. Különleges tehetségük volt a nekromágiában, a rituálékban, és mindenhez, ami halálhoz köthető.</p>
+<p>1692 után települtek az Új Világba, miután Európában megszületett a Varázstitok Alaptörvény. Önkéntes száműzetésük Louisianába vitte őket francia gyarmati kapcsolataikon át, még azelőtt, hogy az Amerikai Egyesült Államok létrejött volna. A család ekkortájt vált ketté. A Trudeau-k nagyrészt északra, első sorban a mai Kanada területe felé vándoroltak, a család másik ága pedig Laveaux néven ott maradt délen. Nevük néhány generációval később amerikanizálódott, mára már a Laveau név vált ismertté.  A névváltoztatás segített abban, hogy leváljanak az európai vérvonal nyilvántartásokról, az Egyesült Államokban pedig (ekkortájt még) nem volt olyan erős a vértisztaság-kultusz, mint Európában, vagy napjaink Amerikájában.
+Családjuk legprominensebb leszármazottja Marie Laveau, aki köré a mai napig erős, magnix kultusz tartozik. Marie Louisiana meghatározó figurájává vált, és kivételes tekintélyt szerzett tettei révén.</p>
+<p>Mágikus és nem mágikus betegségek tombolása idején ápolta a betegeket, különös tekintettel a sárga lázra, kolera járványra és sárkányhimlőre. Bábaként, gyógyítóként és haldoklók lelki támaszaként működött. Fodrászként bejárása volt a leggazdagabb családokhoz, és olyan információkhoz jutott, melyekhez senki más nem férhetett hozzá. Az így szerzett tudást olykor zsarolásra használta, amivel a közösséget védte, máskor pedig tisztánlátásával és mágikus ismereteivel segített a problémák megoldásában, ezzel válságokat és konfliktusokat oldva meg. Marie tudatosan élt befolyásával. A család régi, rituális mágiáját, a voodoo ezen ágát aktívan használta, különösen, ha az elkerülhetetlen volt.</p>
+<p>Tanácsai idővel annyira megkerülhetetlenné váltak, hogy az állam politikai, pénzügyi és rendfenntartó körei semmilyen komoly döntést nem mertek meghozni az ő véleménye nélkül.
+Marie körül elterjedt az a hiedelem, hogy nem öregszik a megszokott módon. Pletykák keringtek Marie sötétebb, kevésbé ismert oldaláról, élethez és halálhoz köthető rítusokról. A legvadabbak szerint évente csecsemőket áldozott egy Papa Legba néven emlegetett alaknak, akitől a hatalma származott, sőt, ezzel párhuzamosan megszületett egy olyan legenda is, miszerint a „Voodoo Királynő” valójában soha nem halt meg, hanem átvette azonos nevű lánya helyét még egy hosszú emberöltőre. A források ellentmondásosak, senki nem tudja az igazat, hogy tényleg kivételes hatalmú boszorkány volt-e, vagy csak pletyka az egész. Abban azonban mindenki egyetért, hogy bármi is az igazság, Marie tudatosan hagyta fennmaradni ezt a bizonytalanságot, ami a megbecsülés mellett a Laveau névhez kötötte a félelmet is.</p>
+<p>A 21. század elejére a Laveau család helyzete megváltozni látszik. Marie Laveau öröksége és a család már több évszázada fennálló, stabil és megszakíthatatlan jelenléte a régióban felkeltette az aranyvérű elit, különösen a Yaxley család figyelmét. Vérvonaluk vitathatatlanul stabil annak ellenére is, hogy a dokumentációjuk nem illeszkedik eléggé az európai mintához.
+A Laveau család egyszerűen megkerülhetetlen Louisiana államban. Mindez azt eredményezte, hogy a vértisztaságot hirdető elit elkezdte bevonni őket a nemzetközi játszmába. Nem ideológiai szövetségest, hanem legitimációt és stabilitást keresnek rajtuk keresztül, hogy a régiót uralni tudják.</p>
+<p>A Laveau család mára kettős identitással működik. Nem képesek azonosulni a vértisztasági ideológiával, ugyanakkor nagyon is tudatosan működnek együtt azok képviselőivel. Ez a szövetség biztosítja számukra azt, hogy megvédjék saját közösségeiket, fenntartsák autonómiájukat, és elkerüljék, hogy kívülállók határozzák meg az államban élő varázsközösségek sorsát.</p>
+      </div>
+    </section>
+
+    <section class="card" id="megjelenes">
+      <h2>Megjelenés</h2>
+
+      <div class="kv-grid">
+        <div class="kv"><div class="k">Magasság</div><div class="v" ">177 cm</div></div>
+        <div class="kv"><div class="k">Testalkat</div><div class="v" ">vékony, sportos</div></div>
+        <div class="kv"><div class="k">Szemszín</div><div class="v" ">barna</div></div>
+        <div class="kv"><div class="k">Hajszín</div><div class="v" ">változó, most épp szőke</div></div>
+
+        <div class="pb-full">
+          <div class="k">PB</div>
+          <div class="v" ">Canelle Ferrangu</div>
+        </div>
+      </div>
+
+      <h3>Kinézet</h3>
+      <div class="prose justify" ">[Ide a leírás.]</div>
+    </section>
+
+    <section class="card" id="tudas">
+      <h2>A tudás</h2>
+
+      <h3>Voodoo</h3>
+<div class="voodoo-visual">
+  <img src="images/snake3.jpg" alt="">
+</div>
+      <div class="prose justify scroll-box" ">
+        <p>A voodoo a közhiedelmekkel ellentétben nem holmi babona, és nem is fekete mágia, hanem szertartásokból és sokféle hagyományokból kialakult, mágikus gyakorlatok összessége. </p>
+<p>Eredete Nyugat-Afrikába, a mai Beninből területére vezethető vissza, ahol vodún néven gyakorolják ezeket a hagyományokat. A régióban hagyományosan minden mágiát vodúnnak tekintenek, beleértve az állati áldozatokat igénylő rituálékat, a gyógyító mágiákat, a gyógynövényismeretet és bájitalfőzést, illetve az animágiát is. </p>
+<p>A gyarmatosításoknak köszönhetően jelent meg Európában is, ahol elkerülhetetlenül kapcsolatba került a nyugati módszerekkel. Ennek hatására a különböző gyakorlók, a gyarmatosítások miatt megtelepedett családok (például a Trudeau, mára már Laveau család) a saját környezetükhöz kezdték igazítani a hagyományokat. Az európai átalakulási folyamatban számos rituális, táncos, zenés vagy állati áldozatot igénylő elemet szimbolikusabb, tárgyi elemek váltották fel. Megjelentek olyan varázslatok is, melyek egyáltalán nem voltak jellemzőek a Nyugat-Afrikai gyakorlatokhoz. Ilyen például a közismert „voodoo-baba” is. </p>
+<p>Az amerikai kolonizáción és a rabszolgakereskedelmen keresztül a voodoo megjelent az Újvilágban is. Legfontosabb csomópontjai Haiti és New Orleans, de jelentős diaszpóra alakult ki Kubában is. Akárcsak Európában, hasonló folyamatok zajlottak le ezeken a területeken is, megjelentek az úgynevezett zanzásított fejek, és keveredett az őslakosok mágiájával. Megkezdődött a hagyományok átalakulása az új környezethez. Mára már beszélhetünk teljesen külön irányzatokról az egyes területeken, azonban mégis fellelhetőek az alapvetően hasonló mintázatok. A new orleans-i ágat emellett erősen befolyásolta a Trudeau-Laveau család megjelenése és hatása, akik saját, európából hozott elemeiket integrálták a helyi voodoo rítusokba. Ezek a közösségek a mai napig aktív gyakorlók, ugyanakkor azonban rendkívül zártak is. Bizalmatlanok a kívülállókkal, nem szeretik megosztani velük titkaikat. </p>
+<p>A XX. század elején a voodoo-t fekete mágiának minősítették. Holott a voodoo alkalmas arra, hogy ártsanak másoknak, ez a minősítés inkább félelemből és tudatlanságból származik. A tiltás nem érte el a hatását. A már különben is zárkózott közösségek még jobban elszeparálták magukat, és továbbra is ugyanúgy gyakorolták hagyományaikat. </p>
+<p>1926. november 28-án a MACUSA elnöke, Seraphina Picquery vetett véget a tiltásnak, a voodoo pedig „megtűrt” minősítést kapott, mely státuszát a mai napig fenntartja. Ez a gyakorlatban azt jelentette, hogy bár továbbra sem támogatják, az Ilvermornyban nem oktatják, de az alkalmazását nem üldözik mindaddig, amíg nem sértenek vele mágikus törvényeket. A voodoo társadalmilag nem, de jogilag elfogadottá vált, de továbbra is intézményes kereteken kívül, az egyes közösségekhez és családi hagyományokhoz láncolt mágiaforma maradt. </p>
+<p>A voodoo számtalan rítussal és mágiával rendelkezik, illetve – a fentebbiek alapján – nincs egy közös irányzat. Újabb és újabb hatások keverednek ezekbe a régi hagyományokba. Vannak hasonló rítusok, melyek megtalálhatóak máshol is, legfeljebb más elemekkel, és vannak teljesen saját mágiák is. </p>
+<p>Solange családja kifejezetten a New Orleans-i változatot gyakorolja. Ezekből néhány példa következik. </p>
+<p>A leírtak nem jelentik automatikusan azt, hogy a karakter ezek közül mindenre képes. Ez inkább egy keret, amin belül ez a mágiaforma mozog, és amit elsajátíthat családja által. </p>
+<p>A személy ellen irányuló rituálék feltétele, hogy a célponttól szerezzünk valamilyen személyes maradványt. Ilyen lehet a hajszál, a köröm, a nyál, vagy a vérrel szennyezett szövet. A maradványt rögzítik valamilyen tárgyra, például egy fadarabra. Ekképpen kapcsolatot lehetséges létrehozni. Feltétele még, hogy az illető személy aludjon a kapcsolat létrejötte közben. A kapcsolat fennállása alatt rémálmokkal lehet kínozni őt. </p>
+<p>Ezt a mágiát igen ritkán használják konszenzuálisan. A rítus fekete mágiának minősül, a MACUSA tiltja és bünteti. </p>
+<p>Ugyanakkor ha ugyanehhez a rítushoz a fadarab vagy más tárgy mellé a megfelelő gyógynövényeket kötözik, az segíthet a gyógyulásban és a fájdalmak leküzdésében. </p>
+<p>Ennek egy másik változata a jól ismert voodoo baba, ahol a baba belsejébe teszik a személyes maradványt, illetve egyéb, szimbolikus tárgyakat a kívánt hatástól függően. A célpontnak ilyenkor nem szükséges aludnia sem. </p>
+<p>A közhiedelemmel ellentétben nem csupán a célpont kínzására, sérülés okozásra szolgálhat, hanem akár a gyógyítására, vagy átkok megszüntetésére is. Főbenjáró átkok hatását megszüntetni viszont nem lehet, illetve az átokhegek sem tüntethetőek el. </p>
+<p>Amennyiben ezzel a módszerrel fájdalmat okoznak vagy más módon ártanak, az fekete mágiának minősül. </p>
+<p>Minden rítus különösen bonyolult és összetett, továbbá a célpont maradványain kívül más hozzávalókat is igényelnek. Minél bonyolultabb, annál több és ritkább dolog szükséges hozzá. Továbbá 600 km hatósugáron belül kell tartózkodni a célponthoz képest. </p>
+<p>A célpont mind a két, fent leírt esetben védekezhet okklumenciával. A voodoo-t gyakorló varázslótól vagy boszorkánytól folyamatos koncentrációt és nagy energiát igényel, a folyamat közben transzállapotban van. Amennyiben kizökkentik, a varázslat azonnal félbeszakad. </p>
+<p>A voodoo-n belül rengeteg a halállal kapcsolatos mágia is. Ezek során személyes tárgyakon keresztül kapcsolatban lehet lépni a szellemekkel, és meg lehet kérni őket arra, hogy adják át tudásukat. A zárt közösségeken belül ez biztosította azt, hogy a tudást átadják az újabb és újabb generációknak. A leggyakorlottabb mesterek akár olyan holtakkal is kapcsolatba léphetnek, akik nem ragadtak a földön szellemként. Legjobban akkor működik, ha családtagot keresnek, és soha nincs garancia arra, hogy választ kapnak. </p>
+<p>Ezeket a rítusokat általában zene és tánc, valamint áldozatok (étel, alkohol, pénz) kísérik. </p>
+<p>Egyéb mágiákat is szívesen használnak. Ilyen többek között a szemmel verés, amivel például meg lehet babonázni egy seprűt. Egyes gyakorlók képesek arra is, hogy átvegyék a másik fél testi vagy lelki fájdalmát. </p>
+<p>A rítusokban gyakran megjelennek élő állatok, de nem mindig és nem feltétlenül áldozati szerepben. Az egyik leggyakoribb, nem áldozati állat a kígyó. A közösségeken belül így nem ritka a párszaszájúság. A Trudeau-Laveau család maga is párszaszájú, a kígyók általában engedelmeskednek is nekik.</p>
+
+      </div>
+
+      <h3>Varázslói ismeretek</h3>
+      <div class="prose justify scroll-box" ">
+        Solange nem kifejezetten szorgalmas diák, ami a házi feladatokat illeti, különösen, ha az adott téma nem érdekli. Nincs szó általános motiválatlanságról - az érdeklődési köre nagyon specifikus, így amely területek számára értékesek, azokat jól és alaposan megtanulja.<br>
+Családja révén gazdag, mágikus örökséggel rendelkezik. A voodoo, mely elválaszthatatlan a Laveau névtől, egész életében jelen volt. Tehetséges is benne - elég jó, de még sem olyan jó, mint amilyen ikerhúga volt. A 2005 nyarán történt incidens óta óvatosabban bánik vele, kevésbé mer kísérletezni, mint azelőtt, és mélyen legbelül egy kicsit ezt a mágiaágat is hibáztatja testvére haláláért. Ehhez képest erősen kilátásba van helyezve, hogy átveszi édesanyja helyét, erre azonban jelenleg nem annyira alkalmas a lelki dolgai miatt.<br>
+Fontos megemlíteni, hogy az előző szakaszban leírtak nem Solange összes képességének leírása, hanem egy keretrendszer, amin belül mozoghat. Még rengeteget kell tanulnia és fejlődnie, hogy méltó legyen a voodooinette titulusra.<br>
+A pálcás mágiákban nem annyira jó. A kötelezőket teljesíti, de nem ezen van a fókusza, bár háztartásmágiából kiválóra vizsgázott. Ennek ellenére nagyon is téved az, aki azt hinné, hogy nem tudja megvédeni magát, vagy nem lenne képes ártani másoknak - a voodoo épp elég eszköztárat biztosít számára még akkor is, ha mostanában kevésbé mer kísérletezni vele. Kiválóan tud szemmel is verni, a pálcás varázslatok közül pedig a Serpensortia - természetesen a párszaszájúsága miatt - a védjegyévé vált.<br>
+Tálentumaként a rituális mágiát választotta, mert az illik a legjobban vérvonalának örökségéhez. Az itt tanultakat szívesen vegyíti az ismereteivel, a voodoo new orleans-i változata ugyanis szívesen ötvöz és merít más kultúrákból is elemeket. Itt ismételten fontos kiemelni, hogy a voodoo, mint olyan, jelenleg megtűrt státuszban van. Ez azt jelenti, hogy nem támogatják, nem oktatják, de mindaddig, amíg nem használják mágikus törvények megszegésére, addig biztonságban gyakorolhatják.
+
+      </div>
+
+      <div class="two-col">
+        <div class="mini">
+          <div class="mini-k">Tálentum</div>
+          <div class="mini-v" ">rituális mágia</div>
+        </div>
+        <div class="mini">
+          <div class="mini-k">Pálca típusa</div>
+          <div class="mini-v" ">11 és ¾ hüvelyk kocsányos tölgyfa pálca szarvaskígyó szarvának a magjával, Isolt Sayre munkája. Érzékeny a párszaszájúságra, figyelmezteti gazdáját a veszélyre.</div>
+        </div>
+      </div>
+
+      <h3>RBF</h3>
+      <div class="rbf rbf-3x3" aria-label="RBF eredmények">
+        <div class="rbf-item">
+          <div class="rbf-left"><span class="subj-ico" aria-hidden="true">🦋</span><span class="subj-name" ">Transzfiguráció</span></div>
+          <div class="rbf-grade"><span class="grade" ">V</span></div>
+        </div>
+
+        <div class="rbf-item">
+          <div class="rbf-left"><span class="subj-ico" aria-hidden="true">🛡️</span><span class="subj-name" ">Defenzív Mágia</span></div>
+          <div class="rbf-grade"><span class="grade" ">E</span></div>
+        </div>
+
+        <div class="rbf-item">
+          <div class="rbf-left"><span class="subj-ico" aria-hidden="true">🌿</span><span class="subj-name" ">Herbeológia</span></div>
+          <div class="rbf-grade"><span class="grade" ">K</span></div>
+        </div>
+
+        <div class="rbf-item">
+          <div class="rbf-left"><span class="subj-ico" aria-hidden="true">🧪</span><span class="subj-name" ">Főzettan</span></div>
+          <div class="rbf-grade"><span class="grade" ">V</span></div>
+        </div>
+
+        <div class="rbf-item">
+          <div class="rbf-left"><span class="subj-ico" aria-hidden="true">✨</span><span class="subj-name" ">Bűbájtan</span></div>
+          <div class="rbf-grade"><span class="grade" ">E</span></div>
+        </div>
+
+        <div class="rbf-item">
+          <div class="rbf-left"><span class="subj-ico" aria-hidden="true">📜</span><span class="subj-name" ">Mágiatörténet</span></div>
+          <div class="rbf-grade"><span class="grade" ">H</span></div>
+        </div>
+
+        <div class="rbf-item">
+          <div class="rbf-left"><span class="subj-ico" aria-hidden="true">🔢</span><span class="subj-name" ">Számmisztika</span></div>
+          <div class="rbf-grade"><span class="grade" ">H</span></div>
+        </div>
+
+        <div class="rbf-item">
+          <div class="rbf-left"><span class="subj-ico" aria-hidden="true">🔮</span><span class="subj-name" ">Futurisztika</span></div>
+          <div class="rbf-grade"><span class="grade" ">V</span></div>
+        </div>
+
+        <div class="rbf-item">
+          <div class="rbf-left"><span class="subj-ico" aria-hidden="true">🕯️</span><span class="subj-name" ">Háztartásmágia</span></div>
+          <div class="rbf-grade"><span class="grade" ">K</span></div>
+        </div>
+
+
+      </div>
+<div><br></div>
+
+    </section>
+
+    <section class="card" id="inspo">
+      <h2>Inspiráció, források</h2>
+
+      <ul class="links">
+        <li class="link-item">
+          <a href="https://www.youtube.com/watch?v=qDC5SsqRc44" target="_blank" rel="noopener">The 'Voodoo renaissance' of New Orleans | BBC Global</a>
+        </li>
+        <li class="link-item">
+          <a href="https://www.youtube.com/watch?v=j9h2-ZVDLB8" target="_blank" rel="noopener">The Bizarre Voodoo World Of New Orleans</a>
+        </li>
+        <li class="link-item">
+          <a href="https://www.youtube.com/watch?v=njn5QUJrhUE" target="_blank" rel="noopener">Voodoo, Torture, and Pirates: New Orleans History Revealed | Hidden History | National Geographic</a>
+        </li>
+        <li class="link-item">
+          <a href="https://www.wikitree.com/wiki/Laveau-5" target="_blank" rel="noopener">Marie Laveau családfája</a>
+        </li>
+        <li class="link-item">
+          <a href="https://www.anthropology-news.org/articles/ten-facts-about-the-racist-history-of-voodoo/" target="_blank" rel="noopener">Ten Facts About the Racist History of Voodoo</a>
+        </li>
+        <li class="link-item">
+          <a href="https://static.wikia.nocookie.net/harrypotter/images/f/f1/The_New_York_Ghost_Nov_28.jpg/revision/latest?cb=20170609223434" target="_blank" rel="noopener">Fantastic Beasts and Where to Find Them – újságkivágás</a>
+        </li>
+        <li class="link-item">
+          <a href="https://static.wikia.nocookie.net/harrypotter/images/1/1a/VoodooLeniency.png/revision/latest?cb=20161014213740" target="_blank" rel="noopener">Fantastic Beasts and Where to Find Them – újságkivágás</a>
+        </li>
+        <li class="link-item">
+          <a href="https://store.steampowered.com/app/262000/Gabriel_Knight_Sins_of_the_Fathers_20th_Anniversary_Edition/" target="_blank" rel="noopener">Gabriel Knight: Sins of the Fathers (20th Anniversary)</a>
+        </li>
+        <li class="link-item">
+          <a href="https://travsd.wordpress.com/2023/06/23/st-johns-eve-voodoo-and-more/" target="_blank" rel="noopener">St. John’s Eve, Voodoo and More</a>
+        </li>
+        <li class="link-item">
+          <a href="https://harrypotter.fandom.com/wiki/Horned_Serpent_horn" target="_blank" rel="noopener">Horned Serpent horn</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="egyeb">
+      <h2>Egyéb</h2>
+      <div class="prose justify" ">
+        [Ide bármi egyéb megjegyzés.]
+      </div>
+    </section>
+
+    <footer class="foot">
+      <a class="to-top" href="#top">Vissza a tetejére</a>
+    </footer>
+  </main>
+
+  <script src="solange.js"></script>
+</body>
+</html>
