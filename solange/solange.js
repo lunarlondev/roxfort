@@ -75,6 +75,7 @@ const reader = document.getElementById("historyReader");
 const readerTitle = document.getElementById("readerTitle");
 const textbox = document.getElementById("historyTextbox");
 const collapseBtn = document.getElementById("historyCollapseBtn");
+const resetReadBtn = document.getElementById("resetReadBtn");
 
 let activeId = null;
 
@@ -238,6 +239,18 @@ function collapse() {
   activeId = null;
 }
 
+function resetReadState() {
+
+  // töröljük a Set-et
+  readSet.clear();
+
+  // levesszük a read class-t minden portréról
+  document.querySelectorAll(".history-card").forEach(card => {
+    card.classList.remove("read");
+  });
+
+}
+
 
 /* ==============================
    INIT
@@ -251,6 +264,10 @@ if (randomBtn) {
 
 renderSelector();
 
+
+if (resetReadBtn) {
+  resetReadBtn.addEventListener("click", resetReadState);
+}
 
 /* ==============================
    RBF COLORING
