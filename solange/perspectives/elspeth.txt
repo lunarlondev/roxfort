@@ -1,5 +1,5 @@
-<p>A mérleg nem azt méri, amit ráhelyeznek.</p>
+<center><p>A mérleg nem azt méri, amit ráhelyeznek.</p>
 <p>Az árnyék nem azt követi, aki előle fut.</p>
 <p>És amikor eljön az óra,</p>
 <p>nem az lép át, akit küldenek,</p>
-<p>hanem az, akit hívnak.</p>
+<p>hanem az, akit hívnak.</p></center>
