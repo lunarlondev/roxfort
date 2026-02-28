@@ -74,6 +74,9 @@
       "A kedvenc táncom a mamba.",
       "Siiiiyah hassssaaashee!",
       "…soo hungry… for so long…",
+      "Fruit ninja.",
+      "Low-carb? Nem. Low-leg.",
+      "Expecto Ssssnackum.",
     ];
 
     return texts[Math.floor(Math.random() * texts.length)];
