@@ -68,7 +68,11 @@
       "Alma a menü, nem egér.",
       "Hiss & Chips.",
       "Snake it easy.",
+      "Callypso a legszebb π-ton.",
       "Melyik állat az abszolút férfi? A kígyó, mert gyakorlatilag az egész egy farok.",
+      "A játék segít elterelni a figyelmet az esetleges logikai ütközésekről.",
+      "A kedvenc táncom a mamba.",
+      "Siiiiyah hassssaaashee!",
     ];
 
     return texts[Math.floor(Math.random() * texts.length)];
