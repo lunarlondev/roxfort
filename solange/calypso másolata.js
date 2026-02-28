@@ -28,6 +28,8 @@
   resize();
   window.addEventListener("resize", resize);
 
+  // ===== SPRITES =====
+
   const headImg = new Image();
   headImg.src = "images/calypso/head.png";
 
@@ -39,6 +41,8 @@
 
   const appleImg = new Image();
   appleImg.src = "images/calypso/apple.png";
+
+  // ===== GAME STATE =====
 
   let snake;
   let dir;
@@ -90,11 +94,13 @@
     const nx = head.x + dir.x;
     const ny = head.y + dir.y;
 
+    // Fal ütközés
     if (nx < 0 || nx >= GRID || ny < 0 || ny >= GRID) {
       running = false;
       return;
     }
 
+    // Önmaga ütközés
     if (snake.some(s => s.x === nx && s.y === ny)) {
       running = false;
       return;
@@ -118,19 +124,18 @@
     }
   }
 
+  // ===== DRAW HELPERS =====
+
   function drawBackground(size) {
     ctx.fillStyle = "#0f0f14";
     ctx.fillRect(0, 0, size, size);
   }
 
-  function drawImageCentered(img, gridX, gridY, angle = 0, scale = 1) {
+  function drawImageCentered(img, gridX, gridY, angle = 0) {
     ctx.save();
     ctx.translate(gridX * cell + cell / 2, gridY * cell + cell / 2);
     ctx.rotate(angle);
-
-    const size = cell * scale;
-    ctx.drawImage(img, -size / 2, -size / 2, size, size);
-
+    ctx.drawImage(img, -cell / 2, -cell / 2, cell, cell);
     ctx.restore();
   }
 
@@ -142,10 +147,12 @@
     return 0;
   }
 
+  // ===== DRAW SNAKE =====
+
   function drawSnake() {
     if (!snake.length) return;
 
-    // BODY (+90° fix)
+    // ---- BODY ----
     for (let i = 1; i < snake.length - 1; i++) {
       const prev = snake[i - 1];
       const cur = snake[i];
@@ -157,17 +164,15 @@
       let angle = 0;
 
       if (dx !== 0 && dy === 0) {
-        angle = 0;
+        angle = 0; // vízszintes
       } else if (dy !== 0 && dx === 0) {
-        angle = Math.PI / 2;
+        angle = Math.PI / 2; // függőleges
       }
 
-      angle += Math.PI / 2;
-
-      drawImageCentered(bodyImg, cur.x, cur.y, angle, 1);
+      drawImageCentered(bodyImg, cur.x, cur.y, angle);
     }
 
-    // TAIL
+    // ---- TAIL ----
     if (snake.length > 1) {
       const tail = snake[0];
       const next = snake[1];
@@ -178,20 +183,22 @@
       };
 
       let angle = getAngleFromDir(tailDir);
+
+      // 90° counter-clockwise korrekció
       angle -= Math.PI / 2;
 
-      drawImageCentered(tailImg, tail.x, tail.y, angle, 1);
+      drawImageCentered(tailImg, tail.x, tail.y, angle);
     }
 
-    // HEAD (1.2 scale)
+    // ---- HEAD ----
     const head = snake[snake.length - 1];
     const headAngle = getAngleFromDir(dir);
 
-    drawImageCentered(headImg, head.x, head.y, headAngle, 1.2);
+    drawImageCentered(headImg, head.x, head.y, headAngle);
   }
 
   function drawFood() {
-    drawImageCentered(appleImg, food.x, food.y, 0, 1);
+    drawImageCentered(appleImg, food.x, food.y, 0);
   }
 
   function draw() {
@@ -201,6 +208,8 @@
     drawFood();
     drawSnake();
   }
+
+  // ===== LOOP =====
 
   let last = 0;
   let acc = 0;
@@ -227,7 +236,7 @@
   }
 
   document.addEventListener("keydown", e => {
-    const keys = ["ArrowUp","ArrowDown","ArrowLeft","ArrowRight","w","a","s","d"];
+    const keys = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "w", "a", "s", "d"];
     if (keys.includes(e.key)) e.preventDefault();
 
     if (e.key === "ArrowUp" || e.key === "w") setDir(0, -1);
