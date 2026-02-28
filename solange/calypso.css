@@ -1,0 +1,147 @@
+#calypso-game .calypso-wrap{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+#calypso-game .calypso-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+#calypso-game .calypso-meta{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+#calypso-game .calypso-label{
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  opacity:.9;
+}
+
+#calypso-game .calypso-sub{
+  opacity:.75;
+  font-size:13px;
+}
+
+#calypso-game .calypso-stats{
+  display:flex;
+  gap:10px;
+}
+
+#calypso-game .calypso-stat{
+  padding:8px 10px;
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:10px;
+  background:rgba(0,0,0,0.22);
+  min-width:84px;
+}
+
+#calypso-game .calypso-k{
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  opacity:.7;
+}
+
+#calypso-game .calypso-v{
+  font-size:18px;
+  font-weight:700;
+  margin-top:2px;
+}
+
+#calypso-game .calypso-canvas-shell{
+  display:flex;
+  justify-content:center;
+}
+
+#calypso-game canvas{
+  width: min(360px, 100%);
+  aspect-ratio: 1/1;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: radial-gradient(
+    circle at center,
+    rgba(20,20,25,0.9),
+    rgba(10,10,12,0.95)
+  );
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+#calypso-game .calypso-controls{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+}
+
+#calypso-game .calypso-btn{
+  padding:10px 14px;
+}
+
+#calypso-game .calypso-opt{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  padding:10px 12px;
+  border:1px solid rgba(255,255,255,0.10);
+  border-radius:10px;
+  background:rgba(0,0,0,0.18);
+  font-size:13px;
+  opacity:.9;
+}
+
+#calypso-game select{
+  background:rgba(0,0,0,0.25);
+  border:1px solid rgba(255,255,255,0.14);
+  color:inherit;
+  border-radius:8px;
+  padding:6px 8px;
+}
+
+#calypso-game .calypso-hint{
+  font-size:13px;
+  opacity:.75;
+}
+
+#calypso-game .calypso-status{
+  min-height:18px;
+  font-size:13px;
+  opacity:.85;
+}
+
+#calypso-game .calypso-dpad{
+  display:none;
+  gap:10px;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  margin-top:6px;
+}
+
+#calypso-game .calypso-dpad-row{
+  display:flex;
+  gap:10px;
+}
+
+#calypso-game .calypso-dpad-btn{
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.14);
+  background:rgba(0,0,0,0.22);
+  color:inherit;
+  cursor:pointer;
+  user-select:none;
+}
+
+@media (max-width: 720px){
+  #calypso-game .calypso-dpad{
+    display:flex;
+  }
+}

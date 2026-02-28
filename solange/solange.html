@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Solange Laveau – karakterlap</title>
   <link rel="stylesheet" href="solange.css">
+  <link rel="stylesheet" href="calypso.css">
 </head>
 <body>
   <main class="sheet" id="top">
@@ -486,11 +487,46 @@ Tálentumaként a rituális mágiát választotta, mert az illik a legjobban vé
       </div>
     </section>
 
+
+<section class="card" id="calypso-game">
+  <h2>Calypso etetés</h2>
+
+  <div class="calypso-wrap">
+
+    <div class="calypso-controls">
+      <button class="btn calypso-btn" id="calypsoStartBtn" type="button">
+        Start
+      </button>
+      <button class="btn subtle calypso-btn" id="calypsoResetBtn" type="button">
+        Újra
+      </button>
+
+      <div class="calypso-stats">
+        <div class="calypso-stat">
+          <div class="calypso-k">Pont</div>
+          <div class="calypso-v" id="calypsoScore">0</div>
+        </div>
+        <div class="calypso-stat">
+          <div class="calypso-k">Rekord</div>
+          <div class="calypso-v" id="calypsoBest">0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="calypso-canvas-shell">
+      <canvas id="calypsoCanvas" width="300" height="300"
+              aria-label="Calypso Snake játék"></canvas>
+    </div>
+
+  </div>
+</section>
+
     <footer class="foot">
       <a class="to-top" href="#top">Vissza a tetejére</a>
     </footer>
   </main>
 
   <script src="solange.js"></script>
+  <script src="calypso.js"></script>
 </body>
 </html>
