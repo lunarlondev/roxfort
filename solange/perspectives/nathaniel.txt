@@ -6,4 +6,4 @@
 <br>
 <p>Két nap múlva, Sámánka, addig is edzd a májad.</p>
 <br>
-<p>Nate</p>
+<p style="text-align:right">Nate</p>
