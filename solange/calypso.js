@@ -41,6 +41,30 @@
   const appleImg = new Image();
   appleImg.src = "images/calypso/apple.png";
 
+  const corner1 = new Image();
+  corner1.src = "images/calypso/corner1.png";
+
+  const corner2 = new Image();
+  corner2.src = "images/calypso/corner2.png";
+
+  const corner3 = new Image();
+  corner3.src = "images/calypso/corner3.png";
+
+  const corner4 = new Image();
+  corner4.src = "images/calypso/corner4.png";
+
+  const corner5 = new Image();
+  corner5.src = "images/calypso/corner1B.png";
+
+  const corner6 = new Image();
+  corner6.src = "images/calypso/corner2B.png";
+
+  const corner7 = new Image();
+  corner7.src = "images/calypso/corner3B.png";
+
+  const corner8 = new Image();
+  corner8.src = "images/calypso/corner4B.png";
+
   let snake;
   let dir;
   let nextDir;
@@ -194,49 +218,103 @@
   }
 
   function drawSnake() {
-    if (!snake.length) return;
+  if (!snake.length) return;
 
-    for (let i = 1; i < snake.length - 1; i++) {
-      const prev = snake[i - 1];
-      const cur = snake[i];
-      const next = snake[i + 1];
+  for (let i = 1; i < snake.length - 1; i++) {
 
-      const dx = next.x - prev.x;
-      const dy = next.y - prev.y;
+    const prev = snake[i - 1];
+    const cur  = snake[i];
+    const next = snake[i + 1];
 
+    const dx1 = cur.x - prev.x;
+    const dy1 = cur.y - prev.y;
+
+    const dx2 = next.x - cur.x;
+    const dy2 = next.y - cur.y;
+
+    const straight = (dx1 === dx2 && dy1 === dy2);
+
+    if (!straight) {
+
+      const cross = dx1 * dy2 - dy1 * dx2;
+      const isCW = cross < 0;
+
+      let img = null;
+
+      // BAL + LE
+      if (
+        (dx1 === -1 && dy2 === 1) ||
+        (dx2 === -1 && dy1 === 1)
+      ) {
+        img = isCW ? corner5 : corner1;
+      }
+
+      // BAL + FEL
+      else if (
+        (dx1 === -1 && dy2 === -1) ||
+        (dx2 === -1 && dy1 === -1)
+      ) {
+        img = isCW ? corner6 : corner2;
+      }
+
+      // JOBB + FEL
+      else if (
+        (dx1 === 1 && dy2 === -1) ||
+        (dx2 === 1 && dy1 === -1)
+      ) {
+        img = isCW ? corner7 : corner3;
+      }
+
+      // JOBB + LE
+      else if (
+        (dx1 === 1 && dy2 === 1) ||
+        (dx2 === 1 && dy1 === 1)
+      ) {
+        img = isCW ? corner8 : corner4;
+      }
+
+      if (img) {
+        drawImageCentered(img, cur.x, cur.y, 0, 1);
+      }
+    }
+    else {
       let angle = 0;
 
-      if (dx !== 0 && dy === 0) {
-        angle = 0;
-      } else if (dy !== 0 && dx === 0) {
-        angle = Math.PI / 2;
-      }
+      if (dx2 !== 0) angle = 0;
+      else angle = Math.PI / 2;
 
       angle += Math.PI / 2;
 
       drawImageCentered(bodyImg, cur.x, cur.y, angle, 1);
     }
-
-    if (snake.length > 1) {
-      const tail = snake[0];
-      const next = snake[1];
-
-      const tailDir = {
-        x: tail.x - next.x,
-        y: tail.y - next.y
-      };
-
-      let angle = getAngleFromDir(tailDir);
-      angle -= Math.PI / 2;
-
-      drawImageCentered(tailImg, tail.x, tail.y, angle, 1);
-    }
-
-    const head = snake[snake.length - 1];
-    const headAngle = getAngleFromDir(dir);
-
-    drawImageCentered(headImg, head.x, head.y, headAngle, 1.2);
   }
+
+  // TAIL
+  if (snake.length > 1) {
+    const tail = snake[0];
+    const next = snake[1];
+
+    const tailDir = {
+      x: tail.x - next.x,
+      y: tail.y - next.y
+    };
+
+    let angle = getAngleFromDir(tailDir);
+    angle -= Math.PI / 2;
+
+    drawImageCentered(tailImg, tail.x, tail.y, angle, 1);
+  }
+
+  // HEAD
+  const head = snake[snake.length - 1];
+  const headAngle = getAngleFromDir(dir);
+
+  drawImageCentered(headImg, head.x, head.y, headAngle, 1.2);
+}
+
+
+
+
 
   function drawFood() {
     drawImageCentered(appleImg, food.x, food.y, 0, 1);
