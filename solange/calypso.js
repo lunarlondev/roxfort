@@ -62,7 +62,7 @@
     const texts = [
       "Nyamm.",
       "Yummies!",
-      "Minden nap egy alma az orvost távol tartja.",
+      "Minden nap egy alma a medimágust távol tartja.",
       "Hissztérikus!",
       "Snake & snack.",
       "Alma a menü, nem egér.",
