@@ -61,14 +61,14 @@
   function getHappyText() {
     const texts = [
       "Nyamm.",
-      "Yummies!.",
+      "Yummies!",
       "Minden nap egy alma az orvost távol tartja.",
       "Hissztérikus!",
       "Snake & snack.",
       "Alma a menü, nem egér.",
-      "Hiss & Chips."
-      "Snake it easy."
-      "Melyik állat az abszolút férfi? A kígyó, mert gyakorlatilag az egész egy farok."
+      "Hiss & Chips.",
+      "Snake it easy.",
+      "Melyik állat az abszolút férfi? A kígyó, mert gyakorlatilag az egész egy farok.",
     ];
 
     return texts[Math.floor(Math.random() * texts.length)];
