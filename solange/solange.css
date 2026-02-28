@@ -1426,3 +1426,90 @@ background: linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.62)), var(--sna
   );
   box-shadow: 0 0 10px rgba(182,144,78,0.6);
 }
+
+
+
+.reader-head{
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.reader-avatar{
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.reader-avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  filter: contrast(1.1) brightness(0.85);
+}
+
+
+.reader-head::before{
+  content:"";
+  position:absolute;
+  left:-20px;
+  top:50%;
+  transform:translateY(-50%);
+  width:150px;
+  height:150px;
+  background: radial-gradient(circle,
+      rgba(140,20,30,0.45) 0%,
+      rgba(140,20,30,0.25) 35%,
+      rgba(140,20,30,0.10) 60%,
+      transparent 75%);
+  animation: snakeAura 5s ease-in-out infinite;
+  pointer-events:none;
+  z-index:1;
+}
+
+@keyframes snakeAura{
+  0%   { transform:translateY(-50%) scale(1); opacity:0.5; }
+  50%  { transform:translateY(-50%) scale(1.15); opacity:0.9; }
+  100% { transform:translateY(-50%) scale(1); opacity:0.5; }
+}
+
+
+/* ==============================
+   FORRÁS LINK HOVER OVERLAY
+================================ */
+
+.link-item{
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 200ms ease;
+}
+
+.link-item::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    90deg,
+    rgba(120,20,25,0.15) 0%,
+    rgba(120,20,25,0.25) 50%,
+    rgba(120,20,25,0.15) 100%
+  );
+  opacity:0;
+  transition:opacity 250ms ease;
+  pointer-events:none;
+}
+
+.link-item:hover::before{
+  opacity:1;
+}
+
+.link-item:hover{
+  transform:translateX(4px);
+}

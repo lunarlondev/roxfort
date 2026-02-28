@@ -196,6 +196,14 @@ async function openPerspective(id, idx) {
 
   readerTitle.textContent = title;
 
+const avatar = document.getElementById("readerAvatar");
+const perspective = PERSPECTIVES.find(x => x.id === id);
+
+if (avatar && perspective) {
+  avatar.src = perspective.image;
+}
+
+
   const text = await loadTextFile(id);
 
   textbox.innerHTML = text;
@@ -288,3 +296,5 @@ document.querySelectorAll(".rbf-item").forEach(item => {
 
   item.setAttribute("data-grade-label", fullText);
 });
+
+
