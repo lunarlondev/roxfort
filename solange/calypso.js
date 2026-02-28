@@ -73,6 +73,7 @@
       "A játék segít elterelni a figyelmet az esetleges logikai ütközésekről.",
       "A kedvenc táncom a mamba.",
       "Siiiiyah hassssaaashee!",
+      "…soo hungry… for so long…",
     ];
 
     return texts[Math.floor(Math.random() * texts.length)];
