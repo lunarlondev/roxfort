@@ -83,6 +83,7 @@
       "I'm the heir of Sssnacktherin!",
       "Sssszóval alma.",
       "Ez a játék KÍGYÓgyít minden bajból",
+      "Some days you shed, some days you shine.",
     ];
 
     return texts[Math.floor(Math.random() * texts.length)];
