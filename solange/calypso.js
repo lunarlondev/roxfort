@@ -124,7 +124,7 @@
     if (snake.some(s => s.x === nx && s.y === ny)) {
       running = false;
       if (statusEl) {
-        statusEl.textContent = "Calypso saját farkába harapó kígyó. Space az új próbához.";
+        statusEl.textContent = "Calypso saját farkába harapó kígyó. Space a folytatáshoz.";
       }
       return;
     }
