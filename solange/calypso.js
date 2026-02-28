@@ -8,6 +8,7 @@
   const bestEl = document.getElementById("calypsoBest");
   const startBtn = document.getElementById("calypsoStartBtn");
   const resetBtn = document.getElementById("calypsoResetBtn");
+  const statusEl = document.querySelector("#calypso-game .calypso-status");
 
   const GRID = 20;
   const SPEED = 130;
@@ -57,6 +58,22 @@
     };
   }
 
+  function getHappyText() {
+    const texts = [
+      "Nyamm.",
+      "Yummies!.",
+      "Minden nap egy alma az orvost távol tartja.",
+      "Hissztérikus!",
+      "Snake & snack.",
+      "Alma a menü, nem egér.",
+      "Hiss & Chips."
+      "Snake it easy."
+      "Melyik állat az abszolút férfi? A kígyó, mert gyakorlatilag az egész egy farok."
+    ];
+
+    return texts[Math.floor(Math.random() * texts.length)];
+  }
+
   function reset() {
     const mid = Math.floor(GRID / 2);
 
@@ -73,6 +90,10 @@
 
     spawnFood();
     draw();
+
+    if (statusEl) {
+      statusEl.textContent = "FEED ME!";
+    }
   }
 
   function spawnFood() {
@@ -90,13 +111,21 @@
     const nx = head.x + dir.x;
     const ny = head.y + dir.y;
 
+    // Fal
     if (nx < 0 || nx >= GRID || ny < 0 || ny >= GRID) {
       running = false;
+      if (statusEl) {
+        statusEl.textContent = "A fal sajnos nem ehető. Nyomj space-t a folytatáshoz.";
+      }
       return;
     }
 
+    // Saját test
     if (snake.some(s => s.x === nx && s.y === ny)) {
       running = false;
+      if (statusEl) {
+        statusEl.textContent = "Calypso saját farkába harapó kígyó. Space az új próbához.";
+      }
       return;
     }
 
@@ -113,6 +142,10 @@
       }
 
       spawnFood();
+
+      if (statusEl) {
+        statusEl.textContent = getHappyText();
+      }
     } else {
       snake.shift();
     }
@@ -145,7 +178,6 @@
   function drawSnake() {
     if (!snake.length) return;
 
-    // BODY (+90° fix)
     for (let i = 1; i < snake.length - 1; i++) {
       const prev = snake[i - 1];
       const cur = snake[i];
@@ -167,7 +199,6 @@
       drawImageCentered(bodyImg, cur.x, cur.y, angle, 1);
     }
 
-    // TAIL
     if (snake.length > 1) {
       const tail = snake[0];
       const next = snake[1];
@@ -183,7 +214,6 @@
       drawImageCentered(tailImg, tail.x, tail.y, angle, 1);
     }
 
-    // HEAD (1.2 scale)
     const head = snake[snake.length - 1];
     const headAngle = getAngleFromDir(dir);
 
@@ -227,13 +257,21 @@
   }
 
   document.addEventListener("keydown", e => {
-    const keys = ["ArrowUp","ArrowDown","ArrowLeft","ArrowRight","w","a","s","d"];
+    const keys = ["ArrowUp","ArrowDown","ArrowLeft","ArrowRight","w","a","s","d"," "];
     if (keys.includes(e.key)) e.preventDefault();
 
     if (e.key === "ArrowUp" || e.key === "w") setDir(0, -1);
     if (e.key === "ArrowDown" || e.key === "s") setDir(0, 1);
     if (e.key === "ArrowLeft" || e.key === "a") setDir(-1, 0);
     if (e.key === "ArrowRight" || e.key === "d") setDir(1, 0);
+
+    if (e.key === " ") {
+      if (!running) {
+        running = true;
+        last = performance.now();
+        requestAnimationFrame(loop);
+      }
+    }
   });
 
   startBtn.addEventListener("click", () => {
