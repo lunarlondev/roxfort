@@ -97,7 +97,7 @@
     draw();
 
     if (statusEl) {
-      statusEl.textContent = "FEED ME!";
+      statusEl.textContent = "Siiiiyah hassssaaashee!";
     }
   }
 
