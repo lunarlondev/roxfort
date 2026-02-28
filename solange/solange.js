@@ -114,17 +114,12 @@ function renderSelector() {
     img.src = p.image;
     img.alt = "";
 
-    const overlay = document.createElement("div");
-    overlay.className = "history-overlay";
+    const nameBelow = document.createElement("div");
+    nameBelow.className = "history-name-below";
+    nameBelow.textContent = p.name;
 
-    const name = document.createElement("div");
-    name.className = "history-name";
-    name.textContent = p.name;
-    name.setAttribute("data-text", p.name);
-
-    overlay.appendChild(name);
     card.appendChild(img);
-    card.appendChild(overlay);
+    card.appendChild(nameBelow);
 
     card.addEventListener("click", () => openPerspective(p.id, idx));
 
@@ -134,10 +129,7 @@ function renderSelector() {
 
   selector.appendChild(mainWrap);
   selector.appendChild(sideWrap);
-
-
 }
-
 
 /* ==============================
    RANDOM LOGIC
