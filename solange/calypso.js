@@ -213,11 +213,17 @@
   }
 
   document.addEventListener("keydown", e => {
-    if (e.key === "ArrowUp" || e.key === "w") setDir(0, -1);
-    if (e.key === "ArrowDown" || e.key === "s") setDir(0, 1);
-    if (e.key === "ArrowLeft" || e.key === "a") setDir(-1, 0);
-    if (e.key === "ArrowRight" || e.key === "d") setDir(1, 0);
-  });
+  const keys = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "w", "a", "s", "d"];
+
+  if (keys.includes(e.key)) {
+    e.preventDefault();
+  }
+
+  if (e.key === "ArrowUp" || e.key === "w") setDir(0, -1);
+  if (e.key === "ArrowDown" || e.key === "s") setDir(0, 1);
+  if (e.key === "ArrowLeft" || e.key === "a") setDir(-1, 0);
+  if (e.key === "ArrowRight" || e.key === "d") setDir(1, 0);
+});
 
   startBtn.addEventListener("click", () => {
     if (!running) {
