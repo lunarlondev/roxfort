@@ -77,6 +77,12 @@
       "Fruit ninja.",
       "Low-carb? Nem. Low-leg.",
       "Expecto Ssssnackum.",
+      "What do you call a snake who works for the government? A civil serpent",
+      "Can I slytherin to your chamber of secrets?",
+      "Nagini wouldn't bite this.",
+      "I'm the heir of Sssnacktherin!",
+      "Sssszóval alma.",
+      "Ez a játék KÍGYÓgyít minden bajból",
     ];
 
     return texts[Math.floor(Math.random() * texts.length)];
