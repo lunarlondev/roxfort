@@ -71,7 +71,6 @@
       "Callypso a legszebb π-ton.",
       "Melyik állat az abszolút férfi? A kígyó, mert gyakorlatilag az egész egy farok.",
       "A játék segít elterelni a figyelmet az esetleges logikai ütközésekről.",
-      "A kedvenc táncom a mamba.",
       "Siiiiyah hassssaaashee!",
       "…soo hungry… for so long…",
       "Fruit ninja.",
@@ -84,6 +83,10 @@
       "Sssszóval alma.",
       "Ez a játék KÍGYÓgyít minden bajból",
       "Some days you shed, some days you shine.",
+      "I’m just a little hiss-understood",
+      "Danger noodle, nope rope",
+      "Sss-snickers",
+      "Hiss me baby one more time!",
     ];
 
     return texts[Math.floor(Math.random() * texts.length)];
