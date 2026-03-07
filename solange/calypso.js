@@ -11,7 +11,7 @@
   const statusEl = document.querySelector("#calypso-game .calypso-status");
 
   const GRID = 20;
-  const SPEED = 130;
+  const SPEED = 150;
 
   let cell;
 
