@@ -1,7 +1,7 @@
 body{
 
-background:#111;
-color:#e5e5e5;
+background:#0f0f10;
+color:#e6e6e6;
 font-family:Segoe UI,Arial;
 padding:30px;
 margin:0;
@@ -10,7 +10,7 @@ margin:0;
 
 .app{
 
-max-width:900px;
+max-width:1000px;
 margin:auto;
 
 }
@@ -27,7 +27,7 @@ margin-bottom:25px;
 display:flex;
 flex-wrap:wrap;
 gap:10px;
-margin-bottom:20px;
+margin-bottom:25px;
 
 }
 
@@ -49,78 +49,95 @@ gap:5px;
 
 }
 
+/* kártya */
+
 .spell{
 
-background:#1a1a1a;
-border:1px solid #2a2a2a;
-padding:14px;
-border-radius:8px;
-margin-bottom:10px;
+position:relative;
+border-radius:10px;
+padding:16px;
+margin-bottom:14px;
+transition:0.2s;
 
 }
 
 .spell:hover{
 
-background:#222;
+transform:translateY(-2px);
 
 }
 
-.nev{
-
-font-size:18px;
-font-weight:bold;
-
-}
-
-.meta{
-
-font-size:13px;
-color:#aaa;
-
-}
-
-a{
-
-color:#7fb3ff;
-
-}
-
+/* kategória színek */
 
 .bubajok{
 
-border-left:4px solid #4aa3ff;
+background:linear-gradient(135deg,#1a2535,#111);
+border:1px solid #4aa3ff;
 
 }
 
 .vedekezes{
 
-border-left:4px solid #5ccf8a;
+background:linear-gradient(135deg,#1a2f2a,#111);
+border:1px solid #5ccf8a;
 
 }
 
 .gyogyitas{
 
-border-left:4px solid #4dd0e1;
+background:linear-gradient(135deg,#1a2f35,#111);
+border:1px solid #4dd0e1;
 
 }
 
 .atvaltoztatas{
 
-border-left:4px solid #d6a2ff;
+background:linear-gradient(135deg,#2b2133,#111);
+border:1px solid #d6a2ff;
 
 }
 
 .atkok{
 
-border-left:4px solid #ff5a5a;
+background:linear-gradient(135deg,#351a1a,#111);
+border:1px solid #ff5a5a;
 
 }
 
+/* ikonok */
+
+.icons{
+
+position:absolute;
+top:8px;
+left:10px;
+font-size:16px;
+display:flex;
+gap:6px;
+
+}
+
+/* év */
+
+.year{
+
+position:absolute;
+top:8px;
+right:10px;
+font-size:12px;
+color:#ccc;
+
+background:#0007;
+padding:3px 7px;
+border-radius:6px;
+
+}
 
 .nev{
 
 font-size:18px;
 font-weight:600;
+margin-top:6px;
 
 }
 
@@ -137,5 +154,34 @@ margin-left:6px;
 margin-top:6px;
 font-size:14px;
 color:#cfcfcf;
+
+}
+
+/* tagek */
+
+.tags{
+
+margin-top:10px;
+display:flex;
+flex-wrap:wrap;
+gap:6px;
+
+}
+
+.tag{
+
+background:#0008;
+padding:3px 6px;
+border-radius:6px;
+font-size:11px;
+
+}
+
+a{
+
+display:inline-block;
+margin-top:8px;
+color:#7fb3ff;
+font-size:13px;
 
 }

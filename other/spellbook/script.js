@@ -2,167 +2,136 @@ let spells = []
 
 async function init(){
 
-    try{
+try{
 
-        const res = await fetch("spells.json")
+const res = await fetch("spells.json")
+spells = await res.json()
 
-        spells = await res.json()
+}catch(e){
 
-    }catch(e){
+console.error("Nem sikerült betölteni a spells.json fájlt")
 
-        console.error("Nem sikerült betölteni a spells.json fájlt")
-
-    }
+}
 
 }
 
 init()
 
-
-
 document.querySelectorAll("input,select")
 .forEach(e => e.addEventListener("input", render))
 
-
-
 function render(){
 
-    const keres = document.getElementById("kereses").value.toLowerCase()
+const keres = document.getElementById("kereses").value.toLowerCase()
+const ev = parseInt(document.getElementById("ev").value)
+const kat = document.getElementById("kategoria").value
+const dark = document.getElementById("dark").checked
+const csakev = document.getElementById("csakev").checked
+const custom = document.getElementById("custom").checked
 
-    const ev = parseInt(document.getElementById("ev").value)
+const lista = document.getElementById("lista")
 
-    const kat = document.getElementById("kategoria").value
+lista.innerHTML=""
 
-    const dark = document.getElementById("dark").checked
+if(!keres && !ev && !kat && !dark && !custom){
 
-    const csakev = document.getElementById("csakev").checked
+lista.innerHTML="<p>Adj meg szűrőt a varázslatok kereséséhez.</p>"
+return
 
+}
 
+const talalatok = spells.filter(s => {
 
-    const lista = document.getElementById("lista")
+if(keres){
 
+const text = (s.name+" "+(s.hu||"")+" "+(s.description||"")+" "+(s.effects||[]).join(" ")).toLowerCase()
 
+if(!text.includes(keres)) return false
 
-    lista.innerHTML = ""
+}
 
+if(ev){
 
+if(csakev){
 
-    if(!keres && !ev && !kat && !dark){
+if(s.year!==ev) return false
 
-        lista.innerHTML = "<p>Adj meg szűrőt a varázslatok kereséséhez.</p>"
+}else{
 
-        return
+if(s.year>ev) return false
 
-    }
+}
 
+}
 
+if(kat && s.category!==kat) return false
+if(dark && !s.dark) return false
+if(custom && !s.custom) return false
 
-    const talalatok = spells.filter(s => {
+return true
 
+})
 
+if(talalatok.length===0){
 
-        if(keres){
+lista.innerHTML="<p>Nincs találat.</p>"
+return
 
-            const text = (s.name + " " + (s.hu || "") + " " + (s.description || "") + " " + (s.effects || []).join(" ")).toLowerCase()
+}
 
-            if(!text.includes(keres)) return false
+talalatok.forEach(s => {
 
-        }
+const div = document.createElement("div")
 
+div.className="spell "+s.category
 
+let icons=""
 
-        if(ev){
+if(s.custom) icons+="⭐"
+if(s.dark) icons+="☠"
+if(s.healing) icons+="✚"
+if(s.rare) icons+="📜"
 
-            if(csakev){
+if(s.effects){
 
-                if(s.year !== ev) return false
+if(s.effects.includes("tűz")) icons+="🔥"
+if(s.effects.includes("jég")) icons+="❄"
+if(s.effects.includes("villám")) icons+="⚡"
+if(s.effects.includes("fény")) icons+="✨"
 
-            }else{
+}
 
-                if(s.year > ev) return false
+let evszoveg = s.year==8 ? "Felsőoktatás" : s.year+". év"
 
-            }
+div.innerHTML=`
 
-        }
+<div class="icons">${icons}</div>
 
+<div class="year">${evszoveg}</div>
 
+<div class="nev">
+${s.name}
+<span class="hu">(${s.hu || "-"})</span>
+</div>
 
-        if(kat && s.category !== kat) return false
+<div class="desc">
+${s.description || ""}
+</div>
 
+<div class="tags">
 
+<span class="tag">${s.category}</span>
 
-        if(dark && !s.dark) return false
+${(s.effects||[]).map(e=>`<span class="tag">${e}</span>`).join("")}
 
+</div>
 
+<a href="${s.wiki}" target="_blank">Fandom oldal</a>
 
-        return true
+`
 
-    })
+lista.appendChild(div)
 
-
-
-    if(talalatok.length === 0){
-
-        lista.innerHTML = "<p>Nincs találat.</p>"
-
-        return
-
-    }
-
-
-
-    talalatok.forEach(s => {
-
-
-
-        const div = document.createElement("div")
-
-
-
-        div.className = "spell " + s.category
-
-
-
-        let evszoveg = s.year == 8 ? "Felsőoktatás" : s.year + ". év"
-
-
-
-        div.innerHTML = `
-
-        <div class="nev">
-
-        ${s.name}
-
-        <span class="hu">(${s.hu || "-"})</span>
-
-        </div>
-
-
-
-        <div class="meta">
-
-        Év: ${evszoveg}
-
-        </div>
-
-
-
-        <div class="desc">
-
-        ${s.description || ""}
-
-        </div>
-
-
-
-        <a href="${s.wiki}" target="_blank">Fandom oldal</a>
-
-        `
-
-
-
-        lista.appendChild(div)
-
-    })
+})
 
 }

@@ -45,13 +45,35 @@ for cat in categories:
             name = item["title"]
 
             spells[name] = {
+
                 "name": name,
                 "hu": "-",
+
+                # tanulási szint (alapból felsőoktatás)
                 "year": 8,
+
+                # kategória
                 "category": "bubajok",
+
+                # rövid leírás
                 "description": "",
+
+                # elemi vagy egyéb hatások
                 "effects": [],
+
+                # fekete mágia
                 "dark": False,
+
+                # gyógyító
+                "healing": False,
+
+                # saját varázslat (canon lista miatt default false)
+                "custom": False,
+
+                # speciális tanulás
+                "rare": False,
+
+                # wiki link
                 "wiki": "https://harrypotter.fandom.com/wiki/" + name.replace(" ", "_")
             }
 
@@ -69,4 +91,5 @@ with open("spells.json", "w", encoding="utf-8") as f:
     json.dump(spell_list, f, indent=2, ensure_ascii=False)
 
 print("spells.json létrehozva!")
+
 input("Enter a kilépéshez...")
