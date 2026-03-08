@@ -83,12 +83,7 @@ const lista = document.getElementById("lista")
 
 lista.innerHTML=""
 
-if(!keres && !ev && !kat && !dark && !custom){
 
-lista.innerHTML="<p>Adj meg szűrőt a varázslatok kereséséhez.</p>"
-return
-
-}
 
 /* szűrés */
 
