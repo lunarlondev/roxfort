@@ -126,61 +126,41 @@ box-shadow:
 /* BŰBÁJOK */
 
 .charm{
-
+background:linear-gradient(160deg,#1a2f55,#0e1524);
 border-color:#3f8cff;
-
-box-shadow:
-0 0 0 1px #3f8cff inset,
-0 0 18px rgba(63,140,255,.25);
-
 }
 
-/* VÉDEKEZÉS */
+/* VÉDEKEZÉS (SÁRGA) */
 
 .defense{
-
-border-color:#38d39f;
-
+background:linear-gradient(160deg,#4a3d00,#1e1700);
+border-color:#ffd23f;
 box-shadow:
-0 0 0 1px #38d39f inset,
-0 0 18px rgba(56,211,159,.25);
-
+0 0 0 1px #ffd23f inset,
+0 0 20px rgba(255,210,63,.35);
 }
 
 /* GYÓGYÍTÁS */
 
 .healing{
+background:linear-gradient(160deg,#12331f,#081a10);
 border-color:#4cd964;
-
-box-shadow:
-0 0 0 1px #4cd964 inset,
-0 0 14px rgba(76,217,100,.25);
 }
-
 
 /* ÁTVÁLTOZTATÁS */
 
 .transfiguration{
-
+background:linear-gradient(160deg,#362047,#150a21);
 border-color:#c08cff;
-
-box-shadow:
-0 0 0 1px #c08cff inset,
-0 0 18px rgba(192,140,255,.25);
-
 }
 
 /* ÁTKOK */
 
 .curse{
-
+background:linear-gradient(160deg,#3a0d0d,#150505);
 border-color:#ff5757;
-
-box-shadow:
-0 0 0 1px #ff5757 inset,
-0 0 18px rgba(255,87,87,.25);
-
 }
+
 
 /* ikonok */
 
@@ -359,4 +339,53 @@ letter-spacing:.3px;
 .spell:hover{
 transform:translateY(-4px) scale(1.01);
 box-shadow:0 14px 32px rgba(0,0,0,.75);
+}
+
+
+.customStar{
+
+position:absolute;
+top:10px;
+left:12px;
+
+font-size:22px;
+
+filter:drop-shadow(0 0 6px rgba(255,255,255,.6));
+
+}
+
+
+.legend{
+
+margin-bottom:20px;
+background:#141720;
+border:1px solid #2a2f3c;
+border-radius:10px;
+padding:10px;
+
+}
+
+.legendContent{
+
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+margin-top:10px;
+
+}
+
+.legendContent div{
+
+background:#1b2030;
+padding:6px 10px;
+border-radius:6px;
+cursor:pointer;
+font-size:13px;
+
+}
+
+.legendContent div:hover{
+
+background:#2c3550;
+
 }

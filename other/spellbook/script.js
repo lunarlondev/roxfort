@@ -160,18 +160,25 @@ function render(){
     const div=document.createElement("div");
     div.className="spell "+s.category;
 
-    let icons="";
+    /* BAL FELSŐ IKONOK */
 
-    if(s.custom) icons+="⭐";
-    if(s.dark) icons+="☠";
-    if(s.healing) icons+="✚";
-    if(s.rare) icons+="📜";
+    let cornerIcons="";
+
+    if(s.custom) cornerIcons+="⭐";
+    if(s.dark) cornerIcons+="☠";
+    if(s.healing) cornerIcons+="✚";
+    if(s.rare) cornerIcons+="📜";
+
+
+    /* EFFECT IKONOK (jobb felső) */
+
+    let effectIcons="";
 
     (s.effects||[]).forEach(e=>{
 
       if(effectData[e]){
 
-        icons+=`<span class="effect" title="${effectData[e].label}">${effectData[e].icon}</span>`;
+        effectIcons+=`<span class="effect" title="${effectData[e].label}">${effectData[e].icon}</span>`;
 
       }
 
@@ -192,7 +199,9 @@ function render(){
 
     div.innerHTML=`
 
-    <div class="icons">${icons}</div>
+    ${cornerIcons ? `<div class="customStar">${cornerIcons}</div>` : ""}
+
+    <div class="icons">${effectIcons}</div>
 
     <div class="year">${evszoveg}</div>
 
@@ -220,3 +229,36 @@ function render(){
   });
 
 }
+
+
+/* legend szűrés */
+
+document.querySelectorAll(".legendContent div")
+.forEach(el=>{
+
+  el.addEventListener("click",()=>{
+
+    const effect = el.dataset.effect;
+    const filter = el.dataset.filter;
+
+    if(effect){
+      document.getElementById("kereses").value = effect;
+    }
+
+    if(filter === "custom"){
+      document.getElementById("custom").checked = true;
+    }
+
+    if(filter === "dark"){
+      document.getElementById("kategoria").value = "dark";
+    }
+
+    if(filter === "healing"){
+      document.getElementById("kategoria").value = "healing";
+    }
+
+    render();
+
+  });
+
+});
