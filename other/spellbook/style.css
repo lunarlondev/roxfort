@@ -10,7 +10,7 @@ margin:0;
 
 .app{
 
-max-width:1000px;
+max-width:1100px;
 margin:auto;
 
 }
@@ -49,21 +49,42 @@ gap:5px;
 
 }
 
+/* lista grid */
+
+#lista{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:16px;
+
+}
+
+/* mobil */
+
+@media (max-width:700px){
+
+#lista{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
 /* kártya */
 
 .spell{
 
 position:relative;
 border-radius:10px;
-padding:16px;
-margin-bottom:14px;
+padding:26px 16px 16px 16px;
 transition:0.2s;
 
 }
 
 .spell:hover{
 
-transform:translateY(-2px);
+transform:translateY(-3px);
 
 }
 
@@ -110,10 +131,12 @@ border:1px solid #ff5a5a;
 
 position:absolute;
 top:8px;
-left:10px;
-font-size:16px;
+right:10px;
+
 display:flex;
-gap:6px;
+gap:8px;
+
+font-size:22px;
 
 }
 
@@ -122,8 +145,9 @@ gap:6px;
 .year{
 
 position:absolute;
-top:8px;
+top:38px;
 right:10px;
+
 font-size:12px;
 color:#ccc;
 
@@ -133,11 +157,13 @@ border-radius:6px;
 
 }
 
+/* spell név */
+
 .nev{
 
 font-size:18px;
 font-weight:600;
-margin-top:6px;
+margin-top:10px;
 
 }
 
@@ -148,6 +174,8 @@ font-weight:400;
 margin-left:6px;
 
 }
+
+/* leírás */
 
 .desc{
 
@@ -177,6 +205,8 @@ font-size:11px;
 
 }
 
+/* link */
+
 a{
 
 display:inline-block;
@@ -186,7 +216,11 @@ font-size:13px;
 
 }
 
+/* effect ikon */
 
 .effect{
+
 cursor:help;
+font-size:22px;
+
 }
