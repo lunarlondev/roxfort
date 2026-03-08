@@ -39,19 +39,6 @@
     "wiki": "https://harrypotter.fandom.com/wiki/Aberforth_Dumbledore's_goat_charm"
   },
   {
-    "name": "Aguamenti",
-    "hu": "-",
-    "year": 2,
-    "category": "charm",
-    "description": "",
-    "effects": ["víz"],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Aguamenti_Maxima"
-  },
-  {
     "name": "Alohomora",
     "hu": "-",
     "year": 1,
