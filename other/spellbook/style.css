@@ -1,6 +1,6 @@
 body{
 
-background:#0f1116;
+background:radial-gradient(circle at 50% 0%,#1b1f2a,#0b0d13);
 color:#e6e6e6;
 font-family:Segoe UI,Arial;
 padding:30px;
@@ -22,9 +22,10 @@ margin:auto;
 h1{
 
 text-align:center;
-margin-bottom:30px;
-font-weight:600;
-letter-spacing:1px;
+margin-bottom:35px;
+font-weight:700;
+letter-spacing:2px;
+font-size:28px;
 
 }
 
@@ -35,17 +36,18 @@ letter-spacing:1px;
 display:flex;
 flex-wrap:wrap;
 gap:10px;
-margin-bottom:30px;
+margin-bottom:25px;
 
 }
 
 input,select{
 
-background:#1a1c22;
-border:1px solid #2e3138;
+background:#141720;
+border:1px solid #2a2f3c;
 color:white;
-padding:8px 10px;
-border-radius:6px;
+padding:9px 12px;
+border-radius:8px;
+font-size:14px;
 
 }
 
@@ -55,77 +57,120 @@ border-radius:6px;
 
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:18px;
+gap:20px;
 
 }
 
 @media (max-width:700px){
 
 #lista{
-
 grid-template-columns:1fr;
-
 }
 
 }
 
-/* kártya */
+/* -------- SPELL CARD -------- */
 
 .spell{
 
 position:relative;
-border-radius:12px;
-padding:26px 18px 18px 18px;
 
-transition:all .25s ease;
+padding:24px 20px 20px 20px;
+
+border-radius:16px;
+
+background:linear-gradient(180deg,#161a25,#0f121a);
+
+border:1px solid rgba(255,255,255,0.06);
+
+transition:.25s;
 
 box-shadow:
-0 4px 14px rgba(0,0,0,0.45);
+0 8px 24px rgba(0,0,0,.55);
+
+overflow:hidden;
+
+}
+
+.spell::before{
+
+content:"";
+position:absolute;
+inset:0;
+opacity:.08;
+background:radial-gradient(circle at 80% 10%,white,transparent 60%);
+pointer-events:none;
 
 }
 
 .spell:hover{
 
-transform:translateY(-4px);
+transform:translateY(-5px) scale(1.01);
+
 box-shadow:
-0 6px 18px rgba(0,0,0,0.55);
+0 12px 30px rgba(0,0,0,.7);
 
 }
 
-/* kategória színek */
+/* ---------- CATEGORY COLORS ---------- */
+
+/* BŰBÁJOK */
 
 .charm{
 
-background:linear-gradient(135deg,#1a2535,#111);
-border:1px solid #4aa3ff;
+border-color:#3f8cff;
+
+box-shadow:
+0 0 0 1px #3f8cff inset,
+0 0 18px rgba(63,140,255,.25);
 
 }
+
+/* VÉDEKEZÉS */
 
 .defense{
 
-background:linear-gradient(135deg,#1a2f2a,#111);
-border:1px solid #5ccf8a;
+border-color:#38d39f;
+
+box-shadow:
+0 0 0 1px #38d39f inset,
+0 0 18px rgba(56,211,159,.25);
 
 }
+
+/* GYÓGYÍTÁS */
 
 .healing{
 
-background:linear-gradient(135deg,#1a2f35,#111);
-border:1px solid #4dd0e1;
+border-color:#58e1ff;
+
+box-shadow:
+0 0 0 1px #58e1ff inset,
+0 0 18px rgba(88,225,255,.25);
 
 }
+
+/* ÁTVÁLTOZTATÁS */
 
 .transfiguration{
 
-background:linear-gradient(135deg,#2b2133,#111);
-border:1px solid #d6a2ff;
+border-color:#c08cff;
+
+box-shadow:
+0 0 0 1px #c08cff inset,
+0 0 18px rgba(192,140,255,.25);
 
 }
 
+/* ÁTKOK */
+
 .curse{
 
-background:linear-gradient(135deg,#351a1a,#111);
-border:1px solid #ff5a5a;
+border-color:#ff5757;
+
+box-shadow:
+0 0 0 1px #ff5757 inset,
+0 0 18px rgba(255,87,87,.25);
 
 }
 
@@ -134,13 +179,13 @@ border:1px solid #ff5a5a;
 .icons{
 
 position:absolute;
-top:10px;
-right:12px;
+top:12px;
+right:14px;
 
 display:flex;
-gap:8px;
+gap:10px;
 
-font-size:22px;
+font-size:24px;
 
 }
 
@@ -149,19 +194,21 @@ font-size:22px;
 .year{
 
 position:absolute;
-top:42px;
-right:12px;
+top:48px;
+right:14px;
 
-font-size:14px;
+font-size:13px;
 font-weight:600;
 
-color:white;
+color:#eaeaea;
 
-background:rgba(0,0,0,0.45);
+background:rgba(0,0,0,.45);
+
 padding:4px 10px;
-border-radius:8px;
 
-letter-spacing:0.4px;
+border-radius:10px;
+
+letter-spacing:.4px;
 
 }
 
@@ -169,15 +216,15 @@ letter-spacing:0.4px;
 
 .nev{
 
-font-size:19px;
-font-weight:600;
-margin-top:10px;
+font-size:20px;
+font-weight:700;
+margin-top:8px;
 
 }
 
 .hu{
 
-color:#9fa6b0;
+color:#9da6b6;
 font-weight:400;
 margin-left:6px;
 
@@ -189,8 +236,8 @@ margin-left:6px;
 
 margin-top:8px;
 font-size:14px;
-line-height:1.45;
-color:#cfd3da;
+line-height:1.5;
+color:#cfd5df;
 
 }
 
@@ -198,7 +245,7 @@ color:#cfd3da;
 
 .tags{
 
-margin-top:12px;
+margin-top:14px;
 display:flex;
 flex-wrap:wrap;
 gap:6px;
@@ -207,10 +254,14 @@ gap:6px;
 
 .tag{
 
-background:#0008;
+background:rgba(255,255,255,.08);
+
 padding:4px 8px;
 border-radius:6px;
+
 font-size:11px;
+
+letter-spacing:.3px;
 
 }
 
@@ -219,9 +270,12 @@ font-size:11px;
 a{
 
 display:inline-block;
-margin-top:10px;
+margin-top:12px;
+
 color:#7fb3ff;
+
 font-size:13px;
+
 text-decoration:none;
 
 }
@@ -241,18 +295,22 @@ font-size:22px;
 
 }
 
+/* note */
 
 .note{
 
-margin-top:-15px;
-margin-bottom:20px;
+margin-top:-10px;
+margin-bottom:22px;
 
 font-size:13px;
 color:#9fa6b0;
 
-background:#1a1c22;
-padding:8px 12px;
-border-radius:8px;
-border:1px solid #2e3138;
+background:#141720;
+
+padding:10px 14px;
+
+border-radius:10px;
+
+border:1px solid #2a2f3c;
 
 }
