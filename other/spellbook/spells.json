@@ -1768,8 +1768,8 @@
     "wiki": "https://harrypotter.fandom.com/wiki/Illusion_charm"
   },
   {
-    "name": "Impervius Charm",
-    "hu": "Imperio",
+    "name": "Impervus Charm",
+    "hu": "-",
     "year": 0,
     "category": "curse",
     "description": "",
@@ -1785,8 +1785,8 @@
     "hu": "-",
     "year": 8,
     "category": "charm",
-    "description": "",
-    "effects": [],
+    "description": "Víztaszítóvá változtat tárgyakat.",
+    "effects": ["víz"],
     "dark": false,
     "healing": false,
     "custom": false,
@@ -6460,5 +6460,44 @@
     "custom": true,
     "rare": false,
     "wiki": ""
+  },
+  {
+    "name": "Imperius Curse",
+    "hu": "Imperio",
+    "year": 0,
+    "category": "curse",
+    "description": "Élőlényeket vonhatunk vele az irányításunk alá. Főbenjáró átok.",
+    "effects": [],
+    "dark": true,
+    "healing": false,
+    "custom": false,
+    "rare": true,
+    "wiki": "https://harrypotter.fandom.com/wiki/Imperius_Curse"
+  },
+  {
+    "name": "Cruciatus Curse",
+    "hu": "Crucio",
+    "year": 0,
+    "category": "curse",
+    "description": "Élőlények kínzására szolgáló átok, a legkegyetlenebb kínzó átok. Főbenjáró átok.",
+    "effects": [],
+    "dark": true,
+    "healing": false,
+    "custom": false,
+    "rare": true,
+    "wiki": "https://harrypotter.fandom.com/wiki/Cruciatus_Curse"
+  },
+  {
+    "name": "Killing Curse",
+    "hu": "Avada Kedavra",
+    "year": 0,
+    "category": "curse",
+    "description": "A gyilkos átok. Főbenjáró átok.",
+     "effects": [],
+    "dark": true,
+    "healing": false,
+    "custom": false,
+    "rare": true,
+    "wiki": "https://harrypotter.fandom.com/wiki/Killing_Curse"
   }
 ]
