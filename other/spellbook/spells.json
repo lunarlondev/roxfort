@@ -85,7 +85,7 @@
     "description": "Vágásokat gyógyít be. Ha idejében használják, akár súlyos sérüléseket is be lehet gyógyítani vele, ha valaki megtanulja jól használni.",
     "effects": ["gyógyítás"],
     "dark": false,
-    "healing": false,
+    "healing": true,
     "custom": false,
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Vulnera_Sanentur"
@@ -173,7 +173,7 @@
     "hu": "-",
     "year": 8,
     "category": "charm",
-    "description": " A célzott zöldségek meghámozzák magukat. Élőlényekre hatástalan.",
+    "description": "A célzott zöldségek meghámozzák magukat. Élőlényekre hatástalan.",
     "effects": ["háztartásmágia"],
     "dark": false,
     "healing": false,
@@ -182,7 +182,7 @@
     "wiki": ""
   },
   {
-    "name": "Vaporare ",
+    "name": "Vaporare",
     "hu": "-",
     "year": 8,
     "category": "charm",
@@ -267,7 +267,7 @@
     "description": "Lobogó lángot szivárványszínűre változtató varázslat.",
     "effects": ["módosítás"],
     "dark": false,
-    "healing": true,
+    "healing": false,
     "custom": true,
     "rare": false,
     "wiki": ""
@@ -280,7 +280,7 @@
     "description": "Páncélt, fegyverzetet, üstöket, trófeákat megtisztító varázsige.",
     "effects": ["háztartásmágia"],
     "dark": false,
-    "healing": true,
+    "healing": false,
     "custom": true,
     "rare": false,
     "wiki": ""
@@ -508,7 +508,7 @@ Erősebb mágiával rendelkező személyek irányítani is tudják ezeket a szir
     "wiki": ""
   },
  {
-    "name": "Rursus  Finis",
+    "name": "Rursus Finis",
     "hu": "Rursus  Finis",
     "year": 1,
     "category": "charm",
@@ -526,7 +526,7 @@ Erősebb mágiával rendelkező személyek irányítani is tudják ezeket a szir
     "year": 1,
     "category": "charm",
     "description": "A pálca hegyét észak felé fordítja.",
-    "effects": [""],
+    "effects": [],
     "dark": false,
     "healing": false,
     "custom": false,
@@ -548,11 +548,11 @@ Erősebb mágiával rendelkező személyek irányítani is tudják ezeket a szir
   },
  {
     "name": "Tempus",
-    "hu": "Tempus ",
+    "hu": "Tempus",
     "year": 1,
     "category": "charm",
     "description": "Egyszerű bűbáj, megmutatja az időt, ha az illetőnek nincs órája.",
-    "effects": [""],
+    "effects": [],
     "dark": false,
     "healing": false,
     "custom": true,
