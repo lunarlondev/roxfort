@@ -1,31 +1,5 @@
 [
   {
-    "name": "Spell",
-    "hu": "-",
-    "year": 8,
-    "category": "bubajok",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Spell"
-  },
-  {
-    "name": "List of spells",
-    "hu": "-",
-    "year": 8,
-    "category": "bubajok",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/List_of_spells"
-  },
-  {
     "name": "Maxima",
     "hu": "-",
     "year": 8,
