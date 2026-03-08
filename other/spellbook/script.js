@@ -262,3 +262,17 @@ document.querySelectorAll(".legendContent div")
   });
 
 });
+
+
+document.getElementById("clearFilters").addEventListener("click", () => {
+
+  document.getElementById("kereses").value="";
+  document.getElementById("ev").value="";
+  document.getElementById("kategoria").value="";
+
+  document.getElementById("csakev").checked=false;
+  document.getElementById("custom").checked=false;
+
+  render();
+
+});
