@@ -90,40 +90,41 @@ transform:translateY(-3px);
 
 /* kategória színek */
 
-.bubajok{
+.charm{
 
 background:linear-gradient(135deg,#1a2535,#111);
 border:1px solid #4aa3ff;
 
 }
 
-.vedekezes{
+.defense{
 
 background:linear-gradient(135deg,#1a2f2a,#111);
 border:1px solid #5ccf8a;
 
 }
 
-.gyogyitas{
+.healing{
 
 background:linear-gradient(135deg,#1a2f35,#111);
 border:1px solid #4dd0e1;
 
 }
 
-.atvaltoztatas{
+.transfiguration{
 
 background:linear-gradient(135deg,#2b2133,#111);
 border:1px solid #d6a2ff;
 
 }
 
-.atkok{
+.curse{
 
 background:linear-gradient(135deg,#351a1a,#111);
 border:1px solid #ff5a5a;
 
 }
+
 
 /* ikonok */
 

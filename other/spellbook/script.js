@@ -1,3 +1,14 @@
+const categoryNames = {
+
+charm: "Bűbájok",
+defense: "Védekezések",
+healing: "Gyógyítások",
+transfiguration: "Átváltoztatások / idézések",
+curse: "Ártások / rontások / átkok"
+
+}
+
+
 let spells = []
 
 /* effect rendszer */
@@ -185,7 +196,7 @@ ${s.description || ""}
 
 <div class="tags">
 
-<span class="tag">${s.category}</span>
+<span class="tag">${categoryNames[s.category] || s.category}</span>
 
 ${(s.effects||[])
 .map(e=>`<span class="tag">${e}</span>`)
