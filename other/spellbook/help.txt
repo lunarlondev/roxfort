@@ -1,0 +1,37 @@
+Szín kategóriák:
+charm
+defense
+healing
+transfiguration
+curse
+
+
+
+Ikonok:
+tűz:{icon:"🔥",label:"Tűz"},
+víz:{icon:"🌊",label:"Víz"},
+jég:{icon:"❄",label:"Jég / fagy"},
+villám:{icon:"⚡",label:"Villám / elektromosság"},
+fény:{icon:"✨",label:"Fényvarázs"},
+sötétség:{icon:"🌑",label:"Sötétségmágia"},
+
+robbanás:{icon:"💥",label:"Robbanás"},
+lökés:{icon:"🌬",label:"Erőhullám"},
+kötözés:{icon:"⛓",label:"Mozgáskorlátozás"},
+bénítás:{icon:"🪨",label:"Bénító hatás"},
+pajzs:{icon:"🛡",label:"Védőpajzs"},
+
+gyógyítás:{icon:"✚",label:"Gyógyító mágia"},
+méreg:{icon:"☠",label:"Méreg"},
+vér:{icon:"🩸",label:"Vérmágia"},
+
+mozgás:{icon:"🌀",label:"Mozgatás / teleport / taszítás"},
+tárgymozgatás:{icon:"🪶",label:"Telekinézis"},
+
+idézés:{icon:"📣",label:"Idézés"},
+irányítás:{icon:"🎯",label:"Irányítás"},
+láthatatlanság:{icon:"👁‍🗨",label:"Láthatatlanság"},
+illúzió:{icon:"🎭",label:"Illúzió"},
+
+háztartásmágia:{icon:"🧹",label:"Háztartási varázslat"},
+párbajvarázslat:{icon:"⚔",label:"Párbajvarázslat"}

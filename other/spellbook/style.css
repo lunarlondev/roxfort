@@ -1,12 +1,14 @@
 body{
 
-background:#0f0f10;
+background:#0f1116;
 color:#e6e6e6;
 font-family:Segoe UI,Arial;
 padding:30px;
 margin:0;
 
 }
+
+/* app */
 
 .app{
 
@@ -15,51 +17,47 @@ margin:auto;
 
 }
 
+/* cím */
+
 h1{
 
 text-align:center;
-margin-bottom:25px;
+margin-bottom:30px;
+font-weight:600;
+letter-spacing:1px;
 
 }
+
+/* szűrők */
 
 .filters{
 
 display:flex;
 flex-wrap:wrap;
 gap:10px;
-margin-bottom:25px;
+margin-bottom:30px;
 
 }
 
 input,select{
 
-background:#1b1b1b;
-border:1px solid #333;
+background:#1a1c22;
+border:1px solid #2e3138;
 color:white;
-padding:8px;
+padding:8px 10px;
 border-radius:6px;
 
 }
 
-.checkbox{
-
-display:flex;
-align-items:center;
-gap:5px;
-
-}
-
-/* lista grid */
+/* lista */
 
 #lista{
 
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:16px;
+gap:18px;
 
 }
-
-/* mobil */
 
 @media (max-width:700px){
 
@@ -76,15 +74,21 @@ grid-template-columns:1fr;
 .spell{
 
 position:relative;
-border-radius:10px;
-padding:26px 16px 16px 16px;
-transition:0.2s;
+border-radius:12px;
+padding:26px 18px 18px 18px;
+
+transition:all .25s ease;
+
+box-shadow:
+0 4px 14px rgba(0,0,0,0.45);
 
 }
 
 .spell:hover{
 
-transform:translateY(-3px);
+transform:translateY(-4px);
+box-shadow:
+0 6px 18px rgba(0,0,0,0.55);
 
 }
 
@@ -125,14 +129,13 @@ border:1px solid #ff5a5a;
 
 }
 
-
 /* ikonok */
 
 .icons{
 
 position:absolute;
-top:8px;
-right:10px;
+top:10px;
+right:12px;
 
 display:flex;
 gap:8px;
@@ -146,23 +149,27 @@ font-size:22px;
 .year{
 
 position:absolute;
-top:38px;
-right:10px;
+top:42px;
+right:12px;
 
-font-size:12px;
-color:#ccc;
+font-size:14px;
+font-weight:600;
 
-background:#0007;
-padding:3px 7px;
-border-radius:6px;
+color:white;
+
+background:rgba(0,0,0,0.45);
+padding:4px 10px;
+border-radius:8px;
+
+letter-spacing:0.4px;
 
 }
 
-/* spell név */
+/* név */
 
 .nev{
 
-font-size:18px;
+font-size:19px;
 font-weight:600;
 margin-top:10px;
 
@@ -170,7 +177,7 @@ margin-top:10px;
 
 .hu{
 
-color:#aaa;
+color:#9fa6b0;
 font-weight:400;
 margin-left:6px;
 
@@ -180,9 +187,10 @@ margin-left:6px;
 
 .desc{
 
-margin-top:6px;
+margin-top:8px;
 font-size:14px;
-color:#cfcfcf;
+line-height:1.45;
+color:#cfd3da;
 
 }
 
@@ -190,7 +198,7 @@ color:#cfcfcf;
 
 .tags{
 
-margin-top:10px;
+margin-top:12px;
 display:flex;
 flex-wrap:wrap;
 gap:6px;
@@ -200,7 +208,7 @@ gap:6px;
 .tag{
 
 background:#0008;
-padding:3px 6px;
+padding:4px 8px;
 border-radius:6px;
 font-size:11px;
 
@@ -211,9 +219,16 @@ font-size:11px;
 a{
 
 display:inline-block;
-margin-top:8px;
+margin-top:10px;
 color:#7fb3ff;
 font-size:13px;
+text-decoration:none;
+
+}
+
+a:hover{
+
+text-decoration:underline;
 
 }
 
