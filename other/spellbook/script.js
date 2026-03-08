@@ -26,7 +26,7 @@ const effectData = {
   méreg:{icon:"☠",label:"Méreg"},
   vér:{icon:"🩸",label:"Vérmágia"},
   mozgás:{icon:"🌀",label:"Mozgás"},
-  tárgymozgatás:{icon:"🪶",label:"Telekinézis"},
+  tárgymozgatás:{icon:"🪶",label:"Tárgymozgatás"},
   átváltoztatás:{icon:"🏆",label:"Átváltoztatás"},
   módosítás:{icon:"🌈",label:"Módosítás"},
   idézés:{icon:"📣",label:"Idézés"},
