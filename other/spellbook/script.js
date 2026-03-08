@@ -52,18 +52,19 @@ if(!text.includes(keres)) return false
 
 if(ev){
 
+const year = Number(s.year)
+
 if(csakev){
 
-if(s.year!==ev) return false
+if(year !== ev) return false
 
 }else{
 
-if(s.year>ev) return false
+if(year > ev) return false
 
 }
 
 }
-
 if(kat && s.category!==kat) return false
 if(dark && !s.dark) return false
 if(custom && !s.custom) return false
