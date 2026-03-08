@@ -84,3 +84,58 @@ a{
 color:#7fb3ff;
 
 }
+
+
+.bubajok{
+
+border-left:4px solid #4aa3ff;
+
+}
+
+.vedekezes{
+
+border-left:4px solid #5ccf8a;
+
+}
+
+.gyogyitas{
+
+border-left:4px solid #4dd0e1;
+
+}
+
+.atvaltoztatas{
+
+border-left:4px solid #d6a2ff;
+
+}
+
+.atkok{
+
+border-left:4px solid #ff5a5a;
+
+}
+
+
+.nev{
+
+font-size:18px;
+font-weight:600;
+
+}
+
+.hu{
+
+color:#aaa;
+font-weight:400;
+margin-left:6px;
+
+}
+
+.desc{
+
+margin-top:6px;
+font-size:14px;
+color:#cfcfcf;
+
+}

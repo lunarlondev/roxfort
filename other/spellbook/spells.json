@@ -1,12 +1,68 @@
 [
 {
+"name":"Lumos",
+"hu":"Fénybűbáj",
+"year":1,
+"category":"bubajok",
+"description":"Fényt hoz létre a pálca végén.",
+"effects":["fény"],
+"dark":false,
+"wiki":"https://harrypotter.fandom.com/wiki/Lumos"
+},
+
+{
+"name":"Nox",
+"hu":"-",
+"year":1,
+"category":"bubajok",
+"description":"Megszünteti a Lumos varázslat fényét.",
+"effects":["fény"],
+"dark":false,
+"wiki":"https://harrypotter.fandom.com/wiki/Nox"
+},
+
+{
+"name":"Alohomora",
+"hu":"Zárnyitó bűbáj",
+"year":1,
+"category":"bubajok",
+"description":"Kinyitja a zárt ajtókat és lakatokat.",
+"effects":["zár"],
+"dark":false,
+"wiki":"https://harrypotter.fandom.com/wiki/Alohomora"
+},
+
+{
+"name":"Wingardium Leviosa",
+"hu":"Lebegtető bűbáj",
+"year":1,
+"category":"bubajok",
+"description":"Lebegtet egy tárgyat a levegőben.",
+"effects":["lebegés"],
+"dark":false,
+"wiki":"https://harrypotter.fandom.com/wiki/Wingardium_Leviosa"
+},
+
+{
 "name":"Incendio",
 "hu":"Tűzgyújtó bűbáj",
 "year":1,
 "category":"bubajok",
+"description":"Tüzet hoz létre a pálca végéből.",
 "effects":["tűz"],
 "dark":false,
 "wiki":"https://harrypotter.fandom.com/wiki/Incendio"
+},
+
+{
+"name":"Expelliarmus",
+"hu":"Fegyvertelenítő bűbáj",
+"year":2,
+"category":"vedekezes",
+"description":"Kicsavarja az ellenfél kezéből a pálcát.",
+"effects":["fegyver"],
+"dark":false,
+"wiki":"https://harrypotter.fandom.com/wiki/Expelliarmus"
 },
 
 {
@@ -14,9 +70,142 @@
 "hu":"Pajzsbűbáj",
 "year":3,
 "category":"vedekezes",
+"description":"Mágikus pajzsot hoz létre támadások ellen.",
 "effects":["pajzs"],
 "dark":false,
 "wiki":"https://harrypotter.fandom.com/wiki/Protego"
+},
+
+{
+"name":"Rictusempra",
+"hu":"-",
+"year":2,
+"category":"atkok",
+"description":"Csiklandozó ártás, amely nevetésre kényszerít.",
+"effects":["zavarás"],
+"dark":false,
+"wiki":"https://harrypotter.fandom.com/wiki/Rictusempra"
+},
+
+{
+"name":"Stupefy",
+"hu":"Kábító bűbáj",
+"year":4,
+"category":"vedekezes",
+"description":"Eszméletlenné teszi az ellenfelet.",
+"effects":["kábítás"],
+"dark":false,
+"wiki":"https://harrypotter.fandom.com/wiki/Stunning_Spell"
+},
+
+{
+"name":"Expecto Patronum",
+"hu":"Patrónus bűbáj",
+"year":5,
+"category":"vedekezes",
+"description":"Megidéz egy Patrónust, amely elűzi a dementorokat.",
+"effects":["védelem"],
+"dark":false,
+"wiki":"https://harrypotter.fandom.com/wiki/Patronus_Charm"
+},
+
+{
+"name":"Accio",
+"hu":"Idéző bűbáj",
+"year":4,
+"category":"atvaltoztatas",
+"description":"Magához hív egy tárgyat.",
+"effects":["idézés"],
+"dark":false,
+"wiki":"https://harrypotter.fandom.com/wiki/Summoning_Charm"
+},
+
+{
+"name":"Reparo",
+"hu":"Javító bűbáj",
+"year":1,
+"category":"bubajok",
+"description":"Megjavít törött tárgyakat.",
+"effects":["javítás"],
+"dark":false,
+"wiki":"https://harrypotter.fandom.com/wiki/Reparo"
+},
+
+{
+"name":"Finite Incantatem",
+"hu":"-",
+"year":4,
+"category":"vedekezes",
+"description":"Megszüntet egy aktív varázslatot.",
+"effects":["semlegesítés"],
+"dark":false,
+"wiki":"https://harrypotter.fandom.com/wiki/General_Counter-Spell"
+},
+
+{
+"name":"Glacius",
+"hu":"-",
+"year":4,
+"category":"bubajok",
+"description":"Jéggé fagyaszt egy célpontot.",
+"effects":["jég"],
+"dark":false,
+"wiki":"https://harrypotter.fandom.com/wiki/Glacius"
+},
+
+{
+"name":"Diffindo",
+"hu":"Vágó bűbáj",
+"year":4,
+"category":"bubajok",
+"description":"Éles vágást hoz létre.",
+"effects":["vágás"],
+"dark":false,
+"wiki":"https://harrypotter.fandom.com/wiki/Severing_Charm"
+},
+
+{
+"name":"Sectumsempra",
+"hu":"-",
+"year":6,
+"category":"atkok",
+"description":"Mélységes vágásokat okoz a célponton.",
+"effects":["vágás"],
+"dark":true,
+"wiki":"https://harrypotter.fandom.com/wiki/Sectumsempra"
+},
+
+{
+"name":"Vulnera Sanentur",
+"hu":"-",
+"year":6,
+"category":"gyogyitas",
+"description":"Súlyos sebek gyógyítására szolgáló varázslat.",
+"effects":["gyógyítás"],
+"dark":false,
+"wiki":"https://harrypotter.fandom.com/wiki/Vulnera_Sanentur"
+},
+
+{
+"name":"Crucio",
+"hu":"Kínzó átok",
+"year":7,
+"category":"atkok",
+"description":"Elviselhetetlen fájdalmat okoz.",
+"effects":["kínzás"],
+"dark":true,
+"wiki":"https://harrypotter.fandom.com/wiki/Cruciatus_Curse"
+},
+
+{
+"name":"Imperio",
+"hu":"Befolyásoló átok",
+"year":7,
+"category":"atkok",
+"description":"Teljes irányítást ad a célpont felett.",
+"effects":["kontroll"],
+"dark":true,
+"wiki":"https://harrypotter.fandom.com/wiki/Imperius_Curse"
 },
 
 {
@@ -24,6 +213,7 @@
 "hu":"Halálos átok",
 "year":7,
 "category":"atkok",
+"description":"Azonnal megöli a célpontot.",
 "effects":["halál"],
 "dark":true,
 "wiki":"https://harrypotter.fandom.com/wiki/Avada_Kedavra"
@@ -32,11 +222,44 @@
 {
 "name":"Fiendfyre",
 "hu":"-",
-"year":felsőoktatás,
+"year":8,
 "category":"atkok",
+"description":"Kontrollálhatatlan mágikus pokoltűz.",
 "effects":["tűz"],
 "dark":true,
 "wiki":"https://harrypotter.fandom.com/wiki/Fiendfyre"
-}
+},
 
+{
+"name":"Obliviate",
+"hu":"Feledtető bűbáj",
+"year":6,
+"category":"bubajok",
+"description":"Eltörli a célpont emlékeit.",
+"effects":["emlék"],
+"dark":false,
+"wiki":"https://harrypotter.fandom.com/wiki/Memory_Charm"
+},
+
+{
+"name":"Silencio",
+"hu":"-",
+"year":5,
+"category":"bubajok",
+"description":"Elhallgattatja a célpontot.",
+"effects":["csend"],
+"dark":false,
+"wiki":"https://harrypotter.fandom.com/wiki/Silencing_Charm"
+},
+
+{
+"name":"Reducto",
+"hu":"-",
+"year":5,
+"category":"bubajok",
+"description":"Felrobbant egy tárgyat.",
+"effects":["robbanás"],
+"dark":false,
+"wiki":"https://harrypotter.fandom.com/wiki/Reductor_Curse"
+}
 ]

@@ -1,94 +1,168 @@
-let spells=[]
-
-let searched=false
+let spells = []
 
 async function init(){
 
-const res=await fetch("spells.json")
+    try{
 
-spells=await res.json()
+        const res = await fetch("spells.json")
+
+        spells = await res.json()
+
+    }catch(e){
+
+        console.error("Nem sikerült betölteni a spells.json fájlt")
+
+    }
 
 }
 
 init()
 
+
+
 document.querySelectorAll("input,select")
-.forEach(e=>e.addEventListener("input",render))
+.forEach(e => e.addEventListener("input", render))
+
+
 
 function render(){
 
-const keres=document.getElementById("kereses").value.toLowerCase()
+    const keres = document.getElementById("kereses").value.toLowerCase()
 
-const ev=parseInt(document.getElementById("ev").value)
+    const ev = parseInt(document.getElementById("ev").value)
 
-const kat=document.getElementById("kategoria").value
+    const kat = document.getElementById("kategoria").value
 
-const dark=document.getElementById("dark").checked
+    const dark = document.getElementById("dark").checked
 
-const lista=document.getElementById("lista")
+    const csakev = document.getElementById("csakev").checked
 
-lista.innerHTML=""
 
-if(!keres && !ev && !kat && !dark){
 
-lista.innerHTML="<p>Adj meg szűrőt a varázslatok kereséséhez.</p>"
+    const lista = document.getElementById("lista")
 
-return
 
-}
 
-const talalatok=spells.filter(s=>{
+    lista.innerHTML = ""
 
-if(keres){
 
-const text=(s.name+" "+s.hu+" "+s.effects.join(" ")).toLowerCase()
 
-if(!text.includes(keres)) return false
+    if(!keres && !ev && !kat && !dark){
 
-}
+        lista.innerHTML = "<p>Adj meg szűrőt a varázslatok kereséséhez.</p>"
 
-if(ev && s.year>ev) return false
+        return
 
-if(kat && s.category!==kat) return false
+    }
 
-if(dark && !s.dark) return false
 
-return true
 
-})
+    const talalatok = spells.filter(s => {
 
-if(talalatok.length===0){
 
-lista.innerHTML="<p>Nincs találat.</p>"
 
-return
+        if(keres){
 
-}
+            const text = (s.name + " " + (s.hu || "") + " " + (s.description || "") + " " + (s.effects || []).join(" ")).toLowerCase()
 
-talalatok.forEach(s=>{
+            if(!text.includes(keres)) return false
 
-const div=document.createElement("div")
+        }
 
-div.className="spell"
 
-div.innerHTML=`
 
-<div class="nev">${s.name}</div>
+        if(ev){
 
-<div class="meta">
+            if(csakev){
 
-Magyar: ${s.hu || "-"} |
+                if(s.year !== ev) return false
 
-Év: ${s.year}
+            }else{
 
-</div>
+                if(s.year > ev) return false
 
-<a href="${s.wiki}" target="_blank">Fandom oldal</a>
+            }
 
-`
+        }
 
-lista.appendChild(div)
 
-})
+
+        if(kat && s.category !== kat) return false
+
+
+
+        if(dark && !s.dark) return false
+
+
+
+        return true
+
+    })
+
+
+
+    if(talalatok.length === 0){
+
+        lista.innerHTML = "<p>Nincs találat.</p>"
+
+        return
+
+    }
+
+
+
+    talalatok.forEach(s => {
+
+
+
+        const div = document.createElement("div")
+
+
+
+        div.className = "spell " + s.category
+
+
+
+        let evszoveg = s.year == 8 ? "Felsőoktatás" : s.year + ". év"
+
+
+
+        div.innerHTML = `
+
+        <div class="nev">
+
+        ${s.name}
+
+        <span class="hu">(${s.hu || "-"})</span>
+
+        </div>
+
+
+
+        <div class="meta">
+
+        Év: ${evszoveg}
+
+        </div>
+
+
+
+        <div class="desc">
+
+        ${s.description || ""}
+
+        </div>
+
+
+
+        <a href="${s.wiki}" target="_blank">Fandom oldal</a>
+
+        `
+
+
+
+        lista.appendChild(div)
+
+    })
 
 }
