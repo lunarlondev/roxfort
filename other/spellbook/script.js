@@ -113,7 +113,11 @@ const year = Number(s.year)
 
 /* 0. év speciális */
 
-if(year === 0) return false
+if(year === 0){
+
+if(ev !== 0) return false
+
+}else{
 
 if(csakev){
 
@@ -126,6 +130,9 @@ if(year > ev) return false
 }
 
 }
+
+}
+
 
 if(kat && s.category!==kat) return false
 if(dark && !s.dark) return false
