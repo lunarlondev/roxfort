@@ -240,3 +240,19 @@ cursor:help;
 font-size:22px;
 
 }
+
+
+.note{
+
+margin-top:-15px;
+margin-bottom:20px;
+
+font-size:13px;
+color:#9fa6b0;
+
+background:#1a1c22;
+padding:8px 12px;
+border-radius:8px;
+border:1px solid #2e3138;
+
+}

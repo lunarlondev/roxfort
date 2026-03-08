@@ -112,6 +112,10 @@ if(ev){
 
 const year = Number(s.year)
 
+/* 0. év speciális */
+
+if(year === 0) return false
+
 if(csakev){
 
 if(year !== ev) return false
@@ -119,6 +123,8 @@ if(year !== ev) return false
 }else{
 
 if(year > ev) return false
+
+}
 
 }
 
@@ -176,7 +182,12 @@ ${effectData[e].icon}
 
 /* év szöveg */
 
-let evszoveg = s.year==8 ? "Felsőoktatás" : s.year+". év"
+let evszoveg=""
+
+if(s.year==0) evszoveg="Ismeretlen"
+else if(s.year==8) evszoveg="Felsőoktatás"
+else evszoveg=s.year+". év"
+
 
 /* html */
 
