@@ -329,8 +329,7 @@
     "hu": "-",
     "year": 1,
     "category": "charm",
-    "description": "Virágszirom eső. Elsősorban gyerekek elkápráztatására szolgál, illetve a szerelmesek használják gyakran hangulatkeltés céljából. A megidézésének helyétől egy két méteres sugarú körben vegyes virágszirmok kezdenek el hullani a semmiből, illetve a virágok illata is érződik.
-Erősebb mágiával rendelkező személyek irányítani is tudják ezeket a szirmokat, ezáltal akár védekezésre is használhatóak vagy figyelem elterelésre.",
+    "description": "Virágszirom eső. Elsősorban gyerekek elkápráztatására szolgál, illetve a szerelmesek használják gyakran hangulatkeltés céljából. A megidézésének helyétől egy két méteres sugarú körben vegyes virágszirmok kezdenek el hullani a semmiből, illetve a virágok illata is érződik. Erősebb mágiával rendelkező személyek irányítani is tudják ezeket a szirmokat, ezáltal akár védekezésre is használhatóak vagy figyelem elterelésre.",
     "effects": ["idézés","irányítás"],
     "dark": false,
     "healing": false,
