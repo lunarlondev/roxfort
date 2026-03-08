@@ -34,7 +34,8 @@ const effectData = {
   láthatatlanság:{icon:"👁‍🗨",label:"Láthatatlanság"},
   illúzió:{icon:"🎭",label:"Illúzió"},
   háztartásmágia:{icon:"🧹",label:"Háztartásmágia"},
-  párbajvarázslat:{icon:"⚔",label:"Párbajvarázslat"}
+  párbajvarázslat:{icon:"⚔",label:"Párbajvarázslat"},
+  vágás:{icon:"🔪",label:"Vágás"}
 };
 
 
