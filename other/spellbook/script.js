@@ -207,10 +207,8 @@ function render(){
 
     <div class="year">${evszoveg}</div>
 
-    <div class="nev">
-    ${s.name}
-    <span class="hu">(${s.hu || "-"})</span>
-    </div>
+    <div class="nev">${s.name}</div>
+    <div class="hu">${s.hu || "-"}</div>
 
     <div class="desc">
     ${s.description || ""}

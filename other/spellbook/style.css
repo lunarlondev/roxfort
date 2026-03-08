@@ -83,11 +83,9 @@ grid-template-columns:1fr;
 
 position:relative;
 
-padding:24px 20px 20px 20px;
+padding:24px 20px 40px 20px;
 
 border-radius:16px;
-
-background:linear-gradient(180deg,#161a25,#0f121a);
 
 border:1px solid rgba(255,255,255,0.06);
 
@@ -97,6 +95,13 @@ box-shadow:
 0 8px 24px rgba(0,0,0,.55);
 
 overflow:hidden;
+background:
+linear-gradient(180deg,#161a25,#0f121a),
+url("https://www.transparenttextures.com/patterns/dark-mosaic.png");
+
+background-blend-mode:overlay;
+
+
 
 }
 
@@ -106,7 +111,14 @@ content:"";
 position:absolute;
 inset:0;
 opacity:.08;
-background:radial-gradient(circle at 80% 10%,white,transparent 60%);
+
+background:
+radial-gradient(circle at 80% 10%,white,transparent 40%),
+radial-gradient(circle at 20% 90%,#ffffff,transparent 50%),
+radial-gradient(circle at 50% 50%,#ffffff,transparent 60%);
+
+background-size:120px 120px;
+
 pointer-events:none;
 
 }
@@ -202,7 +214,7 @@ font-size:24px;
 .year{
 
 position:absolute;
-top:48px;
+bottom:12px;
 right:14px;
 
 font-size:13px;
@@ -233,8 +245,8 @@ margin-top:8px;
 .hu{
 
 color:#9da6b6;
-font-weight:400;
-margin-left:6px;
+font-size:14px;
+margin-top:3px;
 
 }
 
@@ -320,5 +332,69 @@ padding:10px 14px;
 border-radius:10px;
 
 border:1px solid #2a2f3c;
+
+}
+
+
+
+.spell::after{
+
+content:"";
+position:absolute;
+inset:-2px;
+border-radius:16px;
+z-index:-1;
+opacity:.35;
+filter:blur(12px);
+
+}
+
+.charm::after{
+background:#3f8cff;
+}
+
+.curse::after{
+background:#ff5757;
+}
+
+.healing::after{
+background:#58e1ff;
+}
+
+.transfiguration::after{
+background:#c08cff;
+}
+
+.defense::after{
+background:#38d39f;
+}
+
+
+.effect{
+
+cursor:help;
+font-size:22px;
+
+transition:.25s;
+
+}
+
+.spell:hover .effect{
+
+transform:translateY(-3px) scale(1.15);
+
+}
+
+.nev{
+
+font-size:20px;
+font-weight:700;
+margin-top:8px;
+
+text-shadow:
+0 0 6px rgba(255,255,255,.15),
+0 0 12px rgba(255,255,255,.08);
+
+letter-spacing:.3px;
 
 }
