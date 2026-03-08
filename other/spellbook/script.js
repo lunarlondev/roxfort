@@ -14,21 +14,21 @@ const effectData = {
   tűz:{icon:"🔥",label:"Tűz"},
   víz:{icon:"🌊",label:"Víz"},
   jég:{icon:"❄",label:"Jég / fagy"},
-  villám:{icon:"⚡",label:"Villám / elektromosság"},
-  fény:{icon:"✨",label:"Fényvarázs"},
-  sötétség:{icon:"🌑",label:"Sötétségmágia"},
+  villám:{icon:"⚡",label:"Villám"},
+  fény:{icon:"✨",label:"Fény"},
+  sötétség:{icon:"🌑",label:"Sötétség"},
 
   robbanás:{icon:"💥",label:"Robbanás"},
   lökés:{icon:"🌬",label:"Erőhullám"},
   kötözés:{icon:"⛓",label:"Mozgáskorlátozás"},
-  bénítás:{icon:"🪨",label:"Bénító hatás"},
-  pajzs:{icon:"🛡",label:"Védőpajzs"},
+  bénítás:{icon:"🪨",label:"Bénítás"},
+  pajzs:{icon:"🛡",label:"Pajzs"},
 
-  gyógyítás:{icon:"✚",label:"Gyógyító mágia"},
+  gyógyítás:{icon:"✚",label:"Gyógyítás"},
   méreg:{icon:"☠",label:"Méreg"},
   vér:{icon:"🩸",label:"Vérmágia"},
 
-  mozgás:{icon:"🌀",label:"Mozgatás / teleport / taszítás"},
+  mozgás:{icon:"🌀",label:"Mozgás"},
   tárgymozgatás:{icon:"🪶",label:"Telekinézis"},
 
   idézés:{icon:"📣",label:"Idézés"},
@@ -36,7 +36,7 @@ const effectData = {
   láthatatlanság:{icon:"👁‍🗨",label:"Láthatatlanság"},
   illúzió:{icon:"🎭",label:"Illúzió"},
 
-  háztartásmágia:{icon:"🧹",label:"Háztartási varázslat"},
+  háztartásmágia:{icon:"🧹",label:"Háztartásmágia"},
   párbajvarázslat:{icon:"⚔",label:"Párbajvarázslat"}
 };
 
@@ -74,7 +74,10 @@ document.querySelectorAll("input,select")
 function render(){
 
   const keres = document.getElementById("kereses").value.toLowerCase();
-  const ev = Number(document.getElementById("ev").value) || 0;
+
+  const evValue = document.getElementById("ev").value;
+  const ev = evValue === "" ? null : Number(evValue);
+
   const kat = document.getElementById("kategoria").value;
   const dark = document.getElementById("dark").checked;
   const csakev = document.getElementById("csakev").checked;
@@ -85,9 +88,9 @@ function render(){
   lista.innerHTML="";
 
 
-  /* szűrés */
-
   const talalatok = spells.filter(s => {
+
+    /* keresés */
 
     if(keres){
 
@@ -102,17 +105,19 @@ function render(){
 
     }
 
-    if(ev){
+    /* év szűrés */
+
+    if(ev !== null){
 
       const year = Number(s.year);
 
-      /* 0. év speciális */
+      if(ev === 0){
 
-      if(year === 0){
-
-        if(ev !== 0) return false;
+        if(year !== 0) return false;
 
       }else{
+
+        if(year === 0) return false;
 
         if(csakev){
 
@@ -145,8 +150,6 @@ function render(){
   }
 
 
-  /* kártyák */
-
   talalatok.forEach(s => {
 
     const div = document.createElement("div");
@@ -154,16 +157,10 @@ function render(){
 
     let icons="";
 
-
-    /* alap ikonok */
-
     if(s.custom) icons+="⭐";
     if(s.dark) icons+="☠";
     if(s.healing) icons+="✚";
     if(s.rare) icons+="📜";
-
-
-    /* effect ikonok */
 
     if(s.effects){
 
@@ -181,17 +178,11 @@ function render(){
 
     }
 
-
-    /* év szöveg */
-
     let evszoveg="";
 
     if(s.year==0) evszoveg="Ismeretlen";
     else if(s.year==8) evszoveg="Felsőoktatás";
     else evszoveg=s.year+". év";
-
-
-    /* html */
 
     div.innerHTML=`
 
