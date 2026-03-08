@@ -8,7 +8,6 @@ curse: "Ártások / rontások / átkok"
 
 }
 
-
 let spells = []
 
 /* effect rendszer */
@@ -128,8 +127,6 @@ if(year > ev) return false
 
 }
 
-}
-
 if(kat && s.category!==kat) return false
 if(dark && !s.dark) return false
 if(custom && !s.custom) return false
@@ -187,7 +184,6 @@ let evszoveg=""
 if(s.year==0) evszoveg="Ismeretlen"
 else if(s.year==8) evszoveg="Felsőoktatás"
 else evszoveg=s.year+". év"
-
 
 /* html */
 
