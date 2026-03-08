@@ -31,10 +31,13 @@ const effectData = {
   mozgás:{icon:"🌀",label:"Mozgás"},
   tárgymozgatás:{icon:"🪶",label:"Telekinézis"},
 
+  átváltoztatás:{icon:"🏆",label:"Átváltoztatás"},
+  módosítás:{icon:"🌈",label:"Módosítás"},
   idézés:{icon:"📣",label:"Idézés"},
   irányítás:{icon:"🎯",label:"Irányítás"},
   láthatatlanság:{icon:"👁‍🗨",label:"Láthatatlanság"},
   illúzió:{icon:"🎭",label:"Illúzió"},
+
 
   háztartásmágia:{icon:"🧹",label:"Háztartásmágia"},
   párbajvarázslat:{icon:"⚔",label:"Párbajvarázslat"}
