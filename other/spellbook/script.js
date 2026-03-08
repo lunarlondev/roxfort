@@ -16,7 +16,7 @@ let spells = []
 const effectData = {
 
 tűz:{icon:"🔥",label:"Tűz"},
-víz:{icon:"🔥",label:"Víz"},
+víz:{icon:"🌊",label:"Víz"},
 jég:{icon:"❄",label:"Jég / fagy"},
 villám:{icon:"⚡",label:"Villám / elektromosság"},
 fény:{icon:"✨",label:"Fényvarázs"},
