@@ -79,7 +79,6 @@ function render(){
   const ev = evValue === "" ? null : Number(evValue);
 
   const kat = document.getElementById("kategoria").value;
-  const dark = document.getElementById("dark").checked;
   const csakev = document.getElementById("csakev").checked;
   const custom = document.getElementById("custom").checked;
 
