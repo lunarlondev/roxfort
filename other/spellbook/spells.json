@@ -1777,7 +1777,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": true,
+    "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Impervius_Charm"
   },
   {
@@ -1907,7 +1907,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": true,
+    "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Legilimency_Spell"
   },
   {
