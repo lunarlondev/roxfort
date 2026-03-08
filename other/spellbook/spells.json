@@ -1,0 +1,42 @@
+[
+{
+"name":"Incendio",
+"hu":"Tűzgyújtó bűbáj",
+"year":1,
+"category":"bubajok",
+"effects":["tűz"],
+"dark":false,
+"wiki":"https://harrypotter.fandom.com/wiki/Incendio"
+},
+
+{
+"name":"Protego",
+"hu":"Pajzsbűbáj",
+"year":3,
+"category":"vedekezes",
+"effects":["pajzs"],
+"dark":false,
+"wiki":"https://harrypotter.fandom.com/wiki/Protego"
+},
+
+{
+"name":"Avada Kedavra",
+"hu":"Halálos átok",
+"year":7,
+"category":"atkok",
+"effects":["halál"],
+"dark":true,
+"wiki":"https://harrypotter.fandom.com/wiki/Avada_Kedavra"
+},
+
+{
+"name":"Fiendfyre",
+"hu":"-",
+"year":8,
+"category":"atkok",
+"effects":["tűz"],
+"dark":true,
+"wiki":"https://harrypotter.fandom.com/wiki/Fiendfyre"
+}
+
+]
