@@ -13,31 +13,26 @@ let spells = [];
 const effectData = {
   tűz:{icon:"🔥",label:"Tűz"},
   víz:{icon:"🌊",label:"Víz"},
-  jég:{icon:"❄",label:"Jég / fagy"},
+  jég:{icon:"❄",label:"Jég"},
   villám:{icon:"⚡",label:"Villám"},
   fény:{icon:"✨",label:"Fény"},
   sötétség:{icon:"🌑",label:"Sötétség"},
-
   robbanás:{icon:"💥",label:"Robbanás"},
   lökés:{icon:"🌬",label:"Erőhullám"},
   kötözés:{icon:"⛓",label:"Mozgáskorlátozás"},
   bénítás:{icon:"🪨",label:"Bénítás"},
   pajzs:{icon:"🛡",label:"Pajzs"},
-
   gyógyítás:{icon:"✚",label:"Gyógyítás"},
   méreg:{icon:"☠",label:"Méreg"},
   vér:{icon:"🩸",label:"Vérmágia"},
-
   mozgás:{icon:"🌀",label:"Mozgás"},
   tárgymozgatás:{icon:"🪶",label:"Telekinézis"},
-
   átváltoztatás:{icon:"🏆",label:"Átváltoztatás"},
   módosítás:{icon:"🌈",label:"Módosítás"},
   idézés:{icon:"📣",label:"Idézés"},
   irányítás:{icon:"🎯",label:"Irányítás"},
   láthatatlanság:{icon:"👁‍🗨",label:"Láthatatlanság"},
   illúzió:{icon:"🎭",label:"Illúzió"},
-
   háztartásmágia:{icon:"🧹",label:"Háztartásmágia"},
   párbajvarázslat:{icon:"⚔",label:"Párbajvarázslat"}
 };
@@ -56,7 +51,7 @@ async function init(){
 
   }catch(e){
 
-    console.error("Nem sikerült betölteni a spells.json fájlt", e);
+    console.error("spells.json betöltési hiba",e);
 
   }
 
@@ -91,22 +86,18 @@ function render(){
 
   const talalatok = spells.filter(s => {
 
-    /* keresés */
-
     if(keres){
 
       const text = (
-        (s.name || "")+" "+
-        (s.hu || "")+" "+
-        (s.description || "")+" "+
-        (s.effects || []).join(" ")
+        (s.name||"")+" "+
+        (s.hu||"")+" "+
+        (s.description||"")+" "+
+        (s.effects||[]).join(" ")
       ).toLowerCase();
 
       if(!text.includes(keres)) return false;
 
     }
-
-    /* év szűrés */
 
     if(ev !== null){
 
@@ -134,8 +125,6 @@ function render(){
 
     }
 
-    /* kategória szűrés */
-
     if(kat){
 
       if(kat === "dark"){
@@ -149,8 +138,6 @@ function render(){
       }
 
     }
-
-    /* saját varázslatok */
 
     if(custom && !s.custom) return false;
 
@@ -169,7 +156,7 @@ function render(){
 
   talalatok.forEach(s => {
 
-    const div = document.createElement("div");
+    const div=document.createElement("div");
     div.className="spell "+s.category;
 
     let icons="";
@@ -179,27 +166,28 @@ function render(){
     if(s.healing) icons+="✚";
     if(s.rare) icons+="📜";
 
-    if(s.effects){
+    (s.effects||[]).forEach(e=>{
 
-      s.effects.forEach(e=>{
+      if(effectData[e]){
 
-        if(effectData[e]){
+        icons+=`<span class="effect" title="${effectData[e].label}">${effectData[e].icon}</span>`;
 
-          icons+=`<span class="effect" title="${effectData[e].label}">
-          ${effectData[e].icon}
-          </span>`;
+      }
 
-        }
+    });
 
-      });
-
-    }
 
     let evszoveg="";
 
     if(s.year==0) evszoveg="Ismeretlen";
     else if(s.year==8) evszoveg="Felsőoktatás";
     else evszoveg=s.year+". év";
+
+
+    const wikiLink = s.wiki
+      ? `<a href="${s.wiki}" target="_blank">Fandom oldal</a>`
+      : "";
+
 
     div.innerHTML=`
 
@@ -208,23 +196,21 @@ function render(){
     <div class="year">${evszoveg}</div>
 
     <div class="nev">${s.name}</div>
-    <div class="hu">${s.hu || "-"}</div>
+    <div class="hu">${s.hu||"-"}</div>
 
-    <div class="desc">
-    ${s.description || ""}
-    </div>
+    <div class="desc">${s.description||""}</div>
 
     <div class="tags">
 
-    <span class="tag">${categoryNames[s.category] || s.category}</span>
+      <span class="tag">${categoryNames[s.category]||s.category}</span>
 
-    ${(s.effects||[])
-      .map(e=>`<span class="tag">${e}</span>`)
-      .join("")}
+      ${(s.effects||[])
+        .map(e=>`<span class="tag">${e}</span>`)
+        .join("")}
 
     </div>
 
-    <a href="${s.wiki}" target="_blank">Fandom oldal</a>
+    ${wikiLink}
 
     `;
 
