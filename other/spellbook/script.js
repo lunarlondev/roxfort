@@ -134,7 +134,7 @@ function render(){
     }
 
     if(kat && s.category !== kat) return false;
-    if(dark && !s.dark) return false;
+    if(kat === "dark" && !s.dark) return false;
     if(custom && !s.custom) return false;
 
     return true;
