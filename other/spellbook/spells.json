@@ -56,7 +56,7 @@
     "hu": "-",
     "year": 1,
     "category": "charm",
-    "description": "Zárnyitó bűbáj. A pálcával a kilincset kell megcélozni, majd a varázsige után az ajtó kinyílik. Egyes ajtókat "alohomora-biztossá" teszik, azaz ezzel a varázslattal nem lehet őket kinyitni.",
+    "description": "Zárnyitó bűbáj. A pálcával a kilincset kell megcélozni, majd a varázsige után az ajtó kinyílik. Egyes ajtókat alohomora-biztossá teszik, azaz ezzel a varázslattal nem lehet őket kinyitni.",
     "effects": [],
     "dark": false,
     "healing": false,
@@ -545,19 +545,6 @@ Erősebb mágiával rendelkező személyek irányítani is tudják ezeket a szir
     "custom": false,
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Four-Point_Spell"
-  },
- {
-    "name": "Tarantallegra",
-    "hu": "Tarantallegra",
-    "year": 1,
-    "category": "charm",
-    "description": "Csiklandozó bűbáj: a célszemély úgy érzi, mintha csiklandoznák.",
-    "effects": ["párbajvarázslat"],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Tickling_Charm"
   },
  {
     "name": "Rictusempra",
