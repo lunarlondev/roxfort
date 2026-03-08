@@ -38,7 +38,6 @@ const effectData = {
   láthatatlanság:{icon:"👁‍🗨",label:"Láthatatlanság"},
   illúzió:{icon:"🎭",label:"Illúzió"},
 
-
   háztartásmágia:{icon:"🧹",label:"Háztartásmágia"},
   párbajvarázslat:{icon:"⚔",label:"Párbajvarázslat"}
 };
@@ -97,10 +96,10 @@ function render(){
     if(keres){
 
       const text = (
-        s.name+" "+
-        (s.hu||"")+" "+
-        (s.description||"")+" "+
-        (s.effects||[]).join(" ")
+        (s.name || "")+" "+
+        (s.hu || "")+" "+
+        (s.description || "")+" "+
+        (s.effects || []).join(" ")
       ).toLowerCase();
 
       if(!text.includes(keres)) return false;
@@ -135,8 +134,24 @@ function render(){
 
     }
 
-    if(kat && s.category !== kat) return false;
-    if(kat === "dark" && !s.dark) return false;
+    /* kategória szűrés */
+
+    if(kat){
+
+      if(kat === "dark"){
+
+        if(!s.dark) return false;
+
+      }else{
+
+        if(s.category !== kat) return false;
+
+      }
+
+    }
+
+    /* saját varázslatok */
+
     if(custom && !s.custom) return false;
 
     return true;
