@@ -1770,7 +1770,7 @@
   {
     "name": "Impervius Charm",
     "hu": "Imperio",
-    "year": ,
+    "year": 0,
     "category": "bubajok",
     "description": "",
     "effects": [],
@@ -1900,7 +1900,7 @@
   {
     "name": "Legilimency Spell",
     "hu": "-",
-    "year": ,
+    "year": 0,
     "category": "bubajok",
     "description": "",
     "effects": [],
