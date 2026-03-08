@@ -1770,7 +1770,7 @@
   {
     "name": "Impervius Charm",
     "hu": "Imperio",
-    "year": 0,
+    "year": 8,
     "category": "bubajok",
     "description": "",
     "effects": [],
@@ -1900,7 +1900,7 @@
   {
     "name": "Legilimency Spell",
     "hu": "-",
-    "year": 0,
+    "year": 8,
     "category": "bubajok",
     "description": "",
     "effects": [],
@@ -1913,7 +1913,7 @@
   {
     "name": "Levitation Charm",
     "hu": "-",
-    "year": 1,
+    "year": 8,
     "category": "bubajok",
     "description": "",
     "effects": [],
@@ -1926,7 +1926,7 @@
   {
     "name": "Levitation Spell",
     "hu": "-",
-    "year": 1,
+    "year": 8,
     "category": "bubajok",
     "description": "",
     "effects": [],
