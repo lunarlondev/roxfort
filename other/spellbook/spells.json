@@ -861,7 +861,7 @@
     "hu": "Aqua Eructo",
     "year": 3,
     "category": "transfiguration",
-    "description": "A pálca hegyéből egy apró vízsugarat lő ki a célpontra. Pár másodperc elteltével ez a sugár növekedni kezd. Tapasztaltabb mágusok már a varázslat kezdésekor képesek annyi vizet "kilőni", amivel egy egész szobát meg lehetne tölteni.",
+    "description": "A pálca hegyéből egy apró vízsugarat lő ki a célpontra. Pár másodperc elteltével ez a sugár növekedni kezd. Tapasztaltabb mágusok már a varázslat kezdésekor képesek annyi vizet kilőni, amivel egy egész szobát meg lehetne tölteni.",
     "effects": ["idézés","víz"],
     "dark": false,
     "healing": false,
