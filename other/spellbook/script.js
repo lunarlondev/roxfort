@@ -15,6 +15,7 @@ const effectData = {
   jég:{icon:"❄",label:"Jég"},
   villám:{icon:"⚡",label:"Villám"},
   föld:{icon:"⛰️",label:"Föld"},
+  levegő:{icon:"💨",label:"Levegő"},
   fény:{icon:"✨",label:"Fény"},
   sötétség:{icon:"🌑",label:"Sötétség"},
   robbanás:{icon:"💥",label:"Robbanás"},
@@ -218,8 +219,8 @@ document.getElementById("clearFilters").addEventListener("click", () => {
   document.getElementById("kategoria").value="";
 
   document.getElementById("csakev").checked=false;
-  document.getElementById("customMode").value="hide";
-  document.getElementById("missingMode").value="hide";
+  document.getElementById("customMode").value="show";
+  document.getElementById("missingMode").value="show";
 
   flagFilter=null;
 
