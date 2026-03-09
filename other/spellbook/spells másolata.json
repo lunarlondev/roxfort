@@ -1,95 +1,3 @@
-[
-  {
-    "name": "Maxima",
-    "hu": "Maxima",
-    "year": 8,
-    "category": "charm",
-    "description": "Varázslat módosító, aminek célja a varázslat erejének növelése. Egyes varázslatok esetében eltérő hatást válthat ki. Az eredeti varázslattól különállóan találják fel őket.",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Maxima"
-  },
-  {
-    "name": "Nonverbal spell",
-    "hu": "Nonverbális varázslatok",
-    "year": 6,
-    "category": "charm",
-    "description": "Hatodévben jön el a pillanat, mikor a diákoknak a nonverbális varázslást is meg kell tanulniuk. A nonverbális varázslatok valamivel gyengébbek.",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Nonverbal_spell"
-  },
-  {
-    "name": "Aberforth Dumbledore's goat charm",
-    "hu": "Aberforth Dumbledore kecske bűbája",
-    "year": 0,
-    "category": "charm",
-    "description": "Kecskék szarvainak polírozására.",
-    "effects": ["háztartásmágia"],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Aberforth_Dumbledore's_goat_charm"
-  },
-  {
-    "name": "Aguamenti",
-    "hu": "-",
-    "year": 2,
-    "category": "charm",
-    "description": "",
-    "effects": ["víz"],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Aguamenti_Maxima"
-  },
-  {
-    "name": "Aguamenti Maxima",
-    "hu": "-",
-    "year": 0,
-    "category": "charm",
-    "description": "",
-    "effects": ["víz"],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Aguamenti_Maxima"
-  },
-  {
-    "name": "Alarte Ascendare",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Alarte_Ascendare"
-  },
-  {
-    "name": "Alohomora",
-    "hu": "-",
-    "year": 1,
-    "category": "charm",
-    "description": "Zárnyitó bűbáj. A pálcával a kilincset kell megcélozni, majd a varázsige után az ajtó kinyílik. Egyes ajtókat "alohomora-biztossá" teszik, azaz ezzel a varázslattal nem lehet őket kinyitni.",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Unlocking_Charm"
-  },
   {
     "name": "Amplifying Charm",
     "hu": "-",
@@ -103,19 +11,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Amplifying_Charm"
   },
-  {
-    "name": "Anapneo",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Anapneo"
-  },
+
   {
     "name": "Animation Charm",
     "hu": "-",
@@ -142,58 +38,8 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Anti-Cheating_Spell"
   },
-  {
-    "name": "Aqua Eructo",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Aqua_Eructo"
-  },
-  {
-    "name": "Aqua Eructo Duo",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Aqua_Eructo_Duo"
-  },
-  {
-    "name": "Aquarius Scarius",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Aquarius_Scarius"
-  },
-  {
-    "name": "Arresto Momento Duo",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Arresto_Momento_Duo"
-  },
+
+
   {
     "name": "Ascension Charm",
     "hu": "-",
@@ -662,19 +508,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Cheering_Charm"
   },
-  {
-    "name": "Circumrota",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Circumrota"
-  },
+
   {
     "name": "Cleaning Charm",
     "hu": "-",
@@ -688,19 +522,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Cleaning_Charm"
   },
-  {
-    "name": "Cleaning spell",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Cleaning_spell"
-  },
+
   {
     "name": "Colour Change Charm",
     "hu": "-",
@@ -1091,45 +913,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Eradication_Spell"
   },
-  {
-    "name": "Erecto",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Erecto"
-  },
-  {
-    "name": "Essay on Wingardium Leviosa",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Essay_on_Wingardium_Leviosa"
-  },
-  {
-    "name": "Everte Statum",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Everte_Statum"
-  },
+
   {
     "name": "Extension Charm",
     "hu": "-",
@@ -1182,19 +966,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Felixempra"
   },
-  {
-    "name": "Finestra spell",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Finestra_spell"
-  },
+
   {
     "name": "Fire-Making Spell",
     "hu": "-",
@@ -1364,19 +1136,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Force_Spell"
   },
-  {
-    "name": "Four-Point Spell",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Four-Point_Spell"
-  },
+
   {
     "name": "Freeze!",
     "hu": "-",
@@ -1455,45 +1215,8 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Fur_spell"
   },
-  {
-    "name": "Glacius Duo",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": ["jég"],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Glacius_Duo"
-  },
-  {
-    "name": "Glacius Maxima",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Glacius_Maxima"
-  },
-  {
-    "name": "Glacius Tria",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Glacius_Tria"
-  },
+
+
   {
     "name": "Gouging Spell",
     "hu": "-",
@@ -1754,45 +1477,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Illusion_charm"
   },
-  {
-    "name": "Impervus Charm",
-    "hu": "-",
-    "year": 0,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": true,
-    "wiki": "https://harrypotter.fandom.com/wiki/Impervius_Charm"
-  },
-  {
-    "name": "Incendio Duo Spell",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "Víztaszítóvá változtat tárgyakat.",
-    "effects": ["víz"],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Incendio_Duo_Spell"
-  },
-  {
-    "name": "Incendio Tria",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Incendio_Tria"
-  },
+ 
   {
     "name": "Informous Spell",
     "hu": "-",
@@ -1988,19 +1673,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Locomotion_Charm"
   },
-  {
-    "name": "Lumos Duo",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Lumos_Duo"
-  },
+
   {
     "name": "Lumos Maxima",
     "hu": "-",
@@ -2105,19 +1778,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Meteolojinx_recanto"
   },
-  {
-    "name": "Mobiliarbus",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Mobiliarbus"
-  },
+
   {
     "name": "Mobilicorpus",
     "hu": "-",
@@ -2196,19 +1857,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Obscuro"
   },
-  {
-    "name": "Oculus Reparo",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Oculus_Reparo"
-  },
+
   {
     "name": "One-Eyed Witch Spell",
     "hu": "-",
@@ -2287,19 +1936,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Paper_bird_charm"
   },
-  {
-    "name": "Papyrus Reparo",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Papyrus_Reparo"
-  },
+
   {
     "name": "Parchment-sealing spell",
     "hu": "-",
@@ -2547,19 +2184,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Reparifors"
   },
-  {
-    "name": "Reparo Duo",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Reparo_Duo"
-  },
+
   {
     "name": "Repelling Spell",
     "hu": "-",
@@ -3483,45 +3108,9 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Vomitare_Viridis"
   },
-  {
-    "name": "Vulnera Sanentur",
-    "hu": "-",
-    "year": 7,
-    "category": "healing",
-    "description": "Vágásokat gyógyít be. Ha idejében használják, akár súlyos sérüléseket is be lehet gyógyítani vele, ha valaki megtanulja jól használni.",
-    "effects": ["gyógyítás"],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Vulnera_Sanentur"
-  },
-  {
-    "name": "Wand-Extinguishing Charm",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Wand-Extinguishing_Charm"
-  },
-  {
-    "name": "Wand-Lighting Charm",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Wand-Lighting_Charm"
-  },
+
+
+
   {
     "name": "Washing up spell",
     "hu": "-",
@@ -3613,19 +3202,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Windy_Spell"
   },
-  {
-    "name": "Wingardium Leviosa Duo",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Wingardium_Leviosa_Duo"
-  },
+
   {
     "name": "Wiping Spell",
     "hu": "-",
@@ -4081,32 +3658,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Mucus_ad_Nauseam_Tria"
   },
-  {
-    "name": "Petrificus Totalus Duo",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Petrificus_Totalus_Duo"
-  },
-  {
-    "name": "Petrificus Totalus Tria",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Petrificus_Totalus_Tria"
-  },
+  
   {
     "name": "Pimple Jinx",
     "hu": "-",
@@ -4368,19 +3920,6 @@
     "wiki": "https://harrypotter.fandom.com/wiki/Confusion_Hex"
   },
   {
-    "name": "Densaugeo",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Densaugeo"
-  },
-  {
     "name": "Deterioration Hex",
     "hu": "-",
     "year": 8,
@@ -4393,19 +3932,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Deterioration_Hex"
   },
-  {
-    "name": "Hex",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Hex"
-  },
+
   {
     "name": "Horn Tongue Hex",
     "hu": "-",
@@ -4848,33 +4375,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Finger-removing_jinx"
   },
-  {
-    "name": "Flipendo Maxima",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Flipendo_Maxima"
-  },
-  {
-    "name": "Flipendo Tria",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Flipendo_Tria"
-  },
-  {
+
     "name": "Fulgari",
     "hu": "-",
     "year": 8,
@@ -6448,43 +5949,3 @@
     "rare": false,
     "wiki": ""
   },
-  {
-    "name": "Imperius Curse",
-    "hu": "Imperio",
-    "year": 0,
-    "category": "curse",
-    "description": "Élőlényeket vonhatunk vele az irányításunk alá. Főbenjáró átok.",
-    "effects": [],
-    "dark": true,
-    "healing": false,
-    "custom": false,
-    "rare": true,
-    "wiki": "https://harrypotter.fandom.com/wiki/Imperius_Curse"
-  },
-  {
-    "name": "Cruciatus Curse",
-    "hu": "Crucio",
-    "year": 0,
-    "category": "curse",
-    "description": "Élőlények kínzására szolgáló átok, a legkegyetlenebb kínzó átok. Főbenjáró átok.",
-    "effects": [],
-    "dark": true,
-    "healing": false,
-    "custom": false,
-    "rare": true,
-    "wiki": "https://harrypotter.fandom.com/wiki/Cruciatus_Curse"
-  },
-  {
-    "name": "Killing Curse",
-    "hu": "Avada Kedavra",
-    "year": 0,
-    "category": "curse",
-    "description": "A gyilkos átok. Főbenjáró átok.",
-     "effects": [],
-    "dark": true,
-    "healing": false,
-    "custom": false,
-    "rare": true,
-    "wiki": "https://harrypotter.fandom.com/wiki/Killing_Curse"
-  }
-]
