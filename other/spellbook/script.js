@@ -7,8 +7,7 @@ const categoryNames = {
 };
 
 let spells = [];
-
-/* effect rendszer */
+let flagFilter = null;
 
 const effectData = {
   tűz:{icon:"🔥",label:"Tűz"},
@@ -37,57 +36,35 @@ const effectData = {
   vágás:{icon:"🔪",label:"Vágás"}
 };
 
-
-/* JSON betöltés */
-
 async function init(){
 
-  try{
+  const res = await fetch("spells.json");
+  spells = await res.json();
 
-    const res = await fetch("spells.json");
-    spells = await res.json();
-
-    render();
-
-  }catch(e){
-
-    console.error("spells.json betöltési hiba",e);
-
-  }
+  render();
 
 }
 
 init();
 
-
-/* szűrők */
-
 document.querySelectorAll("input,select")
 .forEach(e => e.addEventListener("input", render));
-
-
-/* render */
 
 function render(){
 
   const keres = document.getElementById("kereses").value.toLowerCase();
-
   const evValue = document.getElementById("ev").value;
   const ev = evValue === "" ? null : Number(evValue);
-
   const kat = document.getElementById("kategoria").value;
   const csakev = document.getElementById("csakev").checked;
   const custom = document.getElementById("custom").checked;
 
   const lista = document.getElementById("lista");
-
   lista.innerHTML="";
-
 
   const talalatok = spells.filter(s => {
 
     if(keres){
-
       const text = (
         (s.name||"")+" "+
         (s.hu||"")+" "+
@@ -96,7 +73,6 @@ function render(){
       ).toLowerCase();
 
       if(!text.includes(keres)) return false;
-
     }
 
     if(ev !== null){
@@ -104,47 +80,36 @@ function render(){
       const year = Number(s.year);
 
       if(ev === 0){
-
         if(year !== 0) return false;
-
       }else{
 
         if(year === 0) return false;
 
         if(csakev){
-
           if(year !== ev) return false;
-
         }else{
-
           if(year > ev) return false;
-
         }
-
       }
-
     }
 
     if(kat){
 
       if(kat === "dark"){
-
         if(!s.dark) return false;
-
       }else{
-
         if(s.category !== kat) return false;
-
       }
 
     }
 
     if(custom && !s.custom) return false;
 
+    if(flagFilter && !s[flagFilter]) return false;
+
     return true;
 
   });
-
 
   if(talalatok.length===0){
 
@@ -153,43 +118,32 @@ function render(){
 
   }
 
-
   talalatok.forEach(s => {
 
     const div=document.createElement("div");
     div.className="spell "+s.category;
 
-    /* BAL FELSŐ IKONOK */
-
     let cornerIcons="";
 
-   if(s.custom)
-   cornerIcons+=`<span class="cornerIcon" title="Saját varázslat">⭐</span>`;
+    if(s.custom)
+    cornerIcons+=`<span class="cornerIcon" title="Saját varázslat">⭐</span>`;
 
-   if(s.dark)
-   cornerIcons+=`<span class="cornerIcon" title="Sötét varázslat">☠</span>`;
+    if(s.dark)
+    cornerIcons+=`<span class="cornerIcon" title="Sötét varázslat">☠</span>`;
 
-   if(s.healing)
-   cornerIcons+=`<span class="cornerIcon" title="Gyógyító varázslat">✚</span>`;
+    if(s.healing)
+    cornerIcons+=`<span class="cornerIcon" title="Gyógyító varázslat">✚</span>`;
 
-   if(s.missing)
-   cornerIcons+=`<span class="cornerIcon" title="Oldalon nem szereplő varázslatok">✖️</span>`;
-
-
-    /* EFFECT IKONOK (jobb felső) */
+    if(s.missing)
+    cornerIcons+=`<span class="cornerIcon" title="Oldalon nem szereplő varázslat">✖️</span>`;
 
     let effectIcons="";
 
     (s.effects||[]).forEach(e=>{
-
       if(effectData[e]){
-
         effectIcons+=`<span class="effect" title="${effectData[e].label}">${effectData[e].icon}</span>`;
-
       }
-
     });
-
 
     let evszoveg="";
 
@@ -197,11 +151,9 @@ function render(){
     else if(s.year==8) evszoveg="Felsőoktatás";
     else evszoveg=s.year+". év";
 
-
     const wikiLink = s.wiki
       ? `<a href="${s.wiki}" target="_blank">Fandom oldal</a>`
       : "";
-
 
     div.innerHTML=`
 
@@ -236,31 +188,21 @@ function render(){
 
 }
 
-
-/* legend szűrés */
-
 document.querySelectorAll(".legendContent div")
 .forEach(el=>{
 
   el.addEventListener("click",()=>{
 
     const effect = el.dataset.effect;
-    const filter = el.dataset.filter;
+    const flag = el.dataset.flag;
 
     if(effect){
       document.getElementById("kereses").value = effect;
+      flagFilter=null;
     }
 
-    if(filter === "custom"){
-      document.getElementById("custom").checked = true;
-    }
-
-    if(filter === "dark"){
-      document.getElementById("kategoria").value = "dark";
-    }
-
-    if(filter === "healing"){
-      document.getElementById("kategoria").value = "healing";
+    if(flag){
+      flagFilter = flag;
     }
 
     render();
@@ -268,7 +210,6 @@ document.querySelectorAll(".legendContent div")
   });
 
 });
-
 
 document.getElementById("clearFilters").addEventListener("click", () => {
 
@@ -278,6 +219,8 @@ document.getElementById("clearFilters").addEventListener("click", () => {
 
   document.getElementById("csakev").checked=false;
   document.getElementById("custom").checked=false;
+
+  flagFilter=null;
 
   render();
 
