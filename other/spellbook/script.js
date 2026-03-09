@@ -173,7 +173,7 @@ function render(){
    cornerIcons+=`<span class="cornerIcon" title="Gyógyító varázslat">✚</span>`;
 
    if(s.missing)
-   cornerIcons+=`<span class="cornerIcon" title="Canon varázslat, amely az oldalon nem szerepel">✖️</span>`;
+   cornerIcons+=`<span class="cornerIcon" title="Oldalon nem szereplő varázslatok">✖️</span>`;
 
 
     /* EFFECT IKONOK (jobb felső) */
