@@ -1330,7 +1330,7 @@
     "year": 4,
     "category": "transfiguration",
     "description": "(Baziteo ellentéte) A nagyobb méretűvé varázsolt lény visszanyeri eredeti nagyságát. Tapasztaltabbak képesek tárgyakat lekicsinyíteni vele.",
-    "effects": ["módosítás"Reducto ],
+    "effects": ["módosítás" ],
     "dark": false,
     "healing": false,
     "custom": false,
