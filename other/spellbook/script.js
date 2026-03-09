@@ -34,7 +34,7 @@ const effectData = {
   idézés:{icon:"📣",label:"Idézés"},
   eltüntetés:{icon:"🍃",label:"Eltüntetés"},
   irányítás:{icon:"🎯",label:"Irányítás"},
-  nyomkeresés:{icon:"🔎",label:"Nyomkeresés"}
+  nyomkeresés:{icon:"🔎",label:"Nyomkeresés"},
   láthatatlanság:{icon:"👁‍🗨",label:"Láthatatlanság"},
   illúzió:{icon:"🎭",label:"Illúzió"},
   háztartásmágia:{icon:"🧹",label:"Háztartásmágia"},
