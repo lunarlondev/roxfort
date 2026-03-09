@@ -15,9 +15,9 @@
 
 <div class="app layout">
 
-<aside class="sidebar" id="sidebar">
-
 <div class="sidebarToggle" id="toggleSidebar">◀</div>
+
+<aside class="sidebar" id="sidebar">
 
 <h1>Szűrők</h1>
 
@@ -61,7 +61,11 @@
 <input type="checkbox" id="csakev">
 Csak az adott év
 </label>
+
+
 </div>
+
+
 
 <div class="filterGroup">
 <label>Saját varázslatok</label>
@@ -86,6 +90,7 @@ Csak az adott év
 </div>
 
 </div>
+
 
 
 <div class="legend">
@@ -113,6 +118,31 @@ Csak az adott év
 <div data-effect="vágás" title="Vágás">🔪</div>
 </div>
 
+
+<h3>Mágia típusok</h3>
+<div class="legendContent">
+<div data-effect="vér" title="Vér">🩸</div>
+<div data-effect="idő" title="Idő">⏳</div>
+<div data-effect="módosítás" title="Módosítás">🌈</div>
+<div data-effect="idézés" title="Idézés">📣</div>
+<div data-effect="irányítás" title="Irányítás">🎯</div>
+</div>
+
+<h3>Képességek</h3>
+<div class="legendContent">
+<div data-effect="mozgás" title="Mozgás">🏃</div>
+<div data-effect="tárgymozgatás" title="Tárgymozgatás">🪶</div>
+<div data-effect="átváltoztatás" title="Átváltoztatás">🏆</div>
+<div data-effect="láthatatlanság" title="Láthatatlanság">👁‍🗨</div>
+<div data-effect="illúzió" title="Illúzió">🎭</div>
+</div>
+
+<h3>Egyéb</h3>
+<div class="legendContent">
+<div data-effect="háztartásmágia" title="Háztartásmágia">🧹</div>
+<div data-effect="párbajvarázslat" title="Párbajvarázslat">⚔</div>
+</div>
+
 </div>
 
 </aside>
@@ -136,10 +166,12 @@ Varázslatok listája
 
 const btn = document.getElementById("toggleSidebar")
 const sidebar = document.getElementById("sidebar")
+const layout = document.querySelector(".layout")
 
 btn.onclick = () => {
 
 sidebar.classList.toggle("collapsed")
+layout.classList.toggle("sidebarClosed")
 
 btn.textContent =
 sidebar.classList.contains("collapsed") ? "▶" : "◀"

@@ -517,9 +517,10 @@ min-width:0;
 
 .sidebarToggle{
 
-position:absolute;
-top:20px;
-right:-18px;
+position:fixed;
+
+top:120px;
+left:10px;
 
 width:36px;
 height:36px;
@@ -537,6 +538,8 @@ cursor:pointer;
 
 font-size:14px;
 
+z-index:1000;
+
 transition:.25s;
 
 }
@@ -545,22 +548,13 @@ transition:.25s;
 background:#1e2535;
 }
 
-.pageTitle{
 
-font-family:"Cinzel",serif;
+.layout.sidebarClosed{
+grid-template-columns:0 1fr;
+}
 
-font-size:34px;
-
-letter-spacing:2px;
-
-margin-bottom:25px;
-
-text-align:center;
-
-color:#e8e8e8;
-
-text-shadow:
-0 0 6px rgba(255,255,255,.15),
-0 0 20px rgba(120,160,255,.2);
-
+.sidebar.collapsed{
+transform:translateX(-260px);
+opacity:0;
+pointer-events:none;
 }
