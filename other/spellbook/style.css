@@ -240,29 +240,6 @@ margin-right:auto;
 
 }
 
-/* tagek */
-
-.tags{
-
-margin-top:14px;
-display:flex;
-flex-wrap:wrap;
-gap:6px;
-
-}
-
-.tag{
-
-background:rgba(255,255,255,.08);
-
-padding:4px 8px;
-border-radius:6px;
-
-font-size:11px;
-
-letter-spacing:.3px;
-
-}
 
 /* link */
 

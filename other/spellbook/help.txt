@@ -6,28 +6,36 @@ transfiguration
 curse
 
 
+    if(s.custom) cornerIcons+="⭐";
+    if(s.dark) cornerIcons+="☠";
+    if(s.healing) cornerIcons+="✚";
+    if(s.missing) cornerIcons+="✖️";
+
+
 
 Ikonok:
 tűz:{icon:"🔥",label:"Tűz"},
 víz:{icon:"🌊",label:"Víz"},
 jég:{icon:"❄",label:"Jég / fagy"},
 villám:{icon:"⚡",label:"Villám / elektromosság"},
-fény:{icon:"✨",label:"Fényvarázs"},
-sötétség:{icon:"🌑",label:"Sötétségmágia"},
+fény:{icon:"✨",label:"Fény"},
+sötétség:{icon:"🌑",label:"Sötétség"},
 
 robbanás:{icon:"💥",label:"Robbanás"},
 lökés:{icon:"🌬",label:"Erőhullám"},
-kötözés:{icon:"⛓",label:"Mozgáskorlátozás"},
-bénítás:{icon:"🪨",label:"Bénító hatás"},
+bénítás:{icon:"🪨",label:"Mozgáskorlátozás"},
 pajzs:{icon:"🛡",label:"Védőpajzs"},
+vágás:{icon:"🛡",label:"Vágás"},
 
 gyógyítás:{icon:"✚",label:"Gyógyító mágia"},
 méreg:{icon:"☠",label:"Méreg"},
 vér:{icon:"🩸",label:"Vérmágia"},
 
 mozgás:{icon:"🌀",label:"Mozgatás / teleport / taszítás"},
-tárgymozgatás:{icon:"🪶",label:"Telekinézis"},
+tárgymozgatás:{icon:"🪶",label:"Tárgymozgatás"},
 
+átváltoztatás:{icon:"🏆",label:"Átváltoztatás"},
+módosítás:{icon:"🌈",label:"Módosítás"},
 idézés:{icon:"📣",label:"Idézés"},
 irányítás:{icon:"🎯",label:"Irányítás"},
 láthatatlanság:{icon:"👁‍🗨",label:"Láthatatlanság"},
