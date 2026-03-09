@@ -430,3 +430,41 @@ cursor:help;
 margin-right:4px;
 
 }
+
+
+
+/* fandom wiki link */
+
+.wikiLink{
+
+position:absolute;
+bottom:10px;
+left:12px;
+
+display:flex;
+align-items:center;
+
+opacity:.75;
+
+transition:.2s;
+
+}
+
+.wikiLink img{
+
+width:18px;
+height:18px;
+
+}
+
+.wikiLink:hover{
+
+opacity:1;
+transform:scale(1.15);
+
+}
+
+
+.wikiLink:hover img{
+filter:drop-shadow(0 0 6px #00d1ff);
+}

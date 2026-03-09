@@ -152,8 +152,10 @@ function render(){
     else evszoveg=s.year+". év";
 
     const wikiLink = s.wiki
-      ? `<a href="${s.wiki}" target="_blank">Fandom oldal</a>`
-      : "";
+  ? `<a class="wikiLink" href="${s.wiki}" target="_blank">
+       <img src="fandom-color-codes.svg" alt="Fandom">
+     </a>`
+  : "";
 
     div.innerHTML=`
 
