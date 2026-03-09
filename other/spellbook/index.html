@@ -7,17 +7,17 @@
 
 <link rel="stylesheet" href="style.css">
 
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
 <div class="app layout">
 
-<!-- SIDEBAR -->
-
 <aside class="sidebar" id="sidebar">
 
-<button id="toggleSidebar">Szűrők</button>
+<div class="sidebarToggle" id="toggleSidebar">◀</div>
 
 <h1>Szűrők</h1>
 
@@ -88,8 +88,6 @@ Csak az adott év
 </div>
 
 
-<!-- EMOJI FILTER PANELEK -->
-
 <div class="legend">
 
 <h3>Elemek</h3>
@@ -115,38 +113,16 @@ Csak az adott év
 <div data-effect="vágás" title="Vágás">🔪</div>
 </div>
 
-<h3>Mágia típusok</h3>
-<div class="legendContent">
-<div data-effect="vér" title="Vér">🩸</div>
-<div data-effect="idő" title="Idő">⏳</div>
-<div data-effect="módosítás" title="Módosítás">🌈</div>
-<div data-effect="idézés" title="Idézés">📣</div>
-<div data-effect="irányítás" title="Irányítás">🎯</div>
-</div>
-
-<h3>Képességek</h3>
-<div class="legendContent">
-<div data-effect="mozgás" title="Mozgás">🏃</div>
-<div data-effect="tárgymozgatás" title="Tárgymozgatás">🪶</div>
-<div data-effect="átváltoztatás" title="Átváltoztatás">🏆</div>
-<div data-effect="láthatatlanság" title="Láthatatlanság">👁‍🗨</div>
-<div data-effect="illúzió" title="Illúzió">🎭</div>
-</div>
-
-<h3>Egyéb</h3>
-<div class="legendContent">
-<div data-effect="háztartásmágia" title="Háztartásmágia">🧹</div>
-<div data-effect="párbajvarázslat" title="Párbajvarázslat">⚔</div>
-</div>
-
 </div>
 
 </aside>
 
 
-<!-- SPELL LISTA -->
-
 <main class="content">
+
+<div class="pageTitle">
+Varázslatok listája
+</div>
 
 <div id="lista"></div>
 
@@ -162,7 +138,12 @@ const btn = document.getElementById("toggleSidebar")
 const sidebar = document.getElementById("sidebar")
 
 btn.onclick = () => {
+
 sidebar.classList.toggle("collapsed")
+
+btn.textContent =
+sidebar.classList.contains("collapsed") ? "▶" : "◀"
+
 }
 
 </script>
