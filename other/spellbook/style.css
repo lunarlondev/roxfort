@@ -499,48 +499,61 @@ width:100%;
 }
 
 
+
+
+.content{
+min-width:0;
+}
+
+
+
+/* 3 oszlopos layout */
+
 .layout{
 display:grid;
-grid-template-columns:260px 1fr;
+grid-template-columns:240px 1fr 240px;
 gap:25px;
-
 transition:grid-template-columns .35s ease;
 }
 
+/* sidebar eltűnések */
+
+.layout.leftClosed{
+grid-template-columns:0 1fr 240px;
+}
+
+.layout.rightClosed{
+grid-template-columns:240px 1fr 0;
+}
+
+.layout.bothClosed{
+grid-template-columns:0 1fr 0;
+}
+
+/* sidebar animáció */
+
 .sidebar{
-position:relative;
 transition:transform .35s ease, opacity .25s;
 }
 
-
-.content{
-min-width:0;
+.leftSidebar.collapsed{
+transform:translateX(-260px);
+opacity:0;
+pointer-events:none;
 }
 
-
-.layout{
-display:grid;
-grid-template-columns:260px 1fr;
-gap:25px;
-transition:.35s;
+.rightSidebar.collapsed{
+transform:translateX(260px);
+opacity:0;
+pointer-events:none;
 }
 
-.sidebar{
-position:relative;
-transition:transform .35s;
-}
-
-
-.content{
-min-width:0;
-}
+/* toggle gombok */
 
 .sidebarToggle{
 
 position:fixed;
-
 top:120px;
-left:10px;
 
 width:36px;
 height:36px;
@@ -560,9 +573,22 @@ font-size:14px;
 
 z-index:1000;
 
-transition:.25s;
-
 }
+
+.leftToggle{
+left:10px;
+}
+
+.rightToggle{
+right:10px;
+}
+
+
+
+.content{
+min-width:0;
+}
+
 
 .sidebarToggle:hover{
 background:#1e2535;
@@ -578,3 +604,6 @@ transform:translateX(-260px);
 opacity:0;
 pointer-events:none;
 }
+
+
+

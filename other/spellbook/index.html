@@ -12,11 +12,14 @@
 
 <body>
 
-<div class="app layout">
+<div class="app layout" id="layout">
 
-<div class="sidebarToggle" id="toggleSidebar">◀</div>
+<!-- BAL SIDEBAR TOGGLE -->
+<div class="sidebarToggle leftToggle" id="toggleLeft">◀</div>
 
-<aside class="sidebar" id="sidebar">
+<!-- BAL SIDEBAR -->
+
+<aside class="sidebar leftSidebar" id="leftSidebar">
 
 <h1>Szűrők</h1>
 
@@ -26,9 +29,13 @@
 
 <div class="filters">
 
+<div class="filterRow">
+
 <div class="filterGroup">
 <label>Évfolyam</label>
+
 <select id="ev">
+
 <option value="">Összes</option>
 <option value="0">Ismeretlen</option>
 <option value="1">1. év</option>
@@ -39,12 +46,25 @@
 <option value="6">6. év</option>
 <option value="7">7. év</option>
 <option value="8">Felsőoktatás</option>
+
 </select>
+
 </div>
 
+<label class="yearCheckbox">
+<input type="checkbox" id="csakev">
+csak ez az év
+</label>
+
+</div>
+
+
 <div class="filterGroup">
+
 <label>Kategória</label>
+
 <select id="kategoria">
+
 <option value="">Összes</option>
 <option value="curse">Ártások / átkok</option>
 <option value="transfiguration">Átváltoztatás</option>
@@ -52,33 +72,41 @@
 <option value="healing">Gyógyítás</option>
 <option value="charm">Bűbájok</option>
 <option value="dark">Fekete mágia</option>
+
 </select>
+
 </div>
 
-<div class="filterGroup checkboxGroup">
-<label>
-<input type="checkbox" id="csakev">
-Csak az adott év
-</label>
-</div>
 
 <div class="filterGroup">
+
 <label>Saját varázslatok</label>
+
 <select id="customMode">
+
 <option value="hide">Elrejtve</option>
 <option value="show" selected>Vegyesen</option>
 <option value="only">Csak ezek</option>
+
 </select>
+
 </div>
 
+
 <div class="filterGroup">
+
 <label>Oldalon nem szereplő</label>
+
 <select id="missingMode">
+
 <option value="hide">Elrejtve</option>
 <option value="show" selected>Vegyesen</option>
 <option value="only">Csak ezek</option>
+
 </select>
+
 </div>
+
 
 <div class="filterGroup">
 <button id="clearFilters">Szűrők törlése</button>
@@ -86,6 +114,27 @@ Csak az adott év
 
 </div>
 
+</aside>
+
+
+<!-- TARTALOM -->
+
+<main class="content">
+
+<div class="pageTitle">
+Varázslatok listája
+</div>
+
+<div id="lista"></div>
+
+</main>
+
+
+<!-- JOBB SIDEBAR -->
+
+<aside class="sidebar rightSidebar" id="rightSidebar">
+
+<h1>Hatások</h1>
 
 <div class="legend">
 
@@ -139,18 +188,14 @@ Csak az adott év
 
 </div>
 
+</div>
+
 </aside>
 
 
-<main class="content">
+<!-- JOBB TOGGLE -->
 
-<div class="pageTitle">
-Varázslatok listája
-</div>
-
-<div id="lista"></div>
-
-</main>
+<div class="sidebarToggle rightToggle" id="toggleRight">▶</div>
 
 </div>
 
@@ -159,35 +204,70 @@ Varázslatok listája
 
 <script>
 
-const btn = document.getElementById("toggleSidebar")
-const sidebar = document.getElementById("sidebar")
-const layout = document.querySelector(".layout")
+const layout = document.getElementById("layout")
 
-btn.onclick = () => {
+const leftSidebar = document.getElementById("leftSidebar")
+const rightSidebar = document.getElementById("rightSidebar")
 
-if(sidebar.classList.contains("collapsed")){
+const leftBtn = document.getElementById("toggleLeft")
+const rightBtn = document.getElementById("toggleRight")
 
-layout.classList.remove("sidebarClosed")
 
-setTimeout(()=>{
-sidebar.classList.remove("collapsed")
-},10)
+leftBtn.onclick = () => {
 
-btn.textContent="◀"
+leftSidebar.classList.toggle("collapsed")
+
+if(leftSidebar.classList.contains("collapsed")){
+
+layout.classList.add("leftClosed")
+leftBtn.textContent="▶"
 
 }else{
 
-sidebar.classList.add("collapsed")
-
-setTimeout(()=>{
-layout.classList.add("sidebarClosed")
-},300)
-
-btn.textContent="▶"
+layout.classList.remove("leftClosed")
+leftBtn.textContent="◀"
 
 }
 
+updateLayout()
+
 }
+
+
+rightBtn.onclick = () => {
+
+rightSidebar.classList.toggle("collapsed")
+
+if(rightSidebar.classList.contains("collapsed")){
+
+layout.classList.add("rightClosed")
+rightBtn.textContent="◀"
+
+}else{
+
+layout.classList.remove("rightClosed")
+rightBtn.textContent="▶"
+
+}
+
+updateLayout()
+
+}
+
+
+function updateLayout(){
+
+if(
+leftSidebar.classList.contains("collapsed") &&
+rightSidebar.classList.contains("collapsed")
+){
+layout.classList.add("bothClosed")
+}else{
+layout.classList.remove("bothClosed")
+}
+
+}
+
 </script>
 
 </body>
