@@ -163,10 +163,17 @@ function render(){
 
     let cornerIcons="";
 
-    if(s.custom) cornerIcons+="⭐";
-    if(s.dark) cornerIcons+="☠";
-    if(s.healing) cornerIcons+="✚";
-    if(s.rare) cornerIcons+="✖️";
+   if(s.custom)
+   cornerIcons+=`<span class="cornerIcon" title="Saját varázslat">⭐</span>`;
+
+   if(s.dark)
+   cornerIcons+=`<span class="cornerIcon" title="Sötét varázslat">☠</span>`;
+
+   if(s.healing)
+   cornerIcons+=`<span class="cornerIcon" title="Gyógyító varázslat">✚</span>`;
+
+   if(s.missing)
+   cornerIcons+=`<span class="cornerIcon" title="Canon varázslat, amely az oldalon nem szerepel">✖️</span>`;
 
 
     /* EFFECT IKONOK (jobb felső) */

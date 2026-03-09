@@ -9,7 +9,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Maxima"
   },
   {
@@ -22,7 +22,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Nonverbal_spell"
   },
   {
@@ -35,7 +35,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": true,
     "wiki": "https://harrypotter.fandom.com/wiki/Aberforth_Dumbledore's_goat_charm"
   },
   {
@@ -48,7 +48,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Unlocking_Charm"
   },
   {
@@ -56,12 +56,12 @@
     "hu": "-",
     "year": 0,
     "category": "charm",
-    "description": "",
-    "effects": [],
+    "description": "Vízlepergető bűbáj",
+    "effects": ["víz"],
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": true,
+    "missing": true,
     "wiki": "https://harrypotter.fandom.com/wiki/Impervius_Charm"
   },
   {
@@ -74,7 +74,7 @@
     "dark": false,
     "healing": true,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Vulnera_Sanentur"
   },
   {
@@ -87,7 +87,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": ""
   },
   {
@@ -100,7 +100,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": ""
   },
   {
@@ -113,7 +113,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": ""
   },
   {
@@ -126,7 +126,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": ""
   },
   {
@@ -139,7 +139,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": ""
   },
   {
@@ -152,7 +152,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": ""
   },
   {
@@ -165,11 +165,11 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": ""
   },
   {
-    "name": "Vaporare",
+    "name": "Vapomissing",
     "hu": "-",
     "year": 8,
     "category": "charm",
@@ -178,7 +178,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": ""
   },
   {
@@ -191,7 +191,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": ""
   },
   {
@@ -204,7 +204,7 @@
     "dark": true,
     "healing": false,
     "custom": false,
-    "rare": true,
+    "missing": true,
     "wiki": "https://harrypotter.fandom.com/wiki/Imperius_Curse"
   },
   {
@@ -217,7 +217,7 @@
     "dark": true,
     "healing": false,
     "custom": false,
-    "rare": true,
+    "missing": true,
     "wiki": "https://harrypotter.fandom.com/wiki/Cruciatus_Curse"
   },
   {
@@ -230,7 +230,7 @@
     "dark": true,
     "healing": false,
     "custom": false,
-    "rare": true,
+    "missing": true,
     "wiki": "https://harrypotter.fandom.com/wiki/Killing_Curse"
   },
   {
@@ -243,7 +243,7 @@
     "dark": false,
     "healing": true,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Episkey"
   },
   {
@@ -256,7 +256,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": ""
   },
  {
@@ -269,7 +269,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": ""
   },
  {
@@ -282,7 +282,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": ""
   },
  {
@@ -295,7 +295,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Vanishing_Spell"
   },
  {
@@ -308,7 +308,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Knockback_Jinx"
   },
  {
@@ -321,7 +321,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": ""
   },
  {
@@ -334,7 +334,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": ""
   },
  {
@@ -347,7 +347,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Leg-Locker_Curse"
   },
  {
@@ -360,7 +360,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Wand-Lighting_Charm"
   },
  {
@@ -373,7 +373,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Sunlight_Charm"
   },
  {
@@ -386,7 +386,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Lumos_Maxima"
   },
  {
@@ -399,7 +399,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Mice_to_Snuffboxes"
   },
  {
@@ -412,7 +412,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Wand-Extinguishing_Charm"
   },
  {
@@ -425,7 +425,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Oculus_Reparo"
   },
  {
@@ -438,7 +438,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Bouquet_Spell"
   },
  {
@@ -451,7 +451,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Full_Body-Bind_Curse"
   },
  {
@@ -464,7 +464,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Mending_Charm"
   },
  {
@@ -477,7 +477,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Tickling_Charm"
   },
  {
@@ -490,7 +490,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": ""
   },
  {
@@ -503,7 +503,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": ""
   },
  {
@@ -516,7 +516,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Four-Point_Spell"
   },
  {
@@ -529,7 +529,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Dancing_Feet_Spell"
   },
  {
@@ -542,7 +542,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": ""
   },
  {
@@ -555,7 +555,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Levitation_Charm"
   },
  {
@@ -568,7 +568,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Levitation_Charm"
   },
  {
@@ -581,7 +581,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Vera_Verto"
   }, {
     "name": "Aberto",
@@ -593,7 +593,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Opening_Charm"
   },
  {
@@ -606,7 +606,7 @@
     "dark": false,
     "healing": true,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Anapneo"
   },
  {
@@ -619,7 +619,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Spider-Banishing_Charm"
   },
  {
@@ -632,7 +632,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": ""
   },
  {
@@ -645,7 +645,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Water-Making_Spell"
   },
  {
@@ -658,7 +658,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Disarming_Charm"
   },
  {
@@ -671,7 +671,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": ""
   },
  {
@@ -684,7 +684,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Severing_Charm"
   },
  {
@@ -697,7 +697,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": ""
   },
  {
@@ -710,7 +710,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Everte_Statum"
   },
  {
@@ -723,7 +723,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/General_Counter-Spell"
   },
  {
@@ -736,7 +736,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/General_Counter-Spell"
   },
  {
@@ -749,7 +749,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Freezing_Charm"
   },
  {
@@ -762,7 +762,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": ""
   },
  {
@@ -775,7 +775,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": ""
   },
  {
@@ -788,7 +788,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Shield_Charm"
   },
  {
@@ -801,7 +801,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Cleaning_spell"
   },
  {
@@ -814,7 +814,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Wiping_Spell"
   },
  {
@@ -827,7 +827,7 @@
     "dark": false,
     "healing": false,
     "custom": true,
-    "rare": false,
+    "missing": false,
     "wiki": ""
   },
    {
@@ -840,7 +840,7 @@
     "dark": false,
     "healing": false,
     "custom": false,
-    "rare": false,
+    "missing": false,
     "wiki": "hhttps://harrypotter.fandom.com/wiki/Revealing_Charm"
   }
 ]
