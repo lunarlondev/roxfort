@@ -157,32 +157,22 @@ function render(){
      </a>`
   : "";
 
-    div.innerHTML=`
+       div.innerHTML=`
 
-    ${cornerIcons ? `<div class="customStar">${cornerIcons}</div>` : ""}
+   ${cornerIcons ? `<div class="customStar">${cornerIcons}</div>` : ""}
 
-    <div class="icons">${effectIcons}</div>
+   <div class="icons">${effectIcons}</div>
 
-    <div class="year">${evszoveg}</div>
+   <div class="year">${evszoveg}</div>
 
-    <div class="nev">${s.name}</div>
-    <div class="hu">${s.hu||"-"}</div>
+   <div class="nev">${s.name}</div>
+   <div class="hu">${s.hu||"-"}</div>
 
-    <div class="desc">${s.description||""}</div>
+   <div class="desc">${s.description||""}</div>
 
-    <div class="tags">
+   ${wikiLink}
 
-      <span class="tag">${categoryNames[s.category]||s.category}</span>
-
-      ${(s.effects||[])
-        .map(e=>`<span class="tag">${e}</span>`)
-        .join("")}
-
-    </div>
-
-    ${wikiLink}
-
-    `;
+   `;
 
     lista.appendChild(div);
 
