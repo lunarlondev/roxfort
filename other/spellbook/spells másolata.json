@@ -105,19 +105,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Bandaging_Charm"
   },
-  {
-    "name": "Banishing Charm",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Banishing_Charm"
-  },
+
   {
     "name": "Baubillious",
     "hu": "-",
@@ -144,19 +132,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Beauty_spell"
   },
-  {
-    "name": "Ben Copper's good luck charm",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Ben_Copper's_good_luck_charm"
-  },
+
   {
     "name": "Bewitched Sleep (spell)",
     "hu": "-",
@@ -562,19 +538,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Confundus_Charm"
   },
-  {
-    "name": "Confundus Duo",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Confundus_Duo"
-  },
+
   {
     "name": "Counter-charm for hiccoughs",
     "hu": "-",
@@ -874,19 +838,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Enlargement_Charm"
   },
-  {
-    "name": "Enlarging Spell",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Enlarging_Spell"
-  },
+
   {
     "name": "Entrancing Enchantments",
     "hu": "-",
@@ -1217,19 +1169,7 @@
   },
 
 
-  {
-    "name": "Gouging Spell",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Gouging_Spell"
-  },
+
   {
     "name": "Green Sparks",
     "hu": "-",
@@ -1347,19 +1287,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Herbivicus_Charm"
   },
-  {
-    "name": "Herbivicus Duo",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Herbivicus_Duo"
-  },
+
   {
     "name": "Homonculous Charm",
     "hu": "-",
@@ -1844,19 +1772,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Obliteration_Charm"
   },
-  {
-    "name": "Obscuro",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Obscuro"
-  },
+
 
   {
     "name": "One-Eyed Witch Spell",
@@ -2237,19 +2153,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Reverte"
   },
-  {
-    "name": "Reviving Spell",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Reviving_Spell"
-  },
+
   {
     "name": "Merope Riddle's spell",
     "hu": "-",
@@ -2640,32 +2544,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Stream_of_Flames"
   },
-  {
-    "name": "Stunning Spell",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Stunning_Spell"
-  },
-  {
-    "name": "Stupefy Duo",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Stupefy_Duo"
-  },
+
   {
     "name": "Substantive Charm",
     "hu": "-",
@@ -2679,32 +2558,8 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Substantive_Charm"
   },
-  {
-    "name": "Summoning Charm",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Summoning_Charm"
-  },
-  {
-    "name": "Sunlight Charm",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Sunlight_Charm"
-  },
+
+
   {
     "name": "Supersensory Charm",
     "hu": "-",
@@ -2965,32 +2820,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Vaulting_Charm"
   },
-  {
-    "name": "Ventus Duo",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Ventus_Duo"
-  },
-  {
-    "name": "Ventus Tria",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Ventus_Tria"
-  },
+  
   {
     "name": "Verdillious",
     "hu": "-",
@@ -3017,58 +2847,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Verdimillious_Charm"
   },
-  {
-    "name": "Verdimillious Duo Spell",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Verdimillious_Duo_Spell"
-  },
-  {
-    "name": "Verdimillious Tria",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Verdimillious_Tria"
-  },
-  {
-    "name": "Vermillious Duo",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Vermillious_Duo"
-  },
-  {
-    "name": "Vermillious Tria",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Vermillious_Tria"
-  },
+  
   {
     "name": "Vinegar to wine spell",
     "hu": "-",
@@ -3632,46 +3411,8 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Lycacomia_Curse"
   },
-  {
-    "name": "Mucus ad Nauseam Duo",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Mucus_ad_Nauseam_Duo"
-  },
-  {
-    "name": "Mucus ad Nauseam Tria",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Mucus_ad_Nauseam_Tria"
-  },
   
-  {
-    "name": "Pimple Jinx",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Pimple_Jinx"
-  },
+  
   {
     "name": "Portrait curse",
     "hu": "-",
@@ -3698,20 +3439,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Ragnuk's_curse"
   },
-  {
-    "name": "Reductor Curse",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Reductor_Curse"
-  },
-  {
+
     "name": "Victor Rookwood's curse",
     "hu": "-",
     "year": 8,
@@ -3828,19 +3556,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Thief's_Curse"
   },
-  {
-    "name": "Tongue-Tying Curse",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Tongue-Tying_Curse"
-  },
+
   {
     "name": "Transmogrifian Torture",
     "hu": "-",
@@ -4492,19 +4208,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Knockback_Jinx"
   },
-  {
-    "name": "Knockback Jinx Duo",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Knockback_Jinx_Duo"
-  },
+  
   {
     "name": "Langlock",
     "hu": "-",
@@ -5650,19 +5354,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Bat-Bogey_Hex_of_1972"
   },
-  {
-    "name": "Black Magic",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Black_Magic"
-  },
+
   {
     "name": "Blood payment",
     "hu": "-",
@@ -5741,45 +5433,7 @@
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Tom_Riddle's_unidentified_smoke_spell"
   },
-  {
-    "name": "Rotfang Conspiracy",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Rotfang_Conspiracy"
-  },
-  {
-    "name": "Rudimentary magic",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Rudimentary_magic"
-  },
-  {
-    "name": "Rune-Sign Language",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "rare": false,
-    "wiki": "https://harrypotter.fandom.com/wiki/Rune-Sign_Language"
-  },
+
   {
     "name": "Unknown transforming spell",
     "hu": "-",
@@ -5831,121 +5485,4 @@
     "custom": false,
     "rare": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Weakness_payment"
-  },
-  {
-    "name": "Mellus Rotare",
-    "hu": "Mellus Rotare",
-    "year": 7,
-    "category": "charm",
-    "description": "Önkeverő bűbáj, hogy az üst tartalma folyamatosan kavargjon.",
-    "effects": ["háztartásmágia"],
-    "dark": false,
-    "healing": false,
-    "custom": true,
-    "rare": false,
-    "wiki": ""
-  },
-  {
-    "name": "Aqua Caloris",
-    "hu": "-",
-    "year": 7,
-    "category": "charm",
-    "description": "Főzési hőszabályozó varázslat, amellyel beállítható a tökéletes hőfok.",
-    "effects": ["háztartásmágia"],
-    "dark": false,
-    "healing": false,
-    "custom": true,
-    "rare": false,
-    "wiki": ""
-  },
-  {
-    "name": "Aromatis Ventus",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "Illat- és fűszerszóró bűbáj, amely egyenletesen teríti el a fűszereket.",
-    "effects": ["háztartásmágia"],
-    "dark": false,
-    "healing": false,
-    "custom": true,
-    "rare": false,
-    "wiki": ""
-  },
-  {
-    "name": "Gustatio Perfecta",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "Ízharmonizáló bűbáj, az ízek intenzitásával foglalkozik. Nagyon pontos koncentrációt igényel, mind az öt íz alapos ismerete fontos hozzá.",
-    "effects": ["háztartásmágia"],
-    "dark": false,
-    "healing": false,
-    "custom": true,
-    "rare": false,
-    "wiki": ""
-  },
-  {
-    "name": "Incendium Culinaris",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "Önsütő bűbáj. Folyamatos hőt termel a célzott ételben, így az egyenletesen megsül. Javasolt lebegtetni a célpontot, hogy megelőzzük a baleseteket.",
-    "effects": ["háztartásmágia"],
-    "dark": false,
-    "healing": false,
-    "custom": true,
-    "rare": false,
-    "wiki": ""
-  },
-  {
-    "name": "Tenera Caro",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "Húspuhító bűbáj, hogy szaftos maradjon. Figyelem, élőlényekre nagyon veszélyes a használata, az izmok elveszíthetik tónusukat, gumiszerűvé válhatnak.",
-    "effects": ["háztartásmágia"],
-    "dark": false,
-    "healing": false,
-    "custom": true,
-    "rare": false,
-    "wiki": ""
-  },
-  {
-    "name": "Holus Cortex",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": " A célzott zöldségek meghámozzák magukat. Élőlényekre hatástalan.",
-    "effects": ["háztartásmágia"],
-    "dark": false,
-    "healing": false,
-    "custom": true,
-    "rare": false,
-    "wiki": ""
-  },
-  {
-    "name": "Vaporare ",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "A célzott tárgyat belengi a forró gőz, kiváló zöldségek gőzöléséhez, de vasaláshoz is.",
-    "effects": ["háztartásmágia"],
-    "dark": false,
-    "healing": false,
-    "custom": true,
-    "rare": false,
-    "wiki": ""
-  },
-  {
-    "name": "Textrura Lenis",
-    "hu": "-",
-    "year": 8,
-    "category": "charm",
-    "description": "Állagformáló bűbáj. A célzott anyagot képes kérmessé, kocsonyássá, sűrűvé vagy pépessé változtatni. Főleg folyadékokra használatos.",
-    "effects": ["háztartásmágia","párbajvarázslat"],
-    "dark": false,
-    "healing": false,
-    "custom": true,
-    "rare": false,
-    "wiki": ""
   },
