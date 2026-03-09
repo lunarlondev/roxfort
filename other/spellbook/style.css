@@ -550,31 +550,24 @@ pointer-events:none;
 
 /* toggle gombok */
 
-.sidebarToggle{
+.topFilters{
 
-position:fixed;
-top:120px;
+display:grid;
 
-width:36px;
-height:36px;
+grid-template-columns:
+1.2fr
+160px
+160px
+1fr;
 
-background:#141720;
-border:1px solid #2a2f3c;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-border-radius:8px;
-
-cursor:pointer;
-
-font-size:14px;
-
-z-index:1000;
+gap:12px;
 
 }
 
+#clearFilters{
+grid-column:1 / -1;
+justify-self:end;
+}
 .leftToggle{
 left:10px;
 }
@@ -607,3 +600,116 @@ pointer-events:none;
 
 
 
+/* felső filter bar */
+
+.topFilters{
+
+display:grid;
+
+grid-template-columns:
+1.2fr
+160px
+160px
+1fr;
+
+gap:12px;
+
+}
+
+#clearFilters{
+grid-column:1 / -1;
+justify-self:end;
+}
+
+.topFilters input,
+.topFilters select{
+
+height:36px;
+
+}
+
+/* checkbox */
+
+.yearCheckbox{
+
+display:flex;
+align-items:center;
+gap:6px;
+
+font-size:14px;
+color:#cfd5df;
+
+}
+
+.yearCheckbox input{
+
+width:18px;
+height:18px;
+
+accent-color:#4a7cff;
+
+}
+
+/* fő layout */
+
+.mainLayout{
+
+display:grid;
+grid-template-columns:1fr 260px;
+gap:25px;
+
+}
+
+/* jobb sidebar */
+
+.rightSidebar{
+
+background:#141720;
+border:1px solid #2a2f3c;
+
+border-radius:10px;
+
+padding:14px;
+
+height:fit-content;
+
+}
+
+
+.sidebarToggle{
+
+position:fixed;
+right:20px;
+top:150px;
+
+width:34px;
+height:34px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:#141720;
+border:1px solid #2a2f3c;
+
+border-radius:8px;
+
+cursor:pointer;
+
+z-index:1000;
+
+}
+
+.rightSidebar{
+
+transition:.35s;
+
+}
+
+.rightSidebar.collapsed{
+
+transform:translateX(300px);
+opacity:0;
+pointer-events:none;
+
+}

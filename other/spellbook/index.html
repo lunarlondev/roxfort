@@ -12,31 +12,20 @@
 
 <body>
 
-<div class="app layout" id="layout">
+<div class="app">
 
-<!-- BAL SIDEBAR TOGGLE -->
-<div class="sidebarToggle leftToggle" id="toggleLeft">◀</div>
-
-<!-- BAL SIDEBAR -->
-
-<aside class="sidebar leftSidebar" id="leftSidebar">
-
-<h1>Szűrők</h1>
-
-<div class="searchBar">
-<input id="kereses" placeholder="Keresés (név / hatás)">
+<div class="pageTitle">
+Varázslatok listája
 </div>
 
-<div class="filters">
+<!-- FELSŐ SZŰRŐSÁV -->
 
-<div class="filterRow">
+<div class="topFilters">
 
-<div class="filterGroup">
-<label>Évfolyam</label>
+<input id="kereses" placeholder="Keresés (név / hatás)">
 
 <select id="ev">
-
-<option value="">Összes</option>
+<option value="">Összes év</option>
 <option value="0">Ismeretlen</option>
 <option value="1">1. év</option>
 <option value="2">2. év</option>
@@ -46,26 +35,16 @@
 <option value="6">6. év</option>
 <option value="7">7. év</option>
 <option value="8">Felsőoktatás</option>
-
 </select>
-
-</div>
 
 <label class="yearCheckbox">
 <input type="checkbox" id="csakev">
 csak ez az év
 </label>
 
-</div>
-
-
-<div class="filterGroup">
-
-<label>Kategória</label>
-
 <select id="kategoria">
 
-<option value="">Összes</option>
+<option value="">Minden kategória</option>
 <option value="curse">Ártások / átkok</option>
 <option value="transfiguration">Átváltoztatás</option>
 <option value="defense">Védekezés</option>
@@ -75,116 +54,110 @@ csak ez az év
 
 </select>
 
-</div>
-
-
-<div class="filterGroup">
-
-<label>Saját varázslatok</label>
-
 <select id="customMode">
 
-<option value="hide">Elrejtve</option>
-<option value="show" selected>Vegyesen</option>
-<option value="only">Csak ezek</option>
+<option value="hide">Saját varázslatok: rejtve</option>
+<option value="show" selected>Saját varázslatok: vegyesen</option>
+<option value="only">Csak saját</option>
 
 </select>
-
-</div>
-
-
-<div class="filterGroup">
-
-<label>Oldalon nem szereplő</label>
 
 <select id="missingMode">
 
-<option value="hide">Elrejtve</option>
-<option value="show" selected>Vegyesen</option>
-<option value="only">Csak ezek</option>
+<option value="hide">Hiányzó varázslatok: rejtve</option>
+<option value="show" selected>Hiányzó varázslatok: vegyesen</option>
+<option value="only">Csak hiányzó</option>
 
 </select>
 
-</div>
-
-
-<div class="filterGroup">
 <button id="clearFilters">Szűrők törlése</button>
-</div>
 
 </div>
 
-</aside>
 
+<div class="mainLayout">
 
-<!-- TARTALOM -->
+<!-- SPELL LISTA -->
 
-<main class="content">
-
-<div class="pageTitle">
-Varázslatok listája
-</div>
+<div class="content">
 
 <div id="lista"></div>
 
-</main>
+</div>
 
 
-<!-- JOBB SIDEBAR -->
+<!-- JOBB OLDALI EMOJI FILTER -->
 
-<aside class="sidebar rightSidebar" id="rightSidebar">
+<div class="sidebarToggle" id="toggleRight">▶</div>
+<aside class="rightSidebar" id="rightSidebar">
 
 <h1>Hatások</h1>
 
 <div class="legend">
 
 <h3>Elemek</h3>
+
 <div class="legendContent">
-<div data-effect="tűz" title="Tűz">🔥</div>
-<div data-effect="víz" title="Víz">🌊</div>
-<div data-effect="jég" title="Jég">❄</div>
-<div data-effect="villám" title="Villám">⚡</div>
-<div data-effect="föld" title="Föld">⛰️</div>
-<div data-effect="levegő" title="Levegő">💨</div>
-<div data-effect="fény" title="Fény">✨</div>
-<div data-effect="sötétség" title="Sötétség">🌑</div>
+
+<div data-effect="tűz">🔥</div>
+<div data-effect="víz">🌊</div>
+<div data-effect="jég">❄</div>
+<div data-effect="villám">⚡</div>
+<div data-effect="föld">⛰️</div>
+<div data-effect="levegő">💨</div>
+<div data-effect="fény">✨</div>
+<div data-effect="sötétség">🌑</div>
+
 </div>
 
+
 <h3>Harci hatások</h3>
+
 <div class="legendContent">
-<div data-effect="robbanás" title="Robbanás">💥</div>
-<div data-effect="lökés" title="Lökés">🌬</div>
-<div data-effect="kötözés" title="Kötözés">⛓</div>
-<div data-effect="bénítás" title="Bénítás">🪨</div>
-<div data-effect="kábítás" title="Kábítás">🌀</div>
-<div data-effect="pajzs" title="Védekezés">🛡</div>
-<div data-effect="vágás" title="Vágás">🔪</div>
+
+<div data-effect="robbanás">💥</div>
+<div data-effect="lökés">🌬</div>
+<div data-effect="kötözés">⛓</div>
+<div data-effect="bénítás">🪨</div>
+<div data-effect="kábítás">🌀</div>
+<div data-effect="pajzs">🛡</div>
+<div data-effect="vágás">🔪</div>
+
 </div>
 
 
 <h3>Mágia típusok</h3>
+
 <div class="legendContent">
-<div data-effect="vér" title="Vér">🩸</div>
-<div data-effect="idő" title="Idő">⏳</div>
-<div data-effect="módosítás" title="Módosítás">🌈</div>
-<div data-effect="idézés" title="Idézés">📣</div>
-<div data-effect="irányítás" title="Irányítás">🎯</div>
+
+<div data-effect="vér">🩸</div>
+<div data-effect="idő">⏳</div>
+<div data-effect="módosítás">🌈</div>
+<div data-effect="idézés">📣</div>
+<div data-effect="irányítás">🎯</div>
+
 </div>
+
 
 <h3>Képességek</h3>
+
 <div class="legendContent">
-<div data-effect="mozgás" title="Mozgás">🏃</div>
-<div data-effect="tárgymozgatás" title="Tárgymozgatás">🪶</div>
-<div data-effect="átváltoztatás" title="Átváltoztatás">🏆</div>
-<div data-effect="láthatatlanság" title="Láthatatlanság">👁‍🗨</div>
-<div data-effect="illúzió" title="Illúzió">🎭</div>
+
+<div data-effect="mozgás">🏃</div>
+<div data-effect="tárgymozgatás">🪶</div>
+<div data-effect="átváltoztatás">🏆</div>
+<div data-effect="láthatatlanság">👁‍🗨</div>
+<div data-effect="illúzió">🎭</div>
+
 </div>
 
+
 <h3>Egyéb</h3>
+
 <div class="legendContent">
-<div data-effect="háztartásmágia" title="Háztartásmágia">🧹</div>
-<div data-effect="párbajvarázslat" title="Párbajvarázslat">⚔</div>
-</div>
+
+<div data-effect="háztartásmágia">🧹</div>
+<div data-effect="párbajvarázslat">⚔</div>
 
 </div>
 
@@ -192,83 +165,10 @@ Varázslatok listája
 
 </aside>
 
-
-<!-- JOBB TOGGLE -->
-
-<div class="sidebarToggle rightToggle" id="toggleRight">▶</div>
-
 </div>
 
-
 <script src="script.js"></script>
-
-<script>
-
-const layout = document.getElementById("layout")
-
-const leftSidebar = document.getElementById("leftSidebar")
-const rightSidebar = document.getElementById("rightSidebar")
-
-const leftBtn = document.getElementById("toggleLeft")
-const rightBtn = document.getElementById("toggleRight")
-
-
-leftBtn.onclick = () => {
-
-leftSidebar.classList.toggle("collapsed")
-
-if(leftSidebar.classList.contains("collapsed")){
-
-layout.classList.add("leftClosed")
-leftBtn.textContent="▶"
-
-}else{
-
-layout.classList.remove("leftClosed")
-leftBtn.textContent="◀"
-
-}
-
-updateLayout()
-
-}
-
-
-rightBtn.onclick = () => {
-
-rightSidebar.classList.toggle("collapsed")
-
-if(rightSidebar.classList.contains("collapsed")){
-
-layout.classList.add("rightClosed")
-rightBtn.textContent="◀"
-
-}else{
-
-layout.classList.remove("rightClosed")
-rightBtn.textContent="▶"
-
-}
-
-updateLayout()
-
-}
-
-
-function updateLayout(){
-
-if(
-leftSidebar.classList.contains("collapsed") &&
-rightSidebar.classList.contains("collapsed")
-){
-layout.classList.add("bothClosed")
-}else{
-layout.classList.remove("bothClosed")
-}
-
-}
-
-</script>
+<script src="sidebar.js"></script>
 
 </body>
 </html>
