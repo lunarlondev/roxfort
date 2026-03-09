@@ -23,7 +23,6 @@ const effectData = {
   bénítás:{icon:"🪨",label:"Bénítás"},
   pajzs:{icon:"🛡",label:"Pajzs"},
   gyógyítás:{icon:"✚",label:"Gyógyítás"},
-  méreg:{icon:"☠",label:"Méreg"},
   vér:{icon:"🩸",label:"Vérmágia"},
   mozgás:{icon:"🌀",label:"Mozgás"},
   tárgymozgatás:{icon:"🪶",label:"Tárgymozgatás"},
@@ -167,7 +166,7 @@ function render(){
     if(s.custom) cornerIcons+="⭐";
     if(s.dark) cornerIcons+="☠";
     if(s.healing) cornerIcons+="✚";
-    if(s.rare) cornerIcons+="📜";
+    if(s.rare) cornerIcons+="✖️";
 
 
     /* EFFECT IKONOK (jobb felső) */
