@@ -445,3 +445,38 @@ transform:scale(1.15);
 .wikiLink:hover img{
 filter:drop-shadow(0 0 6px #00d1ff);
 }
+
+
+.searchBar{
+margin-bottom:20px;
+}
+
+.searchBar input{
+width:100%;
+font-size:15px;
+padding:12px 14px;
+}
+
+.filters{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:14px;
+align-items:end;
+}
+
+.filterGroup{
+display:flex;
+flex-direction:column;
+gap:4px;
+font-size:12px;
+color:#9fa6b0;
+}
+
+.checkboxGroup{
+justify-content:flex-end;
+}
+
+.filterGroup select,
+.filterGroup input{
+width:100%;
+}

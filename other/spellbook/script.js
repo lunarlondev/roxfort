@@ -14,14 +14,14 @@ const effectData = {
   víz:{icon:"🌊",label:"Víz"},
   jég:{icon:"❄",label:"Jég"},
   villám:{icon:"⚡",label:"Villám"},
-  villám:{icon:"⛰️",label:"Föld"},
+  föld:{icon:"⛰️",label:"Föld"},
   fény:{icon:"✨",label:"Fény"},
   sötétség:{icon:"🌑",label:"Sötétség"},
   robbanás:{icon:"💥",label:"Robbanás"},
   lökés:{icon:"🌬",label:"Erőhullám"},
   kötözés:{icon:"⛓",label:"Mozgáskorlátozás"},
   bénítás:{icon:"🪨",label:"Bénítás"},
-  bénítás:{icon:"🌀",label:"Kábítás"},
+  kábítás:{icon:"🌀",label:"Kábítás"},
   pajzs:{icon:"🛡",label:"Pajzs"},
   gyógyítás:{icon:"✚",label:"Gyógyítás"},
   vér:{icon:"🩸",label:"Vérmágia"},
@@ -60,7 +60,8 @@ function render(){
   const ev = evValue === "" ? null : Number(evValue);
   const kat = document.getElementById("kategoria").value;
   const csakev = document.getElementById("csakev").checked;
-  const custom = document.getElementById("custom").checked;
+  const customMode = document.getElementById("customMode").value;
+  const missingMode = document.getElementById("missingMode").value;
 
   const lista = document.getElementById("lista");
   lista.innerHTML="";
@@ -106,7 +107,11 @@ function render(){
 
     }
 
-    if(custom && !s.custom) return false;
+    if(customMode === "hide" && s.custom) return false;
+    if(customMode === "only" && !s.custom) return false;
+
+    if(missingMode === "hide" && s.missing) return false;
+    if(missingMode === "only" && !s.missing) return false;
 
     if(flagFilter && !s[flagFilter]) return false;
 
@@ -213,7 +218,8 @@ document.getElementById("clearFilters").addEventListener("click", () => {
   document.getElementById("kategoria").value="";
 
   document.getElementById("csakev").checked=false;
-  document.getElementById("custom").checked=false;
+  document.getElementById("customMode").value="hide";
+  document.getElementById("missingMode").value="hide";
 
   flagFilter=null;
 

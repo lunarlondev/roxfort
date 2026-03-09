@@ -15,13 +15,17 @@
 
 <h1>Varázslatok listája</h1>
 
+<div class="searchBar">
+<input id="kereses" placeholder="Keresés (név / hatás / magyar név)">
+</div>
+
 <div class="filters">
 
-<input id="kereses" placeholder="Keresés (név / hatás / magyar név)">
-
+<div class="filterGroup">
+<label>Évfolyam</label>
 <select id="ev">
 
-<option value="">Évfolyam</option>
+<option value="">Összes</option>
 <option value="0">Ismeretlen</option>
 <option value="1">1. év</option>
 <option value="2">2. év</option>
@@ -33,10 +37,13 @@
 <option value="8">Felsőoktatás</option>
 
 </select>
+</div>
 
+<div class="filterGroup">
+<label>Kategória</label>
 <select id="kategoria">
 
-<option value="">Kategória</option>
+<option value="">Összes</option>
 
 <option value="curse">Ártások / rontások / átkok</option>
 <option value="transfiguration">Átváltoztatások / idézések</option>
@@ -46,23 +53,47 @@
 <option value="dark">Fekete mágia</option>
 
 </select>
+</div>
 
-<label class="checkbox">
+<div class="filterGroup checkboxGroup">
+<label>
 <input type="checkbox" id="csakev">
 Csak az adott év
 </label>
+</div>
 
-<label class="checkbox">
-<input type="checkbox" id="custom">
-Saját varázslatok
-</label>
+<div class="filterGroup">
+<label>Saját varázslatok</label>
+<select id="customMode">
 
+<option value="hide">Elrejtve</option>
+<option value="show">Vegyesen</option>
+<option value="only">Csak ezek</option>
+
+</select>
+</div>
+
+<div class="filterGroup">
+<label>Oldalon nem szereplő</label>
+<select id="missingMode">
+
+<option value="hide">Elrejtve</option>
+<option value="show">Vegyesen</option>
+<option value="only">Csak ezek</option>
+
+</select>
+</div>
+
+<div class="filterGroup">
 <button id="clearFilters">Szűrők törlése</button>
+</div>
 
 </div>
 
 <div class="note">
-Az ismeretlen évfolyam varázslatai vagy nem tanulhatóak hagyományos módon, vagy nem ismert, hogy mikor sajátíthatják el a diákok.
+Az ismeretlen évfolyam varázslatai vagy nem tanulhatóak hagyományos módon, vagy nem ismert, hogy mikor sajátíthatják el a diákok.<br>
+Azon varázslatoknál, amik canonnak számítanak, de nem voltak benne az oldal listájában, a rendelkezésre álló források alapján (pl mikor találkoztak vele a diákok) igyekeztem megtippelni a helyes évet. Ahol ez nem volt lehetséges, ott ismeretlen évfolyamot állítottam be.<br>
+Egyes varázslatok leírása nálunk eltér a canontól. Az eltérés ellenére az oldalon talált leírást használtam ezeknél.
 </div>
 
 <div class="legend">
@@ -83,8 +114,7 @@ Az ismeretlen évfolyam varázslatai vagy nem tanulhatóak hagyományos módon, 
 <div data-effect="lökés">🌬 Erőhullám</div>
 <div data-effect="kötözés">⛓ Mozgáskorlátozás</div>
 <div data-effect="bénítás">🪨 Bénítás</div>
-<div data-effect="bénítás">🌀 Kábítás</div>
-
+<div data-effect="kábítás">🌀 Kábítás</div>
 
 <div data-effect="pajzs">🛡 Pajzs</div>
 <div data-effect="vér">🩸 Vérmágia</div>
@@ -107,8 +137,7 @@ Az ismeretlen évfolyam varázslatai vagy nem tanulhatóak hagyományos módon, 
 
 <div data-flag="dark">☠ Sötét varázslatok</div>
 <div data-flag="healing">✚ Gyógyító varázslatok</div>
-<div data-flag="custom">⭐ Saját varázslatok</div>
-<div data-flag="missing">✖️ Oldalon nem szereplő varázslatok</div>
+
 
 </div>
 
