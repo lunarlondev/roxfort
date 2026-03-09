@@ -8,6 +8,28 @@ margin:0;
 
 }
 
+
+.pageTitle{
+
+font-family:"Cinzel", serif !important;
+
+font-size:36px;
+
+letter-spacing:2px;
+
+margin-bottom:25px;
+
+text-align:center;
+
+color:#f2f2f2;
+
+text-shadow:
+0 0 6px rgba(255,255,255,.2),
+0 0 20px rgba(120,160,255,.25);
+
+}
+
+
 /* app */
 
 .app{
@@ -481,12 +503,13 @@ width:100%;
 display:grid;
 grid-template-columns:260px 1fr;
 gap:25px;
+
+transition:grid-template-columns .35s ease;
 }
 
 .sidebar{
-position:sticky;
-top:20px;
-height:fit-content;
+position:relative;
+transition:transform .35s ease, opacity .25s;
 }
 
 
@@ -507,9 +530,6 @@ position:relative;
 transition:transform .35s;
 }
 
-.sidebar.collapsed{
-transform:translateX(-240px);
-}
 
 .content{
 min-width:0;

@@ -6,7 +6,6 @@
 <title>Spellbook</title>
 
 <link rel="stylesheet" href="style.css">
-
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
 
 </head>
@@ -61,11 +60,7 @@
 <input type="checkbox" id="csakev">
 Csak az adott év
 </label>
-
-
 </div>
-
-
 
 <div class="filterGroup">
 <label>Saját varázslatok</label>
@@ -90,7 +85,6 @@ Csak az adott év
 </div>
 
 </div>
-
 
 
 <div class="legend">
@@ -160,6 +154,7 @@ Varázslatok listája
 
 </div>
 
+
 <script src="script.js"></script>
 
 <script>
@@ -170,14 +165,29 @@ const layout = document.querySelector(".layout")
 
 btn.onclick = () => {
 
-sidebar.classList.toggle("collapsed")
-layout.classList.toggle("sidebarClosed")
+if(sidebar.classList.contains("collapsed")){
 
-btn.textContent =
-sidebar.classList.contains("collapsed") ? "▶" : "◀"
+layout.classList.remove("sidebarClosed")
+
+setTimeout(()=>{
+sidebar.classList.remove("collapsed")
+},10)
+
+btn.textContent="◀"
+
+}else{
+
+sidebar.classList.add("collapsed")
+
+setTimeout(()=>{
+layout.classList.add("sidebarClosed")
+},300)
+
+btn.textContent="▶"
 
 }
 
+}
 </script>
 
 </body>
