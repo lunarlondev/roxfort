@@ -204,7 +204,7 @@
     "dark": true,
     "healing": false,
     "custom": false,
-    "missing": true,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Imperius_Curse"
   },
   {
@@ -217,7 +217,7 @@
     "dark": true,
     "healing": false,
     "custom": false,
-    "missing": true,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Cruciatus_Curse"
   },
   {
@@ -230,7 +230,7 @@
     "dark": true,
     "healing": false,
     "custom": false,
-    "missing": true,
+    "missing": false,
     "wiki": "https://harrypotter.fandom.com/wiki/Killing_Curse"
   },
   {
