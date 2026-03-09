@@ -100,13 +100,21 @@ function render(){
 
     if(kat){
 
-      if(kat === "dark"){
-        if(!s.dark) return false;
-      }else{
-        if(s.category !== kat) return false;
-      }
+      if(kat){
 
-    }
+  if(kat === "dark"){
+
+    if(!s.dark) return false;
+
+  }else{
+
+    if(s.dark && kat !== "dark") return false;
+
+    if(s.category !== kat) return false;
+
+  }
+
+}
 
     if(customMode === "hide" && s.custom) return false;
     if(customMode === "only" && !s.custom) return false;
