@@ -576,8 +576,6 @@ name": "Water-Making Spell", "wiki": "https://harrypotter.fandom.com/wiki/Water-
 
 "name": "Cracker Jinx", "wiki": "https://harrypotter.fandom.com/wiki/Cracker_Jinx"
 
-"name": "Dangling Jinx", "wiki": "https://harrypotter.fandom.com/wiki/Dangling_Jinx
-
 "name": "Defensive jinx", "wiki": "https://harrypotter.fandom.com/wiki/Defensive_jinx"
 
 "name": "Drone Jinx", "wiki": "https://harrypotter.fandom.com/wiki/Drone_Jinx"
@@ -726,9 +724,7 @@ name": "Water-Making Spell", "wiki": "https://harrypotter.fandom.com/wiki/Water-
 
 "Inanimatus Conjurus Spell", "wiki": "https://harrypotter.fandom.com/wiki/Inanimatus_Conjurus_Spell"
 
-"name": "Incarcerous Spell", "wiki": "https://harrypotter.fandom.com/wiki/Incarcerous_Spell" "name":
-
-"Lawn-creating spell", "wiki": "https://harrypotter.fandom.com/wiki/Lawn-creating_spell" "name":
+"name": "Lawn-creating spell", "wiki": "https://harrypotter.fandom.com/wiki/Lawn-creating_spell" "name":
 
 "Manacle-conjuring spell", "wiki": "https://harrypotter.fandom.com/wiki/Manacle-conjuring_spell"
 
@@ -778,14 +774,21 @@ name": "Water-Making Spell", "wiki": "https://harrypotter.fandom.com/wiki/Water-
 
 "name": "Whisky-conjuring spell", "wiki": "https://harrypotter.fandom.com/wiki/Whisky-conjuring_spell"
 
-"name": "Angry Skull", "wiki": "https://harrypotter.fandom.com/wiki/Angry_Skull" "name": "Bat-Bogey Hex of 1972", "wiki": "https://harrypotter.fandom.com/wiki/Bat-Bogey_Hex_of_1972" 
+"name": "Angry Skull", "wiki": "https://harrypotter.fandom.com/wiki/Angry_Skull"
+
+"name": "Bat-Bogey Hex of 1972", "wiki": "https://harrypotter.fandom.com/wiki/Bat-Bogey_Hex_of_1972" 
 
 "name": "Blood payment", "wiki": "https://harrypotter.fandom.com/wiki/Blood_payment"
 
 "name": "Dark Lightning", "wiki": "https://harrypotter.fandom.com/wiki/Dark_Lightning"
 
-"name": "Petrification", "wiki": "https://harrypotter.fandom.com/wiki/Petrification" "name": "Possession", "wiki": "https://harrypotter.fandom.com/wiki/Possession" "name": "Tom Riddle's unidentified pinwheel spell", "wiki": "https://harrypotter.fandom.com/wiki/Tom_Riddle's_unidentified_pinwheel_spell" "name": "Tom Riddle's unidentified smoke spell", "wiki": "https://harrypotter.fandom.com/wiki/Tom_Riddle's_unidentified_smoke_spell" 
- 
+"name": "Petrification", "wiki": "https://harrypotter.fandom.com/wiki/Petrification"
+
+"name": "Possession", "wiki": "https://harrypotter.fandom.com/wiki/Possession"
+
+"name": "Tom Riddle's unidentified pinwheel spell", "wiki": "https://harrypotter.fandom.com/wiki/Tom_Riddle's_unidentified_pinwheel_spell"
+
+"name": "Tom Riddle's unidentified smoke spell", "wiki": "https://harrypotter.fandom.com/wiki/Tom_Riddle's_unidentified_smoke_spell" 
 
 "name": "Unknown transforming spell", "wiki": "https://harrypotter.fandom.com/wiki/Unknown_transforming_spell"
 
