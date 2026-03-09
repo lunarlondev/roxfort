@@ -100,18 +100,10 @@ function render(){
 
     if(kat){
 
-      if(kat){
-
   if(kat === "dark"){
-
     if(!s.dark) return false;
-
   }else{
-
-    if(s.dark && kat !== "dark") return false;
-
     if(s.category !== kat) return false;
-
   }
 
 }
