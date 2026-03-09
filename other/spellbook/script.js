@@ -25,7 +25,7 @@ const effectData = {
   pajzs:{icon:"🛡",label:"Pajzs"},
   gyógyítás:{icon:"✚",label:"Gyógyítás"},
   vér:{icon:"🩸",label:"Vérmágia"},
-  vér:{icon:"⏳",label:"Idő"},
+  idő:{icon:"⏳",label:"Idő"},
   mozgás:{icon:"🏃🏼‍♀️",label:"Mozgás"},
   tárgymozgatás:{icon:"🪶",label:"Tárgymozgatás"},
   átváltoztatás:{icon:"🏆",label:"Átváltoztatás"},
