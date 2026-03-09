@@ -37,7 +37,9 @@ const effectData = {
   illúzió:{icon:"🎭",label:"Illúzió"},
   háztartásmágia:{icon:"🧹",label:"Háztartásmágia"},
   párbajvarázslat:{icon:"⚔",label:"Párbajvarázslat"},
-  vágás:{icon:"🔪",label:"Vágás"}
+  vágás:{icon:"🔪",label:"Vágás"},
+  test:{icon:"🫆",label:"Test"},
+  elme:{icon:"🧠",label:"Elme"}
 };
 
 async function init(){
