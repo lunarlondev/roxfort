@@ -32,6 +32,7 @@ const effectData = {
   átváltoztatás:{icon:"🏆",label:"Átváltoztatás"},
   módosítás:{icon:"🌈",label:"Módosítás"},
   idézés:{icon:"📣",label:"Idézés"},
+  eltüntetés:{icon:"🍃",label:"Eltüntetés"},
   irányítás:{icon:"🎯",label:"Irányítás"},
   láthatatlanság:{icon:"👁‍🗨",label:"Láthatatlanság"},
   illúzió:{icon:"🎭",label:"Illúzió"},
