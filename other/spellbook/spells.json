@@ -1,7 +1,7 @@
 [
   {
     "name": "Maxima",
-    "hu": "Maxima",
+    "hu": "",
     "year": 8,
     "category": "charm",
     "description": "Varázslat módosító, aminek célja a varázslat erejének növelése. Egyes varázslatok esetében eltérő hatást válthat ki. Az eredeti varázslattól különállóan találják fel őket.",
@@ -13,8 +13,8 @@
     "wiki": "https://harrypotter.fandom.com/wiki/Maxima"
   },
   {
-    "name": "Nonverbal spell",
-    "hu": "Nonverbális varázslatok",
+    "name": "Nonverbális varázslatok",
+    "hu": "",
     "year": 6,
     "category": "charm",
     "description": "Hatodévben jön el a pillanat, mikor a diákoknak a nonverbális varázslást is meg kell tanulniuk. A nonverbális varázslatok valamivel gyengébbek.",
@@ -27,7 +27,7 @@
   },
   {
     "name": "Aberforth Dumbledore's goat charm",
-    "hu": "Kecskeszarv polírozó bűbáj",
+    "hu": "",
     "year": 0,
     "category": "charm",
     "description": "Kecskék szarvainak polírozására.",
@@ -40,7 +40,7 @@
   },
   {
     "name": "Alohomora",
-    "hu": "-",
+    "hu": "",
     "year": 1,
     "category": "charm",
     "description": "Zárnyitó bűbáj. A pálcával a kilincset kell megcélozni, majd a varázsige után az ajtó kinyílik. Egyes ajtókat alohomora-biztossá teszik, azaz ezzel a varázslattal nem lehet őket kinyitni.",
@@ -53,7 +53,7 @@
   },
   {
     "name": "Impervus Charm",
-    "hu": "Leperex ",
+    "hu": "Leperex",
     "year": 3,
     "category": "charm",
     "description": "Vízlepergető-bűbáj. A célzott tárgyat vagy személyt vízhatlanná teszi. Ha a tárgy/személy már vizes volt, akkor a vízcseppek lehullanak róla. A varázslat remek védekezés az Aqua Eructo bűbáj ellen..",
@@ -66,7 +66,7 @@
   },
   {
     "name": "Vulnera Sanentur",
-    "hu": "-",
+    "hu": "",
     "year": 7,
     "category": "healing",
     "description": "Vágásokat gyógyít be. Ha idejében használják, akár súlyos sérüléseket is be lehet gyógyítani vele, ha valaki megtanulja jól használni.",
@@ -79,7 +79,7 @@
   },
   {
     "name": "Mellus Rotare",
-    "hu": "Mellus Rotare",
+    "hu": "",
     "year": 7,
     "category": "charm",
     "description": "Önkeverő bűbáj, hogy az üst tartalma folyamatosan kavargjon.",
@@ -92,7 +92,7 @@
   },
   {
     "name": "Aqua Caloris",
-    "hu": "-",
+    "hu": "",
     "year": 7,
     "category": "charm",
     "description": "Főzési hőszabályozó varázslat, amellyel beállítható a tökéletes hőfok.",
@@ -105,7 +105,7 @@
   },
   {
     "name": "Aromatis Ventus",
-    "hu": "-",
+    "hu": "",
     "year": 8,
     "category": "charm",
     "description": "Illat- és fűszerszóró bűbáj, amely egyenletesen teríti el a fűszereket.",
@@ -118,7 +118,7 @@
   },
   {
     "name": "Gustatio Perfecta",
-    "hu": "-",
+    "hu": "",
     "year": 8,
     "category": "charm",
     "description": "Ízharmonizáló bűbáj, az ízek intenzitásával foglalkozik. Nagyon pontos koncentrációt igényel, mind az öt íz alapos ismerete fontos hozzá.",
@@ -131,7 +131,7 @@
   },
   {
     "name": "Incendium Culinaris",
-    "hu": "-",
+    "hu": "",
     "year": 8,
     "category": "charm",
     "description": "Önsütő bűbáj. Folyamatos hőt termel a célzott ételben, így az egyenletesen megsül. Javasolt lebegtetni a célpontot, hogy megelőzzük a baleseteket.",
@@ -144,7 +144,7 @@
   },
   {
     "name": "Tenera Caro",
-    "hu": "-",
+    "hu": "",
     "year": 8,
     "category": "charm",
     "description": "Húspuhító bűbáj, hogy szaftos maradjon. Figyelem, élőlényekre nagyon veszélyes a használata, az izmok elveszíthetik tónusukat, gumiszerűvé válhatnak.",
@@ -157,7 +157,7 @@
   },
   {
     "name": "Holus Cortex",
-    "hu": "-",
+    "hu": "",
     "year": 8,
     "category": "charm",
     "description": "A célzott zöldségek meghámozzák magukat. Élőlényekre hatástalan.",
@@ -170,7 +170,7 @@
   },
   {
     "name": "Vapomissing",
-    "hu": "-",
+    "hu": "",
     "year": 8,
     "category": "charm",
     "description": "A célzott tárgyat belengi a forró gőz, kiváló zöldségek gőzöléséhez, de vasaláshoz is.",
@@ -183,7 +183,7 @@
   },
   {
     "name": "Textrura Lenis",
-    "hu": "-",
+    "hu": "",
     "year": 8,
     "category": "charm",
     "description": "Állagformáló bűbáj. A célzott anyagot képes kérmessé, kocsonyássá, sűrűvé vagy pépessé változtatni. Főleg folyadékokra használatos.",
@@ -195,8 +195,8 @@
     "wiki": ""
   },
   {
-    "name": "Imperius Curse",
-    "hu": "Imperio",
+    "name": "Imperio",
+    "hu": "",
     "year": 0,
     "category": "curse",
     "description": "Élőlényeket vonhatunk vele az irányításunk alá. Főbenjáró átok.",
@@ -208,8 +208,8 @@
     "wiki": "https://harrypotter.fandom.com/wiki/Imperius_Curse"
   },
   {
-    "name": "Cruciatus Curse",
-    "hu": "Crucio",
+    "name": "Crucio",
+    "hu": "",
     "year": 0,
     "category": "curse",
     "description": "Élőlények kínzására szolgáló átok, a legkegyetlenebb kínzó átok. Főbenjáró átok.",
@@ -221,8 +221,8 @@
     "wiki": "https://harrypotter.fandom.com/wiki/Cruciatus_Curse"
   },
   {
-    "name": "Killing Curse",
-    "hu": "Avada Kedavra",
+    "name": "Avada Kedavra",
+    "hu": "",
     "year": 0,
     "category": "curse",
     "description": "A gyilkos átok. Főbenjáró átok.",
@@ -248,7 +248,7 @@
   },
   {
     "name": "Arcoloritum",
-    "hu": "-",
+    "hu": "",
     "year": 1,
     "category": "charm",
     "description": "Lobogó lángot szivárványszínűre változtató varázslat.",
@@ -261,7 +261,7 @@
   },
  {
     "name": "Arma paco",
-    "hu": "-",
+    "hu": "",
     "year": 1,
     "category": "charm",
     "description": "Páncélt, fegyverzetet, üstöket, trófeákat megtisztító varázsige.",
@@ -274,7 +274,7 @@
   },
  {
     "name": "Cano Flessia",
-    "hu": "Cano Flessia",
+    "hu": "",
     "year": 1,
     "category": "curse",
     "description": "A rontás hatására az áldozat lábai olyan hajlékonyak lesznek, mint a gumi. A fiatalabb diákok előszeretettel használják a párbajok folyamán, és a közeledő kviddicsmeccsek időszakában.",
@@ -300,7 +300,7 @@
   },
  {
     "name": "Flipendo",
-    "hu": "Flipendo",
+    "hu": "",
     "year": 1,
     "category": "curse",
     "description": " A célszemélyt vagy tárgyat hátra löki, egy robbanás hang kíséretében, valamint a törékenyebb tárgyakat szét is töri. Mivel az átok képes tárgyakat is hátralökni, így akár kapcsolókat lehet aktiválni, ajtókat kinyitni ha azok nem bűbájjal lezártak és gyengébb falak leggyengébb köveit kirobbantani.",
@@ -313,7 +313,7 @@
   },
  {
     "name": "Laminae pluviam",
-    "hu": "-",
+    "hu": "",
     "year": 1,
     "category": "transfiguration",
     "description": "Virágszirom eső. Elsősorban gyerekek elkápráztatására szolgál, illetve a szerelmesek használják gyakran hangulatkeltés céljából. A megidézésének helyétől egy két méteres sugarú körben vegyes virágszirmok kezdenek el hullani a semmiből, illetve a virágok illata is érződik. Erősebb mágiával rendelkező személyek irányítani is tudják ezeket a szirmokat, ezáltal akár védekezésre is használhatóak vagy figyelem elterelésre.",
@@ -326,7 +326,7 @@
   },
  {
     "name": "Locomotor",
-    "hu": "Locomotor",
+    "hu": "",
     "year": 1,
     "category": "charm",
     "description": "Lebegtető varázsige. A kiválasztott tárgyat vagy személyt felrepíti a levegőbe. A varázslat előnye, hogy a hatását csak a használó szüntetheti meg, vagy egy másik varázsigével kell hatástalanítani, különben a tárgy/személy még akkor is képes repülni, ha a személy, aki elmondta a varázsigét elveszti a pálcáját.",
@@ -339,7 +339,7 @@
   },
  {
     "name": "Locomotor mortis",
-    "hu": "Locomotor mortis",
+    "hu": "",
     "year": 1,
     "category": "curse",
     "description": "Lábbilincselő átok. A célpont lábát megbilincseli, így az nem tud mozogni.",
@@ -352,7 +352,7 @@
   },
  {
     "name": "Lumos",
-    "hu": "Lumos",
+    "hu": "",
     "year": 1,
     "category": "charm",
     "description": "A pálca hegyén apró láng lobban fel.",
@@ -365,7 +365,7 @@
   },
  {
     "name": "Lumos solem",
-    "hu": "Lumos solem",
+    "hu": "",
     "year": 1,
     "category": "charm",
     "description": "A pálca hegyén apró láng lobban fel. Jóval erősebb fényt nyújt társánál.",
@@ -378,7 +378,7 @@
   },
  {
     "name": "Lumos maxima",
-    "hu": "Lumos maxima",
+    "hu": "",
     "year": 1,
     "category": "charm",
     "description": "Nagyon erős, vakító fény idézésére használható.",
@@ -391,7 +391,7 @@
   },
  {
     "name": "Mutare Mus",
-    "hu": "Mutare Mus",
+    "hu": "",
     "year": 1,
     "category": "transfiguration",
     "description": "Egérből dohánytartó dobozt varázsolunk.",
@@ -404,7 +404,7 @@
   },
  {
     "name": "Nox",
-    "hu": "Nox",
+    "hu": "",
     "year": 1,
     "category": "charm",
     "description": "Ezzel a varázsigével lehet megszüntetni a Lumos hatását..",
@@ -417,7 +417,7 @@
   },
  {
     "name": "Oculus reparo",
-    "hu": "Oculus reparo",
+    "hu": "",
     "year": 1,
     "category": "charm",
     "description": "Ezzel a varázsigével a törött szemüvegeket lehet megjavítani.",
@@ -430,7 +430,7 @@
   },
  {
     "name": "Orchidessis",
-    "hu": "Orchidessis",
+    "hu": "",
     "year": 1,
     "category": "charm",
     "description": "A pálca végéből egy virágcsokor repül elő.",
@@ -443,7 +443,7 @@
   },
  {
     "name": "Petrificus totalus",
-    "hu": "Petrificus totalus",
+    "hu": "",
     "year": 1,
     "category": "curse",
     "description": "Sóbálvánnyá változtató átok. A célpont a találat után meg sem tud mozdulni, és beszélni sem tud.",
@@ -456,7 +456,7 @@
   },
  {
     "name": "Reparo",
-    "hu": "Reparo",
+    "hu": "",
     "year": 1,
     "category": "charm",
     "description": "Ezzel a varázslattal törött dolgokat lehet újra összerakni.",
@@ -469,7 +469,7 @@
   },
  {
     "name": "Rictusempra",
-    "hu": "Rictusempra",
+    "hu": "",
     "year": 1,
     "category": "curse",
     "description": "Csiklandozó bűbáj: a célszemély úgy érzi, mintha csiklandoznák.",
@@ -482,7 +482,7 @@
   },
  {
     "name": "Rursus Incipere",
-    "hu": "Rursus Incipere",
+    "hu": "",
     "year": 1,
     "category": "charm",
     "description": "Tárgymozgatásra alkalmas varázslat.",
@@ -495,7 +495,7 @@
   },
  {
     "name": "Rursus Finis",
-    "hu": "Rursus  Finis",
+    "hu": "",
     "year": 1,
     "category": "charm",
     "description": "A Rursus Incipere lezárására alkalmas bűbáj. Emellett a Finito is alkalmazható megszüntető bűbájként.",
@@ -521,7 +521,7 @@
   },
  {
     "name": "Tarantallegra",
-    "hu": "Tarantallegra",
+    "hu": "",
     "year": 1,
     "category": "curse",
     "description": "Táncoltató rontás. A célszemély táncolni kezd.",
@@ -534,7 +534,7 @@
   },
  {
     "name": "Tempus",
-    "hu": "Tempus",
+    "hu": "",
     "year": 1,
     "category": "charm",
     "description": "Egyszerű bűbáj, megmutatja az időt, ha az illetőnek nincs órája.",
@@ -547,7 +547,7 @@
   },
  {
     "name": "Wingardium leviosa",
-    "hu": "Wingardium leviosa",
+    "hu": "",
     "year": 1,
     "category": "charm",
     "description": "A tárgyakat ezzel a varázslattal lehet a levegőbe emelni.",
@@ -560,7 +560,7 @@
   },
  {
     "name": "Volate e stenderya",
-    "hu": "Volate e stenderya",
+    "hu": "",
     "year": 1,
     "category": "charm",
     "description": "Tárgyakat lehet vele mozgatni a levegőben.",
@@ -585,7 +585,7 @@
     "wiki": "https://harrypotter.fandom.com/wiki/Vera_Verto"
   }, {
     "name": "Aberto",
-    "hu": "Aberto",
+    "hu": "",
     "year": 2,
     "category": "charm",
     "description": "Ajtónyitó bűbáj.",
@@ -598,7 +598,7 @@
   },
  {
     "name": "Anapneo",
-    "hu": "Anapneo",
+    "hu": "",
     "year": 2,
     "category": "healing",
     "description": "Kitisztítja a célszemély légutait.",
@@ -624,7 +624,7 @@
   },
  {
     "name": "Arcoloratmen totallum",
-    "hu": "Arcoloratmen totallum",
+    "hu": "",
     "year": 2,
     "category": "charm",
     "description": "Arcoloritum továbbfejlesztése. A varázsló megbűvöli a termet, hogy benne minden fáklya, gyerta, stb. lángja szivárványszínűvé változzon",
@@ -637,7 +637,7 @@
   },
  {
     "name": "Aguamenti ",
-    "hu": "Aguamenti ",
+    "hu": "",
     "year": 2,
     "category": "transfiguration",
     "description": "A pálca rámutat a célpontra, ami ettől megtelik vízzel.",
@@ -663,7 +663,7 @@
   },
  {
     "name": "Committo",
-    "hu": "Committo",
+    "hu": "",
     "year": 2,
     "category": "charm",
     "description": "Cipőkötő varázslat, de használják bármi összekötésére.",
@@ -676,7 +676,7 @@
   },
  {
     "name": "Diffindo",
-    "hu": "Diffindo",
+    "hu": "",
     "year": 2,
     "category": "charm",
     "description": "Táskák (és egyéb más dolgok) kiszakítására alkalmas varázslat.",
@@ -689,7 +689,7 @@
   },
  {
     "name": "Efflorescota",
-    "hu": "Efflorescota",
+    "hu": "",
     "year": 2,
     "category": "transfiguration",
     "description": "Kisebb tárgyakból tudunk csodálatos vörös rózsát varázsolni.",
@@ -715,7 +715,7 @@
   },
  {
     "name": "Finite Incantatem",
-    "hu": "Finite Incantatem",
+    "hu": "",
     "year": 2,
     "category": "defense",
     "description": "Más varázslatok megszüntetésére alkalmas igézés. Erősebb az egyszerű Finite-nél.",
@@ -728,7 +728,7 @@
   },
  {
     "name": "Finite",
-    "hu": "Finite",
+    "hu": "",
     "year": 2,
     "category": "defense",
     "description": "Más varázslatok megszüntetésére alkalmas igézés.",
@@ -741,7 +741,7 @@
   },
  {
     "name": "Immobilus",
-    "hu": "Immobilus",
+    "hu": "",
     "year": 1,
     "category": "charm",
     "description": "Mozdulatlanná teszi az élőlényeket.",
@@ -767,7 +767,7 @@
   },
  {
     "name": "Mundus effectum",
-    "hu": "Mundus effectum",
+    "hu": "",
     "year": 2,
     "category": "charm",
     "description": " Tisztító varázslat. Bármilyen tárgy megtisztítására alkalmas.",
@@ -780,7 +780,7 @@
   },
  {
     "name": "Protego",
-    "hu": "Protego",
+    "hu": "",
     "year": 2,
     "category": "defense",
     "description": "Egy láthatatlan falat idéz, ami egy gyengébb varázslatot kivéd, vagy csak csökkenti az erejét.",
@@ -806,7 +806,7 @@
   },
  {
     "name": "Tergeo",
-    "hu": "Tergeo",
+    "hu": "",
     "year": 2,
     "category": "charm",
     "description": "A célzott területről elszívja a koszt. Folyadékokat is eltüntet.",
@@ -819,7 +819,7 @@
   },
  {
     "name": "Vestimentum reparo",
-    "hu": "Vestimentum reparo",
+    "hu": "",
     "year": 2,
     "category": "charm",
     "description": "Ez olyan, mint az Ocular reparo, csak nem a szemüvegek, hanem a ruhák megjavítására használják.",
@@ -845,7 +845,7 @@
   },
      {
     "name": "Avis",
-    "hu": "Avis",
+    "hu": "",
     "year": 3,
     "category": "transfiguration",
     "description": "Madarak röppennek ki a pálcából. Gyakorlott használó irányítani is tudja őket.",
@@ -858,7 +858,7 @@
   },
        {
     "name": "Aqua Eructo",
-    "hu": "Aqua Eructo",
+    "hu": "",
     "year": 3,
     "category": "transfiguration",
     "description": "A pálca hegyéből egy apró vízsugarat lő ki a célpontra. Pár másodperc elteltével ez a sugár növekedni kezd. Tapasztaltabb mágusok már a varázslat kezdésekor képesek annyi vizet kilőni, amivel egy egész szobát meg lehetne tölteni.",
@@ -871,7 +871,7 @@
   },
          {
     "name": "Canis Transformatus",
-    "hu": "Avis",
+    "hu": "",
     "year": 3,
     "category": "transfiguration",
     "description": "Tárgyakat változtat állattá.",
@@ -884,7 +884,7 @@
   },
          {
     "name": "Certusect",
-    "hu": "Certusect",
+    "hu": "",
     "year": 3,
     "category": "charm",
     "description": "Biztonságos szabóbűbáj textilre.",
@@ -897,7 +897,7 @@
   },
          {
     "name": "Circumrota",
-    "hu": "Circumrota",
+    "hu": "",
     "year": 3,
     "category": "charm",
     "description": "Tárgyak forgatására használják.",
@@ -910,7 +910,7 @@
   },
          {
     "name": "Colloportus",
-    "hu": "Colloportus",
+    "hu": "",
     "year": 3,
     "category": "charm",
     "description": "Ajtózáró varázslat. Bezár egy ajtót, így azt csak a megfelelő kulccsal lehet kinyitni.",
@@ -936,7 +936,7 @@
   },
          {
     "name": "Consuo",
-    "hu": "Consuo",
+    "hu": "",
     "year": 3,
     "category": "charm",
     "description": "Öltőbűbáj. Textilek összevarrására alkalmas.",
@@ -949,7 +949,7 @@
   },
          {
     "name": "Densaugeo",
-    "hu": "Densaugeo",
+    "hu": "",
     "year": 3,
     "category": "curse",
     "description": "A megátkozott személy fogai eredeti méretük többszörösére nőnek.",
@@ -962,7 +962,7 @@
   },
          {
     "name": "Descendo",
-    "hu": "Descendo",
+    "hu": "",
     "year": 3,
     "category": "charm",
     "description": "Döntővarázs. Ledönti a célzott tárgyat.",
@@ -975,7 +975,7 @@
   },
          {
     "name": "Dissendium",
-    "hu": "Dissendium",
+    "hu": "",
     "year": 3,
     "category": "charm",
     "description": "Ezzel a varázsszóval lehet kinyitni a Roxmortsba vezető titkos alagút bejáratát.",
@@ -988,7 +988,7 @@
   },
          {
     "name": "Erecto",
-    "hu": "Erecto",
+    "hu": "",
     "year": 3,
     "category": "charm",
     "description": "Felállítóvarázs. Felállítja a sátrakat, és más tárgyakat.",
@@ -1014,7 +1014,7 @@
   },
          {
     "name": "Finestra",
-    "hu": "Finestra",
+    "hu": "",
     "year": 3,
     "category": "charm",
     "description": "Az üveg megtörésére szolgáló bűbáj. Az üveg rendkívül halkan törik be.",
@@ -1027,7 +1027,7 @@
   },
          {
     "name": "Fronscresco",
-    "hu": "Fronscresco",
+    "hu": "",
     "year": 3,
     "category": "curse",
     "description": "A szemöldök növekedésnek indul. Ez a rontás magától nem szűnik meg, a megnövekedett szőrzet pedig csak vágással tüntethető el.",
@@ -1040,7 +1040,7 @@
   },
          {
     "name": "Glacius",
-    "hu": "Glacius",
+    "hu": "",
     "year": 3,
     "category": "charm",
     "description": "A bűbáj hatására egy adott területet, tárgyat lehet megfagyasztani. Nem lehet megszüntetni, de a bűbáj egy idő után magától megszűnik, így a hatás fenntartásához meg kell ismételni a varázslatot.",
@@ -1053,7 +1053,7 @@
   },
          {
     "name": "Lapidationis",
-    "hu": "Lapidationis",
+    "hu": "",
     "year": 3,
     "category": "transfiguration",
     "description": " A pálcából kövek repülnek ki, melyek az ellenfélre támadnak.",
@@ -1066,7 +1066,7 @@
   },
          {
     "name": "Lepor Festivia",
-    "hu": "Lepor Festivia",
+    "hu": "",
     "year": 3,
     "category": "healing",
     "description": "A bűbáj hatására az alany heveny vigyorgásban tör ki, és felettébb derűs hangulatba kerül. Ez sem megszüntethető, de a mágus tudásától függően maximum egy óráig tart. Dementor támadás után szokás használni.",
@@ -1079,7 +1079,7 @@
   },
          {
     "name": "Mobiliarbus",
-    "hu": "Mobiliarbus",
+    "hu": "",
     "year": 3,
     "category": "charm",
     "description": "Tárgylebegtető bűbáj: Egy választott tárgyat a kívánt helyre lebegtet. A bűbáj előnye, hogy nem kell a pálcával integetni, mint a Vingardium Leviosa esetében, elég rámutatni a tárgyra, és a varázsige elmondása után a tárgy oda megy, ahova a használó szeretné.",
@@ -1092,7 +1092,7 @@
   },
          {
     "name": "Papyrus Reparo",
-    "hu": "Papyrus Reparo",
+    "hu": "",
     "year": 3,
     "category": "charm",
     "description": "Szakadt papír rendbehozására.",
@@ -1105,7 +1105,7 @@
   },
          {
     "name": "Spretrello corruptela",
-    "hu": "Spretrello corruptela",
+    "hu": "",
     "year": 3,
     "category": "curse",
     "description": "Rémdenevér-rontás. A varázsló egy csapat agresszív denevért idéz meg, amik a célpontra támadnak és összecsipkedik az arcát.",
@@ -1118,7 +1118,7 @@
   },
            {
     "name": "Spongify ",
-    "hu": "Spongify ",
+    "hu": "",
     "year": 3,
     "category": "curse",
     "description": "Tárgyakat és felületeket lehet gumiszerűvé, pattogóssá változtatni. A gumiszerűvé változtatott felület alapból olyan 2 négyzetméter, de persze ennek nagysága függ a varázsló erejétől, a pálcától stb. Az átváltoztatott felület hasonló egy trambulinhoz",
@@ -1131,7 +1131,7 @@
   },
              {
     "name": "Aestuosus",
-    "hu": "Aestuosus",
+    "hu": "",
     "year": 4,
     "category": "charm",
     "description": "Tárgyakat, vagy akár vizet is felforrósíthatunk ezzel a bűbájjal.",
@@ -1144,7 +1144,7 @@
   },
                {
     "name": "Arresto Momentum",
-    "hu": "Arresto Momentum",
+    "hu": "",
     "year": 4,
     "category": "charm",
     "description": "Lassítja a célpont tárgy, illetve élőlény esését.",
@@ -1157,7 +1157,7 @@
   },
              {
     "name": "Baziteo",
-    "hu": "Baziteo",
+    "hu": "",
     "year": 4,
     "category": "transfiguration",
     "description": "Térfogatnövelés, vagyis a tárgy/növény/állat méretét a sokszorosára növelhetjük. Embereken alkalmazni veszélyes!",
@@ -1170,7 +1170,7 @@
   },
                {
     "name": "Carbunculus",
-    "hu": "Carbunculus",
+    "hu": "",
     "year": 4,
     "category": "curse",
     "description": "A célszemély arcán gennyes kelések jelennek meg.",
@@ -1183,7 +1183,7 @@
   },
              {
     "name": "Defodio",
-    "hu": "Defodio",
+    "hu": "",
     "year": 4,
     "category": "charm",
     "description": "Egy lyukat kezd el ásni egy megadott pontban.",
@@ -1196,7 +1196,7 @@
   },
                {
     "name": "Gallicinium",
-    "hu": "Gallicinium",
+    "hu": "",
     "year": 4,
     "category": "charm",
     "description": "Ébresztő vagy riasztó bűbáj.",
@@ -1209,7 +1209,7 @@
   },
              {
     "name": "Glisseo",
-    "hu": "Glisseo",
+    "hu": "",
     "year": 4,
     "category": "transfiguration",
     "description": "Egy lépcsőt képes csúszdává alakítani.",
@@ -1235,7 +1235,7 @@
   },
              {
     "name": "Lejate",
-    "hu": "Lejate",
+    "hu": "",
     "year": 4,
     "category": "charm",
     "description": "Az Invito ellentéte, tulajdonképpen tárgytaszításra alkalmas, de az ügyesebb mágus irányítani is képes a tárgyat. Nem lebegtetés.",
@@ -1248,7 +1248,7 @@
   },
                {
     "name": "Obscuro",
-    "hu": "Obscuro",
+    "hu": "",
     "year": 4,
     "category": "transfiguration",
     "description": "A célpont szemét egy fekete kendővel kötözi be, így az nem lát semmit.",
@@ -1261,7 +1261,7 @@
   },
              {
     "name": "Obstructo",
-    "hu": "Obstructo",
+    "hu": "",
     "year": 4,
     "category": "curse",
     "description": "Megtisztítja a célszemély előtt az utat, akár a Reducto. Ha a célpont egy személy, akkor pár másodpercre elkábíthatja.",
@@ -1274,7 +1274,7 @@
   },
                {
     "name": "Reducto",
-    "hu": "Reducto",
+    "hu": "",
     "year": 4,
     "category": "curse",
     "description": "Tárgyak elpusztítására, tarolásra alkalmas bűbáj. A pálca irányába megtisztítja az utat.",
@@ -1287,7 +1287,7 @@
   },
              {
     "name": "Pherecitius mangicus",
-    "hu": "Pherecitius mangicus",
+    "hu": "",
     "year": 4,
     "category": "curse",
     "description": "Fagyasztó átok: Ha valakit eltalál, mozgásképtelenné teszi, megfagyasztja. A legtöbb varázslattal (mint pl.: Finite Incantatem) nem lehet hatástalanítani, a megfagyott személyt ki kell olvasztani.",
@@ -1300,7 +1300,7 @@
   },
                {
     "name": "Pofix",
-    "hu": "Pofix",
+    "hu": "",
     "year": 4,
     "category": "curse",
     "description": "Nyelvragasztó-rontás: A célpont nyelvét a szájpadlásához ragasztja, így az nem tud beszélni.",
@@ -1313,7 +1313,7 @@
   },
              {
     "name": "Relaxo",
-    "hu": "Relaxo",
+    "hu": "",
     "year": 4,
     "category": "curse",
     "description": "Szikrákat lő a pálca végéből, amik ha célt érnek, elkábítják a célpontot. (A Mágiaügyi Minisztérium láncos székeinek láncán is ezt használják.)",
@@ -1326,7 +1326,7 @@
   },
                {
     "name": "Reducio",
-    "hu": "Reducio",
+    "hu": "",
     "year": 4,
     "category": "transfiguration",
     "description": "(Baziteo ellentéte) A nagyobb méretűvé varázsolt lény visszanyeri eredeti nagyságát. Tapasztaltabbak képesek tárgyakat lekicsinyíteni vele.",
@@ -1339,7 +1339,7 @@
   },
              {
     "name": "Renervate",
-    "hu": "Renervate",
+    "hu": "",
     "year": 4,
     "category": "healing",
     "description": "Az eszméletlen embereket magukhoz téríti.",
@@ -1352,7 +1352,7 @@
   },
                {
     "name": "Reverte",
-    "hu": "Reverte",
+    "hu": "",
     "year": 4,
     "category": "transfiguration",
     "description": "A tárgyakat eredeti pozíciójukba vagy állapotukba állítja vissza.",
@@ -1391,7 +1391,7 @@
   },
              {
     "name": "Sonorus",
-    "hu": "Sonorus",
+    "hu": "",
     "year": 4,
     "category": "charm",
     "description": "A hang felerősítésére szolgáló bűbáj, elsősorban kviddicsmeccsek kommentátorai használják.",
@@ -1404,7 +1404,7 @@
   },
                {
     "name": "Ago aureus",
-    "hu": "Ago aureus",
+    "hu": "",
     "year": 5,
     "category": "transfiguration",
     "description": "A tárgyat aranyozottá (de nem arannyá!) teszi.",
@@ -1417,7 +1417,7 @@
   },
                  {
     "name": "Amor cogo",
-    "hu": "Amor cogo",
+    "hu": "",
     "year": 5,
     "category": "transfiguration",
     "description": "Ha ezt a bűbájt egy pohár italon alkalmazzuk, és megitatjuk kiszemeltünkkel, az azonmód reménytelen szerelmet fog irántunk érezni. Nem azonos a szerelmi bájitallal, a bűbáj fél óra múlva hatását veszti. A Roxfortban tiltott bűbájnak számít. (szó szerint: szerelembe kényszerít)",
@@ -1430,7 +1430,7 @@
   },
               {
     "name": "Aura",
-    "hu": "Aura",
+    "hu": "",
     "year": 5,
     "category": "charm",
     "description": "A pálcából szél tör elő.",
@@ -1443,7 +1443,7 @@
   },
                  {
     "name": "Bombarda",
-    "hu": "Bombarda",
+    "hu": "",
     "year": 5,
     "category": "charm",
     "description": "Tárgyak szétrobbantására használják.",
@@ -1456,7 +1456,7 @@
   },
               {
     "name": "Bombarda maxima",
-    "hu": "Bombarda maxima",
+    "hu": "",
     "year": 5,
     "category": "charm",
     "description": "A Bombarda erősebb formája. Képes masszív kőfalakat betörni.",
@@ -1469,7 +1469,7 @@
   },
                  {
     "name": "Ceelocelatum",
-    "hu": "Ceelocelatum",
+    "hu": "",
     "year": 5,
     "category": "transfiguration",
     "description": "Kendőző bűbáj; ahogy a neve is mutatja, apróbb dolgok elfedésére, elrejtésére, eltakarására szolgál (többek között elrejthetőek vele az átokhegek, tetoválások, piercingek, kisebb zúzódások, karcolások, a ruhán ejtett folt.. stb.)",
@@ -1482,7 +1482,7 @@
   },
               {
     "name": "Desertorum impetus",
-    "hu": "Desertorum impetus",
+    "hu": "",
     "year": 5,
     "category": "transfiguration",
     "description": "Támadó homokvihart idézhetünk meg vele.",
@@ -1495,7 +1495,7 @@
   },
                  {
     "name": "Deprimo",
-    "hu": "Deprimo",
+    "hu": "",
     "year": 5,
     "category": "charm",
     "description": "Lyukat robbant egy szilárd felületbe. A masszív kőfalakat nem képes berombolni.",
@@ -1508,7 +1508,7 @@
   },
               {
     "name": "Dormito",
-    "hu": "Dormito",
+    "hu": "",
     "year": 5,
     "category": "curse",
     "description": "A kábító bűbájok egyik finomabb változata. Ezzel a varázslattal bárkit mély álomba szenderíthetünk.",
@@ -1521,7 +1521,7 @@
   },
                  {
     "name": "Ferrum aureus",
-    "hu": "Ferrum aureus",
+    "hu": "",
     "year": 5,
     "category": "transfiguration",
     "description": "A tárgyat vassá változtatja.",
@@ -1534,7 +1534,7 @@
   },
               {
     "name": "Ferula",
-    "hu": "Ferula",
+    "hu": "",
     "year": 5,
     "category": "healing",
     "description": "Sínpólyát helyez el a célzott testrészen.",
@@ -1547,7 +1547,7 @@
   },
                  {
     "name": "Finis Captivo",
-    "hu": "Finis Captivo",
+    "hu": "",
     "year": 5,
     "category": "curse",
     "description": "Bűvös lánc, amely az áldozat csuklójára/bokájára tekeredik, korlátozva annak szabadságát, míg a megidéző el nem tépi az ezüsthöz hasonló szálat. Kézzel is könnyen szétszakítható lenne, ha a kígyó módjára tekergőző végek nem forrnának össze szinte azonnal. Különlegessége, hogy hosszát szintén a megidéző határozza meg; a lánc úgy nyúlik, akár a gumi, feltéve, hogy egyik vége még összeköttetésben áll a pálcával.",
@@ -1560,7 +1560,7 @@
   },
               {
     "name": "Ingravesco pedis",
-    "hu": "Ingravesco pedis",
+    "hu": "",
     "year": 5,
     "category": "curse",
     "description": " Ezzel a bűbájjal elnehezíthetjük ellenfelünk lábát. Szép lassan úgy fogja érezni, nem tud járni, mintha százkilós súlyokat akasztottak volna a lábára.",
@@ -1573,9 +1573,9 @@
   },
                  {
     "name": "Incarcerandus",
-    "hu": "Incarcerandus",
+    "hu": "",
     "year": 5,
-    "category": "átváltoztatás",
+    "category": "transfiguration",
     "description": "Megkötözi a célszemélyt.",
     "effects": ["mozgáskorlátozás","idézés"],
     "dark": false,
@@ -1586,7 +1586,7 @@
   },
               {
     "name": "Levicorpus",
-    "hu": "Levicorpus",
+    "hu": "",
     "year": 5,
     "category": "curse",
     "description": "A célpontot a bokájánál fogva fellógatja.",
@@ -1599,7 +1599,7 @@
   },
                  {
     "name": "Liberacorpus",
-    "hu": "Liberacorpus",
+    "hu": "",
     "year": 5,
     "category": "defense",
     "description": "Megszünteti a Levicorpus hatását.",
@@ -1612,7 +1612,7 @@
   },
               {
     "name": "Liathegens",
-    "hu": "Liathegens",
+    "hu": "",
     "year": 5,
     "category": "curse",
     "description": "Egy tipikus párbajokban is használt varázslat, mely főleg Írországban elterjedt. Az ártás hatására a pálcából apró de annál keményebb, kéken izzó golyók repülnek ki szélsebesen. Az ártás hátránya, hogy kiszámíthatóan egy lövéssel csak öt golyó repül ki, melyet a tapasztaltabbak könnyen kikerülhetnek. A sérülések maximum 10 napon belül gyógyuló sebek lehetnek.",
@@ -1638,7 +1638,7 @@
   },
               {
     "name": "Protego totalum ",
-    "hu": "Protego totalum ",
+    "hu": "",
     "year": 5,
     "category": "defense",
     "description": "A Protego erősebb változata.",
@@ -1651,7 +1651,7 @@
   },
                  {
     "name": "Silencio",
-    "hu": "Silencio",
+    "hu": "",
     "year": 5,
     "category": "curse",
     "description": "Némító varázslat. A célszemély nem tud beszélni.",
@@ -1664,7 +1664,7 @@
   },
               {
     "name": "Soles Summonitionem",
-    "hu": "Soles Summonitionem",
+    "hu": "",
     "year": 5,
     "category": "charm",
     "description": "A varázslat végrehajtása után egy erős, vakító sárga sugár tör ki a pálcából, amely a célpontot eltalálva égési sebeket eredményezhet. Kiválóan alkalmazható vámpírok ellen.",
@@ -1690,7 +1690,7 @@
   },
               {
     "name": "Blundix",
-    "hu": "Blundix",
+    "hu": "",
     "year": 6,
     "category": "defense",
     "description": "Visszaverő bűbáj. Egy méretes, öblös tükörszerű fal jelenik meg az idéző előtt, s ez védi meg, s veri vissza az átkot.",
@@ -1702,8 +1702,8 @@
     "wiki": ""
   },
                  {
-    "name": "Capillus infectum + szín latin neve",
-    "hu": "Capillus infectum",
+    "name": "Capillus infectum",
+    "hu": "+szín latin neve",
     "year": 6,
     "category": "transfiguration",
     "description": "Hajfestés, de ez nem az átváltoztatástan órákról megismert bűbáj. Ez végleges hajfestést nyújt, mely nem visszafordítható.",
@@ -1716,7 +1716,7 @@
   },
                  {
     "name": "Circus Protegum",
-    "hu": "Circus Protegum",
+    "hu": "",
     "year": 6,
     "category": "defense",
     "description": "Védőkör bűbáj. Kb. négy ember köré emel egy védőpajzs burát, mely leghosszabb esetben is csak pár másodpercig tart ki.",
@@ -1729,7 +1729,7 @@
   },
                    {
     "name": "Confundo",
-    "hu": "Confundo",
+    "hu": "",
     "year": 6,
     "category": "charm",
     "description": "Összezavarja a célpontot.",
@@ -1755,7 +1755,7 @@
   },
                    {
     "name": "Duro",
-    "hu": "Duro",
+    "hu": "",
     "year": 6,
     "category": "transfiguration",
     "description": " Kővé változtató bűbáj. Egy tárgyat keménnyé varázsol (pl. - Egy papírlapot vaslemezzé) . A varázslatot emberre nem lehet használni.",
@@ -1768,7 +1768,7 @@
   },
   {
     "name": "Expectantium",
-    "hu": "Expectantium",
+    "hu": "",
     "year": 6,
     "category": "curse",
     "description": "énító varázslat: Ott ahol eltalál valakit ez az átok, megbénul az izom. Végtagok esetében a teljes testrész lebénulhat, míg például a mellkast eltalálva megállíthatja a szívet illetve a tüdő működését is. Fel lehet oldani a Finite igékkel.",
@@ -1781,7 +1781,7 @@
   },
                    {
     "name": "Ferardo",
-    "hu": "Ferardo",
+    "hu": "",
     "year": 6,
     "category": "defense",
     "description": "A bűbáj hatására a bőr tűzállóvá válik, a lángok csak csiklandozzák az embert, de megégetni nem tudják. (Vadóc Wandelin használta, amikor máglyán akarták megégetni. Annyira élvezte a dolgot, hogy később már maga kapatta el magát.)",
@@ -1794,7 +1794,7 @@
   },
   {
     "name": "Flagellii",
-    "hu": "Flagellii",
+    "hu": "",
     "year": 6,
     "category": "curse",
     "description": "Egy átok, mellyel ostorcsapást mérhetünk az ellenre, oda, ahová a pálca irányul.",
@@ -1807,7 +1807,7 @@
   },
                    {
     "name": "Homenum Revelio",
-    "hu": "Homenum Revelio",
+    "hu": "",
     "year": 6,
     "category": "defense",
     "description": "A varázsige elmondása után kiderül, hogy van-e ember a használó körül.",
@@ -1820,7 +1820,7 @@
   },
   {
     "name": "Oppero",
-    "hu": "Oppero",
+    "hu": "",
     "year": 6,
     "category": "curse",
     "description": "Az ellenfél röhögőgörcsben tör ki, összegörnyed, s a földre zuhan.  Tíz másodpercig tart.",
@@ -1833,7 +1833,7 @@
   },
                    {
     "name": "Oppugno",
-    "hu": "Oppugno",
+    "hu": "",
     "year": 6,
     "category": "curse",
     "description": "Ezzel a varázslattal dolgokat, vagy kisebb élőlényeket lehet rávenni arra, hogy egy másik varázslóra támadjanak. Hatása nem halálos, még csak nem is okoz túl nagy sérülést.",
@@ -1846,7 +1846,7 @@
   },
   {
     "name": "Rado",
-    "hu": "Rado",
+    "hu": "",
     "year": 6,
     "category": "transfiguration",
     "description": "A férfiak körében népszerű bűbáj, mellyel sérülésmentesen borotválkozhatnak. Egyszerű varázslat, a pálcát a rászoruló területen végighúzva borotválkozhatunk. Még borotvahab sem kell.",
@@ -1859,7 +1859,7 @@
   },
                    {
     "name": "Piroinito",
-    "hu": "Piroinito",
+    "hu": "",
     "year": 6,
     "category": "transfiguration",
     "description": "A pálca végéből tűz jön elő.",
@@ -1872,7 +1872,7 @@
   },
   {
     "name": "Proicere",
-    "hu": "Proicere",
+    "hu": "",
     "year": 6,
     "category": "curse",
     "description": " Gumitöltény átok. A pálca végéből egy kisebb, izzó, töltényre emlékeztető fénygömb lövel ki. Az ártást a vadnyugati varázslók úgy találták ki, hogy mindenképpen célba érjen, akár a falról visszapatanva is, innen ered a gumitöltény elnevezés. Egy egyszerűbb protegon áttör, protego maxima vagy salvio hexia szükséges a kivédéséhez. Belső szervekig nem képes hatolni, de erős zúzódást, lila foltokat és fajdalmas nyomot hagy maga után.",
@@ -1885,7 +1885,7 @@
   },
                    {
     "name": "Protego maxima",
-    "hu": "Protego maxima",
+    "hu": "",
     "year": 6,
     "category": "defense",
     "description": "A Protegonál és a Protego Totalumnál erősebb védekező varázslat.",
@@ -1898,7 +1898,7 @@
   },
   {
     "name": "Rupivestis",
-    "hu": "Rupivestis",
+    "hu": "",
     "year": 6,
     "category": "transfiguration",
     "description": "Valamilyen tárgy vagy növény külső rétegét távolítja el, ember esetében pl a ruhát.",
@@ -1911,7 +1911,7 @@
   },
                    {
     "name": "Serpensortia",
-    "hu": "Serpensortia",
+    "hu": "",
     "year": 6,
     "category": "curse",
     "description": "A pálca hegyéből egy támadó kígyó ugrik elő.",
@@ -1924,7 +1924,7 @@
   },
   {
     "name": "Swirtenio",
-    "hu": "Swirtenio",
+    "hu": "",
     "year": 6,
     "category": "defense",
     "description": "Hatástalanító átok. A felénk jövő támadást átalakítja ezüstös porrá. Csak bizonyos átkok ellen használható.",
@@ -1937,7 +1937,7 @@
   },
                    {
     "name": "Valetudo",
-    "hu": "Valetudo",
+    "hu": "",
     "year": 6,
     "category": "healing",
     "description": "Apróbb sebek, horzsolások, vágások begyógyítása. Átok okozta sebeket csak hegesít, esetleg kisebbé tesz, de mint tudjuk, azokat nem lehet gyógyítani.",
@@ -1950,7 +1950,7 @@
   },
   {
     "name": "Vinculum",
-    "hu": "Vinculum",
+    "hu": "",
     "year": 6,
     "category": "curse",
     "description": "Bilincs kattan az áldozat csuklóin",
@@ -1963,7 +1963,7 @@
   },
                    {
     "name": "Vipera Iveneska",
-    "hu": "Vipera Iveneska",
+    "hu": "",
     "year": 6,
     "category": "defense",
     "description": "Ezzel lehet eltüntetni a Serpensortia varázslat által idézett kígyót.",
@@ -1976,7 +1976,7 @@
   },
   {
     "name": "Abeo Pellore",
-    "hu": "Abeo Pellore",
+    "hu": "",
     "year": 7,
     "category": "transfiguration",
     "description": "Bőrszín változtatás",
@@ -1989,7 +1989,7 @@
   },
                    {
     "name": "Animum Cambiare",
-    "hu": "Animum Cambiare",
+    "hu": "",
     "year": 7,
     "category": "transfiguration",
     "description": "Az emberi elváltoztatás. A különböző területek elváltoztatásakor, mivel a varázsige egységes, nagy összpontosításra és fegyelmezett elmére van szükség",
@@ -2028,7 +2028,7 @@
   },
   {
     "name": "Confringo",
-    "hu": "Confringo",
+    "hu": "",
     "year": 7,
     "category": "curse",
     "description": "Robbantás-átok. Ha betalál, erős robbantás idéz elő, amivel komoly sérüléseket lehet okozni, akár több ellenségnek.",
@@ -2041,11 +2041,11 @@
   },
                    {
     "name": "Demonstrate",
-    "hu": "Demonstrate",
+    "hu": "",
     "year": 7,
     "category": "charm",
     "description": "Megmutatja egy tárgy mágikus tulajdonságait.",
-    "effects": [],
+    "effects": ["nyomkeresés"],
     "dark": false,
     "healing": false,
     "custom": true,
@@ -2067,7 +2067,7 @@
   },
                    {
     "name": "Geminio",
-    "hu": "Germinio",
+    "hu": "",
     "year": 7,
     "category": "charm",
     "description": "Duplázó bűbáj. Másolatokat készít egy tárgyról.",
@@ -2080,7 +2080,7 @@
   },
   {
     "name": "Meteoronto recanto",
-    "hu": "Meteoronto recanto",
+    "hu": "",
     "year": 7,
     "category": "defense",
     "description": "Megszünteti a rontások okozta meteorológiai jelenségeket.",
@@ -2093,7 +2093,7 @@
   },
                    {
     "name": "Mortuus Locomotor",
-    "hu": "Mortuus Locomotor",
+    "hu": "",
     "year": 7,
     "category": "transfiguration",
     "description": "A tárgyak életre keltésének igéje",
@@ -2106,7 +2106,7 @@
   },
   {
     "name": "Pherecitius mangicust",
-    "hu": "Pherecitius mangicust",
+    "hu": "",
     "year": 7,
     "category": "curse",
     "description": "Fagyasztóátok",
@@ -2119,7 +2119,7 @@
   },
                    {
     "name": "Protego horribilis",
-    "hu": "Protego horribilis",
+    "hu": "",
     "year": 7,
     "category": "defense",
     "description": "A Protego legerősebb változata. A nagyon erős varázslatokat is képes visszaküldeni a használójára. Hátránya, hogy jól kell időzíteni, különben balul sülhet el a dolog.",
@@ -2132,7 +2132,7 @@
   },
   {
     "name": "Prior Incantato",
-    "hu": "Priori Incantatem",
+    "hu": "",
     "year": 7,
     "category": "charm",
     "description": "Megjeleníti a pálcával használt varázslatokat, fordított sorrendben, tehát a legutóbb használt varázslat lesz a legelső. Általában az aurorok használják, de a Roxfortos diákoknak is megtanítják.",
@@ -2145,7 +2145,7 @@
   },
                    {
     "name": "Saggitiis Dominorum",
-    "hu": "Saggitiis Dominorum",
+    "hu": "",
     "year": 7,
     "category": "curse",
     "description": "Bonyolult kábító átok. A megfelelő mozdulatok után a pálca hegyéből tucatnyi nyíl lövődik ki, melyek az ellenfél felé repülnek, ám ezek nem okoznak sérülést, csak elterelés - az igazi átok az áldozatot felülről-hátulról támadja meg. A találat szinte biztosan célt ér, kivéve, ha valaki ismeri.",
@@ -2158,7 +2158,7 @@
   },
   {
     "name": "Saggitiis Defendor",
-    "hu": "Saggitiis Defendor",
+    "hu": "",
     "year": 7,
     "category": "defense",
     "description": "Hasonló, mint a támadópárja. Tucatnyi nyíl csapódik ki a pálcából, s megpróbálják eltalálni a felénk tartó átkot. A nyilak csak az átokra jelentenek veszélyt.",
@@ -2171,7 +2171,7 @@
   },
                    {
     "name": "Salvio hexia",
-    "hu": "Salvio hexia",
+    "hu": "",
     "year": 7,
     "category": "defense",
     "description": "Védelmet nyújt a külső támadások ellen.",
@@ -2184,7 +2184,7 @@
   },
   {
     "name": "Surgito",
-    "hu": "Surgito",
+    "hu": "",
     "year": 7,
     "category": "defense",
     "description": "Ellenvarázslat, mellyel más bűbájok eltávolíthatók.",
@@ -2197,7 +2197,7 @@
   },
                    {
     "name": "Todos a Flote",
-    "hu": "Todos a Flote",
+    "hu": "",
     "year": 7,
     "category": "charm",
     "description": "Zárt térben megszünteti a gravitációt.",
@@ -2209,8 +2209,8 @@
     "wiki": ""
   },
   {
-    "name": "Trullus (+a szín latin esetleg olasz neve)",
-    "hu": "Trullus",
+    "name": "Trullus",
+    "hu": "+a szín latin esetleg olasz neve",
     "year": 7,
     "category": "transfiguration",
     "description": " Színező bűbáj a testszőrzet színezésére. (haj, szemöldök)",
@@ -2223,7 +2223,7 @@
   },
                    {
     "name": "Ventus",
-    "hu": "Ventus",
+    "hu": "",
     "year": 7,
     "category": "charm",
     "description": "Erős széllökést támaszt.",
@@ -2236,7 +2236,7 @@
   },
   {
     "name": "Buborékfej bűbáj",
-    "hu": "Buborékfej bűbáj",
+    "hu": "",
     "year": 7,
     "category": "charm",
     "description": "A használó feje körül egy buborék keletkezik, így az képes lesz lélegezni a víz alatt.",
