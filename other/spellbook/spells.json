@@ -1403,28 +1403,28 @@
     "wiki": "https://harrypotter.fandom.com/wiki/Amplifying_Charm"
   },
                {
-    "name": "engname",
-    "hu": "huname",
+    "name": "Ago aureus",
+    "hu": "Ago aureus",
     "year": 5,
-    "category": "charm",
-    "description": "loremipsum",
-    "effects": [],
+    "category": "transfiguration",
+    "description": "A tárgyat aranyozottá (de nem arannyá!) teszi.",
+    "effects": ["átváltoztatás","módosítás"],
     "dark": false,
     "healing": false,
-    "custom": false,
+    "custom": true,
     "missing": false,
     "wiki": ""
   },
                  {
-    "name": "engname",
-    "hu": "huname",
+    "name": "Amor cogo",
+    "hu": "Amor cogo",
     "year": 5,
     "category": "charm",
     "description": "loremipsum",
     "effects": [],
     "dark": false,
     "healing": false,
-    "custom": false,
+    "custom": true,
     "missing": false,
     "wiki": ""
   },
@@ -1713,5 +1713,5 @@
     "custom": false,
     "missing": false,
     "wiki": ""
-  },
+  }
   ]
