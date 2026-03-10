@@ -2780,19 +2780,6 @@
     "missing": true,
     "wiki": "https://harrypotter.fandom.com/wiki/Blood_malediction"
   },
-    {
-    "name": "",
-    "hu": "",
-    "year": 8,
-    "category": "",
-    "description": "",
-    "effects": [],
-    "dark": false,
-    "healing": false,
-    "custom": false,
-    "missing": true,
-    "wiki": ""
-  },
   {
   "name": "Anti-Cheating Spell",
   "hu": "Csalásgátló bűbáj",
