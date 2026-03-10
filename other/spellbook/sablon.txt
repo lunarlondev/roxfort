@@ -1,0 +1,13 @@
+    {
+    "name": "",
+    "hu": "",
+    "year": 8,
+    "category": "",
+    "description": "",
+    "effects": [],
+    "dark": false,
+    "healing": false,
+    "custom": false,
+    "missing": true,
+    "wiki": ""
+  },
