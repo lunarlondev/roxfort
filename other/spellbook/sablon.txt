@@ -11,3 +11,40 @@
     "missing": true,
     "wiki": ""
   },
+
+
+tűz
+víz
+jég
+villám
+föld
+levegő
+fény
+sötétség
+robbanás
+lökés
+kötözés
+bénítás
+kábítás
+pajzs
+gyógyítás
+vér
+idő
+mozgás (kifejezetten a használó vagy más személy mozgatásával kapcsolatos varázslatok)
+tárgymozgatás
+átváltoztatás (amikor tárgyat-személyt konkrét dologgá változtatunk át)
+módosítás (tárgy tulajdonságainak módosítása, pl puha lesz az anyaga, vagy más a színe)
+idézés (amikor valamit teremtünk, idézünk)
+eltüntetés (pl folt eltüntetése, idézett kígyó eltüntetése, stb)
+irányítás (amikor valami dolgot, pl idézett madarakat konkrétan irányítani tudunk)
+nyomkeresés (olyan varázslatok, amik kifejezetten nyomozásra jók; nem csak szó szerinti nyomkeresés egy erdőben, hanem bármi, amivel infókat lehet kinyerni)
+láthatatlanság
+illúzió
+háztartásmágia
+párbajvarázslat
+vágás
+test (emberi test módosítása, pl hajszínezés, pattanáskeltés, fogak növekedése)
+elme (emberi elmére ható varázslatok, pl memory charmok, legilimencia)
+
+
+Entrancing Enchantments
