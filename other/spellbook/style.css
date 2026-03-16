@@ -556,9 +556,11 @@ display:grid;
 
 grid-template-columns:
 1.2fr
+140px
+120px
 160px
-160px
-1fr;
+220px
+220px;
 
 gap:12px;
 
@@ -760,3 +762,6 @@ background:#4a7cff !important;
 box-shadow:0 0 8px rgba(74,124,255,.6);
 
 }
+
+
+.infoBox{
