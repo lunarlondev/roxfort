@@ -807,23 +807,52 @@ text-align:justify;
 
 .effectActive{
 
+position:relative;
+
+transform:scale(1.18);
+
 filter:
 drop-shadow(0 0 6px rgba(120,160,255,.9))
 drop-shadow(0 0 12px rgba(120,160,255,.6));
 
-transform:scale(1.15);
-animation:effectGlow 1.6s ease-in-out infinite alternate;
+}
+
+.effectActive::after{
+
+content:"";
+
+position:absolute;
+inset:-6px;
+
+border-radius:50%;
+
+background:radial-gradient(
+circle,
+rgba(120,160,255,.35),
+rgba(120,160,255,0) 70%
+);
+
+animation:magicPulse 1.6s ease-in-out infinite;
+
+pointer-events:none;
 
 }
 
-@keyframes effectGlow{
+@keyframes magicPulse{
 
-from{
-filter:drop-shadow(0 0 4px rgba(120,160,255,.6));
+0%{
+opacity:.2;
+transform:scale(.7);
 }
 
-to{
-filter:drop-shadow(0 0 14px rgba(120,160,255,1));
+50%{
+opacity:.6;
+transform:scale(1.05);
+}
+
+100%{
+opacity:.2;
+transform:scale(.7);
 }
 
 }
