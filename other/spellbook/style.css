@@ -1,12 +1,167 @@
 body{
 
-background:radial-gradient(circle at 50% 0%,#1b1f2a,#0b0d13);
+background:
+radial-gradient(circle at 20% 0%, rgba(120,160,255,.15), transparent 40%),
+radial-gradient(circle at 80% 10%, rgba(120,160,255,.10), transparent 45%),
+linear-gradient(180deg,#05070c,#020309);
+
 color:#e6e6e6;
 font-family:Segoe UI,Arial;
 padding:30px;
 margin:0;
 
 }
+
+body::before{
+
+content:"";
+position:fixed;
+inset:0;
+
+background-image:url("https://grainy-gradients.vercel.app/noise.svg");
+
+opacity:.08;
+pointer-events:none;
+z-index:-3;
+
+}
+
+
+#magic-bg{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+z-index:-2;
+
+pointer-events:none;
+
+}
+
+body::after{
+
+content:"";
+position:fixed;
+inset:0;
+
+background:
+radial-gradient(circle at center,
+transparent 35%,
+rgba(0,0,0,.55) 70%,
+rgba(0,0,0,.85) 100%);
+
+pointer-events:none;
+z-index:-1;
+
+}
+
+
+.light-rays{
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:0;
+overflow:hidden;
+mix-blend-mode:screen;
+filter:blur(90px) saturate(200%) brightness(.9);
+opacity:.65;
+}
+
+/* fő rays */
+
+.light-rays::before{
+
+content:"";
+position:absolute;
+inset:-40%;
+
+background:
+
+linear-gradient(
+120deg,
+transparent 8%,
+rgba(0,140,255,0) 18%,
+rgba(0,140,255,.45) 26%,
+rgba(120,60,255,.65) 34%,
+rgba(255,90,160,.45) 42%,
+rgba(255,255,255,.10) 48%,
+transparent 60%
+),
+
+linear-gradient(
+110deg,
+transparent 30%,
+rgba(0,200,255,0) 40%,
+rgba(0,200,255,.35) 48%,
+rgba(80,120,255,.55) 56%,
+rgba(150,70,255,.35) 64%,
+transparent 72%
+);
+
+filter:blur(90px) saturate(200%) brightness(1.1);
+
+animation:rayMoveA 18s linear infinite;
+
+}
+
+
+/* második layer */
+
+.light-rays::after{
+
+content:"";
+position:absolute;
+inset:-40%;
+
+background:
+
+linear-gradient(
+130deg,
+transparent 0%,
+rgba(0,160,255,0) 12%,
+rgba(0,160,255,.30) 20%,
+rgba(150,80,255,.45) 28%,
+rgba(255,140,200,.35) 36%,
+rgba(255,255,255,.08) 44%,
+transparent 55%
+);
+
+filter:blur(160px) saturate(180%);
+opacity:1;
+
+animation:rayMoveB 24s linear infinite;
+
+}
+
+@keyframes rayMoveB{
+
+0%{
+transform:translateX(20%) translateY(15%) rotate(0deg);
+}
+
+50%{
+transform:translateX(-10%) translateY(-5%) rotate(-1deg);
+}
+
+100%{
+transform:translateX(20%) translateY(15%) rotate(0deg);
+}
+
+}
+.app{
+position:relative;
+z-index:2;
+max-width:1100px;
+margin:auto;
+}
+
+
+
+
 
 
 .pageTitle{
