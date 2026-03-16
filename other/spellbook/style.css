@@ -66,10 +66,32 @@ inset:0;
 pointer-events:none;
 z-index:0;
 overflow:hidden;
+
 mix-blend-mode:screen;
-filter:blur(90px) saturate(200%) brightness(.9);
+
+filter:blur(90px) saturate(200%) brightness(.9) hue-rotate(0deg);
+
 opacity:.65;
+
+animation:rayColorShift 40s linear infinite;
 }
+
+@keyframes rayColorShift{
+
+0%{
+filter:blur(90px) saturate(200%) brightness(.9) hue-rotate(0deg);
+}
+
+50%{
+filter:blur(90px) saturate(220%) brightness(1) hue-rotate(160deg);
+}
+
+100%{
+filter:blur(90px) saturate(200%) brightness(.9) hue-rotate(360deg);
+}
+
+}
+
 
 /* fő rays */
 
