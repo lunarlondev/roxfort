@@ -171,7 +171,7 @@ function render(){
 
     (s.effects||[]).forEach(e=>{
       if(effectData[e]){
-        effectIcons+=`<span class="effect" title="${effectData[e].label}">${effectData[e].icon}</span>`;
+        effectIcons+=`<span class="effect effect-${e}" title="${effectData[e].label}">${effectData[e].icon}</span>`;
       }
     });
 
@@ -239,6 +239,7 @@ document.querySelectorAll(".legendContent div")
     }
 
     render();
+    highlightEffects();
 
   });
 
@@ -263,3 +264,18 @@ document.getElementById("clearFilters").addEventListener("click", () => {
   render();
 
 });
+
+
+function highlightEffects(){
+
+  document.querySelectorAll(".effect")
+  .forEach(e=>e.classList.remove("effectActive"));
+
+  effectFilters.forEach(effect=>{
+
+    document.querySelectorAll(".effect-"+effect)
+    .forEach(el=>el.classList.add("effectActive"));
+
+  });
+
+}

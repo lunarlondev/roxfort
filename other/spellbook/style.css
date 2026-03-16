@@ -765,3 +765,64 @@ box-shadow:0 0 8px rgba(74,124,255,.6);
 
 
 .infoBox{
+
+margin-bottom:18px;
+padding:12px;
+
+background:#101520;
+border:1px solid #2a2f3c;
+border-radius:10px;
+
+}
+
+.infoBoxTitle{
+
+font-family:"Cinzel", serif;
+
+font-size:14px;
+letter-spacing:1.2px;
+text-transform:uppercase;
+
+color:#e6ecff;
+
+margin-bottom:10px;
+padding-bottom:6px;
+
+border-bottom:1px solid rgba(120,160,255,.25);
+
+text-shadow:
+0 0 6px rgba(120,160,255,.25);
+
+}}
+
+.infoBoxText{
+
+font-size:13px;
+line-height:1.55;
+color:#b8c1cf;
+
+}
+
+
+.effectActive{
+
+filter:
+drop-shadow(0 0 6px rgba(120,160,255,.9))
+drop-shadow(0 0 12px rgba(120,160,255,.6));
+
+transform:scale(1.15);
+animation:effectGlow 1.6s ease-in-out infinite alternate;
+
+}
+
+@keyframes effectGlow{
+
+from{
+filter:drop-shadow(0 0 4px rgba(120,160,255,.6));
+}
+
+to{
+filter:drop-shadow(0 0 14px rgba(120,160,255,1));
+}
+
+}
