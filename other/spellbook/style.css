@@ -856,3 +856,48 @@ transform:scale(.7);
 }
 
 }
+
+.effectActive::before{
+
+content:"";
+
+position:absolute;
+
+top:-10px;
+left:-20px;
+
+width:60px;
+height:60px;
+
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.6),
+transparent
+);
+
+transform:rotate(25deg);
+
+animation:shimmer 2.2s linear infinite;
+
+pointer-events:none;
+
+}
+
+@keyframes shimmer{
+
+0%{
+transform:translateX(-40px) rotate(25deg);
+opacity:0;
+}
+
+40%{
+opacity:.9;
+}
+
+100%{
+transform:translateX(40px) rotate(25deg);
+opacity:0;
+}
+
+}
