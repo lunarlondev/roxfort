@@ -3889,7 +3889,7 @@
     {
         "name": "Smudge-removing spell",
         "hu": "Maszateltávolító varázs",
-        "year": 0  2,
+        "year": 2,
         "category": "charm",
         "description": "Eltávolít tintát vagy maszatot egy felületről.",
         "effects": [ "eltüntetés", "háztartásmágia" ],
