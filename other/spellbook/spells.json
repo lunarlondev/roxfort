@@ -3164,7 +3164,7 @@
         "year": 3,
         "category": "defense",
         "description": "Felszabadít egy személyt vagy tárgyat egy lekötöző varázslat alól.",
-        "effects": [ "eltüntetés", " mozgáskorlátozás" ],
+        "effects": [ "eltüntetés", "kötözés" ],
         "dark": false,
         "healing": false,
         "custom": false,
