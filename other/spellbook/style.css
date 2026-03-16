@@ -713,3 +713,50 @@ opacity:0;
 pointer-events:none;
 
 }
+
+
+.spellCounter{
+
+margin-bottom:14px;
+font-size:13px;
+color:#9fa6b0;
+
+}
+
+
+.leftSidebar{
+
+background:#141720;
+border:1px solid #2a2f3c;
+border-radius:10px;
+
+padding:14px;
+height:fit-content;
+
+}
+
+#notesBox{
+
+width:100%;
+min-height:160px;
+
+background:#0f121a;
+color:#cfd5df;
+
+border:1px solid #2a2f3c;
+border-radius:8px;
+
+padding:10px;
+
+resize:vertical;
+font-size:13px;
+
+}
+
+
+.activeEffect{
+
+background:#4a7cff !important;
+box-shadow:0 0 8px rgba(74,124,255,.6);
+
+}

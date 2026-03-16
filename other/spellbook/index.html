@@ -1,160 +1,143 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-
 <meta charset="UTF-8">
 <title>Spellbook</title>
 
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
-
 </head>
-
 <body>
 
 <div class="app">
 
-<div class="pageTitle">
-Varázslatok listája
-</div>
+  <div class="pageTitle">
+    Varázslatok listája
+  </div>
 
-<!-- FELSŐ SZŰRŐSÁV -->
+  <div class="topFilters">
+    <input id="kereses" placeholder="Keresés (név / hatás)">
 
-<div class="topFilters">
+    <select id="ev">
+      <option value="">Összes év</option>
+      <option value="0">Ismeretlen</option>
+      <option value="1">1. év</option>
+      <option value="2">2. év</option>
+      <option value="3">3. év</option>
+      <option value="4">4. év</option>
+      <option value="5">5. év</option>
+      <option value="6">6. év</option>
+      <option value="7">7. év</option>
+      <option value="8">Felsőoktatás</option>
+    </select>
 
-<input id="kereses" placeholder="Keresés (név / hatás)">
+    <label class="yearCheckbox">
+      <input type="checkbox" id="csakev">
+      csak ez az év
+    </label>
 
-<select id="ev">
-<option value="">Összes év</option>
-<option value="0">Ismeretlen</option>
-<option value="1">1. év</option>
-<option value="2">2. év</option>
-<option value="3">3. év</option>
-<option value="4">4. év</option>
-<option value="5">5. év</option>
-<option value="6">6. év</option>
-<option value="7">7. év</option>
-<option value="8">Felsőoktatás</option>
-</select>
+    <select id="kategoria">
+      <option value="">Minden kategória</option>
+      <option value="curse">Ártások / átkok</option>
+      <option value="transfiguration">Átváltoztatás</option>
+      <option value="defense">Védekezés</option>
+      <option value="healing">Gyógyítás</option>
+      <option value="charm">Bűbájok</option>
+      <option value="dark">Fekete mágia</option>
+    </select>
 
-<label class="yearCheckbox">
-<input type="checkbox" id="csakev">
-csak ez az év
-</label>
+    <select id="customMode">
+      <option value="hide">Saját varázslatok: rejtve</option>
+      <option value="show" selected>Saját varázslatok: mutatva</option>
+      <option value="only">Csak ezeket mutassa</option>
+    </select>
 
-<select id="kategoria">
+    <select id="missingMode">
+      <option value="hide">Hiányzó varázslatok: rejtve</option>
+      <option value="show" selected>Hiányzó varázslatok: mutatva</option>
+      <option value="only">Csak ezeket mutassa</option>
+    </select>
 
-<option value="">Minden kategória</option>
-<option value="curse">Ártások / átkok</option>
-<option value="transfiguration">Átváltoztatás</option>
-<option value="defense">Védekezés</option>
-<option value="healing">Gyógyítás</option>
-<option value="charm">Bűbájok</option>
-<option value="dark">Fekete mágia</option>
+    <button id="clearFilters">Szűrők törlése</button>
+  </div>
 
-</select>
+  <div class="mainLayout">
 
-<select id="customMode">
+    <div class="content">
+      <div id="spellCounter" class="spellCounter"></div>
+      <div id="lista"></div>
+    </div>
 
-<option value="hide">Saját varázslatok: rejtve</option>
-<option value="show" selected>Saját varázslatok: mutatva</option>
-<option value="only">Csak ezeket mutassa</option>
+    <div class="sidebarToggle" id="toggleRight">▶</div>
 
-</select>
+    <aside class="rightSidebar" id="rightSidebar">
 
-<select id="missingMode">
+      <div class="infoBox">
+        <div class="infoBoxTitle">Megjegyzés</div>
+        <div class="infoBoxText">
+          Ide írhatsz rövid magyarázatot a rendszer működéséről, például hogy mit jelentenek az ikonok,
+          hogyan működik a szűrés, vagy mit jelölnek a saját és hiányzó varázslatok.
+        </div>
+      </div>
 
-<option value="hide">Hiányzó varázslatok: rejtve</option>
-<option value="show" selected>Hiányzó varázslatok: mutatva</option>
-<option value="only">Csak ezeket mutassa</option>
+      <h1>Hatások</h1>
 
-</select>
+      <h3>Elemek</h3>
+      <div class="legendContent">
+        <div data-effect="tűz" title="Tűz">🔥</div>
+        <div data-effect="víz" title="Víz">🌊</div>
+        <div data-effect="jég" title="Jég">❄</div>
+        <div data-effect="villám" title="Villám">⚡</div>
+        <div data-effect="föld" title="Föld">⛰️</div>
+        <div data-effect="levegő" title="Levegő">💨</div>
+        <div data-effect="fény" title="Fény">✨</div>
+        <div data-effect="sötétség" title="Sötétség">🌑</div>
+      </div>
 
-<button id="clearFilters">Szűrők törlése</button>
+      <h3>Harci hatások</h3>
+      <div class="legendContent">
+        <div data-effect="robbanás" title="Robbanás">💥</div>
+        <div data-effect="lökés" title="Lökés">🌬</div>
+        <div data-effect="kötözés" title="Kötözés">⛓</div>
+        <div data-effect="bénítás" title="Bénítás">🪨</div>
+        <div data-effect="kábítás" title="Kábítás">🌀</div>
+        <div data-effect="pajzs" title="Védekezés">🛡</div>
+        <div data-effect="vágás" title="Vágás">🔪</div>
+      </div>
 
-</div>
+      <h3>Mágia típusok</h3>
+      <div class="legendContent">
+        <div data-effect="vér" title="Vér">🩸</div>
+        <div data-effect="idő" title="Idő">⏳</div>
+        <div data-effect="elme" title="Elme">🧠</div>
+        <div data-effect="módosítás" title="Módosítás">🌈</div>
+        <div data-effect="test" title="Testre ható varázslatok">🫆</div>
+        <div data-effect="idézés" title="Idézés">📣</div>
+        <div data-effect="eltüntetés" title="Eltüntetés">🍃</div>
+        <div data-effect="irányítás" title="Irányítás">🎯</div>
+        <div data-effect="nyomkeresés" title="Nyomkeresés">🔎</div>
+      </div>
 
+      <h3>Képességek</h3>
+      <div class="legendContent">
+        <div data-effect="mozgás" title="Mozgás">🏃</div>
+        <div data-effect="tárgymozgatás" title="Tárgymozgatás">🪶</div>
+        <div data-effect="átváltoztatás" title="Átváltoztatás">🏆</div>
+        <div data-effect="láthatatlanság" title="Láthatatlanság">👁‍🗨</div>
+        <div data-effect="illúzió" title="Illúzió">🎭</div>
+      </div>
 
-<div class="mainLayout">
+      <h3>Egyéb</h3>
+      <div class="legendContent">
+        <div data-effect="háztartásmágia" title="Háztartásmágia">🧹</div>
+        <div data-effect="párbajvarázslat" title="Párbajvarázslat">⚔</div>
+      </div>
 
-<!-- SPELL LISTA -->
-
-<div class="content">
-
-<div id="lista"></div>
-
-</div>
-
-
-<!-- JOBB OLDALI EMOJI FILTER -->
-
-<div class="sidebarToggle" id="toggleRight">▶</div>
-<aside class="rightSidebar" id="rightSidebar">
-
-<h1>Hatások</h1>
-
-
-<h3>Elemek</h3>
-<div class="legendContent">
-<div data-effect="tűz" title="Tűz">🔥</div>
-<div data-effect="víz" title="Víz">🌊</div>
-<div data-effect="jég" title="Jég">❄</div>
-<div data-effect="villám" title="Villám">⚡</div>
-<div data-effect="föld" title="Föld">⛰️</div>
-<div data-effect="levegő" title="Levegő">💨</div>
-<div data-effect="fény" title="Fény">✨</div>
-<div data-effect="sötétség" title="Sötétség">🌑</div>
-</div>
-
-<h3>Harci hatások</h3>
-<div class="legendContent">
-<div data-effect="robbanás" title="Robbanás">💥</div>
-<div data-effect="lökés" title="Lökés">🌬</div>
-<div data-effect="kötözés" title="Kötözés">⛓</div>
-<div data-effect="bénítás" title="Bénítás">🪨</div>
-<div data-effect="kábítás" title="Kábítás">🌀</div>
-<div data-effect="pajzs" title="Védekezés">🛡</div>
-<div data-effect="vágás" title="Vágás">🔪</div>
-</div>
-
-
-<h3>Mágia típusok</h3>
-<div class="legendContent">
-<div data-effect="vér" title="Vér">🩸</div>
-<div data-effect="idő" title="Idő">⏳</div>
-<div data-effect="elme" title="Elme">🧠</div>
-<div data-effect="módosítás" title="Módosítás">🌈</div>
-<div data-effect="test" title="Testre ható varázslatok">🫆</div>
-<div data-effect="idézés" title="Idézés">📣</div>
-<div data-effect="eltüntetés" title="Eltüntetés">🍃</div>
-<div data-effect="irányítás" title="Irányítás">🎯</div>
-<div data-effect="nyomkeresés" title="Nyomkeresés">🔎</div>
-</div>
-
-<h3>Képességek</h3>
-<div class="legendContent">
-<div data-effect="mozgás" title="Mozgás">🏃</div>
-<div data-effect="tárgymozgatás" title="Tárgymozgatás">🪶</div>
-<div data-effect="átváltoztatás" title="Átváltoztatás">🏆</div>
-<div data-effect="láthatatlanság" title="Láthatatlanság">👁‍🗨</div>
-<div data-effect="illúzió" title="Illúzió">🎭</div>
-</div>
-
-<h3>Egyéb</h3>
-<div class="legendContent">
-<div data-effect="háztartásmágia" title="Háztartásmágia">🧹</div>
-<div data-effect="párbajvarázslat" title="Párbajvarázslat">⚔</div>
-</div>
-
-
-</div>
-
-</aside>
-
+    </aside>
+  </div>
 </div>
 
 <script src="script.js"></script>
 <script src="sidebar.js"></script>
-
 </body>
 </html>

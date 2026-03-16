@@ -8,6 +8,7 @@ const categoryNames = {
 
 let spells = [];
 let flagFilter = null;
+let effectFilters = [];
 
 const effectData = {
   tűz:{icon:"🔥",label:"Tűz"},
@@ -50,7 +51,6 @@ async function init(){
   spells = await res.json();
 
   render();
-
 }
 
 init();
@@ -74,6 +74,7 @@ function render(){
   const talalatok = spells.filter(s => {
 
     if(keres){
+
       const text = (
         (s.name||"")+" "+
         (s.hu||"")+" "+
@@ -82,6 +83,16 @@ function render(){
       ).toLowerCase();
 
       if(!text.includes(keres)) return false;
+    }
+
+    if(effectFilters.length){
+
+      if(!s.effects) return false;
+
+      for(const ef of effectFilters){
+        if(!s.effects.includes(ef)) return false;
+      }
+
     }
 
     if(ev !== null){
@@ -99,18 +110,19 @@ function render(){
         }else{
           if(year > ev) return false;
         }
+
       }
     }
 
     if(kat){
 
-  if(kat === "dark"){
-    if(!s.dark) return false;
-  }else{
-    if(s.category !== kat) return false;
-  }
+      if(kat === "dark"){
+        if(!s.dark) return false;
+      }else{
+        if(s.category !== kat) return false;
+      }
 
-}
+    }
 
     if(customMode === "hide" && s.custom) return false;
     if(customMode === "only" && !s.custom) return false;
@@ -123,6 +135,11 @@ function render(){
     return true;
 
   });
+
+  const counter = document.getElementById("spellCounter");
+  if(counter){
+    counter.textContent = talalatok.length + " / " + spells.length + " varázslat";
+  }
 
   if(talalatok.length===0){
 
@@ -165,27 +182,27 @@ function render(){
     else evszoveg=s.year+". év";
 
     const wikiLink = s.wiki
-  ? `<a class="wikiLink" href="${s.wiki}" target="_blank">
-       <img src="fandom-color-codes.svg" alt="Fandom">
-     </a>`
-  : "";
+    ? `<a class="wikiLink" href="${s.wiki}" target="_blank">
+         <img src="fandom-color-codes.svg" alt="Fandom">
+       </a>`
+    : "";
 
-       div.innerHTML=`
+    div.innerHTML=`
 
-   ${cornerIcons ? `<div class="customStar">${cornerIcons}</div>` : ""}
+      ${cornerIcons ? `<div class="customStar">${cornerIcons}</div>` : ""}
 
-   <div class="icons">${effectIcons}</div>
+      <div class="icons">${effectIcons}</div>
 
-   <div class="year">${evszoveg}</div>
+      <div class="year">${evszoveg}</div>
 
-   <div class="nev">${s.name}</div>
-   <div class="hu">${s.hu||"-"}</div>
+      <div class="nev">${s.name}</div>
+      <div class="hu">${s.hu||"-"}</div>
 
-   <div class="desc">${s.description||""}</div>
+      <div class="desc">${s.description||""}</div>
 
-   ${wikiLink}
+      ${wikiLink}
 
-   `;
+    `;
 
     lista.appendChild(div);
 
@@ -202,8 +219,19 @@ document.querySelectorAll(".legendContent div")
     const flag = el.dataset.flag;
 
     if(effect){
-      document.getElementById("kereses").value = effect;
-      flagFilter=null;
+
+      if(effectFilters.includes(effect)){
+
+        effectFilters = effectFilters.filter(e=>e!==effect);
+        el.classList.remove("activeEffect");
+
+      }else{
+
+        effectFilters.push(effect);
+        el.classList.add("activeEffect");
+
+      }
+
     }
 
     if(flag){
@@ -227,6 +255,10 @@ document.getElementById("clearFilters").addEventListener("click", () => {
   document.getElementById("missingMode").value="show";
 
   flagFilter=null;
+  effectFilters=[];
+
+  document.querySelectorAll(".legendContent div")
+  .forEach(e=>e.classList.remove("activeEffect"));
 
   render();
 
