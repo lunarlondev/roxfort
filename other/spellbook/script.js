@@ -21,7 +21,7 @@ const effectData = {
   sötétség:{icon:"🌑",label:"Sötétség"},
   robbanás:{icon:"💥",label:"Robbanás"},
   lökés:{icon:"🌬",label:"Erőhullám"},
-  kötözés:{icon:"⛓",label:"Mozgáskorlátozás"},
+  kötözés:{icon:"⛓",label:"Kötözés"},
   bénítás:{icon:"🪨",label:"Bénítás"},
   kábítás:{icon:"🌀",label:"Kábítás"},
   pajzs:{icon:"🛡",label:"Pajzs"},
