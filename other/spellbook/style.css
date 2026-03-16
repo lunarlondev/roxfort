@@ -797,9 +797,10 @@ text-shadow:
 
 .infoBoxText{
 
-font-size:13px;
+font-size:11px;
 line-height:1.55;
 color:#b8c1cf;
+text-align:justify;
 
 }
 
