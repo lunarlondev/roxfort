@@ -4234,7 +4234,20 @@
         "dark": true,
         "healing": false,
         "custom": false,
-        "missing": false,
+        "missing": true,
         "wiki": "https://harrypotter.fandom.com/wiki/Flagrante_Curse"
+    },
+    {
+        "name": "Imperturbable Charm",
+        "hu": "Páncélozó bűbáj",
+        "year": 5,
+        "category": "defense",
+        "description": "Mágikus akadályt hoz létre, amely megakadályozza, hogy hangok, tárgyak vagy személyek áthatoljanak rajta.",
+        "effects": [ "pajzs" ],
+        "dark": false,
+        "healing": false,
+        "custom": false,
+        "missing": false,
+        "wiki": "https://harrypotter.fandom.com/wiki/Imperturbable_Charm"
     }
 ]
