@@ -23,8 +23,6 @@ const UI = {
         decision.className = "decisionRow";
 
         node.choices.forEach((choice) => {
-
-            // ===== SECRET CHECK =====
             if (choice.type === "secret") {
                 if (!this.isSecretUnlocked(choice, nodeId)) {
                     this.setupSecretUnlock(choice, nodeId);
@@ -275,11 +273,11 @@ const UI = {
     },
 
     restart() {
-    State.reset();
-    this.secretTimers = {};
-    this.container.innerHTML = "";
-    this.renderNode("start");
-},
+        State.reset();
+        this.secretTimers = {};
+        this.container.innerHTML = "";
+        this.renderNode("start");
+    },
 
     scrollDown() {
         window.scrollTo({
@@ -288,13 +286,11 @@ const UI = {
         });
     },
 
-    // ===== SECRET SYSTEM =====
-
-    const key = this.getSecretKey(choice, nodeId);
+    isSecretUnlocked(choice, nodeId) {
         if (!choice.unlock) return true;
 
         if (choice.unlock.type === "time") {
-            const key = this.getSecretKey(choice, State.current);
+            const key = this.getSecretKey(choice, nodeId);
             const start = this.secretTimers[key];
             if (!start) return false;
 
@@ -321,8 +317,6 @@ const UI = {
     },
 
     getSecretKey(choice, nodeId) {
-    return `${nodeId}_${choice.next}`;
-}
+        return `${nodeId}_${choice.next}_${choice.text}`;
+    }
 };
-
-
