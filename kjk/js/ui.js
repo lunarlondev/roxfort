@@ -26,7 +26,7 @@ const UI = {
 
             // ===== SECRET CHECK =====
             if (choice.type === "secret") {
-                if (!this.isSecretUnlocked(choice)) {
+                if (!this.isSecretUnlocked(choice, nodeId)) {
                     this.setupSecretUnlock(choice, nodeId);
                     return;
                 }
@@ -290,7 +290,7 @@ const UI = {
 
     // ===== SECRET SYSTEM =====
 
-    isSecretUnlocked(choice) {
+    const key = this.getSecretKey(choice, nodeId);
         if (!choice.unlock) return true;
 
         if (choice.unlock.type === "time") {
