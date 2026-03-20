@@ -1,0 +1,31 @@
+button {
+    font-family: inherit;
+    border-radius: 10px;
+    transition: 0.2s ease;
+}
+
+.controls {
+    margin-top: 28px;
+    display: flex;
+    gap: 10px;
+    position: sticky;
+    bottom: 0;
+    padding-top: 12px;
+    background: linear-gradient(to top, #0f0f12 70%, transparent);
+}
+
+.controls button {
+    flex: 1;
+    padding: 12px 14px;
+    background: linear-gradient(180deg, #23232b, #17171d);
+    border: 1px solid #3a3a46;
+    color: #d7d7df;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+}
+
+.controls button:hover {
+    background: linear-gradient(180deg, #2d2d37, #1d1d24);
+    border-color: #55556a;
+}

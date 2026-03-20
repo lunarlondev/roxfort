@@ -207,35 +207,3 @@
         min-height: 150px;
     }
 }
-
-
-/* ===== DECISION TYPES ===== */
-
-/* Normal – kék */
-.choice-normal {
-    border-color: #4aa3ff;
-}
-
-.choice-normal:hover {
-    border-color: #6bb6ff;
-}
-
-/* Critical – piros */
-.choice-critical {
-    border-color: #ff4d4d;
-    box-shadow: 0 0 12px rgba(255, 77, 77, 0.25);
-}
-
-.choice-critical:hover {
-    border-color: #ff6b6b;
-}
-
-/* Secret – sárga */
-.choice-secret {
-    border-color: #ffd54a;
-    box-shadow: 0 0 12px rgba(255, 213, 74, 0.25);
-}
-
-.choice-secret:hover {
-    border-color: #ffe27a;
-}
