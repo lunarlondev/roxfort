@@ -275,10 +275,11 @@ const UI = {
     },
 
     restart() {
-        State.reset();
-        this.container.innerHTML = "";
-        this.renderNode("start");
-    },
+    State.reset();
+    this.secretTimers = {};
+    this.container.innerHTML = "";
+    this.renderNode("start");
+}
 
     scrollDown() {
         window.scrollTo({
@@ -325,10 +326,3 @@ const UI = {
 };
 
 
-
-restart() {
-    State.reset();
-    this.secretTimers = {};
-    this.container.innerHTML = "";
-    this.renderNode("start");
-}
