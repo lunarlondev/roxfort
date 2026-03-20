@@ -1,0 +1,53 @@
+{
+  "start": {
+    "text": "Felébredsz egy sötét szobában. Mit teszel?",
+    "choices": [
+      { "text": "Felkapcsolod a villanyt", "next": "light" },
+      { "text": "Sötétben maradsz", "next": "dark" }
+    ]
+  },
+
+  "light": {
+    "text": "A fény feltár egy ajtót és egy tükröt.",
+    "choices": [
+      { "text": "Belépsz az ajtón", "next": "door" },
+      { "text": "Belenézel a tükörbe", "next": "mirror" }
+    ]
+  },
+
+  "dark": {
+    "text": "A sötétben valami mozog.",
+    "choices": [
+      { "text": "Megérinted", "next": "touch" },
+      { "text": "Elfutsz", "next": "run" }
+    ]
+  },
+
+  "door": {
+    "type": "ending",
+    "title": "Menekülés",
+    "text": "Kijutsz. Ez volt a helyes út.",
+    "endingId": "E1"
+  },
+
+  "mirror": {
+    "type": "ending",
+    "title": "Tükörbe zárva",
+    "text": "A saját tükörképed csapdába ejt.",
+    "endingId": "E2"
+  },
+
+  "touch": {
+    "type": "ending",
+    "title": "Valami visszanyúl",
+    "text": "Nem kellett volna megérintened.",
+    "endingId": "E3"
+  },
+
+  "run": {
+    "type": "ending",
+    "title": "Eltűnés",
+    "text": "Elveszel a sötétben.",
+    "endingId": "E2"
+  }
+}
