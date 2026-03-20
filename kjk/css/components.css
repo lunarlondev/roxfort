@@ -1,0 +1,14 @@
+.controls {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+.controls button {
+    flex: 1;
+    padding: 10px;
+    background: #222;
+    border: 1px solid #444;
+    color: #ccc;
+    cursor: pointer;
+}

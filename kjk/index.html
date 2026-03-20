@@ -3,34 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Interactive Story Test</title>
-<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/timeline.css">
+
+<title>Story Engine</title>
 </head>
 <body>
 
 <div class="wrapper">
-    <div id="game">
-        <div id="text" class="text"></div>
-        <div id="choices" class="choices"></div>
-    </div>
+
+    <div id="storyContainer" class="storyContainer"></div>
+
+    <div id="choices" class="choices"></div>
 
     <div class="controls">
         <button id="backBtn">Vissza</button>
         <button id="restartBtn">Újrakezdés</button>
     </div>
 
-    <div id="endingScreen" class="hidden">
-        <div class="endingTitle" id="endingTitle"></div>
-        <div class="endingText" id="endingText"></div>
-
-        <div class="timelineTitle">Útvonalad</div>
-        <div id="timeline" class="timeline"></div>
-
-        <div class="timelineTitle">Nem választott utak</div>
-        <div id="missed" class="missed"></div>
-    </div>
 </div>
 
-<script src="engine.js"></script>
+<script src="js/state.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+
 </body>
 </html>

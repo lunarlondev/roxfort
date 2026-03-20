@@ -1,0 +1,37 @@
+.storyBlock {
+    margin-bottom: 30px;
+}
+
+.storyText {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.decisionRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.choiceBubble {
+    padding: 8px 12px;
+    border-radius: 20px;
+    background: #1c1c22;
+    border: 1px solid #333;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 14px;
+}
+
+/* választott */
+.choiceBubble.chosen {
+    background: radial-gradient(circle, #8be9fd, #2a2a33);
+    color: #000;
+}
+
+/* nem választott */
+.choiceBubble.notChosen {
+    background: #111;
+    color: #555;
+    filter: grayscale(100%);
+}
