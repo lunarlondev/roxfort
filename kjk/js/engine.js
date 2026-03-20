@@ -2,7 +2,7 @@ const Engine = {
     story: {},
 
     async load() {
-        const res = await fetch("story/story.json");
+        const res = await fetch("story.json");
         this.story = await res.json();
     },
 
