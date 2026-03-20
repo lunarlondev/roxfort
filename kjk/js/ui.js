@@ -279,7 +279,7 @@ const UI = {
     this.secretTimers = {};
     this.container.innerHTML = "";
     this.renderNode("start");
-}
+},
 
     scrollDown() {
         window.scrollTo({
