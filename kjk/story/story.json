@@ -1,5 +1,48 @@
 {
   "start": {
+    "text": "Reggel van a Roxfortban. Csörög az ébresztő. Mit teszel?",
+    "choices": [
+      {
+        "text": "Összeszeded magad és felkelsz",
+        "next": "breakfast",
+        "type": "normal"
+      },
+      {
+        "text": "Még 5 perc szundi",
+        "next": "snooze_once",
+        "type": "normal"
+      }
+    ]
+  },
+
+  "snooze_once": {
+    "text": "Még egy kicsit visszaalszol. Pár perc múlva újra csörög az ébresztő.",
+    "choices": [
+      {
+        "text": "Na jó, most már felkelsz",
+        "next": "breakfast",
+        "type": "normal"
+      },
+      {
+        "text": "Még 5 percet alszol",
+        "next": "late_start",
+        "type": "critical"
+      }
+    ]
+  },
+
+  "late_start": {
+    "text": "Túl sokáig aludtál. Rohansz az órára, reggeli nélkül.",
+    "choices": [
+      {
+        "text": "Sietsz az órára",
+        "next": "class_intro_hungry",
+        "type": "critical"
+      }
+    ]
+  },
+
+  "breakfast": {
     "text": "Reggeli a Roxfortban. Leültél az asztalhoz Ajax mellé. Mit eszel?",
     "choices": [
       {
@@ -27,19 +70,19 @@
         "type": "normal"
       },
       {
-  "text": "Meglógsz az óráról",
-  "next": "secret_escape",
-  "type": "secret",
-  "unlock": {
-    "type": "time",
-    "delay": 60000
-  }
-}
+        "text": "Meglógsz az óráról",
+        "next": "secret_escape",
+        "type": "secret",
+        "unlock": {
+          "type": "time",
+          "delay": 60000
+        }
+      }
     ]
   },
 
   "breakfast_waffle": {
-    "text": "Kicsit furcsa választás volt, Ajax is furán néz. Enyhén gyomorforgató, de elindulsz az órára.",
+    "text": "Kicsit furcsa választás volt, Ajax is furán néz. De elindulsz az órára.",
     "choices": [
       {
         "text": "Tovább az órára",
@@ -48,24 +91,35 @@
         "type": "normal"
       },
       {
-  "text": "Meglógsz az óráról",
-  "next": "secret_escape",
-  "type": "secret",
-  "unlock": {
-    "type": "time",
-    "delay": 60000
-  }
-}
+        "text": "Meglógsz az óráról",
+        "next": "secret_escape",
+        "type": "secret",
+        "unlock": {
+          "type": "time",
+          "delay": 20000
+        }
+      }
     ]
   },
 
   "class_intro": {
-    "text": "Bűbájtan órán a professzor egy egyszerű feladatot ad: egy könyvet kell a terem másik végébe juttatni.",
+    "text": "Bűbájtan órán a professzor egy feladatot ad: egy könyvet kell a terem másik végébe juttatni.",
     "choices": [
       {
         "text": "Következő",
         "next": "task",
         "image": "assets/book.jpg",
+        "type": "critical"
+      }
+    ]
+  },
+
+  "class_intro_hungry": {
+    "text": "Éhesen és idegesen érkezel az órára. Nehezen koncentrálsz.",
+    "choices": [
+      {
+        "text": "Megpróbálod a feladatot",
+        "next": "task_hungry",
         "type": "critical"
       }
     ]
@@ -95,6 +149,22 @@
     ]
   },
 
+  "task_hungry": {
+    "text": "Nem jut eszedbe a pontos varázslat, csak improvizálsz.",
+    "choices": [
+      {
+        "text": "Accio – magadhoz rántod",
+        "next": "ending_mid",
+        "type": "critical"
+      },
+      {
+        "text": "Depulso – ellököd",
+        "next": "ending_bad",
+        "type": "critical"
+      }
+    ]
+  },
+
   "secret_escape": {
     "type": "ending",
     "title": "Lógás",
@@ -105,21 +175,21 @@
   "ending_good": {
     "type": "ending",
     "title": "Kiváló teljesítmény",
-    "text": "Precíz, elegáns kivitelezés. A professzor elégedetten bólint. Érdemjegy: Kiváló.",
+    "text": "Precíz kivitelezés. Érdemjegy: Kiváló.",
     "endingId": "GRADE_A"
   },
 
   "ending_mid": {
     "type": "ending",
     "title": "Elfogadható megoldás",
-    "text": "A megoldás működött, de kissé darabos volt. A professzor feljegyez valamit. Érdemjegy: Közepes.",
+    "text": "Működött, de darabos volt.",
     "endingId": "GRADE_B"
   },
 
   "ending_bad": {
     "type": "ending",
     "title": "Kaotikus kivitelezés",
-    "text": "A könyv nekicsapódik a falnak. A professzor sóhajt. Érdemjegy: Elégtelen.",
+    "text": "A könyv nekicsapódik a falnak.",
     "endingId": "GRADE_C"
   }
 }
