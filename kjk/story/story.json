@@ -56,6 +56,15 @@
         "next": "breakfast_waffle",
         "image": "assets/pickles.jpg",
         "type": "normal"
+      },
+      {
+        "text": "Furcsa déjà vu érzés… a leviosát gyakorlod reggeli közben",
+        "next": "breakfast_leviosa",
+        "type": "secret",
+        "unlock": {
+          "type": "ending",
+          "id": "GRADE_C"
+        }
       }
     ]
   },
@@ -96,8 +105,19 @@
         "type": "secret",
         "unlock": {
           "type": "time",
-          "delay": 20000
+          "delay": 60000
         }
+      }
+    ]
+  },
+
+  "breakfast_leviosa": {
+    "text": "A kanál finoman lebegni kezd. Magabiztos vagy. Ma ez menni fog.",
+    "choices": [
+      {
+        "text": "Tovább az órára",
+        "next": "task_perfect",
+        "type": "normal"
       }
     ]
   },
@@ -145,6 +165,18 @@
         "next": "ending_bad",
         "image": "assets/depulso.jpg",
         "type": "critical"
+      },
+      {
+        "text": "Valami furcsa ötlet jut eszedbe – kreatívan oldod meg",
+        "next": "ending_creative",
+        "type": "secret",
+        "unlock": {
+          "type": "combo",
+          "choices": [
+            "Még 5 perc szundi",
+            "Savanyúuborkás gofri"
+          ]
+        }
       }
     ]
   },
@@ -165,11 +197,36 @@
     ]
   },
 
+  "task_perfect": {
+    "text": "Teljes kontroll alatt tartod a varázslatot.",
+    "choices": [
+      {
+        "text": "Wingardium Leviosa – tökéletes kivitelezés",
+        "next": "ending_perfect",
+        "type": "critical"
+      }
+    ]
+  },
+
   "secret_escape": {
     "type": "ending",
     "title": "Lógás",
     "text": "Nem mentél be az órára. A folyosón kószálsz, és valami teljesen más kaland kezdődik...",
     "endingId": "SECRET_ESCAPE"
+  },
+
+  "ending_creative": {
+    "type": "ending",
+    "title": "Zseniális improvizáció",
+    "text": "A professzor először pislog, majd elmosolyodik. Ez nem volt a tananyag része… de működött.",
+    "endingId": "CREATIVE"
+  },
+
+  "ending_perfect": {
+    "type": "ending",
+    "title": "Tökéletes kivitelezés",
+    "text": "Mintha már átélted volna ezt. Hibátlan mozdulat.",
+    "endingId": "PERFECT"
   },
 
   "ending_good": {
