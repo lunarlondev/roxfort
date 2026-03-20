@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Engine</title>
 
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/layout.css">
-<link rel="stylesheet" href="css/components.css">
-<link rel="stylesheet" href="css/timeline.css">
-
-<title>Story Engine</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/timeline.css">
 </head>
 <body>
+    <div class="wrapper">
+        <div id="storyContainer" class="storyContainer"></div>
 
-<div class="wrapper">
-    <div id="storyContainer"></div>
-
-    <div class="controls">
-        <button id="backBtn">Vissza</button>
-        <button id="restartBtn">Újrakezdés</button>
+        <div class="controls">
+            <button id="backBtn" type="button">Vissza</button>
+            <button id="restartBtn" type="button">Újrakezdés</button>
+        </div>
     </div>
-</div>
 
-<script src="js/state.js"></script>
-<script src="js/engine.js"></script>
-<script src="js/ui.js"></script>
-<script src="js/main.js"></script>
-
+    <script src="js/state.js"></script>
+    <script src="js/engine.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,44 +1,92 @@
 {
   "start": {
-    "text": "Reggeli a Roxfortban.",
+    "text": "Reggeli a Roxfortban. Leültél az asztalhoz Ajax mellé. Mit eszel?",
     "choices": [
-      { "text": "Toast", "next": "class_intro", "image": "assets/egg.jpg" },
-      { "text": "Gofri", "next": "class_intro", "image": "assets/pickles.jpg" }
+      {
+        "text": "Sonkás-tojásos toast",
+        "next": "breakfast_toast",
+        "image": "assets/egg.jpg"
+      },
+      {
+        "text": "Savanyúuborkás gofri",
+        "next": "breakfast_waffle",
+        "image": "assets/pickles.jpg"
+      }
+    ]
+  },
+
+  "breakfast_toast": {
+    "text": "Gyors, klasszikus reggeli. Tele vagy energiával, és elindulsz az órára.",
+    "choices": [
+      {
+        "text": "Tovább az órára",
+        "next": "class_intro",
+        "image": "assets/class.jpg"
+      }
+    ]
+  },
+
+  "breakfast_waffle": {
+    "text": "Kicsit furcsa választás volt, Ajax is furán néz. Enyhén gyomorforgató, de elindulsz az órára.",
+    "choices": [
+      {
+        "text": "Tovább az órára",
+        "next": "class_intro",
+        "image": "assets/class.jpg"
+      }
     ]
   },
 
   "class_intro": {
-    "text": "Óra előtt állsz.",
-    "secretTimer": 5000,
-    "secretChoice": {
-      "text": "Meglépsz",
-      "next": "ending_secret",
-      "secret": true,
-      "secretId": "ESCAPE"
-    },
+    "text": "Bűbájtan órán a professzor egy egyszerű feladatot ad: egy könyvet kell a terem másik végébe juttatni.",
     "choices": [
-      { "text": "Figyelsz", "next": "task" }
+      {
+        "text": "Következő",
+        "next": "task",
+        "image": "assets/book.jpg"
+      }
     ]
   },
 
   "task": {
-    "text": "Mozgasd a könyvet.",
+    "text": "Hogyan oldod meg a feladatot?",
     "choices": [
-      { "text": "Leviosa", "next": "good", "critical": true },
-      { "text": "Accio", "next": "mid" },
-      { "text": "Depulso", "next": "bad" }
+      {
+        "text": "Wingardium Leviosa – lebegteted a könyvet",
+        "next": "ending_good",
+        "image": "assets/leviosa.jpg"
+      },
+      {
+        "text": "Accio – magadhoz rántod, majd továbbküldöd",
+        "next": "ending_mid",
+        "image": "assets/accio.jpg"
+      },
+      {
+        "text": "Depulso – egyszerűen ellököd",
+        "next": "ending_bad",
+        "image": "assets/depulso.jpg"
+      }
     ]
   },
 
-  "good": { "type": "ending", "title": "Kiváló", "text": "Szép", "endingId": "A" },
-  "mid": { "type": "ending", "title": "Közepes", "text": "Oké", "endingId": "B" },
-  "bad": { "type": "ending", "title": "Bukás", "text": "Rip", "endingId": "C" },
-  "ending_secret": {
+  "ending_good": {
     "type": "ending",
-    "title": "Lógtál",
-    "text": "Megszöktél",
-    "endingId": "S",
-    "secret": true,
-    "secretId": "ESCAPE"
+    "title": "Kiváló teljesítmény",
+    "text": "Precíz, elegáns kivitelezés. A professzor elégedetten bólint. Érdemjegy: Kiváló.",
+    "endingId": "GRADE_A"
+  },
+
+  "ending_mid": {
+    "type": "ending",
+    "title": "Elfogadható megoldás",
+    "text": "A megoldás működött, de kissé darabos volt. A professzor feljegyez valamit. Érdemjegy: Közepes.",
+    "endingId": "GRADE_B"
+  },
+
+  "ending_bad": {
+    "type": "ending",
+    "title": "Kaotikus kivitelezés",
+    "text": "A könyv nekicsapódik a falnak. A professzor sóhajt. Érdemjegy: Elégtelen.",
+    "endingId": "GRADE_C"
   }
 }
