@@ -27,10 +27,14 @@
         "type": "normal"
       },
       {
-        "text": "Meglógsz az óráról",
-        "next": "secret_escape",
-        "type": "secret"
-      }
+  "text": "Meglógsz az óráról",
+  "next": "secret_escape",
+  "type": "secret",
+  "unlock": {
+    "type": "time",
+    "delay": 60000
+  }
+}
     ]
   },
 

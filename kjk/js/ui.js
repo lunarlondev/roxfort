@@ -1,5 +1,6 @@
 const UI = {
     container: document.getElementById("storyContainer"),
+    secretTimers: {},
 
     renderNode(nodeId) {
         const node = Engine.getNode(nodeId);
@@ -22,6 +23,15 @@ const UI = {
         decision.className = "decisionRow";
 
         node.choices.forEach((choice) => {
+
+            // ===== SECRET CHECK =====
+            if (choice.type === "secret") {
+                if (!this.isSecretUnlocked(choice)) {
+                    this.setupSecretUnlock(choice, nodeId);
+                    return;
+                }
+            }
+
             const item = document.createElement("button");
             item.type = "button";
 
@@ -148,7 +158,6 @@ const UI = {
                 overlay.innerText = choice.text;
                 el.appendChild(overlay);
 
-
                 if (choice.text === step.chosen) {
                     el.classList.add("chosen");
                 } else {
@@ -212,7 +221,9 @@ const UI = {
             node.choices.forEach((choice) => {
                 const item = document.createElement("button");
                 item.type = "button";
-                item.className = "choiceCard";
+
+                const type = choice.type || "normal";
+                item.className = `choiceCard choice-${type}`;
 
                 if (choice.image) {
                     item.style.backgroundImage = `url(${choice.image})`;
@@ -274,5 +285,41 @@ const UI = {
             top: document.body.scrollHeight,
             behavior: "smooth"
         });
+    },
+
+    // ===== SECRET SYSTEM =====
+
+    isSecretUnlocked(choice) {
+        if (!choice.unlock) return true;
+
+        if (choice.unlock.type === "time") {
+            const key = this.getSecretKey(choice);
+            const start = this.secretTimers[key];
+            if (!start) return false;
+
+            return Date.now() - start >= choice.unlock.delay;
+        }
+
+        return false;
+    },
+
+    setupSecretUnlock(choice, nodeId) {
+        const key = this.getSecretKey(choice);
+
+        if (this.secretTimers[key]) return;
+
+        this.secretTimers[key] = Date.now();
+
+        if (choice.unlock?.type === "time") {
+            setTimeout(() => {
+                if (State.current === nodeId) {
+                    this.rebuildFromState();
+                }
+            }, choice.unlock.delay);
+        }
+    },
+
+    getSecretKey(choice) {
+        return `${State.current}_${choice.text}`;
     }
 };

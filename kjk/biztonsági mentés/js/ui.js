@@ -24,7 +24,9 @@ const UI = {
         node.choices.forEach((choice) => {
             const item = document.createElement("button");
             item.type = "button";
-            item.className = "choiceCard";
+
+            const type = choice.type || "normal";
+            item.className = `choiceCard choice-${type}`;
 
             if (choice.image) {
                 item.style.backgroundImage = `url(${choice.image})`;
@@ -145,6 +147,7 @@ const UI = {
                 overlay.className = "timelineOverlay";
                 overlay.innerText = choice.text;
                 el.appendChild(overlay);
+
 
                 if (choice.text === step.chosen) {
                     el.classList.add("chosen");
