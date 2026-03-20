@@ -1,44 +1,55 @@
 const UI = {
-
     container: document.getElementById("storyContainer"),
 
     renderNode(nodeId) {
         const node = Engine.getNode(nodeId);
+        if (!node) return;
 
-        // ===== ENDING =====
         if (node.type === "ending") {
             this.renderEnding(node);
             return;
         }
 
-        // ===== NORMAL =====
-        const block = document.createElement("div");
+        const block = document.createElement("section");
         block.className = "storyBlock";
 
         const text = document.createElement("div");
         text.className = "storyText";
         text.innerText = node.text;
-
         block.appendChild(text);
 
         const decision = document.createElement("div");
         decision.className = "decisionRow";
 
-        node.choices.forEach(choice => {
-            const item = document.createElement("div");
-            item.className = "choiceBubble";
+        node.choices.forEach((choice) => {
+            const item = document.createElement("button");
+            item.type = "button";
+            item.className = "choiceCard";
 
-            item.innerText = choice.text;
+            if (choice.image) {
+                item.style.backgroundImage = `url(${choice.image})`;
+            } else {
+                item.classList.add("noImage");
+            }
+
+            const overlay = document.createElement("div");
+            overlay.className = "choiceOverlay";
+            overlay.innerText = choice.text;
+            item.appendChild(overlay);
 
             item.onclick = () => {
-                this.lockDecision(decision, choice.text);
+                State.history.push(this.createSnapshot());
 
-                State.history.push(JSON.parse(JSON.stringify(State)));
+                this.lockDecision(decision, choice.text);
 
                 State.steps.push({
                     node: nodeId,
+                    prompt: node.text,
                     chosen: choice.text,
-                    all: node.choices.map(c => c.text)
+                    all: node.choices.map((c) => ({
+                        text: c.text,
+                        image: c.image || null
+                    }))
                 });
 
                 State.current = choice.next;
@@ -55,17 +66,14 @@ const UI = {
     },
 
     renderEnding(node) {
-
-        // ===== TRACKING FIX =====
         State.saveEnding(node.endingId);
 
-        // ===== ENDING BLOKK =====
-        const block = document.createElement("div");
-        block.className = "storyBlock endingBlock";
+        const endingBlock = document.createElement("section");
+        endingBlock.className = "storyBlock endingBlock";
 
         const title = document.createElement("div");
         title.className = "endingTitle";
-        title.innerText = "ENDING: " + node.title;
+        title.innerText = node.title;
 
         const text = document.createElement("div");
         text.className = "storyText";
@@ -73,48 +81,72 @@ const UI = {
 
         const stats = document.createElement("div");
         stats.className = "endingStats";
-        stats.innerText =
-            "Felfedezett endingek: " + State.seenEndings.length;
+        stats.innerText = `Felfedezett endingek: ${State.seenEndings.length}`;
 
-        block.appendChild(title);
-        block.appendChild(text);
-        block.appendChild(stats);
+        endingBlock.appendChild(title);
+        endingBlock.appendChild(text);
+        endingBlock.appendChild(stats);
 
-        this.container.appendChild(block);
+        this.container.appendChild(endingBlock);
 
-        // ===== TIMELINE =====
         this.renderTimeline();
 
-        // ===== LOCK ALL =====
-        const allChoices = document.querySelectorAll(".choiceBubble");
-        allChoices.forEach(c => c.onclick = null);
+        const allChoices = document.querySelectorAll(".choiceCard");
+        allChoices.forEach((card) => {
+            card.onclick = null;
+            card.disabled = true;
+        });
 
         this.scrollDown();
     },
 
     renderTimeline() {
+        const oldTimeline = this.container.querySelector(".timelineBlock");
+        if (oldTimeline) {
+            oldTimeline.remove();
+        }
 
-        const timeline = document.createElement("div");
+        const timeline = document.createElement("section");
         timeline.className = "timelineBlock";
 
         const title = document.createElement("div");
         title.className = "timelineTitle";
         title.innerText = "Útvonalad";
-
         timeline.appendChild(title);
 
-        State.steps.forEach(step => {
+        State.steps.forEach((step, index) => {
+            const stepBlock = document.createElement("div");
+            stepBlock.className = "timelineStep";
+
+            const stepLabel = document.createElement("div");
+            stepLabel.className = "timelineStepLabel";
+            stepLabel.innerText = `${index + 1}. döntés`;
+            stepBlock.appendChild(stepLabel);
+
+            const prompt = document.createElement("div");
+            prompt.className = "timelinePrompt";
+            prompt.innerText = step.prompt;
+            stepBlock.appendChild(prompt);
 
             const row = document.createElement("div");
-            row.className = "timelineRow";
+            row.className = "timelineRowCards";
 
-            step.all.forEach(choice => {
+            step.all.forEach((choice) => {
                 const el = document.createElement("div");
-                el.className = "timelineChoice";
+                el.className = "timelineCard";
 
-                el.innerText = choice;
+                if (choice.image) {
+                    el.style.backgroundImage = `url(${choice.image})`;
+                } else {
+                    el.classList.add("noImage");
+                }
 
-                if (choice === step.chosen) {
+                const overlay = document.createElement("div");
+                overlay.className = "timelineOverlay";
+                overlay.innerText = choice.text;
+                el.appendChild(overlay);
+
+                if (choice.text === step.chosen) {
                     el.classList.add("chosen");
                 } else {
                     el.classList.add("notChosen");
@@ -123,28 +155,95 @@ const UI = {
                 row.appendChild(el);
             });
 
-            timeline.appendChild(row);
+            stepBlock.appendChild(row);
+            timeline.appendChild(stepBlock);
         });
 
         this.container.appendChild(timeline);
     },
 
     lockDecision(decisionRow, chosenText) {
-        [...decisionRow.children].forEach(el => {
-            if (el.innerText === chosenText) {
+        [...decisionRow.children].forEach((el) => {
+            const label = el.querySelector(".choiceOverlay")?.innerText || "";
+
+            if (label === chosenText) {
                 el.classList.add("chosen");
             } else {
                 el.classList.add("notChosen");
             }
+
             el.onclick = null;
+            el.disabled = true;
         });
     },
 
-    scrollDown() {
-        window.scrollTo({
-            top: document.body.scrollHeight,
-            behavior: "smooth"
-        });
+    createSnapshot() {
+        return {
+            current: State.current,
+            history: [...State.history],
+            steps: JSON.parse(JSON.stringify(State.steps)),
+            seenEndings: [...State.seenEndings]
+        };
+    },
+
+    rebuildFromState() {
+        this.container.innerHTML = "";
+
+        let currentNodeId = "start";
+
+        for (const step of State.steps) {
+            const node = Engine.getNode(currentNodeId);
+            if (!node || node.type === "ending") break;
+
+            const block = document.createElement("section");
+            block.className = "storyBlock";
+
+            const text = document.createElement("div");
+            text.className = "storyText";
+            text.innerText = node.text;
+            block.appendChild(text);
+
+            const decision = document.createElement("div");
+            decision.className = "decisionRow";
+
+            node.choices.forEach((choice) => {
+                const item = document.createElement("button");
+                item.type = "button";
+                item.className = "choiceCard";
+
+                if (choice.image) {
+                    item.style.backgroundImage = `url(${choice.image})`;
+                } else {
+                    item.classList.add("noImage");
+                }
+
+                const overlay = document.createElement("div");
+                overlay.className = "choiceOverlay";
+                overlay.innerText = choice.text;
+                item.appendChild(overlay);
+
+                if (choice.text === step.chosen) {
+                    item.classList.add("chosen");
+                } else {
+                    item.classList.add("notChosen");
+                }
+
+                item.onclick = null;
+                item.disabled = true;
+
+                decision.appendChild(item);
+            });
+
+            block.appendChild(decision);
+            this.container.appendChild(block);
+
+            const chosenChoice = node.choices.find((c) => c.text === step.chosen);
+            if (!chosenChoice) break;
+
+            currentNodeId = chosenChoice.next;
+        }
+
+        this.renderNode(State.current);
     },
 
     back() {
@@ -153,17 +252,24 @@ const UI = {
         const prev = State.history.pop();
         if (!prev) return;
 
-        Object.assign(State, prev);
+        State.current = prev.current;
+        State.history = prev.history;
+        State.steps = prev.steps;
+        State.seenEndings = prev.seenEndings;
 
-        this.container.innerHTML = "";
-        State.steps = [];
-
-        this.renderNode(State.current);
+        this.rebuildFromState();
     },
 
     restart() {
         State.reset();
         this.container.innerHTML = "";
         this.renderNode("start");
+    },
+
+    scrollDown() {
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth"
+        });
     }
 };
