@@ -148,19 +148,6 @@ const UI = {
                 overlay.innerText = choice.text;
                 el.appendChild(overlay);
 
-const overlay = document.createElement("div");
-overlay.className = "choiceOverlay";
-overlay.innerText = choice.text;
-
-if (type === "critical") {
-    overlay.innerText += "\n(Kritikus döntés)";
-}
-if (type === "secret") {
-    overlay.innerText += "\n(?)";
-}
-
-item.appendChild(overlay);
-
 
                 if (choice.text === step.chosen) {
                     el.classList.add("chosen");
