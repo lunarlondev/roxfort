@@ -1,239 +1,59 @@
-.storyBlock {
-    margin-bottom: 28px;
-}
-
-.storyText {
-    margin-bottom: 12px;
-    line-height: 1.6;
-    font-size: 16px;
-    color: #e1e1e8;
-}
-
-.decisionRow {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-}
-
-.decisionRow:has(.choiceCard:nth-child(3)) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
 .choiceCard {
-    position: relative;
-    min-height: 140px;
-    padding: 0;
-    border: 1px solid #2f2f39;
-    background-color: #1a1a21;
+    height: 120px;
     background-size: cover;
-    background-position: center;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
-}
-
-.choiceCard:hover {
-    transform: translateY(-2px);
-    border-color: #4b4b5c;
-}
-
-.choiceCard.noImage {
-    background-image: linear-gradient(135deg, #22222c, #17171d);
+    border: 1px solid #333;
+    position: relative;
 }
 
 .choiceOverlay {
     position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: flex-end;
-    padding: 10px;
-    background:
-        linear-gradient(to top, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.15) 55%, rgba(0, 0, 0, 0.02) 100%);
-    color: #f3f3f6;
-    font-size: 14px;
-    line-height: 1.35;
-    text-align: left;
+    bottom: 0;
+    padding: 8px;
+    background: rgba(0,0,0,0.7);
 }
 
 .choiceCard.chosen {
-    border-color: #8be9fd;
-    box-shadow: 0 0 0 2px rgba(139, 233, 253, 0.2), 0 12px 28px rgba(139, 233, 253, 0.18);
+    outline: 2px solid cyan;
 }
 
 .choiceCard.notChosen {
-    filter: grayscale(100%) brightness(0.5);
-    opacity: 0.75;
-}
-
-.endingBlock {
-    margin-top: 10px;
-    padding: 18px 16px;
-    border: 1px solid #4a2424;
-    border-left: 4px solid #ff6b6b;
-    border-radius: 14px;
-    background: linear-gradient(180deg, rgba(56, 21, 21, 0.5), rgba(25, 17, 17, 0.88));
-}
-
-.endingTitle {
-    margin-bottom: 8px;
-    font-size: 22px;
-    font-weight: 700;
-    color: #ff8e8e;
-}
-
-.endingStats {
-    margin-top: 12px;
-    font-size: 13px;
-    color: #b6b6c3;
+    filter: grayscale(1);
 }
 
 .timelineBlock {
-    margin-top: 26px;
-    padding-top: 18px;
-    border-top: 1px solid #2b2b34;
+    margin-top: 20px;
 }
 
-.timelineTitle {
-    margin-bottom: 14px;
-    font-size: 18px;
-    font-weight: 700;
-    color: #f1f1f4;
-}
-
-.timelineStep {
-    position: relative;
-    margin-bottom: 18px;
-    padding-left: 18px;
-}
-
-.timelineStep::before {
-    content: "";
-    position: absolute;
-    top: 6px;
-    left: 0;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #8be9fd;
-    box-shadow: 0 0 10px rgba(139, 233, 253, 0.45);
-}
-
-.timelineStep::after {
-    content: "";
-    position: absolute;
-    top: 18px;
-    left: 3px;
-    bottom: -18px;
-    width: 2px;
-    background: linear-gradient(to bottom, rgba(139, 233, 253, 0.35), rgba(139, 233, 253, 0));
-}
-
-.timelineStep:last-child::after {
-    display: none;
-}
-
-.timelineStepLabel {
-    margin-bottom: 4px;
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #8d8d9e;
-}
-
-.timelinePrompt {
-    margin-bottom: 10px;
-    font-size: 14px;
-    line-height: 1.45;
-    color: #d9d9e0;
-}
-
-.timelineRowCards {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-}
-
-.timelineRowCards:has(.timelineCard:nth-child(3)) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.timelineCard {
-    position: relative;
-    min-height: 88px;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid #2f2f39;
-    background-color: #1a1a21;
-    background-size: cover;
-    background-position: center;
-}
-
-.timelineCard.noImage {
-    background-image: linear-gradient(135deg, #22222c, #17171d);
-}
-
-.timelineOverlay {
-    position: absolute;
-    inset: 0;
+.timelineItem {
     display: flex;
-    align-items: flex-end;
-    padding: 8px;
-    background:
-        linear-gradient(to top, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.12) 60%, rgba(0, 0, 0, 0.02) 100%);
-    color: #f2f2f5;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.timelinePill {
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: #222;
     font-size: 12px;
-    line-height: 1.3;
 }
 
-.timelineCard.chosen {
-    border-color: #8be9fd;
-    box-shadow: 0 0 0 2px rgba(139, 233, 253, 0.16);
+.timelinePill.chosen {
+    background: cyan;
+    color: black;
 }
 
-.timelineCard.notChosen {
-    filter: grayscale(100%) brightness(0.42);
-    opacity: 0.72;
+.timelinePill.never {
+    border: 1px dashed #555;
 }
 
-@media (max-width: 520px) {
-    .decisionRow,
-    .decisionRow:has(.choiceCard:nth-child(3)),
-    .timelineRowCards,
-    .timelineRowCards:has(.timelineCard:nth-child(3)) {
-        grid-template-columns: 1fr;
-    }
-
-    .choiceCard {
-        min-height: 150px;
-    }
-}
-
-
-
-.timelineItem.secretLocked .timelineDot {
-    background: #000;
-    border: 1px solid #666;
-}
-
-.timelineItem.secretLocked .timelineLabel {
+.timelinePill.locked {
     color: #555;
 }
 
-.timelineItem.critical .timelineDot {
-    background: red;
-    animation: pulse 2s infinite;
+.timelinePill.critical {
+    border: 1px solid red;
 }
 
-.timelineItem.secret .timelineDot {
-    background: gold;
-}
-
-.timelineItem.seenBefore .timelineDot {
-    background: #777;
-}
-
-@keyframes pulse {
-    0% { box-shadow: 0 0 5px red; }
-    50% { box-shadow: 0 0 15px red; }
-    100% { box-shadow: 0 0 5px red; }
+.timelinePill.secret {
+    border: 1px solid gold;
 }

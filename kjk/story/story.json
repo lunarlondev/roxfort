@@ -1,75 +1,44 @@
 {
   "start": {
-    "text": "Reggeli a Roxfortban. Mit eszel?",
+    "text": "Reggeli a Roxfortban.",
     "choices": [
-      {
-        "text": "Toast",
-        "next": "class_intro",
-        "image": "assets/egg.jpg"
-      },
-      {
-        "text": "Gofri",
-        "next": "class_intro",
-        "image": "assets/pickles.jpg"
-      }
+      { "text": "Toast", "next": "class_intro", "image": "assets/egg.jpg" },
+      { "text": "Gofri", "next": "class_intro", "image": "assets/pickles.jpg" }
     ]
   },
 
   "class_intro": {
-    "text": "Megérkezel órára.",
-    "secretTimer": 4000,
+    "text": "Óra előtt állsz.",
+    "secretTimer": 5000,
+    "secretChoice": {
+      "text": "Meglépsz",
+      "next": "ending_secret",
+      "secret": true,
+      "secretId": "ESCAPE"
+    },
     "choices": [
-      {
-        "text": "Figyelsz",
-        "next": "task"
-      }
+      { "text": "Figyelsz", "next": "task" }
     ]
   },
 
   "task": {
     "text": "Mozgasd a könyvet.",
     "choices": [
-      {
-        "text": "Leviosa",
-        "next": "ending_good",
-        "critical": true
-      },
-      {
-        "text": "Accio",
-        "next": "ending_mid"
-      },
-      {
-        "text": "Depulso",
-        "next": "ending_bad"
-      }
+      { "text": "Leviosa", "next": "good", "critical": true },
+      { "text": "Accio", "next": "mid" },
+      { "text": "Depulso", "next": "bad" }
     ]
   },
 
-  "ending_good": {
-    "type": "ending",
-    "title": "Kiváló",
-    "text": "Szép munka",
-    "endingId": "A"
-  },
-
-  "ending_mid": {
-    "type": "ending",
-    "title": "Közepes",
-    "text": "Elmegy",
-    "endingId": "B"
-  },
-
-  "ending_bad": {
-    "type": "ending",
-    "title": "Elégtelen",
-    "text": "Rip",
-    "endingId": "C"
-  },
-
+  "good": { "type": "ending", "title": "Kiváló", "text": "Szép", "endingId": "A" },
+  "mid": { "type": "ending", "title": "Közepes", "text": "Oké", "endingId": "B" },
+  "bad": { "type": "ending", "title": "Bukás", "text": "Rip", "endingId": "C" },
   "ending_secret": {
     "type": "ending",
-    "title": "Megszöktél",
-    "text": "Leléceltél óráról",
-    "endingId": "SECRET"
+    "title": "Lógtál",
+    "text": "Megszöktél",
+    "endingId": "S",
+    "secret": true,
+    "secretId": "ESCAPE"
   }
 }
