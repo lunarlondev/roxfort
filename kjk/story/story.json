@@ -1,92 +1,75 @@
 {
   "start": {
-    "text": "Reggeli a Roxfortban. Leültél az asztalhoz Ajax mellé. Mit eszel?",
+    "text": "Reggeli a Roxfortban. Mit eszel?",
     "choices": [
       {
-        "text": "Sonkás-tojásos toast",
-        "next": "breakfast_toast",
+        "text": "Toast",
+        "next": "class_intro",
         "image": "assets/egg.jpg"
       },
       {
-        "text": "Savanyúuborkás gofri",
-        "next": "breakfast_waffle",
+        "text": "Gofri",
+        "next": "class_intro",
         "image": "assets/pickles.jpg"
       }
     ]
   },
 
-  "breakfast_toast": {
-    "text": "Gyors, klasszikus reggeli. Tele vagy energiával, és elindulsz az órára.",
-    "choices": [
-      {
-        "text": "Tovább az órára",
-        "next": "class_intro",
-        "image": "assets/class.jpg"
-      }
-    ]
-  },
-
-  "breakfast_waffle": {
-    "text": "Kicsit furcsa választás volt, Ajax is furán néz. Enyhén gyomorforgató, de elindulsz az órára.",
-    "choices": [
-      {
-        "text": "Tovább az órára",
-        "next": "class_intro",
-        "image": "assets/class.jpg"
-      }
-    ]
-  },
-
   "class_intro": {
-    "text": "Bűbájtan órán a professzor egy egyszerű feladatot ad: egy könyvet kell a terem másik végébe juttatni.",
+    "text": "Megérkezel órára.",
+    "secretTimer": 4000,
     "choices": [
       {
-        "text": "Következő",
-        "next": "task",
-        "image": "assets/book.jpg"
+        "text": "Figyelsz",
+        "next": "task"
       }
     ]
   },
 
   "task": {
-    "text": "Hogyan oldod meg a feladatot?",
+    "text": "Mozgasd a könyvet.",
     "choices": [
       {
-        "text": "Wingardium Leviosa – lebegteted a könyvet",
+        "text": "Leviosa",
         "next": "ending_good",
-        "image": "assets/leviosa.jpg"
+        "critical": true
       },
       {
-        "text": "Accio – magadhoz rántod, majd továbbküldöd",
-        "next": "ending_mid",
-        "image": "assets/accio.jpg"
+        "text": "Accio",
+        "next": "ending_mid"
       },
       {
-        "text": "Depulso – egyszerűen ellököd",
-        "next": "ending_bad",
-        "image": "assets/depulso.jpeg"
+        "text": "Depulso",
+        "next": "ending_bad"
       }
     ]
   },
 
   "ending_good": {
     "type": "ending",
-    "title": "Kiváló teljesítmény",
-    "text": "Precíz, elegáns kivitelezés. A professzor elégedetten bólint. Érdemjegy: Kiváló.",
-    "endingId": "GRADE_A"
+    "title": "Kiváló",
+    "text": "Szép munka",
+    "endingId": "A"
   },
 
   "ending_mid": {
     "type": "ending",
-    "title": "Elfogadható megoldás",
-    "text": "A megoldás működött, de kissé darabos volt. A professzor feljegyez valamit. Érdemjegy: Közepes.",
-    "endingId": "GRADE_B"
+    "title": "Közepes",
+    "text": "Elmegy",
+    "endingId": "B"
   },
 
   "ending_bad": {
     "type": "ending",
-    "title": "Kaotikus kivitelezés",
-    "text": "A könyv nekicsapódik a falnak. A professzor sóhajt. Érdemjegy: Elégtelen.",
-    "endingId": "GRADE_C"
+    "title": "Elégtelen",
+    "text": "Rip",
+    "endingId": "C"
+  },
+
+  "ending_secret": {
+    "type": "ending",
+    "title": "Megszöktél",
+    "text": "Leléceltél óráról",
+    "endingId": "SECRET"
   }
 }

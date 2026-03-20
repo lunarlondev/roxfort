@@ -207,3 +207,33 @@
         min-height: 150px;
     }
 }
+
+
+
+.timelineItem.secretLocked .timelineDot {
+    background: #000;
+    border: 1px solid #666;
+}
+
+.timelineItem.secretLocked .timelineLabel {
+    color: #555;
+}
+
+.timelineItem.critical .timelineDot {
+    background: red;
+    animation: pulse 2s infinite;
+}
+
+.timelineItem.secret .timelineDot {
+    background: gold;
+}
+
+.timelineItem.seenBefore .timelineDot {
+    background: #777;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 5px red; }
+    50% { box-shadow: 0 0 15px red; }
+    100% { box-shadow: 0 0 5px red; }
+}
