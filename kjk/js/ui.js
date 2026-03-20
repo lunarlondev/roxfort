@@ -1,12 +1,17 @@
 const UI = {
 
     container: document.getElementById("storyContainer"),
-    choices: document.getElementById("choices"),
 
     renderNode(nodeId) {
         const node = Engine.getNode(nodeId);
 
-        // TEXT BLOKK HOZZÁADÁSA (nem töröljük a régit!)
+        // ===== ENDING =====
+        if (node.type === "ending") {
+            this.showEnding(node);
+            return;
+        }
+
+        // ===== NORMAL NODE =====
         const block = document.createElement("div");
         block.className = "storyBlock";
 
@@ -16,7 +21,6 @@ const UI = {
 
         block.appendChild(text);
 
-        // DÖNTÉS BLOKK (INLINE!)
         const decision = document.createElement("div");
         decision.className = "decisionRow";
 
@@ -30,6 +34,7 @@ const UI = {
                 this.lockDecision(decision, choice.text);
 
                 State.history.push(JSON.parse(JSON.stringify(State)));
+
                 State.steps.push({
                     node: nodeId,
                     chosen: choice.text,
@@ -60,8 +65,29 @@ const UI = {
         });
     },
 
-    renderChoices(nodeId) {
-        // már inline van → nem kell külön
+    showEnding(node) {
+
+        // ending mentése
+        if (State.saveEnding) {
+            State.saveEnding(node.endingId);
+        }
+
+        const overlay = document.getElementById("endingOverlay");
+
+        document.getElementById("endingTitle").innerText = node.title;
+        document.getElementById("endingText").innerText = node.text;
+
+        document.getElementById("endingId").innerText =
+            "Ending ID: " + node.endingId;
+
+        document.getElementById("endingCount").innerText =
+            "Felfedezett endingek: " + (State.seenEndings ? State.seenEndings.length : 0);
+
+        overlay.classList.remove("hidden");
+
+        // minden korábbi choice letiltása
+        const allChoices = document.querySelectorAll(".choiceBubble");
+        allChoices.forEach(c => c.onclick = null);
     },
 
     scrollDown() {
@@ -74,9 +100,7 @@ const UI = {
     back() {
         if (State.history.length === 0) return;
 
-        State.history.pop(); // current
         const prev = State.history.pop();
-
         if (!prev) return;
 
         Object.assign(State, prev);
@@ -89,7 +113,14 @@ const UI = {
 
     restart() {
         State.reset();
+
         this.container.innerHTML = "";
+
+        const overlay = document.getElementById("endingOverlay");
+        if (overlay) {
+            overlay.classList.add("hidden");
+        }
+
         this.renderNode("start");
     }
 };
