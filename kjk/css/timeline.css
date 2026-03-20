@@ -35,3 +35,41 @@
     color: #555;
     filter: grayscale(100%);
 }
+
+
+
+.endingBlock {
+    border-top: 2px solid #ff5555;
+    padding-top: 15px;
+}
+
+.timelineBlock {
+    margin-top: 20px;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+}
+
+.timelineRow {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.timelineChoice {
+    padding: 6px 10px;
+    border-radius: 14px;
+    font-size: 13px;
+    background: #1c1c22;
+    border: 1px solid #333;
+}
+
+.timelineChoice.chosen {
+    background: #8be9fd;
+    color: #000;
+}
+
+.timelineChoice.notChosen {
+    background: #111;
+    color: #555;
+    filter: grayscale(100%);
+}

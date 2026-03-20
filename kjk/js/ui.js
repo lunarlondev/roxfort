@@ -7,11 +7,11 @@ const UI = {
 
         // ===== ENDING =====
         if (node.type === "ending") {
-            this.showEnding(node);
+            this.renderEnding(node);
             return;
         }
 
-        // ===== NORMAL NODE =====
+        // ===== NORMAL =====
         const block = document.createElement("div");
         block.className = "storyBlock";
 
@@ -54,6 +54,81 @@ const UI = {
         this.scrollDown();
     },
 
+    renderEnding(node) {
+
+        // ===== TRACKING FIX =====
+        State.saveEnding(node.endingId);
+
+        // ===== ENDING BLOKK =====
+        const block = document.createElement("div");
+        block.className = "storyBlock endingBlock";
+
+        const title = document.createElement("div");
+        title.className = "endingTitle";
+        title.innerText = "ENDING: " + node.title;
+
+        const text = document.createElement("div");
+        text.className = "storyText";
+        text.innerText = node.text;
+
+        const stats = document.createElement("div");
+        stats.className = "endingStats";
+        stats.innerText =
+            "Felfedezett endingek: " + State.seenEndings.length;
+
+        block.appendChild(title);
+        block.appendChild(text);
+        block.appendChild(stats);
+
+        this.container.appendChild(block);
+
+        // ===== TIMELINE =====
+        this.renderTimeline();
+
+        // ===== LOCK ALL =====
+        const allChoices = document.querySelectorAll(".choiceBubble");
+        allChoices.forEach(c => c.onclick = null);
+
+        this.scrollDown();
+    },
+
+    renderTimeline() {
+
+        const timeline = document.createElement("div");
+        timeline.className = "timelineBlock";
+
+        const title = document.createElement("div");
+        title.className = "timelineTitle";
+        title.innerText = "Útvonalad";
+
+        timeline.appendChild(title);
+
+        State.steps.forEach(step => {
+
+            const row = document.createElement("div");
+            row.className = "timelineRow";
+
+            step.all.forEach(choice => {
+                const el = document.createElement("div");
+                el.className = "timelineChoice";
+
+                el.innerText = choice;
+
+                if (choice === step.chosen) {
+                    el.classList.add("chosen");
+                } else {
+                    el.classList.add("notChosen");
+                }
+
+                row.appendChild(el);
+            });
+
+            timeline.appendChild(row);
+        });
+
+        this.container.appendChild(timeline);
+    },
+
     lockDecision(decisionRow, chosenText) {
         [...decisionRow.children].forEach(el => {
             if (el.innerText === chosenText) {
@@ -63,31 +138,6 @@ const UI = {
             }
             el.onclick = null;
         });
-    },
-
-    showEnding(node) {
-
-        // ending mentése
-        if (State.saveEnding) {
-            State.saveEnding(node.endingId);
-        }
-
-        const overlay = document.getElementById("endingOverlay");
-
-        document.getElementById("endingTitle").innerText = node.title;
-        document.getElementById("endingText").innerText = node.text;
-
-        document.getElementById("endingId").innerText =
-            "Ending ID: " + node.endingId;
-
-        document.getElementById("endingCount").innerText =
-            "Felfedezett endingek: " + (State.seenEndings ? State.seenEndings.length : 0);
-
-        overlay.classList.remove("hidden");
-
-        // minden korábbi choice letiltása
-        const allChoices = document.querySelectorAll(".choiceBubble");
-        allChoices.forEach(c => c.onclick = null);
     },
 
     scrollDown() {
@@ -113,14 +163,7 @@ const UI = {
 
     restart() {
         State.reset();
-
         this.container.innerHTML = "";
-
-        const overlay = document.getElementById("endingOverlay");
-        if (overlay) {
-            overlay.classList.add("hidden");
-        }
-
         this.renderNode("start");
     }
 };
