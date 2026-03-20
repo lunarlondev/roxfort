@@ -293,7 +293,7 @@ const UI = {
         if (!choice.unlock) return true;
 
         if (choice.unlock.type === "time") {
-            const key = this.getSecretKey(choice);
+            const key = this.getSecretKey(choice, State.current);
             const start = this.secretTimers[key];
             if (!start) return false;
 
@@ -304,7 +304,7 @@ const UI = {
     },
 
     setupSecretUnlock(choice, nodeId) {
-        const key = this.getSecretKey(choice);
+        const key = this.getSecretKey(choice, nodeId);
 
         if (this.secretTimers[key]) return;
 
@@ -319,7 +319,16 @@ const UI = {
         }
     },
 
-    getSecretKey(choice) {
-        return `${State.current}_${choice.text}`;
-    }
+    getSecretKey(choice, nodeId) {
+    return `${nodeId}_${choice.next}`;
+}
 };
+
+
+
+restart() {
+    State.reset();
+    this.secretTimers = {};
+    this.container.innerHTML = "";
+    this.renderNode("start");
+}
