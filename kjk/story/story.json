@@ -5,12 +5,14 @@
       {
         "text": "Sonkás-tojásos toast",
         "next": "breakfast_toast",
-        "image": "assets/egg.jpg"
+        "image": "assets/egg.jpg",
+        "type": "normal"
       },
       {
         "text": "Savanyúuborkás gofri",
         "next": "breakfast_waffle",
-        "image": "assets/pickles.jpg"
+        "image": "assets/pickles.jpg",
+        "type": "normal"
       }
     ]
   },
@@ -21,7 +23,13 @@
       {
         "text": "Tovább az órára",
         "next": "class_intro",
-        "image": "assets/class.jpg"
+        "image": "assets/class.jpg",
+        "type": "normal"
+      },
+      {
+        "text": "Meglógsz az óráról",
+        "next": "secret_escape",
+        "type": "secret"
       }
     ]
   },
@@ -32,7 +40,13 @@
       {
         "text": "Tovább az órára",
         "next": "class_intro",
-        "image": "assets/class.jpg"
+        "image": "assets/class.jpg",
+        "type": "normal"
+      },
+      {
+        "text": "Meglógsz az óráról",
+        "next": "secret_escape",
+        "type": "secret"
       }
     ]
   },
@@ -43,7 +57,8 @@
       {
         "text": "Következő",
         "next": "task",
-        "image": "assets/book.jpg"
+        "image": "assets/book.jpg",
+        "type": "critical"
       }
     ]
   },
@@ -54,19 +69,29 @@
       {
         "text": "Wingardium Leviosa – lebegteted a könyvet",
         "next": "ending_good",
-        "image": "assets/leviosa.jpg"
+        "image": "assets/leviosa.jpg",
+        "type": "critical"
       },
       {
         "text": "Accio – magadhoz rántod, majd továbbküldöd",
         "next": "ending_mid",
-        "image": "assets/accio.jpg"
+        "image": "assets/accio.jpg",
+        "type": "critical"
       },
       {
         "text": "Depulso – egyszerűen ellököd",
         "next": "ending_bad",
-        "image": "assets/depulso.jpg"
+        "image": "assets/depulso.jpg",
+        "type": "critical"
       }
     ]
+  },
+
+  "secret_escape": {
+    "type": "ending",
+    "title": "Lógás",
+    "text": "Nem mentél be az órára. A folyosón kószálsz, és valami teljesen más kaland kezdődik...",
+    "endingId": "SECRET_ESCAPE"
   },
 
   "ending_good": {
