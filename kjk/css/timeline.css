@@ -87,193 +87,77 @@
     color: #b6b6c3;
 }
 
-.timelineBlock {
-    margin-top: 26px;
-    padding-top: 18px;
+.timelineBox {
+    display: none;
+    margin-top: 24px;
+    padding-top: 14px;
     border-top: 1px solid #2b2b34;
 }
 
 .timelineTitle {
-    margin-bottom: 14px;
-    font-size: 18px;
-    font-weight: 700;
-    color: #f1f1f4;
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #d8d8e0;
+}
+
+.timeline {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    overflow-x: auto;
+    padding-bottom: 10px;
 }
 
 .timelineStep {
-    position: relative;
-    margin-bottom: 18px;
-    padding-left: 18px;
-}
-
-.timelineStep::before {
-    content: "";
-    position: absolute;
-    top: 6px;
-    left: 0;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #8be9fd;
-    box-shadow: 0 0 10px rgba(139, 233, 253, 0.45);
-}
-
-.timelineStep::after {
-    content: "";
-    position: absolute;
-    top: 18px;
-    left: 3px;
-    bottom: -18px;
-    width: 2px;
-    background: linear-gradient(to bottom, rgba(139, 233, 253, 0.35), rgba(139, 233, 253, 0));
-}
-
-.timelineStep:last-child::after {
-    display: none;
-}
-
-.timelineStepLabel {
-    margin-bottom: 4px;
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #8d8d9e;
-}
-
-.timelinePrompt {
-    margin-bottom: 10px;
-    font-size: 14px;
-    line-height: 1.45;
-    color: #d9d9e0;
-}
-
-.timelineRowCards {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-}
-
-.timelineRowCards:has(.timelineCard:nth-child(3)) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: flex;
+    align-items: center;
+    gap: 14px;
 }
 
 .timelineCard {
-    position: relative;
-    min-height: 88px;
+    min-width: 140px;
+    max-width: 160px;
+    min-height: 70px;
+    padding: 10px;
     border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid #2f2f39;
-    background-color: #1a1a21;
+    background: #1b1b23;
+    border: 1px solid #3a3a48;
+    font-size: 12px;
+    line-height: 1.4;
+    position: relative;
+}
+
+.timelineCard.normal {
+    border-color: #4aa3ff;
+}
+
+.timelineCard.critical {
+    border-color: #ff5a5a;
     background-size: cover;
     background-position: center;
 }
 
-.timelineCard.noImage {
-    background-image: linear-gradient(135deg, #22222c, #17171d);
+.timelineCard.secret {
+    border-color: gold;
 }
 
-.timelineOverlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: flex-end;
-    padding: 8px;
-    background:
-        linear-gradient(to top, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.12) 60%, rgba(0, 0, 0, 0.02) 100%);
-    color: #f2f2f5;
-    font-size: 12px;
-    line-height: 1.3;
+.timelineCard.ending {
+    border-color: #9c5aff;
 }
 
-.timelineCard.chosen {
-    border-color: #8be9fd;
-    box-shadow: 0 0 0 2px rgba(139, 233, 253, 0.16);
+.timelineText {
+    position: relative;
+    z-index: 2;
+    background: rgba(0,0,0,0.45);
+    padding: 4px 6px;
+    border-radius: 6px;
 }
 
-.timelineCard.notChosen {
-    filter: grayscale(100%) brightness(0.42);
-    opacity: 0.72;
+.timelineArrow {
+    color: #666;
+    font-size: 18px;
 }
 
-@media (max-width: 520px) {
-    .decisionRow,
-    .decisionRow:has(.choiceCard:nth-child(3)),
-    .timelineRowCards,
-    .timelineRowCards:has(.timelineCard:nth-child(3)) {
-        grid-template-columns: 1fr;
-    }
-
-    .choiceCard {
-        min-height: 150px;
-    }
-}
-
-
-/* ===== DECISION TYPES ===== */
-
-/* Normal – kék */
-.choice-normal {
-    border-color: #4aa3ff;
-}
-
-.choice-normal:hover {
-    border-color: #6bb6ff;
-}
-
-/* Critical – piros */
-.choice-critical {
-    border-color: #ff4d4d;
-    box-shadow: 0 0 12px rgba(255, 77, 77, 0.25);
-}
-
-.choice-critical:hover {
-    border-color: #ff6b6b;
-}
-
-/* Secret – sárga */
-.choice-secret {
-    border-color: #ffd54a;
-    box-shadow: 0 0 12px rgba(255, 213, 74, 0.25);
-}
-
-.choice-secret:hover {
-    border-color: #ffe27a;
-}
-
-
-
-.timeline-unknown {
-    background: #1a1a21;
-    border: 1px solid #2a2a33;
-    opacity: 0.5;
-}
-
-.timeline-seen {
-    background: #2a2a35;
-    border: 1px solid #44445a;
-    color: #ccc;
-}
-
-.timeline-normal {
-    border: 2px solid #4aa3ff;
-}
-
-.timeline-critical {
-    border: 2px solid #ff4d4d;
-}
-
-.timeline-secret {
-    border: 2px solid #ffd54a;
-}
-
-
-
-.timelineSummary {
-    padding: 12px;
-    border: 1px solid #343442;
-    border-radius: 10px;
-    background: #181820;
-}
 
 .graphNode {
     position: absolute;

@@ -2,7 +2,6 @@ const UI = {
     storyBox: document.getElementById("storyBox"),
     decisionBox: document.getElementById("decisionBox"),
     timelineBox: document.getElementById("timelineBox"),
-    graphBox: document.getElementById("graphBox"),
 
     secretTimers: {},
 
@@ -15,7 +14,8 @@ const UI = {
             return;
         }
 
-        this.hideProgressViews();
+        // játék közben timeline ne látszódjon
+        this.timelineBox.style.display = "none";
 
         this.storyBox.innerText = node.text;
         this.decisionBox.innerHTML = "";
@@ -82,38 +82,67 @@ const UI = {
 
         this.decisionBox.appendChild(stats);
 
-        this.timelineBox.style.display = "block";
-        this.graphBox.style.display = "block";
-
-        this.renderTimelineSummary();
-        Graph.render();
+        this.renderTimeline(node);
     },
 
-    renderTimelineSummary() {
+    renderTimeline(node) {
         this.timelineBox.innerHTML = "";
+        this.timelineBox.style.display = "block";
 
         const title = document.createElement("div");
         title.className = "timelineTitle";
-        title.innerText = "Útvonal";
+        title.innerText = "A történeted";
         this.timelineBox.appendChild(title);
 
-        const summary = document.createElement("div");
-        summary.className = "timelineSummary";
+        const timeline = document.createElement("div");
+        timeline.className = "timeline";
 
-        const labels = State.steps.map((step) => step.chosen);
-        summary.innerText = labels.join(" → ");
+        State.steps.forEach((step, index) => {
+            const wrapper = document.createElement("div");
+            wrapper.className = "timelineStep";
 
-        this.timelineBox.appendChild(summary);
-    },
+            const card = document.createElement("div");
+            card.className = "timelineCard " + step.type;
 
-    hideProgressViews() {
-        if (this.timelineBox) this.timelineBox.style.display = "none";
-        if (this.graphBox) this.graphBox.style.display = "none";
-    },
+            // kritikus döntés → kép
+            if (step.type === "critical") {
+                const chosen = step.all.find(c => c.text === step.chosen);
+                if (chosen?.image) {
+                    card.style.backgroundImage = `url(${chosen.image})`;
+                    card.style.backgroundSize = "cover";
+                    card.style.backgroundPosition = "center";
+                }
+            }
 
-    showProgressViews() {
-        if (this.timelineBox) this.timelineBox.style.display = "block";
-        if (this.graphBox) this.graphBox.style.display = "block";
+            const text = document.createElement("div");
+            text.className = "timelineText";
+            text.innerText = step.chosen;
+
+            card.appendChild(text);
+            wrapper.appendChild(card);
+
+            if (index < State.steps.length - 1) {
+                const arrow = document.createElement("div");
+                arrow.className = "timelineArrow";
+                arrow.innerText = "→";
+                wrapper.appendChild(arrow);
+            }
+
+            timeline.appendChild(wrapper);
+        });
+
+        // ENDING KÁRTYA
+        const endingCard = document.createElement("div");
+        endingCard.className = "timelineCard ending";
+
+        const endingText = document.createElement("div");
+        endingText.className = "timelineText";
+        endingText.innerText = node.title;
+
+        endingCard.appendChild(endingText);
+        timeline.appendChild(endingCard);
+
+        this.timelineBox.appendChild(timeline);
     },
 
     createSnapshot() {
@@ -155,20 +184,6 @@ const UI = {
         this.decisionBox.innerHTML = "";
         this.timelineBox.innerHTML = "";
         this.timelineBox.style.display = "none";
-        this.graphBox.style.display = "none";
-
-        if (this.graphBox) {
-            this.graphBox.querySelectorAll(".graphNode").forEach((node) => node.remove());
-        }
-
-        if (Graph?.svg) {
-            Graph.svg.innerHTML = "";
-        }
-
-        if (Graph?.nodesLayer) {
-            Graph.nodesLayer.innerHTML = "";
-        }
-
         this.renderNode("start");
     },
 
