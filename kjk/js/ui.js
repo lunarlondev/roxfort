@@ -5,6 +5,7 @@ const UI = {
 
     secretTimers: {},
 
+    // --- CSOMÓPONT MEGJELENÍTÉSE ---
     renderNode(nodeId) {
         const node = Engine.getNode(nodeId);
         if (!node) return;
@@ -14,13 +15,14 @@ const UI = {
             return;
         }
 
-        // játék közben timeline ne látszódjon
+        // Játék közben elrejtjük a timeline-t, hogy ne zavarjon be
         this.timelineBox.style.display = "none";
 
         this.storyBox.innerText = node.text;
         this.decisionBox.innerHTML = "";
 
         node.choices.forEach((choice) => {
+            // Titkos opciók ellenőrzése
             if (choice.type === "secret") {
                 if (!this.isSecretUnlocked(choice, nodeId)) {
                     this.setupSecretUnlock(choice, nodeId);
@@ -34,8 +36,10 @@ const UI = {
             const type = choice.type || "normal";
             item.className = `choiceCard choice-${type}`;
 
-            if (choice.type === "critical" && choice.image) {
-                item.style.backgroundImage = `url(${choice.image})`;
+            // JAVÍTÁS: Most már minden típusnál betölti a képet, ha létezik
+            if (choice.image) {
+                item.style.backgroundImage = `url('${choice.image}')`;
+                item.classList.remove("noImage");
             } else {
                 item.classList.add("noImage");
             }
@@ -70,6 +74,7 @@ const UI = {
         });
     },
 
+    // --- ENDING MEGJELENÍTÉSE ---
     renderEnding(node) {
         State.saveEnding(node.endingId);
 
@@ -82,9 +87,11 @@ const UI = {
 
         this.decisionBox.appendChild(stats);
 
+        // Az ending elérésekor generáljuk le a timeline-t
         this.renderTimeline(node);
     },
 
+    // --- TIMELINE (IDŐVONAL) GENERÁLÁSA ---
     renderTimeline(node) {
         this.timelineBox.innerHTML = "";
         this.timelineBox.style.display = "block";
@@ -104,14 +111,10 @@ const UI = {
             const card = document.createElement("div");
             card.className = "timelineCard " + step.type;
 
-            // kritikus döntés → kép
-            if (step.type === "critical") {
-                const chosen = step.all.find(c => c.text === step.chosen);
-                if (chosen?.image) {
-                    card.style.backgroundImage = `url(${chosen.image})`;
-                    card.style.backgroundSize = "cover";
-                    card.style.backgroundPosition = "center";
-                }
+            // JAVÍTÁS: A timeline-on is megjelenítjük a képet minden döntéstípusnál
+            const chosenOption = step.all.find(c => c.text === step.chosen);
+            if (chosenOption && chosenOption.image) {
+                card.style.backgroundImage = `url('${chosenOption.image}')`;
             }
 
             const text = document.createElement("div");
@@ -121,7 +124,8 @@ const UI = {
             card.appendChild(text);
             wrapper.appendChild(card);
 
-            if (index < State.steps.length - 1) {
+            // Nyíl hozzáadása, ha nem az utolsó elem
+            if (index < State.steps.length - 1 || node) {
                 const arrow = document.createElement("div");
                 arrow.className = "timelineArrow";
                 arrow.innerText = "→";
@@ -131,20 +135,23 @@ const UI = {
             timeline.appendChild(wrapper);
         });
 
-        // ENDING KÁRTYA
-        const endingCard = document.createElement("div");
-        endingCard.className = "timelineCard ending";
+        // Ending kártya hozzáadása a sor végére
+        if (node) {
+            const endingCard = document.createElement("div");
+            endingCard.className = "timelineCard ending";
 
-        const endingText = document.createElement("div");
-        endingText.className = "timelineText";
-        endingText.innerText = node.title;
+            const endingText = document.createElement("div");
+            endingText.className = "timelineText";
+            endingText.innerText = node.title;
 
-        endingCard.appendChild(endingText);
-        timeline.appendChild(endingCard);
+            endingCard.appendChild(endingText);
+            timeline.appendChild(endingCard);
+        }
 
         this.timelineBox.appendChild(timeline);
     },
 
+    // --- ÁLLAPOTKEZELÉS ÉS SEGÉDFÜGGVÉNYEK ---
     createSnapshot() {
         return {
             current: State.current,
@@ -187,6 +194,7 @@ const UI = {
         this.renderNode("start");
     },
 
+    // --- TITKOS MECHANIKÁK (IDŐ, COMBO, ENDING) ---
     isSecretUnlocked(choice, nodeId) {
         if (!choice.unlock) return true;
 
@@ -201,7 +209,7 @@ const UI = {
 
         if (unlock.type === "combo") {
             return unlock.choices.every((c) =>
-                State.steps.some((step) => step.chosen === c || step.next === c)
+                State.steps.some((step) => step.chosen === c)
             );
         }
 
