@@ -268,58 +268,47 @@
 
 
 
+.timelineSummary {
+    padding: 12px;
+    border: 1px solid #343442;
+    border-radius: 10px;
+    background: #181820;
+}
+
 .graphNode {
-    width: 120px;
-    height: 60px;
-    background: #1e1e26;
-    border: 2px solid #333;
-    border-radius: 8px;
-    font-size: 12px;
-    padding: 6px;
     position: absolute;
+    width: 140px;
+    min-height: 70px;
+    padding: 8px;
+    border-radius: 10px;
+    background: #1b1b23;
+    border: 1px solid #3a3a48;
+    color: #e8e8f0;
+    font-size: 12px;
     text-align: center;
 }
 
-.graphNode.visited {
-    border-color: #777;
-    background: #2a2a35;
-}
-
-.graphNode.current {
+.graphNode.start {
     border-color: #4aa3ff;
 }
 
 .graphNode.ending {
-    border-color: #ff4d4d;
+    border-color: #ff5a5a;
+}
+
+.graphNode.visited {
+    background: #2a2a36;
+}
+
+.graphNode.current {
+    box-shadow: 0 0 10px #4aa3ff;
+}
+
+.graphNode.secret {
+    border-color: gold;
 }
 
 
-
-.timelineSummary {
-    padding: 12px 14px;
-    border: 1px solid #343442;
-    border-radius: 10px;
-    background: #181820;
-    color: #d9d9e0;
-    line-height: 1.5;
-}
-
-.graphNode {
-    position: absolute;
-    width: 130px;
-    min-height: 68px;
-    padding: 8px;
-    border-radius: 10px;
-    font-size: 12px;
-    line-height: 1.35;
-    text-align: center;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    word-break: break-word;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
-}
 
 .graph-story {
     background: #1e1e26;

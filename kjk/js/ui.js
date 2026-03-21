@@ -71,37 +71,40 @@ const UI = {
     },
 
     renderEnding(node) {
-        State.saveEnding(node.endingId);
+    State.saveEnding(node.endingId);
 
-        this.storyBox.innerText = `${node.title}\n\n${node.text}`;
-        this.decisionBox.innerHTML = "";
+    this.storyBox.innerText = `${node.title}\n\n${node.text}`;
+    this.decisionBox.innerHTML = "";
 
-        const stats = document.createElement("div");
-        stats.className = "endingStats";
-        stats.innerText = `Felfedezett endingek: ${State.seenEndings.length}`;
-        this.decisionBox.appendChild(stats);
+    const stats = document.createElement("div");
+    stats.className = "endingStats";
+    stats.innerText = `Felfedezett endingek: ${State.seenEndings.length}`;
 
-        this.renderTimelineSummary();
-        this.showProgressViews();
-        Graph.render();
-    },
+    this.decisionBox.appendChild(stats);
+
+    this.timelineBox.style.display = "block";
+    this.graphBox.style.display = "block";
+
+    this.renderTimelineSummary();
+    Graph.render();
+}
 
     renderTimelineSummary() {
-        this.timelineBox.innerHTML = "";
+    this.timelineBox.innerHTML = "";
 
-        const title = document.createElement("div");
-        title.className = "timelineTitle";
-        title.innerText = "Lezárt útvonal";
-        this.timelineBox.appendChild(title);
+    const title = document.createElement("div");
+    title.className = "timelineTitle";
+    title.innerText = "Útvonal";
+    this.timelineBox.appendChild(title);
 
-        const summary = document.createElement("div");
-        summary.className = "timelineSummary";
+    const summary = document.createElement("div");
+    summary.className = "timelineSummary";
 
-        const labels = State.steps.map((step) => step.chosen);
-        summary.innerText = labels.join(" → ");
+    const labels = State.steps.map(step => step.chosen);
+    summary.innerText = labels.join(" → ");
 
-        this.timelineBox.appendChild(summary);
-    },
+    this.timelineBox.appendChild(summary);
+}
 
     hideProgressViews() {
         if (this.timelineBox) this.timelineBox.style.display = "none";
