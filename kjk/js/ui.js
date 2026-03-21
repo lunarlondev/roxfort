@@ -9,22 +9,16 @@ const UI = {
         const node = Engine.getNode(nodeId);
         if (!node) return;
 
-        // ENDING
         if (node.type === "ending") {
             this.renderEnding(node);
             return;
         }
 
-        // STORY TEXT
         this.storyBox.innerText = node.text;
-
-        // CLEAR DECISIONS
         this.decisionBox.innerHTML = "";
 
-        // CREATE DECISIONS
         node.choices.forEach((choice) => {
 
-            // SECRET CHECK
             if (choice.type === "secret") {
                 if (!this.isSecretUnlocked(choice, nodeId)) {
                     this.setupSecretUnlock(choice, nodeId);
@@ -50,27 +44,25 @@ const UI = {
             item.appendChild(overlay);
 
             item.onclick = () => {
-    State.history.push(this.createSnapshot());
+                State.history.push(this.createSnapshot());
+                State.saveChoice(choice.text);
 
-    State.saveChoice(choice.text);
+                State.steps.push({
+                    node: nodeId,
+                    prompt: node.text,
+                    chosen: choice.text,
+                    type: choice.type || "normal",
+                    next: choice.next,
+                    all: node.choices.map((c) => ({
+                        text: c.text,
+                        image: c.image || null,
+                        type: c.type || "normal"
+                    }))
+                });
 
-    State.steps.push({
-        node: nodeId,
-        prompt: node.text,
-        chosen: choice.text,
-        type: choice.type || "normal",
-        next: choice.next,
-        all: node.choices.map((c) => ({
-            text: c.text,
-            image: c.image || null,
-            type: c.type || "normal"
-        }))
-    });
-
-    State.current = choice.next;
-
-    this.renderNode(choice.next);
-};
+                State.current = choice.next;
+                this.renderNode(choice.next);
+            };
 
             this.decisionBox.appendChild(item);
         });
@@ -80,7 +72,6 @@ const UI = {
         State.saveEnding(node.endingId);
 
         this.storyBox.innerText = `${node.title}\n\n${node.text}`;
-
         this.decisionBox.innerHTML = "";
 
         const stats = document.createElement("div");
@@ -88,74 +79,71 @@ const UI = {
         stats.innerText = `Felfedezett endingek: ${State.seenEndings.length}`;
 
         this.decisionBox.appendChild(stats);
-
         this.renderTimeline();
     },
 
     renderTimeline() {
-    this.timelineBox.innerHTML = "";
+        this.timelineBox.innerHTML = "";
 
-    const title = document.createElement("div");
-    title.className = "timelineTitle";
-    title.innerText = "Útvonalak";
-    this.timelineBox.appendChild(title);
+        const title = document.createElement("div");
+        title.className = "timelineTitle";
+        title.innerText = "Útvonalak";
+        this.timelineBox.appendChild(title);
 
-    State.steps.forEach((step, index) => {
-        const stepBlock = document.createElement("div");
-        stepBlock.className = "timelineStep";
+        State.steps.forEach((step, index) => {
+            const stepBlock = document.createElement("div");
+            stepBlock.className = "timelineStep";
 
-        const stepLabel = document.createElement("div");
-        stepLabel.className = "timelineStepLabel";
-        stepLabel.innerText = `${index + 1}. döntés`;
-        stepBlock.appendChild(stepLabel);
+            const stepLabel = document.createElement("div");
+            stepLabel.className = "timelineStepLabel";
+            stepLabel.innerText = `${index + 1}. döntés`;
+            stepBlock.appendChild(stepLabel);
 
-        const row = document.createElement("div");
-        row.className = "timelineRowCards";
+            const row = document.createElement("div");
+            row.className = "timelineRowCards";
 
-        step.all.forEach((choice) => {
+            step.all.forEach((choice) => {
 
-            // TITKOS döntés és még nem fedezted fel → ne jelenjen meg
-            if (choice.type === "secret" && !State.seenChoices.includes(choice.text)) {
-                return;
-            }
+                if (choice.type === "secret" && !State.seenChoices.includes(choice.text)) {
+                    return;
+                }
 
-            const el = document.createElement("div");
-            el.className = "timelineCard";
+                const el = document.createElement("div");
+                el.className = "timelineCard";
 
-            // Csak kritikus döntéseknél legyen kép
-            if (choice.type === "critical" && choice.image) {
-                el.style.backgroundImage = `url(${choice.image})`;
-            } else {
-                el.classList.add("noImage");
-            }
+                if (choice.type === "critical" && choice.image) {
+                    el.style.backgroundImage = `url(${choice.image})`;
+                } else {
+                    el.classList.add("noImage");
+                }
 
-            const overlay = document.createElement("div");
-            overlay.className = "timelineOverlay";
-            overlay.innerText = choice.text;
-            el.appendChild(overlay);
+                const overlay = document.createElement("div");
+                overlay.className = "timelineOverlay";
+                overlay.innerText = choice.text;
+                el.appendChild(overlay);
 
-            const chosenThisRun = choice.text === step.chosen;
-            const chosenBefore = State.seenChoices.includes(choice.text);
+                const chosenThisRun = choice.text === step.chosen;
+                const chosenBefore = State.seenChoices.includes(choice.text);
 
-            if (chosenThisRun) {
-                if (choice.type === "critical") el.classList.add("timeline-critical");
-                else if (choice.type === "secret") el.classList.add("timeline-secret");
-                else el.classList.add("timeline-normal");
-            }
-            else if (chosenBefore) {
-                el.classList.add("timeline-seen");
-            }
-            else {
-                el.classList.add("timeline-unknown");
-            }
+                if (chosenThisRun) {
+                    if (choice.type === "critical") el.classList.add("timeline-critical");
+                    else if (choice.type === "secret") el.classList.add("timeline-secret");
+                    else el.classList.add("timeline-normal");
+                }
+                else if (chosenBefore) {
+                    el.classList.add("timeline-seen");
+                }
+                else {
+                    el.classList.add("timeline-unknown");
+                }
 
-            row.appendChild(el);
+                row.appendChild(el);
+            });
+
+            stepBlock.appendChild(row);
+            this.timelineBox.appendChild(stepBlock);
         });
-
-        stepBlock.appendChild(row);
-        this.timelineBox.appendChild(stepBlock);
-    });
-}
+    },
 
     createSnapshot() {
         return {
@@ -193,8 +181,6 @@ const UI = {
         this.timelineBox.innerHTML = "";
         this.renderNode("start");
     },
-
-    // ===== SECRET SYSTEM =====
 
     isSecretUnlocked(choice, nodeId) {
         if (!choice.unlock) return true;
