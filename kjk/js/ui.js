@@ -23,6 +23,8 @@ const UI = {
         decision.className = "decisionRow";
 
         node.choices.forEach((choice) => {
+
+            // SECRET CHECK
             if (choice.type === "secret") {
                 if (!this.isSecretUnlocked(choice, nodeId)) {
                     this.setupSecretUnlock(choice, nodeId);
@@ -53,15 +55,10 @@ const UI = {
                 this.lockDecision(decision, choice.text);
 
                 State.steps.push({
-    node: nodeId,
-    prompt: node.text,
-    chosen: choice.text,
-    next: choice.next,
-    all: node.choices.map((c) => ({
-        text: c.text,
-        image: c.image || null
-    }))
-});
+                    node: nodeId,
+                    prompt: node.text,
+                    chosen: choice.text,
+                    next: choice.next,
                     all: node.choices.map((c) => ({
                         text: c.text,
                         image: c.image || null
@@ -118,9 +115,7 @@ const UI = {
 
     renderTimeline() {
         const oldTimeline = this.container.querySelector(".timelineBlock");
-        if (oldTimeline) {
-            oldTimeline.remove();
-        }
+        if (oldTimeline) oldTimeline.remove();
 
         const timeline = document.createElement("section");
         timeline.className = "timelineBlock";
@@ -292,38 +287,35 @@ const UI = {
         });
     },
 
+    // ===== SECRET SYSTEM =====
+
     isSecretUnlocked(choice, nodeId) {
-    if (!choice.unlock) return true;
+        if (!choice.unlock) return true;
 
-    const unlock = choice.unlock;
+        const unlock = choice.unlock;
 
-    // TIME SECRET
-    if (unlock.type === "time") {
-        const key = this.getSecretKey(choice, nodeId);
-        const start = this.secretTimers[key];
-        if (!start) return false;
+        if (unlock.type === "time") {
+            const key = this.getSecretKey(choice, nodeId);
+            const start = this.secretTimers[key];
+            if (!start) return false;
 
-        return Date.now() - start >= unlock.delay;
-    }
+            return Date.now() - start >= unlock.delay;
+        }
 
-    // COMBO SECRET
-    if (unlock.type === "combo") {
-        if (!unlock.choices) return false;
+        if (unlock.type === "combo") {
+            return unlock.choices.every(c =>
+                State.steps.some(step =>
+                    step.chosen === c || step.next === c
+                )
+            );
+        }
 
-        return unlock.choices.every(c =>
-            State.steps.some(step =>
-                step.chosen === c || step.next === c
-            )
-        );
-    }
+        if (unlock.type === "ending") {
+            return State.seenEndings.includes(unlock.id);
+        }
 
-    // ENDING SECRET
-    if (unlock.type === "ending") {
-        return State.seenEndings.includes(unlock.id);
-    }
-
-    return false;
-}
+        return false;
+    },
 
     setupSecretUnlock(choice, nodeId) {
         const key = this.getSecretKey(choice, nodeId);
