@@ -1,36 +1,49 @@
 <!DOCTYPE html>
+
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Story Engine</title>
 
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/timeline.css">
+```
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/timeline.css">
+```
+
 </head>
 <body>
     <div class="wrapper">
         <div class="gameLayout">
 
-    <div id="storyBox" class="storyBox"></div>
+```
+        <div id="storyBox" class="storyBox"></div>
 
-    <div id="decisionBox" class="decisionBox"></div>
+        <div id="decisionBox" class="decisionBox"></div>
 
-    <div id="timelineBox" class="timelineBox"></div>
+        <div id="timelineBox" class="timelineBox"></div>
 
-</div>
-
-        <div class="controls">
-            <button id="backBtn" type="button">Vissza</button>
-            <button id="restartBtn" type="button">Újrakezdés</button>
+        <!-- DECISION GRAPH -->
+        <div id="graphBox" class="graphBox">
+            <svg id="graphLines"></svg>
         </div>
+
     </div>
 
-    <script src="js/state.js"></script>
-    <script src="js/engine.js"></script>
-    <script src="js/ui.js"></script>
-    <script src="js/main.js"></script>
+    <div class="controls">
+        <button id="backBtn" type="button">Vissza</button>
+        <button id="restartBtn" type="button">Újrakezdés</button>
+    </div>
+</div>
+
+<script src="js/state.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/graph.js"></script>
+<script src="js/main.js"></script>
+```
+
 </body>
 </html>

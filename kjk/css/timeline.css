@@ -265,3 +265,30 @@
 .timeline-secret {
     border: 2px solid #ffd54a;
 }
+
+
+
+.graphNode {
+    width: 120px;
+    height: 60px;
+    background: #1e1e26;
+    border: 2px solid #333;
+    border-radius: 8px;
+    font-size: 12px;
+    padding: 6px;
+    position: absolute;
+    text-align: center;
+}
+
+.graphNode.visited {
+    border-color: #777;
+    background: #2a2a35;
+}
+
+.graphNode.current {
+    border-color: #4aa3ff;
+}
+
+.graphNode.ending {
+    border-color: #ff4d4d;
+}

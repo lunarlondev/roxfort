@@ -80,6 +80,7 @@ const UI = {
 
         this.decisionBox.appendChild(stats);
         this.renderTimeline();
+	Graph.render();
     },
 
     renderTimeline() {
