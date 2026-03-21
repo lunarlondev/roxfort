@@ -53,9 +53,15 @@ const UI = {
                 this.lockDecision(decision, choice.text);
 
                 State.steps.push({
-                    node: nodeId,
-                    prompt: node.text,
-                    chosen: choice.text,
+    node: nodeId,
+    prompt: node.text,
+    chosen: choice.text,
+    next: choice.next,
+    all: node.choices.map((c) => ({
+        text: c.text,
+        image: c.image || null
+    }))
+});
                     all: node.choices.map((c) => ({
                         text: c.text,
                         image: c.image || null
@@ -287,18 +293,37 @@ const UI = {
     },
 
     isSecretUnlocked(choice, nodeId) {
-        if (!choice.unlock) return true;
+    if (!choice.unlock) return true;
 
-        if (choice.unlock.type === "time") {
-            const key = this.getSecretKey(choice, nodeId);
-            const start = this.secretTimers[key];
-            if (!start) return false;
+    const unlock = choice.unlock;
 
-            return Date.now() - start >= choice.unlock.delay;
-        }
+    // TIME SECRET
+    if (unlock.type === "time") {
+        const key = this.getSecretKey(choice, nodeId);
+        const start = this.secretTimers[key];
+        if (!start) return false;
 
-        return false;
-    },
+        return Date.now() - start >= unlock.delay;
+    }
+
+    // COMBO SECRET
+    if (unlock.type === "combo") {
+        if (!unlock.choices) return false;
+
+        return unlock.choices.every(c =>
+            State.steps.some(step =>
+                step.chosen === c || step.next === c
+            )
+        );
+    }
+
+    // ENDING SECRET
+    if (unlock.type === "ending") {
+        return State.seenEndings.includes(unlock.id);
+    }
+
+    return false;
+}
 
     setupSecretUnlock(choice, nodeId) {
         const key = this.getSecretKey(choice, nodeId);
