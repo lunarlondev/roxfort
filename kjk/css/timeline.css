@@ -87,77 +87,6 @@
     color: #b6b6c3;
 }
 
-.timelineBox {
-    display: none;
-    margin-top: 24px;
-    padding-top: 14px;
-    border-top: 1px solid #2b2b34;
-}
-
-.timelineTitle {
-    font-size: 16px;
-    margin-bottom: 12px;
-    color: #d8d8e0;
-}
-
-.timeline {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    overflow-x: auto;
-    padding-bottom: 10px;
-}
-
-.timelineStep {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.timelineCard {
-    min-width: 140px;
-    max-width: 160px;
-    min-height: 70px;
-    padding: 10px;
-    border-radius: 10px;
-    background: #1b1b23;
-    border: 1px solid #3a3a48;
-    font-size: 12px;
-    line-height: 1.4;
-    position: relative;
-}
-
-.timelineCard.normal {
-    border-color: #4aa3ff;
-}
-
-.timelineCard.critical {
-    border-color: #ff5a5a;
-    background-size: cover;
-    background-position: center;
-}
-
-.timelineCard.secret {
-    border-color: gold;
-}
-
-.timelineCard.ending {
-    border-color: #9c5aff;
-}
-
-.timelineText {
-    position: relative;
-    z-index: 2;
-    background: rgba(0,0,0,0.45);
-    padding: 4px 6px;
-    border-radius: 6px;
-}
-
-.timelineArrow {
-    color: #666;
-    font-size: 18px;
-}
-
 
 .graphNode {
     position: absolute;
@@ -219,4 +148,128 @@
 
 .graph-current {
     box-shadow: 0 0 0 2px rgba(74, 163, 255, 0.28), 0 10px 24px rgba(0, 0, 0, 0.22);
+}
+
+
+
+
+
+
+
+/* --- Timeline Konténer --- */
+.timelineBox {
+    display: none;
+    margin-top: 40px;
+    padding: 24px;
+    background: rgba(30, 30, 38, 0.4);
+    border-radius: 16px;
+    border: 1px solid #2b2b34;
+}
+
+.timelineTitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #8be9fd; /* Kicsit élénkebb szín */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- A Görgethető rész --- */
+.timeline {
+    display: flex;
+    align-items: stretch; /* Hogy egyforma magasak legyenek */
+    gap: 0; /* A gap helyett az arrow-nál kezeljük a távolságot */
+    overflow-x: auto;
+    padding-bottom: 16px; /* Hely a scrollbarnak */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* --- EGYEDI SCROLLBAR STÍLUS --- */
+.timeline::-webkit-scrollbar {
+    height: 8px;
+}
+
+.timeline::-webkit-scrollbar-track {
+    background: #1a1a21;
+    border-radius: 10px;
+}
+
+.timeline::-webkit-scrollbar-thumb {
+    background: #3a3a48;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.timeline::-webkit-scrollbar-thumb:hover {
+    background: #4aa3ff; /* Kékre vált, ha fölé érsz */
+}
+
+/* --- Kártyák és Nyilak --- */
+.timelineStep {
+    display: flex;
+    align-items: center;
+}
+
+.timelineCard {
+    min-width: 160px;
+    max-width: 180px;
+    min-height: 85px;
+    padding: 12px;
+    border-radius: 12px;
+    background: #23232d;
+    border: 2px solid #3a3a48;
+    font-size: 13px;
+    line-height: 1.4;
+    position: relative;
+    transition: transform 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.timelineCard:hover {
+    transform: translateY(-4px);
+}
+
+/* Különböző típusok színei */
+.timelineCard.normal { border-color: #4aa3ff; }
+.timelineCard.critical { border-color: #ff5a5a; }
+.timelineCard.secret { border-color: #ffb86c; }
+.timelineCard.ending { 
+    border-color: #bd93f9; 
+    background: linear-gradient(145deg, #23232d, #2d1b4d);
+}
+
+.timelineText {
+    position: relative;
+    z-index: 2;
+    background: rgba(0,0,0,0.6);
+    padding: 6px 8px;
+    border-radius: 6px;
+    color: #e8e8f0;
+    text-align: center;
+}
+
+/* A nyíl stílusosabbá tétele */
+.timelineArrow {
+    color: #44475a;
+    font-size: 20px;
+    padding: 0 10px;
+    font-weight: bold;
+    user-select: none;
+}
+
+/* Egy kis extra: fade effekt a timeline két szélén (opcionális) */
+/* Ha túl bonyolult, ezt a részt kihagyhatod */
+.timelineBox {
+    position: relative;
+}
+
+/* Képek a kártyákban - jobb illeszkedés */
+.timelineCard.critical, .timelineCard.ending {
+    background-size: cover;
+    background-position: center;
 }
