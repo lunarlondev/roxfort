@@ -1,252 +1,227 @@
 {
-  "start": {
-    "text": "Reggel van a Roxfortban. Csörög az ébresztő. Mit teszel?",
-    "choices": [
-      {
-        "text": "Összeszeded magad és felkelsz",
-        "next": "breakfast",
-        "type": "normal"
-      },
-      {
-        "text": "Még 5 perc szundi",
-        "next": "snooze_once",
-        "type": "normal"
-      }
-    ]
-  },
-
-  "snooze_once": {
-    "text": "Még egy kicsit visszaalszol. Pár perc múlva újra csörög az ébresztő.",
-    "choices": [
-      {
-        "text": "Na jó, most már felkelsz",
-        "next": "breakfast",
-        "type": "normal"
-      },
-      {
-        "text": "Még 5 percet alszol",
-        "next": "late_start",
-        "type": "critical"
-      }
-    ]
-  },
-
-  "late_start": {
-    "text": "Túl sokáig aludtál. Rohansz az órára, reggeli nélkül.",
-    "choices": [
-      {
-        "text": "Sietsz az órára",
-        "next": "class_intro_hungry",
-        "type": "critical"
-      }
-    ]
-  },
-
-  "breakfast": {
-    "text": "Reggeli a Roxfortban. Leültél az asztalhoz Ajax mellé. Mit eszel?",
-    "choices": [
-      {
-        "text": "Sonkás-tojásos toast",
-        "next": "breakfast_toast",
-        "image": "assets/egg.jpg",
-        "type": "normal"
-      },
-      {
-        "text": "Savanyúuborkás gofri",
-        "next": "breakfast_waffle",
-        "image": "assets/pickles.jpg",
-        "type": "normal"
-      },
-      {
-        "text": "Furcsa déjà vu érzés… a leviosát gyakorlod reggeli közben",
-        "next": "breakfast_leviosa",
-        "type": "secret",
-        "unlock": {
-          "type": "ending",
-          "id": "GRADE_C"
-        }
-      }
-    ]
-  },
-
-  "breakfast_toast": {
-    "text": "Gyors, klasszikus reggeli. Tele vagy energiával, és elindulsz az órára.",
-    "choices": [
-      {
-        "text": "Tovább az órára",
-        "next": "class_intro",
-        "image": "assets/class.jpg",
-        "type": "normal"
-      },
-      {
-        "text": "Meglógsz az óráról",
-        "next": "secret_escape",
-        "type": "secret",
-        "unlock": {
-          "type": "time",
-          "delay": 60000
-        }
-      }
-    ]
-  },
-
-  "breakfast_waffle": {
-    "text": "Kicsit furcsa választás volt, Ajax is furán néz. De elindulsz az órára.",
-    "choices": [
-      {
-        "text": "Tovább az órára",
-        "next": "class_intro",
-        "image": "assets/class.jpg",
-        "type": "normal"
-      },
-      {
-        "text": "Meglógsz az óráról",
-        "next": "secret_escape",
-        "type": "secret",
-        "unlock": {
-          "type": "time",
-          "delay": 60000
-        }
-      }
-    ]
-  },
-
-  "breakfast_leviosa": {
-    "text": "A kanál finoman lebegni kezd. Magabiztos vagy. Ma ez menni fog.",
-    "choices": [
-      {
-        "text": "Tovább az órára",
-        "next": "task_perfect",
-        "type": "normal"
-      }
-    ]
-  },
-
-  "class_intro": {
-    "text": "Bűbájtan órán a professzor egy feladatot ad: egy könyvet kell a terem másik végébe juttatni.",
-    "choices": [
-      {
-        "text": "Következő",
-        "next": "task",
-        "image": "assets/book.jpg",
-        "type": "critical"
-      }
-    ]
-  },
-
-  "class_intro_hungry": {
-    "text": "Éhesen és idegesen érkezel az órára. Nehezen koncentrálsz.",
-    "choices": [
-      {
-        "text": "Megpróbálod a feladatot",
-        "next": "task_hungry",
-        "type": "critical"
-      }
-    ]
-  },
-
-  "task": {
-    "text": "Hogyan oldod meg a feladatot?",
-    "choices": [
-      {
-        "text": "Wingardium Leviosa – lebegteted a könyvet",
-        "next": "ending_good",
-        "image": "assets/leviosa.jpg",
-        "type": "critical"
-      },
-      {
-        "text": "Accio – magadhoz rántod, majd továbbküldöd",
-        "next": "ending_mid",
-        "image": "assets/accio.jpg",
-        "type": "critical"
-      },
-      {
-        "text": "Depulso – egyszerűen ellököd",
-        "next": "ending_bad",
-        "image": "assets/depulso.jpg",
-        "type": "critical"
-      },
-      {
-        "text": "Valami furcsa ötlet jut eszedbe – kreatívan oldod meg",
-        "next": "ending_creative",
-        "type": "secret",
-        "unlock": {
-          "type": "combo",
-          "choices": [
-            "Még 5 perc szundi",
-            "Savanyúuborkás gofri"
-          ]
-        }
-      }
-    ]
-  },
-
-  "task_hungry": {
-    "text": "Nem jut eszedbe a pontos varázslat, csak improvizálsz.",
-    "choices": [
-      {
-        "text": "Accio – magadhoz rántod",
-        "next": "ending_mid",
-        "type": "critical"
-      },
-      {
-        "text": "Depulso – ellököd",
-        "next": "ending_bad",
-        "type": "critical"
-      }
-    ]
-  },
-
-  "task_perfect": {
-    "text": "Teljes kontroll alatt tartod a varázslatot.",
-    "choices": [
-      {
-        "text": "Wingardium Leviosa – tökéletes kivitelezés",
-        "next": "ending_perfect",
-        "type": "critical"
-      }
-    ]
-  },
-
-  "secret_escape": {
-    "type": "ending",
-    "title": "Lógás",
-    "text": "Nem mentél be az órára. A folyosón kószálsz, és valami teljesen más kaland kezdődik...",
-    "endingId": "SECRET_ESCAPE"
-  },
-
-  "ending_creative": {
-    "type": "ending",
-    "title": "Zseniális improvizáció",
-    "text": "A professzor először pislog, majd elmosolyodik. Ez nem volt a tananyag része… de működött.",
-    "endingId": "CREATIVE"
-  },
-
-  "ending_perfect": {
-    "type": "ending",
-    "title": "Tökéletes kivitelezés",
-    "text": "Mintha már átélted volna ezt. Hibátlan mozdulat.",
-    "endingId": "PERFECT"
-  },
-
-  "ending_good": {
-    "type": "ending",
-    "title": "Kiváló teljesítmény",
-    "text": "Precíz kivitelezés. Érdemjegy: Kiváló.",
-    "endingId": "GRADE_A"
-  },
-
-  "ending_mid": {
-    "type": "ending",
-    "title": "Elfogadható megoldás",
-    "text": "Működött, de darabos volt.",
-    "endingId": "GRADE_B"
-  },
-
-  "ending_bad": {
-    "type": "ending",
-    "title": "Kaotikus kivitelezés",
-    "text": "A könyv nekicsapódik a falnak.",
-    "endingId": "GRADE_C"
-  }
+    "start": {
+        "text": "Reggel van a Roxfortban. Csörög az ébresztő. Mit teszel?",
+        "choices": [
+            {
+                "text": "Összeszeded magad és felkelsz",
+                "next": "breakfast",
+                "image": "assets/wakeup.jpg",
+                "type": "normal"
+            },
+            {
+                "text": "Még 5 perc szundi",
+                "next": "snooze_once",
+                "image": "assets/sleep.jpg",
+                "type": "normal"
+            }
+        ]
+    },
+    "snooze_once": {
+        "text": "Még egy kicsit visszaalszol. Pár perc múlva újra csörög az ébresztő.",
+        "choices": [
+            {
+                "text": "Na jó, most már felkelsz",
+                "next": "breakfast",
+                "image": "assets/sleep.jpg",
+                "type": "normal"
+            },
+            {
+                "text": "Még 5 percet alszol",
+                "next": "late_start",
+                "image": "assets/sleep.jpg",
+                "type": "normal"
+            }
+        ]
+    },
+    "late_start": {
+        "text": "Túl sokáig aludtál. Rohansz az órára, reggeli nélkül. Éhesen és idegesen érkezel, nehezen koncentrálsz.",
+        "choices": [
+            {
+                "text": "Megpróbálod a feladatot",
+                "next": "task_hungry",
+                "image": "assets/running.jpg",
+                "type": "critical"
+            }
+        ]
+    },
+    "breakfast": {
+        "text": "Reggeli a Roxfortban. Leültél az asztalhoz Ajax mellé. Mit eszel?",
+        "choices": [
+            {
+                "text": "Sonkás-tojásos toast",
+                "next": "breakfast_toast",
+                "image": "assets/egg.jpg",
+                "type": "normal"
+            },
+            {
+                "text": "Savanyúuborkás gofri",
+                "next": "breakfast_waffle",
+                "image": "assets/pickles.jpg",
+                "type": "normal"
+            },
+            {
+                "text": "Furcsa déjà vu érzés… a leviosát gyakorlod reggeli közben",
+                "next": "breakfast_leviosa",
+                "image": "assets/spoon.jpg",
+                "type": "secret",
+                "unlock": {
+                    "type": "ending",
+                    "id": "GRADE_C"
+                }
+            }
+        ]
+    },
+    "breakfast_toast": {
+        "text": "Gyors, klasszikus reggeli. Tele vagy energiával, és elindulsz az órára.",
+        "choices": [
+            {
+                "text": "Tovább az órára",
+                "next": "task",
+                "image": "assets/class.jpg",
+                "type": "normal"
+            },
+            {
+                "text": "Meglógsz az óráról",
+                "next": "secret_escape",
+                "image": "assets/escape.jpg",
+                "type": "secret",
+                "unlock": {
+                    "type": "time",
+                    "delay": 60000
+                }
+            }
+        ]
+    },
+    "breakfast_waffle": {
+        "text": "Kicsit furcsa választás volt, Ajax is furán néz. De elindulsz az órára.",
+        "choices": [
+            {
+                "text": "Tovább az órára",
+                "next": "task",
+                "image": "assets/class.jpg",
+                "type": "normal"
+            },
+            {
+                "text": "Meglógsz az óráról",
+                "next": "secret_escape",
+                "image": "assets/escape.jpg",
+                "type": "secret",
+                "unlock": {
+                    "type": "time",
+                    "delay": 30000
+                }
+            }
+        ]
+    },
+    "breakfast_leviosa": {
+        "text": "A kanál finoman lebegni kezd. Magabiztos vagy. Ma ez menni fog.",
+        "choices": [
+            {
+                "text": "Tovább az órára",
+                "next": "task_perfect",
+                "image": "assets/class.jpg",
+                "type": "normal"
+            }
+        ]
+    },
+    "task": {
+        "text": "Bűbájtan órán a professzor egy feladatot ad: egy könyvet kell a terem másik végébe juttatni. Hogyan oldod meg?",
+        "choices": [
+            {
+                "text": "Wingardium Leviosa – lebegteted a könyvet",
+                "next": "ending_good",
+                "image": "assets/leviosa.jpg",
+                "type": "critical"
+            },
+            {
+                "text": "Accio – magadhoz rántod, majd továbbküldöd",
+                "next": "ending_mid",
+                "image": "assets/accio.jpg",
+                "type": "critical"
+            },
+            {
+                "text": "Depulso – egyszerűen ellököd",
+                "next": "ending_bad",
+                "image": "assets/depulso.jpg",
+                "type": "critical"
+            },
+            {
+                "text": "Valami furcsa ötlet jut eszedbe – kreatívan oldod meg",
+                "next": "ending_creative",
+                "image": "assets/wand.jpg",
+                "type": "secret",
+                "unlock": {
+                    "type": "combo",
+                    "choices": [
+                        "Még 5 perc szundi",
+                        "Savanyúuborkás gofri"
+                    ]
+                }
+            }
+        ]
+    },
+    "task_hungry": {
+        "text": "Nem jut eszedbe a pontos varázslat az éhség miatt, csak improvizálsz.",
+        "choices": [
+            {
+                "text": "Accio – magadhoz rántod",
+                "next": "ending_mid",
+                "image": "assets/accio.jpg",
+                "type": "critical"
+            },
+            {
+                "text": "Depulso – ellököd",
+                "next": "ending_bad",
+                "image": "assets/depulso.jpg",
+                "type": "critical"
+            }
+        ]
+    },
+    "task_perfect": {
+        "text": "Teljes kontroll alatt tartod a varázslatot. A professzor figyel.",
+        "choices": [
+            {
+                "text": "Wingardium Leviosa – tökéletes kivitelezés",
+                "next": "ending_perfect",
+                "image": "assets/leviosa.jpg",
+                "type": "critical"
+            }
+        ]
+    },
+    "secret_escape": {
+        "type": "ending",
+        "title": "Lógás",
+        "text": "Nem mentél be az órára. A folyosón kószálsz, és valami teljesen más kaland kezdődik...",
+        "endingId": "SECRET_ESCAPE"
+    },
+    "ending_creative": {
+        "type": "ending",
+        "title": "Zseniális improvizáció",
+        "text": "A professzor először pislog, majd elmosolyodik. Ez nem volt a tananyag része… de működött.",
+        "endingId": "CREATIVE"
+    },
+    "ending_perfect": {
+        "type": "ending",
+        "title": "Tökéletes kivitelezés",
+        "text": "Mintha már átélted volna ezt. Hibátlan mozdulat.",
+        "endingId": "PERFECT"
+    },
+    "ending_good": {
+        "type": "ending",
+        "title": "Kiváló teljesítmény",
+        "text": "Precíz kivitelezés. Érdemjegy: Kiváló.",
+        "endingId": "GRADE_A"
+    },
+    "ending_mid": {
+        "type": "ending",
+        "title": "Elfogadható megoldás",
+        "text": "Működött, de darabos volt.",
+        "endingId": "GRADE_B"
+    },
+    "ending_bad": {
+        "type": "ending",
+        "title": "Kaotikus kivitelezés",
+        "text": "A könyv nekicsapódik a falnak.",
+        "endingId": "GRADE_C"
+    }
 }
