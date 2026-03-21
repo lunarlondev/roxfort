@@ -3,3 +3,31 @@
     margin: 40px auto;
     padding: 20px;
 }
+
+
+.gameLayout {
+    max-width: 700px;
+    margin: 40px auto;
+}
+
+.storyBox {
+    min-height: 180px;
+    padding: 18px;
+    border: 1px solid #2f2f39;
+    background: #15151b;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    line-height: 1.6;
+}
+
+.decisionBox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.timelineBox {
+    border-top: 1px solid #2b2b34;
+    padding-top: 14px;
+}
