@@ -1,27 +1,27 @@
 const UI = {
-    container: document.getElementById("storyContainer"),
+    storyBox: document.getElementById("storyBox"),
+    decisionBox: document.getElementById("decisionBox"),
+    timelineBox: document.getElementById("timelineBox"),
+
     secretTimers: {},
 
     renderNode(nodeId) {
         const node = Engine.getNode(nodeId);
         if (!node) return;
 
+        // ENDING
         if (node.type === "ending") {
             this.renderEnding(node);
             return;
         }
 
-        const block = document.createElement("section");
-        block.className = "storyBlock";
+        // STORY TEXT
+        this.storyBox.innerText = node.text;
 
-        const text = document.createElement("div");
-        text.className = "storyText";
-        text.innerText = node.text;
-        block.appendChild(text);
+        // CLEAR DECISIONS
+        this.decisionBox.innerHTML = "";
 
-        const decision = document.createElement("div");
-        decision.className = "decisionRow";
-
+        // CREATE DECISIONS
         node.choices.forEach((choice) => {
 
             // SECRET CHECK
@@ -52,8 +52,6 @@ const UI = {
             item.onclick = () => {
                 State.history.push(this.createSnapshot());
 
-                this.lockDecision(decision, choice.text);
-
                 State.steps.push({
                     node: nodeId,
                     prompt: node.text,
@@ -66,64 +64,38 @@ const UI = {
                 });
 
                 State.current = choice.next;
+
                 this.renderNode(choice.next);
+                this.renderTimeline();
             };
 
-            decision.appendChild(item);
+            this.decisionBox.appendChild(item);
         });
-
-        block.appendChild(decision);
-        this.container.appendChild(block);
-
-        this.scrollDown();
     },
 
     renderEnding(node) {
         State.saveEnding(node.endingId);
 
-        const endingBlock = document.createElement("section");
-        endingBlock.className = "storyBlock endingBlock";
+        this.storyBox.innerText = `${node.title}\n\n${node.text}`;
 
-        const title = document.createElement("div");
-        title.className = "endingTitle";
-        title.innerText = node.title;
-
-        const text = document.createElement("div");
-        text.className = "storyText";
-        text.innerText = node.text;
+        this.decisionBox.innerHTML = "";
 
         const stats = document.createElement("div");
         stats.className = "endingStats";
         stats.innerText = `Felfedezett endingek: ${State.seenEndings.length}`;
 
-        endingBlock.appendChild(title);
-        endingBlock.appendChild(text);
-        endingBlock.appendChild(stats);
-
-        this.container.appendChild(endingBlock);
+        this.decisionBox.appendChild(stats);
 
         this.renderTimeline();
-
-        const allChoices = document.querySelectorAll(".choiceCard");
-        allChoices.forEach((card) => {
-            card.onclick = null;
-            card.disabled = true;
-        });
-
-        this.scrollDown();
     },
 
     renderTimeline() {
-        const oldTimeline = this.container.querySelector(".timelineBlock");
-        if (oldTimeline) oldTimeline.remove();
-
-        const timeline = document.createElement("section");
-        timeline.className = "timelineBlock";
+        this.timelineBox.innerHTML = "";
 
         const title = document.createElement("div");
         title.className = "timelineTitle";
         title.innerText = "Útvonalad";
-        timeline.appendChild(title);
+        this.timelineBox.appendChild(title);
 
         State.steps.forEach((step, index) => {
             const stepBlock = document.createElement("div");
@@ -167,24 +139,7 @@ const UI = {
             });
 
             stepBlock.appendChild(row);
-            timeline.appendChild(stepBlock);
-        });
-
-        this.container.appendChild(timeline);
-    },
-
-    lockDecision(decisionRow, chosenText) {
-        [...decisionRow.children].forEach((el) => {
-            const label = el.querySelector(".choiceOverlay")?.innerText || "";
-
-            if (label === chosenText) {
-                el.classList.add("chosen");
-            } else {
-                el.classList.add("notChosen");
-            }
-
-            el.onclick = null;
-            el.disabled = true;
+            this.timelineBox.appendChild(stepBlock);
         });
     },
 
@@ -198,65 +153,8 @@ const UI = {
     },
 
     rebuildFromState() {
-        this.container.innerHTML = "";
-
-        let currentNodeId = "start";
-
-        for (const step of State.steps) {
-            const node = Engine.getNode(currentNodeId);
-            if (!node || node.type === "ending") break;
-
-            const block = document.createElement("section");
-            block.className = "storyBlock";
-
-            const text = document.createElement("div");
-            text.className = "storyText";
-            text.innerText = node.text;
-            block.appendChild(text);
-
-            const decision = document.createElement("div");
-            decision.className = "decisionRow";
-
-            node.choices.forEach((choice) => {
-                const item = document.createElement("button");
-                item.type = "button";
-
-                const type = choice.type || "normal";
-                item.className = `choiceCard choice-${type}`;
-
-                if (choice.image) {
-                    item.style.backgroundImage = `url(${choice.image})`;
-                } else {
-                    item.classList.add("noImage");
-                }
-
-                const overlay = document.createElement("div");
-                overlay.className = "choiceOverlay";
-                overlay.innerText = choice.text;
-                item.appendChild(overlay);
-
-                if (choice.text === step.chosen) {
-                    item.classList.add("chosen");
-                } else {
-                    item.classList.add("notChosen");
-                }
-
-                item.onclick = null;
-                item.disabled = true;
-
-                decision.appendChild(item);
-            });
-
-            block.appendChild(decision);
-            this.container.appendChild(block);
-
-            const chosenChoice = node.choices.find((c) => c.text === step.chosen);
-            if (!chosenChoice) break;
-
-            currentNodeId = chosenChoice.next;
-        }
-
         this.renderNode(State.current);
+        this.renderTimeline();
     },
 
     back() {
@@ -276,15 +174,10 @@ const UI = {
     restart() {
         State.reset();
         this.secretTimers = {};
-        this.container.innerHTML = "";
+        this.storyBox.innerHTML = "";
+        this.decisionBox.innerHTML = "";
+        this.timelineBox.innerHTML = "";
         this.renderNode("start");
-    },
-
-    scrollDown() {
-        window.scrollTo({
-            top: document.body.scrollHeight,
-            behavior: "smooth"
-        });
     },
 
     // ===== SECRET SYSTEM =====

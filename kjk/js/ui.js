@@ -50,24 +50,27 @@ const UI = {
             item.appendChild(overlay);
 
             item.onclick = () => {
-                State.history.push(this.createSnapshot());
+    State.history.push(this.createSnapshot());
 
-                State.steps.push({
-                    node: nodeId,
-                    prompt: node.text,
-                    chosen: choice.text,
-                    next: choice.next,
-                    all: node.choices.map((c) => ({
-                        text: c.text,
-                        image: c.image || null
-                    }))
-                });
+    State.saveChoice(choice.text);
 
-                State.current = choice.next;
+    State.steps.push({
+        node: nodeId,
+        prompt: node.text,
+        chosen: choice.text,
+        type: choice.type || "normal",
+        next: choice.next,
+        all: node.choices.map((c) => ({
+            text: c.text,
+            image: c.image || null,
+            type: c.type || "normal"
+        }))
+    });
 
-                this.renderNode(choice.next);
-                this.renderTimeline();
-            };
+    State.current = choice.next;
+
+    this.renderNode(choice.next);
+};
 
             this.decisionBox.appendChild(item);
         });
@@ -90,58 +93,69 @@ const UI = {
     },
 
     renderTimeline() {
-        this.timelineBox.innerHTML = "";
+    this.timelineBox.innerHTML = "";
 
-        const title = document.createElement("div");
-        title.className = "timelineTitle";
-        title.innerText = "Útvonalad";
-        this.timelineBox.appendChild(title);
+    const title = document.createElement("div");
+    title.className = "timelineTitle";
+    title.innerText = "Útvonalak";
+    this.timelineBox.appendChild(title);
 
-        State.steps.forEach((step, index) => {
-            const stepBlock = document.createElement("div");
-            stepBlock.className = "timelineStep";
+    State.steps.forEach((step, index) => {
+        const stepBlock = document.createElement("div");
+        stepBlock.className = "timelineStep";
 
-            const stepLabel = document.createElement("div");
-            stepLabel.className = "timelineStepLabel";
-            stepLabel.innerText = `${index + 1}. döntés`;
-            stepBlock.appendChild(stepLabel);
+        const stepLabel = document.createElement("div");
+        stepLabel.className = "timelineStepLabel";
+        stepLabel.innerText = `${index + 1}. döntés`;
+        stepBlock.appendChild(stepLabel);
 
-            const prompt = document.createElement("div");
-            prompt.className = "timelinePrompt";
-            prompt.innerText = step.prompt;
-            stepBlock.appendChild(prompt);
+        const row = document.createElement("div");
+        row.className = "timelineRowCards";
 
-            const row = document.createElement("div");
-            row.className = "timelineRowCards";
+        step.all.forEach((choice) => {
 
-            step.all.forEach((choice) => {
-                const el = document.createElement("div");
-                el.className = "timelineCard";
+            // TITKOS döntés és még nem fedezted fel → ne jelenjen meg
+            if (choice.type === "secret" && !State.seenChoices.includes(choice.text)) {
+                return;
+            }
 
-                if (choice.image) {
-                    el.style.backgroundImage = `url(${choice.image})`;
-                } else {
-                    el.classList.add("noImage");
-                }
+            const el = document.createElement("div");
+            el.className = "timelineCard";
 
-                const overlay = document.createElement("div");
-                overlay.className = "timelineOverlay";
-                overlay.innerText = choice.text;
-                el.appendChild(overlay);
+            // Csak kritikus döntéseknél legyen kép
+            if (choice.type === "critical" && choice.image) {
+                el.style.backgroundImage = `url(${choice.image})`;
+            } else {
+                el.classList.add("noImage");
+            }
 
-                if (choice.text === step.chosen) {
-                    el.classList.add("chosen");
-                } else {
-                    el.classList.add("notChosen");
-                }
+            const overlay = document.createElement("div");
+            overlay.className = "timelineOverlay";
+            overlay.innerText = choice.text;
+            el.appendChild(overlay);
 
-                row.appendChild(el);
-            });
+            const chosenThisRun = choice.text === step.chosen;
+            const chosenBefore = State.seenChoices.includes(choice.text);
 
-            stepBlock.appendChild(row);
-            this.timelineBox.appendChild(stepBlock);
+            if (chosenThisRun) {
+                if (choice.type === "critical") el.classList.add("timeline-critical");
+                else if (choice.type === "secret") el.classList.add("timeline-secret");
+                else el.classList.add("timeline-normal");
+            }
+            else if (chosenBefore) {
+                el.classList.add("timeline-seen");
+            }
+            else {
+                el.classList.add("timeline-unknown");
+            }
+
+            row.appendChild(el);
         });
-    },
+
+        stepBlock.appendChild(row);
+        this.timelineBox.appendChild(stepBlock);
+    });
+}
 
     createSnapshot() {
         return {
