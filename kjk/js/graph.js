@@ -2,109 +2,144 @@ const Graph = {
     box: document.getElementById("graphBox"),
     svg: document.getElementById("graphLines"),
 
-    nodes: {},
     positions: {},
+    levels: {},
 
     render() {
-        this.box.querySelectorAll(".graphNode").forEach(n => n.remove());
+        if (!this.box || !this.svg) return;
+
+        this.box.querySelectorAll(".graphNode").forEach((node) => node.remove());
         this.svg.innerHTML = "";
-
-        this.nodes = Engine.nodes;
         this.positions = {};
+        this.levels = {};
 
-        this.layout();
-        this.drawNodes();
-        this.drawLines();
+        const story = Engine.story;
+        if (!story || !story.start) return;
+
+        this.buildLayout(story);
+        this.drawConnections(story);
+        this.drawNodes(story);
     },
 
-    layout() {
+    buildLayout(story) {
         const visited = new Set();
-        let queue = [{ id: "start", level: 0 }];
-        let levels = {};
+        const queue = [{ id: "start", level: 0 }];
 
         while (queue.length > 0) {
             const current = queue.shift();
             if (visited.has(current.id)) continue;
             visited.add(current.id);
 
-            if (!levels[current.level]) levels[current.level] = [];
-            levels[current.level].push(current.id);
+            if (!this.levels[current.level]) {
+                this.levels[current.level] = [];
+            }
+            this.levels[current.level].push(current.id);
 
-            const node = this.nodes[current.id];
+            const node = story[current.id];
             if (!node || !node.choices) continue;
 
-            node.choices.forEach(choice => {
+            node.choices.forEach((choice) => {
+                if (choice.type === "secret" && !State.seenChoices.includes(choice.text)) {
+                    return;
+                }
                 queue.push({ id: choice.next, level: current.level + 1 });
             });
         }
 
-        Object.keys(levels).forEach(level => {
-            const arr = levels[level];
+        Object.keys(this.levels).forEach((levelKey) => {
+            const level = Number(levelKey);
+            const nodes = this.levels[level];
+            const spacingX = 170;
+            const spacingY = 130;
+            const startX = 40;
+            const y = 40 + level * spacingY;
 
-            arr.forEach((nodeId, index) => {
-                const x = 200 + index * 180;
-                const y = 50 + level * 120;
-
+            nodes.forEach((nodeId, index) => {
+                const x = startX + index * spacingX;
                 this.positions[nodeId] = { x, y };
+            });
+        });
+
+        const maxX = Math.max(...Object.values(this.positions).map((p) => p.x), 0) + 180;
+        const maxY = Math.max(...Object.values(this.positions).map((p) => p.y), 0) + 120;
+
+        this.svg.setAttribute("width", String(maxX));
+        this.svg.setAttribute("height", String(maxY));
+    },
+
+    drawConnections(story) {
+        Object.entries(story).forEach(([nodeId, node]) => {
+            if (!node.choices || !this.positions[nodeId]) return;
+
+            node.choices.forEach((choice) => {
+                if (choice.type === "secret" && !State.seenChoices.includes(choice.text)) {
+                    return;
+                }
+
+                const from = this.positions[nodeId];
+                const to = this.positions[choice.next];
+                if (!to) return;
+
+                const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                line.setAttribute("x1", String(from.x + 65));
+                line.setAttribute("y1", String(from.y + 68));
+                line.setAttribute("x2", String(to.x + 65));
+                line.setAttribute("y2", String(to.y));
+                line.setAttribute("stroke", "#4a4a56");
+                line.setAttribute("stroke-width", "2");
+                line.setAttribute("stroke-linecap", "round");
+
+                this.svg.appendChild(line);
             });
         });
     },
 
-    drawNodes() {
-        Object.keys(this.positions).forEach(nodeId => {
-            const pos = this.positions[nodeId];
-            const node = this.nodes[nodeId];
+    drawNodes(story) {
+        Object.entries(this.positions).forEach(([nodeId, pos]) => {
+            const node = story[nodeId];
+            if (!node) return;
 
             const el = document.createElement("div");
             el.className = "graphNode";
-            el.style.left = pos.x + "px";
-            el.style.top = pos.y + "px";
+            el.style.left = `${pos.x}px`;
+            el.style.top = `${pos.y}px`;
 
             if (node.type === "ending") {
-                el.classList.add("ending");
+                el.classList.add("graph-ending");
+                el.innerText = node.title || nodeId;
+            } else {
+                el.classList.add("graph-story");
+                el.innerText = this.getNodeLabel(nodeId, node);
             }
 
-            if (State.seenChoices.some(c => node.text?.includes(c))) {
-                el.classList.add("visited");
+            if (this.isNodeInCurrentRun(nodeId)) {
+                el.classList.add("graph-current");
+            } else if (this.isNodeSeenBefore(nodeId, node)) {
+                el.classList.add("graph-seen");
+            } else {
+                el.classList.add("graph-unknown");
             }
 
-            el.innerText = nodeId;
             this.box.appendChild(el);
         });
     },
 
-    drawLines() {
-        Object.keys(this.nodes).forEach(nodeId => {
-            const node = this.nodes[nodeId];
-            if (!node.choices) return;
-
-            const from = this.positions[nodeId];
-            if (!from) return;
-
-            node.choices.forEach(choice => {
-                const to = this.positions[choice.next];
-                if (!to) return;
-
-                this.drawLine(
-                    from.x + 60,
-                    from.y + 30,
-                    to.x + 60,
-                    to.y
-                );
-            });
-        });
+    getNodeLabel(nodeId, node) {
+        if (nodeId === "start") return "Start";
+        if (node.text) return node.text.slice(0, 42) + (node.text.length > 42 ? "..." : "");
+        return nodeId;
     },
 
-    drawLine(x1, y1, x2, y2) {
-        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    isNodeInCurrentRun(nodeId) {
+        if (nodeId === "start") return true;
+        return State.steps.some((step) => step.next === nodeId);
+    },
 
-        line.setAttribute("x1", x1);
-        line.setAttribute("y1", y1);
-        line.setAttribute("x2", x2);
-        line.setAttribute("y2", y2);
-        line.setAttribute("stroke", "#555");
-        line.setAttribute("stroke-width", "2");
+    isNodeSeenBefore(nodeId, node) {
+        if (node.type === "ending" && node.endingId) {
+            return State.seenEndings.includes(node.endingId);
+        }
 
-        this.svg.appendChild(line);
+        return State.steps.some((step) => step.next === nodeId);
     }
 };

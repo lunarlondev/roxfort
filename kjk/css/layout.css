@@ -1,13 +1,12 @@
 .wrapper {
-    max-width: 580px;
+    max-width: 920px;
     margin: 40px auto;
     padding: 20px;
 }
 
-
 .gameLayout {
-    max-width: 700px;
-    margin: 40px auto;
+    max-width: 920px;
+    margin: 0 auto;
 }
 
 .storyBox {
@@ -17,17 +16,44 @@
     background: #15151b;
     border-radius: 12px;
     margin-bottom: 14px;
-    line-height: 1.6;
+    line-height: 1.7;
+    white-space: pre-line;
 }
 
 .decisionBox {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
     margin-bottom: 20px;
 }
 
 .timelineBox {
-    border-top: 1px solid #2b2b34;
+    display: none;
+    margin-top: 24px;
     padding-top: 14px;
+    border-top: 1px solid #2b2b34;
+}
+
+.graphBox {
+    display: none;
+    position: relative;
+    min-height: 520px;
+    margin-top: 18px;
+    border: 1px solid #2b2b34;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #14141a, #101015);
+    overflow: auto;
+}
+
+.graphLines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+@media (max-width: 700px) {
+    .decisionBox {
+        grid-template-columns: 1fr;
+    }
 }

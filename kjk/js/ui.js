@@ -2,6 +2,7 @@ const UI = {
     storyBox: document.getElementById("storyBox"),
     decisionBox: document.getElementById("decisionBox"),
     timelineBox: document.getElementById("timelineBox"),
+    graphBox: document.getElementById("graphBox"),
 
     secretTimers: {},
 
@@ -14,11 +15,12 @@ const UI = {
             return;
         }
 
+        this.hideProgressViews();
+
         this.storyBox.innerText = node.text;
         this.decisionBox.innerHTML = "";
 
         node.choices.forEach((choice) => {
-
             if (choice.type === "secret") {
                 if (!this.isSecretUnlocked(choice, nodeId)) {
                     this.setupSecretUnlock(choice, nodeId);
@@ -32,7 +34,7 @@ const UI = {
             const type = choice.type || "normal";
             item.className = `choiceCard choice-${type}`;
 
-            if (choice.image) {
+            if (choice.type === "critical" && choice.image) {
                 item.style.backgroundImage = `url(${choice.image})`;
             } else {
                 item.classList.add("noImage");
@@ -77,73 +79,38 @@ const UI = {
         const stats = document.createElement("div");
         stats.className = "endingStats";
         stats.innerText = `Felfedezett endingek: ${State.seenEndings.length}`;
-
         this.decisionBox.appendChild(stats);
-        this.renderTimeline();
-	Graph.render();
+
+        this.renderTimelineSummary();
+        this.showProgressViews();
+        Graph.render();
     },
 
-    renderTimeline() {
+    renderTimelineSummary() {
         this.timelineBox.innerHTML = "";
 
         const title = document.createElement("div");
         title.className = "timelineTitle";
-        title.innerText = "Útvonalak";
+        title.innerText = "Lezárt útvonal";
         this.timelineBox.appendChild(title);
 
-        State.steps.forEach((step, index) => {
-            const stepBlock = document.createElement("div");
-            stepBlock.className = "timelineStep";
+        const summary = document.createElement("div");
+        summary.className = "timelineSummary";
 
-            const stepLabel = document.createElement("div");
-            stepLabel.className = "timelineStepLabel";
-            stepLabel.innerText = `${index + 1}. döntés`;
-            stepBlock.appendChild(stepLabel);
+        const labels = State.steps.map((step) => step.chosen);
+        summary.innerText = labels.join(" → ");
 
-            const row = document.createElement("div");
-            row.className = "timelineRowCards";
+        this.timelineBox.appendChild(summary);
+    },
 
-            step.all.forEach((choice) => {
+    hideProgressViews() {
+        if (this.timelineBox) this.timelineBox.style.display = "none";
+        if (this.graphBox) this.graphBox.style.display = "none";
+    },
 
-                if (choice.type === "secret" && !State.seenChoices.includes(choice.text)) {
-                    return;
-                }
-
-                const el = document.createElement("div");
-                el.className = "timelineCard";
-
-                if (choice.type === "critical" && choice.image) {
-                    el.style.backgroundImage = `url(${choice.image})`;
-                } else {
-                    el.classList.add("noImage");
-                }
-
-                const overlay = document.createElement("div");
-                overlay.className = "timelineOverlay";
-                overlay.innerText = choice.text;
-                el.appendChild(overlay);
-
-                const chosenThisRun = choice.text === step.chosen;
-                const chosenBefore = State.seenChoices.includes(choice.text);
-
-                if (chosenThisRun) {
-                    if (choice.type === "critical") el.classList.add("timeline-critical");
-                    else if (choice.type === "secret") el.classList.add("timeline-secret");
-                    else el.classList.add("timeline-normal");
-                }
-                else if (chosenBefore) {
-                    el.classList.add("timeline-seen");
-                }
-                else {
-                    el.classList.add("timeline-unknown");
-                }
-
-                row.appendChild(el);
-            });
-
-            stepBlock.appendChild(row);
-            this.timelineBox.appendChild(stepBlock);
-        });
+    showProgressViews() {
+        if (this.timelineBox) this.timelineBox.style.display = "block";
+        if (this.graphBox) this.graphBox.style.display = "block";
     },
 
     createSnapshot() {
@@ -156,8 +123,12 @@ const UI = {
     },
 
     rebuildFromState() {
-        this.renderNode(State.current);
-        this.renderTimeline();
+        const currentNode = Engine.getNode(State.current);
+        if (currentNode?.type === "ending") {
+            this.renderEnding(currentNode);
+        } else {
+            this.renderNode(State.current);
+        }
     },
 
     back() {
@@ -180,6 +151,12 @@ const UI = {
         this.storyBox.innerHTML = "";
         this.decisionBox.innerHTML = "";
         this.timelineBox.innerHTML = "";
+        if (this.graphBox) {
+            this.graphBox.querySelectorAll(".graphNode").forEach((node) => node.remove());
+        }
+        if (Graph?.svg) {
+            Graph.svg.innerHTML = "";
+        }
         this.renderNode("start");
     },
 
@@ -192,15 +169,12 @@ const UI = {
             const key = this.getSecretKey(choice, nodeId);
             const start = this.secretTimers[key];
             if (!start) return false;
-
             return Date.now() - start >= unlock.delay;
         }
 
         if (unlock.type === "combo") {
-            return unlock.choices.every(c =>
-                State.steps.some(step =>
-                    step.chosen === c || step.next === c
-                )
+            return unlock.choices.every((c) =>
+                State.steps.some((step) => step.chosen === c || step.next === c)
             );
         }
 
@@ -215,7 +189,6 @@ const UI = {
         const key = this.getSecretKey(choice, nodeId);
 
         if (this.secretTimers[key]) return;
-
         this.secretTimers[key] = Date.now();
 
         if (choice.unlock?.type === "time") {
