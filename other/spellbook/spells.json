@@ -4130,7 +4130,7 @@
         "dark": false,
         "healing": false,
         "custom": false,
-        "missing": false,
+        "missing": true,
         "wiki": "https://harrypotter.fandom.com/wiki/White_sparks"
     },
     {
@@ -4143,7 +4143,7 @@
         "dark": false,
         "healing": false,
         "custom": false,
-        "missing": false,
+        "missing": true,
         "wiki": "https://harrypotter.fandom.com/wiki/Babbling_Curse"
     },
     {
@@ -4156,7 +4156,7 @@
         "dark": false,
         "healing": false,
         "custom": false,
-        "missing": false,
+        "missing": true,
         "wiki": "https://harrypotter.fandom.com/wiki/Curse_of_the_Bogies"
     },
     {
@@ -4195,7 +4195,7 @@
         "dark": false,
         "healing": false,
         "custom": false,
-        "missing": false,
+        "missing": true,
         "wiki": "https://harrypotter.fandom.com/wiki/Ear-Shrivelling_Curse"
     },
     {
@@ -4247,7 +4247,176 @@
         "dark": false,
         "healing": false,
         "custom": false,
-        "missing": false,
+        "missing": true,
         "wiki": "https://harrypotter.fandom.com/wiki/Imperturbable_Charm"
+    },
+    {
+        "name": "Gormlaith Gaunt's curse",
+        "hu": "Gormlaith Gaunt átka",
+        "year": 0,
+        "category": "curse",
+        "description": "Erős altató átok, amiből rettenetesen nehéz felébredni. Golmaith Gaunt használta az Ilvermorny két alapítóján, akik csak gyerekük sírására voltak képesek felébredni.",
+        "effects": [ "elme", "kábítás" ],
+        "dark": true,
+        "healing": false,
+        "custom": false,
+        "missing": true,
+        "wiki": "https://harrypotter.fandom.com/wiki/Gormlaith_Gaunt's_curse"
+    },
+    {
+        "name": "Calvorio",
+        "hu": "Hajhullató átok",
+        "year": 1,
+        "category": "curse",
+        "description": "A célpont haját kihullatja.",
+        "effects": [ "test" ],
+        "dark": false,
+        "healing": false,
+        "custom": false,
+        "missing": true,
+        "wiki": "https://harrypotter.fandom.com/wiki/Hair_Loss_Curse"
+    },
+    {
+        "name": "Head growing curse",
+        "hu": "Fejnövesztő átok",
+        "year": 0,
+        "category": "curse",
+        "description": "Ősi egyiptomi átok, amivel a piramisokat védték. Második fejet növeszt az áldozatnak. Nem tanulható.",
+        "effects": [ "test" ],
+        "dark": false,
+        "healing": false,
+        "custom": false,
+        "missing": true,
+        "wiki": "https://harrypotter.fandom.com/wiki/Head_growing_curse"
+    },
+    {
+        "name": "Jelly-Fingers Curse",
+        "hu": "",
+        "year": 2,
+        "category": "curse",
+        "description": "A célpont ujjai elernyednek, és zselé-szerű rugalmasságuk lesz.",
+        "effects": [ "test", "bénítás", "párbajvarázslat" ],
+        "dark": false,
+        "healing": false,
+        "custom": false,
+        "missing": true,
+        "wiki": "https://harrypotter.fandom.com/wiki/Jelly-Fingers_Curse"
+    },
+    {
+        "name": "Locomotor Wibbly",
+        "hu": "",
+        "year": 2,
+        "category": "curse",
+        "description": "A célpont lábai elernyednek és nem tud járni. Furunculus rontással együtt használva az áldozat arcából apró csápok burjánzanak elő.",
+        "effects": [ "test", "bénítás", "párbajvarázslat" ],
+        "dark": false,
+        "healing": false,
+        "custom": false,
+        "missing": true,
+        "wiki": "https://harrypotter.fandom.com/wiki/Jelly-Legs_Curse"
+    },
+    {
+        "name": "Furnunculus",
+        "hu": "",
+        "year": 2,
+        "category": "curse",
+        "description": "Pattanásokat okoz a célpont bőrén. Locomotor Wibbly-vel együtt használva az áldozat arcából apró csápok burjánzanak elő.",
+        "effects": [ "test" ],
+        "dark": false,
+        "healing": false,
+        "custom": false,
+        "missing": true,
+        "wiki": "https://harrypotter.fandom.com/wiki/Pimple_Jinx"
+    },
+    {
+        "name": "Slugulus Eructo",
+        "hu": "",
+        "year": 2,
+        "category": "charm",
+        "description": "A célpont meztelen csigákat hány.",
+        "effects": [ "test", "párbajvarázslat" ],
+        "dark": false,
+        "healing": false,
+        "custom": false,
+        "missing": true,
+        "wiki": "https://harrypotter.fandom.com/wiki/Slug-vomiting_Charm"
+    },
+    {
+        "name": "Sponge-Knees Curse",
+        "hu": "Szivacstérd átok",
+        "year": 0,
+        "category": "curse",
+        "description": "A célpont térdei elernyednek.",
+        "effects": [ "test", "bénítás" ],
+        "dark": false,
+        "healing": false,
+        "custom": false,
+        "missing": true,
+        "wiki": "https://harrypotter.fandom.com/wiki/Sponge-Knees_Curse"
+    },
+    {
+        "name": "Thief's Curse",
+        "hu": "Tolvajok átka",
+        "year": 0,
+        "category": "curse",
+        "description": "A pontos hatása nem ismert. Könyvekre használják, hogy ne lehessen őket túl sokáig olvasni anélkül, hogy kifizetnéd.",
+        "effects": [  ],
+        "dark": true,
+        "healing": false,
+        "custom": false,
+        "missing": true,
+        "wiki": "https://harrypotter.fandom.com/wiki/Thief's_Curse"
+    },
+    {
+        "name": "Transzmogrifiai tortúra",
+        "hu": "",
+        "year": 0,
+        "category": "curse",
+        "description": "Olyan átok, ami kínzás mellett halált okoz. A főbenjáró átkokkal ellentétben létezik ellenvarázslat hozzá, és amulettekkel is lehet védekezni ellene.",
+        "effects": [ "" ],
+        "dark": true,
+        "healing": false,
+        "custom": false,
+        "missing": true,
+        "wiki": "https://harrypotter.fandom.com/wiki/Transmogrifian_Torture"
+    },
+    {
+        "name": "Molly Weasley's curse",
+        "hu": "Molly Weasley átka",
+        "year": 0,
+        "category": "curse",
+        "description": "Molly Weasley által használt átok, amivel megölte Bellatrix Lestrange-et (a könyv alapján). Egészen pontos hatás nem ismert; vélhetően csak közelről, esetleg szívre célozva alkalmas erre.",
+        "effects": [ "párbajvarázslat" ],
+        "dark": true,
+        "healing": false,
+        "custom": false,
+        "missing": true,
+        "wiki": "https://harrypotter.fandom.com/wiki/Molly_Weasley's_curse"
+    },
+    {
+        "name": "Kápráztató rontás",
+        "hu": "",
+        "year": 0,
+        "category": "átok",
+        "description": "Hasonlóan a kiábrándító bűbájhoz, el lehet fedni vele dolgokat. Piaci, egyszerű láthatatlanná tévő köpenyeken használják. Hatása idővel eltűnik, vagy roncsolhatja a köpeny szövetét.",
+        "effects": [ "elme","módosítás" ],
+        "dark": false,
+        "healing": false,
+        "custom": false,
+        "missing": true,
+        "wiki": "https://harrypotter.fandom.com/wiki/Bedazzling_Hex"
+    },
+    {
+        "name": "Horn Tongue Hex",
+        "hu": "Szarvnyelv rontás",
+        "year": 0,
+        "category": "curse",
+        "description": "A célpont nyelvét szarvszerűvé változtatja.",
+        "effects": [ "átváltoztatás", "test" ],
+        "dark": false,
+        "healing": false,
+        "custom": false,
+        "missing": true,
+        "wiki": "https://harrypotter.fandom.com/wiki/Horn_Tongue_Hex"
     }
 ]
