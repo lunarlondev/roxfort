@@ -132,7 +132,7 @@
     {
         "name": "Incendium Culinaris",
         "hu": "",
-        "year": 8,
+        "year": 7,
         "category": "charm",
         "description": "Önsütő bűbáj. Folyamatos hőt termel a célzott ételben, így az egyenletesen megsül. Javasolt lebegtetni a célpontot, hogy megelőzzük a baleseteket.",
         "effects": [ "háztartásmágia" ],
@@ -145,7 +145,7 @@
     {
         "name": "Tenera Caro",
         "hu": "",
-        "year": 8,
+        "year": 7,
         "category": "charm",
         "description": "Húspuhító bűbáj, hogy szaftos maradjon. Figyelem, élőlényekre nagyon veszélyes a használata, az izmok elveszíthetik tónusukat, gumiszerűvé válhatnak.",
         "effects": [ "háztartásmágia" ],
@@ -158,7 +158,7 @@
     {
         "name": "Holus Cortex",
         "hu": "",
-        "year": 8,
+        "year": 7,
         "category": "charm",
         "description": "A célzott zöldségek meghámozzák magukat. Élőlényekre hatástalan.",
         "effects": [ "háztartásmágia" ],
@@ -184,7 +184,7 @@
     {
         "name": "Textrura Lenis",
         "hu": "",
-        "year": 8,
+        "year": 7,
         "category": "charm",
         "description": "Állagformáló bűbáj. A célzott anyagot képes kérmessé, kocsonyássá, sűrűvé vagy pépessé változtatni. Főleg folyadékokra használatos.",
         "effects": [ "háztartásmágia", "párbajvarázslat" ],
