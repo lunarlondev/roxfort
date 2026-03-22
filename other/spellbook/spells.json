@@ -169,17 +169,17 @@
         "wiki": ""
     },
     {
-        "name": "Vapomissing",
+        "name": "Vaporare ",
         "hu": "",
-        "year": 8,
+        "year": 7,
         "category": "charm",
         "description": "A célzott tárgyat belengi a forró gőz, kiváló zöldségek gőzöléséhez, de vasaláshoz is.",
         "effects": [ "háztartásmágia" ],
         "dark": false,
         "healing": false,
-        "custom": true,
+        "custom": false,
         "missing": false,
-        "wiki": ""
+        "wiki": "https://harrypotter.fandom.com/wiki/Hot_Air_Charm"
     },
     {
         "name": "Textrura Lenis",
@@ -2273,19 +2273,6 @@
         "custom": false,
         "missing": false,
         "wiki": "https://harrypotter.fandom.com/wiki/Disillusionment_Charm"
-    },
-    {
-        "name": "Gőzölő bűbáj",
-        "hu": "",
-        "year": 7,
-        "category": "charm",
-        "description": "Ruhák gőzölésére, szárítására használatos. Ezzel elkerülhető a ruhák gyűrődése mosás után.",
-        "effects": [ "háztartásmágia", "tűz", "levegő" ],
-        "dark": false,
-        "healing": false,
-        "custom": false,
-        "missing": false,
-        "wiki": "https://harrypotter.fandom.com/wiki/Hot_Air_Charm"
     },
     {
         "name": "Mosogató bűbáj",
@@ -4825,7 +4812,7 @@
     {
         "name": "Taboo",
         "hu": "Tabu varázs",
-        "year": 0,
+        "year": 8,
         "category": "curse",
         "description": "Egy szó kimondásakor nyomkövetést aktivál.",
         "effects": [ "nyomkeresés" ],
@@ -4864,7 +4851,7 @@
     {
         "name": "Trip Jinx",
         "hu": "Gáncsrontás",
-        "year": 0,
+        "year": 5,
         "category": "curse",
         "description": "Elgáncsolja a célpontot.",
         "effects": [ "lökés" ],
