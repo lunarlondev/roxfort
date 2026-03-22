@@ -4854,7 +4854,7 @@
         "year": 8,
         "category": "transfiguration",
         "description": "A varázslat hatása alatt álló fák életre kelnek, a gyökereikkel mozognak, és pusztítást végeznek (a varázslat létrehozója ellen is).",
-        "effects": [ "módosítás"" ],
+        "effects": [ "módosítás" ],
         "dark": false,
         "healing": false,
         "custom": false,
