@@ -51,3 +51,6 @@ elme (emberi elmére ható varázslatok, pl memory charmok, legilimencia)
 13 sor/elem
 261 fent
 
+
+
+Nyelvragasztó-rontás: A célpont nyelvét a szájpadlásához ragasztja, így az nem tud beszélni
