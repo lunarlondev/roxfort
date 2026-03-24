@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kapcsolat generátor</title>
+  <link rel="stylesheet" href="kkny.css">
+</head>
+<body>
+  <main class="sheet">
+    <section class="kkny-card">
+      <div class="kkny-grid">
+        <div class="kkny-left">
+          <div class="kkny-image">
+            <img src="images/gif/kkny.gif" alt="">
+          </div>
+        </div>
+
+        <div class="kkny-right">
+  <input id="imageURL" class="kkny-input" placeholder="Választott kép URL">
+  <input id="titleInput" class="kkny-input" placeholder="Cím">
+  <textarea id="messageInput" class="kkny-text" placeholder="Speak parseltongue to me"></textarea>
+</div>
+
+      <div class="kkny-generate">
+        <button id="generateBtn" class="random-btn" type="button" aria-label="Generálás">
+          <img src="images/gif/snakebutton.gif" alt="">
+        </button>
+      </div>
+
+      <textarea id="resultOutput" class="kkny-result" placeholder="Itt jelenik meg a generált [html] kód"></textarea>
+    </section>
+  </main>
+
+  <script src="kkny.js"></script>
+</body>
+</html>
