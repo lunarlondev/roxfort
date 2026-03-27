@@ -1339,7 +1339,7 @@
         "wiki": "https://harrypotter.fandom.com/wiki/Shrinking_Charm"
     },
     {
-        "name": "Renervate",
+        "name": "Rennervate",
         "hu": "",
         "year": 4,
         "category": "healing",
@@ -5055,5 +5055,44 @@
         "custom": false,
         "missing": true,
         "wiki": "https://harrypotter.fandom.com/wiki/Whip_spell"
+    },
+    {
+        "name": "Counter-charm for hiccoughs",
+        "hu": "Ellenbűbáj csuklásra",
+        "year": 5,
+        "category": "charm",
+        "description": "Mágikus okok miatti csuklás megszüntetésére.",
+        "effects": [ "gyógyítás" ],
+        "dark": true,
+        "healing": true,
+        "custom": false,
+        "missing": true,
+        "wiki": "https://harrypotter.fandom.com/wiki/Counter-charm_for_hiccoughs"
+    },
+    {
+        "name": "Entrail-Expelling Curse",
+        "hu": "Kizsigerelő átok",
+        "year": 8,
+        "category": "charm",
+        "description": "Amire a neve céloz... leírás a linken, én le nem írom.",
+        "effects": [ "gyógyítás" ],
+        "dark": true,
+        "healing": true,
+        "custom": false,
+        "missing": true,
+        "wiki": "https://harrypotter.fandom.com/wiki/Entrail-Expelling_Curse"
+    },
+    {
+        "name": "Ragyaragasztó por elleni bűbáj",
+        "hu": "",
+        "year": 6,
+        "category": "charm",
+        "description": "A ragyaragasztó porral rögzíteni lehet tárgyakat fix helyekre, bőrre kerülve azonban irritációt és keléseket okoz. Bűbájjal könnyen gyógyítható.",
+        "effects": [ "gyógyítás" ],
+        "dark": true,
+        "healing": true,
+        "custom": false,
+        "missing": true,
+        "wiki": "https://harrypotter.fandom.com/wiki/Spell_to_cure_Wartcap_powder_infection"
     }
 ]
