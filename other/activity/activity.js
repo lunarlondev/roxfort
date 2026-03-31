@@ -1,8 +1,7 @@
 let wordsData = null;
-const modes = ["Rajz", "Körbeírás", "Mutogatás"];
+const modes = ["Rajz", "Korbemagyarazas", "Mutogatas"];
 
 let deck = [];
-let currentIndex = 0;
 
 // JSON betöltése
 async function loadWords() {
@@ -23,35 +22,26 @@ function buildDeck() {
             });
         });
     });
-
-    shuffleDeck();
-    currentIndex = 0;
 }
 
-// Pakli keverése
-function shuffleDeck() {
-    for (let i = deck.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [deck[i], deck[j]] = [deck[j], deck[i]];
-    }
-}
-
-// Kártyahúzás
+// Random kártya húzás
 function drawCard() {
-    if (deck.length === 0) return;
-
-    if (currentIndex >= deck.length) {
-        buildDeck();
+    if (deck.length === 0) {
+        buildDeck(); // ha elfogyott, új pakli
     }
 
-    const card = deck[currentIndex];
-    currentIndex++;
+    const randomIndex = Math.floor(Math.random() * deck.length);
+    const card = deck[randomIndex];
+
+    // kivesszük a pakliból, hogy ne ismétlődjön
+    deck.splice(randomIndex, 1);
 
     document.getElementById("mode").innerText = card.mode;
     document.getElementById("word").innerText = card.word;
 }
 
 document.getElementById("drawButton").addEventListener("click", drawCard);
+document.getElementById("skipButton").addEventListener("click", drawCard);
 
 // Indítás
 loadWords();
