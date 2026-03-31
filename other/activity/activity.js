@@ -1,18 +1,26 @@
 let originalData = null;
 let wordsData = null;
-
-const modes = ["Rajz", "Körbemagyarázás", "Mutogatás"];
+let modes = [];
 
 // JSON betöltése
 async function loadWords() {
-    const response = await fetch("activity.json");
-    originalData = await response.json();
+    try {
+        const response = await fetch("activity.json");
+        originalData = await response.json();
 
-    // másolat, hogy tudjunk belőle törölni
-    wordsData = JSON.parse(JSON.stringify(originalData));
+        // kategóriák automatikusan a JSON-ból
+        modes = Object.keys(originalData);
+
+        // másolat, hogy tudjunk törölni belőle
+        wordsData = JSON.parse(JSON.stringify(originalData));
+
+        console.log("Activity betöltve:", modes);
+    } catch (err) {
+        console.error("JSON betöltési hiba:", err);
+    }
 }
 
-// Random elem kiválasztása és törlése
+// Random szó kategóriából
 function drawFromCategory(mode) {
     if (wordsData[mode].length === 0) {
         // ha elfogyott, visszatöltjük
@@ -28,8 +36,13 @@ function drawFromCategory(mode) {
     return word;
 }
 
-// Kártyahúzás
+// Új kártya húzás
 function drawCard() {
+    if (!wordsData || modes.length === 0) {
+        console.log("Még tölt a JSON...");
+        return;
+    }
+
     const mode = modes[Math.floor(Math.random() * modes.length)];
     const word = drawFromCategory(mode);
 
@@ -37,8 +50,8 @@ function drawCard() {
     document.getElementById("word").innerText = word;
 }
 
+// Gomb
 document.getElementById("drawButton").addEventListener("click", drawCard);
-document.getElementById("skipButton").addEventListener("click", drawCard);
 
 // Indítás
 loadWords();
