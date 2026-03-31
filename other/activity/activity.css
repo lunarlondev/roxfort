@@ -1,60 +1,83 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    padding: 0;
     font-family: Arial, sans-serif;
-    background: #2b2b2b;
+    background: radial-gradient(circle at top, #1f1f1f, #0e0e0e);
     color: white;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
-.activity-container {
+.app {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
     text-align: center;
 }
 
 .card {
-    width: 300px;
-    height: 180px;
-    background: #3a3a3a;
-    border-radius: 12px;
-    padding: 20px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    background: linear-gradient(145deg, #1c1c1c, #111);
+    border-radius: 18px;
+    padding: 40px 20px;
+    margin-bottom: 25px;
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,0.05),
+        0 10px 30px rgba(0,0,0,0.6);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card.animate {
+    transform: scale(1.05);
+    box-shadow:
+        0 0 20px rgba(255,209,102,0.3),
+        0 10px 40px rgba(0,0,0,0.8);
 }
 
 .mode {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
     color: #ffd166;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .word {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
+    line-height: 1.2;
 }
 
-button {
-    padding: 12px 20px;
-    font-size: 16px;
+.draw-btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
     border: none;
-    border-radius: 8px;
-    background: #ffd166;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #ffd166, #ffb703);
+    color: black;
+    font-weight: bold;
     cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-button:hover {
-    background: #ffbe33;
+.draw-btn:active {
+    transform: scale(0.96);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.6);
 }
 
+/* Telefon */
+@media (max-width: 500px) {
+    .word {
+        font-size: 26px;
+    }
 
-.buttons {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
+    .card {
+        padding: 30px 15px;
+    }
 }

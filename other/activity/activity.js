@@ -55,3 +55,23 @@ document.getElementById("drawButton").addEventListener("click", drawCard);
 
 // Indítás
 loadWords();
+
+
+
+function drawCard() {
+    if (!wordsData || modes.length === 0) {
+        console.log("Még tölt a JSON...");
+        return;
+    }
+
+    const mode = modes[Math.floor(Math.random() * modes.length)];
+    const word = drawFromCategory(mode);
+
+    document.getElementById("mode").innerText = mode;
+    document.getElementById("word").innerText = word;
+
+    // animáció
+    const card = document.getElementById("card");
+    card.classList.add("animate");
+    setTimeout(() => card.classList.remove("animate"), 200);
+}
