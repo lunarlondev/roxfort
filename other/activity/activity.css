@@ -51,3 +51,10 @@ button {
 button:hover {
     background: #ffbe33;
 }
+
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}

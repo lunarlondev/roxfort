@@ -26,14 +26,13 @@ function buildDeck() {
 
 // Random kártya húzás
 function drawCard() {
-    if (deck.length === 0) {
-        buildDeck(); // ha elfogyott, új pakli
+    if (!deck || deck.length === 0) {
+        buildDeck();
     }
 
     const randomIndex = Math.floor(Math.random() * deck.length);
     const card = deck[randomIndex];
 
-    // kivesszük a pakliból, hogy ne ismétlődjön
     deck.splice(randomIndex, 1);
 
     document.getElementById("mode").innerText = card.mode;
