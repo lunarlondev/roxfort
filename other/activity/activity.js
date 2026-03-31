@@ -1,7 +1,7 @@
 let originalData = null;
 let wordsData = null;
 
-const modes = ["Rajz", "Korbemagyarazas", "Mutogatas"];
+const modes = ["Rajz", "Körbemagyarázás", "Mutogatás"];
 
 // JSON betöltése
 async function loadWords() {
