@@ -1,42 +1,40 @@
+let originalData = null;
 let wordsData = null;
-const modes = ["Rajz", "Korbemagyarazas", "Mutogatas"];
 
-let deck = [];
+const modes = ["Rajz", "Korbemagyarazas", "Mutogatas"];
 
 // JSON betöltése
 async function loadWords() {
     const response = await fetch("activity.json");
-    wordsData = await response.json();
-    buildDeck();
+    originalData = await response.json();
+
+    // másolat, hogy tudjunk belőle törölni
+    wordsData = JSON.parse(JSON.stringify(originalData));
 }
 
-// Pakli létrehozása
-function buildDeck() {
-    deck = [];
-
-    modes.forEach(mode => {
-        wordsData[mode].forEach(word => {
-            deck.push({
-                mode: mode,
-                word: word
-            });
-        });
-    });
-}
-
-// Random kártya húzás
-function drawCard() {
-    if (!deck || deck.length === 0) {
-        buildDeck();
+// Random elem kiválasztása és törlése
+function drawFromCategory(mode) {
+    if (wordsData[mode].length === 0) {
+        // ha elfogyott, visszatöltjük
+        wordsData[mode] = [...originalData[mode]];
     }
 
-    const randomIndex = Math.floor(Math.random() * deck.length);
-    const card = deck[randomIndex];
+    const randomIndex = Math.floor(Math.random() * wordsData[mode].length);
+    const word = wordsData[mode][randomIndex];
 
-    deck.splice(randomIndex, 1);
+    // kivesszük, hogy ne ismétlődjön
+    wordsData[mode].splice(randomIndex, 1);
 
-    document.getElementById("mode").innerText = card.mode;
-    document.getElementById("word").innerText = card.word;
+    return word;
+}
+
+// Kártyahúzás
+function drawCard() {
+    const mode = modes[Math.floor(Math.random() * modes.length)];
+    const word = drawFromCategory(mode);
+
+    document.getElementById("mode").innerText = mode;
+    document.getElementById("word").innerText = word;
 }
 
 document.getElementById("drawButton").addEventListener("click", drawCard);
