@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ballot 2006</title>
+    <link rel="stylesheet" href="ballot2006.css">
+</head>
+<body>
+    <main class="b06-app">
+        <section class="b06-shell">
+           <header class="b06-top">
+    <div>
+        <div class="b06-kicker">Levélszavazat</div>
+        <h1>2006 választások, USA</h1>
+    </div>
+    <p>Kitölthető szavazólap, megjegyzéssel és firkával. A végén beilleszthető [html][/html] kód készül belőle.</p>
+</header>
+
+<div class="b06-source-link">
+    A generált kód szabadon felhasználható <a href="https://URLHELYE" target="_blank">az alábbi játékban</a>.
+</div>
+
+            <div class="b06-grid">
+                <section class="b06-card b06-editor-card">
+                    <article class="b06-ballot" id="ballotEditor">
+                        <div class="b06-ballot-head">
+                            <div>
+                                <div class="b06-ballot-meta">Hivatalos szavazólap</div>
+                                <h2>Válasszon egy jelöltet</h2>
+                            </div>
+                            <div class="b06-year">2006</div>
+                        </div>
+
+                        <div class="b06-options">
+                            <button class="b06-option" type="button" data-party="Salem Hagyatéka Párt" data-candidate="Cassius Yaxley" data-logo="img/salem.png">
+                                <span class="b06-logo"><img src="img/salem.png" alt="Salem Hagyatéka Párt logó"></span>
+                                <span class="b06-option-text">
+                                    <strong>Salem Hagyatéka Párt</strong>
+                                    <em>Cassius Yaxley</em>
+                                </span>
+                                <span class="b06-mark"></span>
+                            </button>
+
+                            <button class="b06-option" type="button" data-party="Újvilági Mágus Párt" data-candidate="Ember Picquery" data-logo="img/ujvilag.png">
+                                <span class="b06-logo"><img src="img/ujvilag.png" alt="Újvilági Mágus Párt logó"></span>
+                                <span class="b06-option-text">
+                                    <strong>Újvilági Mágus Párt</strong>
+                                    <em>Ember Picquery</em>
+                                </span>
+                                <span class="b06-mark"></span>
+                            </button>
+                        </div>
+
+                        <div class="b06-freeform">
+                            <textarea id="ballotComment" class="b06-comment" maxlength="500" placeholder="Nem a szavazólap része, de adott a lehetőség, hogy ráírj valamit."></textarea>
+
+                            <div class="b06-doodle-bar">
+                                <span>Vagy akár firkálj.</span>
+                                <button class="b06-ghost-btn" type="button" id="clearCanvas">Firka törlése</button>
+                            </div>
+
+                            <canvas id="ballotCanvas" class="b06-canvas"></canvas>
+                        </div>
+                    </article>
+                </section>
+
+                <aside class="b06-side">
+                    <section class="b06-card b06-actions-card">
+                        <button class="b06-btn" type="button" id="generateCode">Kód generálása</button>
+                        <button class="b06-btn b06-btn-soft" type="button" id="resetBallot">Törlés</button>
+                    </section>
+
+                    <section class="b06-card b06-output-card">
+                        <div class="b06-output-head">
+                            <span>Generált kód</span>
+                            <small>[html][/html]</small>
+                        </div>
+                        <textarea id="generatedCode" class="b06-output" readonly placeholder="A generált kód itt jelenik meg."></textarea>
+                    </section>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <script src="ballot2006.js"></script>
+</body>
+</html>
