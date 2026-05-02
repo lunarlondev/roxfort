@@ -10,8 +10,8 @@
     const ctx = canvas.getContext("2d");
 
     const allOptions = [
-        { party: "Salem Hagyatéka Párt", candidate: "Cassius Yaxley", logo: "img/salem.png" },
-        { party: "Újvilági Mágus Párt", candidate: "Ember Picquery", logo: "img/ujvilag.png" }
+        { party: "Salem Hagyatéka Párt", candidate: "Cassius Yaxley", logo: "https://lunarlondev.github.io/roxfort/other/ballot/img/salem.png" },
+        { party: "Újvilági Mágus Párt", candidate: "Ember Picquery", logo: "https://lunarlondev.github.io/roxfort/other/ballot/img/ujvilag.png" }
     ];
 
     let selectedOption = null;
