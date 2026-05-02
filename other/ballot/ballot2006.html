@@ -9,17 +9,17 @@
 <body>
     <main class="b06-app">
         <section class="b06-shell">
-           <header class="b06-top">
-    <div>
-        <div class="b06-kicker">Levélszavazat</div>
-        <h1>2006 választások, USA</h1>
-    </div>
-    <p>Kitölthető szavazólap, megjegyzéssel és firkával. A végén beilleszthető [html][/html] kód készül belőle.</p>
-</header>
+            <header class="b06-top">
+                <div>
+                    <div class="b06-kicker">Levélszavazat</div>
+                    <h1>2006 választások, USA</h1>
+                </div>
+                <p>Kitölthető szavazólap, megjegyzéssel és firkával. A végén beilleszthető [html][/html] kód készül belőle.</p>
+            </header>
 
-<div class="b06-source-link">
-    A generált kód szabadon felhasználható <a href="https://URLHELYE" target="_blank">az alábbi játékban</a>.
-</div>
+            <div class="b06-source-link">
+                A generált kód szabadon felhasználható <a href="https://URLHELYE" target="_blank" rel="noopener">az alábbi játékban</a>.
+            </div>
 
             <div class="b06-grid">
                 <section class="b06-card b06-editor-card">
@@ -57,7 +57,24 @@
 
                             <div class="b06-doodle-bar">
                                 <span>Vagy akár firkálj.</span>
-                                <button class="b06-ghost-btn" type="button" id="clearCanvas">Firka törlése</button>
+
+                                <div class="b06-doodle-tools">
+                                    <div class="b06-tool-group" aria-label="Firka színe">
+                                        <button class="b06-color is-active b06-ink-dark" type="button" data-color="#282117" title="Sötét"></button>
+                                        <button class="b06-color b06-ink-red" type="button" data-color="#7d1f1f" title="Vörös"></button>
+                                        <button class="b06-color b06-ink-blue" type="button" data-color="#1f476f" title="Kék"></button>
+                                        <button class="b06-color b06-ink-green" type="button" data-color="#2f6a3d" title="Zöld"></button>
+                                        <button class="b06-color b06-ink-gold" type="button" data-color="#8a6a20" title="Aranybarna"></button>
+                                    </div>
+
+                                    <div class="b06-tool-group" aria-label="Ecsetméret">
+                                        <button class="b06-size is-active" type="button" data-size="2.25">S</button>
+                                        <button class="b06-size" type="button" data-size="4.5">M</button>
+                                        <button class="b06-size" type="button" data-size="7">L</button>
+                                    </div>
+
+                                    <button class="b06-ghost-btn" type="button" id="clearCanvas">Firka törlése</button>
+                                </div>
                             </div>
 
                             <canvas id="ballotCanvas" class="b06-canvas"></canvas>

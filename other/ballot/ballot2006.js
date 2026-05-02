@@ -6,6 +6,8 @@
     const generateButton = document.getElementById("generateCode");
     const resetButton = document.getElementById("resetBallot");
     const clearCanvasButton = document.getElementById("clearCanvas");
+    const colorButtons = Array.from(document.querySelectorAll(".b06-color"));
+    const sizeButtons = Array.from(document.querySelectorAll(".b06-size"));
 
     const ctx = canvas.getContext("2d");
 
@@ -14,9 +16,10 @@
         { party: "Újvilági Mágus Párt", candidate: "Ember Picquery", logo: "https://lunarlondev.github.io/roxfort/other/ballot/img/ujvilag.png" }
     ];
 
-    let selectedOption = null;
     let drawing = false;
     let doodleDirty = false;
+    let brushColor = "#282117";
+    let brushSize = 2.25;
 
     function escapeHtml(value){
         return String(value)
@@ -31,6 +34,13 @@
         return escapeHtml(value).replaceAll("\n","<br>");
     }
 
+    function applyBrush(){
+        ctx.lineWidth = brushSize;
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
+        ctx.strokeStyle = brushColor;
+    }
+
     function setupCanvas(preserve){
         const previous = preserve && doodleDirty ? canvas.toDataURL("image/png") : "";
         const rect = canvas.getBoundingClientRect();
@@ -40,15 +50,13 @@
         canvas.height = Math.max(1,Math.floor(rect.height * ratio));
 
         ctx.setTransform(ratio,0,0,ratio,0,0);
-        ctx.lineWidth = 2.25;
-        ctx.lineCap = "round";
-        ctx.lineJoin = "round";
-        ctx.strokeStyle = "#282117";
+        applyBrush();
 
         if(previous){
             const img = new Image();
             img.onload = function(){
                 ctx.drawImage(img,0,0,rect.width,rect.height);
+                applyBrush();
             };
             img.src = previous;
         }
@@ -66,6 +74,7 @@
     function startDrawing(event){
         drawing = true;
         doodleDirty = true;
+        applyBrush();
 
         const point = getPoint(event);
         ctx.beginPath();
@@ -101,32 +110,38 @@
     function clearCanvas(){
         ctx.clearRect(0,0,canvas.width,canvas.height);
         doodleDirty = false;
+        applyBrush();
     }
 
-    function selectOption(option){
-        selectedOption = option;
+    function toggleOption(option){
+        const mark = option.querySelector(".b06-mark");
+        const isSelected = option.classList.toggle("is-selected");
 
-        options.forEach(function(item){
-            item.classList.remove("is-selected");
-            item.querySelector(".b06-mark").textContent = "";
-        });
+        mark.textContent = isSelected ? "X" : "";
+    }
 
-        option.classList.add("is-selected");
-        option.querySelector(".b06-mark").textContent = "X";
+    function getSelectedParties(){
+        return options
+            .filter(function(option){
+                return option.classList.contains("is-selected");
+            })
+            .map(function(option){
+                return option.dataset.party;
+            });
     }
 
     function getBallotData(){
-        if(!selectedOption){
-            return null;
-        }
-
         return {
-            party: selectedOption.dataset.party,
-            candidate: selectedOption.dataset.candidate,
-            logo: selectedOption.dataset.logo,
+            selectedParties: getSelectedParties(),
             comment: comment.value.trim(),
             doodle: doodleDirty ? canvas.toDataURL("image/png") : ""
         };
+    }
+
+    function setActiveButton(buttons,activeButton){
+        buttons.forEach(function(button){
+            button.classList.toggle("is-active",button === activeButton);
+        });
     }
 
     function buildOptionHtml(party,candidate,logo,isSelected){
@@ -144,7 +159,7 @@
 
     function buildGeneratedCode(data){
         const optionHtml = allOptions.map(function(item){
-            return buildOptionHtml(item.party,item.candidate,item.logo,item.party === data.party);
+            return buildOptionHtml(item.party,item.candidate,item.logo,data.selectedParties.includes(item.party));
         }).join("\n");
 
         const extras = [];
@@ -198,17 +213,10 @@
 
     function generateCode(){
         const data = getBallotData();
-
-        if(!data){
-            alert("Előbb válassz egy jelöltet.");
-            return;
-        }
-
         output.value = buildGeneratedCode(data);
     }
 
     function resetBallot(){
-        selectedOption = null;
         comment.value = "";
         output.value = "";
 
@@ -222,7 +230,23 @@
 
     options.forEach(function(option){
         option.addEventListener("click",function(){
-            selectOption(option);
+            toggleOption(option);
+        });
+    });
+
+    colorButtons.forEach(function(button){
+        button.addEventListener("click",function(){
+            brushColor = button.dataset.color;
+            setActiveButton(colorButtons,button);
+            applyBrush();
+        });
+    });
+
+    sizeButtons.forEach(function(button){
+        button.addEventListener("click",function(){
+            brushSize = Number(button.dataset.size) || 2.25;
+            setActiveButton(sizeButtons,button);
+            applyBrush();
         });
     });
 
