@@ -6,6 +6,8 @@
     const generateButton = document.getElementById("generateCode");
     const resetButton = document.getElementById("resetBallot");
     const clearCanvasButton = document.getElementById("clearCanvas");
+    const undoCanvasButton = document.getElementById("undoCanvas");
+    const eraserCanvasButton = document.getElementById("eraserCanvas");
     const colorButtons = Array.from(document.querySelectorAll(".b06-color"));
     const sizeButtons = Array.from(document.querySelectorAll(".b06-size"));
 
@@ -20,6 +22,9 @@
     let doodleDirty = false;
     let brushColor = "#282117";
     let brushSize = 2.25;
+    let brushMode = "draw";
+    let undoStack = [];
+    const maxUndoSteps = 30;
 
     function escapeHtml(value){
         return String(value)
@@ -35,11 +40,61 @@
     }
 
     function applyBrush(){
-        ctx.lineWidth = brushSize;
-        ctx.lineCap = "round";
-        ctx.lineJoin = "round";
+    ctx.lineWidth = brushSize;
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+
+    if(brushMode === "erase"){
+        ctx.globalCompositeOperation = "destination-out";
+        ctx.strokeStyle = "rgba(0,0,0,1)";
+    }else{
+        ctx.globalCompositeOperation = "source-over";
         ctx.strokeStyle = brushColor;
     }
+}
+
+
+function saveCanvasState(){
+    undoStack.push(canvas.toDataURL("image/png"));
+
+    if(undoStack.length > maxUndoSteps){
+        undoStack.shift();
+    }
+}
+
+function undoCanvas(){
+    if(!undoStack.length){
+        return;
+    }
+
+    const previous = undoStack.pop();
+    const rect = canvas.getBoundingClientRect();
+
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    const img = new Image();
+    img.onload = function(){
+        ctx.globalCompositeOperation = "source-over";
+        ctx.drawImage(img,0,0,rect.width,rect.height);
+        applyBrush();
+        doodleDirty = undoStack.length > 0 || previous !== "";
+    };
+    img.src = previous;
+}
+
+function setDrawMode(){
+    brushMode = "draw";
+    eraserCanvasButton.classList.remove("is-active");
+    applyBrush();
+}
+
+function setEraseMode(){
+    brushMode = "erase";
+    eraserCanvasButton.classList.add("is-active");
+    applyBrush();
+}
+
+
 
     function setupCanvas(preserve){
         const previous = preserve && doodleDirty ? canvas.toDataURL("image/png") : "";
@@ -72,9 +127,10 @@
     }
 
     function startDrawing(event){
-        drawing = true;
-        doodleDirty = true;
-        applyBrush();
+    saveCanvasState();
+    drawing = true;
+    doodleDirty = true;
+    applyBrush();
 
         const point = getPoint(event);
         ctx.beginPath();
@@ -108,10 +164,14 @@
     }
 
     function clearCanvas(){
-        ctx.clearRect(0,0,canvas.width,canvas.height);
-        doodleDirty = false;
-        applyBrush();
+    if(doodleDirty){
+        saveCanvasState();
     }
+
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    doodleDirty = false;
+    applyBrush();
+}
 
     function toggleOption(option){
         const mark = option.querySelector(".b06-mark");
@@ -235,12 +295,14 @@
     });
 
     colorButtons.forEach(function(button){
-        button.addEventListener("click",function(){
-            brushColor = button.dataset.color;
-            setActiveButton(colorButtons,button);
-            applyBrush();
-        });
+    button.addEventListener("click",function(){
+        brushColor = button.dataset.color;
+        brushMode = "draw";
+        eraserCanvasButton.classList.remove("is-active");
+        setActiveButton(colorButtons,button);
+        applyBrush();
     });
+});
 
     sizeButtons.forEach(function(button){
         button.addEventListener("click",function(){
@@ -258,6 +320,8 @@
     clearCanvasButton.addEventListener("click",clearCanvas);
     generateButton.addEventListener("click",generateCode);
     resetButton.addEventListener("click",resetBallot);
+    undoCanvasButton.addEventListener("click",undoCanvas);
+    eraserCanvasButton.addEventListener("click",setEraseMode);
 
     window.addEventListener("resize",function(){
         setupCanvas(true);
