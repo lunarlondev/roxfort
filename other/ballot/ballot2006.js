@@ -2,6 +2,7 @@
     const options = Array.from(document.querySelectorAll(".b06-option"));
     const comment = document.getElementById("ballotComment");
     const canvas = document.getElementById("ballotCanvas");
+    const brushCursor = document.getElementById("brushCursor");
     const output = document.getElementById("generatedCode");
     const generateButton = document.getElementById("generateCode");
     const resetButton = document.getElementById("resetBallot");
@@ -10,6 +11,9 @@
     const eraserCanvasButton = document.getElementById("eraserCanvas");
     const colorButtons = Array.from(document.querySelectorAll(".b06-color"));
     const sizeButtons = Array.from(document.querySelectorAll(".b06-size"));
+    const brushHexInput = document.getElementById("brushHexInput");
+    const applyHexColorButton = document.getElementById("applyHexColor");
+    const customColorPreview = document.getElementById("customColorPreview");
 
     const ctx = canvas.getContext("2d");
 
@@ -39,62 +43,122 @@
         return escapeHtml(value).replaceAll("\n","<br>");
     }
 
+    function updateBrushCursor(){
+        if(!brushCursor){
+            return;
+        }
+
+        const size = Math.max(brushSize,6);
+
+        brushCursor.style.width = size + "px";
+        brushCursor.style.height = size + "px";
+
+        if(brushMode === "erase"){
+            brushCursor.classList.add("is-eraser");
+            brushCursor.style.background = "rgba(255,255,255,.45)";
+        }else{
+            brushCursor.classList.remove("is-eraser");
+            brushCursor.style.background = brushColor;
+        }
+    }
+
+    function moveBrushCursor(event){
+        if(!brushCursor){
+            return;
+        }
+
+        const rect = canvas.getBoundingClientRect();
+
+        brushCursor.style.left = (event.clientX - rect.left) + "px";
+        brushCursor.style.top = (event.clientY - rect.top) + "px";
+    }
+
+    function showBrushCursor(){
+        if(brushCursor){
+            brushCursor.classList.add("is-visible");
+        }
+    }
+
+    function hideBrushCursor(){
+        if(brushCursor){
+            brushCursor.classList.remove("is-visible");
+        }
+    }
+
     function applyBrush(){
-    ctx.lineWidth = brushSize;
-    ctx.lineCap = "round";
-    ctx.lineJoin = "round";
+        ctx.lineWidth = brushSize;
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
 
-    if(brushMode === "erase"){
-        ctx.globalCompositeOperation = "destination-out";
-        ctx.strokeStyle = "rgba(0,0,0,1)";
-    }else{
+        if(brushMode === "erase"){
+            ctx.globalCompositeOperation = "destination-out";
+            ctx.strokeStyle = "rgba(0,0,0,1)";
+        }else{
+            ctx.globalCompositeOperation = "source-over";
+            ctx.strokeStyle = brushColor;
+        }
+
+        updateBrushCursor();
+    }
+
+    function saveCanvasState(){
+        undoStack.push(canvas.toDataURL("image/png"));
+
+        if(undoStack.length > maxUndoSteps){
+            undoStack.shift();
+        }
+    }
+
+    function undoCanvas(){
+        if(!undoStack.length){
+            return;
+        }
+
+        const previous = undoStack.pop();
+        const rect = canvas.getBoundingClientRect();
+
         ctx.globalCompositeOperation = "source-over";
-        ctx.strokeStyle = brushColor;
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+
+        const img = new Image();
+
+        img.onload = function(){
+            ctx.globalCompositeOperation = "source-over";
+            ctx.drawImage(img,0,0,rect.width,rect.height);
+            doodleDirty = true;
+            applyBrush();
+        };
+
+        img.src = previous;
+
+        if(!undoStack.length && previous){
+            doodleDirty = true;
+        }
     }
-}
 
+    function setEraseMode(){
+        brushMode = "erase";
 
-function saveCanvasState(){
-    undoStack.push(canvas.toDataURL("image/png"));
+        if(eraserCanvasButton){
+            eraserCanvasButton.classList.add("is-active");
+        }
 
-    if(undoStack.length > maxUndoSteps){
-        undoStack.shift();
-    }
-}
+        colorButtons.forEach(function(button){
+            button.classList.remove("is-active");
+        });
 
-function undoCanvas(){
-    if(!undoStack.length){
-        return;
-    }
-
-    const previous = undoStack.pop();
-    const rect = canvas.getBoundingClientRect();
-
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-
-    const img = new Image();
-    img.onload = function(){
-        ctx.globalCompositeOperation = "source-over";
-        ctx.drawImage(img,0,0,rect.width,rect.height);
         applyBrush();
-        doodleDirty = undoStack.length > 0 || previous !== "";
-    };
-    img.src = previous;
-}
+    }
 
-function setDrawMode(){
-    brushMode = "draw";
-    eraserCanvasButton.classList.remove("is-active");
-    applyBrush();
-}
+    function setDrawMode(){
+        brushMode = "draw";
 
-function setEraseMode(){
-    brushMode = "erase";
-    eraserCanvasButton.classList.add("is-active");
-    applyBrush();
-}
+        if(eraserCanvasButton){
+            eraserCanvasButton.classList.remove("is-active");
+        }
 
-
+        applyBrush();
+    }
 
     function setupCanvas(preserve){
         const previous = preserve && doodleDirty ? canvas.toDataURL("image/png") : "";
@@ -109,10 +173,13 @@ function setEraseMode(){
 
         if(previous){
             const img = new Image();
+
             img.onload = function(){
+                ctx.globalCompositeOperation = "source-over";
                 ctx.drawImage(img,0,0,rect.width,rect.height);
                 applyBrush();
             };
+
             img.src = previous;
         }
     }
@@ -127,10 +194,12 @@ function setEraseMode(){
     }
 
     function startDrawing(event){
-    saveCanvasState();
-    drawing = true;
-    doodleDirty = true;
-    applyBrush();
+        saveCanvasState();
+        drawing = true;
+        doodleDirty = true;
+        applyBrush();
+        moveBrushCursor(event);
+        showBrushCursor();
 
         const point = getPoint(event);
         ctx.beginPath();
@@ -154,6 +223,11 @@ function setEraseMode(){
         event.preventDefault();
     }
 
+    function handleCanvasMove(event){
+        moveBrushCursor(event);
+        draw(event);
+    }
+
     function stopDrawing(){
         if(!drawing){
             return;
@@ -164,14 +238,15 @@ function setEraseMode(){
     }
 
     function clearCanvas(){
-    if(doodleDirty){
-        saveCanvasState();
-    }
+        if(doodleDirty){
+            saveCanvasState();
+        }
 
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    doodleDirty = false;
-    applyBrush();
-}
+        ctx.globalCompositeOperation = "source-over";
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        doodleDirty = false;
+        applyBrush();
+    }
 
     function toggleOption(option){
         const mark = option.querySelector(".b06-mark");
@@ -202,6 +277,57 @@ function setEraseMode(){
         buttons.forEach(function(button){
             button.classList.toggle("is-active",button === activeButton);
         });
+    }
+
+    function normalizeHexColor(value){
+        let color = String(value || "").trim();
+
+        if(color && color[0] !== "#"){
+            color = "#" + color;
+        }
+
+        if(/^#[0-9a-fA-F]{3}$/.test(color)){
+            color = "#" + color[1] + color[1] + color[2] + color[2] + color[3] + color[3];
+        }
+
+        if(!/^#[0-9a-fA-F]{6}$/.test(color)){
+            return "";
+        }
+
+        return color.toLowerCase();
+    }
+
+    function setBrushColor(color,activeButton){
+        brushColor = color;
+        brushMode = "draw";
+
+        if(eraserCanvasButton){
+            eraserCanvasButton.classList.remove("is-active");
+        }
+
+        setActiveButton(colorButtons,activeButton);
+
+        if(customColorPreview){
+            customColorPreview.style.background = color;
+        }
+
+        if(brushHexInput){
+            brushHexInput.classList.remove("is-invalid");
+        }
+
+        applyBrush();
+    }
+
+    function applyCustomHexColor(){
+        const color = normalizeHexColor(brushHexInput.value);
+
+        if(!color){
+            brushHexInput.classList.add("is-invalid");
+            return;
+        }
+
+        setBrushColor(color,null);
+        brushHexInput.value = color;
     }
 
     function buildOptionHtml(party,candidate,logo,isSelected){
@@ -279,6 +405,7 @@ function setEraseMode(){
     function resetBallot(){
         comment.value = "";
         output.value = "";
+        undoStack = [];
 
         options.forEach(function(item){
             item.classList.remove("is-selected");
@@ -295,14 +422,32 @@ function setEraseMode(){
     });
 
     colorButtons.forEach(function(button){
-    button.addEventListener("click",function(){
-        brushColor = button.dataset.color;
-        brushMode = "draw";
-        eraserCanvasButton.classList.remove("is-active");
-        setActiveButton(colorButtons,button);
-        applyBrush();
+        button.addEventListener("click",function(){
+            setBrushColor(button.dataset.color,button);
+        });
     });
-});
+
+    if(applyHexColorButton){
+        applyHexColorButton.addEventListener("click",applyCustomHexColor);
+    }
+
+    if(brushHexInput){
+        brushHexInput.addEventListener("keydown",function(event){
+            if(event.key === "Enter"){
+                event.preventDefault();
+                applyCustomHexColor();
+            }
+        });
+
+        brushHexInput.addEventListener("input",function(){
+            const color = normalizeHexColor(brushHexInput.value);
+
+            if(color && customColorPreview){
+                customColorPreview.style.background = color;
+                brushHexInput.classList.remove("is-invalid");
+            }
+        });
+    }
 
     sizeButtons.forEach(function(button){
         button.addEventListener("click",function(){
@@ -312,8 +457,10 @@ function setEraseMode(){
         });
     });
 
+    canvas.addEventListener("pointerenter",showBrushCursor);
+    canvas.addEventListener("pointerleave",hideBrushCursor);
     canvas.addEventListener("pointerdown",startDrawing);
-    canvas.addEventListener("pointermove",draw);
+    canvas.addEventListener("pointermove",handleCanvasMove);
     window.addEventListener("pointerup",stopDrawing);
     window.addEventListener("pointercancel",stopDrawing);
 

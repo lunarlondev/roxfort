@@ -42,7 +42,6 @@ button,textarea{font:inherit;}
 .b06-ink-green{background:#00a651;}
 .b06-ink-pink{background:#ff4fb8;}
 .b06-ink-yellow{background:#ffe600;}
-.b06-ink-white{background:#ffffff;border-color:rgba(40,33,23,.45);}
 .b06-ghost-btn.is-active{background:#fff;border-color:rgba(40,33,23,.55);box-shadow:0 0 0 2px rgba(40,33,23,.12);}
 .b06-size{min-width:24px;height:22px;padding:0 6px;border:0;border-radius:999px;background:transparent;color:var(--ink);cursor:pointer;font-size:10px;font-weight:800;}
 .b06-size.is-active{background:#fff;box-shadow:0 1px 4px rgba(40,33,23,.12);}
@@ -67,3 +66,9 @@ button,textarea{font:inherit;}
 @media(max-width:560px){.b06-app{padding:10px 8px;}.b06-top{padding:12px;border-radius:16px;}.b06-top h1{font-size:24px;}.b06-editor-card,.b06-actions-card,.b06-output-card{padding:8px;border-radius:16px;}.b06-ballot{padding:13px;border-radius:14px;}.b06-ballot h2{font-size:20px;}.b06-year{font-size:17px;padding:7px 9px;}.b06-option{grid-template-columns:42px 1fr 34px;gap:8px;padding:8px;}.b06-logo{width:42px;height:42px;border-radius:12px;}.b06-logo img{width:32px;height:32px;}.b06-option-text strong{font-size:15px;}.b06-mark{width:32px;height:32px;font-size:22px;border-radius:9px;}.b06-doodle-bar{align-items:flex-start;flex-direction:column;}.b06-doodle-tools{justify-content:flex-start;}.b06-actions-card{grid-template-columns:1fr;}.b06-btn-soft{width:100%;}.b06-canvas{aspect-ratio:1/1;}}
 #eraserCanvas{border:1px solid rgba(40,33,23,.45);}
 #eraserCanvas.is-active{border-color:#282117;box-shadow:0 0 0 2px rgba(40,33,23,.14);background:#fff;}
+
+.b06-canvas-wrap{position:relative;width:100%;aspect-ratio:1/1;}
+.b06-canvas-wrap .b06-canvas{width:100%;height:100%;cursor:none;}
+.b06-brush-cursor{position:absolute;left:0;top:0;width:10px;height:10px;border:1px solid rgba(40,33,23,.75);border-radius:999px;background:rgba(40,33,23,.18);transform:translate(-50%,-50%);pointer-events:none;opacity:0;z-index:5;mix-blend-mode:multiply;}
+.b06-brush-cursor.is-visible{opacity:1;}
+.b06-brush-cursor.is-eraser{background:rgba(255,255,255,.45);border:1px dashed rgba(40,33,23,.85);mix-blend-mode:normal;}

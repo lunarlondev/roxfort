@@ -60,29 +60,37 @@
 
                                 <div class="b06-doodle-tools">
                                     <div class="b06-tool-group" aria-label="Firka színe">
-                                        <button class="b06-color is-active b06-ink-dark" type="button" data-color="#282117" title="Sötét"></button>
-<button class="b06-color b06-ink-white" type="button" data-color="#ffffff" title="Fehér"></button>
-<button class="b06-color b06-ink-red" type="button" data-color="#d71920" title="Piros"></button>
-<button class="b06-color b06-ink-blue" type="button" data-color="#0057ff" title="Kék"></button>
-<button class="b06-color b06-ink-green" type="button" data-color="#00a651" title="Zöld"></button>
-<button class="b06-color b06-ink-pink" type="button" data-color="#ff4fb8" title="Rózsaszín"></button></button>
-<button class="b06-color b06-ink-yellow" type="button" data-color="#ffe600" title="Citromsárga"></button>
-                                    </div>
+    <button class="b06-color is-active b06-ink-dark" type="button" data-color="#282117" title="Sötét"></button>
+    <button class="b06-color b06-ink-red" type="button" data-color="#d71920" title="Piros"></button>
+    <button class="b06-color b06-ink-blue" type="button" data-color="#0057ff" title="Kék"></button>
+    <button class="b06-color b06-ink-green" type="button" data-color="#00a651" title="Zöld"></button>
+    <button class="b06-color b06-ink-pink" type="button" data-color="#ff4fb8" title="Rózsaszín"></button>
+    <button class="b06-color b06-ink-yellow" type="button" data-color="#ffe600" title="Citromsárga"></button>
+</div>
+
+<div class="b06-tool-group b06-hex-group" aria-label="Egyedi hex szín">
+    <span class="b06-custom-preview" id="customColorPreview"></span>
+    <input class="b06-hex-input" id="brushHexInput" type="text" maxlength="7" placeholder="#8b00ff">
+    <button class="b06-hex-btn" id="applyHexColor" type="button">OK</button>
+</div>
 
                                     <div class="b06-tool-group" aria-label="Ecsetméret">
-                                        <button class="b06-size is-active" type="button" data-size="2.25">S</button>
-                                        <button class="b06-size" type="button" data-size="4.5">M</button>
-                                        <button class="b06-size" type="button" data-size="7">L</button>
-					<button class="b06-size" type="button" data-size="12">XL</button>
-					<button class="b06-size" type="button" data-size="36">XXL</button>
-                                    </div>
+    <button class="b06-size is-active b06-size-s" type="button" data-size="2.25"><span></span>S</button>
+    <button class="b06-size b06-size-m" type="button" data-size="4.5"><span></span>M</button>
+    <button class="b06-size b06-size-l" type="button" data-size="7"><span></span>L</button>
+    <button class="b06-size b06-size-xl" type="button" data-size="12"><span></span>XL</button>
+    <button class="b06-size b06-size-xxl" type="button" data-size="36"><span></span>XXL</button>
+</div>
                                     <button class="b06-ghost-btn" type="button" id="undoCanvas">Vissza</button>
                                     <button class="b06-ghost-btn" type="button" id="eraserCanvas">Radír</button>
                                     <button class="b06-ghost-btn" type="button" id="clearCanvas">Firka törlése</button>
                                 </div>
                             </div>
 
-                            <canvas id="ballotCanvas" class="b06-canvas"></canvas>
+                            <div class="b06-canvas-wrap">
+    <canvas id="ballotCanvas" class="b06-canvas"></canvas>
+    <span id="brushCursor" class="b06-brush-cursor"></span>
+</div>
                         </div>
                     </article>
                 </section>
