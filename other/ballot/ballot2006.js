@@ -265,13 +265,30 @@
             });
     }
 
+
+function getCompressedDoodleDataUrl(){
+    const exportSize = 260;
+    const exportCanvas = document.createElement("canvas");
+    const exportCtx = exportCanvas.getContext("2d");
+
+    exportCanvas.width = exportSize;
+    exportCanvas.height = exportSize;
+
+    exportCtx.fillStyle = "#ffffff";
+    exportCtx.fillRect(0,0,exportSize,exportSize);
+    exportCtx.drawImage(canvas,0,0,exportSize,exportSize);
+
+    return exportCanvas.toDataURL("image/jpeg",0.72);
+}
+
+
     function getBallotData(){
-        return {
-            selectedParties: getSelectedParties(),
-            comment: comment.value.trim(),
-            doodle: doodleDirty ? canvas.toDataURL("image/png") : ""
-        };
-    }
+    return {
+        selectedParties: getSelectedParties(),
+        comment: comment.value.trim(),
+        doodle: doodleDirty ? getCompressedDoodleDataUrl() : ""
+    };
+}
 
     function setActiveButton(buttons,activeButton){
         buttons.forEach(function(button){
@@ -379,7 +396,7 @@
             '.b06s-mark{display:grid;place-items:center;width:32px;height:32px;border:2px solid #282117;border-radius:9px;background:rgba(255,255,255,.72);font-family:Arial,sans-serif;font-size:22px;font-weight:800;line-height:1;}',
             '.b06s-extras{margin-top:10px;padding-top:9px;border-top:1px dashed rgba(74,57,33,.18);}',
             '.b06s-comment{padding:7px 9px;border-radius:12px;background:rgba(255,255,255,.34);font-size:12px;line-height:1.45;color:#3d3223;font-style:italic;}',
-            '.b06s-doodle{display:block;width:100%;height:auto;margin-top:7px;border-radius:13px;border:1px solid rgba(74,57,33,.16);background:#fff;}',
+            '.b06s-doodle{display:block;width:min(100%,220px);height:auto;margin:7px auto 0;border-radius:13px;border:1px solid rgba(74,57,33,.16);background:#fff;}',
             '</style>',
             '<div class="b06s-head">',
             '<div>',
