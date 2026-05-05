@@ -54,3 +54,6 @@ elme (emberi elmére ható varázslatok, pl memory charmok, legilimencia)
 
 
 Nyelvragasztó-rontás: A célpont nyelvét a szájpadlásához ragasztja, így az nem tud beszélni
+
+
+bla
