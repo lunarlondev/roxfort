@@ -6,6 +6,7 @@
     const output = document.getElementById("generatedCode");
     const generateButton = document.getElementById("generateCode");
     const resetButton = document.getElementById("resetBallot");
+    const invalidButtons = Array.from(document.querySelectorAll(".b06-invalid-choice"));
     const clearCanvasButton = document.getElementById("clearCanvas");
     const undoCanvasButton = document.getElementById("undoCanvas");
     const eraserCanvasButton = document.getElementById("eraserCanvas");
@@ -27,6 +28,7 @@
     let brushColor = "#282117";
     let brushSize = 2.25;
     let brushMode = "draw";
+    let invalidParty = "";
     let undoStack = [];
     const maxUndoSteps = 30;
 
@@ -248,7 +250,44 @@
         applyBrush();
     }
 
+    function clearSelectedOptions(){
+        options.forEach(function(option){
+            option.classList.remove("is-selected");
+            option.classList.remove("is-invalid-vote");
+            option.querySelector(".b06-mark").textContent = "";
+        });
+
+        invalidButtons.forEach(function(button){
+            button.classList.remove("is-active");
+        });
+    }
+
+    function renderInvalidVoteState(){
+        invalidButtons.forEach(function(button){
+            button.classList.toggle("is-active",invalidParty === button.dataset.invalidParty);
+        });
+
+        options.forEach(function(option){
+            const isInvalid = invalidParty === option.dataset.party;
+            option.classList.toggle("is-invalid-vote",isInvalid);
+
+            if(isInvalid){
+                option.querySelector(".b06-mark").textContent = "";
+            }
+        });
+    }
+
+    function toggleInvalidVote(party){
+        const isSameParty = invalidParty === party;
+        clearSelectedOptions();
+        invalidParty = isSameParty ? "" : party;
+        renderInvalidVoteState();
+    }
+
     function toggleOption(option){
+        invalidParty = "";
+        renderInvalidVoteState();
+
         const mark = option.querySelector(".b06-mark");
         const isSelected = option.classList.toggle("is-selected");
 
@@ -285,6 +324,7 @@ function getCompressedDoodleDataUrl(){
     function getBallotData(){
     return {
         selectedParties: getSelectedParties(),
+        invalidParty: invalidParty,
         comment: comment.value.trim(),
         doodle: doodleDirty ? getCompressedDoodleDataUrl() : ""
     };
@@ -347,9 +387,15 @@ function getCompressedDoodleDataUrl(){
         brushHexInput.value = color;
     }
 
-    function buildOptionHtml(party,candidate,logo,isSelected){
+    function buildOptionHtml(party,candidate,logo,isSelected,isInvalid){
+        const optionClass = [
+            "b06s-option",
+            isSelected ? "b06s-option-selected" : "",
+            isInvalid ? "b06s-option-invalid" : ""
+        ].filter(Boolean).join(" ");
+
         return [
-            '<div class="b06s-option ' + (isSelected ? 'b06s-option-selected' : '') + '">',
+            '<div class="' + optionClass + '">',
             '<img class="b06s-logo" src="' + escapeHtml(logo) + '" alt="">',
             '<div class="b06s-option-text">',
             '<strong>' + escapeHtml(party) + '</strong>',
@@ -361,8 +407,8 @@ function getCompressedDoodleDataUrl(){
     }
 
     function buildGeneratedCode(data){
-        const optionHtml = allOptions.map(function(item){
-            return buildOptionHtml(item.party,item.candidate,item.logo,data.selectedParties.includes(item.party));
+        const optionHtml = allOptions.map(function(item,index){
+            return buildOptionHtml(item.party,item.candidate,item.logo,data.selectedParties.includes(item.party),data.invalidParty === item.party);
         }).join("\n");
 
         const extras = [];
@@ -389,11 +435,14 @@ function getCompressedDoodleDataUrl(){
             '.b06s-list{display:grid;gap:7px;}',
             '.b06s-option{display:grid;grid-template-columns:43px 1fr 34px;gap:8px;align-items:center;padding:8px;border:1px solid rgba(74,57,33,.16);border-radius:14px;background:rgba(255,255,255,.38);}',
             '.b06s-option-selected{background:#fff;box-shadow:inset 0 0 0 1px rgba(40,33,23,.08);}',
+            '.b06s-option-invalid{background:#fff7ea;box-shadow:inset 0 0 0 1px rgba(40,33,23,.08);}',
             '.b06s-logo{display:block;width:43px;height:43px;object-fit:contain;border-radius:13px;background:#fff;border:1px solid rgba(74,57,33,.14);padding:4px;}',
             '.b06s-option-text{display:grid;gap:2px;}',
             '.b06s-option-text strong{font-family:Georgia,"Times New Roman",serif;font-size:15px;line-height:1.08;color:#282117;}',
             '.b06s-option-text em{font-style:normal;text-transform:uppercase;letter-spacing:1.05px;font-size:9px;color:#78674d;}',
-            '.b06s-mark{display:grid;place-items:center;width:32px;height:32px;border:2px solid #282117;border-radius:9px;background:rgba(255,255,255,.72);font-family:Arial,sans-serif;font-size:22px;font-weight:800;line-height:1;}',
+            '.b06s-mark{position:relative;display:grid;place-items:center;width:32px;height:32px;border:2px solid #282117;border-radius:9px;background:rgba(255,255,255,.72);font-family:Arial,sans-serif;font-size:22px;font-weight:800;line-height:1;overflow:visible;}',
+            '.b06s-option-invalid .b06s-mark{color:transparent;}',
+            '.b06s-option-invalid .b06s-mark:after{content:"X";position:absolute;right:-15px;top:50%;transform:translateY(-53%) rotate(-9deg);color:#282117;font-size:25px;font-weight:900;line-height:1;}',
             '.b06s-extras{margin-top:10px;padding-top:9px;border-top:1px dashed rgba(74,57,33,.18);}',
             '.b06s-comment{padding:7px 9px;border-radius:12px;background:rgba(255,255,255,.34);font-size:12px;line-height:1.45;color:#3d3223;font-style:italic;}',
             '.b06s-doodle{display:block;width:min(100%,220px);height:auto;margin:7px auto 0;border-radius:13px;border:1px solid rgba(74,57,33,.16);background:#fff;}',
@@ -423,18 +472,22 @@ function getCompressedDoodleDataUrl(){
         comment.value = "";
         output.value = "";
         undoStack = [];
+        invalidParty = "";
 
-        options.forEach(function(item){
-            item.classList.remove("is-selected");
-            item.querySelector(".b06-mark").textContent = "";
-        });
-
+        clearSelectedOptions();
+        renderInvalidVoteState();
         clearCanvas();
     }
 
     options.forEach(function(option){
         option.addEventListener("click",function(){
             toggleOption(option);
+        });
+    });
+
+    invalidButtons.forEach(function(button){
+        button.addEventListener("click",function(){
+            toggleInvalidVote(button.dataset.invalidParty);
         });
     });
 
@@ -491,5 +544,6 @@ function getCompressedDoodleDataUrl(){
         setupCanvas(true);
     });
 
+    renderInvalidVoteState();
     setupCanvas(false);
 })();

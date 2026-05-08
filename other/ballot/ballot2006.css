@@ -19,6 +19,7 @@ button,textarea{font:inherit;}
 .b06-ballot h2{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:24px;line-height:1.05;color:var(--ink);}
 .b06-year{flex:0 0 auto;padding:8px 11px;border:1px solid var(--line);border-radius:12px;background:var(--white-soft);font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:700;color:var(--ink);}
 .b06-options{position:relative;display:grid;gap:8px;}
+.b06-option-row{display:grid;grid-template-columns:minmax(0,1fr) 118px;gap:8px;align-items:stretch;}
 .b06-option{display:grid;grid-template-columns:48px 1fr 38px;gap:10px;align-items:center;width:100%;padding:9px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.38);color:var(--ink);cursor:pointer;text-align:left;transition:transform .15s ease,background .15s ease,border-color .15s ease,box-shadow .15s ease;}
 .b06-option:hover{transform:translateY(-1px);background:rgba(255,255,255,.76);border-color:var(--line-strong);box-shadow:0 8px 20px rgba(64,47,25,.08);}
 .b06-option.is-selected{background:#fff;border-color:rgba(40,33,23,.55);box-shadow:0 8px 22px rgba(64,47,25,.1),inset 0 0 0 1px rgba(40,33,23,.08);}
@@ -27,7 +28,14 @@ button,textarea{font:inherit;}
 .b06-option-text{display:grid;gap:2px;min-width:0;}
 .b06-option-text strong{font-family:Georgia,"Times New Roman",serif;font-size:17px;line-height:1.1;color:var(--ink);}
 .b06-option-text em{font-style:normal;text-transform:uppercase;letter-spacing:1.15px;font-size:9px;color:var(--muted);}
-.b06-mark{display:grid;place-items:center;width:36px;height:36px;border:2px solid var(--ink);border-radius:11px;background:rgba(255,255,255,.74);font-family:Arial,sans-serif;font-size:24px;font-weight:800;line-height:1;color:var(--ink);}
+.b06-mark{position:relative;display:grid;place-items:center;width:36px;height:36px;border:2px solid var(--ink);border-radius:11px;background:rgba(255,255,255,.74);font-family:Arial,sans-serif;font-size:24px;font-weight:800;line-height:1;color:var(--ink);overflow:visible;}
+.b06-option.is-invalid-vote{background:#fff7ea;border-color:rgba(40,33,23,.42);box-shadow:0 8px 22px rgba(64,47,25,.08),inset 0 0 0 1px rgba(40,33,23,.06);}
+.b06-option.is-invalid-vote .b06-mark{color:transparent;}
+.b06-option.is-invalid-vote .b06-mark:after{content:"X";position:absolute;right:-17px;top:50%;transform:translateY(-53%) rotate(-9deg);color:var(--ink);font-size:26px;font-weight:900;line-height:1;}
+.b06-invalid-choice{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:100%;padding:8px 7px;border:1px dashed var(--line-strong);border-radius:15px;background:rgba(255,255,255,.28);color:var(--muted);cursor:pointer;text-align:center;font-size:10px;font-weight:800;line-height:1.15;transition:transform .15s ease,background .15s ease,border-color .15s ease,color .15s ease;}
+.b06-invalid-choice:hover{transform:translateY(-1px);background:#fff;border-color:var(--line-strong);color:var(--ink);}
+.b06-invalid-choice.is-active{background:#282117;border-color:#282117;color:#f5eedc;box-shadow:0 0 0 2px rgba(40,33,23,.12);}
+.b06-invalid-x{display:grid;place-items:center;width:24px;height:24px;border:2px solid currentColor;border-radius:8px;font-family:Arial,sans-serif;font-size:18px;font-weight:900;line-height:1;transform:rotate(-9deg);}
 .b06-freeform{position:relative;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line-strong);}
 .b06-comment{display:block;width:100%;min-height:64px;padding:10px 11px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.48);color:var(--ink);resize:vertical;outline:none;font-size:13px;line-height:1.45;}
 .b06-comment:focus{background:#fff;border-color:rgba(40,33,23,.48);box-shadow:0 0 0 4px rgba(74,57,33,.08);}
@@ -63,7 +71,7 @@ button,textarea{font:inherit;}
 .b06-source-link a,.b06-source-link a:visited{color:#f2d28d;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-weight:700;}
 .b06-source-link a:hover{color:#fff0bd;}
 @media(max-width:860px){.b06-grid{grid-template-columns:1fr;}.b06-top{align-items:start;flex-direction:column;}.b06-top p{text-align:left;max-width:100%;}.b06-output{min-height:230px;}.b06-canvas{max-height:560px;}}
-@media(max-width:560px){.b06-app{padding:10px 8px;}.b06-top{padding:12px;border-radius:16px;}.b06-top h1{font-size:24px;}.b06-editor-card,.b06-actions-card,.b06-output-card{padding:8px;border-radius:16px;}.b06-ballot{padding:13px;border-radius:14px;}.b06-ballot h2{font-size:20px;}.b06-year{font-size:17px;padding:7px 9px;}.b06-option{grid-template-columns:42px 1fr 34px;gap:8px;padding:8px;}.b06-logo{width:42px;height:42px;border-radius:12px;}.b06-logo img{width:32px;height:32px;}.b06-option-text strong{font-size:15px;}.b06-mark{width:32px;height:32px;font-size:22px;border-radius:9px;}.b06-doodle-bar{align-items:flex-start;flex-direction:column;}.b06-doodle-tools{justify-content:flex-start;}.b06-actions-card{grid-template-columns:1fr;}.b06-btn-soft{width:100%;}.b06-canvas{aspect-ratio:1/1;}}
+@media(max-width:560px){.b06-app{padding:10px 8px;}.b06-top{padding:12px;border-radius:16px;}.b06-top h1{font-size:24px;}.b06-editor-card,.b06-actions-card,.b06-output-card{padding:8px;border-radius:16px;}.b06-ballot{padding:13px;border-radius:14px;}.b06-ballot h2{font-size:20px;}.b06-year{font-size:17px;padding:7px 9px;}.b06-option-row{grid-template-columns:1fr;}.b06-option{grid-template-columns:42px 1fr 34px;gap:8px;padding:8px;}.b06-logo{width:42px;height:42px;border-radius:12px;}.b06-logo img{width:32px;height:32px;}.b06-option-text strong{font-size:15px;}.b06-mark{width:32px;height:32px;font-size:22px;border-radius:9px;}.b06-option.is-invalid-vote .b06-mark:after{right:-13px;font-size:24px;}.b06-invalid-choice{min-height:40px;flex-direction:row;}.b06-invalid-x{width:22px;height:22px;font-size:16px;}.b06-doodle-bar{align-items:flex-start;flex-direction:column;}.b06-doodle-tools{justify-content:flex-start;}.b06-actions-card{grid-template-columns:1fr;}.b06-btn-soft{width:100%;}.b06-canvas{aspect-ratio:1/1;}}
 #eraserCanvas{border:1px solid rgba(40,33,23,.45);}
 #eraserCanvas.is-active{border-color:#282117;box-shadow:0 0 0 2px rgba(40,33,23,.14);background:#fff;}
 
