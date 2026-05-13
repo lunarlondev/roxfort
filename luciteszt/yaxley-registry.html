@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucinda Yaxley - Kapcsolatok</title>
+  <link rel="stylesheet" href="yaxley-registry.css">
+</head>
+<body>
+
+<div class="yaxley-registry">
+  <div class="yaxley-registry-wrap">
+    <div class="yax-header">
+      <div class="yax-title-section">
+        <div class="yax-main-title" aria-label="Lucinda Yaxley"><span>L</span><span>u</span><span>c</span><span>i</span><span>n</span><span>d</span><span>a</span><span class="yax-hidden-gap">q</span><span>Y</span><span>a</span><span>x</span><span>l</span><span>e</span><span>y</span></div>
+        <div class="yax-title-sub">Kapcsolatok</div>
+      </div>
+      <div class="yax-crown-wrap">
+        <img class="yax-crown-img" src="https://i.pinimg.com/originals/b0/50/7f/b0507f0932af2f971ba531a2a3278790.gif" alt="Crown">
+        <div class="yax-crown-caption">The Crown</div>
+      </div>
+    </div>
+
+    <div class="yax-ornament">
+      <div class="yax-ornament-line"></div>
+      <div class="yax-ornament-diamond"></div>
+      <div class="yax-ornament-line"></div>
+    </div>
+
+    <div class="yax-section-title">Kapcsolattípusok</div>
+
+    <div class="yax-contact-tabs">
+      <button class="yax-contact-tab active" onclick="showYaxContact('friends', this)">Barát</button>
+      <button class="yax-contact-tab" onclick="showYaxContact('enemies', this)">Ellenség</button>
+      <button class="yax-contact-tab" onclick="showYaxContact('loves', this)">Szerelem</button>
+      <button class="yax-contact-tab" onclick="showYaxContact('other', this)">Egyéb</button>
+    </div>
+
+    <div class="yax-contact-display" id="yaxContactDisplay">
+      <div class="yax-relation-item">
+        <img class="yax-relation-avatar" id="yaxContactImg" src="https://i.pinimg.com/736x/eb/08/92/eb08927869dff3a572cdd9a9d892861d.jpg" alt="Friend">
+        <div class="yax-relation-info">
+          <div class="yax-relation-name" id="yaxContactName">Közel a távolsághoz</div>
+          <div class="yax-relation-desc" id="yaxContactDesc">Sosem tagadtam, hogy nem könnyű velem a barátság, nincs is sok belőle. Nehezen nyílok meg és ritkán lelkesedem látványosan, ráadásul leginkább a saját céljaim vezérelnek. Viszont különösen jól látom az emberekben a potenciált, a tehetséget és azokat az értékeket, amik elsőre nem mindenkinek tűnnek fel. Ha mégis elnyernéd a bizalmamat, barátságom csendes, visszafogott tele rengeteg elvárással, de cserébe mindent az eszembe vések.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="yax-ornament">
+      <div class="yax-ornament-line"></div>
+      <div class="yax-ornament-diamond"></div>
+      <div class="yax-ornament-line"></div>
+    </div>
+
+    <div class="yax-generator-section">
+      <div class="yax-section-title">Küldj egy baglyot</div>
+
+      <div class="yax-input-group">
+        <label class="yax-input-label">Cím</label>
+        <input type="text" class="yax-input" id="yaxLetterTitle" placeholder="Add meg a levél címét...">
+      </div>
+
+      <div class="yax-input-group">
+        <label class="yax-input-label">Üzenet</label>
+        <textarea class="yax-textarea" id="yaxLetterMessage" placeholder="Írd meg az üzenetet..."></textarea>
+      </div>
+
+      <div class="yax-input-group">
+        <label class="yax-input-label">Aláírás</label>
+        <input type="text" class="yax-input" id="yaxLetterSignature" placeholder="Aláírás...">
+      </div>
+
+      <button class="yax-gen-button" onclick="generateYaxleyLetter()">HTML Kód Generálása</button>
+
+      <div class="yax-inline-output" id="yaxInlineOutput">
+        <div class="yax-output-header">
+          <div class="yax-output-title">Generált HTML Kód</div>
+          <button class="yax-copy-button" onclick="copyYaxleyLetterCode()">Másolás</button>
+        </div>
+        <textarea class="yax-output-code" id="yaxOutputCode" readonly></textarea>
+        <div class="yax-copy-status" id="yaxCopyStatus"></div>
+        <div class="yax-output-preview-title">Előnézet</div>
+        <div class="yax-output-preview" id="yaxOutputPreview"></div>
+      </div>
+    </div>
+
+    <div class="yax-footer">Yaxley - est. 1620</div>
+  </div>
+</div>
+
+<script src="yaxley-registry.js"></script>
+
+</body>
+</html>
