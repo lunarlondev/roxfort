@@ -8,7 +8,6 @@ body {
   background: #0e1214;
 }
 
-/* Skinhez igazított scrollbar */
 html {
   scrollbar-width: thin;
   scrollbar-color: #4b7e8a #0e1214;
@@ -50,9 +49,6 @@ body::-webkit-scrollbar-thumb:hover,
   background: linear-gradient(180deg, #a2c3c9, #5e96a3);
 }
 
-.yaxley-registry {
-  box-sizing: border-box;
-}
 
 .yaxley-registry * {
   box-sizing: border-box;
@@ -71,7 +67,6 @@ body::-webkit-scrollbar-thumb:hover,
   --yax-border-mid: rgba(131, 173, 181, 0.4);
   --yax-text: #c8d8da;
   --yax-text-dim: #7a9499;
-
   width: 600px;
   max-width: 100%;
   min-height: 400px;
@@ -143,9 +138,7 @@ body::-webkit-scrollbar-thumb:hover,
 }
 
 @keyframes yax-write-in {
-  to {
-    opacity: 1;
-  }
+  to { opacity: 1; }
 }
 
 .yax-main-title span:nth-child(1) { animation-delay: 0.05s; }
@@ -340,6 +333,39 @@ body::-webkit-scrollbar-thumb:hover,
   margin-bottom: 6px;
 }
 
+
+.yax-form-message {
+  display: none;
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  background: rgba(74, 18, 28, 0.34);
+  border: 1px solid rgba(174, 72, 87, 0.55);
+  border-left: 4px solid rgba(174, 72, 87, 0.85);
+  border-radius: 2px;
+  box-shadow: 0 0 14px rgba(174, 72, 87, 0.12), inset 0 0 12px rgba(174, 72, 87, 0.08);
+  font-family: 'Libre Baskerville', serif;
+  font-size: 9px;
+  line-height: 1.55;
+  color: #d8a7ae;
+  text-align: center;
+}
+
+.yax-form-message.active {
+  display: block;
+}
+
+.yax-input.yax-field-error,
+.yax-textarea.yax-field-error {
+  border-color: rgba(174, 72, 87, 0.85);
+  box-shadow: 0 0 10px rgba(174, 72, 87, 0.24), inset 0 0 8px rgba(174, 72, 87, 0.08);
+}
+
+.yax-input.yax-field-error:focus,
+.yax-textarea.yax-field-error:focus {
+  border-color: rgba(218, 112, 125, 0.95);
+  box-shadow: 0 0 12px rgba(218, 112, 125, 0.32), inset 0 0 8px rgba(174, 72, 87, 0.08);
+}
+
 .yax-input,
 .yax-textarea {
   width: 100%;
@@ -450,9 +476,6 @@ body::-webkit-scrollbar-thumb:hover,
   white-space: pre-wrap;
   word-break: break-word;
   user-select: text;
-
-  scrollbar-width: thin;
-  scrollbar-color: var(--yax-teal-dark) var(--yax-bg);
 }
 
 .yax-copy-status {
@@ -489,12 +512,8 @@ body::-webkit-scrollbar-thumb:hover,
   overflow: hidden;
   border: 1px solid rgba(131, 173, 181, 0.26);
   border-radius: 4px;
-  background: radial-gradient(circle at 50% 18%, rgba(131, 173, 181, 0.08), transparent 32%),
-              radial-gradient(circle at 50% 88%, rgba(75, 126, 138, 0.1), transparent 28%),
-              linear-gradient(180deg, #141a1d 0%, #0e1214 100%);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.48),
-              inset 0 0 34px rgba(131, 173, 181, 0.05),
-              inset 0 0 70px rgba(0, 0, 0, 0.5);
+  background: radial-gradient(circle at 50% 18%, rgba(131, 173, 181, 0.08), transparent 32%), radial-gradient(circle at 50% 88%, rgba(75, 126, 138, 0.1), transparent 28%), linear-gradient(180deg, #141a1d 0%, #0e1214 100%);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.48), inset 0 0 34px rgba(131, 173, 181, 0.05), inset 0 0 70px rgba(0, 0, 0, 0.5);
   font-family: 'Libre Baskerville', Georgia, serif;
   color: #83adb5;
 }
