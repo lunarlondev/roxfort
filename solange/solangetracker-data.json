@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "Solange Laveau",
+    "subtitle": "játékkövető",
+    "intro": "Játékok kategória, tanév, státusz és szereplők szerint rendezve.",
+    "heroImage": "images/snake2.jpg",
+    "defaultImage": "images/gif/kkny.gif"
+  },
+  "categories": [
+    {
+      "id": "past",
+      "title": "Múlt",
+      "open": true
+    },
+    {
+      "id": "year-2005-2006",
+      "title": "2005/2006 tanév",
+      "open": true
+    },
+    {
+      "id": "year-2006-2007",
+      "title": "2006/2007 tanév",
+      "open": false
+    },
+    {
+      "id": "outside-time",
+      "title": "Időn kívüli",
+      "open": false
+    }
+  ],
+  "games": [
+    {
+      "id": "elotortenet",
+      "categoryId": "past",
+      "title": "Előtörténet",
+      "status": "closed",
+      "characters": ["Solange Laveau", "Naya Laveau"],
+      "date": "2005 előtt",
+      "topic": "előtörténet",
+      "location": "New Orleans",
+      "summary": "Solange és Naya múltjának egyik fontos szelete.",
+      "link": "#",
+      "image": "images/games/elotortenet.jpg",
+      "tags": ["múlt", "család", "New Orleans"]
+    },
+    {
+      "id": "aktiv-jatek-2005",
+      "categoryId": "year-2005-2006",
+      "title": "Aktív játék címe",
+      "status": "active",
+      "characters": ["Solange Laveau", "Karakter A"],
+      "date": "2005. 09. 12.",
+      "topic": "Trimágus Tusa",
+      "location": "Roxfort",
+      "summary": "Aktív játék rövid leírása.",
+      "link": "#",
+      "image": "images/games/aktiv-jatek-2005.jpg",
+      "tags": ["aktív", "Roxfort", "Trimágus Tusa"]
+    },
+    {
+      "id": "lezart-jatek-2006",
+      "categoryId": "year-2006-2007",
+      "title": "2006/2007-es játék címe",
+      "status": "closed",
+      "characters": ["Solange Laveau", "Karakter B"],
+      "date": "2006. 09. 20.",
+      "topic": "új tanév",
+      "location": "Roxfort",
+      "summary": "Ide kerülhet a 2006/2007-es tanévhez tartozó játék leírása.",
+      "link": "#",
+      "image": "images/games/lezart-jatek-2006.jpg",
+      "tags": ["lezárt", "2006/2007"]
+    },
+    {
+      "id": "idon-kivuli-jatek",
+      "categoryId": "outside-time",
+      "title": "Időn kívüli jelenet",
+      "status": "active",
+      "characters": ["Solange Laveau", "Karakter C"],
+      "date": "időn kívül",
+      "topic": "AU / extra / nem kronologikus játék",
+      "location": "változó",
+      "summary": "Olyan játék, ami nem illeszkedik szorosan a tanévi idővonalba.",
+      "link": "#",
+      "image": "images/games/idon-kivuli-jatek.jpg",
+      "tags": ["időn kívüli", "extra"]
+    }
+  ]
+}
