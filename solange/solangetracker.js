@@ -16,7 +16,6 @@ const solangetrackerDom = {
   filters: document.querySelectorAll(".solangetracker-filter"),
   openAll: document.getElementById("solangetrackerOpenAll"),
   closeAll: document.getElementById("solangetrackerCloseAll"),
-  random: document.getElementById("solangetrackerRandom"),
   stats: document.getElementById("solangetrackerStats"),
   reader: document.getElementById("solangetrackerReader"),
   list: document.getElementById("solangetrackerList"),
@@ -74,6 +73,10 @@ function solangetrackerSetImage(img, src){
   }, { once: true });
 }
 
+function solangetrackerCategoryId(game){
+  return game.categoryId || game.category || "other";
+}
+
 function solangetrackerGetCategories(){
   const categories = solangetrackerState.data?.categories;
 
@@ -98,10 +101,6 @@ function solangetrackerGetCategories(){
       title: id,
       open: false
     }));
-}
-
-function solangetrackerCategoryId(game){
-  return game.categoryId || game.category || "other";
 }
 
 function solangetrackerCategoryTitle(categoryId){
@@ -457,17 +456,6 @@ function solangetrackerCloseAllCategories(){
   solangetrackerRenderList();
 }
 
-function solangetrackerRandomVisible(){
-  const pool = solangetrackerGetFilteredGames();
-
-  if (pool.length === 0) {
-    return;
-  }
-
-  const randomIndex = Math.floor(Math.random() * pool.length);
-  solangetrackerSelectGame(pool[randomIndex].id);
-}
-
 function solangetrackerApplyMeta(data){
   const meta = data.meta || {};
 
@@ -504,7 +492,6 @@ function solangetrackerInitEvents(){
 
   solangetrackerDom.openAll.addEventListener("click", solangetrackerOpenAllCategories);
   solangetrackerDom.closeAll.addEventListener("click", solangetrackerCloseAllCategories);
-  solangetrackerDom.random.addEventListener("click", solangetrackerRandomVisible);
 }
 
 async function solangetrackerLoad(){

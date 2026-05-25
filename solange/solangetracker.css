@@ -239,7 +239,7 @@ body{
 }
 
 .solangetracker-actions{
-  justify-content:space-between;
+  justify-content:flex-start;
 }
 
 .solangetracker-btn{
@@ -269,30 +269,6 @@ body{
 .solangetracker-subtle{
   border-color:rgba(232,214,176,0.12);
   color:var(--solangetracker-muted);
-}
-
-.solangetracker-random{
-  appearance:none;
-  border:none;
-  background:none;
-  cursor:pointer;
-  padding:0;
-  margin-left:auto;
-  transition:transform 180ms ease;
-}
-
-.solangetracker-random:hover{
-  transform:scale(1.08);
-}
-
-.solangetracker-random img{
-  width:58px;
-  height:58px;
-  object-fit:cover;
-  border-radius:999px;
-  border:1px solid rgba(182,144,78,0.35);
-  box-shadow:0 0 16px rgba(182,144,78,0.25);
-  display:block;
 }
 
 .solangetracker-stats{
@@ -597,6 +573,18 @@ body{
   color:#ffe2a8;
 }
 
+.solangetracker-status-planned{
+  background:#172b3a;
+  border-color:#24506c;
+  color:#b9e2ff;
+}
+
+.solangetracker-status-stuck{
+  background:#3a2417;
+  border-color:#7c3d24;
+  color:#ffd0a8;
+}
+
 .solangetracker-game-info{
   margin-top:8px;
   display:grid;
@@ -728,9 +716,5 @@ body{
 
   .solangetracker-actions{
     justify-content:flex-start;
-  }
-
-  .solangetracker-random{
-    margin-left:0;
   }
 }
