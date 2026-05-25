@@ -33,57 +33,105 @@
       "id": "elotortenet",
       "categoryId": "past",
       "title": "Előtörténet",
-      "status": "closed",
-      "characters": ["Solange Laveau", "Naya Laveau"],
-      "date": "2005 előtt",
-      "topic": "előtörténet",
+      "status": "Lezárt",
+      "characters": [
+        "Solange Laveau"
+      ],
+      "date": "2005. június 23., csütörtök",
+      "topic": "Haláleset",
       "location": "New Orleans",
-      "summary": "Solange és Naya múltjának egyik fontos szelete.",
-      "link": "#",
-      "image": "images/games/elotortenet.jpg",
-      "tags": ["múlt", "család", "New Orleans"]
+      "summary": "Előtörténeti játék Solange múltjához kapcsolódva.",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,21211.msg129088/topicseen.html#msg129088",
+      "image": "images/gif/kkny.gif",
+      "tags": [
+        "New Orleans",
+        "Haláleset",
+        "Lore"
+      ]
     },
     {
-      "id": "aktiv-jatek-2005",
-      "categoryId": "year-2005-2006",
-      "title": "Aktív játék címe",
-      "status": "active",
-      "characters": ["Solange Laveau", "Karakter A"],
-      "date": "2005. 09. 12.",
+      "id": "panic-at-the-pythons",
+      "categoryId": "past",
+      "title": "Panic at the Pythons",
+      "status": "Lezárt",
+      "characters": [
+        "Elspeth Mordrake",
+        "Lucinda Yaxley",
+        "Orville Morris",
+        "Nathaniel Nox"
+      ],
+      "date": "2006. február 26., szombat",
       "topic": "Trimágus Tusa",
       "location": "Roxfort",
-      "summary": "Aktív játék rövid leírása.",
-      "link": "#",
-      "image": "images/games/aktiv-jatek-2005.jpg",
-      "tags": ["aktív", "Roxfort", "Trimágus Tusa"]
+      "summary": "Játék a Trimágus Tusa lelátóihoz kapcsolódó eseményekkel.",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,21232.msg129259.html#msg129259",
+      "image": "images/gif/kkny.gif",
+      "tags": [
+        "Trimágus Tusa",
+        "Roxfort",
+        "Lelátók"
+      ]
     },
     {
-      "id": "lezart-jatek-2006",
-      "categoryId": "year-2006-2007",
-      "title": "2006/2007-es játék címe",
-      "status": "closed",
-      "characters": ["Solange Laveau", "Karakter B"],
-      "date": "2006. 09. 20.",
-      "topic": "új tanév",
+      "id": "a-biztos-valasztas",
+      "categoryId": "past",
+      "title": "A biztos választás",
+      "status": "Lezárt",
+      "characters": [
+        "USA delegáltak"
+      ],
+      "date": "2006. május 7., vasárnap",
+      "topic": "Politika",
       "location": "Roxfort",
-      "summary": "Ide kerülhet a 2006/2007-es tanévhez tartozó játék leírása.",
-      "link": "#",
-      "image": "images/games/lezart-jatek-2006.jpg",
-      "tags": ["lezárt", "2006/2007"]
+      "summary": "Az USA delegáltakhoz és a mágikus iskolabuszhoz kapcsolódó politikai jelenet.",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,21286.msg129515.html#msg129515",
+      "image": "images/gif/kkny.gif",
+      "tags": [
+        "Roxfort",
+        "Mágikus iskolabusz",
+        "Politika"
+      ]
     },
     {
-      "id": "idon-kivuli-jatek",
-      "categoryId": "outside-time",
-      "title": "Időn kívüli jelenet",
-      "status": "active",
-      "characters": ["Solange Laveau", "Karakter C"],
-      "date": "időn kívül",
-      "topic": "AU / extra / nem kronologikus játék",
-      "location": "változó",
-      "summary": "Olyan játék, ami nem illeszkedik szorosan a tanévi idővonalba.",
-      "link": "#",
-      "image": "images/games/idon-kivuli-jatek.jpg",
-      "tags": ["időn kívüli", "extra"]
+      "id": "loko-kezei",
+      "categoryId": "past",
+      "title": "Loko kezei",
+      "status": "Aktív",
+      "characters": [
+        "Ajax Ambrose",
+        "a többi jelenlévő"
+      ],
+      "date": "2006. május 13., szombat",
+      "topic": "Tanóra",
+      "location": "Roxfort",
+      "summary": "Vodou témájú tanórai játék Ajax Ambrose és a jelenlévők részvételével.",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20708.msg129558.html#msg129558",
+      "image": "images/gif/kkny.gif",
+      "tags": [
+        "Roxfort",
+        "Tanóra",
+        "Vodou"
+      ]
+    },
+    {
+      "id": "cim-kesobb-lucinda-elspeth",
+      "categoryId": "past",
+      "title": "????",
+      "status": "Aktív",
+      "characters": [
+        "Lucinda Yaxley",
+        "Elspeth Mordrake"
+      ],
+      "date": "2006. május 14., vasárnap",
+      "topic": "Tiniterhesség",
+      "location": "Roxfort",
+      "summary": "Lucinda Yaxley és Elspeth Mordrake aktív játéka.",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,19908.msg129576/topicseen.html#msg129576",
+      "image": "images/gif/kkny.gif",
+      "tags": [
+        "Roxfort",
+        "Tiniterhesség"
+      ]
     }
   ]
 }
