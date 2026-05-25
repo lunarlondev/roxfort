@@ -515,7 +515,7 @@ body{
   min-height:0;
   object-fit:cover;
   display:block;
-  filter:grayscale(0.65) contrast(1.12) brightness(0.58) saturate(0.68);
+  filter:grayscale(1) contrast(1.25) brightness(0.10) saturate(0.3);
   transform:scale(1.02);
   transition:filter 260ms ease,transform 260ms ease;
 }
@@ -547,6 +547,8 @@ body{
   font-size:13px;
   color:rgba(230,214,195,0.92);
   line-height:1.28;
+  max-height:34px;
+  overflow:hidden;
 }
 
 .solangetracker-status{
@@ -708,16 +710,20 @@ body{
 
   .solangetracker-reader-grid,
   .solangetracker-game{
-    grid-template-columns:1fr;
+    grid-template-rows:190px 150px;
+    height:340px;
   }
 
   .solangetracker-game-body{
+    height:150px;
     padding:10px;
   }
 
   .solangetracker-game-image,
   .solangetracker-game-image img{
-    min-height:190px;
+    width:100%;
+    height:190px;
+    min-height:0;
   }
 
   .solangetracker-reader-image,
