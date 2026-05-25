@@ -247,7 +247,6 @@ function solangetrackerRenderGame(game){
 
   info.appendChild(solangetrackerInfoLine("Név", solangetrackerArray(game.characters).join(", ") || "-"));
   info.appendChild(solangetrackerInfoLine("Dátum", game.date || "-"));
-  info.appendChild(solangetrackerInfoLine("Téma", game.topic || "-"));
 
   if (game.location) {
     info.appendChild(solangetrackerInfoLine("Helyszín", game.location));
@@ -392,7 +391,6 @@ function solangetrackerRenderReader(game){
   meta.appendChild(solangetrackerMetaBox("Kategória", solangetrackerCategoryTitle(solangetrackerCategoryId(game))));
   meta.appendChild(solangetrackerMetaBox("Dátum", game.date || "-"));
   meta.appendChild(solangetrackerMetaBox("Szereplők", solangetrackerArray(game.characters).join(", ") || "-"));
-  meta.appendChild(solangetrackerMetaBox("Téma", game.topic || "-"));
 
   if (game.location) {
     meta.appendChild(solangetrackerMetaBox("Helyszín", game.location));
