@@ -480,8 +480,9 @@ body{
 .solangetracker-game{
   display:grid;
   grid-template-columns:112px 1fr;
-  grid-template-rows:128px;
-  height:128px;
+  grid-template-rows:auto;
+  min-height:184px;
+  height:auto;
   gap:10px;
   border:1px solid rgba(232,214,176,0.12);
   border-radius:13px;
@@ -503,8 +504,8 @@ body{
 
 .solangetracker-game-image{
   width:112px;
-  height:128px;
-  min-height:0;
+  height:100%;
+  min-height:184px;
   background:rgba(0,0,0,0.22);
   overflow:hidden;
 }
@@ -527,11 +528,12 @@ body{
 }
 
 .solangetracker-game-body{
-  height:128px;
-  min-height:0;
+  min-height:184px;
   padding:10px 10px 10px 0;
   min-width:0;
-  overflow:hidden;
+  overflow:visible;
+  display:flex;
+  flex-direction:column;
 }
 
 .solangetracker-game-top{
@@ -601,8 +603,8 @@ body{
   font-size:10px;
   line-height:1.45;
   color:rgba(230,214,195,0.82);
-  max-height:44px;
-  overflow:hidden;
+  max-height:none;
+  overflow:visible;
 }
 
 .solangetracker-game-info b{
@@ -615,7 +617,7 @@ body{
   flex-wrap:wrap;
   gap:5px;
   margin-top:8px;
-  max-height:22px;
+  max-height:46px;
   overflow:hidden;
 }
 
@@ -632,7 +634,8 @@ body{
   display:flex;
   align-items:center;
   gap:8px;
-  margin-top:9px;
+  margin-top:auto;
+  padding-top:9px;
 }
 
 .solangetracker-small-btn{
@@ -708,14 +711,19 @@ body{
     grid-template-columns:1fr;
   }
 
-  .solangetracker-reader-grid,
-  .solangetracker-game{
+  .solangetracker-reader-grid{
     grid-template-rows:190px 150px;
     height:340px;
   }
 
+  .solangetracker-game{
+    grid-template-rows:190px auto;
+    min-height:0;
+    height:auto;
+  }
+
   .solangetracker-game-body{
-    height:150px;
+    min-height:0;
     padding:10px;
   }
 

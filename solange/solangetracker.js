@@ -31,6 +31,19 @@ const solangetrackerStatus = {
   stuck: "Elakadt"
 };
 
+const solangetrackerStatusAliases = {
+  aktiv: "active",
+  active: "active",
+  lezart: "closed",
+  closed: "closed",
+  szunetel: "paused",
+  paused: "paused",
+  tervezett: "planned",
+  planned: "planned",
+  elakadt: "stuck",
+  stuck: "stuck"
+};
+
 function solangetrackerNormalize(value){
   return String(value || "")
     .toLocaleLowerCase("hu-HU")
@@ -42,8 +55,14 @@ function solangetrackerArray(value){
   return Array.isArray(value) ? value : [];
 }
 
+function solangetrackerStatusKey(status){
+  const key = solangetrackerNormalize(status).replace(/\s+/g, "-");
+  return solangetrackerStatusAliases[key] || key || "unknown";
+}
+
 function solangetrackerStatusLabel(status){
-  return solangetrackerStatus[status] || status || "Ismeretlen";
+  const key = solangetrackerStatusKey(status);
+  return solangetrackerStatus[key] || status || "Ismeretlen";
 }
 
 function solangetrackerDefaultImage(){
@@ -129,7 +148,7 @@ function solangetrackerGetFilteredGames(){
   const query = solangetrackerNormalize(solangetrackerState.query);
 
   return solangetrackerState.games.filter(game => {
-    const statusOk = solangetrackerState.filter === "all" || game.status === solangetrackerState.filter;
+    const statusOk = solangetrackerState.filter === "all" || solangetrackerStatusKey(game.status) === solangetrackerState.filter;
     const queryOk = !query || solangetrackerSearchBlob(game).includes(query);
 
     return statusOk && queryOk;
@@ -167,8 +186,8 @@ function solangetrackerGroupByCategory(games){
 
 function solangetrackerRenderStats(){
   const all = solangetrackerState.games.length;
-  const active = solangetrackerState.games.filter(game => game.status === "active").length;
-  const closed = solangetrackerState.games.filter(game => game.status === "closed").length;
+  const active = solangetrackerState.games.filter(game => solangetrackerStatusKey(game.status) === "active").length;
+  const closed = solangetrackerState.games.filter(game => solangetrackerStatusKey(game.status) === "closed").length;
 
   solangetrackerDom.stats.innerHTML = "";
 
@@ -205,7 +224,7 @@ function solangetrackerRenderGame(game){
     article.classList.add("is-selected");
   }
 
-  article.dataset.status = game.status || "";
+  article.dataset.status = solangetrackerStatusKey(game.status);
 
   const imageWrap = solangetrackerCreateEl("div", "solangetracker-game-image");
   const image = document.createElement("img");
@@ -219,7 +238,7 @@ function solangetrackerRenderGame(game){
   const title = solangetrackerCreateEl("h3", "solangetracker-game-title", game.title || "Cím nélküli játék");
   const status = solangetrackerCreateEl("div", "solangetracker-status", solangetrackerStatusLabel(game.status));
 
-  status.classList.add(`solangetracker-status-${game.status || "unknown"}`);
+  status.classList.add(`solangetracker-status-${solangetrackerStatusKey(game.status)}`);
 
   top.appendChild(title);
   top.appendChild(status);
@@ -249,14 +268,6 @@ function solangetrackerRenderGame(game){
   });
 
   footer.appendChild(openBtn);
-
-  if (game.link && game.link !== "#") {
-    const link = solangetrackerCreateEl("a", "solangetracker-link", "Játék megnyitása");
-    link.href = game.link;
-    link.target = "_blank";
-    link.rel = "noopener";
-    footer.appendChild(link);
-  }
 
   body.appendChild(top);
   body.appendChild(info);
@@ -392,14 +403,6 @@ function solangetrackerRenderReader(game){
   }
 
   const footer = solangetrackerCreateEl("div", "solangetracker-reader-footer");
-
-  if (game.link && game.link !== "#") {
-    const link = solangetrackerCreateEl("a", "solangetracker-link", "Játék megnyitása");
-    link.href = game.link;
-    link.target = "_blank";
-    link.rel = "noopener";
-    footer.appendChild(link);
-  }
 
   body.appendChild(top);
   body.appendChild(summary);
