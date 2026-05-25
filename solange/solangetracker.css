@@ -479,7 +479,7 @@ body{
 
 .solangetracker-game{
   display:grid;
-  grid-template-columns:112px 1fr;
+  grid-template-columns:135px 1fr;
   grid-template-rows:auto;
   min-height:184px;
   height:auto;
@@ -503,7 +503,7 @@ body{
 }
 
 .solangetracker-game-image{
-  width:112px;
+  width:135px;
   height:100%;
   min-height:184px;
   background:rgba(0,0,0,0.22);
