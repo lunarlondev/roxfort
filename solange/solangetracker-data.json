@@ -2,7 +2,7 @@
   "meta": {
     "title": "Solange Laveau",
     "subtitle": "játékkövető",
-    "intro": "Játékok kategória, tanév, státusz és szereplők szerint rendezve.",
+    "intro": "A játékok kategóriák és státusz szerint rendezve.",
     "heroImage": "images/snake2.jpg",
     "defaultImage": "images/gif/kkny.gif"
   },
@@ -40,7 +40,7 @@
       "date": "2005. június 23., csütörtök",
       "topic": "Haláleset",
       "location": "New Orleans",
-      "summary": "Előtörténeti játék Solange múltjához kapcsolódva.",
+      "summary": "Előtörténet, ami a karakter múltjának egy fontos napját, illetve a vodou lore-t tartalmazza.",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,21211.msg129088/topicseen.html#msg129088",
       "image": "https://i.pinimg.com/736x/da/f3/55/daf355638528eaabd2ee32c971fa2224.jpg",
       "tags": [
@@ -51,7 +51,7 @@
     },
     {
       "id": "panic-at-the-pythons",
-      "categoryId": "past",
+      "categoryId": "year-2005-2006",
       "title": "Panic at the Pythons",
       "status": "Lezárt",
       "characters": [
@@ -63,7 +63,7 @@
       "date": "2006. február 26., szombat",
       "topic": "Trimágus Tusa",
       "location": "Roxfort",
-      "summary": "Játék a Trimágus Tusa lelátóihoz kapcsolódó eseményekkel.",
+      "summary": "Szurkolás a Második Próba lelátóján.",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,21232.msg129259.html#msg129259",
       "image": "https://i.pinimg.com/1200x/a2/b7/dd/a2b7ddfe4dc296ea4e32748d4731d14e.jpg",
       "tags": [
@@ -74,7 +74,7 @@
     },
     {
       "id": "a-biztos-valasztas",
-      "categoryId": "past",
+      "categoryId": "year-2005-2006",
       "title": "A biztos választás",
       "status": "Lezárt",
       "characters": [
@@ -83,7 +83,7 @@
       "date": "2006. május 7., vasárnap",
       "topic": "Politika",
       "location": "Roxfort",
-      "summary": "Az USA delegáltakhoz és a mágikus iskolabuszhoz kapcsolódó politikai jelenet.",
+      "summary": "Levélszavazat leadása a 2006-os választásokra.",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,21286.msg129515.html#msg129515",
       "image": "https://i.pinimg.com/1200x/4e/09/6c/4e096cc35a8c3d5e4cfc347ad928990c.jpg",
       "tags": [
@@ -94,7 +94,7 @@
     },
     {
       "id": "loko-kezei",
-      "categoryId": "past",
+      "categoryId": "year-2005-2006",
       "title": "Loko kezei",
       "status": "Aktív",
       "characters": [
@@ -104,7 +104,7 @@
       "date": "2006. május 13., szombat",
       "topic": "Tanóra",
       "location": "Roxfort",
-      "summary": "Vodou témájú tanórai játék Ajax Ambrose és a jelenlévők részvételével.",
+      "summary": "Mediatika fakultatív tanóra.",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,20708.msg129558.html#msg129558",
       "image": "https://i.pinimg.com/736x/6e/9d/6a/6e9d6ad335234ae178686f33256b41a6.jpg",
       "tags": [
@@ -115,7 +115,7 @@
     },
     {
       "id": "cim-kesobb-lucinda-elspeth",
-      "categoryId": "past",
+      "categoryId": "year-2005-2006",
       "title": "????",
       "status": "Aktív",
       "characters": [
