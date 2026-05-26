@@ -29,24 +29,54 @@
     }
   ],
   "games": [
+{
+  "id": "elotortenet",
+  "categoryId": "past",
+  "title": "Előtörténet",
+  "status": "Lezárt",
+  "characters": [
     {
-      "id": "elotortenet",
-      "categoryId": "past",
-      "title": "Előtörténet",
-      "status": "Lezárt",
-      "characters": [
-        "Solange Laveau"
-      ],
-      "date": "2005. június 23., csütörtök",
-      "location": "New Orleans",
-      "link": "https://www.roxfort.frpg.hu/index.php/topic,21211.msg129088/topicseen.html#msg129088",
-      "image": "https://i.pinimg.com/736x/da/f3/55/daf355638528eaabd2ee32c971fa2224.jpg",
-      "tags": [
-        "New Orleans",
-        "Haláleset",
-        "Lore"
-      ]
+      "name": "Naya Laveau",
+      "image": "images/naya.jpg",
+      "featured": true
     },
+    {
+      "name": "Nathaniel Nox",
+      "image": "nathaniel.jpg",
+      "featured": true
+    },
+    {
+      "name": "Elspeth Mordrake",
+      "image": "elspeth.jpg"
+    },
+    {
+      "name": "Orville Morris",
+      "image": "orville.jpg"
+    },
+    {
+      "name": "Jackson",
+      "image": "jackson.jpg",
+      "featured": true
+    },
+    {
+      "name": "Damballah",
+      "image": "damballah.jpg",
+      "featured": true
+    }
+  ],
+  "date": "2005. június 23., csütörtök",
+  "location": "New Orleans",
+  "link": "https://www.roxfort.frpg.hu/index.php/topic,21211.msg129088/topicseen.html#msg129088",
+  "image": "https://i.pinimg.com/736x/da/f3/55/daf355638528eaabd2ee32c971fa2224.jpg",
+  "summary": "Egy szerencsétlen döntés és egy vodou rituálé következményeiként Solange elveszít valaki fontosat.",
+  "tags": [
+    "Vérábrázolás",
+    "Szerv",
+    "Halál",
+    "Káros ideológiák",
+    "Lore"
+  ]
+},
     {
       "id": "panic-at-the-pythons",
       "categoryId": "year-2005-2006",
