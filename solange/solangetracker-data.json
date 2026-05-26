@@ -149,7 +149,11 @@
       "title": "A biztos választás",
       "status": "Lezárt",
       "characters": [
-	    {
+	      {
+      "name": "Lucinda Yaxley",
+      "image": "images/lucinda.jpg"
+      "featured": true
+    },
     {
       "name": "Nathaniel Nox",
       "image": "images/nathaniel.jpg",
@@ -159,6 +163,26 @@
       "name": "Elspeth Mordrake",
       "image": "images/elspeth.jpg"
       "featured": true
+    },
+		      {
+      "name": "Solace Barbon",
+      "image": "images/actors/barbon.jpg"
+      "featured": true
+    },
+			      {
+      "name": "Vale Bate",
+      "image": "images/actors/vale.jpg"
+      "featured": false
+    },
+				      {
+      "name": "Varvara Chernov",
+      "image": "images/actors/varvara.jpg"
+      "featured": false
+    },
+					      {
+      "name": "Varvara Chernov",
+      "image": "images/actors/varvara.jpg"
+      "featured": false
     },
       ],
       "date": "2006. május 7., vasárnap",
