@@ -676,6 +676,7 @@ body{
 .solangetracker-character-chip.is-featured{
   border-color:rgba(182,144,78,0.88);
   box-shadow:0 0 0 2px rgba(182,144,78,0.24),0 0 18px rgba(182,144,78,0.22),0 4px 12px rgba(0,0,0,0.35);
+  animation:solangetrackerFeaturedPulse 2.6s ease-in-out infinite;
 }
 
 .solangetracker-character-name{
@@ -782,6 +783,25 @@ body{
   to{
     opacity:1;
     transform:translateY(0);
+  }
+}
+
+@keyframes solangetrackerFeaturedPulse{
+  0%,
+  100%{
+    box-shadow:0 0 0 2px rgba(182,144,78,0.20),0 0 14px rgba(182,144,78,0.16),0 4px 12px rgba(0,0,0,0.35);
+    transform:scale(1);
+  }
+
+  50%{
+    box-shadow:0 0 0 3px rgba(182,144,78,0.34),0 0 24px rgba(182,144,78,0.32),0 4px 14px rgba(0,0,0,0.40);
+    transform:scale(1.045);
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .solangetracker-character-chip.is-featured{
+    animation:none;
   }
 }
 
