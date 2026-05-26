@@ -59,12 +59,12 @@
         },
         {
           "name": "Jackson",
-          "image": "images/actors/jackson.jpg",
+          "image": "images/jackson.jpg",
           "featured": true
         },
         {
           "name": "Damballah",
-          "image": "images/actors/damballah.jpg",
+          "image": "images/damballah.jpg",
           "featured": true
         }
       ],
