@@ -679,9 +679,15 @@ body{
   display:block;
   object-fit:cover;
   border-radius:999px;
-  filter:contrast(1.08) saturate(0.94) brightness(0.90);
+  filter:grayscale(1) contrast(1.35) brightness(0.36) saturate(0.25);
+  transition:filter 180ms ease,transform 180ms ease;
 }
 
+.solangetracker-character-chip:hover img,
+.solangetracker-game.is-selected .solangetracker-character-chip img,
+.solangetracker-character-list-reader .solangetracker-character-chip img{
+  filter:grayscale(0) contrast(1.08) brightness(0.92) saturate(1.05);
+}
 .solangetracker-character-chip.is-featured{
   border-color:rgba(182,144,78,0.88);
   box-shadow:0 0 0 2px rgba(182,144,78,0.24),0 0 18px rgba(182,144,78,0.22),0 4px 12px rgba(0,0,0,0.35);
