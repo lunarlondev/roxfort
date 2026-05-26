@@ -30,7 +30,7 @@
   ],
   "games": [
 {
-  "id": "elotortenet",
+  "id": "past01",
   "categoryId": "past",
   "title": "Előtörténet",
   "status": "Lezárt",
@@ -44,6 +44,10 @@
       "name": "Nathaniel Nox",
       "image": "images/nathaniel.jpg",
       "featured": true
+    },
+	    {
+      "name": "Lucinda Yaxley",
+      "image": "images/lucinda.jpg"
     },
     {
       "name": "Elspeth Mordrake",
@@ -78,24 +82,65 @@
   ]
 },
     {
-      "id": "panic-at-the-pythons",
+      "id": "g01",
       "categoryId": "year-2005-2006",
       "title": "Panic at the Pythons",
       "status": "Lezárt",
       "characters": [
-        "Elspeth Mordrake",
-        "Lucinda Yaxley",
-        "Orville Morris",
-        "Nathaniel Nox"
+	  		    {
+      "name": "Solace Barbon",
+      "image": "images/actors/barbon.jpg"
+	  "featured": true
+    },
+			    {
+      "name": "Vale Bate",
+      "image": "images/actors/vale.jpg"
+	  "featured": true
+    },
+		    {
+      "name": "Lucinda Yaxley",
+      "image": "images/lucinda.jpg"
+	  "featured": true
+    },
+	    {
+      "name": "Orville Morris",
+      "image": "images/orville.jpg"
+	  "featured": true
+    },
+    {
+      "name": "Nathaniel Nox",
+      "image": "images/nathaniel.jpg",
+      "featured": true
+    },
+    {
+      "name": "Elspeth Mordrake",
+      "image": "images/elspeth.jpg"
+      "featured": true
+    },
+	    {
+      "name": "Vianne M. Gardner",
+      "image": "images/actors/vianne.jpg"
+	  "featured": false
+    },
+		    {
+      "name": "Varvara Chernov",
+      "image": "images/actors/varvara.jpg"
+	  "featured": false
+    },
+			    {
+      "name": "Malachi Maddock",
+      "image": "images/actors/malachi.jpg"
+	  "featured": false
+    },
       ],
       "date": "2006. február 26., szombat",
-      "location": "Roxfort",
+      "location": "Roxfort, Lelátók",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,21232.msg129259.html#msg129259",
       "image": "https://i.pinimg.com/1200x/a2/b7/dd/a2b7ddfe4dc296ea4e32748d4731d14e.jpg",
+	  "summary": "A Trimágus Tusa második próbája. Szurkolás, kígyótolmácsolás (és rosszindulatúskodás) a nézőtéren.",
       "tags": [
         "Trimágus Tusa",
-        "Roxfort",
-        "Lelátók"
+        "Káros ideológiák"
       ]
     },
     {
@@ -104,10 +149,20 @@
       "title": "A biztos választás",
       "status": "Lezárt",
       "characters": [
-        "USA delegáltak"
+	    {
+    {
+      "name": "Nathaniel Nox",
+      "image": "images/nathaniel.jpg",
+      "featured": true
+    },
+    {
+      "name": "Elspeth Mordrake",
+      "image": "images/elspeth.jpg"
+      "featured": true
+    },
       ],
       "date": "2006. május 7., vasárnap",
-      "location": "Roxfort",
+      "location": "Roxfort, A Mágikus iskolabusz",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,21286.msg129515.html#msg129515",
       "image": "https://i.pinimg.com/1200x/4e/09/6c/4e096cc35a8c3d5e4cfc347ad928990c.jpg",
       "tags": [
