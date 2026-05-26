@@ -50,21 +50,24 @@
       "characters": [
         {
           "name": "Solace Barbon",
-          "image": "images/actors/barbon.jpg",
+          "image": "actors/barbon.jpg",
+          "featured": true
+        },
+		        {
+          "name": "Prudence Barbon",
+          "image": "actors/prudence.jpg",
           "featured": true
         }
       ],
-      "name": "Solace Barbon",
       "topic": "előtörténet",
       "date": "",
       "location": "",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,20373.msg126118.html#msg126118",
       "image": "https://i.imgur.com/f52VsHA.png",
       "triggerWarning": "Trigger warning: káros ideológiák, kereszténygyűlölet, illegális (ön)kísérletek",
-      "summary": "",
+      "summary": "A karakterhez tartozó előtörténet, illetve a családi háttér leírása.",
       "meta": {
-        "Név": "Solace Barbon",
-        "Téma": "előtörténet"
+        "Név": "Solace Barbon"
       }
     },
     {
@@ -75,18 +78,17 @@
       "characters": [
         {
           "name": "Malachi Maddock",
-          "image": "images/actors/malachi.jpg",
+          "image": "actors/malachi.jpg",
           "featured": true
         }
       ],
-      "name": "Malachi Maddock",
       "topic": "",
       "date": "2003. január 09. csütörtök",
       "location": "",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,20948.msg128336.html#msg128336",
       "image": "https://i.imgur.com/s4VusEh.png",
       "triggerWarning": "Trigger warning: bullying",
-      "summary": "",
+      "summary": "Két, kamaszkorban lévő srác ígéretet tesznek egymásnak.",
       "meta": {
         "Név": "Malachi Maddock",
         "Dátum": "2003. január 09. csütörtök"
@@ -100,50 +102,46 @@
       "characters": [
         {
           "name": "Sienna Scrimgeour",
-          "image": "",
+          "image": "actors/sienna.jpg",
           "featured": true
         }
       ],
-      "name": "Sienna Scrimgeour",
       "topic": "",
       "date": "2005. 07. 02. szombat",
       "location": "Az Amerikai Egyesült Államok Pavilonja, Barcelona, Világkiállítás",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,20379.msg126366.html#msg126366",
       "image": "https://i.imgur.com/sEtA9ao.png",
       "triggerWarning": "",
-      "summary": "",
+      "summary": "Sienna megkörnyékezi Solace-t a világkiállításon az amerikaiak pavilonjánál.",
       "meta": {
-        "Név": "Sienna Scrimgeour",
         "Dátum": "2005. 07. 02. szombat",
         "Helyszín": "Az Amerikai Egyesült Államok Pavilonja, Barcelona, Világkiállítás"
       }
     },
     {
-      "id": "g004",
-      "categoryId": "2005-nyar",
-      "title": "666",
-      "status": "Lezárt",
-      "characters": [
-        {
-          "name": "Zaniah Ivutro",
-          "image": "",
-          "featured": true
-        }
-      ],
+  "id": "g004",
+  "categoryId": "2005-nyar",
+  "title": "666",
+  "status": "Lezárt",
+  "characters": [
+    {
       "name": "Zaniah Ivutro",
-      "topic": "",
-      "date": "2005. 07. 04. hétfő",
-      "location": "Playa de Cristal – tenger és fürdőzési terület",
-      "link": "https://www.roxfort.frpg.hu/index.php/topic,20349.msg126312/topicseen.html#msg126312",
-      "image": "https://i.imgur.com/pKJHj7k.png",
-      "triggerWarning": "",
-      "summary": "",
-      "meta": {
-        "Név": "Zaniah Ivutro",
-        "Dátum": "2005. 07. 04. hétfő",
-        "Helyszín": "Playa de Cristal – tenger és fürdőzési terület"
-      }
-    },
+      "image": "actors/zaniah.jpg",
+      "featured": true
+    }
+  ],
+  "name": "Zaniah Ivutro",
+  "date": "2005. 07. 04. hétfő",
+  "location": "Playa de Cristal – tenger és fürdőzési terület",
+  "link": "https://www.roxfort.frpg.hu/index.php/topic,20349.msg126312/topicseen.html#msg126312",
+  "image": "https://i.imgur.com/pKJHj7k.png",
+  "triggerWarning": "",
+  "summary": "Egy tengerbe dobott pálca megmentése, egy rája és egy platformon meditáló druida esete.",
+  "meta": {
+    "Dátum": "2005. 07. 04. hétfő",
+    "Helyszín": "Playa de Cristal – tenger és fürdőzési terület"
+  }
+},
     {
       "id": "g005",
       "categoryId": "2005-nyar",
@@ -152,20 +150,17 @@
       "characters": [
         {
           "name": "Malachi Maddock",
-          "image": "images/actors/malachi.jpg",
+          "image": "actors/malachi.jpg",
           "featured": true
         }
       ],
-      "name": "Malachi Maddock",
-      "topic": "",
       "date": "2005. 07. 07. csütörtök",
       "location": "Tengerparti napágyak és napernyők, Barcelona, Világkiállítás",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,20348.msg126271.html#msg126271",
       "image": "https://i.imgur.com/ynFhANd.png",
       "triggerWarning": "Trigger warning: erőszak, szerhasználat",
-      "summary": "",
+      "summary": "Szer hatása alatt szégyenletes erőszakot követ el Malachi ellen.",
       "meta": {
-        "Név": "Malachi Maddock",
         "Dátum": "2005. 07. 07. csütörtök",
         "Helyszín": "Tengerparti napágyak és napernyők, Barcelona, Világkiállítás"
       }
@@ -178,23 +173,21 @@
       "characters": [
         {
           "name": "Anne-Rose Tuffin",
-          "image": "images/actors/annie.jpg",
+          "image": "actors/annie.jpg",
           "featured": true
         },
         {
           "name": "Roxanne Montague",
-          "image": "",
+          "image": "actors/roxanne",
           "featured": true
         }
       ],
-      "name": "Anne-Rose Tuffin & Roxanne Montague",
-      "topic": "",
       "date": "2005. 07. 15. péntek",
       "location": "Homokvárzóna – Építőkörlet",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,20355.msg126471.html#msg126471",
       "image": "https://i.imgur.com/QybLvfQ.png",
       "triggerWarning": "",
-      "summary": "",
+      "summary": "Egy megrémült kneazle-nek köszönhetően megismeri a két Roxfortos lányt.",
       "meta": {
         "Név": "Anne-Rose Tuffin & Roxanne Montague",
         "Dátum": "2005. 07. 15. péntek",
@@ -209,20 +202,18 @@
       "characters": [
         {
           "name": "Orville Morris",
-          "image": "images/actors/orville.jpg",
+          "image": "actors/orville.jpg",
           "featured": true
         }
       ],
       "name": "Orville Morris",
-      "topic": "",
       "date": "2005. 08. 14. szombat",
       "location": "Nagy Síkság, Középnyugat, USA",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,20419.msg126713/topicseen.html#msg126713",
       "image": "https://i.imgur.com/kkzBsbA.png",
       "triggerWarning": "",
-      "summary": "",
+      "summary": "A Trimágus Tusa hírére megosztják egymással tudásuk egy szeletét. Morris egy sötét varázslatot tanít Solacenak.",
       "meta": {
-        "Név": "Orville Morris",
         "Dátum": "2005. 08. 14. szombat",
         "Helyszín": "Nagy Síkság, Középnyugat, USA"
       }
@@ -240,15 +231,13 @@
         }
       ],
       "name": "Eydis Sidthvordr",
-      "topic": "",
       "date": "2005. 08. 20. vasárnap",
       "location": "Nagytavak vidéke, USA",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,20423.msg126707.html#msg126707",
       "image": "https://i.imgur.com/5HSBEHB.png",
       "triggerWarning": "Trigger warning: grafikus erőszak",
-      "summary": "",
+      "summary": "Az akromantula infesztáció hírére Solace maga akarja megoldani a problémát, hogy ezzel is a Tusára gyakoroljon. A szörnyvadász családból származó évfolyamtársával kerül össze a harcra.",
       "meta": {
-        "Név": "Eydis Sidthvordr",
         "Dátum": "2005. 08. 20. vasárnap",
         "Helyszín": "Nagytavak vidéke, USA"
       }
@@ -261,23 +250,191 @@
       "characters": [
         {
           "name": "Wesley Fawcett",
-          "image": "",
+          "image": "actors/wesley.jpg",
           "featured": true
         },
         {
-          "name": "hetedév",
-          "image": "",
-          "featured": true
+          "name": "Eydis Sidthvordr",
+          "image": "actors/eydis.jpg",
+          "featured": false
+        },
+		        {
+          "name": "Nialen Travers",
+          "image": "actors/nialen.jpg",
+          "featured": false
+        },
+		{
+		"name": "Orville Morris",
+          "image": "actors/orville.jpg",
+          "featured": false
+        }
+				        {
+          "name": "Daphné d'Aboville",
+          "image": "actors/daph.jpg",
+          "featured": false
+        },
+						        {
+          "name": "Rokuro Ishida",
+          "image": "actors/rokuro.jpg",
+          "featured": false
+        },
+				    {
+          "name": "Élodie Roethlisberger",
+          "image": "actors/elodie.jpg",
+          "featured": false
+        },
+		{
+		"name": "Vianne M. Gardner",
+          "image": "actors/vianne.jpg",
+          "featured": false
+        },
+		{
+		"name": "Ophelia Langley",
+          "image": "actors/ophelia.jpg",
+          "featured": false
+        },
+		{
+		"name": "Alma L. Remington",
+          "image": "actors/alma.jpg",
+          "featured": false
+        },
+		{
+		"name": "Sebastien Lacroix",
+          "image": "actors/sebastien.jpg",
+          "featured": false
+        },
+		{
+		"name": "Inès de Saint-Vinant",
+          "image": "actors/ines.jpg",
+          "featured": false
+        },
+		{
+		"name": "Enver Nebelwald",
+          "image": "actors/enver.jpg",
+          "featured": false
+        },
+		{
+		"name": "Chikara Tetsuya",
+          "image": "actors/chikara.jpg",
+          "featured": false
+        },
+		{
+		"name": "Chikara Tetsuya",
+          "image": "actors/chikara.jpg",
+          "featured": false
+        },
+		{
+		"name": "Sienna Scrimgeour",
+          "image": "actors/sienna.jpg",
+          "featured": false
+        },
+		{
+		"name": "Zaniah Ivutro",
+          "image": "actors/zaniah.jpg",
+          "featured": false
+        },
+		{
+		"name": "Connor O'Hara",
+          "image": "actors/connor.jpg",
+          "featured": false
+        },
+		{
+		"name": "Vale Bate",
+          "image": "actors/vale.jpg",
+          "featured": false
+        },
+		{
+		"name": "Anne-Rose Tuffin",
+          "image": "actors/annie.jpg",
+          "featured": false
+        },
+		{
+		"name": "Holden Echohawk",
+          "image": "actors/holden.jpg",
+          "featured": false
+        },
+		{
+		"name": "Varvara Chernov",
+          "image": "actors/varvara.jpg",
+          "featured": false
+        },
+		{
+		"name": "Gemma Jenkins",
+          "image": "actors/gemma.jpg",
+          "featured": false
+        },
+		{
+		"name": "William Ashford",
+          "image": "actors/william.jpg",
+          "featured": false
+        },
+		{
+		"name": "Lucius Rheims",
+          "image": "actors/lucius.jpg",
+          "featured": false
+        },
+		{
+		"name": "Malachi Maddock",
+          "image": "actors/malachi.jpg",
+          "featured": false
+        },
+		{
+		"name": "Blaze Florance",
+          "image": "actors/blaze.jpg",
+          "featured": false
+        },
+		{
+		"name": "Miguel Fuentes",
+          "image": "actors/miguel.jpg",
+          "featured": false
+        },
+		{
+		"name": "Heliodora Haseltine",
+          "image": "actors/heliodora.jpg",
+          "featured": false
+        },
+		{
+		"name": "Zafira Tavish",
+          "image": "actors/zafira.jpg",
+          "featured": false
+        },
+		{
+		"name": "Orin Morgenstern",
+          "image": "actors/orin.jpg",
+          "featured": false
+        },
+		{
+		"name": "Soffi Lowe",
+          "image": "actors/soffi.jpg",
+          "featured": false
+        },
+		{
+		"name": "Elizabeth Rappaport",
+          "image": "actors/elizabeth.jpg",
+          "featured": false
+        },
+		{
+		"name": "Roxanne Montague",
+          "image": "actors/roxanne.jpg",
+          "featured": false
+        },
+		{
+		"name": "Lolita Delacour",
+          "image": "actors/lolita.jpg",
+          "featured": false
+        },
+		{
+		"name": "Venus Llewellyn",
+          "image": "actors/venus.jpg",
+          "featured": false
         }
       ],
-      "name": "Wesley Fawcett & hetedév",
-      "topic": "",
       "date": "2005. 09. 20. hétfő",
       "location": "Roxfort, SVK tanterem",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,19960.msg127176.html#msg127176",
       "image": "https://i.imgur.com/sh1wAlh.png",
       "triggerWarning": "",
-      "summary": "",
+      "summary": "Sor kerül arra a legendás szintfelmérő Sötét Varázslatok Kivédése dolgozatra.",
       "meta": {
         "Név": "Wesley Fawcett & hetedév",
         "Dátum": "2005. 09. 20. hétfő",
