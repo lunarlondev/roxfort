@@ -82,3 +82,92 @@ body{margin:0;background:#070708;color:#eee;font-family:'Roboto Mono',monospace;
 @keyframes barelytrackerFeaturedPulse{0%,100%{box-shadow:0 0 0 2px rgba(190,47,55,.14),0 0 12px rgba(190,47,55,.16),0 4px 12px rgba(0,0,0,.35);}50%{box-shadow:0 0 0 3px rgba(190,47,55,.28),0 0 22px rgba(190,47,55,.30),0 4px 14px rgba(0,0,0,.40);}}
 @media (prefers-reduced-motion:reduce){.barelytracker-character-chip.is-featured{animation:none;}}
 @media (max-width:520px){.barelytracker-shell{width:100%;grid-template-columns:1fr;}.barelytracker-side{display:none;}.barelytracker-frame{width:100%;}.darklog__pane{opacity:1;pointer-events:auto;}.barelytracker-reader-grid{grid-template-columns:1fr;}.barelytracker-reader-image,.barelytracker-reader-image img{height:170px;min-height:170px;}}
+
+.barelytracker-cat[open],
+.barelytracker-list,
+.barelytracker-game,
+.barelytracker-game-body,
+.barelytracker-characters,
+.barelytracker-character-list{
+  overflow:visible;
+}
+
+.barelytracker-cat:not([open]){
+  overflow:hidden;
+}
+
+.barelytracker-character-chip{
+  isolation:isolate;
+  overflow:visible;
+}
+
+.barelytracker-character-chip img{
+  position:relative;
+  z-index:1;
+  filter:grayscale(1) saturate(0) contrast(155%) brightness(54%);
+  transition:filter .18s ease,transform .18s ease;
+}
+
+.barelytracker-character-chip::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  border-radius:999px;
+  background:rgba(190,47,55,.82);
+  mix-blend-mode:color;
+  opacity:0;
+  transition:opacity .18s ease;
+}
+
+.barelytracker-character-chip:hover img{
+  filter:grayscale(.2) saturate(90%) contrast(165%) brightness(68%);
+}
+
+.barelytracker-character-chip:hover::after{
+  opacity:1;
+}
+
+.barelytracker-character-name{
+  z-index:80;
+  width:max-content;
+  max-width:150px;
+  white-space:normal;
+  overflow-wrap:break-word;
+  text-align:center;
+  line-height:1.18;
+  border-radius:8px;
+  padding:5px 7px;
+  background:rgba(8,8,10,.98);
+}
+
+.barelytracker-reader-grid{
+  grid-template-columns:1fr;
+  min-height:0;
+}
+
+.barelytracker-reader-image{
+  width:100%;
+  height:145px;
+  min-height:0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.barelytracker-reader-image img{
+  width:100%;
+  height:100%;
+  min-height:0;
+  object-fit:cover;
+  object-position:center;
+  image-rendering:auto;
+  filter:grayscale(1) saturate(0) contrast(135%) brightness(62%);
+}
+
+@media (max-width:520px){
+  .barelytracker-reader-image,
+  .barelytracker-reader-image img{
+    height:150px;
+    min-height:150px;
+  }
+}
