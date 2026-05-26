@@ -152,7 +152,7 @@
       "characters": [
         {
           "name": "Malachi Maddock",
-          "image": "images/actors/malachi.jpg",
+          "image": "actors/malachi.jpg",
           "featured": true
         }
       ],
@@ -178,7 +178,7 @@
       "characters": [
         {
           "name": "Anne-Rose Tuffin",
-          "image": "images/actors/annie.jpg",
+          "image": "actors/annie.jpg",
           "featured": true
         },
         {
@@ -209,7 +209,7 @@
       "characters": [
         {
           "name": "Orville Morris",
-          "image": "images/actors/orville.jpg",
+          "image": "actors/orville.jpg",
           "featured": true
         }
       ],
