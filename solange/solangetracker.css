@@ -876,3 +876,42 @@ body{
     justify-content:flex-start;
   }
 }
+
+
+.solangetracker-scrollbox{
+  margin-top:14px;
+  height:620px;
+  overflow-y:auto;
+  overflow-x:hidden;
+  padding-right:4px;
+  position:relative;
+  z-index:2;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(182,144,78,0.55) rgba(0,0,0,0.15);
+}
+
+.solangetracker-scrollbox .solangetracker-reader,
+.solangetracker-scrollbox .solangetracker-list,
+.solangetracker-scrollbox .solangetracker-empty{
+  margin-top:0;
+}
+
+.solangetracker-scrollbox .solangetracker-reader:not(.solangetracker-hidden) + .solangetracker-list,
+.solangetracker-scrollbox .solangetracker-list + .solangetracker-empty:not(.solangetracker-hidden){
+  margin-top:14px;
+}
+
+.solangetracker-scrollbox::-webkit-scrollbar{
+  width:8px;
+}
+
+.solangetracker-scrollbox::-webkit-scrollbar-track{
+  background:rgba(0,0,0,0.15);
+  border-radius:999px;
+}
+
+.solangetracker-scrollbox::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg,rgba(182,144,78,0.65),rgba(232,214,176,0.35));
+  border-radius:999px;
+  border:1px solid rgba(232,214,176,0.25);
+}

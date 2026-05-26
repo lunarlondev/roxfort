@@ -17,6 +17,7 @@ const solangetrackerDom = {
   openAll: document.getElementById("solangetrackerOpenAll"),
   closeAll: document.getElementById("solangetrackerCloseAll"),
   stats: document.getElementById("solangetrackerStats"),
+  scrollbox: document.getElementById("solangetrackerScrollbox"),
   reader: document.getElementById("solangetrackerReader"),
   list: document.getElementById("solangetrackerList"),
   empty: document.getElementById("solangetrackerEmpty"),
@@ -630,10 +631,17 @@ function solangetrackerSelectGame(id){
   solangetrackerRenderReader(game);
   solangetrackerRenderList();
 
-  solangetrackerDom.reader.scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
+  if (solangetrackerDom.scrollbox) {
+    solangetrackerDom.scrollbox.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  } else {
+    solangetrackerDom.reader.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }
 }
 
 function solangetrackerSetFilter(filter){
