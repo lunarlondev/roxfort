@@ -2,7 +2,7 @@
   "meta": {
     "title": "Solange Laveau",
     "subtitle": "játékkövető",
-    "intro": "A játékok kategóriák és státusz szerint rendezve.",
+    "intro": "A játékok összefoglalóját a Részletek gombra kattintva tekintheted meg. Az egyes játékokra a Megnyitás gomb megnyomása után lehet tovább menni.",
     "heroImage": "images/snake2.jpg",
     "defaultImage": "images/gif/kkny.gif"
   },
@@ -42,25 +42,25 @@
     },
     {
       "name": "Nathaniel Nox",
-      "image": "nathaniel.jpg",
+      "image": "images/nathaniel.jpg",
       "featured": true
     },
     {
       "name": "Elspeth Mordrake",
-      "image": "elspeth.jpg"
+      "image": "images/elspeth.jpg"
     },
     {
       "name": "Orville Morris",
-      "image": "orville.jpg"
+      "image": "images/orville.jpg"
     },
     {
       "name": "Jackson",
-      "image": "jackson.jpg",
+      "image": "images/jackson.jpg",
       "featured": true
     },
     {
       "name": "Damballah",
-      "image": "damballah.jpg",
+      "image": "images/damballah.jpg",
       "featured": true
     }
   ],
