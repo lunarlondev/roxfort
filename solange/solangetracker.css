@@ -669,7 +669,7 @@ body{
 }
 
 .solangetracker-character-chip:hover{
-  transform:scale(1.18);
+  transform:scale(1.4);
   z-index:40;
 }
 
