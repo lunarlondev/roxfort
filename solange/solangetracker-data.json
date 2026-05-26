@@ -294,7 +294,7 @@
         {
           "name": "Elspeth Mordrake",
           "image": "images/actors/elspeth.jpg",
-          "featured": false
+          "featured": true
         },
         {
           "name": "Lucinda Yaxley",
