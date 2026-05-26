@@ -144,7 +144,7 @@
       ]
     },
     {
-      "id": "a-biztos-valasztas",
+      "id": "g02",
       "categoryId": "year-2005-2006",
       "title": "A biztos választás",
       "status": "Lezárt",
@@ -196,40 +196,124 @@
       ]
     },
     {
-      "id": "loko-kezei",
+      "id": "g03",
       "categoryId": "year-2005-2006",
       "title": "Loko kezei",
       "status": "Aktív",
       "characters": [
-        "Ajax Ambrose",
-        "a többi jelenlévő"
+	    {
+    {
+      "name": "Hagen Romanov",
+      "image": "images/actors/hagen.jpg",
+      "featured": true
+    },
+    {
+      "name": "Ajax Ambrose",
+      "image": "images/actors/ajax.jpg"
+      "featured": true
+    },
+    {
+      "name": "Madam Pomfrey",
+      "image": "images/actors/pomfrey.jpg"
+      "featured": false
+    },
+    {
+      "name": "Daphné d'Aboville",
+      "image": "images/actors/daph.jpg"
+      "featured": false
+    },
+    {
+      "name": "Malachi Maddock",
+      "image": "images/actors/malachi.jpg"
+      "featured": false
+    },
+    {
+      "name": "Rokuro Ishida",
+      "image": "images/actors/rokuro.jpg"
+      "featured": false
+    },
+    {
+      "name": "Anne-Rose Tuffin",
+      "image": "images/actors/annie.jpg"
+      "featured": false
+    },
+    {
+      "name": "Solace Barbon",
+      "image": "images/actors/barbon.jpg"
+      "featured": false
+    },
+    {
+      "name": "Lucinda Yaxley",
+      "image": "images/lucinda.jpg"
+      "featured": false
+    },
+    {
+      "name": "William Ashford",
+      "image": "images/actors/william.jpg"
+      "featured": false
+    },
+    {
+      "name": "Lorian Grimmstark",
+      "image": "images/actors/lorian.jpg"
+      "featured": false
+    },
+    {
+      "name": "Locket R. Grimmstark",
+      "image": "images/actors/lorian.jpg"
+      "featured": false
+    },
+    {
+      "name": "Hanni Haeni",
+      "image": "images/actors/hanni.jpg"
+      "featured": false
+    },
+    {
+      "name": "Gemma Jenkins",
+      "image": "images/actors/gemma.jpg"
+      "featured": false
+    },
+    {
+      "name": "Connor O'Hara",
+      "image": "images/actors/connor.jpg"
+      "featured": false
+    },
       ],
       "date": "2006. május 13., szombat",
       "topic": "Tanóra",
-      "location": "Roxfort",
+      "location": "Roxfort, Alkimista labor",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,20708.msg129558.html#msg129558",
       "image": "https://i.pinimg.com/736x/6e/9d/6a/6e9d6ad335234ae178686f33256b41a6.jpg",
+	  "summary": "Fakultatív mediatika tanóra."
       "tags": [
-        "Roxfort",
         "Tanóra",
-        "Vodou"
+		"Mediatika",
+        "Vodou",
+		"Káros ideológiák"
       ]
     },
     {
-      "id": "cim-kesobb-lucinda-elspeth",
+      "id": "g04",
       "categoryId": "year-2005-2006",
       "title": "Feels like the end of the world",
       "status": "Aktív",
       "characters": [
-        "Lucinda Yaxley",
-        "Elspeth Mordrake"
-      ],
+    {
+      "name": "Elspeth Mordrake",
+      "image": "images/elspeth.jpg"
+      "featured": false
+    },      
+    {
+      "name": "Lucinda Yaxley",
+      "image": "images/lucinda.jpg"
+      "featured": true
+    },
+],,
       "date": "2006. május 14., vasárnap",
-      "location": "Roxfort",
+      "location": "Roxfort, Birtok, Odvas fa",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,19908.msg129576/topicseen.html#msg129576",
       "image": "https://i.pinimg.com/736x/e5/e0/47/e5e0470005f45fd23b20e4f4f0610c13.jpg",
+	  "summary": "Elsie súlyos válságon megy keresztül."
       "tags": [
-        "Roxfort",
         "Tiniterhesség"
       ]
     }
