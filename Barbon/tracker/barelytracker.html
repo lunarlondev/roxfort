@@ -1,1 +1,57 @@
-semmi
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Barely Human - játékkövető</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Playfair+Display|Oswald" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="barelytracker.css">
+</head>
+<body>
+  <main class="barelytracker-shell">
+    <aside class="barelytracker-side">
+      <div class="barelytracker-side-top">
+        <div class="barelytracker-initial" id="barelytrackerInitial">B</div>
+        <div class="barelytracker-icons" id="barelytrackerIcons"></div>
+        <div class="barelytracker-motto" id="barelytrackerMotto">barely human</div>
+      </div>
+      <div class="barelytracker-texture"></div>
+    </aside>
+
+    <section class="darklog__frame barelytracker-frame" id="barelytrackerFrame">
+      <div class="darklog__pane">
+        <div class="barelytracker-scroll">
+          <header class="barelytracker-head">
+            <div class="barelytracker-title" id="barelytrackerTitle">Játéklista</div>
+            <div class="barelytracker-subtitle" id="barelytrackerSubtitle">játékkövető</div>
+            <div class="barelytracker-intro" id="barelytrackerIntro"></div>
+          </header>
+
+          <div class="barelytracker-tools">
+            <input class="barelytracker-search" id="barelytrackerSearch" type="search" placeholder="Keresés címre, névre, helyszínre, dátumra, TW-re...">
+
+            <div class="barelytracker-filterbar" aria-label="Szűrők">
+              <button class="barelytracker-btn barelytracker-filter is-active" type="button" data-filter="all">Összes</button>
+              <button class="barelytracker-btn barelytracker-filter" type="button" data-filter="active">Aktív</button>
+              <button class="barelytracker-btn barelytracker-filter" type="button" data-filter="closed">Lezárt</button>
+            </div>
+
+            <div class="barelytracker-actions">
+              <button class="barelytracker-btn" id="barelytrackerOpenAll" type="button">Mind nyit</button>
+              <button class="barelytracker-btn" id="barelytrackerCloseAll" type="button">Mind zár</button>
+            </div>
+          </div>
+
+          <div class="barelytracker-count" id="barelytrackerVisibleCount">0 játék</div>
+          <div class="barelytracker-reader barelytracker-hidden" id="barelytrackerReader"></div>
+          <div class="barelytracker-cats" id="barelytrackerList"></div>
+          <div class="barelytracker-empty barelytracker-hidden" id="barelytrackerEmpty">Nincs találat erre a szűrésre.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="barelytracker.js"></script>
+</body>
+</html>
