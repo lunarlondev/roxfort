@@ -69,6 +69,10 @@ function solangetrackerDefaultImage(){
   return solangetrackerState.data?.meta?.defaultImage || "images/gif/kkny.gif";
 }
 
+function solangetrackerDefaultCharacterImage(){
+  return solangetrackerState.data?.meta?.defaultCharacterImage || solangetrackerDefaultImage();
+}
+
 function solangetrackerCreateEl(tag, className, text){
   const el = document.createElement(tag);
 
@@ -83,13 +87,31 @@ function solangetrackerCreateEl(tag, className, text){
   return el;
 }
 
-function solangetrackerSetImage(img, src){
-  img.src = src || solangetrackerDefaultImage();
+function solangetrackerSetImage(img, src, fallback){
+  const safeFallback = fallback || solangetrackerDefaultImage();
+
+  img.src = src || safeFallback;
   img.alt = "";
 
   img.addEventListener("error", () => {
-    img.src = solangetrackerDefaultImage();
+    img.src = safeFallback;
   }, { once: true });
+}
+
+function solangetrackerHasLink(game){
+  return typeof game.link === "string" && game.link.trim() !== "";
+}
+
+function solangetrackerMakeExternalLink(game, text, className){
+  const link = document.createElement("a");
+
+  link.className = className;
+  link.textContent = text;
+  link.href = game.link;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+
+  return link;
 }
 
 function solangetrackerCategoryId(game){
@@ -127,6 +149,159 @@ function solangetrackerCategoryTitle(categoryId){
   return category?.title || categoryId || "Egyéb";
 }
 
+function solangetrackerCharacterName(character){
+  if (typeof character === "string") {
+    return character;
+  }
+
+  if (character && typeof character === "object") {
+    return character.name || character.title || character.id || "Ismeretlen";
+  }
+
+  return "";
+}
+
+function solangetrackerCharacterBankItem(name){
+  const bank = solangetrackerState.data?.characters || solangetrackerState.data?.characterBank || null;
+
+  if (!bank || !name) {
+    return null;
+  }
+
+  if (Array.isArray(bank)) {
+    return bank.find(item => {
+      const itemName = item?.name || item?.title || item?.id || "";
+      return solangetrackerNormalize(itemName) === solangetrackerNormalize(name);
+    }) || null;
+  }
+
+  if (typeof bank === "object") {
+    const direct = bank[name];
+
+    if (typeof direct === "string") {
+      return {
+        image: direct
+      };
+    }
+
+    if (direct && typeof direct === "object") {
+      return direct;
+    }
+
+    const normalizedName = solangetrackerNormalize(name);
+    const matchingKey = Object.keys(bank).find(key => solangetrackerNormalize(key) === normalizedName);
+
+    if (matchingKey) {
+      const match = bank[matchingKey];
+
+      if (typeof match === "string") {
+        return {
+          image: match
+        };
+      }
+
+      if (match && typeof match === "object") {
+        return match;
+      }
+    }
+  }
+
+  return null;
+}
+
+function solangetrackerCharacterImage(character){
+  const name = solangetrackerCharacterName(character);
+  const bankItem = solangetrackerCharacterBankItem(name);
+
+  if (character && typeof character === "object") {
+    return character.image || character.avatar || character.photo || bankItem?.image || bankItem?.avatar || bankItem?.photo || "";
+  }
+
+  return bankItem?.image || bankItem?.avatar || bankItem?.photo || "";
+}
+
+function solangetrackerCharacterFeatured(character, game){
+  const name = solangetrackerCharacterName(character);
+  const normalizedName = solangetrackerNormalize(name);
+
+  const characterMarked = character && typeof character === "object" && (
+    character.featured === true ||
+    character.highlighted === true ||
+    character.important === true
+  );
+
+  const featuredLists = [
+    ...solangetrackerArray(game.featuredCharacters),
+    ...solangetrackerArray(game.highlightedCharacters),
+    ...solangetrackerArray(game.importantCharacters)
+  ];
+
+  const listed = featuredLists.some(item => solangetrackerNormalize(solangetrackerCharacterName(item) || item) === normalizedName);
+
+  return characterMarked || listed;
+}
+
+function solangetrackerCharacterNames(game){
+  return solangetrackerArray(game.characters)
+    .map(character => solangetrackerCharacterName(character))
+    .filter(name => name);
+}
+
+function solangetrackerRenderCharacters(game, variant){
+  const characters = solangetrackerArray(game.characters);
+
+  if (characters.length === 0) {
+    return null;
+  }
+
+  const wrap = solangetrackerCreateEl("div", `solangetracker-character-list solangetracker-character-list-${variant || "card"}`);
+
+  characters.forEach(character => {
+    const name = solangetrackerCharacterName(character);
+
+    if (!name) {
+      return;
+    }
+
+    const chip = solangetrackerCreateEl("div", "solangetracker-character-chip");
+
+    if (solangetrackerCharacterFeatured(character, game)) {
+      chip.classList.add("is-featured");
+    }
+
+    chip.title = name;
+    chip.setAttribute("aria-label", name);
+
+    const img = document.createElement("img");
+    solangetrackerSetImage(img, solangetrackerCharacterImage(character), solangetrackerDefaultCharacterImage());
+    img.alt = name;
+
+    const label = solangetrackerCreateEl("span", "solangetracker-character-name", name);
+
+    chip.appendChild(img);
+    chip.appendChild(label);
+    wrap.appendChild(chip);
+  });
+
+  return wrap;
+}
+
+function solangetrackerRenderTags(tags, className){
+  const tagList = solangetrackerArray(tags);
+
+  if (tagList.length === 0) {
+    return null;
+  }
+
+  const wrap = solangetrackerCreateEl("div", className || "solangetracker-tags");
+
+  tagList.forEach(tag => {
+    wrap.appendChild(solangetrackerCreateEl("span", "solangetracker-tag", tag));
+  });
+
+  return wrap;
+}
+
 function solangetrackerSearchBlob(game){
   const parts = [
     game.title,
@@ -137,7 +312,7 @@ function solangetrackerSearchBlob(game){
     game.topic,
     game.location,
     game.summary,
-    solangetrackerArray(game.characters).join(" "),
+    solangetrackerCharacterNames(game).join(" "),
     solangetrackerArray(game.tags).join(" ")
   ];
 
@@ -245,33 +420,40 @@ function solangetrackerRenderGame(game){
 
   const info = solangetrackerCreateEl("div", "solangetracker-game-info");
 
-  info.appendChild(solangetrackerInfoLine("Név", solangetrackerArray(game.characters).join(", ") || "-"));
   info.appendChild(solangetrackerInfoLine("Dátum", game.date || "-"));
 
   if (game.location) {
     info.appendChild(solangetrackerInfoLine("Helyszín", game.location));
   }
 
-  const tags = solangetrackerCreateEl("div", "solangetracker-tags");
-
-  solangetrackerArray(game.tags).forEach(tag => {
-    tags.appendChild(solangetrackerCreateEl("span", "solangetracker-tag", tag));
-  });
+  const characters = solangetrackerRenderCharacters(game, "card");
+  const tags = solangetrackerRenderTags(game.tags, "solangetracker-tags");
 
   const footer = solangetrackerCreateEl("div", "solangetracker-game-footer");
 
-  const openBtn = solangetrackerCreateEl("button", "solangetracker-small-btn", "Megnézem");
-  openBtn.type = "button";
-  openBtn.addEventListener("click", () => {
+  const detailsBtn = solangetrackerCreateEl("button", "solangetracker-small-btn", "Részletek");
+  detailsBtn.type = "button";
+  detailsBtn.addEventListener("click", () => {
     solangetrackerSelectGame(game.id);
   });
 
-  footer.appendChild(openBtn);
+  footer.appendChild(detailsBtn);
+
+  if (solangetrackerHasLink(game)) {
+    footer.appendChild(solangetrackerMakeExternalLink(game, "Megnyitás", "solangetracker-small-btn solangetracker-small-link"));
+  }
 
   body.appendChild(top);
   body.appendChild(info);
 
-  if (solangetrackerArray(game.tags).length > 0) {
+  if (characters) {
+    const characterBlock = solangetrackerCreateEl("div", "solangetracker-game-characters");
+    characterBlock.appendChild(solangetrackerCreateEl("div", "solangetracker-game-characters-label", "Szereplők"));
+    characterBlock.appendChild(characters);
+    body.appendChild(characterBlock);
+  }
+
+  if (tags) {
     body.appendChild(tags);
   }
 
@@ -334,11 +516,24 @@ function solangetrackerRenderList(){
   });
 }
 
-function solangetrackerMetaBox(label, value){
+function solangetrackerMetaBox(label, value, extraClass){
   const box = solangetrackerCreateEl("div", "solangetracker-meta");
 
+  if (extraClass) {
+    box.classList.add(extraClass);
+  }
+
+  const body = solangetrackerCreateEl("div", "solangetracker-meta-v");
+
   box.appendChild(solangetrackerCreateEl("div", "solangetracker-meta-k", label));
-  box.appendChild(solangetrackerCreateEl("div", "solangetracker-meta-v", value));
+
+  if (value instanceof Node) {
+    body.appendChild(value);
+  } else {
+    body.textContent = value;
+  }
+
+  box.appendChild(body);
 
   return box;
 }
@@ -387,20 +582,29 @@ function solangetrackerRenderReader(game){
   );
 
   const meta = solangetrackerCreateEl("div", "solangetracker-reader-meta");
+  const readerCharacters = solangetrackerRenderCharacters(game, "reader");
+  const readerTags = solangetrackerRenderTags(game.tags, "solangetracker-tags solangetracker-reader-tags");
 
   meta.appendChild(solangetrackerMetaBox("Kategória", solangetrackerCategoryTitle(solangetrackerCategoryId(game))));
   meta.appendChild(solangetrackerMetaBox("Dátum", game.date || "-"));
-  meta.appendChild(solangetrackerMetaBox("Szereplők", solangetrackerArray(game.characters).join(", ") || "-"));
+
+  if (readerCharacters) {
+    meta.appendChild(solangetrackerMetaBox("Szereplők", readerCharacters));
+  }
 
   if (game.location) {
     meta.appendChild(solangetrackerMetaBox("Helyszín", game.location));
   }
 
-  if (solangetrackerArray(game.tags).length > 0) {
-    meta.appendChild(solangetrackerMetaBox("Tagek", solangetrackerArray(game.tags).join(", ")));
+  if (readerTags) {
+    meta.appendChild(solangetrackerMetaBox("Tagek", readerTags, "solangetracker-meta-full"));
   }
 
   const footer = solangetrackerCreateEl("div", "solangetracker-reader-footer");
+
+  if (solangetrackerHasLink(game)) {
+    footer.appendChild(solangetrackerMakeExternalLink(game, "Megnyitás", "solangetracker-link solangetracker-reader-link"));
+  }
 
   body.appendChild(top);
   body.appendChild(summary);
