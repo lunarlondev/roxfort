@@ -1,0 +1,878 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@300;400;500;600&display=swap');
+
+:root{
+  --solangetracker-w:580px;
+  --solangetracker-bg0:#070607;
+  --solangetracker-bg1:#0e0b0f;
+  --solangetracker-cardA:rgba(20,15,20,0.86);
+  --solangetracker-cardB:rgba(12,10,14,0.66);
+  --solangetracker-ink:rgba(230,214,195,0.92);
+  --solangetracker-muted:rgba(200,181,154,0.74);
+  --solangetracker-faint:rgba(155,137,113,0.55);
+  --solangetracker-line:rgba(232,214,176,0.18);
+  --solangetracker-shadow:rgba(0,0,0,0.62);
+  --solangetracker-accent:#b6904e;
+  --solangetracker-accent2:#3e9aa1;
+  --solangetracker-blood:#8b3b3b;
+  --solangetracker-green:#2f9c61;
+  --solangetracker-radius:14px;
+  --solangetracker-radius2:18px;
+  --solangetracker-snake:url("images/snake1.jpg");
+  --solangetracker-veve:url("images/veveB.jpg");
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  min-height:100%;
+}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--solangetracker-ink);
+  background:
+    radial-gradient(900px 620px at 15% 12%,rgba(182,144,78,0.16),transparent 60%),
+    radial-gradient(720px 520px at 85% 25%,rgba(62,154,161,0.10),transparent 62%),
+    radial-gradient(820px 520px at 50% 100%,rgba(139,59,59,0.10),transparent 64%),
+    linear-gradient(180deg,var(--solangetracker-bg0),var(--solangetracker-bg1));
+  background-attachment:fixed;
+  overflow-x:hidden;
+}
+
+.solangetracker-sheet{
+  width:100%;
+  max-width:var(--solangetracker-w);
+  margin:0 auto;
+  padding:14px 12px 24px;
+  position:relative;
+}
+
+.solangetracker-sheet::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(900px 580px at 50% -10%,rgba(182,144,78,0.08),transparent 55%),
+    radial-gradient(820px 620px at 0% 100%,rgba(62,154,161,0.06),transparent 55%),
+    linear-gradient(180deg,rgba(0,0,0,0.62),rgba(0,0,0,0.12) 32%,rgba(0,0,0,0.62));
+  opacity:0.95;
+}
+
+.solangetracker-hero,
+.solangetracker-card{
+  position:relative;
+  z-index:1;
+  border:1px solid var(--solangetracker-line);
+  background:linear-gradient(180deg,var(--solangetracker-cardA),var(--solangetracker-cardB));
+  box-shadow:0 12px 30px var(--solangetracker-shadow);
+  overflow:hidden;
+}
+
+.solangetracker-hero{
+  border-radius:var(--solangetracker-radius2);
+  padding:16px;
+}
+
+.solangetracker-hero::after,
+.solangetracker-card::after{
+  content:"";
+  position:absolute;
+  inset:-80px -80px auto -80px;
+  height:210px;
+  background-image:var(--solangetracker-veve);
+  background-size:720px auto;
+  background-repeat:no-repeat;
+  background-position:20% 0%;
+  opacity:0.08;
+  filter:grayscale(1) contrast(1.05);
+  transform:rotate(6deg);
+  pointer-events:none;
+}
+
+.solangetracker-hero-inner{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+
+.solangetracker-sigil{
+  width:80px;
+  height:80px;
+  border-radius:999px;
+  overflow:hidden;
+  border:2px solid rgba(182,144,78,0.40);
+  box-shadow:0 0 26px rgba(182,144,78,0.20);
+  background:rgba(0,0,0,0.22);
+  flex:0 0 auto;
+}
+
+.solangetracker-sigil img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  filter:contrast(1.08) saturate(0.90);
+}
+
+.solangetracker-hero-text h1{
+  margin:0;
+  font-family:Cinzel,serif;
+  font-weight:600;
+  letter-spacing:0.4px;
+  font-size:22px;
+  line-height:1.05;
+}
+
+.solangetracker-subtitle{
+  margin-top:7px;
+  color:var(--solangetracker-muted);
+  font-size:11px;
+  letter-spacing:0.7px;
+  text-transform:uppercase;
+}
+
+.solangetracker-intro{
+  position:relative;
+  z-index:2;
+  margin-top:16px;
+  padding:12px;
+  border-left:2px solid rgba(182,144,78,0.45);
+  background:rgba(0,0,0,0.18);
+  border-radius:0 12px 12px 0;
+  font-size:12px;
+  line-height:1.65;
+  color:var(--solangetracker-muted);
+}
+
+.solangetracker-card{
+  margin-top:12px;
+  border-radius:var(--solangetracker-radius);
+  padding:18px;
+}
+
+.solangetracker-section-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+  position:relative;
+  z-index:2;
+}
+
+.solangetracker-section-head h2{
+  margin:0;
+  font-family:Cinzel,serif;
+  font-weight:600;
+  font-size:16px;
+  letter-spacing:0.2px;
+}
+
+.solangetracker-count{
+  border:1px solid rgba(232,214,176,0.14);
+  background:rgba(0,0,0,0.20);
+  border-radius:999px;
+  padding:7px 10px;
+  font-size:11px;
+  color:var(--solangetracker-muted);
+  white-space:nowrap;
+}
+
+.solangetracker-ornament{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:12px 0;
+  position:relative;
+  z-index:2;
+}
+
+.solangetracker-ornament-line{
+  height:1px;
+  flex:1;
+  background:linear-gradient(90deg,transparent,rgba(232,214,176,0.18),transparent);
+}
+
+.solangetracker-ornament-mark{
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  border:1px solid rgba(182,144,78,0.45);
+  background:radial-gradient(circle at 35% 35%,rgba(182,144,78,0.75),rgba(182,144,78,0.10));
+  box-shadow:0 0 0 6px rgba(182,144,78,0.08);
+}
+
+.solangetracker-tools{
+  display:grid;
+  gap:10px;
+  position:relative;
+  z-index:2;
+}
+
+.solangetracker-search{
+  width:100%;
+  border:1px solid rgba(232,214,176,0.16);
+  border-radius:12px;
+  background:rgba(0,0,0,0.28);
+  color:var(--solangetracker-ink);
+  padding:10px 11px;
+  font-size:12px;
+  outline:none;
+}
+
+.solangetracker-search::placeholder{
+  color:var(--solangetracker-muted);
+}
+
+.solangetracker-filterbar,
+.solangetracker-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:center;
+}
+
+.solangetracker-actions{
+  justify-content:flex-start;
+}
+
+.solangetracker-btn{
+  appearance:none;
+  border:1px solid rgba(232,214,176,0.18);
+  background:rgba(0,0,0,0.28);
+  color:rgba(230,214,195,0.86);
+  border-radius:999px;
+  padding:8px 12px;
+  font-size:12px;
+  cursor:pointer;
+  transition:transform 120ms ease,border-color 120ms ease,background 120ms ease,color 120ms ease;
+}
+
+.solangetracker-btn:hover{
+  transform:translateY(-1px);
+  border-color:rgba(182,144,78,0.40);
+  background:rgba(0,0,0,0.40);
+}
+
+.solangetracker-btn.is-active{
+  border-color:rgba(182,144,78,0.55);
+  background:rgba(182,144,78,0.18);
+  color:rgba(245,230,205,0.96);
+}
+
+.solangetracker-subtle{
+  border-color:rgba(232,214,176,0.12);
+  color:var(--solangetracker-muted);
+}
+
+.solangetracker-stats{
+  margin-top:12px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  position:relative;
+  z-index:2;
+}
+
+.solangetracker-stat{
+  border:1px solid rgba(232,214,176,0.14);
+  border-radius:12px;
+  padding:9px 10px;
+  background:rgba(0,0,0,0.18);
+}
+
+.solangetracker-stat-k{
+  font-size:10px;
+  letter-spacing:0.6px;
+  text-transform:uppercase;
+  color:var(--solangetracker-faint);
+  margin-bottom:5px;
+}
+
+.solangetracker-stat-v{
+  font-size:13px;
+  color:rgba(230,214,195,0.92);
+}
+
+.solangetracker-reader{
+  margin-top:14px;
+  position:relative;
+  z-index:2;
+  border:1px solid rgba(232,214,176,0.18);
+  border-radius:16px;
+  background:rgba(0,0,0,0.22);
+  box-shadow:0 12px 28px rgba(0,0,0,0.58);
+  overflow:hidden;
+  animation:solangetrackerPopIn 220ms ease;
+}
+
+.solangetracker-reader-grid{
+  display:grid;
+  grid-template-columns:170px 1fr;
+  gap:0;
+}
+
+.solangetracker-reader-image{
+  min-height:220px;
+  background:rgba(0,0,0,0.22);
+  overflow:hidden;
+}
+
+.solangetracker-reader-image img{
+  width:100%;
+  height:100%;
+  min-height:220px;
+  display:block;
+  object-fit:cover;
+  filter:contrast(1.08) saturate(0.92) brightness(0.92);
+}
+
+.solangetracker-reader-body{
+  padding:14px;
+  min-width:0;
+}
+
+.solangetracker-reader-top{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  align-items:flex-start;
+}
+
+.solangetracker-reader-label{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:0.7px;
+  color:var(--solangetracker-faint);
+  margin-bottom:3px;
+}
+
+.solangetracker-reader-title{
+  font-family:Cinzel,serif;
+  font-size:16px;
+  color:rgba(230,214,195,0.92);
+  line-height:1.25;
+}
+
+.solangetracker-reader-summary{
+  margin-top:10px;
+  border:1px solid rgba(182,144,78,0.22);
+  border-radius:12px;
+  padding:11px 12px;
+  max-height:170px;
+  overflow:auto;
+  background:
+    linear-gradient(rgba(0,0,0,0.62),rgba(0,0,0,0.62)),
+    var(--solangetracker-snake);
+  background-size:720px auto;
+  background-position:center;
+  background-blend-mode:overlay;
+  box-shadow:inset 0 0 44px rgba(0,0,0,0.65);
+  color:rgba(215,198,173,0.94);
+  font-size:11px;
+  line-height:1.65;
+}
+
+.solangetracker-reader-meta{
+  margin-top:10px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+
+.solangetracker-meta{
+  border:1px solid rgba(232,214,176,0.12);
+  border-radius:10px;
+  padding:8px 9px;
+  background:rgba(0,0,0,0.18);
+}
+
+.solangetracker-meta-k{
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:0.6px;
+  color:var(--solangetracker-faint);
+  margin-bottom:4px;
+}
+
+.solangetracker-meta-v{
+  font-size:11px;
+  line-height:1.45;
+  color:rgba(230,214,195,0.88);
+}
+
+.solangetracker-meta-full{
+  grid-column:1 / -1;
+}
+
+.solangetracker-reader-tags{
+  margin-top:0;
+  max-height:none;
+  overflow:visible;
+}
+
+.solangetracker-reader-footer:empty{
+  display:none;
+}
+
+.solangetracker-reader-link{
+  display:inline-flex;
+  align-items:center;
+}
+
+.solangetracker-reader-footer{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:11px;
+}
+
+.solangetracker-link{
+  color:rgba(182,144,78,0.92);
+  text-decoration:none;
+  border-bottom:1px solid rgba(182,144,78,0.28);
+  font-family:Cinzel,serif;
+  font-size:12px;
+}
+
+.solangetracker-link:hover{
+  border-bottom-color:rgba(182,144,78,0.65);
+}
+
+.solangetracker-list{
+  margin-top:14px;
+  position:relative;
+  z-index:2;
+  display:grid;
+  gap:10px;
+}
+
+.solangetracker-cat{
+  border:1px solid rgba(232,214,176,0.14);
+  border-radius:14px;
+  background:rgba(0,0,0,0.16);
+  overflow:visible;
+}
+
+.solangetracker-cat summary{
+  cursor:pointer;
+  list-style:none;
+  padding:12px 13px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  font-family:Cinzel,serif;
+  font-size:14px;
+  color:rgba(230,214,195,0.90);
+  background:rgba(0,0,0,0.20);
+}
+
+.solangetracker-cat summary::-webkit-details-marker{
+  display:none;
+}
+
+.solangetracker-cat-count{
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  font-size:10px;
+  color:var(--solangetracker-muted);
+  border:1px solid rgba(232,214,176,0.12);
+  border-radius:999px;
+  padding:5px 8px;
+  background:rgba(0,0,0,0.20);
+}
+
+.solangetracker-cat-body{
+  padding:10px;
+  display:grid;
+  gap:9px;
+  overflow:visible;
+}
+
+.solangetracker-game{
+  display:grid;
+  grid-template-columns:135px 1fr;
+  grid-template-rows:auto;
+  min-height:184px;
+  height:auto;
+  gap:10px;
+  border:1px solid rgba(232,214,176,0.12);
+  border-radius:13px;
+  background:rgba(0,0,0,0.18);
+  overflow:visible;
+  transition:transform 180ms ease,border-color 180ms ease,box-shadow 180ms ease;
+}
+
+.solangetracker-game:hover{
+  transform:translateY(-2px);
+  border-color:rgba(182,144,78,0.40);
+  box-shadow:0 12px 26px rgba(0,0,0,0.45);
+}
+
+.solangetracker-game.is-selected{
+  border-color:rgba(182,144,78,0.62);
+  box-shadow:0 0 0 1px rgba(182,144,78,0.22),0 12px 26px rgba(0,0,0,0.48);
+}
+
+.solangetracker-game-image{
+  width:135px;
+  height:100%;
+  min-height:184px;
+  background:rgba(0,0,0,0.22);
+  overflow:hidden;
+}
+
+.solangetracker-game-image img{
+  width:100%;
+  height:100%;
+  min-height:0;
+  object-fit:cover;
+  display:block;
+  filter:grayscale(1) contrast(1.25) brightness(0.10) saturate(0.3);
+  transform:scale(1.02);
+  transition:filter 260ms ease,transform 260ms ease;
+}
+
+.solangetracker-game:hover .solangetracker-game-image img,
+.solangetracker-game.is-selected .solangetracker-game-image img{
+  filter:grayscale(0) contrast(1.08) brightness(0.86) saturate(1.02);
+  transform:scale(1.06);
+}
+
+.solangetracker-game-body{
+  min-height:184px;
+  padding:10px 10px 10px 0;
+  min-width:0;
+  overflow:visible;
+  display:flex;
+  flex-direction:column;
+}
+
+.solangetracker-game-top{
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  align-items:flex-start;
+}
+
+.solangetracker-game-title{
+  margin:0;
+  font-family:Cinzel,serif;
+  font-size:13px;
+  color:rgba(230,214,195,0.92);
+  line-height:1.28;
+  max-height:34px;
+  overflow:hidden;
+}
+
+.solangetracker-status{
+  flex:0 0 auto;
+  border-radius:999px;
+  padding:5px 8px;
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+  border:1px solid rgba(232,214,176,0.16);
+  background:rgba(0,0,0,0.20);
+  color:rgba(230,214,195,0.82);
+}
+
+.solangetracker-status-active{
+  background:#163c24;
+  border-color:#1f5a36;
+  color:#a8d5b8;
+}
+
+.solangetracker-status-closed{
+  background:#321616;
+  border-color:#7a1f1f;
+  color:#ffd6d6;
+}
+
+.solangetracker-status-paused{
+  background:#3a3017;
+  border-color:#7c6124;
+  color:#ffe2a8;
+}
+
+.solangetracker-status-planned{
+  background:#172b3a;
+  border-color:#24506c;
+  color:#b9e2ff;
+}
+
+.solangetracker-status-stuck{
+  background:#3a2417;
+  border-color:#7c3d24;
+  color:#ffd0a8;
+}
+
+.solangetracker-game-info{
+  margin-top:8px;
+  display:grid;
+  gap:4px;
+  font-size:10px;
+  line-height:1.45;
+  color:rgba(230,214,195,0.82);
+  max-height:none;
+  overflow:visible;
+}
+
+.solangetracker-game-info b{
+  color:rgba(182,144,78,0.86);
+  font-weight:600;
+}
+
+.solangetracker-game-characters{
+  margin-top:8px;
+}
+
+.solangetracker-game-characters-label{
+  margin-bottom:5px;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:0.6px;
+  color:var(--solangetracker-faint);
+}
+
+.solangetracker-character-list{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:6px;
+  min-width:0;
+  overflow:visible;
+}
+
+.solangetracker-character-chip{
+  width:26px;
+  height:26px;
+  position:relative;
+  flex:0 0 auto;
+  border:1px solid rgba(232,214,176,0.18);
+  border-radius:999px;
+  background:rgba(0,0,0,0.28);
+  box-shadow:0 4px 12px rgba(0,0,0,0.35);
+}
+
+.solangetracker-character-chip{
+  transition:transform 160ms ease,box-shadow 160ms ease,border-color 160ms ease;
+}
+
+.solangetracker-character-chip:hover{
+  transform:scale(1.4);
+  z-index:40;
+}
+
+.solangetracker-character-chip img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  border-radius:999px;
+  filter:contrast(1.08) saturate(0.94) brightness(0.90);
+}
+
+.solangetracker-character-chip.is-featured{
+  border-color:rgba(182,144,78,0.88);
+  box-shadow:0 0 0 2px rgba(182,144,78,0.24),0 0 18px rgba(182,144,78,0.22),0 4px 12px rgba(0,0,0,0.35);
+  animation:solangetrackerFeaturedPulse 2.6s ease-in-out infinite;
+}
+
+.solangetracker-character-name{
+  position:absolute;
+  left:50%;
+  bottom:calc(100% + 7px);
+  z-index:30;
+  pointer-events:none;
+  white-space:nowrap;
+  transform:translateX(-50%) translateY(4px);
+  opacity:0;
+  border:1px solid rgba(232,214,176,0.18);
+  border-radius:999px;
+  padding:4px 7px;
+  background:rgba(6,5,7,0.94);
+  color:rgba(230,214,195,0.92);
+  font-size:9px;
+  line-height:1;
+  box-shadow:0 8px 18px rgba(0,0,0,0.48);
+  transition:opacity 130ms ease,transform 130ms ease;
+}
+
+.solangetracker-character-chip:hover .solangetracker-character-name{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+
+.solangetracker-character-list-reader .solangetracker-character-chip{
+  width:31px;
+  height:31px;
+}
+
+.solangetracker-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  margin-top:8px;
+  max-height:46px;
+  overflow:hidden;
+}
+
+.solangetracker-tag{
+  border:1px solid rgba(232,214,176,0.12);
+  border-radius:999px;
+  padding:4px 7px;
+  background:rgba(0,0,0,0.18);
+  color:var(--solangetracker-muted);
+  font-size:9px;
+}
+
+.solangetracker-game-footer{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px;
+  margin-top:auto;
+  padding-top:9px;
+}
+
+.solangetracker-small-btn{
+  appearance:none;
+  cursor:pointer;
+  border:1px solid rgba(232,214,176,0.14);
+  background:rgba(0,0,0,0.22);
+  color:rgba(230,214,195,0.86);
+  border-radius:999px;
+  padding:6px 9px;
+  font-size:10px;
+}
+
+.solangetracker-small-btn:hover{
+  border-color:rgba(182,144,78,0.40);
+}
+
+.solangetracker-small-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+}
+
+.solangetracker-empty{
+  position:relative;
+  z-index:2;
+  margin-top:14px;
+  border:1px solid rgba(232,214,176,0.14);
+  border-radius:12px;
+  padding:14px;
+  background:rgba(0,0,0,0.18);
+  color:var(--solangetracker-muted);
+  font-size:12px;
+  text-align:center;
+}
+
+.solangetracker-hidden{
+  display:none;
+}
+
+@keyframes solangetrackerPopIn{
+  from{
+    opacity:0;
+    transform:translateY(8px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes solangetrackerFeaturedPulse{
+  0%,
+  100%{
+    box-shadow:0 0 0 2px rgba(182,144,78,0.20),0 0 14px rgba(182,144,78,0.16),0 4px 12px rgba(0,0,0,0.35);
+  }
+
+  50%{
+    box-shadow:0 0 0 3px rgba(182,144,78,0.34),0 0 24px rgba(182,144,78,0.32),0 4px 14px rgba(0,0,0,0.40);
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .solangetracker-character-chip.is-featured{
+    animation:none;
+  }
+}
+
+.solangetracker-reader-summary,
+.solangetracker-list{
+  scrollbar-width:thin;
+  scrollbar-color:rgba(182,144,78,0.55) rgba(0,0,0,0.15);
+}
+
+.solangetracker-reader-summary::-webkit-scrollbar,
+.solangetracker-list::-webkit-scrollbar{
+  width:8px;
+}
+
+.solangetracker-reader-summary::-webkit-scrollbar-track,
+.solangetracker-list::-webkit-scrollbar-track{
+  background:rgba(0,0,0,0.15);
+  border-radius:999px;
+}
+
+.solangetracker-reader-summary::-webkit-scrollbar-thumb,
+.solangetracker-list::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg,rgba(182,144,78,0.65),rgba(232,214,176,0.35));
+  border-radius:999px;
+  border:1px solid rgba(232,214,176,0.25);
+}
+
+@media (max-width:520px){
+  .solangetracker-stats,
+  .solangetracker-reader-meta{
+    grid-template-columns:1fr;
+  }
+
+  .solangetracker-reader-grid{
+    grid-template-columns:1fr;
+    grid-template-rows:auto auto;
+    height:auto;
+  }
+
+  .solangetracker-game{
+    grid-template-columns:1fr;
+    grid-template-rows:190px auto;
+    min-height:0;
+    height:auto;
+  }
+
+  .solangetracker-game-body{
+    min-height:0;
+    padding:10px;
+  }
+
+  .solangetracker-game-image,
+  .solangetracker-game-image img{
+    width:100%;
+    height:190px;
+    min-height:0;
+  }
+
+  .solangetracker-reader-image,
+  .solangetracker-reader-image img{
+    min-height:230px;
+  }
+
+  .solangetracker-actions{
+    justify-content:flex-start;
+  }
+}
