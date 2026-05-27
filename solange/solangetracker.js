@@ -729,7 +729,7 @@ function solangetrackerRenderCharacterReader(character){
   const summary = solangetrackerCreateEl(
     "div",
     "solangetracker-reader-summary",
-    `${countText} A lista lent csak azokat a játékokat mutatja, amelyekben ez a karakter benne van.`
+    `${countText} Az alábbi lista csak azokat a játékokat jeleníti meg, amikben a megjelölt karakter szerepel. A szűrő törlésével lehet visszaállítani alapértelmezettre.`
   );
 
   body.appendChild(top);

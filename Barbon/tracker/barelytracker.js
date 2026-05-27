@@ -631,7 +631,7 @@ function barelytrackerRenderCharacterReader(character){
     ? `${allGames.length} játékban szerepel.`
     : `${visibleGames.length} játék látszik a jelenlegi szűrőkkel, összesen ${allGames.length} játékban szerepel.`;
 
-  const summary = barelytrackerCreateEl("div", "barelytracker-reader-summary", `${countText} A lista lent csak azokat a játékokat mutatja, amelyekben ez a karakter benne van.`);
+  const summary = barelytrackerCreateEl("div", "barelytracker-reader-summary", `${countText} Az alábbi lista csak azokat a játékokat jeleníti meg, amikben a megjelölt karakter szerepel. A szűrő törlésével lehet visszaállítani alapértelmezettre.`);
 
   body.appendChild(top);
   body.appendChild(summary);
