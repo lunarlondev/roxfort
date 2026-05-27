@@ -178,7 +178,7 @@
         },
         {
           "name": "Roxanne Montague",
-          "image": "actors/roxanne",
+          "image": "actors/roxanne.jpg",
           "featured": true
         }
       ],
@@ -189,7 +189,6 @@
       "triggerWarning": "",
       "summary": "Egy megrémült kneazle-nek köszönhetően megismeri a két Roxfortos lányt.",
       "meta": {
-        "Név": "Anne-Rose Tuffin & Roxanne Montague",
         "Dátum": "2005. 07. 15. péntek",
         "Helyszín": "Homokvárzóna – Építőkörlet"
       }
@@ -226,11 +225,10 @@
       "characters": [
         {
           "name": "Eydis Sidthvordr",
-          "image": "",
+          "image": "actors/eydis.jpg",
           "featured": true
         }
       ],
-      "name": "Eydis Sidthvordr",
       "date": "2005. 08. 20. vasárnap",
       "location": "Nagytavak vidéke, USA",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,20423.msg126707.html#msg126707",
@@ -444,20 +442,17 @@
       "characters": [
         {
           "name": "Sienna Scrimgeour",
-          "image": "",
+          "image": "actors/sienna.jpg",
           "featured": true
         }
       ],
-      "name": "Sienna Scrimgeour",
-      "topic": "",
       "date": "2005. 09. 20. hétfő",
       "location": "Roxfort, Kviddics pálya",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,19915.msg127310.html#msg127310",
       "image": "https://i.imgur.com/ECd7r9q.png",
       "triggerWarning": "Trigger warning: káros ideológiák",
-      "summary": "",
+      "summary": "Sienna a Roxfortban konfrontálódik Solace-szal.",
       "meta": {
-        "Név": "Sienna Scrimgeour",
         "Dátum": "2005. 09. 20. hétfő",
         "Helyszín": "Roxfort, Kviddics pálya"
       }
@@ -470,18 +465,16 @@
       "characters": [
         {
           "name": "Anne-Rose Tuffin",
-          "image": "images/actors/annie.jpg",
+          "image": "actors/annie.jpg",
           "featured": true
         }
       ],
-      "name": "Anne-Rose Tuffin",
-      "topic": "",
       "date": "2005. 09. 09. péntek",
       "location": "Roxfort, Nyilvános mágiatörténeti irattár",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,19902.msg127381/topicseen.html#msg127381",
       "image": "https://i.imgur.com/esyD5Bn.png",
       "triggerWarning": "",
-      "summary": "",
+      "summary": "Újratalálkozás Barcelona után a roxforti irattárban.",
       "meta": {
         "Név": "Anne-Rose Tuffin",
         "Dátum": "2005. 09. 09. péntek",
@@ -496,20 +489,17 @@
       "characters": [
         {
           "name": "Miguel Fuentes",
-          "image": "",
+          "image": "actors/miguel.jpg",
           "featured": true
         }
       ],
-      "name": "Miguel Fuentes",
-      "topic": "",
       "date": "2005. 09. 12. hétfő",
       "location": "Roxfort, Hagrid kunyhója",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,19912.msg126995.html#msg126995",
       "image": "https://i.imgur.com/YauoKGI.png",
       "triggerWarning": "Trigger warning: drogmegjelenítés, káromkodás",
-      "summary": "",
+      "summary": "Solace készséggel segít elrejteni Miguel illegálisan átutaztatott kellékeit. Az elrejtett dolgokat később titokban a mocsárban helyezi el.",
       "meta": {
-        "Név": "Miguel Fuentes",
         "Dátum": "2005. 09. 12. hétfő",
         "Helyszín": "Roxfort, Hagrid kunyhója"
       }
@@ -522,20 +512,17 @@
       "characters": [
         {
           "name": "Malachi Maddock",
-          "image": "images/actors/malachi.jpg",
+          "image": "actors/malachi.jpg",
           "featured": true
         }
       ],
-      "name": "Malachi Maddock",
-      "topic": "",
       "date": "2005. 09. 14. szerda",
       "location": "Roxfort, Hisztis Myrtle mosdója",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,19965.msg127360.html#msg127360",
       "image": "https://i.imgur.com/SClbBHV.png",
       "triggerWarning": "Trigger warning: erőszak",
-      "summary": "",
+      "summary": "Kontrontálódás Malachival az ezt megelőző bántalmazást és bullyzást követően. Újabb egyezségre jutnak, miszerint a tanév során kerülik egymást még a tanórákon is.",
       "meta": {
-        "Név": "Malachi Maddock",
         "Dátum": "2005. 09. 14. szerda",
         "Helyszín": "Roxfort, Hisztis Myrtle mosdója"
       }
@@ -548,25 +535,102 @@
       "characters": [
         {
           "name": "Hagen Romanov",
-          "image": "images/actors/hagen.jpg",
+          "image": "actors/hagen.jpg",
           "featured": true
         },
         {
-          "name": "hatod-hetedév",
-          "image": "",
-          "featured": true
+          "name": "Alma L. Remington",
+          "image": "actors/alma.jpg",
+          "featured": false
+        },
+		{
+          "name": "Holden Echohawk",
+          "image": "actors/holden.jpg",
+          "featured": false
+        },
+		{
+          "name": "Maisie Jackdaw",
+          "image": "actors/maisie.jpg",
+          "featured": false
+        },
+		{
+          "name": "Daphné d'Aboville",
+          "image": "actors/daph.jpg",
+          "featured": false
+        },
+		{
+          "name": "Chikara Tetsuya",
+          "image": "actors/chikara.jpg",
+          "featured": false
+        },
+		{
+          "name": "Gemma Jenkins",
+          "image": "actors/gemma.jpg",
+          "featured": false
+        },
+		{
+          "name": "Inès de Saint-Vinant",
+          "image": "actors/ines.jpg",
+          "featured": false
+        },
+		{
+          "name": "Varvara Chernov",
+          "image": "actors/varvara.jpg",
+          "featured": false
+        },
+		{
+          "name": "Siddhartha Suduri",
+          "image": "actors/sid.jpg",
+          "featured": false
+        },
+		{
+          "name": "Lolita Delacour",
+          "image": "actors/lolita.jpg",
+          "featured": false
+        },
+		{
+          "name": "Sebastien Lacroix",
+          "image": "actors/sebastien.jpg",
+          "featured": false
+        },
+		{
+          "name": "Rokuro Ishida",
+          "image": "actors/rokuro.jpg",
+          "featured": false
+        },
+		{
+          "name": "Ophelia Langley",
+          "image": "actors/ophelia.jpg",
+          "featured": false
+        },
+		{
+          "name": "Miguel Fuentes",
+          "image": "actors/miguel.jpg",
+          "featured": false
+        },
+		{
+          "name": "Anne-Rose Tuffin",
+          "image": "actors/annie.jpg",
+          "featured": false
+        },
+		{
+          "name": "Orin Morgenstern",
+          "image": "actors/orin.jpg",
+          "featured": false
+        },
+		{
+          "name": "María Teresa Salamanca",
+          "image": "actors/maria.jpg",
+          "featured": false
         }
       ],
-      "name": "Hagen Romanov & hatod-hetedév",
-      "topic": "",
       "date": "2005. 09. 29. csütörtök",
       "location": "Roxfort, Alkimista labor",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,20708.msg127594.html#msg127594",
       "image": "https://i.imgur.com/Iy8I8BM.png",
       "triggerWarning": "",
-      "summary": "",
+      "summary": "Romanov professzor alkímia órája. Téma az alkímiai ezüst.",
       "meta": {
-        "Név": "Hagen Romanov & hatod-hetedév",
         "Dátum": "2005. 09. 29. csütörtök",
         "Helyszín": "Roxfort, Alkimista labor"
       }
@@ -578,21 +642,183 @@
       "status": "Lezárt",
       "characters": [
         {
-          "name": "Griffendél vs. Mardekár mérkőzés",
-          "image": "",
+          "name": "Sienna Scrimgeour",
+          "image": "actors/sienna.jpg",
           "featured": true
+        },
+		{
+          "name": "Revan Morgenstern",
+          "image": "actors/revan.jpg",
+          "featured": true
+        },
+		{
+          "name": "Anne-Rose Tuffin",
+          "image": "actors/annie.jpg",
+          "featured": true
+        },
+		{
+          "name": "Chikara Tetsuya",
+          "image": "actors/chikara.jpg",
+          "featured": true
+        },
+		{
+          "name": "Maribel Thorne",
+          "image": "actors/npcfemale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Bernard Barkley",
+          "image": "actors/npcmale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Elowen Dawlish",
+          "image": "actors/npcfemale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Connor O'Hara",
+          "image": "actors/connor.jpg",
+          "featured": true
+        },
+		{
+          "name": "Gemma Jenkins",
+          "image": "actors/gemma.jpg",
+          "featured": true
+        },
+		{
+          "name": "Heranoush Fletcher",
+          "image": "actors/sienna.jpg",
+          "featured": true
+        },
+		{
+          "name": "Nialen Travers",
+          "image": "actors/nialen.jpg",
+          "featured": true
+        },
+		{
+          "name": "Connor O'Hara",
+          "image": "actors/connor.jpg",
+          "featured": true
+        },
+		{
+          "name": "Roxanne Montague",
+          "image": "actors/roxanne.jpg",
+          "featured": true
+        },
+		{
+          "name": "Blaze Florance",
+          "image": "actors/blaze.jpg",
+          "featured": true
+        },
+		{
+          "name": "Octavia Selwyn",
+          "image": "actors/npcfemale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Ophelia Langley",
+          "image": "actors/ophelia.jpg",
+          "featured": false
+        },
+		{
+          "name": "Holden Echohawk",
+          "image": "actors/holden.jpg",
+          "featured": false
+        },
+		{
+          "name": "Enver Nebelwald",
+          "image": "actors/enver.jpg",
+          "featured": false
+        },
+		{
+          "name": "Winthrop Hardy",
+          "image": "actors/winthrop.jpg",
+          "featured": false
+        },
+		{
+          "name": "Amycus Carrow",
+          "image": "actors/amy.jpg",
+          "featured": false
+        },
+		{
+          "name": "Hagen Romanov",
+          "image": "actors/hagen.jpg",
+          "featured": false
+        },
+		{
+          "name": "Liliya Romanov",
+          "image": "actors/liliya.jpg",
+          "featured": false
+        },
+		{
+          "name": "Daphné d'Aboville",
+          "image": "actors/daph.jpg",
+          "featured": false
+        },
+		{
+          "name": "Alma L. Remington",
+          "image": "actors/alma.jpg",
+          "featured": false
+        },
+		{
+          "name": "Elizabeth Rappaport",
+          "image": "actors/elizabeth.jpg",
+          "featured": false
+        },
+		{
+          "name": "Quennel Oakley",
+          "image": "actors/quennel.jpg",
+          "featured": false
+        },
+		{
+          "name": "Ginevra Weasley",
+          "image": "actors/ginny.jpg",
+          "featured": false
+        },
+		{
+          "name": "Siddhartha Suduri",
+          "image": "actors/sid.jpg",
+          "featured": false
+        },
+		{
+          "name": "Malachi Maddock",
+          "image": "actors/malachi.jpg",
+          "featured": false
+        },
+		{
+          "name": "Varvara Chernov",
+          "image": "actors/varvara.jpg",
+          "featured": false
+        },
+		{
+          "name": "Vianne M. Gardner",
+          "image": "actors/vianne.jpg",
+          "featured": false
+        },
+		{
+          "name": "Élodie Roethlisberger",
+          "image": "actors/elodie.jpg",
+          "featured": false
+        },
+		{
+          "name": "Eydis Sidthvordr",
+          "image": "actors/eydis.jpg",
+          "featured": false
+        },
+		{
+          "name": "Miguel Fuentes",
+          "image": "actors/miguel.jpg",
+          "featured": false
         }
       ],
-      "name": "Griffendél vs. Mardekár mérkőzés",
-      "topic": "",
       "date": "2005. 10. 01. szombat",
       "location": "Roxfort, Mardekár lelátók",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,20824.msg127475.html#msg127475",
       "image": "https://i.imgur.com/2z4yXHv.png",
       "triggerWarning": "",
-      "summary": "",
+      "summary": "Szurkolás a nézőtéren a Griffendél-Mardekár nyitómérkőzésén.",
       "meta": {
-        "Név": "Griffendél vs. Mardekár mérkőzés",
         "Dátum": "2005. 10. 01. szombat",
         "Helyszín": "Roxfort, Mardekár lelátók"
       }
@@ -604,13 +830,116 @@
       "status": "Lezárt",
       "characters": [
         {
-          "name": "A Tűz Serlege",
-          "image": "",
-          "featured": true
+          "name": "Sebastien Lacroix",
+          "image": "actors/sebastien.jpg",
+          "featured": false
+        },
+		{
+          "name": "Chikara Tetsuya",
+          "image": "actors/chikara.jpg",
+          "featured": false
+        },
+		{
+          "name": "Daphné d'Aboville",
+          "image": "actors/daph.jpg",
+          "featured": false
+        },
+		{
+          "name": "Vianne M. Gardner",
+          "image": "actors/vianne.jpg",
+          "featured": false
+        },
+		{
+          "name": "Zaniah Ivutro",
+          "image": "actors/zaniah.jpg",
+          "featured": false
+        },
+		{
+          "name": "Eydis Sidthvordr",
+          "image": "actors/eydis.jpg",
+          "featured": false
+        },
+		{
+          "name": "Lolita Delacour",
+          "image": "actors/lolita.jpg",
+          "featured": false
+        },
+		{
+          "name": "Inès de Saint-Vinant",
+          "image": "actors/ines.jpg",
+          "featured": false
+        },
+		{
+          "name": "Rokuro Ishida",
+          "image": "actors/rokuro.jpg",
+          "featured": false
+        },
+		{
+          "name": "Connor O'Hara",
+          "image": "actors/connor.jpg",
+          "featured": false
+        },
+		{
+          "name": "Vale Bate",
+          "image": "actors/vale.jpg",
+          "featured": false
+        },
+		{
+          "name": "Sienna Scrimgeour",
+          "image": "actors/sienna.jpg",
+          "featured": false
+        },
+		{
+          "name": "Varvara Chernov",
+          "image": "actors/varvara.jpg",
+          "featured": false
+        },
+		{
+          "name": "Orin Morgenstern",
+          "image": "actors/orin.jpg",
+          "featured": false
+        },
+		{
+          "name": "Siddhartha Suduri",
+          "image": "actors/sid.jpg",
+          "featured": false
+        },
+		{
+          "name": "Élodie Roethlisberger",
+          "image": "actors/elodie.jpg",
+          "featured": false
+        },
+		{
+          "name": "Malachi Maddock",
+          "image": "actors/malachi.jpg",
+          "featured": false
+        },
+		{
+          "name": "Miguel Fuentes",
+          "image": "actors/miguel.jpg",
+          "featured": false
+        },
+		{
+          "name": "Elizabeth Rappaport",
+          "image": "actors/elizabeth.jpg",
+          "featured": false
+        },
+		{
+          "name": "Holden Echohawk",
+          "image": "actors/holden.jpg",
+          "featured": false
+        },
+		{
+          "name": "Gemma Jenkins",
+          "image": "actors/gemma.jpg",
+          "featured": false
+        },
+		{
+          "name": "Minerva McGalagony",
+          "image": "actors/minerva.png",
+          "featured": false
         }
       ],
-      "name": "A Tűz Serlege",
-      "topic": "",
       "date": "2005. 10. 14. péntek",
       "location": "Roxfort, Nagyterem",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,20828.msg127579.html#msg127579",
@@ -618,7 +947,6 @@
       "triggerWarning": "",
       "summary": "",
       "meta": {
-        "Név": "A Tűz Serlege",
         "Dátum": "2005. 10. 14. péntek",
         "Helyszín": "Roxfort, Nagyterem"
       }
@@ -631,20 +959,17 @@
       "characters": [
         {
           "name": "Sienna Scrimgeour",
-          "image": "",
+          "image": "actors/sienna.jpg",
           "featured": true
         }
       ],
-      "name": "Sienna Scrimgeour",
-      "topic": "",
       "date": "2005. 10. 29. szombat",
       "location": "Roxmorts, Szellemszállás",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,20842.msg127732.html#msg127732",
       "image": "https://i.imgur.com/Us7haMg.png",
       "triggerWarning": "Trigger warning: káros ideológiák",
-      "summary": "",
+      "summary": "A Szellemszálláson lévő buli kezdetekor hátrahagyják a nézeteltéréseket, és rövid időre úgy tűnik, hogy akár ki is jöhetnének.",
       "meta": {
-        "Név": "Sienna Scrimgeour",
         "Dátum": "2005. 10. 29. szombat",
         "Helyszín": "Roxmorts, Szellemszállás"
       }

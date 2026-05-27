@@ -4,6 +4,7 @@ const solangetrackerState = {
   filter: "all",
   query: "",
   selectedId: null,
+  selectedCharacter: null,
   openCategories: new Set()
 };
 
@@ -248,6 +249,50 @@ function solangetrackerCharacterNames(game){
     .filter(name => name);
 }
 
+function solangetrackerSameCharacterName(firstName, secondName){
+  return solangetrackerNormalize(firstName) === solangetrackerNormalize(secondName);
+}
+
+function solangetrackerGameHasCharacter(game, characterName){
+  if (!characterName) {
+    return false;
+  }
+
+  return solangetrackerArray(game.characters).some(character => {
+    return solangetrackerSameCharacterName(solangetrackerCharacterName(character), characterName);
+  });
+}
+
+function solangetrackerGetCharacterGames(characterName){
+  return solangetrackerState.games.filter(game => solangetrackerGameHasCharacter(game, characterName));
+}
+
+function solangetrackerFindCharacterByName(characterName){
+  if (!characterName) {
+    return null;
+  }
+
+  for (const game of solangetrackerState.games) {
+    for (const character of solangetrackerArray(game.characters)) {
+      if (solangetrackerSameCharacterName(solangetrackerCharacterName(character), characterName) && solangetrackerCharacterImage(character)) {
+        return character;
+      }
+    }
+  }
+
+  return null;
+}
+
+function solangetrackerCharacterImageForName(characterName, preferredCharacter){
+  const preferredImage = solangetrackerCharacterImage(preferredCharacter);
+
+  if (preferredImage) {
+    return preferredImage;
+  }
+
+  return solangetrackerCharacterImage(solangetrackerFindCharacterByName(characterName));
+}
+
 function solangetrackerRenderCharacters(game, variant){
   const characters = solangetrackerArray(game.characters);
 
@@ -264,7 +309,12 @@ function solangetrackerRenderCharacters(game, variant){
       return;
     }
 
-    const chip = solangetrackerCreateEl("div", "solangetracker-character-chip");
+    const chip = solangetrackerCreateEl("button", "solangetracker-character-chip");
+    chip.type = "button";
+
+    if (solangetrackerState.selectedCharacter && solangetrackerSameCharacterName(solangetrackerState.selectedCharacter.name, name)) {
+      chip.classList.add("is-active-character");
+    }
 
     if (solangetrackerCharacterFeatured(character, game)) {
       chip.classList.add("is-featured");
@@ -272,6 +322,11 @@ function solangetrackerRenderCharacters(game, variant){
 
     chip.title = name;
     chip.setAttribute("aria-label", name);
+    chip.addEventListener("click", event => {
+      event.preventDefault();
+      event.stopPropagation();
+      solangetrackerSelectCharacter(character);
+    });
 
     const img = document.createElement("img");
     solangetrackerSetImage(img, solangetrackerCharacterImage(character), solangetrackerDefaultCharacterImage());
@@ -322,12 +377,14 @@ function solangetrackerSearchBlob(game){
 
 function solangetrackerGetFilteredGames(){
   const query = solangetrackerNormalize(solangetrackerState.query);
+  const selectedCharacterName = solangetrackerState.selectedCharacter?.name || "";
 
   return solangetrackerState.games.filter(game => {
     const statusOk = solangetrackerState.filter === "all" || solangetrackerStatusKey(game.status) === solangetrackerState.filter;
     const queryOk = !query || solangetrackerSearchBlob(game).includes(query);
+    const characterOk = !selectedCharacterName || solangetrackerGameHasCharacter(game, selectedCharacterName);
 
-    return statusOk && queryOk;
+    return statusOk && queryOk && characterOk;
   });
 }
 
@@ -469,16 +526,23 @@ function solangetrackerRenderGame(game){
 function solangetrackerRenderList(){
   const filtered = solangetrackerGetFilteredGames();
   const groups = solangetrackerGroupByCategory(filtered);
+  const hasCharacterFilter = !!solangetrackerState.selectedCharacter;
 
   solangetrackerDom.list.innerHTML = "";
-  solangetrackerDom.visibleCount.textContent = `${filtered.length} játék`;
+  solangetrackerDom.visibleCount.textContent = hasCharacterFilter
+    ? `${filtered.length} játék (${solangetrackerState.selectedCharacter.name})`
+    : `${filtered.length} játék`;
 
   const hasAnyGame = filtered.length > 0;
-  const hasSearchOrFilter = solangetrackerState.query.trim() !== "" || solangetrackerState.filter !== "all";
+  const hasSearchOrFilter = solangetrackerState.query.trim() !== "" || solangetrackerState.filter !== "all" || hasCharacterFilter;
 
   solangetrackerDom.empty.classList.toggle("solangetracker-hidden", hasAnyGame || !hasSearchOrFilter);
 
   groups.forEach(group => {
+    if (group.games.length === 0 && hasSearchOrFilter) {
+      return;
+    }
+
     const details = solangetrackerCreateEl("details", "solangetracker-cat");
 
     if (solangetrackerState.openCategories.has(group.id)) {
@@ -618,6 +682,109 @@ function solangetrackerRenderReader(game){
   solangetrackerDom.reader.appendChild(grid);
 }
 
+function solangetrackerRenderCharacterReader(character){
+  if (!character?.name) {
+    solangetrackerDom.reader.classList.add("solangetracker-hidden");
+    solangetrackerDom.reader.innerHTML = "";
+    return;
+  }
+
+  const allGames = solangetrackerGetCharacterGames(character.name);
+  const visibleGames = solangetrackerGetFilteredGames();
+  const imageSrc = solangetrackerCharacterImageForName(character.name, character);
+
+  solangetrackerDom.reader.innerHTML = "";
+  solangetrackerDom.reader.classList.remove("solangetracker-hidden");
+
+  const wrap = solangetrackerCreateEl("div", "solangetracker-character-reader");
+  const imageWrap = solangetrackerCreateEl("div", "solangetracker-character-reader-image");
+  const image = document.createElement("img");
+
+  solangetrackerSetImage(image, imageSrc, solangetrackerDefaultCharacterImage());
+  image.alt = character.name;
+  imageWrap.appendChild(image);
+
+  const body = solangetrackerCreateEl("div", "solangetracker-character-reader-body");
+  const top = solangetrackerCreateEl("div", "solangetracker-reader-top");
+  const titleBlock = document.createElement("div");
+
+  titleBlock.appendChild(solangetrackerCreateEl("div", "solangetracker-reader-label", "Karakter"));
+  titleBlock.appendChild(solangetrackerCreateEl("div", "solangetracker-reader-title", character.name));
+
+  const closeBtn = solangetrackerCreateEl("button", "solangetracker-btn solangetracker-subtle", "Szűrés törlése");
+  closeBtn.type = "button";
+  closeBtn.addEventListener("click", () => {
+    solangetrackerState.selectedCharacter = null;
+    solangetrackerRenderReader(null);
+    solangetrackerRenderList();
+  });
+
+  top.appendChild(titleBlock);
+  top.appendChild(closeBtn);
+
+  const countText = visibleGames.length === allGames.length
+    ? `${allGames.length} játékban szerepel.`
+    : `${visibleGames.length} játék látszik a jelenlegi szűrőkkel, összesen ${allGames.length} játékban szerepel.`;
+
+  const summary = solangetrackerCreateEl(
+    "div",
+    "solangetracker-reader-summary",
+    `${countText} A lista lent csak azokat a játékokat mutatja, amelyekben ez a karakter benne van.`
+  );
+
+  body.appendChild(top);
+  body.appendChild(summary);
+  wrap.appendChild(imageWrap);
+  wrap.appendChild(body);
+
+  solangetrackerDom.reader.appendChild(wrap);
+}
+
+function solangetrackerRefreshCharacterReader(){
+  if (solangetrackerState.selectedCharacter) {
+    solangetrackerRenderCharacterReader(solangetrackerState.selectedCharacter);
+  }
+}
+
+function solangetrackerSelectCharacter(character){
+  const name = solangetrackerCharacterName(character);
+
+  if (!name) {
+    return;
+  }
+
+  const image = solangetrackerCharacterImageForName(name, character);
+
+  solangetrackerState.selectedId = null;
+  solangetrackerState.selectedCharacter = { name, image };
+  solangetrackerState.filter = "all";
+  solangetrackerState.query = "";
+  solangetrackerDom.search.value = "";
+
+  solangetrackerDom.filters.forEach(btn => {
+    btn.classList.toggle("is-active", btn.dataset.filter === "all");
+  });
+
+  solangetrackerGetCharacterGames(name).forEach(game => {
+    solangetrackerState.openCategories.add(solangetrackerCategoryId(game));
+  });
+
+  solangetrackerRenderCharacterReader(solangetrackerState.selectedCharacter);
+  solangetrackerRenderList();
+
+  if (solangetrackerDom.scrollbox) {
+    solangetrackerDom.scrollbox.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  } else {
+    solangetrackerDom.reader.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }
+}
+
 function solangetrackerSelectGame(id){
   const game = solangetrackerState.games.find(item => item.id === id);
 
@@ -626,6 +793,7 @@ function solangetrackerSelectGame(id){
   }
 
   solangetrackerState.selectedId = id;
+  solangetrackerState.selectedCharacter = null;
   solangetrackerState.openCategories.add(solangetrackerCategoryId(game));
 
   solangetrackerRenderReader(game);
@@ -651,6 +819,7 @@ function solangetrackerSetFilter(filter){
     btn.classList.toggle("is-active", btn.dataset.filter === filter);
   });
 
+  solangetrackerRefreshCharacterReader();
   solangetrackerRenderList();
 }
 
@@ -694,6 +863,7 @@ function solangetrackerInitOpenCategories(){
 function solangetrackerInitEvents(){
   solangetrackerDom.search.addEventListener("input", event => {
     solangetrackerState.query = event.target.value;
+    solangetrackerRefreshCharacterReader();
     solangetrackerRenderList();
   });
 

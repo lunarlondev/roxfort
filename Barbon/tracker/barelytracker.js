@@ -4,6 +4,7 @@ const barelytrackerState = {
   filter: "all",
   query: "",
   selectedId: null,
+  selectedCharacter: null,
   openCategories: new Set()
 };
 
@@ -228,6 +229,50 @@ function barelytrackerCharacterNames(game){
     .filter(name => name);
 }
 
+function barelytrackerSameCharacterName(firstName, secondName){
+  return barelytrackerNormalize(firstName) === barelytrackerNormalize(secondName);
+}
+
+function barelytrackerGameHasCharacter(game, characterName){
+  if (!characterName) {
+    return false;
+  }
+
+  return barelytrackerArray(game.characters).some(character => {
+    return barelytrackerSameCharacterName(barelytrackerCharacterName(character), characterName);
+  });
+}
+
+function barelytrackerGetCharacterGames(characterName){
+  return barelytrackerState.games.filter(game => barelytrackerGameHasCharacter(game, characterName));
+}
+
+function barelytrackerFindCharacterByName(characterName){
+  if (!characterName) {
+    return null;
+  }
+
+  for (const game of barelytrackerState.games) {
+    for (const character of barelytrackerArray(game.characters)) {
+      if (barelytrackerSameCharacterName(barelytrackerCharacterName(character), characterName) && barelytrackerCharacterImage(character)) {
+        return character;
+      }
+    }
+  }
+
+  return null;
+}
+
+function barelytrackerCharacterImageForName(characterName, preferredCharacter){
+  const preferredImage = barelytrackerCharacterImage(preferredCharacter);
+
+  if (preferredImage) {
+    return preferredImage;
+  }
+
+  return barelytrackerCharacterImage(barelytrackerFindCharacterByName(characterName));
+}
+
 function barelytrackerRenderCharacters(game){
   const characters = barelytrackerArray(game.characters);
 
@@ -244,7 +289,12 @@ function barelytrackerRenderCharacters(game){
       return;
     }
 
-    const chip = barelytrackerCreateEl("div", "barelytracker-character-chip");
+    const chip = barelytrackerCreateEl("button", "barelytracker-character-chip");
+    chip.type = "button";
+
+    if (barelytrackerState.selectedCharacter && barelytrackerSameCharacterName(barelytrackerState.selectedCharacter.name, name)) {
+      chip.classList.add("is-active-character");
+    }
 
     if (barelytrackerCharacterFeatured(character, game)) {
       chip.classList.add("is-featured");
@@ -252,6 +302,11 @@ function barelytrackerRenderCharacters(game){
 
     chip.title = name;
     chip.setAttribute("aria-label", name);
+    chip.addEventListener("click", event => {
+      event.preventDefault();
+      event.stopPropagation();
+      barelytrackerSelectCharacter(character);
+    });
 
     const img = document.createElement("img");
     barelytrackerSetImage(img, barelytrackerCharacterImage(character), barelytrackerDefaultCharacterImage());
@@ -288,11 +343,13 @@ function barelytrackerSearchBlob(game){
 
 function barelytrackerGetFilteredGames(){
   const query = barelytrackerNormalize(barelytrackerState.query);
+  const selectedCharacterName = barelytrackerState.selectedCharacter?.name || "";
 
   return barelytrackerState.games.filter(game => {
     const statusOk = barelytrackerState.filter === "all" || barelytrackerStatusKey(game.status) === barelytrackerState.filter;
     const queryOk = !query || barelytrackerSearchBlob(game).includes(query);
-    return statusOk && queryOk;
+    const characterOk = !selectedCharacterName || barelytrackerGameHasCharacter(game, selectedCharacterName);
+    return statusOk && queryOk && characterOk;
   });
 }
 
@@ -399,10 +456,13 @@ function barelytrackerRenderGame(game){
 function barelytrackerRenderList(){
   const filtered = barelytrackerGetFilteredGames();
   const groups = barelytrackerGroupByCategory(filtered);
-  const hasSearchOrFilter = barelytrackerState.query.trim() !== "" || barelytrackerState.filter !== "all";
+  const hasCharacterFilter = !!barelytrackerState.selectedCharacter;
+  const hasSearchOrFilter = barelytrackerState.query.trim() !== "" || barelytrackerState.filter !== "all" || hasCharacterFilter;
 
   barelytrackerDom.list.innerHTML = "";
-  barelytrackerDom.visibleCount.textContent = `${filtered.length} játék`;
+  barelytrackerDom.visibleCount.textContent = hasCharacterFilter
+    ? `${filtered.length} játék (${barelytrackerState.selectedCharacter.name})`
+    : `${filtered.length} játék`;
   barelytrackerDom.empty.classList.toggle("barelytracker-hidden", filtered.length > 0 || !hasSearchOrFilter);
 
   groups.forEach(group => {
@@ -529,6 +589,89 @@ function barelytrackerRenderReader(game){
   barelytrackerDom.reader.appendChild(grid);
 }
 
+function barelytrackerRenderCharacterReader(character){
+  if (!character?.name) {
+    barelytrackerDom.reader.classList.add("barelytracker-hidden");
+    barelytrackerDom.reader.innerHTML = "";
+    return;
+  }
+
+  const allGames = barelytrackerGetCharacterGames(character.name);
+  const visibleGames = barelytrackerGetFilteredGames();
+  const imageSrc = barelytrackerCharacterImageForName(character.name, character);
+
+  barelytrackerDom.reader.innerHTML = "";
+  barelytrackerDom.reader.classList.remove("barelytracker-hidden");
+
+  const wrap = barelytrackerCreateEl("div", "barelytracker-character-reader");
+  const imageWrap = barelytrackerCreateEl("div", "barelytracker-character-reader-image");
+  const image = document.createElement("img");
+  barelytrackerSetImage(image, imageSrc, barelytrackerDefaultCharacterImage());
+  image.alt = character.name;
+  imageWrap.appendChild(image);
+
+  const body = barelytrackerCreateEl("div", "barelytracker-character-reader-body");
+  const top = barelytrackerCreateEl("div", "barelytracker-reader-top");
+  const titleBlock = document.createElement("div");
+  titleBlock.appendChild(barelytrackerCreateEl("div", "barelytracker-reader-label", "Karakter"));
+  titleBlock.appendChild(barelytrackerCreateEl("div", "barelytracker-reader-title", character.name));
+
+  const closeBtn = barelytrackerCreateEl("button", "barelytracker-btn", "Szűrés törlése");
+  closeBtn.type = "button";
+  closeBtn.addEventListener("click", () => {
+    barelytrackerState.selectedCharacter = null;
+    barelytrackerRenderReader(null);
+    barelytrackerRenderList();
+  });
+
+  top.appendChild(titleBlock);
+  top.appendChild(closeBtn);
+
+  const countText = visibleGames.length === allGames.length
+    ? `${allGames.length} játékban szerepel.`
+    : `${visibleGames.length} játék látszik a jelenlegi szűrőkkel, összesen ${allGames.length} játékban szerepel.`;
+
+  const summary = barelytrackerCreateEl("div", "barelytracker-reader-summary", `${countText} A lista lent csak azokat a játékokat mutatja, amelyekben ez a karakter benne van.`);
+
+  body.appendChild(top);
+  body.appendChild(summary);
+  wrap.appendChild(imageWrap);
+  wrap.appendChild(body);
+  barelytrackerDom.reader.appendChild(wrap);
+}
+
+function barelytrackerRefreshCharacterReader(){
+  if (barelytrackerState.selectedCharacter) {
+    barelytrackerRenderCharacterReader(barelytrackerState.selectedCharacter);
+  }
+}
+
+function barelytrackerSelectCharacter(character){
+  const name = barelytrackerCharacterName(character);
+
+  if (!name) {
+    return;
+  }
+
+  const image = barelytrackerCharacterImageForName(name, character);
+  barelytrackerState.selectedId = null;
+  barelytrackerState.selectedCharacter = { name, image };
+  barelytrackerState.filter = "all";
+  barelytrackerState.query = "";
+  barelytrackerDom.search.value = "";
+  barelytrackerDom.filters.forEach(btn => {
+    btn.classList.toggle("is-active", btn.dataset.filter === "all");
+  });
+
+  barelytrackerGetCharacterGames(name).forEach(game => {
+    barelytrackerState.openCategories.add(barelytrackerCategoryId(game));
+  });
+
+  barelytrackerRenderCharacterReader(barelytrackerState.selectedCharacter);
+  barelytrackerRenderList();
+  barelytrackerDom.reader.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 function barelytrackerSelectGame(id){
   const game = barelytrackerState.games.find(item => item.id === id);
 
@@ -537,6 +680,7 @@ function barelytrackerSelectGame(id){
   }
 
   barelytrackerState.selectedId = id;
+  barelytrackerState.selectedCharacter = null;
   barelytrackerState.openCategories.add(barelytrackerCategoryId(game));
   barelytrackerRenderReader(game);
   barelytrackerRenderList();
@@ -550,6 +694,7 @@ function barelytrackerSetFilter(filter){
     btn.classList.toggle("is-active", btn.dataset.filter === filter);
   });
 
+  barelytrackerRefreshCharacterReader();
   barelytrackerRenderList();
 }
 
@@ -597,6 +742,7 @@ function barelytrackerInitOpenCategories(){
 function barelytrackerInitEvents(){
   barelytrackerDom.search.addEventListener("input", event => {
     barelytrackerState.query = event.target.value;
+    barelytrackerRefreshCharacterReader();
     barelytrackerRenderList();
   });
 

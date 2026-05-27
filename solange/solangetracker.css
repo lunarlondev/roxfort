@@ -662,6 +662,11 @@ body{
   border-radius:999px;
   background:rgba(0,0,0,0.28);
   box-shadow:0 4px 12px rgba(0,0,0,0.35);
+  padding:0;
+  cursor:pointer;
+  appearance:none;
+  font:inherit;
+  line-height:1;
 }
 
 .solangetracker-character-chip{
@@ -687,6 +692,15 @@ body{
 .solangetracker-game.is-selected .solangetracker-character-chip img,
 .solangetracker-character-list-reader .solangetracker-character-chip img{
   filter:grayscale(0) contrast(1.08) brightness(0.92) saturate(1.05);
+}
+
+.solangetracker-character-chip.is-active-character{
+  border-color:rgba(62,154,161,0.88);
+  box-shadow:0 0 0 2px rgba(62,154,161,0.22),0 0 18px rgba(62,154,161,0.24),0 4px 12px rgba(0,0,0,0.35);
+}
+
+.solangetracker-character-chip.is-active-character img{
+  filter:grayscale(0) contrast(1.12) brightness(0.88) saturate(1.08);
 }
 .solangetracker-character-chip.is-featured{
   border-color:rgba(182,144,78,0.88);
@@ -773,6 +787,59 @@ body{
   text-decoration:none;
 }
 
+.solangetracker-character-reader{
+  display:grid;
+  grid-template-columns:112px 1fr;
+  gap:14px;
+  padding:14px;
+  min-height:142px;
+  background:
+    radial-gradient(420px 180px at 10% 20%,rgba(182,144,78,0.16),transparent 65%),
+    radial-gradient(360px 180px at 92% 16%,rgba(62,154,161,0.11),transparent 62%),
+    rgba(0,0,0,0.18);
+}
+
+.solangetracker-character-reader-image{
+  position:relative;
+  isolation:isolate;
+  width:112px;
+  height:112px;
+  border-radius:999px;
+  overflow:hidden;
+  border:2px solid rgba(182,144,78,0.50);
+  background:rgba(0,0,0,0.28);
+  box-shadow:0 0 0 6px rgba(182,144,78,0.06),0 0 30px rgba(182,144,78,0.20),0 12px 26px rgba(0,0,0,0.46);
+}
+
+.solangetracker-character-reader-image img{
+  position:relative;
+  z-index:1;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:grayscale(1) sepia(0.42) saturate(1.75) hue-rotate(348deg) contrast(1.34) brightness(0.58);
+}
+
+.solangetracker-character-reader-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  border-radius:999px;
+  background:
+    radial-gradient(circle at 38% 28%,rgba(182,144,78,0.16),rgba(46,18,12,0.50) 62%,rgba(0,0,0,0.80) 100%),
+    linear-gradient(135deg,rgba(62,154,161,0.15),rgba(139,59,59,0.30));
+  mix-blend-mode:multiply;
+  opacity:0.74;
+}
+
+.solangetracker-character-reader-body{
+  min-width:0;
+  align-self:center;
+}
+
 .solangetracker-empty{
   position:relative;
   z-index:2;
@@ -854,6 +921,16 @@ body{
     height:auto;
   }
 
+  .solangetracker-character-reader{
+    grid-template-columns:1fr;
+    justify-items:center;
+    text-align:center;
+  }
+
+  .solangetracker-character-reader .solangetracker-reader-top{
+    align-items:center;
+  }
+
   .solangetracker-game{
     grid-template-columns:1fr;
     grid-template-rows:190px auto;
@@ -920,4 +997,8 @@ body{
   background:linear-gradient(180deg,rgba(182,144,78,0.65),rgba(232,214,176,0.35));
   border-radius:999px;
   border:1px solid rgba(232,214,176,0.25);
+}
+.solangetracker-character-chip.is-featured.is-active-character{
+  border-color:rgba(62,154,161,0.88);
+  box-shadow:0 0 0 2px rgba(62,154,161,0.22),0 0 18px rgba(62,154,161,0.24),0 4px 12px rgba(0,0,0,0.35);
 }
