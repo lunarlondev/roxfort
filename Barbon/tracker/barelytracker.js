@@ -83,7 +83,7 @@ function barelytrackerStatusLabel(status){
 }
 
 function barelytrackerDefaultImage(){
-  return barelytrackerState.data?.meta?.defaultImage || "https://i.imgur.com/6Syolw9.jpeg";
+  return barelytrackerState.data?.meta?.defaultImage || "https://i.imgur.com/dkvWHGc.png";
 }
 
 function barelytrackerDefaultCharacterImage(){

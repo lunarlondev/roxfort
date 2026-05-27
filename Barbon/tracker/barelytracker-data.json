@@ -5,13 +5,13 @@
     "intro": "A játékok összefoglalóját a Részletek gombra kattintva tekintheted meg. A Megnyitás gomb az eredeti játékhoz vezet.",
     "initial": "B",
     "motto": "barely human",
-    "frameImage": "https://i.imgur.com/6Syolw9.jpeg",
+    "frameImage": "https://i.imgur.com/dkvWHGc.png",
     "iconImages": [
       "https://i.imgur.com/fU03xFO.gif",
       "https://i.imgur.com/wk2syZO.gif",
       "https://i.imgur.com/IiIkwQH.gif"
     ],
-    "defaultImage": "https://i.imgur.com/6Syolw9.jpeg",
+    "defaultImage": "https://i.imgur.com/dkvWHGc.png",
     "defaultCharacterImage": "https://i.imgur.com/fU03xFO.gif"
   },
   "categories": [
