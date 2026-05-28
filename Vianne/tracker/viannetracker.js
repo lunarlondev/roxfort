@@ -28,19 +28,6 @@
     selectedCount: root.querySelector("[data-selected-count]")
   };
 
-  const statusMap = {
-    all: "ALL",
-    active: "ACTIVE",
-    closed: "CLOSED"
-  };
-
-  const statusAliases = {
-    aktiv: "active",
-    active: "active",
-    lezart: "closed",
-    closed: "closed"
-  };
-
   const source = root.dataset.source || "viannetracker-data.json";
 
   document.addEventListener("DOMContentLoaded", init);
@@ -69,26 +56,17 @@
     renderFilters();
   }
 
-  function profile() {
-    return state.data.profile || {};
-  }
-
-  function fallbackImage() {
-    return state.data.meta?.defaultCharacterImage || state.data.meta?.defaultImage || profile().portrait || "";
-  }
-
   function renderPortrait() {
     const img = document.createElement("img");
-    img.alt = profile().brand?.join(" ") || state.data.meta?.title || "Vianne M. Gardner";
-    setSmartImage(img, profile().portrait || state.data.meta?.heroImage, fallbackImage());
+    img.alt = "Vianne M. Gardner";
+    setSmartImage(img, state.data.profile.portrait, state.data.profile.portrait);
     refs.portrait.replaceChildren(img);
   }
 
   function renderBrand() {
-    const brand = Array.isArray(profile().brand) ? profile().brand : [state.data.meta?.title || "Vianne"];
     const fragment = document.createDocumentFragment();
 
-    brand.forEach((line) => {
+    arrayOf(state.data.profile.brand).forEach((line) => {
       const span = document.createElement("span");
       span.textContent = line;
       fragment.appendChild(span);
@@ -98,10 +76,9 @@
   }
 
   function renderTraits() {
-    const traits = Array.isArray(profile().traits) ? profile().traits : [];
     const fragment = document.createDocumentFragment();
 
-    traits.forEach((trait) => {
+    arrayOf(state.data.profile.traits).forEach((trait) => {
       const row = document.createElement("div");
       row.className = "vi-trait";
 
@@ -124,18 +101,12 @@
   }
 
   function renderFilters() {
-    const filters = Array.isArray(state.data.filters) ? state.data.filters : [
-      { id: "all", label: "ALL" },
-      { id: "active", label: "ACTIVE" },
-      { id: "closed", label: "CLOSED" }
-    ];
-
     const fragment = document.createDocumentFragment();
 
-    filters.forEach((filter) => {
+    arrayOf(state.data.filters).forEach((filter) => {
       const button = document.createElement("button");
       button.type = "button";
-      button.textContent = filter.label || statusMap[filter.id] || filter.id;
+      button.textContent = filter.label;
       button.dataset.filter = filter.id;
 
       if (filter.id === state.status) {
@@ -164,16 +135,21 @@
     });
 
     refs.timeline.addEventListener("click", (event) => {
-      const button = event.target.closest("[data-character-name]");
+      const button = event.target.closest("[data-character-id]");
 
       if (!button) {
         return;
       }
 
-      const name = button.dataset.characterName;
-      const image = button.dataset.characterImage;
-      const sameCharacter = state.character && sameName(state.character.name, name);
-      state.character = sameCharacter ? null : { name, image };
+      const character = findCharacterById(button.dataset.characterId);
+
+      if (!character) {
+        return;
+      }
+
+      state.character = state.character && state.character.id === character.id ? null : character;
+      state.search = "";
+      refs.search.value = "";
       render();
     });
 
@@ -200,8 +176,8 @@
     const fragment = document.createDocumentFragment();
     let totalMatches = 0;
 
-    categoriesWithGames().forEach((category) => {
-      const games = category.games.filter((game) => matches(game, category));
+    arrayOf(state.data.categories).forEach((category) => {
+      const games = arrayOf(category.games).filter((game) => matches(game, category));
 
       if (!games.length) {
         return;
@@ -220,18 +196,6 @@
 
     refs.timeline.replaceChildren(fragment);
     renderSelectedCharacter(totalMatches);
-  }
-
-  function categoriesWithGames() {
-    const categories = Array.isArray(state.data.categories) ? state.data.categories : [];
-    const games = Array.isArray(state.data.games) ? state.data.games : [];
-
-    return categories.map((category) => ({
-      id: category.id,
-      title: category.title,
-      open: category.open,
-      games: games.filter((game) => (game.categoryId || game.category) === category.id)
-    }));
   }
 
   function renderCategory(category, games) {
@@ -259,106 +223,85 @@
   function renderGame(game) {
     const item = document.createElement("article");
     item.className = "vi-item";
-    item.dataset.status = statusKey(game.status);
+    item.dataset.status = game.status;
+    item.style.setProperty("--game-image", cssUrl(game.image));
 
     const dot = document.createElement("div");
     dot.className = "vi-dot";
 
-    const img = document.createElement("img");
-    img.className = "vi-img";
-    img.alt = game.title || "";
-    setSmartImage(img, game.image, fallbackImage());
+    const status = document.createElement("span");
+    status.className = `vi-status vi-status--${game.status}`;
+    status.textContent = statusLabel(game.status);
 
     const content = document.createElement("div");
     content.className = "vi-content";
 
     const title = document.createElement("div");
     title.className = "vi-title";
-    title.textContent = game.title || "Cím nélküli játék";
+    title.textContent = game.title;
 
     const meta = document.createElement("div");
     meta.className = "vi-meta";
-    meta.textContent = game.meta || buildMeta(game);
+    meta.textContent = game.meta;
 
     const characters = renderCharacters(game);
 
     const footer = document.createElement("div");
     footer.className = "vi-card-footer";
 
-    const status = document.createElement("span");
-    const key = statusKey(game.status);
-    status.className = `vi-status vi-status--${key}`;
-    status.textContent = statusLabel(game.status).toUpperCase();
-    footer.appendChild(status);
+    const link = document.createElement("a");
+    link.className = "vi-open";
+    link.href = game.url;
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.textContent = "MEGNYITÁS";
 
-    const href = game.link || game.url || "";
-
-    if (href) {
-      const link = document.createElement("a");
-      link.className = "vi-open";
-      link.href = href;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.textContent = "MEGNYITÁS";
-      footer.appendChild(link);
-    }
-
-    content.append(title, meta);
-
-    if (characters) {
-      content.appendChild(characters);
-    }
-
-    content.appendChild(footer);
-    item.append(dot, img, content);
+    footer.append(link);
+    content.append(title, meta, characters, footer);
+    item.append(dot, status, content);
 
     return item;
   }
 
   function renderCharacters(game) {
-    const characters = Array.isArray(game.characters) ? game.characters : [];
-
-    if (!characters.length) {
-      return null;
-    }
-
     const wrap = document.createElement("div");
-    wrap.className = "vi-characters";
+    wrap.className = "vi-card-characters";
 
-    characters.forEach((character) => {
-      const name = characterName(character);
+    const label = document.createElement("div");
+    label.className = "vi-card-characters-label";
+    label.textContent = "Karakterek";
 
-      if (!name) {
-        return;
-      }
+    const list = document.createElement("div");
+    list.className = "vi-character-list";
 
-      const image = characterImage(character);
+    arrayOf(game.characters).forEach((character) => {
       const button = document.createElement("button");
       button.type = "button";
       button.className = "vi-character-chip";
-      button.dataset.characterName = name;
-      button.dataset.characterImage = image;
-      button.setAttribute("aria-label", name);
+      button.dataset.characterId = character.id;
+      button.setAttribute("aria-label", character.name);
+      button.title = character.name;
 
-      if (state.character && sameName(state.character.name, name)) {
-        button.classList.add("is-active");
-      }
-
-      if (characterFeatured(character, game)) {
+      if (character.featured) {
         button.classList.add("vi-character-chip--featured");
       }
 
+      if (state.character && state.character.id === character.id) {
+        button.classList.add("is-active");
+      }
+
       const img = document.createElement("img");
-      img.alt = name;
-      setSmartImage(img, image, fallbackImage());
+      img.alt = character.name;
+      setSmartImage(img, character.image, state.data.profile.portrait);
 
-      const label = document.createElement("span");
-      label.textContent = name;
+      const name = document.createElement("span");
+      name.textContent = character.name;
 
-      button.append(img, label);
-      wrap.appendChild(button);
+      button.append(img, name);
+      list.appendChild(button);
     });
 
+    wrap.append(label, list);
     return wrap;
   }
 
@@ -371,15 +314,15 @@
     refs.selected.hidden = false;
     refs.selectedName.textContent = state.character.name;
     refs.selectedCount.textContent = `${totalMatches} játék a kijelölt karakterrel`;
-    setSmartImage(refs.selectedImage, state.character.image, fallbackImage());
+    setSmartImage(refs.selectedImage, state.character.image, state.data.profile.portrait);
   }
 
   function matches(game, category) {
-    if (state.status !== "all" && statusKey(game.status) !== state.status) {
+    if (state.status !== "all" && game.status !== state.status) {
       return false;
     }
 
-    if (state.character && !gameHasCharacter(game, state.character.name)) {
+    if (state.character && !arrayOf(game.characters).some((character) => character.id === state.character.id)) {
       return false;
     }
 
@@ -387,7 +330,8 @@
       return true;
     }
 
-    const characterNames = characterList(game).map(characterName).join(" ");
+    const characterNames = arrayOf(game.characters).map((character) => character.name).join(" ");
+
     const haystack = normalize([
       category.title,
       game.title,
@@ -401,78 +345,46 @@
     return haystack.includes(normalize(state.search));
   }
 
-  function characterList(game) {
-    return Array.isArray(game.characters) ? game.characters : [];
-  }
-
-  function characterName(character) {
-    if (typeof character === "string") {
-      return character;
+  function findCharacterById(id) {
+    for (const category of arrayOf(state.data.categories)) {
+      for (const game of arrayOf(category.games)) {
+        for (const character of arrayOf(game.characters)) {
+          if (character.id === id) {
+            return character;
+          }
+        }
+      }
     }
 
-    return character?.name || character?.title || character?.id || "";
-  }
-
-  function characterImage(character) {
-    if (character && typeof character === "object") {
-      return character.image || character.avatar || character.photo || imagePathFromName(characterName(character));
-    }
-
-    return imagePathFromName(characterName(character));
-  }
-
-  function characterFeatured(character, game) {
-    const name = characterName(character);
-    const lists = [
-      ...(Array.isArray(game.featuredCharacters) ? game.featuredCharacters : []),
-      ...(Array.isArray(game.highlightedCharacters) ? game.highlightedCharacters : []),
-      ...(Array.isArray(game.importantCharacters) ? game.importantCharacters : [])
-    ];
-
-    return Boolean(character?.featured || character?.highlighted || character?.important || lists.some((item) => sameName(characterName(item) || item, name)));
-  }
-
-  function gameHasCharacter(game, name) {
-    return characterList(game).some((character) => sameName(characterName(character), name));
-  }
-
-  function sameName(first, second) {
-    return normalize(first) === normalize(second);
-  }
-
-  function statusKey(status) {
-    const normalized = normalize(status).replace(/\s+/g, "-");
-    return statusAliases[normalized] || normalized || "unknown";
+    return null;
   }
 
   function statusLabel(status) {
-    const key = statusKey(status);
-
-    if (key === "active") {
-      return "Aktív";
+    if (status === "active") {
+      return "AKTÍV";
     }
 
-    if (key === "closed") {
-      return "Lezárt";
+    if (status === "closed") {
+      return "LEZÁRT";
     }
 
-    return status || "Ismeretlen";
+    return String(status || "").toUpperCase();
   }
 
-  function buildMeta(game) {
-    return [game.participantsLabel, game.date].filter(Boolean).join(" · ");
-  }
-
-  function imagePathFromName(name) {
-    const slug = normalize(name).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-    return slug ? `actors/${slug}` : "";
+  function arrayOf(value) {
+    return Array.isArray(value) ? value : [];
   }
 
   function normalize(value) {
     return String(value || "")
-      .toLocaleLowerCase("hu-HU")
+      .toLowerCase()
       .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "");
+      .replace(/[̀-ͯ]/g, "");
+  }
+
+  function cssUrl(value) {
+    const safe = String(value || "").replace(/["\\]/g, "\\$&");
+    return `url("${safe}")`;
   }
 
   function setSmartImage(img, rawSource, fallback) {
@@ -497,7 +409,7 @@
     const attempts = [];
 
     if (source) {
-      if (/\.(png|jpe?g|webp|gif|avif|svg)(\?.*)?$/i.test(source) || /^(https?:|data:|blob:)/i.test(source)) {
+      if (/\.(png|jpe?g|webp|gif|avif)$/i.test(source) || /^https?:\/\//i.test(source)) {
         attempts.push(source);
       } else {
         attempts.push(`${source}.png`, `${source}.jpg`, `${source}.jpeg`, `${source}.webp`);
