@@ -11,7 +11,7 @@
     data: null,
     status: "all",
     search: "",
-    actor: null
+    character: null
   };
 
   const refs = {
@@ -19,7 +19,6 @@
     brand: root.querySelector("[data-profile-brand]"),
     traits: root.querySelector("[data-profile-traits]"),
     filters: root.querySelector("[data-status-filters]"),
-    actorList: root.querySelector("[data-actor-list]"),
     timeline: root.querySelector("[data-timeline]"),
     search: root.querySelector("[data-search]"),
     clear: root.querySelector("[data-clear]"),
@@ -27,6 +26,19 @@
     selectedImage: root.querySelector("[data-selected-image]"),
     selectedName: root.querySelector("[data-selected-name]"),
     selectedCount: root.querySelector("[data-selected-count]")
+  };
+
+  const statusMap = {
+    all: "ALL",
+    active: "ACTIVE",
+    closed: "CLOSED"
+  };
+
+  const statusAliases = {
+    aktiv: "active",
+    active: "active",
+    lezart: "closed",
+    closed: "closed"
   };
 
   const source = root.dataset.source || "viannetracker-data.json";
@@ -55,20 +67,28 @@
     renderBrand();
     renderTraits();
     renderFilters();
-    renderActors();
+  }
+
+  function profile() {
+    return state.data.profile || {};
+  }
+
+  function fallbackImage() {
+    return state.data.meta?.defaultCharacterImage || state.data.meta?.defaultImage || profile().portrait || "";
   }
 
   function renderPortrait() {
     const img = document.createElement("img");
-    img.alt = "Vianne M. Gardner";
-    setSmartImage(img, state.data.profile.portrait, state.data.profile.portrait);
+    img.alt = profile().brand?.join(" ") || state.data.meta?.title || "Vianne M. Gardner";
+    setSmartImage(img, profile().portrait || state.data.meta?.heroImage, fallbackImage());
     refs.portrait.replaceChildren(img);
   }
 
   function renderBrand() {
+    const brand = Array.isArray(profile().brand) ? profile().brand : [state.data.meta?.title || "Vianne"];
     const fragment = document.createDocumentFragment();
 
-    state.data.profile.brand.forEach((line) => {
+    brand.forEach((line) => {
       const span = document.createElement("span");
       span.textContent = line;
       fragment.appendChild(span);
@@ -78,9 +98,10 @@
   }
 
   function renderTraits() {
+    const traits = Array.isArray(profile().traits) ? profile().traits : [];
     const fragment = document.createDocumentFragment();
 
-    state.data.profile.traits.forEach((trait) => {
+    traits.forEach((trait) => {
       const row = document.createElement("div");
       row.className = "vi-trait";
 
@@ -103,12 +124,18 @@
   }
 
   function renderFilters() {
+    const filters = Array.isArray(state.data.filters) ? state.data.filters : [
+      { id: "all", label: "ALL" },
+      { id: "active", label: "ACTIVE" },
+      { id: "closed", label: "CLOSED" }
+    ];
+
     const fragment = document.createDocumentFragment();
 
-    state.data.filters.forEach((filter) => {
+    filters.forEach((filter) => {
       const button = document.createElement("button");
       button.type = "button";
-      button.textContent = filter.label;
+      button.textContent = filter.label || statusMap[filter.id] || filter.id;
       button.dataset.filter = filter.id;
 
       if (filter.id === state.status) {
@@ -119,34 +146,6 @@
     });
 
     refs.filters.replaceChildren(fragment);
-  }
-
-  function renderActors() {
-    const fragment = document.createDocumentFragment();
-
-    state.data.actors.forEach((actor) => {
-      const button = document.createElement("button");
-      button.type = "button";
-      button.className = "vi-character-chip";
-      button.dataset.actor = actor.id;
-      button.setAttribute("aria-label", actor.name);
-
-      if (actor.featured) {
-        button.classList.add("vi-character-chip--featured");
-      }
-
-      const img = document.createElement("img");
-      img.alt = actor.name;
-      setSmartImage(img, actor.image, state.data.profile.portrait);
-
-      const name = document.createElement("span");
-      name.textContent = actor.name;
-
-      button.append(img, name);
-      fragment.appendChild(button);
-    });
-
-    refs.actorList.replaceChildren(fragment);
   }
 
   function bindEvents() {
@@ -164,20 +163,17 @@
       render();
     });
 
-    refs.actorList.addEventListener("click", (event) => {
-      const button = event.target.closest("[data-actor]");
+    refs.timeline.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-character-name]");
 
       if (!button) {
         return;
       }
 
-      const nextActor = button.dataset.actor;
-      state.actor = state.actor === nextActor ? null : nextActor;
-
-      root.querySelectorAll("[data-actor]").forEach((item) => {
-        item.classList.toggle("is-active", item.dataset.actor === state.actor);
-      });
-
+      const name = button.dataset.characterName;
+      const image = button.dataset.characterImage;
+      const sameCharacter = state.character && sameName(state.character.name, name);
+      state.character = sameCharacter ? null : { name, image };
       render();
     });
 
@@ -189,15 +185,11 @@
     refs.clear.addEventListener("click", () => {
       state.status = "all";
       state.search = "";
-      state.actor = null;
+      state.character = null;
       refs.search.value = "";
 
       root.querySelectorAll("[data-filter]").forEach((item) => {
         item.classList.toggle("is-active", item.dataset.filter === "all");
-      });
-
-      root.querySelectorAll("[data-actor]").forEach((item) => {
-        item.classList.remove("is-active");
       });
 
       render();
@@ -208,7 +200,7 @@
     const fragment = document.createDocumentFragment();
     let totalMatches = 0;
 
-    state.data.categories.forEach((category) => {
+    categoriesWithGames().forEach((category) => {
       const games = category.games.filter((game) => matches(game, category));
 
       if (!games.length) {
@@ -230,11 +222,23 @@
     renderSelectedCharacter(totalMatches);
   }
 
+  function categoriesWithGames() {
+    const categories = Array.isArray(state.data.categories) ? state.data.categories : [];
+    const games = Array.isArray(state.data.games) ? state.data.games : [];
+
+    return categories.map((category) => ({
+      id: category.id,
+      title: category.title,
+      open: category.open,
+      games: games.filter((game) => (game.categoryId || game.category) === category.id)
+    }));
+  }
+
   function renderCategory(category, games) {
     const details = document.createElement("details");
     details.className = "vi-cat";
 
-    if (category.open || state.search || state.actor || state.status !== "all") {
+    if (category.open || state.search || state.character || state.status !== "all") {
       details.open = true;
     }
 
@@ -255,68 +259,127 @@
   function renderGame(game) {
     const item = document.createElement("article");
     item.className = "vi-item";
-    item.dataset.status = game.status;
+    item.dataset.status = statusKey(game.status);
 
     const dot = document.createElement("div");
     dot.className = "vi-dot";
 
     const img = document.createElement("img");
     img.className = "vi-img";
-    img.alt = game.title;
-    setSmartImage(img, game.image, state.data.profile.portrait);
+    img.alt = game.title || "";
+    setSmartImage(img, game.image, fallbackImage());
 
     const content = document.createElement("div");
     content.className = "vi-content";
 
     const title = document.createElement("div");
     title.className = "vi-title";
-    title.textContent = game.title;
+    title.textContent = game.title || "Cím nélküli játék";
 
     const meta = document.createElement("div");
     meta.className = "vi-meta";
-    meta.textContent = game.meta;
+    meta.textContent = game.meta || buildMeta(game);
+
+    const characters = renderCharacters(game);
 
     const footer = document.createElement("div");
     footer.className = "vi-card-footer";
 
     const status = document.createElement("span");
-    status.className = `vi-status vi-status--${game.status}`;
-    status.textContent = game.status.toUpperCase();
+    const key = statusKey(game.status);
+    status.className = `vi-status vi-status--${key}`;
+    status.textContent = statusLabel(game.status).toUpperCase();
+    footer.appendChild(status);
 
-    const link = document.createElement("a");
-    link.className = "vi-open";
-    link.href = game.url;
-    link.target = "_blank";
-    link.rel = "noopener";
-    link.textContent = "MEGNYITÁS";
+    const href = game.link || game.url || "";
 
-    footer.append(status, link);
-    content.append(title, meta, footer);
+    if (href) {
+      const link = document.createElement("a");
+      link.className = "vi-open";
+      link.href = href;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "MEGNYITÁS";
+      footer.appendChild(link);
+    }
+
+    content.append(title, meta);
+
+    if (characters) {
+      content.appendChild(characters);
+    }
+
+    content.appendChild(footer);
     item.append(dot, img, content);
 
     return item;
   }
 
-  function renderSelectedCharacter(totalMatches) {
-    const actor = state.actor ? state.data.actors.find((item) => item.id === state.actor) : null;
+  function renderCharacters(game) {
+    const characters = Array.isArray(game.characters) ? game.characters : [];
 
-    if (!actor) {
+    if (!characters.length) {
+      return null;
+    }
+
+    const wrap = document.createElement("div");
+    wrap.className = "vi-characters";
+
+    characters.forEach((character) => {
+      const name = characterName(character);
+
+      if (!name) {
+        return;
+      }
+
+      const image = characterImage(character);
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "vi-character-chip";
+      button.dataset.characterName = name;
+      button.dataset.characterImage = image;
+      button.setAttribute("aria-label", name);
+
+      if (state.character && sameName(state.character.name, name)) {
+        button.classList.add("is-active");
+      }
+
+      if (characterFeatured(character, game)) {
+        button.classList.add("vi-character-chip--featured");
+      }
+
+      const img = document.createElement("img");
+      img.alt = name;
+      setSmartImage(img, image, fallbackImage());
+
+      const label = document.createElement("span");
+      label.textContent = name;
+
+      button.append(img, label);
+      wrap.appendChild(button);
+    });
+
+    return wrap;
+  }
+
+  function renderSelectedCharacter(totalMatches) {
+    if (!state.character) {
       refs.selected.hidden = true;
       return;
     }
 
     refs.selected.hidden = false;
-    refs.selectedName.textContent = actor.name;
+    refs.selectedName.textContent = state.character.name;
     refs.selectedCount.textContent = `${totalMatches} játék a kijelölt karakterrel`;
-    setSmartImage(refs.selectedImage, actor.image, state.data.profile.portrait);
+    setSmartImage(refs.selectedImage, state.character.image, fallbackImage());
   }
 
   function matches(game, category) {
-    if (state.status !== "all" && game.status !== state.status) {
+    if (state.status !== "all" && statusKey(game.status) !== state.status) {
       return false;
     }
 
-    if (state.actor && !game.actors.includes(state.actor)) {
+    if (state.character && !gameHasCharacter(game, state.character.name)) {
       return false;
     }
 
@@ -324,12 +387,7 @@
       return true;
     }
 
-    const actorNames = game.actors
-      .map((id) => state.data.actors.find((actor) => actor.id === id))
-      .filter(Boolean)
-      .map((actor) => actor.name)
-      .join(" ");
-
+    const characterNames = characterList(game).map(characterName).join(" ");
     const haystack = normalize([
       category.title,
       game.title,
@@ -337,15 +395,82 @@
       game.participantsLabel,
       game.date,
       game.status,
-      actorNames
+      characterNames
     ].join(" "));
 
     return haystack.includes(normalize(state.search));
   }
 
+  function characterList(game) {
+    return Array.isArray(game.characters) ? game.characters : [];
+  }
+
+  function characterName(character) {
+    if (typeof character === "string") {
+      return character;
+    }
+
+    return character?.name || character?.title || character?.id || "";
+  }
+
+  function characterImage(character) {
+    if (character && typeof character === "object") {
+      return character.image || character.avatar || character.photo || imagePathFromName(characterName(character));
+    }
+
+    return imagePathFromName(characterName(character));
+  }
+
+  function characterFeatured(character, game) {
+    const name = characterName(character);
+    const lists = [
+      ...(Array.isArray(game.featuredCharacters) ? game.featuredCharacters : []),
+      ...(Array.isArray(game.highlightedCharacters) ? game.highlightedCharacters : []),
+      ...(Array.isArray(game.importantCharacters) ? game.importantCharacters : [])
+    ];
+
+    return Boolean(character?.featured || character?.highlighted || character?.important || lists.some((item) => sameName(characterName(item) || item, name)));
+  }
+
+  function gameHasCharacter(game, name) {
+    return characterList(game).some((character) => sameName(characterName(character), name));
+  }
+
+  function sameName(first, second) {
+    return normalize(first) === normalize(second);
+  }
+
+  function statusKey(status) {
+    const normalized = normalize(status).replace(/\s+/g, "-");
+    return statusAliases[normalized] || normalized || "unknown";
+  }
+
+  function statusLabel(status) {
+    const key = statusKey(status);
+
+    if (key === "active") {
+      return "Aktív";
+    }
+
+    if (key === "closed") {
+      return "Lezárt";
+    }
+
+    return status || "Ismeretlen";
+  }
+
+  function buildMeta(game) {
+    return [game.participantsLabel, game.date].filter(Boolean).join(" · ");
+  }
+
+  function imagePathFromName(name) {
+    const slug = normalize(name).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    return slug ? `actors/${slug}` : "";
+  }
+
   function normalize(value) {
     return String(value || "")
-      .toLowerCase()
+      .toLocaleLowerCase("hu-HU")
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "");
   }
@@ -372,7 +497,7 @@
     const attempts = [];
 
     if (source) {
-      if (/\.(png|jpe?g|webp|gif|avif)$/i.test(source) || /^https?:\/\//i.test(source)) {
+      if (/\.(png|jpe?g|webp|gif|avif|svg)(\?.*)?$/i.test(source) || /^(https?:|data:|blob:)/i.test(source)) {
         attempts.push(source);
       } else {
         attempts.push(`${source}.png`, `${source}.jpg`, `${source}.jpeg`, `${source}.webp`);
