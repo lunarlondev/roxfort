@@ -2,36 +2,39 @@
 <html lang="hu">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Vianne Tracker</title>
   <link rel="stylesheet" href="viannetracker.css">
   <script src="viannetracker.js" defer></script>
 </head>
 <body>
-  <div class="vi-dashboard" id="viannetracker" data-source="viannetracker-data.json">
+  <div class="vi-dashboard" id="viannetracker" data-source="./viannetracker-data.json">
     <div class="vi-wrap">
       <aside class="vi-sidebar">
         <div class="vi-portrait" data-profile-portrait></div>
 
         <div class="vi-brand" data-profile-brand></div>
 
-        <div class="vi-personality" data-profile-traits></div>
+        <label class="vi-search-wrap">
+          <span>Keresés</span>
+          <input class="vi-search" type="search" placeholder="Cím, szereplő, dátum..." data-search>
+        </label>
 
+        <div class="vi-filter-title">Állapot</div>
         <div class="vi-filterbar" data-status-filters></div>
+
+        <button class="vi-clear" type="button" data-clear>Szűrés törlése</button>
+
+        <div class="vi-sidebar-stats" data-sidebar-stats></div>
 
         <div class="vi-aura"></div>
       </aside>
 
       <main class="vi-main">
-        <div class="vi-toolbar">
-          <input class="vi-search" type="search" placeholder="Keresés..." data-search>
-          <button class="vi-clear" type="button" data-clear>RESET</button>
-        </div>
-
         <section class="vi-selected" data-selected-character hidden>
           <img class="vi-selected-img" alt="" data-selected-image>
           <div class="vi-selected-text">
-            <div class="vi-selected-label">Kiválasztott karakter</div>
+            <div class="vi-selected-label">Kijelölt karakter</div>
             <div class="vi-selected-name" data-selected-name></div>
             <div class="vi-selected-count" data-selected-count></div>
           </div>

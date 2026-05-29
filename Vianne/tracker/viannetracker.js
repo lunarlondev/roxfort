@@ -17,7 +17,7 @@
   const refs = {
     portrait: root.querySelector("[data-profile-portrait]"),
     brand: root.querySelector("[data-profile-brand]"),
-    traits: root.querySelector("[data-profile-traits]"),
+    sidebarStats: root.querySelector("[data-sidebar-stats]"),
     filters: root.querySelector("[data-status-filters]"),
     timeline: root.querySelector("[data-timeline]"),
     search: root.querySelector("[data-search]"),
@@ -29,44 +29,132 @@
   };
 
   const source = root.dataset.source || "viannetracker-data.json";
+  const scriptUrl = document.currentScript && document.currentScript.src ? document.currentScript.src : "";
+
+  const statusLabels = {
+    all: "Összes",
+    aktiv: "Aktív",
+    lezart: "Lezárt"
+  };
 
   document.addEventListener("DOMContentLoaded", init);
 
   async function init() {
     try {
-      const response = await fetch(source, { cache: "no-store" });
-
-      if (!response.ok) {
-        throw new Error("Nem sikerült betölteni az adatfájlt.");
-      }
-
-      state.data = await response.json();
+      state.data = await loadJsonData(source);
+      normalizeData();
       renderStaticParts();
       bindEvents();
       render();
     } catch (error) {
-      refs.timeline.innerHTML = '<div class="vi-error">Nem sikerült betölteni a viannetracker-data.json fájlt. Helyi tesztnél indítsd szerverről, ne sima file megnyitással.</div>';
+      console.error("Vianne tracker adatbetöltési hiba:", error);
+      const message = error && error.message ? error.message : "Ismeretlen hiba.";
+      refs.timeline.innerHTML = `<div class="vi-error">Nem sikerült betölteni a viannetracker-data.json fájlt.<br><small>${escapeHtml(message)}</small></div>`;
     }
+  }
+
+  async function loadJsonData(rawSource) {
+    const urls = buildJsonUrls(rawSource);
+    const errors = [];
+
+    for (const url of urls) {
+      try {
+        const response = await fetch(url, { cache: "no-store" });
+
+        if (!response.ok) {
+          errors.push(`${url} - HTTP ${response.status}`);
+          continue;
+        }
+
+        const text = await response.text();
+
+        try {
+          return JSON.parse(text);
+        } catch (parseError) {
+          const preview = text.trim().slice(0, 80).replace(/\s+/g, " ");
+          throw new Error(`A JSON fájl elérhető, de nem érvényes JSON. Eleje: ${preview}`);
+        }
+      } catch (fetchError) {
+        errors.push(`${url} - ${fetchError.message}`);
+      }
+    }
+
+    throw new Error(`Nem található vagy nem olvasható adatfájl. Próbált útvonalak: ${errors.join(" | ")}`);
+  }
+
+  function buildJsonUrls(rawSource) {
+    const src = String(rawSource || "viannetracker-data.json").trim();
+    const urls = [];
+
+    addJsonUrl(urls, src, window.location.href);
+
+    if (scriptUrl) {
+      addJsonUrl(urls, src, scriptUrl);
+    }
+
+    if (!/^https?:\/\//i.test(src) && !src.startsWith("/")) {
+      addJsonUrl(urls, `./${src.replace(/^\.\//, "")}`, window.location.href);
+    }
+
+    return urls;
+  }
+
+  function addJsonUrl(urls, src, base) {
+    try {
+      const url = new URL(src, base).href;
+
+      if (!urls.includes(url)) {
+        urls.push(url);
+      }
+    } catch (error) {
+      if (!urls.includes(src)) {
+        urls.push(src);
+      }
+    }
+  }
+
+  function escapeHtml(value) {
+    return String(value || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  function normalizeData() {
+    state.data.filters = Array.isArray(state.data.filters) && state.data.filters.length
+      ? state.data.filters
+      : [
+        { id: "all", label: "Összes" },
+        { id: "aktiv", label: "Aktív" },
+        { id: "lezart", label: "Lezárt" }
+      ];
+
+    getAllGames().forEach((game) => {
+      game.status = statusKey(game.status);
+      game.characters = Array.isArray(game.characters) ? game.characters : [];
+    });
   }
 
   function renderStaticParts() {
     renderPortrait();
     renderBrand();
-    renderTraits();
     renderFilters();
   }
 
   function renderPortrait() {
     const img = document.createElement("img");
     img.alt = "Vianne M. Gardner";
-    setSmartImage(img, state.data.profile.portrait, state.data.profile.portrait);
+    setSmartImage(img, state.data.profile?.portrait, state.data.profile?.portrait);
     refs.portrait.replaceChildren(img);
   }
 
   function renderBrand() {
     const fragment = document.createDocumentFragment();
+    const lines = Array.isArray(state.data.profile?.brand) ? state.data.profile.brand : ["VIANNE", "MAEVE", "GARDNER"];
 
-    arrayOf(state.data.profile.brand).forEach((line) => {
+    lines.forEach((line) => {
       const span = document.createElement("span");
       span.textContent = line;
       fragment.appendChild(span);
@@ -75,41 +163,16 @@
     refs.brand.replaceChildren(fragment);
   }
 
-  function renderTraits() {
-    const fragment = document.createDocumentFragment();
-
-    arrayOf(state.data.profile.traits).forEach((trait) => {
-      const row = document.createElement("div");
-      row.className = "vi-trait";
-
-      const label = document.createElement("div");
-      label.className = "vi-trait-label";
-      label.textContent = trait.label;
-
-      const bar = document.createElement("div");
-      bar.className = "vi-bar";
-
-      const fill = document.createElement("i");
-      fill.style.width = `${Number(trait.value) || 0}%`;
-
-      bar.appendChild(fill);
-      row.append(label, bar);
-      fragment.appendChild(row);
-    });
-
-    refs.traits.replaceChildren(fragment);
-  }
-
   function renderFilters() {
     const fragment = document.createDocumentFragment();
 
-    arrayOf(state.data.filters).forEach((filter) => {
+    state.data.filters.forEach((filter) => {
       const button = document.createElement("button");
       button.type = "button";
-      button.textContent = filter.label;
-      button.dataset.filter = filter.id;
+      button.textContent = filter.label || statusLabel(filter.id);
+      button.dataset.filter = statusKey(filter.id);
 
-      if (filter.id === state.status) {
+      if (button.dataset.filter === state.status) {
         button.classList.add("is-active");
       }
 
@@ -128,28 +191,7 @@
       }
 
       state.status = button.dataset.filter;
-      root.querySelectorAll("[data-filter]").forEach((item) => {
-        item.classList.toggle("is-active", item.dataset.filter === state.status);
-      });
-      render();
-    });
-
-    refs.timeline.addEventListener("click", (event) => {
-      const button = event.target.closest("[data-character-id]");
-
-      if (!button) {
-        return;
-      }
-
-      const character = findCharacterById(button.dataset.characterId);
-
-      if (!character) {
-        return;
-      }
-
-      state.character = state.character && state.character.id === character.id ? null : character;
-      state.search = "";
-      refs.search.value = "";
+      updateFilterButtons();
       render();
     });
 
@@ -163,12 +205,14 @@
       state.search = "";
       state.character = null;
       refs.search.value = "";
-
-      root.querySelectorAll("[data-filter]").forEach((item) => {
-        item.classList.toggle("is-active", item.dataset.filter === "all");
-      });
-
+      updateFilterButtons();
       render();
+    });
+  }
+
+  function updateFilterButtons() {
+    root.querySelectorAll("[data-filter]").forEach((item) => {
+      item.classList.toggle("is-active", item.dataset.filter === state.status);
     });
   }
 
@@ -176,8 +220,8 @@
     const fragment = document.createDocumentFragment();
     let totalMatches = 0;
 
-    arrayOf(state.data.categories).forEach((category) => {
-      const games = arrayOf(category.games).filter((game) => matches(game, category));
+    state.data.categories.forEach((category) => {
+      const games = category.games.filter((game) => matches(game, category));
 
       if (!games.length) {
         return;
@@ -196,6 +240,63 @@
 
     refs.timeline.replaceChildren(fragment);
     renderSelectedCharacter(totalMatches);
+    renderSidebarStats(totalMatches);
+  }
+
+
+  function renderSidebarStats(visibleCount) {
+    if (!refs.sidebarStats) {
+      return;
+    }
+
+    const allGames = getAllGames();
+    const total = allGames.length;
+    const active = allGames.filter((game) => statusKey(game.status) === "aktiv").length;
+    const closed = allGames.filter((game) => statusKey(game.status) === "lezart").length;
+    const current = state.character
+      ? state.character.name
+      : state.search
+        ? "Keresés aktív"
+        : state.status !== "all"
+          ? statusLabel(state.status)
+          : "Minden játék";
+
+    const stats = [
+      { label: "Látszik", value: visibleCount },
+      { label: "Összesen", value: total },
+      { label: "Aktív", value: active },
+      { label: "Lezárt", value: closed }
+    ];
+
+    const fragment = document.createDocumentFragment();
+
+    const currentBox = document.createElement("div");
+    currentBox.className = "vi-side-stat vi-side-stat--wide";
+
+    const currentValue = document.createElement("strong");
+    currentValue.textContent = current;
+
+    const currentLabel = document.createElement("span");
+    currentLabel.textContent = "Jelenlegi nézet";
+
+    currentBox.append(currentValue, currentLabel);
+    fragment.appendChild(currentBox);
+
+    stats.forEach((item) => {
+      const box = document.createElement("div");
+      box.className = "vi-side-stat";
+
+      const value = document.createElement("strong");
+      value.textContent = String(item.value);
+
+      const label = document.createElement("span");
+      label.textContent = item.label;
+
+      box.append(value, label);
+      fragment.appendChild(box);
+    });
+
+    refs.sidebarStats.replaceChildren(fragment);
   }
 
   function renderCategory(category, games) {
@@ -207,7 +308,16 @@
     }
 
     const summary = document.createElement("summary");
-    summary.textContent = category.title;
+
+    const title = document.createElement("span");
+    title.className = "vi-cat-title";
+    title.textContent = category.title;
+
+    const count = document.createElement("span");
+    count.className = "vi-cat-count";
+    count.textContent = `${games.length} játék`;
+
+    summary.append(title, count);
 
     const list = document.createElement("div");
     list.className = "vi-list";
@@ -223,14 +333,21 @@
   function renderGame(game) {
     const item = document.createElement("article");
     item.className = "vi-item";
-    item.dataset.status = game.status;
-    item.style.setProperty("--game-image", cssUrl(game.image));
+    item.dataset.status = statusKey(game.status);
+
+    const skin = document.createElement("div");
+    skin.className = "vi-card-skin";
+
+    const bg = document.createElement("img");
+    bg.alt = "";
+    setSmartImage(bg, game.image, state.data.profile?.portrait);
+    skin.appendChild(bg);
 
     const dot = document.createElement("div");
     dot.className = "vi-dot";
 
     const status = document.createElement("span");
-    status.className = `vi-status vi-status--${game.status}`;
+    status.className = `vi-status vi-status--${statusKey(game.status)}`;
     status.textContent = statusLabel(game.status);
 
     const content = document.createElement("div");
@@ -238,71 +355,133 @@
 
     const title = document.createElement("div");
     title.className = "vi-title";
-    title.textContent = game.title;
+    title.textContent = game.title || "Cím nélküli játék";
 
     const meta = document.createElement("div");
     meta.className = "vi-meta";
-    meta.textContent = game.meta;
+
+    if (game.participantsLabel || game.meta) {
+      meta.appendChild(infoLine("Játékosok", game.participantsLabel || game.meta));
+    }
+
+    if (game.date) {
+      meta.appendChild(infoLine("Dátum", game.date));
+    }
 
     const characters = renderCharacters(game);
 
     const footer = document.createElement("div");
     footer.className = "vi-card-footer";
 
-    const link = document.createElement("a");
-    link.className = "vi-open";
-    link.href = game.url;
-    link.target = "_blank";
-    link.rel = "noopener";
-    link.textContent = "MEGNYITÁS";
+    if (game.url) {
+      const link = document.createElement("a");
+      link.className = "vi-open";
+      link.href = game.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "Megnyitás";
+      footer.appendChild(link);
+    }
 
-    footer.append(link);
-    content.append(title, meta, characters, footer);
-    item.append(dot, status, content);
+    content.append(title, meta);
+
+    if (characters) {
+      content.appendChild(characters);
+    }
+
+    content.appendChild(footer);
+    item.append(skin, dot, status, content);
 
     return item;
   }
 
+  function infoLine(label, value) {
+    const line = document.createElement("span");
+    line.className = "vi-line";
+
+    const strong = document.createElement("b");
+    strong.textContent = `${label}: `;
+
+    line.append(strong, document.createTextNode(value));
+    return line;
+  }
+
   function renderCharacters(game) {
-    const wrap = document.createElement("div");
-    wrap.className = "vi-card-characters";
+    const characters = Array.isArray(game.characters) ? game.characters : [];
+
+    if (!characters.length) {
+      return null;
+    }
+
+    const area = document.createElement("div");
+    area.className = "vi-character-area";
 
     const label = document.createElement("div");
-    label.className = "vi-card-characters-label";
-    label.textContent = "Karakterek";
+    label.className = "vi-character-label";
+    label.textContent = "Szereplők";
 
     const list = document.createElement("div");
     list.className = "vi-character-list";
 
-    arrayOf(game.characters).forEach((character) => {
+    characters.forEach((character) => {
+      const name = characterName(character);
+
+      if (!name) {
+        return;
+      }
+
       const button = document.createElement("button");
       button.type = "button";
       button.className = "vi-character-chip";
-      button.dataset.characterId = character.id;
-      button.setAttribute("aria-label", character.name);
-      button.title = character.name;
+      button.dataset.character = normalize(name);
+      button.setAttribute("aria-label", name);
+
+      if (state.character && sameName(state.character.name, name)) {
+        button.classList.add("is-active");
+      }
 
       if (character.featured) {
         button.classList.add("vi-character-chip--featured");
       }
 
-      if (state.character && state.character.id === character.id) {
-        button.classList.add("is-active");
-      }
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        toggleCharacter(character);
+      });
 
       const img = document.createElement("img");
-      img.alt = character.name;
-      setSmartImage(img, character.image, state.data.profile.portrait);
+      img.alt = name;
+      setSmartImage(img, characterImage(character), state.data.profile?.portrait);
 
-      const name = document.createElement("span");
-      name.textContent = character.name;
+      const text = document.createElement("span");
+      text.textContent = name;
 
-      button.append(img, name);
+      button.append(img, text);
       list.appendChild(button);
     });
 
-    wrap.append(label, list);
-    return wrap;
+    area.append(label, list);
+    return area;
+  }
+
+  function toggleCharacter(character) {
+    const name = characterName(character);
+
+    if (!name) {
+      return;
+    }
+
+    if (state.character && sameName(state.character.name, name)) {
+      state.character = null;
+    } else {
+      state.character = {
+        name,
+        image: characterImage(character)
+      };
+    }
+
+    render();
   }
 
   function renderSelectedCharacter(totalMatches) {
@@ -314,15 +493,15 @@
     refs.selected.hidden = false;
     refs.selectedName.textContent = state.character.name;
     refs.selectedCount.textContent = `${totalMatches} játék a kijelölt karakterrel`;
-    setSmartImage(refs.selectedImage, state.character.image, state.data.profile.portrait);
+    setSmartImage(refs.selectedImage, state.character.image, state.data.profile?.portrait);
   }
 
   function matches(game, category) {
-    if (state.status !== "all" && game.status !== state.status) {
+    if (state.status !== "all" && statusKey(game.status) !== state.status) {
       return false;
     }
 
-    if (state.character && !arrayOf(game.characters).some((character) => character.id === state.character.id)) {
+    if (state.character && !gameHasCharacter(game, state.character.name)) {
       return false;
     }
 
@@ -330,61 +509,77 @@
       return true;
     }
 
-    const characterNames = arrayOf(game.characters).map((character) => character.name).join(" ");
-
     const haystack = normalize([
       category.title,
       game.title,
       game.meta,
       game.participantsLabel,
       game.date,
-      game.status,
-      characterNames
+      statusLabel(game.status),
+      statusKey(game.status),
+      Array.isArray(game.tags) ? game.tags.join(" ") : "",
+      game.characters.map((character) => characterName(character)).join(" ")
     ].join(" "));
 
     return haystack.includes(normalize(state.search));
   }
 
-  function findCharacterById(id) {
-    for (const category of arrayOf(state.data.categories)) {
-      for (const game of arrayOf(category.games)) {
-        for (const character of arrayOf(game.characters)) {
-          if (character.id === id) {
-            return character;
-          }
-        }
-      }
-    }
-
-    return null;
+  function getAllGames() {
+    const categories = Array.isArray(state.data?.categories) ? state.data.categories : [];
+    return categories.flatMap((category) => Array.isArray(category.games) ? category.games : []);
   }
 
-  function statusLabel(status) {
-    if (status === "active") {
-      return "AKTÍV";
-    }
-
-    if (status === "closed") {
-      return "LEZÁRT";
-    }
-
-    return String(status || "").toUpperCase();
+  function gameHasCharacter(game, name) {
+    return game.characters.some((character) => sameName(characterName(character), name));
   }
 
-  function arrayOf(value) {
-    return Array.isArray(value) ? value : [];
+  function characterName(character) {
+    if (typeof character === "string") {
+      return character;
+    }
+
+    return character?.name || character?.title || "";
+  }
+
+  function characterImage(character) {
+    if (typeof character === "string") {
+      return "";
+    }
+
+    return character?.image || character?.avatar || "";
+  }
+
+  function sameName(first, second) {
+    return normalize(first) === normalize(second);
+  }
+
+  function statusKey(value) {
+    const key = normalize(value).replace(/\s+/g, "-");
+
+    if (key === "active" || key === "aktiv" || key === "aktív") {
+      return "aktiv";
+    }
+
+    if (key === "closed" || key === "lezart" || key === "lezárt") {
+      return "lezart";
+    }
+
+    if (key === "all" || key === "osszes" || key === "összes") {
+      return "all";
+    }
+
+    return key || "ismeretlen";
+  }
+
+  function statusLabel(value) {
+    return statusLabels[statusKey(value)] || value || "Ismeretlen";
   }
 
   function normalize(value) {
     return String(value || "")
-      .toLowerCase()
+      .toLocaleLowerCase("hu-HU")
       .normalize("NFD")
-      .replace(/[̀-ͯ]/g, "");
-  }
-
-  function cssUrl(value) {
-    const safe = String(value || "").replace(/["\\]/g, "\\$&");
-    return `url("${safe}")`;
+      .replace(/[\u0300-\u036f]/g, "");
   }
 
   function setSmartImage(img, rawSource, fallback) {
