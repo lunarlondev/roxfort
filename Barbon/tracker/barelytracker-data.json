@@ -1861,6 +1861,30 @@
       }
     },
 	{
+      "id": "e03",
+      "categoryId": "2005-2006-tanev-2-felev",
+      "title": "Cassius Yaxley Szenátor beszéde",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Cassius Yaxley",
+          "image": "actors/npcmale.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2006. 02. 01. szerda",
+      "location": "Boston",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20989.0.html",
+      "image": "https://i.pinimg.com/736x/ba/f7/cf/baf7cfff8c664be95d1e99f2925a8a19.jpg",
+      "triggerWarning": "Trigger warning: káros ideológiák",
+      "summary": "Cassius Yaxley a beszédében háborog Solace botrányai miatt.",
+      "meta": {
+        "Dátum": "2006. 02. 01. szerda",
+        "Helyszín": "Boston"
+      }
+    },
+
+	{
       "id": "e07",
       "categoryId": "2005-2006-tanev-2-felev",
       "title": "nephilim",
@@ -1886,29 +1910,6 @@
       "meta": {
         "Dátum": "2006. 02. 18. szombat",
         "Helyszín": "Roxfort"
-      }
-    },
-	{
-      "id": "e03",
-      "categoryId": "2005-2006-tanev-2-felev",
-      "title": "Cassius Yaxley Szenátor beszéde",
-      "status": "Lezárt",
-      "characters": [
-        {
-          "name": "Cassius Yaxley",
-          "image": "actors/npcmale.jpg",
-          "featured": true
-        }
-      ],
-      "date": "2006. 02. 01. szerda",
-      "location": "Boston",
-      "link": "https://www.roxfort.frpg.hu/index.php/topic,20989.0.html",
-      "image": "https://i.pinimg.com/736x/ba/f7/cf/baf7cfff8c664be95d1e99f2925a8a19.jpg",
-      "triggerWarning": "Trigger warning: káros ideológiák",
-      "summary": "Cassius Yaxley a beszédében háborog Solace botrányai miatt.",
-      "meta": {
-        "Dátum": "2006. 02. 01. szerda",
-        "Helyszín": "Boston"
       }
     },
     {
