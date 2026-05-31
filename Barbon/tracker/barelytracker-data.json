@@ -36,6 +36,11 @@
       "open": false
     },
     {
+      "id": "2006-nyar",
+      "title": "2006 Nyár",
+      "open": false
+    },
+    {
       "id": "idon-kivuli",
       "title": "Időn kívüli",
       "open": false
@@ -1853,6 +1858,34 @@
       "meta": {
         "Dátum": "2006. 01. 21. szombat",
         "Helyszín": "Thunderbird hálóterem"
+      }
+    },
+	{
+      "id": "e07",
+      "categoryId": "2005-2006-tanev-2-felev",
+      "title": "nephilim",
+      "status": "Aktív",
+      "characters": [
+        {
+          "name": "Lucinda Yaxley",
+          "image": "actors/lucinda.jpg",
+          "featured": true
+        },
+        {
+          "name": "Orville Morris",
+          "image": "actors/orville.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2006. 02. 18. szombat",
+      "location": "Roxfort",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,21312.0.html",
+      "image": "https://i.pinimg.com/1200x/83/9e/eb/839eeb7f986e84b7ffcc3d06a19966b9.jpg",
+      "triggerWarning": "Trigger warning: káros ideológiák",
+      "summary": "Solace leteszi a megszeghetetlen esküt Lucindának.",
+      "meta": {
+        "Dátum": "2006. 02. 18. szombat",
+        "Helyszín": "Roxfort"
       }
     },
 	{
