@@ -303,12 +303,10 @@
     const meta = document.createElement("div");
     meta.className = "vi-meta";
 
-    if (game.participantsLabel || game.meta) {
-      meta.appendChild(infoLine("Játékosok", game.participantsLabel || game.meta));
-    }
+    const metaParts = [game.placeLabel, game.date].filter(Boolean);
 
-    if (game.date) {
-      meta.appendChild(infoLine("Dátum", game.date));
+    if (metaParts.length) {
+      meta.appendChild(infoLine("", metaParts.join(" · ")));
     }
 
     const characters = renderCharacters(game);
@@ -342,10 +340,13 @@
     const line = document.createElement("span");
     line.className = "vi-line";
 
-    const strong = document.createElement("b");
-    strong.textContent = `${label}: `;
+    if (label) {
+      const strong = document.createElement("b");
+      strong.textContent = `${label}: `;
+      line.appendChild(strong);
+    }
 
-    line.append(strong, document.createTextNode(value));
+    line.appendChild(document.createTextNode(value));
     return line;
   }
 
@@ -455,6 +456,7 @@
     const haystack = normalize([
       category.title,
       game.title,
+      game.placeLabel,
       game.meta,
       game.participantsLabel,
       game.date,
