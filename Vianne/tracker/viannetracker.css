@@ -445,19 +445,22 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(.18) contrast(1.05) saturate(1.18);
+  opacity: .46;
+  filter: grayscale(.08) contrast(.92) saturate(.7) brightness(1.12);
   transform: scale(1.03);
-  transition: transform .35s ease, filter .35s ease;
+  transition: transform .35s ease, filter .35s ease, opacity .35s ease;
 }
 
 .vi-item[data-status="lezart"] .vi-card-skin img,
 .vi-item[data-status="closed"] .vi-card-skin img {
-  filter: grayscale(.45) contrast(1.08) saturate(.8);
+  opacity: .38;
+  filter: grayscale(.28) contrast(.9) saturate(.55) brightness(1.14);
 }
 
 .vi-item:hover .vi-card-skin img {
+  opacity: .56;
   transform: scale(1.08);
-  filter: grayscale(0) contrast(1.05) saturate(1.28);
+  filter: grayscale(.04) contrast(.95) saturate(.82) brightness(1.1);
 }
 
 .vi-card-skin::after {
@@ -465,9 +468,9 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(280px 180px at 18% 14%, rgba(255, 255, 255, .78), transparent 72%),
-    linear-gradient(135deg, rgba(255, 246, 251, .82), rgba(255, 205, 231, .48) 58%, rgba(210, 239, 255, .36));
-  backdrop-filter: blur(.5px);
+    radial-gradient(280px 180px at 18% 14%, rgba(255, 255, 255, .9), transparent 72%),
+    linear-gradient(135deg, rgba(255, 250, 253, .9), rgba(255, 218, 238, .64) 58%, rgba(224, 245, 255, .48));
+  backdrop-filter: blur(.8px);
 }
 
 .vi-dot {
@@ -610,43 +613,72 @@ body {
 
 .vi-character-chip--featured {
   border-color: rgba(255, 255, 255, .96);
+  box-shadow: 0 0 0 3px rgba(255, 105, 180, .18), 0 8px 18px rgba(155, 37, 105, .18);
+  animation: viFeaturedIconPulse 1.8s ease-in-out infinite;
 }
 
 .vi-character-chip--featured::after {
   content: "";
   position: absolute;
-  inset: -5px;
+  inset: -7px;
   z-index: -1;
   border-radius: inherit;
-  background: radial-gradient(circle, rgba(255, 79, 160, .54), rgba(255, 79, 160, 0) 68%);
+  background: radial-gradient(circle, rgba(255, 105, 180, .42) 0%, rgba(255, 105, 180, .22) 42%, rgba(255, 105, 180, 0) 72%);
   animation: viFeaturedPulse 1.7s ease-in-out infinite;
 }
 
 .vi-character-chip span {
   position: absolute;
-  left: 0;
+  left: 50%;
+  right: auto;
   bottom: calc(100% + 8px);
   z-index: 50;
   width: max-content;
-  max-width: 230px;
+  max-width: 168px;
   padding: 7px 10px;
   pointer-events: none;
   opacity: 0;
   color: #fff;
   font-size: 10px;
   font-weight: 900;
-  line-height: 1;
-  text-align: left;
-  white-space: nowrap;
+  line-height: 1.15;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
   border-radius: 999px;
   background: linear-gradient(135deg, rgba(255, 79, 160, .96), rgba(255, 159, 214, .96));
   box-shadow: 0 9px 18px rgba(155, 37, 105, .26), inset 0 0 0 1px rgba(255, 255, 255, .32);
-  transform: translateY(5px);
+  transform: translate(-50%, 5px);
   transition: opacity .18s ease, transform .18s ease;
 }
 
-.vi-character-chip:hover span {
+.vi-character-chip:hover span,
+.vi-character-chip:focus-visible span {
   opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.vi-character-chip.vi-tooltip-align-left span {
+  left: 0;
+  right: auto;
+  text-align: left;
+  transform: translateY(5px);
+}
+
+.vi-character-chip.vi-tooltip-align-left:hover span,
+.vi-character-chip.vi-tooltip-align-left:focus-visible span {
+  transform: translateY(0);
+}
+
+.vi-character-chip.vi-tooltip-align-right span {
+  left: auto;
+  right: 0;
+  text-align: right;
+  transform: translateY(5px);
+}
+
+.vi-character-chip.vi-tooltip-align-right:hover span,
+.vi-character-chip.vi-tooltip-align-right:focus-visible span {
   transform: translateY(0);
 }
 
@@ -798,6 +830,17 @@ body {
   }
 }
 
+@keyframes viFeaturedIconPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px rgba(255, 105, 180, .16), 0 8px 18px rgba(155, 37, 105, .16);
+  }
+
+  50% {
+    box-shadow: 0 0 0 5px rgba(255, 105, 180, .3), 0 0 20px rgba(255, 105, 180, .34), 0 8px 18px rgba(155, 37, 105, .18);
+  }
+}
+
 @keyframes viFeaturedPulse {
   0%,
   100% {
@@ -820,6 +863,7 @@ body {
   .vi-list::before,
   .vi-item,
   .vi-item[data-status="aktiv"] .vi-dot,
+  .vi-character-chip--featured,
   .vi-character-chip--featured::after,
   .vi-item[data-status="aktiv"] .vi-dot,
   .vi-item[data-status="aktiv"] .vi-dot::after {

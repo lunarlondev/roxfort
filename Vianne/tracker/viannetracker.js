@@ -394,6 +394,22 @@
         toggleCharacter(character);
       });
 
+      button.addEventListener("mouseenter", () => {
+        positionCharacterTooltip(button);
+      });
+
+      button.addEventListener("focus", () => {
+        positionCharacterTooltip(button);
+      });
+
+      button.addEventListener("mouseleave", () => {
+        resetCharacterTooltip(button);
+      });
+
+      button.addEventListener("blur", () => {
+        resetCharacterTooltip(button);
+      });
+
       const img = document.createElement("img");
       img.alt = name;
       setSmartImage(img, characterImage(character), state.data.profile?.portrait);
@@ -426,6 +442,32 @@
     }
 
     render();
+  }
+
+  function positionCharacterTooltip(button) {
+    const tooltip = button.querySelector("span");
+
+    if (!tooltip) {
+      return;
+    }
+
+    resetCharacterTooltip(button);
+
+    window.requestAnimationFrame(() => {
+      const bounds = refs.timeline ? refs.timeline.getBoundingClientRect() : root.getBoundingClientRect();
+      const tooltipRect = tooltip.getBoundingClientRect();
+      const padding = 8;
+
+      if (tooltipRect.right > bounds.right - padding) {
+        button.classList.add("vi-tooltip-align-right");
+      } else if (tooltipRect.left < bounds.left + padding) {
+        button.classList.add("vi-tooltip-align-left");
+      }
+    });
+  }
+
+  function resetCharacterTooltip(button) {
+    button.classList.remove("vi-tooltip-align-left", "vi-tooltip-align-right");
   }
 
   function renderSelectedCharacter(totalMatches) {
