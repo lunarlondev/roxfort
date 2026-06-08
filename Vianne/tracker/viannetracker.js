@@ -326,8 +326,19 @@
 
       detailsButton.addEventListener("click", () => {
         const isOpen = !detailsPanel.hidden;
-        detailsPanel.hidden = isOpen;
-        detailsButton.setAttribute("aria-expanded", String(!isOpen));
+
+        if (isOpen) {
+          detailsPanel.hidden = true;
+          detailsButton.setAttribute("aria-expanded", "false");
+          item.classList.remove("vi-item--details-open");
+          item.style.removeProperty("--vi-card-bg-height");
+          return;
+        }
+
+        item.style.setProperty("--vi-card-bg-height", `${item.getBoundingClientRect().height}px`);
+        item.classList.add("vi-item--details-open");
+        detailsPanel.hidden = false;
+        detailsButton.setAttribute("aria-expanded", "true");
       });
 
       footer.appendChild(detailsButton);
