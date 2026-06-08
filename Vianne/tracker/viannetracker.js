@@ -385,7 +385,7 @@
 
     const label = document.createElement("div");
     label.className = "vi-details-label";
-    label.textContent = "Meta";
+    label.textContent = "Részletek";
 
     const value = document.createElement("div");
     value.className = "vi-details-value";
