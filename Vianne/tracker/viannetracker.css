@@ -476,7 +476,7 @@ body {
 
 .vi-dot {
   position: absolute;
-  left: -16px;
+  left: -15px;
   top: 50%;
   z-index: 3;
   width: 12px;
