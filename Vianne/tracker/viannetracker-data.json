@@ -39,7 +39,7 @@
           "characters": [
             {
               "name": "Vianne M. Gardner",
-              "image": "actors/vianne-m-gardner",
+              "image": "actors/vianne.jpg",
               "featured": true
             }
           ]
@@ -56,7 +56,7 @@
           "characters": [
             {
               "name": "Vianne M. Gardner",
-              "image": "actors/vianne-m-gardner",
+              "image": "actors/vianne.jpg",
               "featured": true
             }
           ]
@@ -79,14 +79,9 @@
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20357.msg126320.html#msg126320",
           "characters": [
             {
-              "name": "Vianne M. Gardner",
-              "image": "actors/vianne-m-gardner",
-              "featured": true
-            },
-            {
               "name": "Vale Bate",
-              "image": "actors/vale-bate",
-              "featured": false
+              "image": "actors/vale.jpg",
+              "featured": true
             }
           ]
         },
@@ -101,14 +96,9 @@
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20353.msg126516.html#msg126516",
           "characters": [
             {
-              "name": "Vianne M. Gardner",
-              "image": "actors/vianne-m-gardner",
-              "featured": true
-            },
-            {
               "name": "Rokuro Ishida",
-              "image": "actors/rokuro-ishida",
-              "featured": false
+              "image": "actors/rokuro.jpg",
+              "featured": true
             }
           ]
         },
@@ -123,13 +113,8 @@
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20343.msg126401.html#msg126401",
           "characters": [
             {
-              "name": "Vianne M. Gardner",
-              "image": "actors/vianne-m-gardner",
-              "featured": true
-            },
-            {
               "name": "Evan Meadows",
-              "image": "actors/evan-meadows",
+              "image": "actors/evan.jpg",
               "featured": false
             }
           ]
@@ -152,20 +137,180 @@
           "url": "https://www.roxfort.frpg.hu/index.php/topic,19960.msg127185.html#msg127185",
           "characters": [
             {
-              "name": "Vianne M. Gardner",
-              "image": "actors/vianne-m-gardner",
-              "featured": true
-            },
-            {
-              "name": "Wesley Fawcett",
-              "image": "actors/wesley-fawcett",
-              "featured": false
-            },
-            {
-              "name": "hetedév",
-              "image": "actors/hetedev",
-              "featured": false
-            }
+          "name": "Wesley Fawcett",
+          "image": "actors/wesley.jpg",
+          "featured": true
+        },
+        {
+          "name": "Eydis Sidthvordr",
+          "image": "actors/eydis.jpg",
+          "featured": false
+        },
+		        {
+          "name": "Nialen Travers",
+          "image": "actors/nialen.jpg",
+          "featured": false
+        },
+		{
+		"name": "Orville Morris",
+          "image": "actors/orville.jpg",
+          "featured": false
+        },
+				        {
+          "name": "Daphné d'Aboville",
+          "image": "actors/daph.jpg",
+          "featured": false
+        },
+						        {
+          "name": "Rokuro Ishida",
+          "image": "actors/rokuro.jpg",
+          "featured": false
+        },
+				    {
+          "name": "Élodie Roethlisberger",
+          "image": "actors/elodie.jpg",
+          "featured": false
+        },
+		{
+		"name": "Solace Barbon",
+          "image": "actors/barbon.jpg",
+          "featured": false
+        },
+		{
+		"name": "Ophelia Langley",
+          "image": "actors/ophelia.jpg",
+          "featured": false
+        },
+		{
+		"name": "Alma L. Remington",
+          "image": "actors/alma.jpg",
+          "featured": false
+        },
+		{
+		"name": "Sebastien Lacroix",
+          "image": "actors/sebastien.jpg",
+          "featured": false
+        },
+		{
+		"name": "Inès de Saint-Vinant",
+          "image": "actors/ines.jpg",
+          "featured": false
+        },
+		{
+		"name": "Enver Nebelwald",
+          "image": "actors/enver.jpg",
+          "featured": false
+        },
+		{
+		"name": "Chikara Tetsuya",
+          "image": "actors/chikara.jpg",
+          "featured": false
+        },
+		{
+		"name": "Sienna Scrimgeour",
+          "image": "actors/sienna.jpg",
+          "featured": false
+        },
+		{
+		"name": "Zaniah Ivutro",
+          "image": "actors/zaniah.jpg",
+          "featured": false
+        },
+		{
+		"name": "Connor O'Hara",
+          "image": "actors/connor.jpg",
+          "featured": false
+        },
+		{
+		"name": "Vale Bate",
+          "image": "actors/vale.jpg",
+          "featured": false
+        },
+		{
+		"name": "Anne-Rose Tuffin",
+          "image": "actors/annie.jpg",
+          "featured": false
+        },
+		{
+		"name": "Holden Echohawk",
+          "image": "actors/holden.jpg",
+          "featured": false
+        },
+		{
+		"name": "Varvara Chernov",
+          "image": "actors/varvara.jpg",
+          "featured": false
+        },
+		{
+		"name": "Gemma Jenkins",
+          "image": "actors/gemma.jpg",
+          "featured": false
+        },
+		{
+		"name": "William Ashford",
+          "image": "actors/william.jpg",
+          "featured": false
+        },
+		{
+		"name": "Lucius Rheims",
+          "image": "actors/lucius.jpg",
+          "featured": false
+        },
+		{
+		"name": "Malachi Maddock",
+          "image": "actors/malachi.jpg",
+          "featured": false
+        },
+		{
+		"name": "Blaze Florance",
+          "image": "actors/blaze.jpg",
+          "featured": false
+        },
+		{
+		"name": "Miguel Fuentes",
+          "image": "actors/miguel.jpg",
+          "featured": false
+        },
+		{
+		"name": "Heliodora Haseltine",
+          "image": "actors/heliodora.jpg",
+          "featured": false
+        },
+		{
+		"name": "Zafira Tavish",
+          "image": "actors/zafira.jpg",
+          "featured": false
+        },
+		{
+		"name": "Orin Morgenstern",
+          "image": "actors/orin.jpg",
+          "featured": false
+        },
+		{
+		"name": "Soffi Lowe",
+          "image": "actors/soffi.jpg",
+          "featured": false
+        },
+		{
+		"name": "Elizabeth Rappaport",
+          "image": "actors/elizabeth.jpg",
+          "featured": false
+        },
+		{
+		"name": "Roxanne Montague",
+          "image": "actors/roxanne.jpg",
+          "featured": false
+        },
+		{
+		"name": "Lolita Delacour",
+          "image": "actors/lolita.jpg",
+          "featured": false
+        },
+		{
+		"name": "Venus Llewellyn",
+          "image": "actors/venus.jpg",
+          "featured": false
+        }
           ]
         },
         {
@@ -179,15 +324,175 @@
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20824.msg127524.html#msg127524",
           "characters": [
             {
-              "name": "Vianne M. Gardner",
-              "image": "actors/vianne-m-gardner",
-              "featured": true
-            },
-            {
-              "name": "Mardekár lelátók",
-              "image": "actors/mardekar-lelatok",
-              "featured": false
-            }
+          "name": "Sienna Scrimgeour",
+          "image": "actors/sienna.jpg",
+          "featured": true
+        },
+		{
+          "name": "Revan Morgenstern",
+          "image": "actors/revan.jpg",
+          "featured": true
+        },
+		{
+          "name": "Anne-Rose Tuffin",
+          "image": "actors/annie.jpg",
+          "featured": true
+        },
+		{
+          "name": "Chikara Tetsuya",
+          "image": "actors/chikara.jpg",
+          "featured": true
+        },
+		{
+          "name": "Maribel Thorne",
+          "image": "actors/npcfemale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Bernard Barkley",
+          "image": "actors/npcmale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Elowen Dawlish",
+          "image": "actors/npcfemale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Connor O'Hara",
+          "image": "actors/connor.jpg",
+          "featured": true
+        },
+		{
+          "name": "Gemma Jenkins",
+          "image": "actors/gemma.jpg",
+          "featured": true
+        },
+		{
+          "name": "Heranoush Fletcher",
+          "image": "actors/hera.jpg",
+          "featured": true
+        },
+		{
+          "name": "Nialen Travers",
+          "image": "actors/nialen.jpg",
+          "featured": true
+        },
+		{
+          "name": "Connor O'Hara",
+          "image": "actors/connor.jpg",
+          "featured": true
+        },
+		{
+          "name": "Roxanne Montague",
+          "image": "actors/roxanne.jpg",
+          "featured": true
+        },
+		{
+          "name": "Blaze Florance",
+          "image": "actors/blaze.jpg",
+          "featured": true
+        },
+		{
+          "name": "Octavia Selwyn",
+          "image": "actors/npcfemale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Ophelia Langley",
+          "image": "actors/ophelia.jpg",
+          "featured": false
+        },
+		{
+          "name": "Holden Echohawk",
+          "image": "actors/holden.jpg",
+          "featured": false
+        },
+		{
+          "name": "Enver Nebelwald",
+          "image": "actors/enver.jpg",
+          "featured": false
+        },
+		{
+          "name": "Winthrop Hardy",
+          "image": "actors/winthrop.jpg",
+          "featured": false
+        },
+		{
+          "name": "Amycus Carrow",
+          "image": "actors/amy.jpg",
+          "featured": false
+        },
+		{
+          "name": "Hagen Romanov",
+          "image": "actors/hagen.jpg",
+          "featured": false
+        },
+		{
+          "name": "Liliya Romanov",
+          "image": "actors/liliya.jpg",
+          "featured": false
+        },
+		{
+          "name": "Daphné d'Aboville",
+          "image": "actors/daph.jpg",
+          "featured": false
+        },
+		{
+          "name": "Alma L. Remington",
+          "image": "actors/alma.jpg",
+          "featured": false
+        },
+		{
+          "name": "Elizabeth Rappaport",
+          "image": "actors/elizabeth.jpg",
+          "featured": false
+        },
+		{
+          "name": "Quennel Oakley",
+          "image": "actors/quennel.jpg",
+          "featured": false
+        },
+		{
+          "name": "Ginevra Weasley",
+          "image": "actors/ginny.jpg",
+          "featured": false
+        },
+		{
+          "name": "Siddhartha Suduri",
+          "image": "actors/sid.jpg",
+          "featured": false
+        },
+		{
+          "name": "Malachi Maddock",
+          "image": "actors/malachi.jpg",
+          "featured": false
+        },
+		{
+          "name": "Varvara Chernov",
+          "image": "actors/varvara.jpg",
+          "featured": false
+        },
+		{
+          "name": "Solace Barbon",
+          "image": "actors/barbon.jpg",
+          "featured": false
+        },
+		{
+          "name": "Élodie Roethlisberger",
+          "image": "actors/elodie.jpg",
+          "featured": false
+        },
+		{
+          "name": "Eydis Sidthvordr",
+          "image": "actors/eydis.jpg",
+          "featured": false
+        },
+		{
+          "name": "Miguel Fuentes",
+          "image": "actors/miguel.jpg",
+          "featured": false
+        }
           ]
         },
         {
@@ -201,15 +506,115 @@
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20828.msg127567.html#msg127567",
           "characters": [
             {
-              "name": "Vianne M. Gardner",
-              "image": "actors/vianne-m-gardner",
-              "featured": true
-            },
-            {
-              "name": "#vwitchgang",
-              "image": "actors/vwitchgang",
-              "featured": false
-            }
+          "name": "Sebastien Lacroix",
+          "image": "actors/sebastien.jpg",
+          "featured": false
+        },
+		{
+          "name": "Chikara Tetsuya",
+          "image": "actors/chikara.jpg",
+          "featured": false
+        },
+		{
+          "name": "Daphné d'Aboville",
+          "image": "actors/daph.jpg",
+          "featured": false
+        },
+		{
+          "name": "Solace Barbon",
+          "image": "actors/barbon.jpg",
+          "featured": false
+        },
+		{
+          "name": "Zaniah Ivutro",
+          "image": "actors/zaniah.jpg",
+          "featured": false
+        },
+		{
+          "name": "Eydis Sidthvordr",
+          "image": "actors/eydis.jpg",
+          "featured": false
+        },
+		{
+          "name": "Lolita Delacour",
+          "image": "actors/lolita.jpg",
+          "featured": false
+        },
+		{
+          "name": "Inès de Saint-Vinant",
+          "image": "actors/ines.jpg",
+          "featured": false
+        },
+		{
+          "name": "Rokuro Ishida",
+          "image": "actors/rokuro.jpg",
+          "featured": false
+        },
+		{
+          "name": "Connor O'Hara",
+          "image": "actors/connor.jpg",
+          "featured": false
+        },
+		{
+          "name": "Vale Bate",
+          "image": "actors/vale.jpg",
+          "featured": false
+        },
+		{
+          "name": "Sienna Scrimgeour",
+          "image": "actors/sienna.jpg",
+          "featured": false
+        },
+		{
+          "name": "Varvara Chernov",
+          "image": "actors/varvara.jpg",
+          "featured": false
+        },
+		{
+          "name": "Orin Morgenstern",
+          "image": "actors/orin.jpg",
+          "featured": false
+        },
+		{
+          "name": "Siddhartha Suduri",
+          "image": "actors/sid.jpg",
+          "featured": false
+        },
+		{
+          "name": "Élodie Roethlisberger",
+          "image": "actors/elodie.jpg",
+          "featured": false
+        },
+		{
+          "name": "Malachi Maddock",
+          "image": "actors/malachi.jpg",
+          "featured": false
+        },
+		{
+          "name": "Miguel Fuentes",
+          "image": "actors/miguel.jpg",
+          "featured": false
+        },
+		{
+          "name": "Elizabeth Rappaport",
+          "image": "actors/elizabeth.jpg",
+          "featured": false
+        },
+		{
+          "name": "Holden Echohawk",
+          "image": "actors/holden.jpg",
+          "featured": false
+        },
+		{
+          "name": "Gemma Jenkins",
+          "image": "actors/gemma.jpg",
+          "featured": false
+        },
+		{
+          "name": "Minerva McGalagony",
+          "image": "actors/minerva.png",
+          "featured": false
+        }
           ]
         },
         {
