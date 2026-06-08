@@ -303,10 +303,12 @@
     const meta = document.createElement("div");
     meta.className = "vi-meta";
 
-    const metaParts = [game.placeLabel, game.date].filter(Boolean);
+    if (game.placeLabel) {
+      meta.appendChild(infoLine("Helyszín", game.placeLabel));
+    }
 
-    if (metaParts.length) {
-      meta.appendChild(infoLine("", metaParts.join(" · ")));
+    if (game.date) {
+      meta.appendChild(infoLine("Dátum", game.date));
     }
 
     const characters = renderCharacters(game);
