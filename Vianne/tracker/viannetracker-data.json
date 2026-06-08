@@ -31,7 +31,7 @@
           "id": "game-01",
           "title": "NJK előtörténet",
           "meta": "Vianne M. Gardner",
-          "placeLabel": "CA, USA",
+          "placeLabel": "Berkeley, CA, USA",
           "date": "",
           "status": "lezart",
           "image": "https://i.pinimg.com/1200x/a0/f0/e1/a0f0e1ee80e70567980b2fa0fdbcb73a.jpg",
@@ -114,7 +114,7 @@
           "characters": [
             {
               "name": "Evan Meadows",
-              "image": "actors/evan.jpg",
+              "image": "actors/npcmale.jpg",
               "featured": false
             }
           ]
@@ -649,7 +649,7 @@
             },
 			{
               "name": "Gemma Jenkins",
-              "image": "actors/chikara.jpg",
+              "image": "actors/gemma.jpg",
               "featured": false
             },
 			{
@@ -853,7 +853,7 @@
         {
           "id": "game-13",
           "title": "chihuahua moms",
-          "meta": "Daphné d'Aboville · 2006. 01. 08.. vasárnap",
+          "meta": "Daphné d'Aboville · 2006. 01. 08. vasárnap",
           "placeLabel": "Beauxbatons hintók, Roxfort",
           "date": "2006. 01. 08. vasárnap",
           "status": "aktiv",
@@ -984,7 +984,7 @@
         {
           "id": "game-16",
           "title": "i wish it was 0412 again",
-          "meta": "Team USA · 2006. 05. 07.. vasárnap",
+          "meta": "Team USA · 2006. 05. 07. vasárnap",
           "placeLabel": "Team USA",
           "date": "2006. 05. 07.. vasárnap",
           "status": "lezart",
