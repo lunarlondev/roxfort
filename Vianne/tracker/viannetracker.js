@@ -312,9 +312,26 @@
     }
 
     const characters = renderCharacters(game);
+    const detailsPanel = renderGameDetails(game);
 
     const footer = document.createElement("div");
     footer.className = "vi-card-footer";
+
+    if (detailsPanel) {
+      const detailsButton = document.createElement("button");
+      detailsButton.type = "button";
+      detailsButton.className = "vi-open vi-details-button";
+      detailsButton.setAttribute("aria-expanded", "false");
+      detailsButton.textContent = "Részletek";
+
+      detailsButton.addEventListener("click", () => {
+        const isOpen = !detailsPanel.hidden;
+        detailsPanel.hidden = isOpen;
+        detailsButton.setAttribute("aria-expanded", String(!isOpen));
+      });
+
+      footer.appendChild(detailsButton);
+    }
 
     if (game.url) {
       const link = document.createElement("a");
@@ -333,9 +350,51 @@
     }
 
     content.appendChild(footer);
+
+    if (detailsPanel) {
+      content.appendChild(detailsPanel);
+    }
+
     item.append(skin, dot, status, content);
 
     return item;
+  }
+
+  function renderGameDetails(game) {
+    const hasMeta = Boolean(String(game.meta || "").trim());
+    const hasImage = Boolean(String(game.image || "").trim());
+
+    if (!hasMeta && !hasImage) {
+      return null;
+    }
+
+    const panel = document.createElement("div");
+    panel.className = "vi-details-panel";
+    panel.hidden = true;
+
+    const imageWrap = document.createElement("div");
+    imageWrap.className = "vi-details-image";
+
+    const image = document.createElement("img");
+    image.alt = "";
+    setSmartImage(image, game.image, state.data.profile?.portrait);
+    imageWrap.appendChild(image);
+
+    const textWrap = document.createElement("div");
+    textWrap.className = "vi-details-text";
+
+    const label = document.createElement("div");
+    label.className = "vi-details-label";
+    label.textContent = "Meta";
+
+    const value = document.createElement("div");
+    value.className = "vi-details-value";
+    value.textContent = hasMeta ? game.meta : "Nincs megadva meta adat.";
+
+    textWrap.append(label, value);
+    panel.append(imageWrap, textWrap);
+
+    return panel;
   }
 
   function infoLine(label, value) {
