@@ -792,11 +792,6 @@
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20682.msg128480/topicseen.html#msg128480",
           "characters": [
             {
-              "name": "Vianne M. Gardner",
-              "image": "actors/vianne-m-gardner",
-              "featured": true
-            },
-            {
               "name": "Santiago Herrera",
               "image": "actors/santiago.jpg",
               "featured": true
@@ -815,12 +810,37 @@
           "characters": [
             {
               "name": "Varvara Chernov",
-              "image": "actors/vianne-m-gardner",
-              "featured": false
+              "image": "actors/varvara.jpg",
+              "featured": true
             },
             {
               "name": "Vale Bate",
               "image": "actors/vale.jpg",
+              "featured": true
+            },
+			{
+              "name": "Solace Barbon",
+              "image": "actors/barbon.jpg",
+              "featured": true
+            },
+			{
+              "name": "Inés de Saint-Vinant",
+              "image": "actors/ines.jpg",
+              "featured": true
+            },
+			{
+              "name": "Lolita Delacour",
+              "image": "actors/lolita.jpg",
+              "featured": true
+            },
+			{
+              "name": "Sienna Scrimgeour",
+              "image": "actors/sienna.jpg",
+              "featured": true
+            },
+			{
+              "name": "Connor O'Hara",
+              "image": "actors/connor.jpg",
               "featured": true
             },
 			{
