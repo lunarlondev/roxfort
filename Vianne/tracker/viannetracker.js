@@ -17,7 +17,6 @@
   const refs = {
     portrait: root.querySelector("[data-profile-portrait]"),
     brand: root.querySelector("[data-profile-brand]"),
-    sidebarStats: root.querySelector("[data-sidebar-stats]"),
     filters: root.querySelector("[data-status-filters]"),
     timeline: root.querySelector("[data-timeline]"),
     search: root.querySelector("[data-search]"),
@@ -240,64 +239,8 @@
 
     refs.timeline.replaceChildren(fragment);
     renderSelectedCharacter(totalMatches);
-    renderSidebarStats(totalMatches);
   }
 
-
-  function renderSidebarStats(visibleCount) {
-    if (!refs.sidebarStats) {
-      return;
-    }
-
-    const allGames = getAllGames();
-    const total = allGames.length;
-    const active = allGames.filter((game) => statusKey(game.status) === "aktiv").length;
-    const closed = allGames.filter((game) => statusKey(game.status) === "lezart").length;
-    const current = state.character
-      ? state.character.name
-      : state.search
-        ? "Keresés aktív"
-        : state.status !== "all"
-          ? statusLabel(state.status)
-          : "Minden játék";
-
-    const stats = [
-      { label: "Látszik", value: visibleCount },
-      { label: "Összesen", value: total },
-      { label: "Aktív", value: active },
-      { label: "Lezárt", value: closed }
-    ];
-
-    const fragment = document.createDocumentFragment();
-
-    const currentBox = document.createElement("div");
-    currentBox.className = "vi-side-stat vi-side-stat--wide";
-
-    const currentValue = document.createElement("strong");
-    currentValue.textContent = current;
-
-    const currentLabel = document.createElement("span");
-    currentLabel.textContent = "Jelenlegi nézet";
-
-    currentBox.append(currentValue, currentLabel);
-    fragment.appendChild(currentBox);
-
-    stats.forEach((item) => {
-      const box = document.createElement("div");
-      box.className = "vi-side-stat";
-
-      const value = document.createElement("strong");
-      value.textContent = String(item.value);
-
-      const label = document.createElement("span");
-      label.textContent = item.label;
-
-      box.append(value, label);
-      fragment.appendChild(box);
-    });
-
-    refs.sidebarStats.replaceChildren(fragment);
-  }
 
   function renderCategory(category, games) {
     const details = document.createElement("details");

@@ -69,13 +69,13 @@ body {
 .vi-filter-title,
 .vi-filterbar,
 .vi-clear,
-.vi-sidebar-stats,
 .vi-aura {
   position: relative;
   z-index: 1;
 }
 
 .vi-portrait {
+  flex: 0 0 auto;
   overflow: hidden;
   border-radius: 22px;
   box-shadow: 0 12px 28px rgba(155, 37, 105, .24);
@@ -86,6 +86,7 @@ body {
   width: 100%;
   aspect-ratio: 1 / 1.36;
   object-fit: cover;
+  object-position: center 28%;
   filter: saturate(1.5) contrast(1.05);
   animation: viPortraitBreath 9s ease-in-out infinite;
 }
@@ -226,59 +227,6 @@ body {
   filter: brightness(1.04);
 }
 
-.vi-sidebar-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-top: 2px;
-}
-
-.vi-side-stat {
-  min-width: 0;
-  padding: 9px 8px;
-  text-align: center;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, .2);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .2);
-}
-
-.vi-side-stat strong {
-  display: block;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 900;
-  line-height: 1;
-}
-
-.vi-side-stat span {
-  display: block;
-  margin-top: 5px;
-  color: rgba(255, 255, 255, .86);
-  font-size: 8px;
-  font-weight: 900;
-  line-height: 1.1;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
-.vi-side-stat--wide {
-  grid-column: 1 / -1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
-  text-align: left;
-}
-
-.vi-side-stat--wide strong {
-  font-size: 12px;
-  line-height: 1.2;
-}
-
-.vi-side-stat--wide span {
-  margin-top: 0;
-  text-align: right;
-}
 
 .vi-aura {
   height: 16px;
@@ -517,9 +465,9 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(260px 170px at 18% 14%, rgba(255, 255, 255, .72), transparent 70%),
-    linear-gradient(135deg, rgba(255, 232, 243, .88), rgba(255, 159, 214, .74) 58%, rgba(154, 223, 255, .42));
-  backdrop-filter: blur(1px);
+    radial-gradient(280px 180px at 18% 14%, rgba(255, 255, 255, .78), transparent 72%),
+    linear-gradient(135deg, rgba(255, 246, 251, .82), rgba(255, 205, 231, .48) 58%, rgba(210, 239, 255, .36));
+  backdrop-filter: blur(.5px);
 }
 
 .vi-dot {
