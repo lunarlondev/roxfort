@@ -25,128 +25,6 @@
       "readout": "AURA INTENSITY: STABLE / 45%"
     }
   ],
-  "actors": [
-    {
-      "id": "winthrop-hardy",
-      "name": "Winthrop Hardy",
-      "image": "winthrop-hardy.png",
-      "featured": false
-    },
-    {
-      "id": "sienna-scrimgeour",
-      "name": "Sienna Scrimgeour",
-      "image": "sienna-scrimgeour.png",
-      "featured": false
-    },
-    {
-      "id": "nezoteren-levok",
-      "name": "nézőtéren lévők",
-      "image": "nezoteren-levok.png",
-      "featured": false
-    },
-    {
-      "id": "owen-redway",
-      "name": "Owen Redway",
-      "image": "owen-redway.png",
-      "featured": false
-    },
-    {
-      "id": "maisie-jackdaw",
-      "name": "Maisie Jackdaw",
-      "image": "maisie-jackdaw.png",
-      "featured": false
-    },
-    {
-      "id": "chikara-tetsuya",
-      "name": "Chikara Tetsuya",
-      "image": "actors/chikara.jpg",
-      "featured": false
-    },
-    {
-      "id": "gemma-jenkins",
-      "name": "Gemma Jenkins",
-      "image": "gemma-jenkins.png",
-      "featured": false
-    },
-    {
-      "id": "mardekar-asztal",
-      "name": "Mardekár asztal",
-      "image": "mardekar-asztal.png",
-      "featured": false
-    },
-    {
-      "id": "mardekar-valogato",
-      "name": "Mardekár válogató",
-      "image": "mardekar-valogato.png",
-      "featured": false
-    },
-    {
-      "id": "mardekar-vs-griffendel",
-      "name": "Mardekár vs. Griffendél",
-      "image": "mardekar-vs-griffendel.png",
-      "featured": false
-    },
-    {
-      "id": "szellemszallas-bulizoi",
-      "name": "Szellemszállás bulizói",
-      "image": "szellemszallas-bulizoi.png",
-      "featured": false
-    },
-    {
-      "id": "dementor-bela",
-      "name": "Dementor Béla",
-      "image": "dementor-bela.png",
-      "featured": false
-    },
-    {
-      "id": "vivien-m-smithe",
-      "name": "Vivien M. Smithe",
-      "image": "vivien-m-smithe.png",
-      "featured": false
-    },
-    {
-      "id": "viv-and-tetsu",
-      "name": "Viv & Tetsu",
-      "image": "actors/chikara.jpg",
-      "featured": false
-    },
-    {
-      "id": "oakley-quennel-professzor",
-      "name": "Oakley Quennel professzor",
-      "image": "oakley-quennel-professzor.png",
-      "featured": false
-    },
-    {
-      "id": "vivien-smithe",
-      "name": "Vivien Smithe",
-      "image": "vivien-smithe.png",
-      "featured": false
-    },
-    {
-      "id": "victor-holloway",
-      "name": "Victor Holloway",
-      "image": "victor-holloway.png",
-      "featured": false
-    },
-    {
-      "id": "mardekar-vs-hollohat",
-      "name": "Mardekár vs. Hollóhát",
-      "image": "mardekar-vs-hollohat.png",
-      "featured": false
-    },
-    {
-      "id": "otodev-tetsu",
-      "name": "Ötödév + Tetsu",
-      "image": "otodev-tetsu.png",
-      "featured": false
-    },
-    {
-      "id": "hugrabug-vs-mardekar",
-      "name": "Hugrabug vs. Mardekár",
-      "image": "hugrabug-vs-mardekar.png",
-      "featured": false
-    }
-  ],
   "categories": [
     {
       "id": "01-mult",
@@ -181,6 +59,8 @@
           "actors": [
             {
               "id": "winthrop-hardy",
+              "name": "Winthrop Hardy",
+              "image": "actors/winthtop.jpg",
               "featured": false
             }
           ],
@@ -198,6 +78,8 @@
           "actors": [
             {
               "id": "sienna-scrimgeour",
+              "name": "Sienna Scrimgeour",
+              "image": "actors/sienna.jpg",
               "featured": false
             }
           ],
@@ -215,6 +97,8 @@
           "actors": [
             {
               "id": "nezoteren-levok",
+              "name": "nézőtéren lévők",
+              "image": "nezoteren-levok.png",
               "featured": false
             }
           ],
@@ -232,6 +116,8 @@
           "actors": [
             {
               "id": "owen-redway",
+              "name": "Owen Redway",
+              "image": "actors/owen.jpg",
               "featured": false
             }
           ],
@@ -249,7 +135,9 @@
           "actors": [
             {
               "id": "maisie-jackdaw",
-              "featured": false
+              "name": "Maisie Jackdaw",
+              "image": "actors/maisie.jpg",
+              "featured": true
             }
           ],
           "location": "Roxfort, folyosók",
@@ -266,6 +154,8 @@
           "actors": [
             {
               "id": "chikara-tetsuya",
+              "name": "Chikara Tetsuya",
+              "image": "actors/chikara.jpg",
               "featured": true
             }
           ],
@@ -290,6 +180,8 @@
           "actors": [
             {
               "id": "gemma-jenkins",
+              "name": "Gemma Jenkins",
+              "image": "actors/gemma.jpg",
               "featured": false
             }
           ],
@@ -307,6 +199,8 @@
           "actors": [
             {
               "id": "mardekar-asztal",
+              "name": "Mardekár asztal",
+              "image": "mardekar-asztal.png",
               "featured": false
             }
           ],
@@ -324,6 +218,8 @@
           "actors": [
             {
               "id": "mardekar-valogato",
+              "name": "Mardekár válogató",
+              "image": "mardekar-valogato.png",
               "featured": false
             }
           ],
@@ -341,6 +237,8 @@
           "actors": [
             {
               "id": "mardekar-vs-griffendel",
+              "name": "Mardekár vs. Griffendél",
+              "image": "mardekar-vs-griffendel.png",
               "featured": false
             }
           ],
@@ -357,7 +255,8 @@
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20837.msg127672.html#msg127672",
           "actors": [
             {
-              "id": "szellemszallas-bulizoi",
+              "name": "Szellemszállás bulizói",
+              "image": "szellemszallas-bulizoi.png",
               "featured": false
             }
           ],
@@ -374,7 +273,8 @@
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20846.msg127674.html#msg127674",
           "actors": [
             {
-              "id": "dementor-bela",
+              "name": "Dementor Béla",
+              "image": "dementor-bela.png",
               "featured": true
             }
           ],
@@ -391,7 +291,8 @@
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20917.msg128144.html#msg128144",
           "actors": [
             {
-              "id": "vivien-m-smithe",
+              "name": "Vivien M. Smithe",
+              "image": "actors/vivien.jpg",
               "featured": true
             }
           ],
@@ -408,7 +309,13 @@
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20913.msg128150.html#msg128150",
           "actors": [
             {
-              "id": "viv-and-tetsu",
+              "name": "Vivien M. Smithe",
+              "image": "actors/vivien.jpg",
+              "featured": true
+            },
+			{
+              "name": "Chikara Tetsuya",
+              "image": "actors/chikara.jpg",
               "featured": true
             }
           ],
@@ -425,8 +332,15 @@
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20922.0.html",
           "actors": [
             {
-              "id": "viv-and-tetsu",
-              "featured": false
+              "name": "Vivien M. Smithe",
+              "image": "actors/vivien.jpg",
+              "featured": true
+            },
+			{
+  
+              "name": "Chikara Tetsuya",
+              "image": "chikara.jpg",
+              "featured": true
             }
           ],
           "location": "Roxfort, Tusa lelátók",
@@ -442,7 +356,8 @@
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20919.msg128151.html#msg128151",
           "actors": [
             {
-              "id": "oakley-quennel-professzor",
+              "name": "Oakley Quennel professzor",
+              "image": "oakley-quennel-professzor.png",
               "featured": false
             }
           ],
@@ -460,6 +375,8 @@
           "actors": [
             {
               "id": "vivien-smithe",
+              "name": "Vivien Smithe",
+              "image": "vivien-smithe.png",
               "featured": false
             }
           ],
@@ -477,6 +394,8 @@
           "actors": [
             {
               "id": "victor-holloway",
+              "name": "Victor Holloway",
+              "image": "victor-holloway.png",
               "featured": false
             }
           ],
@@ -494,6 +413,8 @@
           "actors": [
             {
               "id": "mardekar-vs-hollohat",
+              "name": "Mardekár vs. Hollóhát",
+              "image": "mardekar-vs-hollohat.png",
               "featured": false
             }
           ],
@@ -511,6 +432,8 @@
           "actors": [
             {
               "id": "chikara-tetsuya",
+              "name": "Chikara Tetsuya",
+              "image": "chikara.jpg",
               "featured": true
             }
           ],
@@ -528,6 +451,8 @@
           "actors": [
             {
               "id": "otodev-tetsu",
+              "name": "Ötödév + Tetsu",
+              "image": "otodev-tetsu.png",
               "featured": false
             }
           ],
@@ -545,6 +470,8 @@
           "actors": [
             {
               "id": "hugrabug-vs-mardekar",
+              "name": "Hugrabug vs. Mardekár",
+              "image": "hugrabug-vs-mardekar.png",
               "featured": false
             }
           ],
