@@ -1,0 +1,1 @@
+A karakterképek ide kerüljenek. A fájlneveket a heranoushtracker-data.json actors tömbjében tudod megadni.

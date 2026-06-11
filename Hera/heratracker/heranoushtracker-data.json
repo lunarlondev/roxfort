@@ -1,0 +1,453 @@
+{
+  "profile": {
+    "name": "Heranoush Fletcher",
+    "role": "///gold covered in mud ///",
+    "portrait": "https://i.pinimg.com/1200x/d3/f8/60/d3f860b05ef362e22d66ba89948303f5.jpg"
+  },
+  "actorImagePath": "actors/",
+  "stats": [
+    {
+      "label": "MINDSET",
+      "value": 100,
+      "level": "high",
+      "readout": "MINDSET: OPTIMAL"
+    },
+    {
+      "label": "GOLD LUST",
+      "value": 85,
+      "level": "mid",
+      "readout": "GOLD LUST: ELEVATED"
+    },
+    {
+      "label": "AURA INTENSITY",
+      "value": 45,
+      "level": "unstable",
+      "readout": "AURA INTENSITY: STABLE / 45%"
+    }
+  ],
+  "actors": [
+    {
+      "id": "winthrop-hardy",
+      "name": "Winthrop Hardy",
+      "image": "winthrop-hardy.png",
+      "featured": false
+    },
+    {
+      "id": "sienna-scrimgeour",
+      "name": "Sienna Scrimgeour",
+      "image": "sienna-scrimgeour.png",
+      "featured": false
+    },
+    {
+      "id": "nezoteren-levok",
+      "name": "nézőtéren lévők",
+      "image": "nezoteren-levok.png",
+      "featured": false
+    },
+    {
+      "id": "owen-redway",
+      "name": "Owen Redway",
+      "image": "owen-redway.png",
+      "featured": false
+    },
+    {
+      "id": "maisie-jackdaw",
+      "name": "Maisie Jackdaw",
+      "image": "maisie-jackdaw.png",
+      "featured": false
+    },
+    {
+      "id": "chikara-tetsuya",
+      "name": "Chikara Tetsuya",
+      "image": "chikara-tetsuya.png",
+      "featured": false
+    },
+    {
+      "id": "gemma-jenkins",
+      "name": "Gemma Jenkins",
+      "image": "gemma-jenkins.png",
+      "featured": false
+    },
+    {
+      "id": "mardekar-asztal",
+      "name": "Mardekár asztal",
+      "image": "mardekar-asztal.png",
+      "featured": false
+    },
+    {
+      "id": "mardekar-valogato",
+      "name": "Mardekár válogató",
+      "image": "mardekar-valogato.png",
+      "featured": false
+    },
+    {
+      "id": "mardekar-vs-griffendel",
+      "name": "Mardekár vs. Griffendél",
+      "image": "mardekar-vs-griffendel.png",
+      "featured": false
+    },
+    {
+      "id": "szellemszallas-bulizoi",
+      "name": "Szellemszállás bulizói",
+      "image": "szellemszallas-bulizoi.png",
+      "featured": false
+    },
+    {
+      "id": "dementor-bela",
+      "name": "Dementor Béla",
+      "image": "dementor-bela.png",
+      "featured": false
+    },
+    {
+      "id": "vivien-m-smithe",
+      "name": "Vivien M. Smithe",
+      "image": "vivien-m-smithe.png",
+      "featured": false
+    },
+    {
+      "id": "viv-and-tetsu",
+      "name": "Viv & Tetsu",
+      "image": "viv-and-tetsu.png",
+      "featured": false
+    },
+    {
+      "id": "oakley-quennel-professzor",
+      "name": "Oakley Quennel professzor",
+      "image": "oakley-quennel-professzor.png",
+      "featured": false
+    },
+    {
+      "id": "vivien-smithe",
+      "name": "Vivien Smithe",
+      "image": "vivien-smithe.png",
+      "featured": false
+    },
+    {
+      "id": "victor-holloway",
+      "name": "Victor Holloway",
+      "image": "victor-holloway.png",
+      "featured": false
+    },
+    {
+      "id": "mardekar-vs-hollohat",
+      "name": "Mardekár vs. Hollóhát",
+      "image": "mardekar-vs-hollohat.png",
+      "featured": false
+    },
+    {
+      "id": "otodev-tetsu",
+      "name": "Ötödév + Tetsu",
+      "image": "otodev-tetsu.png",
+      "featured": false
+    },
+    {
+      "id": "hugrabug-vs-mardekar",
+      "name": "Hugrabug vs. Mardekár",
+      "image": "hugrabug-vs-mardekar.png",
+      "featured": false
+    }
+  ],
+  "categories": [
+    {
+      "id": "01-mult",
+      "title": "01 // Múlt",
+      "open": false,
+      "games": [
+        {
+          "id": "elotortenet",
+          "title": "Előtörténet",
+          "status": "closed",
+          "image": "https://i.pinimg.com/1200x/ab/97/d9/ab97d9207be31f61a4085e5bf276cc5d.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,19745.0.html",
+          "actors": [],
+          "location": "",
+          "date": ""
+        }
+      ]
+    },
+    {
+      "id": "02-2004-2005",
+      "title": "02 // 2004-2005",
+      "open": false,
+      "games": [
+        {
+          "id": "he-hides-in-the-shadow",
+          "title": "he hides in the shadow",
+          "status": "active",
+          "image": "https://i.pinimg.com/1200x/33/a8/52/33a8520e4cca9f4296b09e3c315df7af.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,19759.0.html",
+          "actors": [
+            "winthrop-hardy"
+          ],
+          "location": "Zsebpiszok-köz",
+          "date": "2004. december 31. péntek"
+        },
+        {
+          "id": "with-wind-and-gold",
+          "title": "with wind and gold",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/4f/60/4b/4f604b11d8198dbcb3d074ac56c47482.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,19756.0.html",
+          "actors": [
+            "sienna-scrimgeour"
+          ],
+          "location": "Roxfort, Kviddics pálya",
+          "date": "2005 április 5. péntek"
+        },
+        {
+          "id": "hear-me-rawr",
+          "title": "hear me rawr",
+          "status": "closed",
+          "image": "https://media.tenor.com/FCONEtZs4tgAAAAM/yawn-cat.gif",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,19829.msg125363.html#msg125363",
+          "actors": [
+            "nezoteren-levok"
+          ],
+          "location": "Roxfort, Kviddics lelátók",
+          "date": "2005. 05. 14. szombat"
+        },
+        {
+          "id": "money-money-come-to-me",
+          "title": "money money come to me",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/d4/7f/68/d47f68f97ca1553077c5820b3e6c8c84.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,19891.msg125564/topicseen.html#msg125564",
+          "actors": [
+            "owen-redway"
+          ],
+          "location": "Roxfort",
+          "date": "2005. 05. 21. szombat"
+        },
+        {
+          "id": "darkness-came-for-you",
+          "title": "Darkness came for you",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/7f/96/31/7f963126b2f59936171a08a9a1e836f1.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20058.0.html",
+          "actors": [
+            "maisie-jackdaw"
+          ],
+          "location": "Roxfort, folyosók",
+          "date": "2005. június 12, vasárnap"
+        },
+        {
+          "id": "hello-kitty-boots",
+          "title": "Hello-Kitty-boots",
+          "status": "closed",
+          "image": "https://i.pinimg.com/1200x/ca/33/6a/ca336ab29d4c57158a114019a811d6ba.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20347.msg126204.html#msg126204",
+          "actors": [
+            "chikara-tetsuya"
+          ],
+          "location": "Barcelona, El Sombracel",
+          "date": "2005. július 2, szombat"
+        }
+      ]
+    },
+    {
+      "id": "04-2005-2006",
+      "title": "04 // 2005-2006",
+      "open": false,
+      "games": [
+        {
+          "id": "i-m-not-a-baddie",
+          "title": "I'm not a baddie",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/4c/98/02/4c9802cf953a761f76b9ac6ebf1beee8.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20096.msg127270.html#msg127270",
+          "actors": [
+            "gemma-jenkins"
+          ],
+          "location": "Roxfort Expressz",
+          "date": "2005. szeptember 1, csütörtök"
+        },
+        {
+          "id": "no-spf",
+          "title": "no SPF",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/b4/fe/59/b4fe591891e767d9434720dbaa400a6c.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,19896.msg127090.html#msg127090",
+          "actors": [
+            "mardekar-asztal"
+          ],
+          "location": "Roxfort, Nagyterem",
+          "date": "2005. szeptember 1, csütörtök"
+        },
+        {
+          "id": "i-m-a-drama-queen",
+          "title": "I'm a drama queen",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/f3/30/54/f33054c22081885a9d9893fe38620464.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20769.0.html",
+          "actors": [
+            "mardekar-valogato"
+          ],
+          "location": "Roxfort, Kviddicspálya",
+          "date": "2005. szeptember 10, szombat"
+        },
+        {
+          "id": "debute",
+          "title": "Debute",
+          "status": "closed",
+          "image": "https://i.pinimg.com/1200x/3b/63/ce/3b63ce923a0dd436e3c04b6bdb0d8d3f.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20823.0.html",
+          "actors": [
+            "mardekar-vs-griffendel"
+          ],
+          "location": "Roxfort, Kviddicspálya",
+          "date": "2005. október 1, szombat"
+        },
+        {
+          "id": "princesscore",
+          "title": "Princesscore",
+          "status": "closed",
+          "image": "https://i.pinimg.com/1200x/68/42/8e/68428ef2ef789998cc150ddf57544db1.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20837.msg127672.html#msg127672",
+          "actors": [
+            "szellemszallas-bulizoi"
+          ],
+          "location": "Roxmorts, Szellemszállás",
+          "date": "2005. október 29, szombat"
+        },
+        {
+          "id": "sugar-overdose",
+          "title": "Sugar Overdose",
+          "status": "active",
+          "image": "https://i.pinimg.com/736x/90/49/31/90493167b2542e4e8d284c9f56883ec5.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20846.msg127674.html#msg127674",
+          "actors": [
+            "dementor-bela"
+          ],
+          "location": "Roxmorts, Szellemszállás",
+          "date": "2005. október 29, szombat"
+        },
+        {
+          "id": "zero-exits",
+          "title": "Zero exits",
+          "status": "active",
+          "image": "https://i.pinimg.com/1200x/6f/7e/46/6f7e46d9748d51fc3526ca0d54e89ff6.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20917.msg128144.html#msg128144",
+          "actors": [
+            "vivien-m-smithe"
+          ],
+          "location": "Roxfort, Lányhálók",
+          "date": "2005. november 4. péntek"
+        },
+        {
+          "id": "violence-terror-chaos",
+          "title": "Violence, Terror, Chaos",
+          "status": "closed",
+          "image": "https://i.pinimg.com/1200x/16/db/35/16db357dec53114a86e9a919c5b1f12a.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20913.msg128150.html#msg128150",
+          "actors": [
+            "viv-and-tetsu"
+          ],
+          "location": "Roxfort, Tusa lelátók",
+          "date": "2005. november 26. szombat"
+        },
+        {
+          "id": "violence-terror-chaos-ii",
+          "title": "Violence, Terror, Chaos II.",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/41/64/98/416498619cac056c88a99a1e9da42709.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20922.0.html",
+          "actors": [
+            "viv-and-tetsu"
+          ],
+          "location": "Roxfort, Tusa lelátók",
+          "date": "2005. november 26. szombat"
+        },
+        {
+          "id": "spiderwebs",
+          "title": "spiderwebs",
+          "status": "closed",
+          "image": "https://i.pinimg.com/1200x/6a/b8/7f/6ab87f8be9a5eb34aa6d7b75940b16a9.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20919.msg128151.html#msg128151",
+          "actors": [
+            "oakley-quennel-professzor"
+          ],
+          "location": "Roxfort, Bájitaltan tanterem",
+          "date": "2005. december 2. szerda"
+        },
+        {
+          "id": "all-this-pain-will-end",
+          "title": "all this pain will end",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/b6/b0/29/b6b029351c835e85e1beb774663cda13.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20955.msg128534.html#msg128534",
+          "actors": [
+            "vivien-smithe"
+          ],
+          "location": "Roxfort,Yule bál",
+          "date": "2006. 01. 13. péntek"
+        },
+        {
+          "id": "cheerio-serial-thinker-depressed",
+          "title": "cheerio serial thinker depressed",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/0d/b6/25/0db625220c5cf6b7b55c2cd6ff3f6929.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20957.msg128830.html#msg128830",
+          "actors": [
+            "victor-holloway"
+          ],
+          "location": "Roxfort, Yule bál",
+          "date": "2006. 01. 13. péntek"
+        },
+        {
+          "id": "victory-debute",
+          "title": "victory debute",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/18/ba/d7/18bad7828f6dfc613f5fb4bf36ff2975.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,21128.0.html",
+          "actors": [
+            "mardekar-vs-hollohat"
+          ],
+          "location": "Roxfort, Kviddicspálya",
+          "date": "2005. február 04. szombat"
+        },
+        {
+          "id": "pinkie-swear-knife-swear",
+          "title": "pinkie swear? knife swear",
+          "status": "active",
+          "image": "https://i.pinimg.com/736x/fb/3d/37/fb3d37cc86669f826f85b60980f1d095.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,19927.msg129416.html#msg129416",
+          "actors": [
+            "chikara-tetsuya"
+          ],
+          "location": "Roxfort, Déli kilátó",
+          "date": "2005. február 04. szombat"
+        },
+        {
+          "id": "brunch-but-make-it-mean",
+          "title": "brunch, but make it mean",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/d2/57/d3/d257d3e43203f78f028a9cad241f6358.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,21232.msg129164.html#msg129164",
+          "actors": [
+            "otodev-tetsu"
+          ],
+          "location": "Roxfort, Tusa lelátók",
+          "date": "2005. február 26. szombat"
+        },
+        {
+          "id": "season-final",
+          "title": "season final",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/1d/ca/aa/1dcaaa581c5d4419a6c9d6fe87c186dd.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,21282.0.html",
+          "actors": [
+            "hugrabug-vs-mardekar"
+          ],
+          "location": "Roxfort, Kviddicspálya",
+          "date": "2005. április 01. szombat"
+        }
+      ]
+    },
+    {
+      "id": "xx-idon-kivuli",
+      "title": "XX // Időn kívüli",
+      "open": false,
+      "games": []
+    }
+  ]
+}
