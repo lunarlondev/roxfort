@@ -11,7 +11,6 @@
   };
 
   let trackerData = null;
-  let actorMap = new Map();
 
   root.innerHTML = '<div class="chaos-loading">Adatok betöltése...</div>';
 
@@ -22,7 +21,6 @@
     })
     .then((data) => {
       trackerData = data;
-      actorMap = new Map((data.actors || []).map((actor) => [actor.id, actor]));
       (data.categories || []).forEach((category) => {
         if (category.open) state.openCategories.add(category.id);
       });
@@ -163,7 +161,7 @@
     const main = el('main', 'chaos-content');
     let renderedCategories = 0;
 
-    const selectedActor = state.actor ? actorMap.get(state.actor) : null;
+    const selectedActor = state.actor ? findActorById(state.actor) : null;
     if (selectedActor) {
       main.appendChild(renderActiveActorFilter(selectedActor, visibleTotal));
     }
@@ -207,7 +205,7 @@
 
     const text = el('span', 'filter-actor-text');
     const strong = document.createElement('strong');
-    strong.textContent = actor.name || 'Szereplő';
+    strong.textContent = actor.name || humanizeId(actor.id) || 'Szereplő';
     const small = document.createElement('small');
     small.textContent = `${visibleTotal} játék látszik`;
     text.append(strong, small);
@@ -243,22 +241,20 @@
 
     const meta = el('div', 'meta');
     const actorEntries = getGameActors(game);
-    const actorNames = actorEntries.map((entry) => actorMap.get(entry.id)?.name).filter(Boolean);
+    const actorNames = actorEntries.map((actor) => actor.name || humanizeId(actor.id)).filter(Boolean);
     if (actorNames.length) meta.appendChild(metaLine('NÉV', actorNames.join(' · ')));
     if (game.location) meta.appendChild(metaLine('HELYSZÍN', game.location));
     if (game.date) meta.appendChild(metaLine('DÁTUM', game.date));
 
     const actorRow = el('div', 'card-actors');
-    actorEntries.forEach((entry) => {
-      const actor = actorMap.get(entry.id);
-      if (!actor) return;
+    actorEntries.forEach((actor) => {
       const button = el('button', 'card-actor-btn');
       button.type = 'button';
       button.dataset.actor = actor.id;
-      button.title = actor.name;
-      if (entry.featured) button.classList.add('is-featured');
+      button.title = actor.name || humanizeId(actor.id);
+      if (actor.featured) button.classList.add('is-featured');
       if (state.actor === actor.id) button.classList.add('is-active');
-      button.appendChild(actorImage(actor, actor.name));
+      button.appendChild(actorImage(actor, actor.name || humanizeId(actor.id)));
       actorRow.appendChild(button);
     });
 
@@ -308,7 +304,7 @@
 
   function matchesFilters(game) {
     const statusOk = state.status === 'all' || game.status === state.status;
-    const actorOk = !state.actor || getGameActors(game).some((entry) => entry.id === state.actor);
+    const actorOk = !state.actor || getGameActors(game).some((actor) => actor.id === state.actor);
     return statusOk && actorOk;
   }
 
@@ -323,36 +319,47 @@
   }
 
   function getGameActors(game) {
-    const featuredActors = new Set(game.featuredActors || []);
-
     return (game.actors || [])
-      .map((entry) => {
-        if (typeof entry === 'string') {
-          const actor = actorMap.get(entry);
-          return {
-            id: entry,
-            featured: featuredActors.has(entry) || actor?.featured === true
-          };
-        }
+      .map(normalizeActor)
+      .filter((actor) => actor && actor.id);
+  }
 
-        if (entry && typeof entry === 'object') {
-          const id = entry.id || entry.actorId;
-          const actor = actorMap.get(id);
-          return {
-            id,
-            featured: entry.featured === true || featuredActors.has(id) || actor?.featured === true
-          };
-        }
+  function normalizeActor(entry) {
+    if (typeof entry === 'string') {
+      return {
+        id: entry,
+        name: humanizeId(entry),
+        image: '',
+        featured: false
+      };
+    }
 
-        return null;
-      })
-      .filter((entry) => entry && entry.id);
+    if (!entry || typeof entry !== 'object') return null;
+
+    const id = entry.id || entry.actorId || slugify(entry.name || entry.image || 'actor');
+    return {
+      id,
+      name: entry.name || humanizeId(id),
+      image: entry.image || '',
+      featured: entry.featured === true
+    };
+  }
+
+  function findActorById(actorId) {
+    const categories = trackerData.categories || [];
+    for (const category of categories) {
+      for (const game of category.games || []) {
+        const actor = getGameActors(game).find((entry) => entry.id === actorId);
+        if (actor) return actor;
+      }
+    }
+    return null;
   }
 
   function actorImage(actor, altText) {
     const wrap = el('span', 'actor-image-wrap');
     const initial = el('span', 'actor-initial');
-    initial.textContent = initials(altText);
+    initial.textContent = initials(altText || actor.id);
 
     const imageName = actor.image || '';
     if (!imageName) {
@@ -380,9 +387,13 @@
   }
 
   function buildActorPath(imageName) {
-    if (/^(https?:)?\/\//.test(imageName) || imageName.startsWith('/')) return imageName;
+    const image = String(imageName || '').trim();
+    if (!image) return '';
+    if (/^(https?:)?\/\//.test(image) || image.startsWith('/') || image.startsWith('data:')) return image;
+    if (image.includes('/')) return image;
+
     const base = trackerData.actorImagePath || 'actors/';
-    return `${base.replace(/\/?$/, '/')}${imageName}`;
+    return `${base.replace(/\/?$/, '/')}${image}`;
   }
 
   function countLine(label, value) {
@@ -411,6 +422,23 @@
       .map((part) => part[0])
       .join('')
       .toUpperCase();
+  }
+
+  function humanizeId(id) {
+    return String(id || '')
+      .replace(/[-_]+/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .replace(/\b\p{L}/gu, (char) => char.toUpperCase());
+  }
+
+  function slugify(text) {
+    return String(text || 'actor')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '') || 'actor';
   }
 
   function el(tag, className) {
