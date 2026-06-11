@@ -11,6 +11,8 @@
   };
 
   let trackerData = null;
+  let tooltipEl = null;
+  let tooltipTarget = null;
 
   root.innerHTML = '<div class="chaos-loading">Adatok betöltése...</div>';
 
@@ -45,8 +47,8 @@
 
     if (actorButton) {
       rememberOpenCategories();
-      const actorId = actorButton.dataset.actor;
-      state.actor = state.actor === actorId ? null : actorId;
+      const actorKey = actorButton.dataset.actor;
+      state.actor = state.actor === actorKey ? null : actorKey;
       render();
       return;
     }
@@ -81,6 +83,25 @@
     }
   });
 
+  root.addEventListener('mouseover', (event) => {
+    const actorButton = event.target.closest('.card-actor-btn[data-actor-name]');
+    if (!actorButton || !root.contains(actorButton)) return;
+    showActorTooltip(actorButton, event);
+  });
+
+  root.addEventListener('mousemove', (event) => {
+    if (!tooltipTarget) return;
+    moveActorTooltip(event);
+  });
+
+  root.addEventListener('mouseout', (event) => {
+    if (!tooltipTarget) return;
+    const leavingButton = event.target.closest('.card-actor-btn[data-actor-name]');
+    if (!leavingButton || leavingButton !== tooltipTarget) return;
+    if (event.relatedTarget && leavingButton.contains(event.relatedTarget)) return;
+    hideActorTooltip();
+  });
+
   root.addEventListener('toggle', (event) => {
     const details = event.target.closest('details[data-category-id]');
     if (!details) return;
@@ -98,6 +119,7 @@
     const allGames = categories.flatMap((category) => category.games || []);
     const visibleGames = allGames.filter(matchesFilters);
 
+    hideActorTooltip();
     root.innerHTML = '';
     root.appendChild(renderSidebar(profile, allGames, visibleGames));
     root.appendChild(renderContent(categories, visibleGames.length));
@@ -172,7 +194,7 @@
     const main = el('main', 'chaos-content');
     let renderedCategories = 0;
 
-    const selectedActor = state.actor ? findActorById(state.actor) : null;
+    const selectedActor = state.actor ? findActorByKey(state.actor) : null;
     if (selectedActor) {
       main.appendChild(renderActiveActorFilter(selectedActor, visibleTotal));
     }
@@ -216,7 +238,7 @@
 
     const text = el('span', 'filter-actor-text');
     const strong = document.createElement('strong');
-    strong.textContent = actor.name || humanizeId(actor.id) || 'Szereplő';
+    strong.textContent = actor.name || 'Szereplő';
     const small = document.createElement('small');
     small.textContent = `${visibleTotal} játék látszik`;
     text.append(strong, small);
@@ -252,8 +274,6 @@
 
     const meta = el('div', 'meta');
     const actorEntries = getGameActors(game);
-    const actorNames = actorEntries.map((actor) => actor.name || humanizeId(actor.id)).filter(Boolean);
-    if (actorNames.length) meta.appendChild(metaLine('NÉV', actorNames.join(' · ')));
     if (game.location) meta.appendChild(metaLine('HELYSZÍN', game.location));
     if (game.date) meta.appendChild(metaLine('DÁTUM', game.date));
 
@@ -261,11 +281,12 @@
     actorEntries.forEach((actor) => {
       const button = el('button', 'card-actor-btn');
       button.type = 'button';
-      button.dataset.actor = actor.id;
-      button.title = actor.name || humanizeId(actor.id);
+      button.dataset.actor = actor.key;
+      button.dataset.actorName = actor.name || 'Szereplő';
+      button.setAttribute('aria-label', actor.name || 'Szereplő');
       if (actor.featured) button.classList.add('is-featured');
-      if (state.actor === actor.id) button.classList.add('is-active');
-      button.appendChild(actorImage(actor, actor.name || humanizeId(actor.id)));
+      if (state.actor === actor.key) button.classList.add('is-active');
+      button.appendChild(actorImage(actor, actor.name || 'Szereplő'));
       actorRow.appendChild(button);
     });
 
@@ -316,7 +337,7 @@
 
   function matchesFilters(game) {
     const statusOk = state.status === 'all' || game.status === state.status;
-    const actorOk = !state.actor || getGameActors(game).some((actor) => actor.id === state.actor);
+    const actorOk = !state.actor || getGameActors(game).some((actor) => actor.key === state.actor);
     return statusOk && actorOk;
   }
 
@@ -333,14 +354,15 @@
   function getGameActors(game) {
     return (game.actors || [])
       .map(normalizeActor)
-      .filter((actor) => actor && actor.id);
+      .filter((actor) => actor && actor.key);
   }
 
   function normalizeActor(entry) {
     if (typeof entry === 'string') {
+      const name = entry.trim();
       return {
-        id: entry,
-        name: humanizeId(entry),
+        key: slugify(name),
+        name: name || 'Szereplő',
         image: '',
         featured: false
       };
@@ -348,20 +370,23 @@
 
     if (!entry || typeof entry !== 'object') return null;
 
-    const id = entry.id || entry.actorId || slugify(entry.name || entry.image || 'actor');
+    const name = String(entry.name || '').trim();
+    const image = String(entry.image || '').trim();
+    const keySource = name || image || 'actor';
+
     return {
-      id,
-      name: entry.name || humanizeId(id),
-      image: entry.image || '',
+      key: slugify(keySource),
+      name: name || humanizeId(keySource),
+      image,
       featured: entry.featured === true
     };
   }
 
-  function findActorById(actorId) {
+  function findActorByKey(actorKey) {
     const categories = trackerData.categories || [];
     for (const category of categories) {
       for (const game of category.games || []) {
-        const actor = getGameActors(game).find((entry) => entry.id === actorId);
+        const actor = getGameActors(game).find((entry) => entry.key === actorKey);
         if (actor) return actor;
       }
     }
@@ -371,7 +396,7 @@
   function actorImage(actor, altText) {
     const wrap = el('span', 'actor-image-wrap');
     const initial = el('span', 'actor-initial');
-    initial.textContent = initials(altText || actor.id);
+    initial.textContent = initials(altText || actor.name || actor.key);
 
     const imageName = actor.image || '';
     if (!imageName) {
@@ -406,6 +431,37 @@
 
     const base = trackerData.actorImagePath || 'actors/';
     return `${base.replace(/\/?$/, '/')}${image}`;
+  }
+
+  function showActorTooltip(button, event) {
+    const name = button.dataset.actorName || '';
+    if (!name) return;
+
+    if (!tooltipEl) {
+      tooltipEl = el('div', 'chaos-actor-tooltip');
+      document.body.appendChild(tooltipEl);
+    }
+
+    tooltipTarget = button;
+    tooltipEl.textContent = name;
+    tooltipEl.classList.add('is-visible');
+    moveActorTooltip(event);
+  }
+
+  function moveActorTooltip(event) {
+    if (!tooltipEl) return;
+
+    const offset = 14;
+    const x = Math.min(event.clientX + offset, window.innerWidth - tooltipEl.offsetWidth - 8);
+    const y = Math.max(event.clientY - tooltipEl.offsetHeight - offset, 8);
+
+    tooltipEl.style.left = `${x}px`;
+    tooltipEl.style.top = `${y}px`;
+  }
+
+  function hideActorTooltip() {
+    tooltipTarget = null;
+    if (tooltipEl) tooltipEl.classList.remove('is-visible');
   }
 
   function countLine(label, value) {

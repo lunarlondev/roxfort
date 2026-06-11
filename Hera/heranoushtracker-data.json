@@ -327,6 +327,11 @@
               "featured": false
             },
 			{
+              "name": "Anne-Rose Tuffin",
+              "image": "actors/annie.jpg",
+              "featured": false
+            },
+			{
               "name": "Vivien M. Smithe",
               "image": "actors/vivien.jpg",
               "featured": true
@@ -941,7 +946,7 @@
             },
 			{
               "name": "Aurore Gjöldar",
-              "image": "actors/aurore.png",
+              "image": "actors/aurore.jpg",
               "featured": true
             },
 			{
@@ -961,6 +966,7 @@
           "description": "A szezon utolsó mérkőzése a Griffendél győzelmével a Hollóháttal szemben, azonban a Mardekár nyeri a kviddics kupát. Utoljára láthatják Tetsuyát, mielőtt leigazol egy külföldi csapatba. Heranoush betegen érkezik a szurkolásra."
         }
       ]
+    }
     },
     {
       "id": "xx-idon-kivuli",
