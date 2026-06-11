@@ -20,8 +20,8 @@ body {
 
 .chaos-tracker {
   display: grid;
-  grid-template-columns: 168px 1fr;
-  width: 640px;
+  grid-template-columns: 150px minmax(0, 1fr);
+  width: 590px;
   max-width: 100%;
   margin: 40px auto;
   background-color: var(--dark);
