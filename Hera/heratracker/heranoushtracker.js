@@ -297,17 +297,10 @@
     const box = el('div', 'card-extra');
     if (isOpen) box.classList.add('is-open');
 
-    const theme = el('p', 'detail-theme');
-    const themeLabel = document.createElement('span');
-    themeLabel.textContent = 'TÉMA: ';
-    const themeText = document.createElement('strong');
-    themeText.textContent = game.theme || 'nincs megadva';
-    theme.append(themeLabel, themeText);
-
     const description = el('p', 'detail-description');
     description.textContent = game.description || 'Ehhez a játékhoz még nincs részletes leírás megadva.';
 
-    box.append(theme, description);
+    box.append(description);
     return box;
   }
 
