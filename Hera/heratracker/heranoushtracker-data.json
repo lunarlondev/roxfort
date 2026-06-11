@@ -59,13 +59,13 @@
     {
       "id": "chikara-tetsuya",
       "name": "Chikara Tetsuya",
-      "image": "chikara.jpg",
+      "image": "chikara-tetsuya.png",
       "featured": false
     },
     {
       "id": "gemma-jenkins",
       "name": "Gemma Jenkins",
-      "image": "gemma.jpg",
+      "image": "gemma-jenkins.png",
       "featured": false
     },
     {
@@ -161,7 +161,9 @@
           "url": "https://www.roxfort.frpg.hu/index.php/topic,19745.0.html",
           "actors": [],
           "location": "",
-          "date": ""
+          "date": "",
+          "theme": "",
+          "description": ""
         }
       ]
     },
@@ -177,10 +179,15 @@
           "image": "https://i.pinimg.com/1200x/33/a8/52/33a8520e4cca9f4296b09e3c315df7af.jpg",
           "url": "https://www.roxfort.frpg.hu/index.php/topic,19759.0.html",
           "actors": [
-            "winthrop-hardy"
+            {
+              "id": "winthrop-hardy",
+              "featured": false
+            }
           ],
           "location": "Zsebpiszok-köz",
-          "date": "2004. december 31. péntek"
+          "date": "2004. december 31. péntek",
+          "theme": "",
+          "description": ""
         },
         {
           "id": "with-wind-and-gold",
@@ -189,10 +196,15 @@
           "image": "https://i.pinimg.com/736x/4f/60/4b/4f604b11d8198dbcb3d074ac56c47482.jpg",
           "url": "https://www.roxfort.frpg.hu/index.php/topic,19756.0.html",
           "actors": [
-            "sienna-scrimgeour"
+            {
+              "id": "sienna-scrimgeour",
+              "featured": false
+            }
           ],
           "location": "Roxfort, Kviddics pálya",
-          "date": "2005 április 5. péntek"
+          "date": "2005 április 5. péntek",
+          "theme": "",
+          "description": ""
         },
         {
           "id": "hear-me-rawr",
@@ -201,10 +213,15 @@
           "image": "https://media.tenor.com/FCONEtZs4tgAAAAM/yawn-cat.gif",
           "url": "https://www.roxfort.frpg.hu/index.php/topic,19829.msg125363.html#msg125363",
           "actors": [
-            "nezoteren-levok"
+            {
+              "id": "nezoteren-levok",
+              "featured": false
+            }
           ],
           "location": "Roxfort, Kviddics lelátók",
-          "date": "2005. 05. 14. szombat"
+          "date": "2005. 05. 14. szombat",
+          "theme": "",
+          "description": ""
         },
         {
           "id": "money-money-come-to-me",
@@ -213,10 +230,15 @@
           "image": "https://i.pinimg.com/736x/d4/7f/68/d47f68f97ca1553077c5820b3e6c8c84.jpg",
           "url": "https://www.roxfort.frpg.hu/index.php/topic,19891.msg125564/topicseen.html#msg125564",
           "actors": [
-            "owen-redway"
+            {
+              "id": "owen-redway",
+              "featured": false
+            }
           ],
           "location": "Roxfort",
-          "date": "2005. 05. 21. szombat"
+          "date": "2005. 05. 21. szombat",
+          "theme": "",
+          "description": ""
         },
         {
           "id": "darkness-came-for-you",
@@ -225,10 +247,15 @@
           "image": "https://i.pinimg.com/736x/7f/96/31/7f963126b2f59936171a08a9a1e836f1.jpg",
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20058.0.html",
           "actors": [
-            "maisie-jackdaw"
+            {
+              "id": "maisie-jackdaw",
+              "featured": false
+            }
           ],
           "location": "Roxfort, folyosók",
-          "date": "2005. június 12, vasárnap"
+          "date": "2005. június 12, vasárnap",
+          "theme": "",
+          "description": ""
         },
         {
           "id": "hello-kitty-boots",
@@ -237,10 +264,15 @@
           "image": "https://i.pinimg.com/1200x/ca/33/6a/ca336ab29d4c57158a114019a811d6ba.jpg",
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20347.msg126204.html#msg126204",
           "actors": [
-            "chikara-tetsuya"
+            {
+              "id": "chikara-tetsuya",
+              "featured": true
+            }
           ],
           "location": "Barcelona, El Sombracel",
-          "date": "2005. július 2, szombat"
+          "date": "2005. július 2, szombat",
+          "theme": "Nyári kitérő",
+          "description": "Barcelona, szokatlan helyzetek és a kényelmetlenül látványos jelenlét találkozása egy könnyedebb, mégis karakterépítő epizódban."
         }
       ]
     },
@@ -256,10 +288,15 @@
           "image": "https://i.pinimg.com/736x/4c/98/02/4c9802cf953a761f76b9ac6ebf1beee8.jpg",
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20096.msg127270.html#msg127270",
           "actors": [
-            "gemma-jenkins"
+            {
+              "id": "gemma-jenkins",
+              "featured": false
+            }
           ],
           "location": "Roxfort Expressz",
-          "date": "2005. szeptember 1, csütörtök"
+          "date": "2005. szeptember 1, csütörtök",
+          "theme": "",
+          "description": ""
         },
         {
           "id": "no-spf",
@@ -268,10 +305,15 @@
           "image": "https://i.pinimg.com/736x/b4/fe/59/b4fe591891e767d9434720dbaa400a6c.jpg",
           "url": "https://www.roxfort.frpg.hu/index.php/topic,19896.msg127090.html#msg127090",
           "actors": [
-            "mardekar-asztal"
+            {
+              "id": "mardekar-asztal",
+              "featured": false
+            }
           ],
           "location": "Roxfort, Nagyterem",
-          "date": "2005. szeptember 1, csütörtök"
+          "date": "2005. szeptember 1, csütörtök",
+          "theme": "",
+          "description": ""
         },
         {
           "id": "i-m-a-drama-queen",
@@ -280,10 +322,15 @@
           "image": "https://i.pinimg.com/736x/f3/30/54/f33054c22081885a9d9893fe38620464.jpg",
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20769.0.html",
           "actors": [
-            "mardekar-valogato"
+            {
+              "id": "mardekar-valogato",
+              "featured": false
+            }
           ],
           "location": "Roxfort, Kviddicspálya",
-          "date": "2005. szeptember 10, szombat"
+          "date": "2005. szeptember 10, szombat",
+          "theme": "",
+          "description": ""
         },
         {
           "id": "debute",
@@ -292,10 +339,15 @@
           "image": "https://i.pinimg.com/1200x/3b/63/ce/3b63ce923a0dd436e3c04b6bdb0d8d3f.jpg",
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20823.0.html",
           "actors": [
-            "mardekar-vs-griffendel"
+            {
+              "id": "mardekar-vs-griffendel",
+              "featured": false
+            }
           ],
           "location": "Roxfort, Kviddicspálya",
-          "date": "2005. október 1, szombat"
+          "date": "2005. október 1, szombat",
+          "theme": "",
+          "description": ""
         },
         {
           "id": "princesscore",
@@ -304,10 +356,15 @@
           "image": "https://i.pinimg.com/1200x/68/42/8e/68428ef2ef789998cc150ddf57544db1.jpg",
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20837.msg127672.html#msg127672",
           "actors": [
-            "szellemszallas-bulizoi"
+            {
+              "id": "szellemszallas-bulizoi",
+              "featured": false
+            }
           ],
           "location": "Roxmorts, Szellemszállás",
-          "date": "2005. október 29, szombat"
+          "date": "2005. október 29, szombat",
+          "theme": "",
+          "description": ""
         },
         {
           "id": "sugar-overdose",
@@ -316,10 +373,15 @@
           "image": "https://i.pinimg.com/736x/90/49/31/90493167b2542e4e8d284c9f56883ec5.jpg",
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20846.msg127674.html#msg127674",
           "actors": [
-            "dementor-bela"
+            {
+              "id": "dementor-bela",
+              "featured": true
+            }
           ],
           "location": "Roxmorts, Szellemszállás",
-          "date": "2005. október 29, szombat"
+          "date": "2005. október 29, szombat",
+          "theme": "Szellemszállás / káosz",
+          "description": "Egy aktív játék, amelyben a hangulat fontosabb, mint a rendezettség: cukor, zavar, társasági túlterhelés és túl sok inger."
         },
         {
           "id": "zero-exits",
@@ -328,10 +390,15 @@
           "image": "https://i.pinimg.com/1200x/6f/7e/46/6f7e46d9748d51fc3526ca0d54e89ff6.jpg",
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20917.msg128144.html#msg128144",
           "actors": [
-            "vivien-m-smithe"
+            {
+              "id": "vivien-m-smithe",
+              "featured": true
+            }
           ],
           "location": "Roxfort, Lányhálók",
-          "date": "2005. november 4. péntek"
+          "date": "2005. november 4. péntek",
+          "theme": "Bezártság / feszültség",
+          "description": "A helyzet középpontjában a kiszolgáltatottság és a menekülési útvonalak hiánya áll, Vivien jelenlétével kiélezve."
         },
         {
           "id": "violence-terror-chaos",
@@ -340,10 +407,15 @@
           "image": "https://i.pinimg.com/1200x/16/db/35/16db357dec53114a86e9a919c5b1f12a.jpg",
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20913.msg128150.html#msg128150",
           "actors": [
-            "viv-and-tetsu"
+            {
+              "id": "viv-and-tetsu",
+              "featured": true
+            }
           ],
           "location": "Roxfort, Tusa lelátók",
-          "date": "2005. november 26. szombat"
+          "date": "2005. november 26. szombat",
+          "theme": "",
+          "description": ""
         },
         {
           "id": "violence-terror-chaos-ii",
@@ -352,10 +424,15 @@
           "image": "https://i.pinimg.com/736x/41/64/98/416498619cac056c88a99a1e9da42709.jpg",
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20922.0.html",
           "actors": [
-            "viv-and-tetsu"
+            {
+              "id": "viv-and-tetsu",
+              "featured": false
+            }
           ],
           "location": "Roxfort, Tusa lelátók",
-          "date": "2005. november 26. szombat"
+          "date": "2005. november 26. szombat",
+          "theme": "",
+          "description": ""
         },
         {
           "id": "spiderwebs",
@@ -364,10 +441,15 @@
           "image": "https://i.pinimg.com/1200x/6a/b8/7f/6ab87f8be9a5eb34aa6d7b75940b16a9.jpg",
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20919.msg128151.html#msg128151",
           "actors": [
-            "oakley-quennel-professzor"
+            {
+              "id": "oakley-quennel-professzor",
+              "featured": false
+            }
           ],
           "location": "Roxfort, Bájitaltan tanterem",
-          "date": "2005. december 2. szerda"
+          "date": "2005. december 2. szerda",
+          "theme": "",
+          "description": ""
         },
         {
           "id": "all-this-pain-will-end",
@@ -376,10 +458,15 @@
           "image": "https://i.pinimg.com/736x/b6/b0/29/b6b029351c835e85e1beb774663cda13.jpg",
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20955.msg128534.html#msg128534",
           "actors": [
-            "vivien-smithe"
+            {
+              "id": "vivien-smithe",
+              "featured": false
+            }
           ],
           "location": "Roxfort,Yule bál",
-          "date": "2006. 01. 13. péntek"
+          "date": "2006. 01. 13. péntek",
+          "theme": "",
+          "description": ""
         },
         {
           "id": "cheerio-serial-thinker-depressed",
@@ -388,10 +475,15 @@
           "image": "https://i.pinimg.com/736x/0d/b6/25/0db625220c5cf6b7b55c2cd6ff3f6929.jpg",
           "url": "https://www.roxfort.frpg.hu/index.php/topic,20957.msg128830.html#msg128830",
           "actors": [
-            "victor-holloway"
+            {
+              "id": "victor-holloway",
+              "featured": false
+            }
           ],
           "location": "Roxfort, Yule bál",
-          "date": "2006. 01. 13. péntek"
+          "date": "2006. 01. 13. péntek",
+          "theme": "",
+          "description": ""
         },
         {
           "id": "victory-debute",
@@ -400,10 +492,15 @@
           "image": "https://i.pinimg.com/736x/18/ba/d7/18bad7828f6dfc613f5fb4bf36ff2975.jpg",
           "url": "https://www.roxfort.frpg.hu/index.php/topic,21128.0.html",
           "actors": [
-            "mardekar-vs-hollohat"
+            {
+              "id": "mardekar-vs-hollohat",
+              "featured": false
+            }
           ],
           "location": "Roxfort, Kviddicspálya",
-          "date": "2005. február 04. szombat"
+          "date": "2005. február 04. szombat",
+          "theme": "",
+          "description": ""
         },
         {
           "id": "pinkie-swear-knife-swear",
@@ -412,10 +509,15 @@
           "image": "https://i.pinimg.com/736x/fb/3d/37/fb3d37cc86669f826f85b60980f1d095.jpg",
           "url": "https://www.roxfort.frpg.hu/index.php/topic,19927.msg129416.html#msg129416",
           "actors": [
-            "chikara-tetsuya"
+            {
+              "id": "chikara-tetsuya",
+              "featured": true
+            }
           ],
           "location": "Roxfort, Déli kilátó",
-          "date": "2005. február 04. szombat"
+          "date": "2005. február 04. szombat",
+          "theme": "Bizalom / fenyegetés",
+          "description": "A jelenet a játékos ígéretek és a mögöttük lévő veszélyesebb érzelmi réteg között mozog."
         },
         {
           "id": "brunch-but-make-it-mean",
@@ -424,10 +526,15 @@
           "image": "https://i.pinimg.com/736x/d2/57/d3/d257d3e43203f78f028a9cad241f6358.jpg",
           "url": "https://www.roxfort.frpg.hu/index.php/topic,21232.msg129164.html#msg129164",
           "actors": [
-            "otodev-tetsu"
+            {
+              "id": "otodev-tetsu",
+              "featured": false
+            }
           ],
           "location": "Roxfort, Tusa lelátók",
-          "date": "2005. február 26. szombat"
+          "date": "2005. február 26. szombat",
+          "theme": "",
+          "description": ""
         },
         {
           "id": "season-final",
@@ -436,10 +543,15 @@
           "image": "https://i.pinimg.com/736x/1d/ca/aa/1dcaaa581c5d4419a6c9d6fe87c186dd.jpg",
           "url": "https://www.roxfort.frpg.hu/index.php/topic,21282.0.html",
           "actors": [
-            "hugrabug-vs-mardekar"
+            {
+              "id": "hugrabug-vs-mardekar",
+              "featured": false
+            }
           ],
           "location": "Roxfort, Kviddicspálya",
-          "date": "2005. április 01. szombat"
+          "date": "2005. április 01. szombat",
+          "theme": "",
+          "description": ""
         }
       ]
     },

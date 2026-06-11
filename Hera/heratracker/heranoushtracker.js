@@ -6,7 +6,8 @@
   const state = {
     status: 'all',
     actor: null,
-    openCategories: new Set()
+    openCategories: new Set(),
+    openDetails: new Set()
   };
 
   let trackerData = null;
@@ -35,6 +36,7 @@
     const filterButton = event.target.closest('[data-filter]');
     const actorButton = event.target.closest('[data-actor]');
     const clearActorButton = event.target.closest('[data-clear-actor]');
+    const detailButton = event.target.closest('[data-detail-id]');
 
     if (filterButton) {
       rememberOpenCategories();
@@ -45,7 +47,8 @@
 
     if (actorButton) {
       rememberOpenCategories();
-      state.actor = actorButton.dataset.actor;
+      const actorId = actorButton.dataset.actor;
+      state.actor = state.actor === actorId ? null : actorId;
       render();
       return;
     }
@@ -53,6 +56,18 @@
     if (clearActorButton) {
       rememberOpenCategories();
       state.actor = null;
+      render();
+      return;
+    }
+
+    if (detailButton) {
+      rememberOpenCategories();
+      const detailId = detailButton.dataset.detailId;
+      if (state.openDetails.has(detailId)) {
+        state.openDetails.delete(detailId);
+      } else {
+        state.openDetails.add(detailId);
+      }
       render();
     }
   });
@@ -70,18 +85,16 @@
 
   function render() {
     const profile = trackerData.profile || {};
-    const actors = trackerData.actors || [];
     const categories = trackerData.categories || [];
     const allGames = categories.flatMap((category) => category.games || []);
     const visibleGames = allGames.filter(matchesFilters);
-    const selectedActor = state.actor ? actorMap.get(state.actor) : null;
 
     root.innerHTML = '';
-    root.appendChild(renderSidebar(profile, actors, allGames, visibleGames, selectedActor));
+    root.appendChild(renderSidebar(profile, allGames, visibleGames));
     root.appendChild(renderContent(categories, visibleGames.length));
   }
 
-  function renderSidebar(profile, actors, allGames, visibleGames, selectedActor) {
+  function renderSidebar(profile, allGames, visibleGames) {
     const sidebar = el('aside', 'chaos-sidebar');
 
     const portrait = el('div', 'chaos-portrait');
@@ -122,15 +135,6 @@
     );
 
     sidebar.append(portrait, idBox, controls, counts, renderStats(trackerData.stats || []));
-
-    if (selectedActor) {
-      sidebar.appendChild(renderSelectedActor(selectedActor, visibleGames.length));
-    }
-
-    if (actors.length) {
-      sidebar.appendChild(renderActorPanel(actors));
-    }
-
     return sidebar;
   }
 
@@ -155,56 +159,14 @@
     return box;
   }
 
-  function renderSelectedActor(actor, count) {
-    const wrap = el('div', 'chaos-selected-actor');
-    const title = el('p', 'chaos-section-title');
-    title.textContent = 'Szűrés';
-
-    const card = el('div', 'selected-actor-card');
-    const imageBox = el('div', 'selected-actor-image');
-    imageBox.appendChild(actorImage(actor, actor.name));
-
-    const data = el('div', 'selected-actor-data');
-    const name = document.createElement('strong');
-    name.textContent = actor.name;
-    const gameCount = document.createElement('span');
-    gameCount.textContent = `${count} játék látszik`;
-
-    const clear = el('button', 'clear-actor-btn');
-    clear.type = 'button';
-    clear.dataset.clearActor = 'true';
-    clear.textContent = 'Szűrés törlése';
-
-    data.append(name, gameCount, clear);
-    card.append(imageBox, data);
-    wrap.append(title, card);
-    return wrap;
-  }
-
-  function renderActorPanel(actors) {
-    const panel = el('div', 'chaos-actors-panel');
-    const title = el('p', 'chaos-section-title');
-    title.textContent = 'Szereplők';
-    const list = el('div', 'actor-list');
-
-    actors.forEach((actor) => {
-      const button = el('button', 'actor-filter-btn');
-      button.type = 'button';
-      button.dataset.actor = actor.id;
-      button.title = actor.name;
-      if (actor.featured) button.classList.add('is-featured');
-      if (state.actor === actor.id) button.classList.add('is-active');
-      button.appendChild(actorImage(actor, actor.name));
-      list.appendChild(button);
-    });
-
-    panel.append(title, list);
-    return panel;
-  }
-
   function renderContent(categories, visibleTotal) {
     const main = el('main', 'chaos-content');
     let renderedCategories = 0;
+
+    const selectedActor = state.actor ? actorMap.get(state.actor) : null;
+    if (selectedActor) {
+      main.appendChild(renderActiveActorFilter(selectedActor, visibleTotal));
+    }
 
     categories.forEach((category) => {
       const games = (category.games || []).filter(matchesFilters);
@@ -237,9 +199,32 @@
     return main;
   }
 
+  function renderActiveActorFilter(actor, visibleTotal) {
+    const strip = el('div', 'chaos-filter-strip');
+
+    const imageBox = el('span', 'filter-actor-image');
+    imageBox.appendChild(actorImage(actor, actor.name));
+
+    const text = el('span', 'filter-actor-text');
+    const strong = document.createElement('strong');
+    strong.textContent = actor.name || 'Szereplő';
+    const small = document.createElement('small');
+    small.textContent = `${visibleTotal} játék látszik`;
+    text.append(strong, small);
+
+    const clear = el('button', 'clear-actor-btn');
+    clear.type = 'button';
+    clear.dataset.clearActor = 'true';
+    clear.textContent = 'Szűrés törlése';
+
+    strip.append(imageBox, text, clear);
+    return strip;
+  }
+
   function renderCard(game) {
     const article = el('article', `chaos-card status-${game.status || 'closed'}`);
     article.dataset.status = game.status || 'closed';
+    if (state.openDetails.has(game.id)) article.classList.add('is-expanded');
 
     const visual = el('div', 'card-visual');
     const img = document.createElement('img');
@@ -254,41 +239,76 @@
     const data = el('div', 'card-data');
     const title = document.createElement('h3');
     title.textContent = game.title || '';
+    title.title = game.title || '';
 
     const meta = el('div', 'meta');
-    const actorNames = (game.actors || []).map((id) => actorMap.get(id)?.name).filter(Boolean);
+    const actorEntries = getGameActors(game);
+    const actorNames = actorEntries.map((entry) => actorMap.get(entry.id)?.name).filter(Boolean);
     if (actorNames.length) meta.appendChild(metaLine('NÉV', actorNames.join(' · ')));
     if (game.location) meta.appendChild(metaLine('HELYSZÍN', game.location));
     if (game.date) meta.appendChild(metaLine('DÁTUM', game.date));
 
     const actorRow = el('div', 'card-actors');
-    (game.actors || []).forEach((actorId) => {
-      const actor = actorMap.get(actorId);
+    actorEntries.forEach((entry) => {
+      const actor = actorMap.get(entry.id);
       if (!actor) return;
       const button = el('button', 'card-actor-btn');
       button.type = 'button';
       button.dataset.actor = actor.id;
       button.title = actor.name;
-      if (actor.featured) button.classList.add('is-featured');
+      if (entry.featured) button.classList.add('is-featured');
       if (state.actor === actor.id) button.classList.add('is-active');
       button.appendChild(actorImage(actor, actor.name));
       actorRow.appendChild(button);
     });
 
-    const link = el('a', 'gradient-btn');
+    const actions = el('div', 'card-actions');
+
+    const link = el('a', 'gradient-btn open-btn');
     link.href = game.url || '#';
+    link.target = '_blank';
+    link.rel = 'noopener';
     link.textContent = 'Megnyitás';
+
+    const detailButton = el('button', 'gradient-btn detail-btn');
+    detailButton.type = 'button';
+    detailButton.dataset.detailId = game.id;
+    detailButton.textContent = state.openDetails.has(game.id) ? 'Részletek zárása' : 'Részletek';
+
+    actions.append(link, detailButton);
 
     data.append(title, meta);
     if (actorRow.childElementCount) data.appendChild(actorRow);
-    data.appendChild(link);
+    data.appendChild(actions);
+
+    if (state.openDetails.has(game.id)) {
+      data.appendChild(renderGameDetails(game));
+    }
+
     article.append(visual, data);
     return article;
   }
 
+  function renderGameDetails(game) {
+    const box = el('div', 'card-extra');
+
+    const theme = el('p', 'detail-theme');
+    const themeLabel = document.createElement('span');
+    themeLabel.textContent = 'TÉMA: ';
+    const themeText = document.createElement('strong');
+    themeText.textContent = game.theme || 'nincs megadva';
+    theme.append(themeLabel, themeText);
+
+    const description = el('p', 'detail-description');
+    description.textContent = game.description || 'Ehhez a játékhoz még nincs részletes leírás megadva.';
+
+    box.append(theme, description);
+    return box;
+  }
+
   function matchesFilters(game) {
     const statusOk = state.status === 'all' || game.status === state.status;
-    const actorOk = !state.actor || (game.actors || []).includes(state.actor);
+    const actorOk = !state.actor || getGameActors(game).some((entry) => entry.id === state.actor);
     return statusOk && actorOk;
   }
 
@@ -302,24 +322,60 @@
     });
   }
 
+  function getGameActors(game) {
+    const featuredActors = new Set(game.featuredActors || []);
+
+    return (game.actors || [])
+      .map((entry) => {
+        if (typeof entry === 'string') {
+          const actor = actorMap.get(entry);
+          return {
+            id: entry,
+            featured: featuredActors.has(entry) || actor?.featured === true
+          };
+        }
+
+        if (entry && typeof entry === 'object') {
+          const id = entry.id || entry.actorId;
+          const actor = actorMap.get(id);
+          return {
+            id,
+            featured: entry.featured === true || featuredActors.has(id) || actor?.featured === true
+          };
+        }
+
+        return null;
+      })
+      .filter((entry) => entry && entry.id);
+  }
+
   function actorImage(actor, altText) {
-    const wrap = document.createElement('span');
+    const wrap = el('span', 'actor-image-wrap');
     const initial = el('span', 'actor-initial');
     initial.textContent = initials(altText);
 
     const imageName = actor.image || '';
-    if (imageName) {
-      const img = document.createElement('img');
-      img.src = buildActorPath(imageName);
-      img.alt = altText || 'Szereplő';
-      img.addEventListener('error', () => {
-        img.remove();
-      }, { once: true });
-      wrap.append(img, initial);
-    } else {
+    if (!imageName) {
+      wrap.classList.add('has-fallback');
       wrap.appendChild(initial);
+      return wrap;
     }
 
+    const img = document.createElement('img');
+    img.alt = altText || 'Szereplő';
+    img.loading = 'lazy';
+    img.addEventListener('load', () => {
+      wrap.classList.add('has-image');
+    }, { once: true });
+    img.addEventListener('error', () => {
+      img.remove();
+      wrap.classList.remove('has-image');
+      wrap.classList.add('has-fallback');
+      if (!wrap.contains(initial)) wrap.appendChild(initial);
+    }, { once: true });
+    img.src = buildActorPath(imageName);
+
+    wrap.append(img, initial);
     return wrap;
   }
 
