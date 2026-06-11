@@ -61,12 +61,23 @@
     if (detailButton) {
       rememberOpenCategories();
       const detailId = detailButton.dataset.detailId;
+      const game = findGameById(detailId);
+      const card = detailButton.closest('.chaos-card');
+      const detailBox = card ? card.querySelector('.card-extra') : null;
+
       if (state.openDetails.has(detailId)) {
         state.openDetails.delete(detailId);
+        detailButton.textContent = 'Részletek';
+        if (card) card.classList.remove('is-expanded');
+        if (detailBox) detailBox.classList.remove('is-open');
       } else {
         state.openDetails.add(detailId);
+        detailButton.textContent = 'Részletek zárása';
+        if (card) card.classList.add('is-expanded');
+        if (detailBox) detailBox.classList.add('is-open');
       }
-      render();
+
+      if (!card || !detailBox || !game) render();
     }
   });
 
@@ -271,22 +282,20 @@
     detailButton.dataset.detailId = game.id;
     detailButton.textContent = state.openDetails.has(game.id) ? 'Részletek zárása' : 'Részletek';
 
-    actions.append(link, detailButton);
+    actions.append(detailButton, link);
 
     data.append(title, meta);
     if (actorRow.childElementCount) data.appendChild(actorRow);
     data.appendChild(actions);
-
-    if (state.openDetails.has(game.id)) {
-      data.appendChild(renderGameDetails(game));
-    }
+    data.appendChild(renderGameDetails(game, state.openDetails.has(game.id)));
 
     article.append(visual, data);
     return article;
   }
 
-  function renderGameDetails(game) {
+  function renderGameDetails(game, isOpen = false) {
     const box = el('div', 'card-extra');
+    if (isOpen) box.classList.add('is-open');
 
     const theme = el('p', 'detail-theme');
     const themeLabel = document.createElement('span');
@@ -300,6 +309,16 @@
 
     box.append(theme, description);
     return box;
+  }
+
+  function findGameById(gameId) {
+    const categories = trackerData.categories || [];
+    for (const category of categories) {
+      for (const game of category.games || []) {
+        if (game.id === gameId) return game;
+      }
+    }
+    return null;
   }
 
   function matchesFilters(game) {
