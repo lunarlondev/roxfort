@@ -63,9 +63,22 @@ function inlineColorStyle(node){
 function getInputDate(){const raw=$('postDate').value;if(raw)return new Date(`${raw}T12:00:00`);const d=new Date();d.setHours(12,0,0,0);return d;}
 function formatDate(date){return new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'long',day:'numeric'}).format(date);}
 function lunarAge(date){const utc=Date.UTC(date.getFullYear(),date.getMonth(),date.getDate(),12,0,0);const days=(utc-REF_NEW_MOON)/86400000;return ((days%SYNODIC_MONTH)+SYNODIC_MONTH)%SYNODIC_MONTH;}
-function phaseIndex(age){if(age<1.84566||age>=27.68493)return 0;if(age<5.53699)return 1;if(age<9.22831)return 2;if(age<12.91963)return 3;if(age<16.61096)return 4;if(age<20.30228)return 5;if(age<23.99361)return 6;return 7;}
-function futureText(label,days){if(days<=.75)return `${label} ma éjjel`;if(days<=1.5)return `${label} holnap`;return `${Math.round(days)} nap múlva ${label}`;}
-function lunarNote(age,index){const current=moonPhases[index].name;const milestones=[{age:0,label:'újhold'},{age:SYNODIC_MONTH/4,label:'első negyed'},{age:SYNODIC_MONTH/2,label:'telihold'},{age:SYNODIC_MONTH*3/4,label:'utolsó negyed'},{age:SYNODIC_MONTH,label:'újhold'}];for(const m of milestones){if(Math.abs(age-m.age)<=.75)return `${current}<br>${m.label} ma éjjel`;}const next=milestones.find(m=>m.age>age)??milestones[milestones.length-1];return `${current}<br>${futureText(next.label,next.age-age)}`;}
+const MAJOR_PHASE_WINDOW=.5;
+const lunarMilestones=[{age:0,label:'újhold',index:0},{age:SYNODIC_MONTH/4,label:'első negyed',index:2},{age:SYNODIC_MONTH/2,label:'telihold',index:4},{age:SYNODIC_MONTH*3/4,label:'utolsó negyed',index:6},{age:SYNODIC_MONTH,label:'újhold',index:0}];
+function phaseDistance(age,target){return Math.abs(((age-target+SYNODIC_MONTH/2)%SYNODIC_MONTH+SYNODIC_MONTH)%SYNODIC_MONTH-SYNODIC_MONTH/2);}
+function phaseIndex(age){
+ if(phaseDistance(age,0)<=MAJOR_PHASE_WINDOW||phaseDistance(age,SYNODIC_MONTH)<=MAJOR_PHASE_WINDOW)return 0;
+ if(phaseDistance(age,SYNODIC_MONTH/4)<=MAJOR_PHASE_WINDOW)return 2;
+ if(phaseDistance(age,SYNODIC_MONTH/2)<=MAJOR_PHASE_WINDOW)return 4;
+ if(phaseDistance(age,SYNODIC_MONTH*3/4)<=MAJOR_PHASE_WINDOW)return 6;
+ if(age<SYNODIC_MONTH/4)return 1;
+ if(age<SYNODIC_MONTH/2)return 3;
+ if(age<SYNODIC_MONTH*3/4)return 5;
+ return 7;
+}
+function daysToNextMilestone(age,milestoneAge){return milestoneAge>=age?milestoneAge-age:SYNODIC_MONTH-age+milestoneAge;}
+function futureText(label,days){if(days<=.5)return `${label} ma éjjel`;if(days<=1.5)return `${label} holnap`;return `${Math.round(days)} nap múlva ${label}`;}
+function lunarNote(age,index){const current=moonPhases[index].name;const today=lunarMilestones.find(m=>phaseDistance(age,m.age)<=MAJOR_PHASE_WINDOW);if(today)return `${current}<br>${today.label} ma éjjel`;const next=lunarMilestones.map(m=>({...m,days:daysToNextMilestone(age,m.age)})).filter(m=>m.days>MAJOR_PHASE_WINDOW).sort((a,b)=>a.days-b.days)[0];return `${current}<br>${futureText(next.label,next.days)}`;}
 function lunarHtml(date){const age=lunarAge(date);const index=phaseIndex(age);const order=[];for(let offset=-3;offset<=3;offset++)order.push((index+offset+moonPhases.length)%moonPhases.length);const imgs=order.map((phaseIdx,place)=>{const phase=moonPhases[phaseIdx];if(place===3)return `<span class="rp-moon-current"><img class="rp-moon rp-moon-now" src="${phase.img}" alt="${escapeHtml(phase.name)}"></span>`;return `<img class="rp-moon" src="${phase.img}" alt="${escapeHtml(phase.name)}">`;}).join('');return {row:`<div class="rp-phases">${imgs}</div>`,note:lunarNote(age,index)};}
 function quoteHtml(text){return escapeHtml(text).trim().replace(/\r?\n/g,'<br>')||'Ide kerül az idézet.';}
 function warningHtml(text){const items=text.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);if(!items.length)return '<li>nincs megadva</li>';return items.map(item=>`<li>${escapeHtml(item)}</li>`).join('');}
