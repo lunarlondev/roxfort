@@ -16,9 +16,7 @@
 <p class="eyebrow">♥</p>
 <h1>Reag sablon generátor</h1>
 <p>A mezők kitöltésével legenerálja a kódot. Előnézet és kód jobb oldalon.<br>
-Viv beszéd: [viv][/viv]<br>
-Morgana beszéd: [morgana][/morgana]<br>
-Bárki más beszéde: [third][/third] - a Harmadik Szereplő Neve mellett lehet színt választani neki.<br><br>
+A törzsszöveg már WYSIWYG szerkesztő: jelölj ki egy részt, majd használd a formázó vagy párbeszéd gombokat.<br>
 A holdfázist automatikusan beállítja.</p>
 </div>
 <form id="generatorForm">
@@ -38,17 +36,25 @@ vér említése
 <label>Harmadik szereplő neve<input id="thirdName" type="text" value="harmadik"></label>
 <label>Harmadik szín<input id="thirdColor" type="color" value="#8b6fd6"></label>
 </div>
-<div class="body-tools">
-<span>Párbeszéd jelölése kijelölt szövegre:</span>
+<div class="body-tools rich-tools" role="toolbar" aria-label="Törzsszöveg formázása">
+<span>Formázás:</span>
+<button type="button" data-format="bold" title="Félkövér"><strong>B</strong></button>
+<button type="button" data-format="italic" title="Dőlt"><em>I</em></button>
+<button type="button" data-format="underline" title="Aláhúzás"><u>U</u></button>
+<button type="button" data-format="strikeThrough" title="Áthúzás"><s>S</s></button>
+<span class="color-tool" title="Kijelölt szöveg színe">Szín <input id="textColor" type="color" value="#c9859b" aria-label="Kijelölt szöveg színe"></span>
+<button type="button" data-format="insertUnorderedList" title="Lista">Lista</button>
+<button type="button" data-format="removeFormat" title="Formázás törlése">Törlés</button>
+<span class="tools-separator" aria-hidden="true"></span>
+<span>Párbeszéd:</span>
 <button type="button" data-wrap="viv">Viv</button>
 <button type="button" data-wrap="morgana">Morgana</button>
 <button type="button" data-wrap="third" id="thirdWrapButton">Harmadik</button>
 </div>
-<label>Törzsszöveg<textarea id="bodyText" rows="11">The evening settled softly over the castle grounds, painting everything in muted gold and silver.
-[viv]— You look tired.[/viv] - mondta Viv.
-Morgana did not answer at once. Her gaze stayed on the darkening horizon.
-[morgana]— I couldn't sleep.[/morgana] - felelte Morgana.
-[third]— Akkor maradj velem.[/third] - suttogta valaki a folyosó végéről.</textarea></label>
+<div class="field">
+<label class="field-label" for="bodyEditor">Törzsszöveg</label>
+<div id="bodyEditor" class="rich-editor" contenteditable="true" role="textbox" aria-multiline="true" spellcheck="true"><p>The evening settled softly over the castle grounds, painting everything in muted gold and silver.</p><p><b data-role="viv">— You look tired.</b> - mondta Viv.</p><p>Morgana did not answer at once. Her gaze stayed on the darkening horizon.</p><p><b data-role="morgana">— I couldn't sleep.</b> - felelte Morgana.</p><p><b data-role="third">— Akkor maradj velem.</b> - suttogta valaki a folyosó végéről.</p></div>
+</div>
 </form>
 </section>
 <section class="panel output" aria-label="Előnézet és kész kód">
