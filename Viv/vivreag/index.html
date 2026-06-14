@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Holdfény poszt generátor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+<section class="panel editor" aria-label="Adatok megadása">
+<div class="brand">
+<p class="eyebrow">♥</p>
+<h1>Reag sablon generátor</h1>
+<p>A mezők kitöltésével legenerálja a kódot. Előnézet és kód jobb oldalon.<br>
+Viv beszéd: [viv][/viv]<br>
+Morgana beszéd: [morgana][/morgana]<br>
+Bárki más beszéde: [third][/third] - a Harmadik Szereplő Neve mellett lehet színt választani neki.<br><br>
+A holdfázist automatikusan beállítja.</p>
+</div>
+<form id="generatorForm">
+<div class="grid two">
+<label>Név<input id="postName" type="text" value="Vivienne és Morgana"></label>
+<label>Dátum<input id="postDate" type="date"></label>
+</div>
+<label>Helyszín<input id="postLocation" type="text" value="Hogsmeade"></label>
+<label>Fejléckép URL<input id="headerImage" type="url" value="https://i.pinimg.com/736x/ab/d8/a9/abd8a9566138d845a74566bb474388b1.jpg"></label>
+<label>Idézet<textarea id="quoteText" rows="4">What's you and I without a little pain?
+Tastes bittersweet each time you say my name
+If love was poison, we would drink it anyways</textarea></label>
+<label>Figyelmeztetések <span class="hint">soronként egy elem</span><textarea id="warningsText" rows="4">angst
+vér említése
+érzelmi feszültség</textarea></label>
+<div class="grid two">
+<label>Harmadik szereplő neve<input id="thirdName" type="text" value="harmadik"></label>
+<label>Harmadik szín<input id="thirdColor" type="color" value="#8b6fd6"></label>
+</div>
+<div class="body-tools">
+<span>Párbeszéd jelölése kijelölt szövegre:</span>
+<button type="button" data-wrap="viv">Viv</button>
+<button type="button" data-wrap="morgana">Morgana</button>
+<button type="button" data-wrap="third" id="thirdWrapButton">Harmadik</button>
+</div>
+<label>Törzsszöveg<textarea id="bodyText" rows="11">The evening settled softly over the castle grounds, painting everything in muted gold and silver.
+[viv]— You look tired.[/viv] - mondta Viv.
+Morgana did not answer at once. Her gaze stayed on the darkening horizon.
+[morgana]— I couldn't sleep.[/morgana] - felelte Morgana.
+[third]— Akkor maradj velem.[/third] - suttogta valaki a folyosó végéről.</textarea></label>
+</form>
+</section>
+<section class="panel output" aria-label="Előnézet és kész kód">
+<div class="tabs">
+<button class="tab active" type="button" data-tab="preview">Előnézet</button>
+<button class="tab" type="button" data-tab="code">Kód</button>
+<button id="copyCode" class="copy" type="button">Kód másolása</button>
+</div>
+<div id="previewPane" class="tabpane active"><iframe id="previewFrame" title="Előnézet"></iframe></div>
+<div id="codePane" class="tabpane"><textarea id="generatedCode" spellcheck="false"></textarea></div>
+</section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
