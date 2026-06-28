@@ -285,12 +285,26 @@ function styleDashArray(pattern, width = 2.5) {
 }
 
 function applySvgLineStyle(path, style) {
-  path.setAttribute("stroke", style.color);
-  path.setAttribute("stroke-width", style.width);
+  // Inline SVG styles must win over the default CSS classes (.parent-link, .partner-link).
+  // Presentation attributes such as stroke/stroke-width can be overridden by CSS,
+  // which is why earlier versions only seemed to apply the dash pattern reliably.
+  const clean = normalizeLinkStyle(style, defaultParentStyle());
+  path.style.stroke = clean.color;
+  path.style.strokeWidth = String(clean.width);
+  path.style.strokeLinecap = "round";
+  path.style.strokeLinejoin = "round";
+  path.setAttribute("stroke", clean.color);
+  path.setAttribute("stroke-width", clean.width);
   path.setAttribute("stroke-linecap", "round");
-  const dash = styleDashArray(style.pattern, style.width);
-  if (dash) path.setAttribute("stroke-dasharray", dash);
-  else path.removeAttribute("stroke-dasharray");
+  path.setAttribute("stroke-linejoin", "round");
+  const dash = styleDashArray(clean.pattern, clean.width);
+  if (dash) {
+    path.style.strokeDasharray = dash;
+    path.setAttribute("stroke-dasharray", dash);
+  } else {
+    path.style.strokeDasharray = "none";
+    path.removeAttribute("stroke-dasharray");
+  }
 }
 
 function normalizeEvent(event, ids) {
