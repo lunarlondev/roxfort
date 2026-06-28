@@ -16,8 +16,7 @@ export const authEnabled = true;
 // A felületen csak ezeknek az e-mail címeknek jelenik meg a szerkesztőpanel.
 // Ugyanezeket az e-maileket írd be a firestore.rules fájlba is.
 export const editorEmails = [
-  // "sajat.email@gmail.com",
-  // "masik.szerkeszto@gmail.com"
+  notcaringenough@gmail.com
 ];
 
 // true: a publikus nézet oldalbetöltéskor automatikusan betölti a trees/main dokumentumot.
