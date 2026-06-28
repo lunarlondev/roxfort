@@ -1,0 +1,17 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isEditor() {
+      return request.auth != null
+        && request.auth.token.email in [
+          "TE_EMAIL_CIMED@example.com"
+        ];
+    }
+
+    match /trees/{treeId} {
+      // Publikus nézés, csak megadott admin e-mail írhat.
+      allow read: if true;
+      allow create, update, delete: if isEditor();
+    }
+  }
+}

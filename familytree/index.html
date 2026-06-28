@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RPG családfa</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="title-block">
+      <h1 id="treeTitle">RPG családfa</h1>
+      <p id="treeSubtitle">Statikus, GitHub Pages-kompatibilis családfa szerkesztő</p>
+    </div>
+
+    <nav class="view-tabs" aria-label="Nézetek">
+      <button id="showTree" class="tab active" type="button">Családfa</button>
+      <button id="showTimeline" class="tab" type="button">Timeline</button>
+    </nav>
+
+    <div class="topbar-actions">
+      <button id="zoomOut" title="Kicsinyítés" type="button">−</button>
+      <button id="zoomReset" title="Alaphelyzet" type="button">100%</button>
+      <button id="zoomIn" title="Nagyítás" type="button">+</button>
+      <button id="exportPng" title="Kép export" type="button">PNG</button>
+      <button id="exportJson" class="primary" type="button">JSON mentés</button>
+      <label class="file-button">
+        JSON betöltés
+        <input id="importJson" type="file" accept="application/json,.json" />
+      </label>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section id="treeView" class="stage-wrap view-panel active" aria-label="Családfa vászon">
+      <div class="stage-scroll" id="stageScroll">
+        <div id="stage" class="stage">
+          <svg id="links" class="links" aria-hidden="true"></svg>
+          <div id="cards" class="cards"></div>
+          <div id="annotations" class="annotations"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="timelineView" class="timeline-wrap view-panel" aria-label="Timeline">
+      <div class="timeline-header">
+        <h2>Timeline</h2>
+        <p>A születések, halálozások és kézzel felvitt kampányesemények évekre bontva.</p>
+      </div>
+      <div id="timeline" class="timeline"></div>
+    </section>
+
+    <aside class="editor" aria-label="Családfa szerkesztő">
+      <details open>
+        <summary>Fa adatai</summary>
+        <label>Név
+          <input id="metaTitle" type="text" />
+        </label>
+        <label>Leírás
+          <input id="metaSubtitle" type="text" />
+        </label>
+        <label>Aktuális játékbeli év
+          <input id="metaCurrentYear" type="number" min="0" step="1" />
+        </label>
+      </details>
+
+      <details>
+        <summary>Firebase / Firestore</summary>
+        <p class="muted small">Opcionális online mentés. Másold a <code>firebase-config.example.js</code> fájlt <code>firebase-config.js</code> néven, töltsd ki, majd a Firebase Console-ban kapcsold be a Firestore-t és kapcsold be a Google belépést. Az e-mail+jelszó opció tartalékként továbbra is használható.</p>
+        <div id="firebaseStatus" class="status muted">Firebase nincs csatlakoztatva.</div>
+
+        <div id="firebaseAuthBox" class="firebase-auth hidden">
+          <div id="firebaseAuthState" class="auth-state muted">Nincs belépve.</div>
+
+          <button id="firebaseGoogleSignIn" class="google-button" type="button">Belépés Google-lal</button>
+          <p class="muted small auth-hint">Ajánlott: Google provider. A Firestore szabályban a Google-fiókod e-mail címét engedélyezd.</p>
+
+          <details class="password-fallback">
+            <summary>E-mail + jelszó tartalék belépés</summary>
+            <label>Admin e-mail
+              <input id="firebaseEmail" type="email" autocomplete="username" placeholder="admin@example.com" />
+            </label>
+            <label>Jelszó
+              <input id="firebasePassword" type="password" autocomplete="current-password" />
+            </label>
+            <button id="firebaseSignIn" type="button">Admin belépés e-mail/jelszóval</button>
+          </details>
+
+          <div class="row wrap">
+            <button id="firebaseSignOut" type="button">Kilépés</button>
+          </div>
+        </div>
+
+        <div class="row wrap">
+          <button id="firebaseConnect" type="button">Firebase csatlakozás</button>
+          <button id="firebaseLoad" type="button">Felhő betöltés</button>
+          <button id="firebaseSave" class="primary" type="button">Felhő mentés</button>
+          <button id="firebaseLive" type="button">Élő sync</button>
+        </div>
+      </details>
+
+      <div class="row gap">
+        <button id="addPerson" class="primary" type="button">+ Új szereplő</button>
+        <button id="deletePerson" class="danger" type="button">Törlés</button>
+      </div>
+
+      <label>Keresés / kiválasztás
+        <input id="search" type="search" placeholder="név, leánykori név, születési hely..." />
+      </label>
+      <div id="personList" class="person-list"></div>
+
+      <details open>
+        <summary>Kiválasztott szereplő</summary>
+        <p id="emptyState" class="muted">Válassz ki egy kártyát vagy hozz létre új szereplőt.</p>
+        <form id="personForm" class="hidden">
+          <label>Név
+            <input name="name" type="text" required />
+          </label>
+          <label>Leánykori név / névváltozat
+            <input name="maidenName" type="text" placeholder="pl. née Selwyn" />
+          </label>
+          <label>Nem
+            <select name="gender">
+              <option value="female">nő</option>
+              <option value="male">férfi</option>
+              <option value="other">egyéb</option>
+            </select>
+          </label>
+
+          <fieldset>
+            <legend>Születés</legend>
+            <div class="row three">
+              <label>Év
+                <input name="birthYear" type="number" min="0" step="1" placeholder="pl. 1992" />
+              </label>
+              <label>Hó
+                <input name="birthMonth" type="number" min="1" max="12" step="1" placeholder="1–12" />
+              </label>
+              <label>Nap
+                <input name="birthDay" type="number" min="1" max="31" step="1" placeholder="1–31" />
+              </label>
+            </div>
+            <label>Születési hely
+              <input name="birthPlace" type="text" placeholder="pl. Viharvár" />
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Halál</legend>
+            <div class="row three">
+              <label>Év
+                <input name="deathYear" type="number" min="0" step="1" />
+              </label>
+              <label>Hó
+                <input name="deathMonth" type="number" min="1" max="12" step="1" />
+              </label>
+              <label>Nap
+                <input name="deathDay" type="number" min="1" max="31" step="1" />
+              </label>
+            </div>
+          </fieldset>
+
+          <label>Kép URL
+            <input name="image" type="url" placeholder="https://..." />
+          </label>
+          <label>Karakter színe
+            <input name="color" type="color" />
+          </label>
+          <label>Leírás / jegyzet
+            <textarea name="notes" rows="5" placeholder="cím, szerep, ház, frakció, titkok, státusz, kapcsolatok..."></textarea>
+          </label>
+        </form>
+      </details>
+
+      <details open>
+        <summary>Kapcsolatok</summary>
+        <div id="relationshipEditor" class="hidden">
+          <label>Szülő hozzáadása
+            <select id="parentSelect"></select>
+          </label>
+          <button id="addParent" type="button">+ Szülő</button>
+          <div id="parentChips" class="chips"></div>
+
+          <hr />
+
+          <label>Partner / házastárs hozzáadása
+            <select id="partnerSelect"></select>
+          </label>
+          <label>Kapcsolat státusza
+            <select id="partnerStatus">
+              <option value="married">házas</option>
+              <option value="partner">partner</option>
+              <option value="divorced">elvált</option>
+              <option value="widowed">özvegy</option>
+            </select>
+          </label>
+          <button id="addPartner" type="button">+ Kapcsolat</button>
+          <div id="partnerChips" class="chips"></div>
+
+          <hr />
+
+          <label>Gyermek hozzáadása
+            <select id="childSelect"></select>
+          </label>
+          <button id="addChild" type="button">+ Gyermek</button>
+          <div id="childChips" class="chips"></div>
+        </div>
+      </details>
+
+      <details open>
+        <summary>Fa-megjegyzések</summary>
+        <p class="muted small">A megjegyzések húzható cetliként jelennek meg a családfán. Jó egy-egy ág vagy titok megjelölésére.</p>
+        <div class="row gap">
+          <button id="addAnnotation" class="primary" type="button">+ Megjegyzés</button>
+          <button id="deleteAnnotation" class="danger" type="button">Törlés</button>
+        </div>
+        <label>Megjegyzés kiválasztása
+          <select id="annotationSelect"></select>
+        </label>
+        <form id="annotationForm" class="hidden">
+          <label>Szöveg
+            <textarea name="text" rows="4" placeholder="pl. Ezen az ágon történt X és Y..."></textarea>
+          </label>
+          <div class="row three">
+            <label>X
+              <input name="x" type="number" step="1" />
+            </label>
+            <label>Y
+              <input name="y" type="number" step="1" />
+            </label>
+            <label>Szélesség
+              <input name="width" type="number" min="160" step="10" />
+            </label>
+          </div>
+          <label>Szín
+            <input name="color" type="color" />
+          </label>
+        </form>
+      </details>
+
+      <details>
+        <summary>Timeline események</summary>
+        <p class="muted small">A születés és halál automatikus. Itt kampányeseményeket tudsz felvinni.</p>
+        <div class="row gap">
+          <button id="addEvent" class="primary" type="button">+ Esemény</button>
+          <button id="deleteEvent" class="danger" type="button">Törlés</button>
+        </div>
+        <label>Esemény kiválasztása
+          <select id="eventSelect"></select>
+        </label>
+        <form id="eventForm" class="hidden">
+          <div class="row three">
+            <label>Év
+              <input name="year" type="number" step="1" />
+            </label>
+            <label>Hó
+              <input name="month" type="number" min="1" max="12" step="1" />
+            </label>
+            <label>Nap
+              <input name="day" type="number" min="1" max="31" step="1" />
+            </label>
+          </div>
+          <label>Cím
+            <input name="title" type="text" />
+          </label>
+          <label>Leírás
+            <textarea name="description" rows="4"></textarea>
+          </label>
+          <label>Kapcsolódó szereplők
+            <select id="eventPeople" name="personIds" multiple size="5"></select>
+          </label>
+          <label>Szín
+            <input name="color" type="color" />
+          </label>
+        </form>
+      </details>
+
+      <details>
+        <summary>Használat</summary>
+        <p class="muted">A szerkesztések automatikusan mentődnek a böngésződben. A <strong>JSON mentés</strong> gombbal letöltheted a fájlt, majd GitHubon a <code>data/family.json</code> helyére töltheted.</p>
+        <button id="resetSample" type="button">Mintaadatok visszaállítása</button>
+        <button id="clearLocal" type="button">Böngésző mentés törlése</button>
+      </details>
+    </aside>
+  </main>
+
+  <template id="chipTemplate">
+    <span class="chip"><span></span><button type="button" aria-label="Eltávolítás">×</button></span>
+  </template>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
