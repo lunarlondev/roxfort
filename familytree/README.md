@@ -1,13 +1,17 @@
 # RPG családfa – HTML/CSS/JS + JSON + opcionális Firebase
 
-GitHub Pages-re feltölthető, sötét tónusú családfa-szerkesztő szerepjátékos kampányokhoz. Alapból teljesen statikus, de Firestore-dokumentumba is tud menteni, ha beállítod a Firebase-t.
+GitHub Pages-re feltölthető, sötét tónusú családfa-szerkesztő szerepjátékos kampányokhoz. Alapból teljesen statikus, üres családfával indul, de Firestore-dokumentumba is tud menteni, ha beállítod a Firebase-t.
 
 ## Mit tud?
 
 - Sötét, szürkés-fekete vizuális téma
-- Nagyobb karakterportrék és erősebb karakter-szín megjelenítés
+- Üres kezdő családfa, próba/minta család nélkül
+- Jelentősen nagyobb karakterportrék és erősebb karakter-szín megjelenítés
+- Kártyák egyszerű húzása és kézi pozíciómentése
+- Automatikus elrendezés visszaállítása az **Auto layout** gombbal
 - Családfa kártyák generációk szerint
 - Szülő, gyermek és partner/házastárs kapcsolatok
+- Kapcsolati vonalak egyedi stílusa: szín, vastagság, solid/dashed/dotted/longdash minta
 - Kapcsolati státuszok: `házas`, `partner`, `elvált`, `özvegy`
 - Személyadatok:
   - név
@@ -18,6 +22,7 @@ GitHub Pages-re feltölthető, sötét tónusú családfa-szerkesztő szerepját
   - halál: év, hó, nap – külön mezők, mind opcionális
   - születési hely
   - kép URL
+  - böngészőből feltöltött kép, base64/data URL formában mentve
   - karakter színe
   - leírás / jegyzet
 - Életkor számítás a `meta.currentYear` alapján, alapértelmezés: `2032`
@@ -48,6 +53,8 @@ http://localhost:8080
 
 A `type="module"` miatt a Firebase-kompatibilis verziót érdemes helyi szerverről nézni, nem közvetlenül fájlként megnyitni.
 
+A feltöltött képek a JSON-ben `data:image/...` értékként tárolódnak. Ez egyszerű és GitHub Pages-kompatibilis, de nagy képeknél a JSON gyorsan megnőhet; érdemes webre optimalizált, kisebb portrékat használni.
+
 ## GitHub Pages publikálás
 
 1. Hozz létre egy új GitHub repository-t.
@@ -71,6 +78,7 @@ A személyek a `people` tömbben vannak:
   "image": "",
   "color": "#6f9289",
   "notes": "Erdővidéki követ.",
+  "position": { "x": 320, "y": 180 },
   "parents": []
 }
 ```
@@ -84,7 +92,8 @@ A partneri/házastársi kapcsolatok külön vannak, mert az elválás és az öz
   "personA": "seren",
   "personB": "lyra",
   "status": "married",
-  "notes": "Politikai házasság."
+  "notes": "Politikai házasság.",
+  "linkStyle": { "color": "#e6e6ee", "width": 3.2, "pattern": "solid" }
 }
 ```
 
@@ -96,6 +105,19 @@ partner   = partner
 divorced  = elvált
 widowed   = özvegy
 ```
+
+
+A szülő–gyermek vonalak egyedi stílusai a `linkStyles.parent` objektumban tárolódnak. A kulcs formája: `szuloId-->gyerekId`.
+
+```json
+"linkStyles": {
+  "parent": {
+    "aelor-->seren": { "color": "#c4c4d0", "width": 2.5, "pattern": "dashed" }
+  }
+}
+```
+
+A kártyák húzással mozgatott helye a személy `position` mezőjébe mentődik. Az **Auto layout** gomb törli ezeket a kézi pozíciókat, és újraszámolja az elrendezést.
 
 A fa-megjegyzések az `annotations` tömbben vannak. Ezeket a felületen húzni lehet:
 
@@ -137,7 +159,7 @@ A program a `meta.currentYear` mezőből számol. A mintaadatban ez `2032`.
 
 ## Firebase / Firestore beállítás
 
-A v3.2 verzió már tartalmaz Firebase Auth admin belépést Google-fiókkal is. Így a családfa lehet publikus olvasásra, de írni csak a megadott admin e-mail címmel lehessen. Az e-mail+jelszó belépés tartalékként maradt benne, de nem kötelező bekapcsolni.
+A v3.3 verzió tartalmaz Firebase Auth admin belépést Google-fiókkal is. Így a családfa lehet publikus olvasásra, de írni csak a megadott admin e-mail címmel lehessen. Az e-mail+jelszó belépés tartalékként maradt benne, de nem kötelező bekapcsolni.
 
 Rövid lépések:
 
@@ -220,5 +242,5 @@ https://felhasznalonev.github.io/repo-nev/?data=data/masik-csalad.json
 - több fa/kampány választó
 - kapcsolat kezdete/vége dátummal
 - örökbefogadás vagy titkos szülőség jelölése
-- manuális generációk és sorrend mentése
-- kártyák drag-and-drop pozicionálása
+- több admin e-mail kezelése UI-ból
+- képfeltöltés Firebase Storage-ba nagy kampányokhoz

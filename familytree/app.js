@@ -1,16 +1,18 @@
-const STORAGE_KEY = "rpg-family-tree-data-v3";
-const OLD_STORAGE_KEYS = ["rpg-family-tree-data-v2", "rpg-family-tree-data-v1"];
+const STORAGE_KEY = "rpg-family-tree-data-v3.3";
+const OLD_STORAGE_KEYS = [];
 const DEFAULT_DATA_URL = "data/family.json";
-const CARD_W = 320;
-const CARD_H = 214;
-const GAP_X = 96;
-const GAP_Y = 150;
+const CARD_W = 380;
+const CARD_H = 286;
+const GAP_X = 120;
+const GAP_Y = 170;
 const FIREBASE_SDK_VERSION = "11.10.0";
 
 let data = null;
 let selectedId = null;
 let selectedAnnotationId = null;
 let selectedEventId = null;
+let selectedLinkKey = null;
+let suppressCardClickId = null;
 let activeView = "tree";
 let zoom = 1;
 let positions = new Map();
@@ -37,6 +39,7 @@ const annotationsLayer = $("#annotations");
 const form = $("#personForm");
 const annotationForm = $("#annotationForm");
 const eventForm = $("#eventForm");
+const linkStyleForm = $("#linkStyleForm");
 
 init();
 
@@ -59,8 +62,28 @@ async function loadData() {
     return;
   }
 
-  const response = await fetch(source, { cache: "no-store" });
-  data = normalize(await response.json());
+  try {
+    const response = await fetch(source, { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    data = normalize(await response.json());
+  } catch {
+    data = normalize(emptyTreeData());
+  }
+}
+
+function emptyTreeData() {
+  return {
+    meta: {
+      title: "RPG családfa",
+      subtitle: "Üres családfa – kezdd új szereplővel vagy tölts be felhőből / JSON-ból.",
+      currentYear: 2032
+    },
+    people: [],
+    relationships: [],
+    linkStyles: { parent: {} },
+    annotations: [],
+    events: []
+  };
 }
 
 function normalize(input) {
@@ -72,6 +95,7 @@ function normalize(input) {
     },
     people: Array.isArray(input?.people) ? input.people : [],
     relationships: Array.isArray(input?.relationships) ? input.relationships : [],
+    linkStyles: normalizeLinkStyles(input?.linkStyles),
     annotations: Array.isArray(input?.annotations) ? input.annotations : [],
     events: Array.isArray(input?.events) ? input.events : []
   };
@@ -90,6 +114,7 @@ function normalize(input) {
       image: p.image || "",
       color: p.color || randomPaletteColor(),
       notes,
+      position: normalizePosition(p.position || p.pos || { x: p.x, y: p.y }),
       parents: Array.isArray(p.parents) ? uniqueIds(p.parents) : [],
       partners: Array.isArray(p.partners) ? uniqueIds(p.partners) : []
     };
@@ -125,13 +150,21 @@ function normalize(input) {
           personA: person.id,
           personB: partnerId,
           status: "married",
-          notes: ""
+          notes: "",
+          linkStyle: defaultRelationshipStyle("married")
         });
         existingKeys.add(key);
       }
     }
     delete person.partners;
   }
+
+  normalized.linkStyles.parent = Object.fromEntries(
+    Object.entries(normalized.linkStyles.parent || {}).filter(([key]) => {
+      const [parentId, childId] = key.split("-->");
+      return ids.has(parentId) && ids.has(childId);
+    })
+  );
 
   normalized.annotations = normalized.annotations.map((ann, index) => ({
     id: String(ann.id || crypto.randomUUID()),
@@ -188,8 +221,71 @@ function normalizeRelationship(r) {
     personA: a,
     personB: b,
     status,
-    notes: r.notes || ""
+    notes: r.notes || "",
+    linkStyle: normalizeLinkStyle(r.linkStyle || r.style || defaultRelationshipStyle(status), defaultRelationshipStyle(status))
   };
+}
+
+function normalizeLinkStyles(value) {
+  const parent = {};
+  const source = value?.parent || value?.parents || {};
+  for (const [key, style] of Object.entries(source)) {
+    const clean = normalizeLinkStyle(style, defaultParentStyle());
+    if (clean) parent[String(key)] = clean;
+  }
+  return { parent };
+}
+
+function normalizeLinkStyle(style, fallback = defaultParentStyle()) {
+  const rawWidth = Number(style?.width);
+  const width = Math.max(1, Math.min(12, Number.isFinite(rawWidth) && rawWidth > 0 ? rawWidth : fallback.width || 2.5));
+  return {
+    color: validColor(style?.color) || fallback.color || "#c4c4d0",
+    width,
+    pattern: ["solid", "dashed", "dotted", "longdash"].includes(style?.pattern) ? style.pattern : fallback.pattern || "solid"
+  };
+}
+
+function normalizePosition(value) {
+  const x = numberOrBlank(value?.x);
+  const y = numberOrBlank(value?.y);
+  if (x === "" || y === "") return null;
+  return { x: Math.max(0, x), y: Math.max(0, y) };
+}
+
+function defaultParentStyle() {
+  return { color: "#c4c4d0", width: 2.4, pattern: "solid" };
+}
+
+function defaultRelationshipStyle(status = "married") {
+  const defaults = {
+    married: { color: "#e6e6ee", width: 3.2, pattern: "solid" },
+    partner: { color: "#d6d6df", width: 2.8, pattern: "dashed" },
+    divorced: { color: "#e06b6b", width: 3, pattern: "dotted" },
+    widowed: { color: "#aaaab4", width: 2.8, pattern: "dashed" }
+  };
+  return defaults[status] || defaults.partner;
+}
+
+function parentLinkKey(parentId, childId) {
+  return `${parentId}-->${childId}`;
+}
+
+function styleDashArray(pattern, width = 2.5) {
+  const w = Math.max(1, Number(width) || 2.5);
+  if (pattern === "dotted") return `${w * 0.8} ${w * 3}`;
+  if (pattern === "dashed") return `${w * 4} ${w * 2.6}`;
+  if (pattern === "longdash") return `${w * 8} ${w * 3}`;
+  return "";
+}
+
+function applySvgLineStyle(path, style) {
+  path.setAttribute("stroke", style.color);
+  path.setAttribute("stroke-width", style.width);
+  path.setAttribute("stroke-linecap", "round");
+  const dash = styleDashArray(style.pattern, style.width);
+  if (dash) path.setAttribute("stroke-dasharray", dash);
+  else path.removeAttribute("stroke-dasharray");
 }
 
 function normalizeEvent(event, ids) {
@@ -224,6 +320,7 @@ function bindUi() {
   $("#zoomIn").addEventListener("click", () => setZoom(zoom + 0.1));
   $("#zoomOut").addEventListener("click", () => setZoom(zoom - 0.1));
   $("#zoomReset").addEventListener("click", () => setZoom(1));
+  $("#autoLayout").addEventListener("click", resetPersonPositions);
   $("#exportPng").addEventListener("click", exportPng);
 
   $("#firebaseConnect").addEventListener("click", connectFirebase);
@@ -235,11 +332,21 @@ function bindUi() {
   $("#firebaseSignOut").addEventListener("click", signOutFirebase);
 
   form.addEventListener("input", (e) => {
+    if (e.target.name === "imageFile") return;
     const person = getSelected();
     if (!person) return;
     updatePersonFromForm(person, e.target.name, e.target.value);
     persistAndRender(false);
   });
+  if (form.elements.imageFile) {
+    form.elements.imageFile.addEventListener("change", uploadPersonImage);
+  }
+
+  $("#linkStyleSelect").addEventListener("change", (e) => {
+    selectedLinkKey = e.target.value || null;
+    renderLinkStyleEditor(getSelected());
+  });
+  linkStyleForm.addEventListener("input", updateSelectedLinkStyle);
 
   $("#addParent").addEventListener("click", () => addRelationship("parent"));
   $("#addPartner").addEventListener("click", () => addRelationship("partner"));
@@ -287,6 +394,7 @@ function setView(view) {
   $("#zoomOut").disabled = view !== "tree";
   $("#zoomReset").disabled = view !== "tree";
   $("#zoomIn").disabled = view !== "tree";
+  $("#autoLayout").disabled = view !== "tree";
   $("#exportPng").disabled = view !== "tree";
 }
 
@@ -311,6 +419,26 @@ function updatePersonFromForm(person, name, value) {
     return;
   }
   person[name] = value;
+}
+
+function uploadPersonImage(event) {
+  const person = getSelected();
+  const file = event.target.files?.[0];
+  if (!person || !file) return;
+  if (!file.type.startsWith("image/")) {
+    alert("Képfájlt válassz ki.");
+    event.target.value = "";
+    return;
+  }
+  const reader = new FileReader();
+  reader.onload = () => {
+    person.image = String(reader.result || "");
+    form.elements.image.value = person.image;
+    event.target.value = "";
+    persistAndRender(false);
+  };
+  reader.onerror = () => alert("Nem sikerült beolvasni a képet.");
+  reader.readAsDataURL(file);
 }
 
 function updateAnnotationFromForm(annotation, name, value) {
@@ -366,6 +494,7 @@ function renderTree() {
   drawPartnerLinks();
   renderPersonCards();
   renderAnnotations();
+  renderEmptyTreeHint();
 }
 
 function renderPersonCards() {
@@ -379,7 +508,15 @@ function renderPersonCards() {
     card.tabIndex = 0;
     card.setAttribute("role", "button");
     card.setAttribute("aria-label", `${person.name} kiválasztása`);
-    card.addEventListener("click", () => selectPerson(person.id));
+    card.addEventListener("click", (e) => {
+      if (suppressCardClickId === person.id) {
+        e.preventDefault();
+        e.stopPropagation();
+        return;
+      }
+      selectPerson(person.id);
+    });
+    card.addEventListener("pointerdown", (e) => startPersonDrag(e, person, card));
     card.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") selectPerson(person.id);
     });
@@ -410,6 +547,85 @@ function renderPersonCards() {
     `;
     cards.appendChild(card);
   }
+}
+
+function renderEmptyTreeHint() {
+  if (data.people.length) return;
+  const hint = document.createElement("div");
+  hint.className = "empty-tree-hint";
+  hint.innerHTML = `
+    <strong>Még üres a családfa.</strong>
+    <span>Kezdéshez nyomd meg az „+ Új szereplő” gombot, vagy tölts be JSON-t / felhőadatot.</span>
+  `;
+  cards.appendChild(hint);
+}
+
+function startPersonDrag(event, person, element) {
+  if (event.button !== 0) return;
+  if (event.target.closest("button, input, textarea, select, label")) return;
+
+  selectedId = person.id;
+  const current = positions.get(person.id) || person.position || { x: 20, y: 20 };
+  person.position = { x: Math.round(current.x), y: Math.round(current.y) };
+
+  element.setPointerCapture(event.pointerId);
+  element.classList.add("dragging");
+  const startX = event.clientX;
+  const startY = event.clientY;
+  const originalX = person.position.x;
+  const originalY = person.position.y;
+  let moved = false;
+
+  const onMove = (moveEvent) => {
+    const dx = (moveEvent.clientX - startX) / zoom;
+    const dy = (moveEvent.clientY - startY) / zoom;
+    if (Math.abs(dx) > 2 || Math.abs(dy) > 2) moved = true;
+    person.position.x = Math.max(0, Math.round(originalX + dx));
+    person.position.y = Math.max(0, Math.round(originalY + dy));
+    element.style.left = `${person.position.x}px`;
+    element.style.top = `${person.position.y}px`;
+    ensureStageBounds(person.position.x + CARD_W + 140, person.position.y + CARD_H + 140);
+    positions.set(person.id, { x: person.position.x, y: person.position.y });
+    redrawLinksOnly();
+  };
+
+  const onUp = () => {
+    element.classList.remove("dragging");
+    element.removeEventListener("pointermove", onMove);
+    element.removeEventListener("pointerup", onUp);
+    element.removeEventListener("pointercancel", onUp);
+    if (moved) {
+      suppressCardClickId = person.id;
+      setTimeout(() => { suppressCardClickId = null; }, 150);
+    }
+    saveLocal();
+    renderPersonList();
+    renderEditor();
+  };
+
+  element.addEventListener("pointermove", onMove);
+  element.addEventListener("pointerup", onUp);
+  element.addEventListener("pointercancel", onUp);
+}
+
+function ensureStageBounds(width, height) {
+  const currentWidth = Number.parseFloat(stage.style.width) || stage.offsetWidth;
+  const currentHeight = Number.parseFloat(stage.style.height) || stage.offsetHeight;
+  const nextWidth = Math.max(currentWidth, width);
+  const nextHeight = Math.max(currentHeight, height);
+  if (nextWidth !== currentWidth || nextHeight !== currentHeight) {
+    stage.style.width = `${nextWidth}px`;
+    stage.style.height = `${nextHeight}px`;
+    links.setAttribute("width", nextWidth);
+    links.setAttribute("height", nextHeight);
+    links.setAttribute("viewBox", `0 0 ${nextWidth} ${nextHeight}`);
+  }
+}
+
+function redrawLinksOnly() {
+  links.innerHTML = "";
+  drawParentLinks();
+  drawPartnerLinks();
 }
 
 function renderAnnotations() {
@@ -506,12 +722,18 @@ function calculateLayout(people, annotations = []) {
     const rowWidth = persons.length * CARD_W + Math.max(0, persons.length - 1) * GAP_X;
     const startX = Math.max(GAP_X / 2, (width - rowWidth) / 2);
     persons.forEach((person, index) => {
-      positions.set(person.id, {
+      const autoPosition = {
         x: startX + index * (CARD_W + GAP_X),
         y: GAP_Y / 2 + level * (CARD_H + GAP_Y)
-      });
+      };
+      positions.set(person.id, person.position || autoPosition);
     });
   });
+
+  for (const pos of positions.values()) {
+    width = Math.max(width, (numberOrBlank(pos.x) || 0) + CARD_W + 120);
+    height = Math.max(height, (numberOrBlank(pos.y) || 0) + CARD_H + 120);
+  }
 
   for (const ann of annotations) {
     width = Math.max(width, (numberOrBlank(ann.x) || 0) + (numberOrBlank(ann.width) || 260) + 120);
@@ -536,8 +758,10 @@ function drawParentLinks() {
       const y2 = childPos.y;
       const midY = y1 + (y2 - y1) / 2;
       const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      const style = getParentLinkStyle(parent.person.id, child.id);
       path.setAttribute("class", "link parent-link");
       path.setAttribute("d", `M ${x1} ${y1} C ${x1} ${midY}, ${x2} ${midY}, ${x2} ${y2}`);
+      applySvgLineStyle(path, style);
       links.appendChild(path);
     }
   }
@@ -553,8 +777,10 @@ function drawPartnerLinks() {
     const x2 = b.x + CARD_W / 2;
     const y2 = b.y + CARD_H / 2;
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    const style = normalizeLinkStyle(rel.linkStyle, defaultRelationshipStyle(rel.status));
     path.setAttribute("class", `link partner-link status-${rel.status}`);
     path.setAttribute("d", `M ${x1} ${y1} L ${x2} ${y2}`);
+    applySvgLineStyle(path, style);
     links.appendChild(path);
 
     const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
@@ -565,6 +791,11 @@ function drawPartnerLinks() {
     label.textContent = relationshipLabel(rel.status);
     links.appendChild(label);
   }
+}
+
+function getParentLinkStyle(parentId, childId) {
+  const key = parentLinkKey(parentId, childId);
+  return normalizeLinkStyle(data.linkStyles?.parent?.[key], defaultParentStyle());
 }
 
 function renderTimeline() {
@@ -721,6 +952,7 @@ function renderEditor() {
 
   populateRelationshipSelects(person);
   renderRelationshipChips(person);
+  renderLinkStyleEditor(person);
 }
 
 function populateRelationshipSelects(person) {
@@ -767,6 +999,97 @@ function renderRelationshipChips(person) {
 
   const children = data.people.filter((p) => (p.parents || []).includes(person.id)).map((p) => p.id);
   renderChips("#childChips", children, (id) => removeParent(id, person.id));
+}
+
+function renderLinkStyleEditor(person) {
+  const select = $("#linkStyleSelect");
+  const box = $("#linkStyleEditor");
+  if (!select || !box) return;
+
+  select.innerHTML = "";
+  const options = getEditableLinksForPerson(person);
+  box.classList.toggle("hidden", !person || !options.length);
+  linkStyleForm.classList.toggle("hidden", !person || !options.length);
+
+  if (!person || !options.length) {
+    selectedLinkKey = null;
+    return;
+  }
+
+  for (const optionInfo of options) {
+    const option = document.createElement("option");
+    option.value = optionInfo.key;
+    option.textContent = optionInfo.label;
+    select.appendChild(option);
+  }
+
+  if (!options.some((option) => option.key === selectedLinkKey)) selectedLinkKey = options[0].key;
+  select.value = selectedLinkKey || "";
+  fillLinkStyleForm(getLinkStyleByKey(selectedLinkKey));
+}
+
+function getEditableLinksForPerson(person) {
+  if (!person) return [];
+  const options = [];
+
+  for (const parentId of person.parents || []) {
+    const parent = getPerson(parentId);
+    if (!parent) continue;
+    const key = `parent:${parentLinkKey(parent.id, person.id)}`;
+    options.push({ key, label: `Szülő–gyermek: ${displayName(parent)} → ${displayName(person)}` });
+  }
+
+  for (const child of data.people.filter((candidate) => (candidate.parents || []).includes(person.id))) {
+    const key = `parent:${parentLinkKey(person.id, child.id)}`;
+    options.push({ key, label: `Szülő–gyermek: ${displayName(person)} → ${displayName(child)}` });
+  }
+
+  for (const rel of data.relationships.filter((relationship) => relationship.personA === person.id || relationship.personB === person.id)) {
+    const other = getPerson(rel.personA === person.id ? rel.personB : rel.personA);
+    if (!other) continue;
+    options.push({ key: `relationship:${rel.id}`, label: `Partnerkapcsolat: ${displayName(person)} ↔ ${displayName(other)} (${relationshipLabel(rel.status)})` });
+  }
+
+  return options;
+}
+
+function getLinkStyleByKey(key) {
+  if (!key) return null;
+  const [kind, id] = key.split(":");
+  if (kind === "parent") return normalizeLinkStyle(data.linkStyles?.parent?.[id], defaultParentStyle());
+  if (kind === "relationship") {
+    const rel = data.relationships.find((relationship) => relationship.id === id);
+    return rel ? normalizeLinkStyle(rel.linkStyle, defaultRelationshipStyle(rel.status)) : null;
+  }
+  return null;
+}
+
+function fillLinkStyleForm(style) {
+  if (!style || !linkStyleForm || linkStyleForm.classList.contains("hidden")) return;
+  linkStyleForm.elements.color.value = validColor(style.color) || "#c4c4d0";
+  linkStyleForm.elements.width.value = style.width || 2.5;
+  linkStyleForm.elements.pattern.value = style.pattern || "solid";
+}
+
+function updateSelectedLinkStyle() {
+  if (!selectedLinkKey) return;
+  const style = normalizeLinkStyle({
+    color: linkStyleForm.elements.color.value,
+    width: linkStyleForm.elements.width.value,
+    pattern: linkStyleForm.elements.pattern.value
+  }, defaultParentStyle());
+
+  const [kind, id] = selectedLinkKey.split(":");
+  if (kind === "parent") {
+    data.linkStyles ||= { parent: {} };
+    data.linkStyles.parent ||= {};
+    data.linkStyles.parent[id] = style;
+  } else if (kind === "relationship") {
+    const rel = data.relationships.find((relationship) => relationship.id === id);
+    if (rel) rel.linkStyle = style;
+  }
+
+  persistAndRender(false);
 }
 
 function renderChips(selector, ids, removeFn) {
@@ -932,14 +1255,18 @@ function addRelationship(kind) {
     const status = $("#partnerStatus").value || "married";
     if (!partnerId || partnerId === person.id) return;
     const existing = findRelationship(person.id, partnerId);
-    if (existing) existing.status = status;
+    if (existing) {
+      existing.status = status;
+      existing.linkStyle = normalizeLinkStyle(existing.linkStyle, defaultRelationshipStyle(status));
+    }
     else data.relationships.push({
       id: `rel-${relationshipKey(person.id, partnerId)}`,
       type: "partnership",
       personA: person.id,
       personB: partnerId,
       status,
-      notes: ""
+      notes: "",
+      linkStyle: defaultRelationshipStyle(status)
     });
     persistAndRender();
   }
@@ -1030,6 +1357,13 @@ function relationshipKey(a, b) {
   return [String(a), String(b)].sort().join("--");
 }
 
+function resetPersonPositions() {
+  const ok = window.confirm("Újraszámoljam az automatikus elrendezést? Ez törli a kézzel húzott karakterpozíciókat.");
+  if (!ok) return;
+  data.people.forEach((person) => { delete person.position; });
+  persistAndRender();
+}
+
 function setZoom(value) {
   zoom = Math.max(0.4, Math.min(1.8, Number(value.toFixed(2))));
   stage.style.transform = `scale(${zoom})`;
@@ -1062,18 +1396,20 @@ function importJson(event) {
 }
 
 async function resetSample() {
-  const response = await fetch(DEFAULT_DATA_URL, { cache: "no-store" });
-  data = normalize(await response.json());
-  selectedId = data.people[0]?.id || null;
-  selectedAnnotationId = data.annotations[0]?.id || null;
-  selectedEventId = data.events[0]?.id || null;
+  const ok = window.confirm("Biztosan üres családfára váltasz? A böngészős aktuális mentés felülíródik.");
+  if (!ok) return;
+  data = normalize(emptyTreeData());
+  selectedId = null;
+  selectedAnnotationId = null;
+  selectedEventId = null;
+  selectedLinkKey = null;
   persistAndRender();
 }
 
 function clearLocal() {
   localStorage.removeItem(STORAGE_KEY);
   OLD_STORAGE_KEYS.forEach((key) => localStorage.removeItem(key));
-  alert("A böngészős mentés törölve. Frissítés után a data/family.json töltődik be.");
+  alert("A böngészős mentés törölve. Frissítés után az üres data/family.json töltődik be.");
 }
 
 async function exportPng() {
@@ -1380,15 +1716,18 @@ function cleanForSave(source) {
       image: p.image || "",
       color: validColor(p.color) || "#a9a9b4",
       notes: p.notes || "",
+      position: normalizePosition(p.position),
       parents: uniqueIds(p.parents || [])
     })),
+    linkStyles: cleanLinkStyles(source),
     relationships: source.relationships.map((r) => ({
       id: r.id || `rel-${relationshipKey(r.personA, r.personB)}`,
       type: "partnership",
       personA: r.personA,
       personB: r.personB,
       status: ["married", "partner", "divorced", "widowed"].includes(r.status) ? r.status : "married",
-      notes: r.notes || ""
+      notes: r.notes || "",
+      linkStyle: normalizeLinkStyle(r.linkStyle, defaultRelationshipStyle(r.status))
     })),
     annotations: source.annotations.map((ann) => ({
       id: ann.id,
@@ -1409,6 +1748,19 @@ function cleanForSave(source) {
       color: validColor(event.color) || "#a9a9b4"
     }))
   };
+}
+
+function cleanLinkStyles(source) {
+  const ids = new Set(source.people.map((p) => p.id));
+  const parent = {};
+  for (const [key, style] of Object.entries(source.linkStyles?.parent || {})) {
+    const [parentId, childId] = key.split("-->");
+    if (!ids.has(parentId) || !ids.has(childId)) continue;
+    const child = source.people.find((p) => p.id === childId);
+    if (!child || !(child.parents || []).includes(parentId)) continue;
+    parent[key] = normalizeLinkStyle(style, defaultParentStyle());
+  }
+  return { parent };
 }
 
 function formatLife(person) {

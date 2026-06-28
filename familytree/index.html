@@ -22,6 +22,7 @@
       <button id="zoomOut" title="Kicsinyítés" type="button">−</button>
       <button id="zoomReset" title="Alaphelyzet" type="button">100%</button>
       <button id="zoomIn" title="Nagyítás" type="button">+</button>
+      <button id="autoLayout" title="Automatikus elrendezés" type="button">Auto layout</button>
       <button id="exportPng" title="Kép export" type="button">PNG</button>
       <button id="exportJson" class="primary" type="button">JSON mentés</button>
       <label class="file-button">
@@ -161,7 +162,10 @@
           </fieldset>
 
           <label>Kép URL
-            <input name="image" type="url" placeholder="https://..." />
+            <input name="image" type="url" placeholder="https://... vagy data:image/..." />
+          </label>
+          <label>Kép feltöltése a böngészőből
+            <input name="imageFile" type="file" accept="image/*" />
           </label>
           <label>Karakter színe
             <input name="color" type="color" />
@@ -204,6 +208,32 @@
           </label>
           <button id="addChild" type="button">+ Gyermek</button>
           <div id="childChips" class="chips"></div>
+
+          <hr />
+
+          <div id="linkStyleEditor" class="line-style-editor hidden">
+            <label>Vonal kiválasztása
+              <select id="linkStyleSelect"></select>
+            </label>
+            <form id="linkStyleForm" class="hidden">
+              <div class="row three">
+                <label>Szín
+                  <input name="color" type="color" />
+                </label>
+                <label>Vastagság
+                  <input name="width" type="number" min="1" max="12" step="0.5" />
+                </label>
+                <label>Minta
+                  <select name="pattern">
+                    <option value="solid">solid</option>
+                    <option value="dashed">dashed</option>
+                    <option value="dotted">dotted</option>
+                    <option value="longdash">longdash</option>
+                  </select>
+                </label>
+              </div>
+            </form>
+          </div>
         </div>
       </details>
 
@@ -278,7 +308,7 @@
       <details>
         <summary>Használat</summary>
         <p class="muted">A szerkesztések automatikusan mentődnek a böngésződben. A <strong>JSON mentés</strong> gombbal letöltheted a fájlt, majd GitHubon a <code>data/family.json</code> helyére töltheted.</p>
-        <button id="resetSample" type="button">Mintaadatok visszaállítása</button>
+        <button id="resetSample" type="button">Üres családfa indítása</button>
         <button id="clearLocal" type="button">Böngésző mentés törlése</button>
       </details>
     </aside>
