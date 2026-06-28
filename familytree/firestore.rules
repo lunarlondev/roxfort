@@ -4,16 +4,12 @@ service cloud.firestore {
     function isEditor() {
       return request.auth != null
         && request.auth.token.email in [
-          "SAJAT_EMAIL@gmail.com",
-          "MASIK_SZEREKESZTO@gmail.com"
+          "notcaringenough@gmail.com"
         ];
     }
 
     match /trees/{treeId} {
-      // Külsők számára olvasható / nézhető családfa.
       allow read: if true;
-
-      // Írni csak az itt engedélyezett Google-fiókok tudnak.
       allow create, update, delete: if isEditor();
     }
   }

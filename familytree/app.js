@@ -12,6 +12,7 @@ const WHEEL_ZOOM_SENSITIVITY = 0.00135;
 
 let data = null;
 let selectedId = null;
+let selectedIds = new Set();
 let selectedAnnotationId = null;
 let selectedEventId = null;
 let selectedLinkKey = null;
@@ -54,6 +55,7 @@ async function init() {
   bindUi();
   await loadData();
   if (data.people.length && !selectedId) selectedId = data.people[0].id;
+  syncSelection();
   if (data.annotations.length && !selectedAnnotationId) selectedAnnotationId = data.annotations[0].id;
   if (data.events.length && !selectedEventId) selectedEventId = data.events[0].id;
   render();
@@ -432,6 +434,11 @@ function bindStagePanning() {
     if (activeView !== "tree" || event.button !== 0) return;
     if (event.target.closest(".person-card, .tree-note, button, input, textarea, select, label, a")) return;
 
+    if (canEdit() && event.shiftKey) {
+      startMarqueeSelection(event);
+      return;
+    }
+
     event.preventDefault();
     stageScroll.setPointerCapture(event.pointerId);
     stageScroll.classList.add("panning");
@@ -538,6 +545,7 @@ function persistAndRender(full = true) {
 }
 
 function render() {
+  syncSelection();
   $("#treeTitle").textContent = data.meta.title;
   $("#treeSubtitle").textContent = data.meta.subtitle;
   $("#metaTitle").value = data.meta.title;
@@ -579,7 +587,9 @@ function renderPersonCards() {
   for (const person of data.people) {
     const pos = positions.get(person.id) || { x: 20, y: 20 };
     const card = document.createElement("article");
-    card.className = `person-card gender-${person.gender || "other"} ${person.id === selectedId ? "selected" : ""}`;
+    const isSelected = selectedIds.has(person.id);
+    card.className = `person-card gender-${person.gender || "other"} ${isSelected ? "selected" : ""} ${person.id === selectedId ? "primary-selected" : ""}`;
+    card.dataset.personId = person.id;
     card.style.left = `${pos.x}px`;
     card.style.top = `${pos.y}px`;
     card.style.setProperty("--card-color", person.color || "#a9a9b4");
@@ -592,7 +602,7 @@ function renderPersonCards() {
         e.stopPropagation();
         return;
       }
-      selectPerson(person.id);
+      selectPerson(person.id, { additive: e.shiftKey || e.ctrlKey || e.metaKey });
     });
     card.addEventListener("pointerdown", (e) => startPersonDrag(e, person, card));
     card.addEventListener("keydown", (e) => {
@@ -645,33 +655,70 @@ function startPersonDrag(event, person, element) {
   if (event.button !== 0) return;
   if (event.target.closest("button, input, textarea, select, label")) return;
 
-  selectedId = person.id;
-  const current = positions.get(person.id) || person.position || { x: 20, y: 20 };
-  person.position = { x: Math.round(current.x), y: Math.round(current.y) };
+  const additive = event.shiftKey || event.ctrlKey || event.metaKey;
+  if (!selectedIds.has(person.id)) {
+    if (additive) {
+      selectedIds.add(person.id);
+      selectedId = person.id;
+    } else {
+      setSingleSelection(person.id);
+    }
+  } else {
+    selectedId = person.id;
+  }
+  updateSelectionClasses();
+  renderPersonList();
+  renderEditor();
+
+  const dragIds = selectedIds.has(person.id) ? Array.from(selectedIds) : [person.id];
+  const originals = new Map();
+  for (const id of dragIds) {
+    const target = getPerson(id);
+    if (!target) continue;
+    const current = positions.get(id) || target.position || { x: 20, y: 20 };
+    target.position = { x: Math.round(current.x), y: Math.round(current.y) };
+    originals.set(id, { x: target.position.x, y: target.position.y });
+  }
+
+  const draggedElements = dragIds
+    .map((id) => cards.querySelector(`.person-card[data-person-id="${cssEscape(id)}"]`))
+    .filter(Boolean);
 
   element.setPointerCapture(event.pointerId);
-  element.classList.add("dragging");
+  draggedElements.forEach((el) => el.classList.add("dragging"));
   const startX = event.clientX;
   const startY = event.clientY;
-  const originalX = person.position.x;
-  const originalY = person.position.y;
   let moved = false;
 
   const onMove = (moveEvent) => {
     const dx = (moveEvent.clientX - startX) / zoom;
     const dy = (moveEvent.clientY - startY) / zoom;
     if (Math.abs(dx) > 2 || Math.abs(dy) > 2) moved = true;
-    person.position.x = Math.max(0, Math.round(originalX + dx));
-    person.position.y = Math.max(0, Math.round(originalY + dy));
-    element.style.left = `${person.position.x}px`;
-    element.style.top = `${person.position.y}px`;
-    ensureStageBounds(person.position.x + CARD_W + 140, person.position.y + CARD_H + 140);
-    positions.set(person.id, { x: person.position.x, y: person.position.y });
+    let maxX = 0;
+    let maxY = 0;
+
+    for (const id of dragIds) {
+      const target = getPerson(id);
+      const original = originals.get(id);
+      if (!target || !original) continue;
+      target.position.x = Math.max(0, Math.round(original.x + dx));
+      target.position.y = Math.max(0, Math.round(original.y + dy));
+      positions.set(id, { x: target.position.x, y: target.position.y });
+      const cardEl = cards.querySelector(`.person-card[data-person-id="${cssEscape(id)}"]`);
+      if (cardEl) {
+        cardEl.style.left = `${target.position.x}px`;
+        cardEl.style.top = `${target.position.y}px`;
+      }
+      maxX = Math.max(maxX, target.position.x + CARD_W + 140);
+      maxY = Math.max(maxY, target.position.y + CARD_H + 140);
+    }
+
+    ensureStageBounds(maxX, maxY);
     redrawLinksOnly();
   };
 
   const onUp = () => {
-    element.classList.remove("dragging");
+    draggedElements.forEach((el) => el.classList.remove("dragging"));
     element.removeEventListener("pointermove", onMove);
     element.removeEventListener("pointerup", onUp);
     element.removeEventListener("pointercancel", onUp);
@@ -687,6 +734,94 @@ function startPersonDrag(event, person, element) {
   element.addEventListener("pointermove", onMove);
   element.addEventListener("pointerup", onUp);
   element.addEventListener("pointercancel", onUp);
+}
+
+function startMarqueeSelection(event) {
+  event.preventDefault();
+  const startClient = { x: event.clientX, y: event.clientY };
+  const startWorld = clientToWorld(event.clientX, event.clientY);
+  const box = document.createElement("div");
+  box.className = "selection-box";
+  document.body.appendChild(box);
+  stageScroll.setPointerCapture(event.pointerId);
+
+  const updateBox = (clientX, clientY) => {
+    const left = Math.min(startClient.x, clientX);
+    const top = Math.min(startClient.y, clientY);
+    const width = Math.abs(clientX - startClient.x);
+    const height = Math.abs(clientY - startClient.y);
+    box.style.left = `${left}px`;
+    box.style.top = `${top}px`;
+    box.style.width = `${width}px`;
+    box.style.height = `${height}px`;
+  };
+  updateBox(event.clientX, event.clientY);
+
+  const onMove = (moveEvent) => updateBox(moveEvent.clientX, moveEvent.clientY);
+  const onUp = (upEvent) => {
+    const endWorld = clientToWorld(upEvent.clientX, upEvent.clientY);
+    const rect = normalizeRect(startWorld, endWorld);
+    const picked = data.people.filter((person) => {
+      const pos = positions.get(person.id) || person.position;
+      if (!pos) return false;
+      return rectsOverlap(rect, { x1: pos.x, y1: pos.y, x2: pos.x + CARD_W, y2: pos.y + CARD_H });
+    });
+
+    if (picked.length) {
+      selectedIds = new Set(picked.map((person) => person.id));
+      selectedId = picked[0].id;
+    } else if (!upEvent.shiftKey) {
+      setSingleSelection(null);
+    }
+
+    box.remove();
+    stageScroll.classList.remove("selecting");
+    stageScroll.removeEventListener("pointermove", onMove);
+    stageScroll.removeEventListener("pointerup", onUp);
+    stageScroll.removeEventListener("pointercancel", onCancel);
+    render();
+  };
+  const onCancel = () => {
+    box.remove();
+    stageScroll.classList.remove("selecting");
+    stageScroll.removeEventListener("pointermove", onMove);
+    stageScroll.removeEventListener("pointerup", onUp);
+    stageScroll.removeEventListener("pointercancel", onCancel);
+  };
+
+  stageScroll.classList.add("selecting");
+  stageScroll.addEventListener("pointermove", onMove);
+  stageScroll.addEventListener("pointerup", onUp);
+  stageScroll.addEventListener("pointercancel", onCancel);
+}
+
+function clientToWorld(clientX, clientY) {
+  const rect = stageScroll.getBoundingClientRect();
+  const style = window.getComputedStyle(stageScroll);
+  const paddingLeft = Number.parseFloat(style.paddingLeft) || 0;
+  const paddingTop = Number.parseFloat(style.paddingTop) || 0;
+  return {
+    x: (stageScroll.scrollLeft + clientX - rect.left - paddingLeft) / zoom,
+    y: (stageScroll.scrollTop + clientY - rect.top - paddingTop) / zoom
+  };
+}
+
+function normalizeRect(a, b) {
+  return {
+    x1: Math.min(a.x, b.x),
+    y1: Math.min(a.y, b.y),
+    x2: Math.max(a.x, b.x),
+    y2: Math.max(a.y, b.y)
+  };
+}
+
+function rectsOverlap(a, b) {
+  return a.x1 <= b.x2 && a.x2 >= b.x1 && a.y1 <= b.y2 && a.y2 >= b.y1;
+}
+
+function cssEscape(value) {
+  if (window.CSS?.escape) return window.CSS.escape(String(value));
+  return String(value).replace(/[^a-zA-Z0-9_-]/g, "\\$&");
 }
 
 function ensureStageBounds(width, height) {
@@ -793,7 +928,7 @@ function calculateLayout(people, annotations = []) {
   }
 
   for (const persons of levels.values()) {
-    persons.sort((a, b) => sortKey(a).localeCompare(sortKey(b), "hu"));
+    persons.sort(compareLayoutPeople);
   }
 
   const positions = new Map();
@@ -827,27 +962,73 @@ function calculateLayout(people, annotations = []) {
 }
 
 function drawParentLinks() {
-  for (const child of data.people) {
-    const childPos = positions.get(child.id);
-    if (!childPos) continue;
-    const parents = (child.parents || [])
-      .map((id) => ({ person: getPerson(id), pos: positions.get(id) }))
-      .filter((x) => x.person && x.pos);
+  const groups = new Map();
 
-    for (const parent of parents) {
-      const x1 = parent.pos.x + CARD_W / 2;
-      const y1 = parent.pos.y + CARD_H;
-      const x2 = childPos.x + CARD_W / 2;
-      const y2 = childPos.y;
-      const midY = y1 + (y2 - y1) / 2;
-      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-      const style = getParentLinkStyle(parent.person.id, child.id);
-      path.setAttribute("class", "link parent-link");
-      path.setAttribute("d", `M ${x1} ${y1} C ${x1} ${midY}, ${x2} ${midY}, ${x2} ${y2}`);
-      applySvgLineStyle(path, style);
-      links.appendChild(path);
+  for (const child of data.people) {
+    const parentIds = uniqueIds(child.parents || []).filter((id) => getPerson(id) && positions.has(id));
+    const childPos = positions.get(child.id);
+    if (!parentIds.length || !childPos) continue;
+    const key = parentIds.slice().sort().join("+");
+    if (!groups.has(key)) groups.set(key, { parentIds: parentIds.slice().sort(), children: [] });
+    groups.get(key).children.push(child);
+  }
+
+  for (const group of groups.values()) {
+    const parentPoints = group.parentIds
+      .map((id) => {
+        const pos = positions.get(id);
+        return pos ? { id, x: pos.x + CARD_W / 2, y: pos.y + CARD_H } : null;
+      })
+      .filter(Boolean)
+      .sort((a, b) => a.x - b.x);
+
+    const childPoints = group.children
+      .map((child) => {
+        const pos = positions.get(child.id);
+        return pos ? { id: child.id, x: pos.x + CARD_W / 2, y: pos.y } : null;
+      })
+      .filter(Boolean)
+      .sort((a, b) => a.x - b.x || getPerson(a.id)?.name.localeCompare(getPerson(b.id)?.name || "", "hu"));
+
+    if (!parentPoints.length || !childPoints.length) continue;
+
+    const maxParentY = Math.max(...parentPoints.map((p) => p.y));
+    const minChildY = Math.min(...childPoints.map((p) => p.y));
+    const available = minChildY - maxParentY;
+    let busY = available > 120 ? maxParentY + available * 0.48 : maxParentY + Math.max(48, available * 0.5);
+    if (!Number.isFinite(busY)) busY = maxParentY + 80;
+
+    const allX = [...parentPoints, ...childPoints].map((p) => p.x);
+    const minX = Math.min(...allX);
+    const maxX = Math.max(...allX);
+    const d = [];
+
+    for (const parent of parentPoints) {
+      d.push(`M ${parent.x} ${parent.y} L ${parent.x} ${busY}`);
+    }
+    d.push(`M ${minX} ${busY} L ${maxX} ${busY}`);
+    for (const child of childPoints) {
+      d.push(`M ${child.x} ${busY} L ${child.x} ${child.y}`);
+    }
+
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    const style = getFamilyParentStyle(group.parentIds, group.children.map((child) => child.id));
+    path.setAttribute("class", "link parent-link family-link");
+    path.setAttribute("d", d.join(" "));
+    applySvgLineStyle(path, style);
+    links.appendChild(path);
+  }
+}
+
+function getFamilyParentStyle(parentIds, childIds) {
+  for (const childId of childIds) {
+    for (const parentId of parentIds) {
+      const key = parentLinkKey(parentId, childId);
+      const raw = data.linkStyles?.parent?.[key];
+      if (raw) return normalizeLinkStyle(raw, defaultParentStyle());
     }
   }
+  return defaultParentStyle();
 }
 
 function drawPartnerLinks() {
@@ -1003,9 +1184,10 @@ function renderPersonList() {
     .forEach((person) => {
       const btn = document.createElement("button");
       btn.type = "button";
-      btn.className = person.id === selectedId ? "active" : "";
+      btn.className = `${person.id === selectedId ? "active" : ""} ${selectedIds.has(person.id) && person.id !== selectedId ? "multi-selected" : ""}`.trim();
+      btn.dataset.personId = person.id;
       btn.innerHTML = `${genderIcon(person.gender)} ${escapeHtml(displayName(person))}`;
-      btn.addEventListener("click", () => selectPerson(person.id));
+      btn.addEventListener("click", (e) => selectPerson(person.id, { additive: e.shiftKey || e.ctrlKey || e.metaKey }));
       list.appendChild(btn);
     });
 }
@@ -1016,6 +1198,13 @@ function renderEditor() {
   form.classList.toggle("hidden", !person);
   $("#relationshipEditor").classList.toggle("hidden", !person);
   $("#deletePerson").disabled = !person;
+
+  const multiInfo = $("#multiSelectInfo");
+  if (multiInfo) {
+    const count = selectedIds.size;
+    multiInfo.textContent = count > 1 ? `${count} szereplő kijelölve · húzd bármelyiket, és együtt mozognak.` : "Shift+kattintás vagy Shift+húzás a vásznon: több kijelölés.";
+    multiInfo.classList.toggle("active", count > 1);
+  }
 
   if (!person) return;
 
@@ -1269,9 +1458,52 @@ function fillEventForm(event) {
   });
 }
 
-function selectPerson(id) {
-  selectedId = id;
+function syncSelection() {
+  if (!data?.people) return;
+  const valid = new Set(data.people.map((person) => person.id));
+  selectedIds = new Set(Array.from(selectedIds || []).filter((id) => valid.has(id)));
+  if (selectedId && valid.has(selectedId)) selectedIds.add(selectedId);
+  if (!selectedId || !valid.has(selectedId)) selectedId = Array.from(selectedIds)[0] || null;
+}
+
+function setSingleSelection(id) {
+  selectedId = id || null;
+  selectedIds = id ? new Set([id]) : new Set();
+}
+
+function selectPerson(id, options = {}) {
+  const additive = Boolean(options.additive);
+  const toggle = Boolean(options.toggle);
+  if (!id) {
+    setSingleSelection(null);
+    render();
+    return;
+  }
+  if (additive) {
+    if (toggle && selectedIds.has(id) && selectedIds.size > 1) {
+      selectedIds.delete(id);
+      if (selectedId === id) selectedId = Array.from(selectedIds)[0] || null;
+    } else {
+      selectedIds.add(id);
+      selectedId = id;
+    }
+  } else {
+    setSingleSelection(id);
+  }
   render();
+}
+
+function updateSelectionClasses() {
+  $$(".person-card").forEach((card) => {
+    const id = card.dataset.personId;
+    card.classList.toggle("selected", selectedIds.has(id));
+    card.classList.toggle("primary-selected", id === selectedId);
+  });
+  $$("#personList button[data-person-id]").forEach((btn) => {
+    const id = btn.dataset.personId;
+    btn.classList.toggle("active", id === selectedId);
+    btn.classList.toggle("multi-selected", selectedIds.has(id) && id !== selectedId);
+  });
 }
 
 function addPerson() {
@@ -1290,7 +1522,7 @@ function addPerson() {
     parents: []
   };
   data.people.push(person);
-  selectedId = id;
+  setSingleSelection(id);
   persistAndRender();
 }
 
@@ -1308,7 +1540,7 @@ function deleteSelectedPerson() {
   data.events.forEach((event) => {
     event.personIds = (event.personIds || []).filter((id) => id !== person.id);
   });
-  selectedId = data.people[0]?.id || null;
+  setSingleSelection(data.people[0]?.id || null);
   persistAndRender();
 }
 
@@ -1510,7 +1742,7 @@ function importJson(event) {
   reader.onload = () => {
     try {
       data = normalize(JSON.parse(reader.result));
-      selectedId = data.people[0]?.id || null;
+      setSingleSelection(data.people[0]?.id || null);
       selectedAnnotationId = data.annotations[0]?.id || null;
       selectedEventId = data.events[0]?.id || null;
       persistAndRender();
@@ -1528,7 +1760,7 @@ async function resetSample() {
   const ok = window.confirm("Biztosan üres családfára váltasz? A böngészős aktuális mentés felülíródik.");
   if (!ok) return;
   data = normalize(emptyTreeData());
-  selectedId = null;
+  setSingleSelection(null);
   selectedAnnotationId = null;
   selectedEventId = null;
   selectedLinkKey = null;
@@ -1798,7 +2030,7 @@ async function loadFromFirebase(options = {}) {
     const remote = snap.data();
     const remoteTree = remote.tree || remote;
     data = normalize(remoteTree);
-    selectedId = data.people[0]?.id || null;
+    setSingleSelection(data.people[0]?.id || null);
     selectedAnnotationId = data.annotations[0]?.id || null;
     selectedEventId = data.events[0]?.id || null;
     persistAndRender();
@@ -1847,7 +2079,7 @@ async function toggleFirebaseLiveSync() {
       if (!snap.exists()) return;
       const remote = snap.data();
       data = normalize(remote.tree || remote);
-      if (!getSelected()) selectedId = data.people[0]?.id || null;
+      if (!getSelected()) setSingleSelection(data.people[0]?.id || null);
       if (!getSelectedAnnotation()) selectedAnnotationId = data.annotations[0]?.id || null;
       if (!getSelectedEvent()) selectedEventId = data.events[0]?.id || null;
       saveLocal();
@@ -2016,7 +2248,25 @@ function searchableText(person) {
 }
 
 function sortKey(person) {
-  return `${numberOrBlank(person.birth?.year) || 999999}-${person.name}`;
+  const [year, month, day] = birthSortParts(person);
+  return `${year}-${month}-${day}-${person.name}`;
+}
+
+function compareLayoutPeople(a, b) {
+  const aParts = birthSortParts(a);
+  const bParts = birthSortParts(b);
+  return aParts[0] - bParts[0]
+    || aParts[1] - bParts[1]
+    || aParts[2] - bParts[2]
+    || displayName(a).localeCompare(displayName(b), "hu");
+}
+
+function birthSortParts(person) {
+  return [
+    numberOrBlank(person.birth?.year) || 999999,
+    numberOrBlank(person.birth?.month) || 99,
+    numberOrBlank(person.birth?.day) || 99
+  ];
 }
 
 function genderIcon(gender) {

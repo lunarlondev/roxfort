@@ -1,6 +1,6 @@
 # RPG családfa – publikus nézet + whitelistes Firebase szerkesztés
 
-GitHub Pages-re feltölthető, sötét tónusú családfa szerepjátékos kampányokhoz. A v3.6 célja: **külsők olvashassák / nézhessék a családfát**, de **szerkeszteni csak az általad megadott Google-fiókok tudjanak**.
+GitHub Pages-re feltölthető, sötét tónusú családfa szerepjátékos kampányokhoz. A v3.7 célja: **külsők olvashassák / nézhessék a családfát**, de **szerkeszteni csak az általad megadott Google-fiókok tudjanak**.
 
 ## Mit tud?
 
@@ -14,6 +14,9 @@ GitHub Pages-re feltölthető, sötét tónusú családfa szerepjátékos kampá
 - Egérhúzással mozgatható családfa nézet az üres háttéren.
 - Egérgörgős nagyítás/kicsinyítés a családfa-vásznon, egérmutató körüli fókuszponttal.
 - Kártyák húzása és kézi pozíciómentése szerkesztő módban.
+- Több karakter kijelölése Shift+kattintással vagy Shift+húzással a vásznon, majd közös mozgatás.
+- Testvérek / közös szülők vonalai családi sínné rendeződnek, így kevesebb különálló kis vonal látszik.
+- Auto layout születési év/hó/nap alapján próbálja rendezni az azonos generáción belüli szereplőket.
 - Kapcsolati vonalak egyedi stílusa: szín, vastagság, solid/dashed/dotted/longdash minta.
 - Kapcsolati státuszok: `házas`, `partner`, `elvált`, `özvegy`.
 - Fa-megjegyzések / cetlik konkrét ágakhoz vagy területekhez.
@@ -77,6 +80,19 @@ Ezt a Firebase Console-ban kell bemásolni:
 ```text
 Firestore Database → Rules → Publish
 ```
+
+## Többkijelölés és elrendezés
+
+Szerkesztő módban:
+
+```text
+Shift + kattintás szereplőkártyára = hozzáadás a kijelöléshez
+Shift + húzás az üres vásznon = kijelölő téglalap
+Kijelölt kártyák egyikének húzása = minden kijelölt együtt mozog
+Auto layout = kézi pozíciók törlése, újrarendezés születési dátum alapján
+```
+
+A szülő–gyermek vonalak azonos szülőcsoport esetén közös sínre kapcsolódnak, ezért testvéreknél átláthatóbb a családfa.
 
 ## Publikus oldal működése
 
@@ -208,5 +224,5 @@ Ha privát ablakban üres a családfa, akkor az oldal nem tudja olvasni a `trees
 1. Firebase Console → Firestore Database → Data alatt létezik-e: `trees / main`.
 2. Firebase Console → Firestore Database → Rules alatt a `/trees/{treeId}` blokkban ez szerepel-e: `allow read: if true;`.
 3. A GitHubra feltöltött `firebase-config.js` fájlban ez van-e: `export const firestorePath = "trees/main";`.
-4. Az oldalon a státuszsor mit ír: a v3.6.1 már publikus módban is kiírja, ha jogosultsági vagy útvonalhiba van.
+4. Az oldalon a státuszsor mit ír: a v3.7 már publikus módban is kiírja, ha jogosultsági vagy útvonalhiba van.
 

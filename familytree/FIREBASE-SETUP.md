@@ -143,5 +143,5 @@ Ha privát ablakban üres a családfa, akkor az oldal nem tudja olvasni a `trees
 1. Firebase Console → Firestore Database → Data alatt létezik-e: `trees / main`.
 2. Firebase Console → Firestore Database → Rules alatt a `/trees/{treeId}` blokkban ez szerepel-e: `allow read: if true;`.
 3. A GitHubra feltöltött `firebase-config.js` fájlban ez van-e: `export const firestorePath = "trees/main";`.
-4. Az oldalon a státuszsor mit ír: a v3.6.1 már publikus módban is kiírja, ha jogosultsági vagy útvonalhiba van.
+4. Az oldalon a státuszsor mit ír: a v3.7 már publikus módban is kiírja, ha jogosultsági vagy útvonalhiba van.
 
