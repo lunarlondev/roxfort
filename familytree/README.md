@@ -6,7 +6,9 @@ GitHub Pages-re feltölthető, sötét tónusú családfa-szerkesztő szerepját
 
 - Sötét, szürkés-fekete vizuális téma
 - Üres kezdő családfa, próba/minta család nélkül
-- Jelentősen nagyobb karakterportrék és erősebb karakter-szín megjelenítés
+- Portré-fókuszú, ízlésesebb karakterkártyák nagyobb képfelülettel
+- Nagyobb, folytonosabb családfa-vászon, amely zoomoláskor sem ér véget csúnyán
+- Egérhúzással mozgatható családfa nézet az üres háttéren
 - Kártyák egyszerű húzása és kézi pozíciómentése
 - Automatikus elrendezés visszaállítása az **Auto layout** gombbal
 - Családfa kártyák generációk szerint
@@ -117,7 +119,7 @@ A szülő–gyermek vonalak egyedi stílusai a `linkStyles.parent` objektumban t
 }
 ```
 
-A kártyák húzással mozgatott helye a személy `position` mezőjébe mentődik. Az **Auto layout** gomb törli ezeket a kézi pozíciókat, és újraszámolja az elrendezést.
+A kártyák húzással mozgatott helye a személy `position` mezőjébe mentődik. Az **Auto layout** gomb törli ezeket a kézi pozíciókat, és újraszámolja az elrendezést. Az üres családfa-háttéren bal egérgombbal húzva a teljes nézetet tudod mozgatni.
 
 A fa-megjegyzések az `annotations` tömbben vannak. Ezeket a felületen húzni lehet:
 

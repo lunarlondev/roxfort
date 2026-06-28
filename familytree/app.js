@@ -1,10 +1,10 @@
-const STORAGE_KEY = "rpg-family-tree-data-v3.3";
+const STORAGE_KEY = "rpg-family-tree-data-v3.4";
 const OLD_STORAGE_KEYS = [];
 const DEFAULT_DATA_URL = "data/family.json";
-const CARD_W = 380;
-const CARD_H = 286;
-const GAP_X = 120;
-const GAP_Y = 170;
+const CARD_W = 304;
+const CARD_H = 356;
+const GAP_X = 96;
+const GAP_Y = 160;
 const FIREBASE_SDK_VERSION = "11.10.0";
 
 let data = null;
@@ -32,6 +32,8 @@ let firebaseState = {
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => Array.from(document.querySelectorAll(selector));
 
+const stageScroll = $("#stageScroll");
+const stageSpace = $("#stageSpace");
 const stage = $("#stage");
 const cards = $("#cards");
 const links = $("#links");
@@ -383,7 +385,44 @@ function bindUi() {
     event.personIds = Array.from(e.target.selectedOptions).map((option) => option.value);
     persistAndRender(false);
   });
+
+  bindStagePanning();
 }
+
+function bindStagePanning() {
+  if (!stageScroll) return;
+
+  stageScroll.addEventListener("pointerdown", (event) => {
+    if (activeView !== "tree" || event.button !== 0) return;
+    if (event.target.closest(".person-card, .tree-note, button, input, textarea, select, label, a")) return;
+
+    event.preventDefault();
+    stageScroll.setPointerCapture(event.pointerId);
+    stageScroll.classList.add("panning");
+
+    const startX = event.clientX;
+    const startY = event.clientY;
+    const startLeft = stageScroll.scrollLeft;
+    const startTop = stageScroll.scrollTop;
+
+    const onMove = (moveEvent) => {
+      stageScroll.scrollLeft = startLeft - (moveEvent.clientX - startX);
+      stageScroll.scrollTop = startTop - (moveEvent.clientY - startY);
+    };
+
+    const onUp = () => {
+      stageScroll.classList.remove("panning");
+      stageScroll.removeEventListener("pointermove", onMove);
+      stageScroll.removeEventListener("pointerup", onUp);
+      stageScroll.removeEventListener("pointercancel", onUp);
+    };
+
+    stageScroll.addEventListener("pointermove", onMove);
+    stageScroll.addEventListener("pointerup", onUp);
+    stageScroll.addEventListener("pointercancel", onUp);
+  });
+}
+
 
 function setView(view) {
   activeView = view;
@@ -481,7 +520,7 @@ function renderTree() {
 
   stage.style.width = `${layout.width}px`;
   stage.style.height = `${layout.height}px`;
-  stage.style.transform = `scale(${zoom})`;
+  applyStageScale();
   links.setAttribute("width", layout.width);
   links.setAttribute("height", layout.height);
   links.setAttribute("viewBox", `0 0 ${layout.width} ${layout.height}`);
@@ -531,19 +570,21 @@ function renderPersonCards() {
     const notes = person.notes ? `<div class="notes">${escapeHtml(person.notes)}</div>` : "";
 
     card.innerHTML = `
-      <div class="person-head">
+      <div class="portrait-frame">
         ${avatar}
-        <div class="person-main">
-          <div class="name-line">
-            <div class="name">${escapeHtml(person.name)}</div>
-            <div class="gender-icon" title="${genderLabel(person.gender)}">${genderIcon(person.gender)}</div>
-          </div>
-          ${maiden}
-        </div>
+        <div class="gender-icon gender-badge" title="${genderLabel(person.gender)}">${genderIcon(person.gender)}</div>
       </div>
-      ${dates ? `<div class="dates">${dates}</div>` : ""}
-      ${place}
-      ${notes}
+      <div class="person-body">
+        <div class="name-line">
+          <div class="name">${escapeHtml(person.name)}</div>
+        </div>
+        ${maiden}
+        <div class="person-facts">
+          ${dates ? `<div class="dates">${dates}</div>` : ""}
+          ${place}
+        </div>
+        ${notes}
+      </div>
     `;
     cards.appendChild(card);
   }
@@ -619,6 +660,7 @@ function ensureStageBounds(width, height) {
     links.setAttribute("width", nextWidth);
     links.setAttribute("height", nextHeight);
     links.setAttribute("viewBox", `0 0 ${nextWidth} ${nextHeight}`);
+    applyStageScale();
   }
 }
 
@@ -1365,8 +1407,26 @@ function resetPersonPositions() {
 }
 
 function setZoom(value) {
-  zoom = Math.max(0.4, Math.min(1.8, Number(value.toFixed(2))));
+  const previousZoom = zoom;
+  const rect = stageScroll.getBoundingClientRect();
+  const centerX = (stageScroll.scrollLeft + rect.width / 2) / previousZoom;
+  const centerY = (stageScroll.scrollTop + rect.height / 2) / previousZoom;
+
+  zoom = Math.max(0.32, Math.min(1.9, Number(value.toFixed(2))));
+  applyStageScale();
+
+  stageScroll.scrollLeft = Math.max(0, centerX * zoom - rect.width / 2);
+  stageScroll.scrollTop = Math.max(0, centerY * zoom - rect.height / 2);
+}
+
+function applyStageScale() {
+  const width = Number.parseFloat(stage.style.width) || stage.offsetWidth || 1200;
+  const height = Number.parseFloat(stage.style.height) || stage.offsetHeight || 780;
   stage.style.transform = `scale(${zoom})`;
+  if (stageSpace) {
+    stageSpace.style.width = `${Math.ceil(width * zoom)}px`;
+    stageSpace.style.height = `${Math.ceil(height * zoom)}px`;
+  }
   $("#zoomReset").textContent = `${Math.round(zoom * 100)}%`;
 }
 
@@ -1421,6 +1481,9 @@ async function exportPng() {
   const height = stage.offsetHeight;
   const clone = stage.cloneNode(true);
   clone.style.transform = "none";
+  clone.style.position = "relative";
+  clone.style.left = "0";
+  clone.style.top = "0";
   clone.style.width = `${width}px`;
   clone.style.height = `${height}px`;
   inlineSvgSize(clone, width, height);

@@ -583,3 +583,227 @@ select[multiple] {
   display: grid;
   gap: 8px;
 }
+
+/* v3.4: folyamatos vászon, egérhúzós pan és portré-fókuszú karakterkártyák */
+:root {
+  --card-w: 304px;
+  --card-h: 356px;
+}
+
+.stage-wrap {
+  overflow: hidden;
+  background: #050506;
+}
+
+.stage-scroll {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding: 34px;
+  cursor: grab;
+  overscroll-behavior: contain;
+  background:
+    radial-gradient(circle at 50% 28%, rgba(118,118,128,.18) 0%, transparent 34rem),
+    linear-gradient(rgba(255,255,255,.032) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.032) 1px, transparent 1px),
+    linear-gradient(135deg, #050506, #09090b 55%, #050506);
+  background-size: auto, 44px 44px, 44px 44px, auto;
+  background-position: center, 0 0, 0 0, 0 0;
+}
+
+.stage-scroll.panning {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.stage-space {
+  position: relative;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.stage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  min-width: 1200px;
+  min-height: 820px;
+  transform-origin: 0 0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,.07) 0%, transparent 34%),
+    linear-gradient(135deg, rgba(255,255,255,.035), rgba(255,255,255,.006) 32%, rgba(255,255,255,.025)),
+    rgba(9,9,11,.64);
+  background-size: auto;
+  border-radius: 28px;
+  border: 1px solid rgba(255,255,255,.09);
+  box-shadow: inset 0 0 90px rgba(0,0,0,.48), 0 24px 70px rgba(0,0,0,.35);
+}
+
+.stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
+  background-size: 44px 44px, 44px 44px;
+  opacity: .85;
+}
+
+.person-card {
+  width: var(--card-w);
+  height: var(--card-h);
+  min-height: var(--card-h);
+  padding: 0;
+  border-radius: 28px;
+  display: grid;
+  grid-template-rows: 192px minmax(0, 1fr);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--card-color) 28%, #121216 72%) 0%, rgba(16,16,19,.98) 48%, #0a0a0d 100%);
+  border: 1px solid color-mix(in srgb, var(--card-color) 54%, #ffffff 12%);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.04) inset,
+    0 0 30px color-mix(in srgb, var(--card-color) 28%, transparent),
+    0 20px 42px rgba(0,0,0,.42);
+}
+
+.person-card::before {
+  background:
+    radial-gradient(circle at 18% 4%, color-mix(in srgb, var(--card-color) 52%, transparent), transparent 44%),
+    linear-gradient(180deg, color-mix(in srgb, var(--card-color) 22%, transparent), transparent 44%);
+}
+
+.person-card::after {
+  height: 9px;
+  background: linear-gradient(90deg, transparent, var(--card-color) 18%, color-mix(in srgb, var(--card-color) 55%, #fff 24%) 50%, transparent 92%);
+}
+
+.person-card:hover,
+.person-card.selected {
+  transform: translateY(-3px);
+}
+
+.person-card.dragging {
+  transform: scale(1.018);
+}
+
+.portrait-frame {
+  position: relative;
+  z-index: 1;
+  margin: 12px 12px 0;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 22px;
+  border: 1px solid color-mix(in srgb, var(--card-color) 62%, #fff 16%);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--card-color) 48%, #1d1d22 52%), #09090b);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.05),
+    0 0 24px color-mix(in srgb, var(--card-color) 30%, transparent);
+}
+
+.portrait-frame::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 54%;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,.62));
+}
+
+.portrait-frame .avatar,
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  object-fit: cover;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 3.25rem;
+  font-weight: 950;
+  background:
+    radial-gradient(circle at 50% 34%, color-mix(in srgb, var(--card-color) 62%, #2a2a31 38%), #0e0e12 70%);
+  border: 0;
+  box-shadow: none;
+}
+
+.gender-badge,
+.gender-icon {
+  position: absolute;
+  right: 11px;
+  top: 11px;
+  z-index: 2;
+  min-width: 38px;
+  width: 38px;
+  height: 38px;
+  font-size: 1.15rem;
+  background: rgba(0,0,0,.58);
+  border: 1px solid rgba(255,255,255,.28);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.28);
+}
+
+.person-body {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  padding: 14px 16px 18px;
+  min-width: 0;
+}
+
+.name-line {
+  display: block;
+}
+
+.name {
+  font-size: 1.28rem;
+  line-height: 1.06;
+  letter-spacing: .01em;
+  overflow-wrap: anywhere;
+}
+
+.maiden {
+  margin-top: 1px;
+  color: #d2d2dc;
+  font-size: .9rem;
+}
+
+.person-facts {
+  display: grid;
+  gap: 4px;
+  margin-top: 3px;
+}
+
+.dates,
+.place,
+.notes {
+  margin-top: 0;
+  font-size: .87rem;
+}
+
+.dates {
+  color: #e4e4ea;
+  font-weight: 720;
+}
+
+.place {
+  color: #bdbdc8;
+}
+
+.notes {
+  margin-top: 4px;
+  max-height: 4.7em;
+  color: #aaaab6;
+  line-height: 1.28;
+  mask-image: linear-gradient(to bottom, black 72%, transparent 100%);
+}
+
+.empty-tree-hint {
+  pointer-events: none;
+}
