@@ -1,4 +1,4 @@
-const STORAGE_KEY = "rpg-family-tree-data-v3.4";
+const STORAGE_KEY = "rpg-family-tree-data-v3.6-public-editor";
 const OLD_STORAGE_KEYS = [];
 const DEFAULT_DATA_URL = "data/family.json";
 const CARD_W = 304;
@@ -27,8 +27,10 @@ let firebaseState = {
   db: null,
   ref: null,
   auth: null,
-  authEnabled: false,
+  authEnabled: true,
   user: null,
+  editorEmails: [],
+  autoLoadFromFirebase: true,
   unsubscribe: null
 };
 
@@ -55,6 +57,7 @@ async function init() {
   if (data.annotations.length && !selectedAnnotationId) selectedAnnotationId = data.annotations[0].id;
   if (data.events.length && !selectedEventId) selectedEventId = data.events[0].id;
   render();
+  autoLoadFirebaseForPublicView();
 }
 
 async function loadData() {
@@ -349,8 +352,12 @@ function bindUi() {
   $("#firebaseGoogleSignIn").addEventListener("click", signInGoogleFirebase);
   $("#firebaseSignIn").addEventListener("click", signInFirebase);
   $("#firebaseSignOut").addEventListener("click", signOutFirebase);
+  $("#publicCloudLoad")?.addEventListener("click", loadFromFirebase);
+  $("#editorSignInTop")?.addEventListener("click", signInGoogleFirebase);
+  $("#editorSignOutTop")?.addEventListener("click", signOutFirebase);
 
   form.addEventListener("input", (e) => {
+    if (!canEdit()) return;
     if (e.target.name === "imageFile") return;
     const person = getSelected();
     if (!person) return;
@@ -365,7 +372,7 @@ function bindUi() {
     selectedLinkKey = e.target.value || null;
     renderLinkStyleEditor(getSelected());
   });
-  linkStyleForm.addEventListener("input", updateSelectedLinkStyle);
+  linkStyleForm.addEventListener("input", () => { if (canEdit()) updateSelectedLinkStyle(); });
 
   $("#addParent").addEventListener("click", () => addRelationship("parent"));
   $("#addPartner").addEventListener("click", () => addRelationship("partner"));
@@ -378,6 +385,7 @@ function bindUi() {
     render();
   });
   annotationForm.addEventListener("input", (e) => {
+    if (!canEdit()) return;
     const annotation = getSelectedAnnotation();
     if (!annotation) return;
     updateAnnotationFromForm(annotation, e.target.name, e.target.value);
@@ -391,12 +399,14 @@ function bindUi() {
     render();
   });
   eventForm.addEventListener("input", (e) => {
+    if (!canEdit()) return;
     const event = getSelectedEvent();
     if (!event) return;
     updateEventFromForm(event, e.target.name, e.target.value);
     persistAndRender(false);
   });
   $("#eventPeople").addEventListener("change", (e) => {
+    if (!canEdit()) return;
     const event = getSelectedEvent();
     if (!event) return;
     event.personIds = Array.from(e.target.selectedOptions).map((option) => option.value);
@@ -459,11 +469,12 @@ function setView(view) {
   $("#zoomOut").disabled = view !== "tree";
   $("#zoomReset").disabled = view !== "tree";
   $("#zoomIn").disabled = view !== "tree";
-  $("#autoLayout").disabled = view !== "tree";
+  if ($("#autoLayout")) $("#autoLayout").disabled = view !== "tree" || !canEdit();
   $("#exportPng").disabled = view !== "tree";
 }
 
 function updateMeta(key, value) {
+  if (!requireEditor()) return;
   data.meta[key] = value;
   persistAndRender(false);
 }
@@ -487,6 +498,7 @@ function updatePersonFromForm(person, name, value) {
 }
 
 function uploadPersonImage(event) {
+  if (!requireEditor()) return;
   const person = getSelected();
   const file = event.target.files?.[0];
   if (!person || !file) return;
@@ -538,6 +550,7 @@ function render() {
   renderAnnotationEditor();
   renderEventEditor();
   setView(activeView);
+  updateAccessMode();
 }
 
 function renderTree() {
@@ -628,6 +641,7 @@ function renderEmptyTreeHint() {
 }
 
 function startPersonDrag(event, person, element) {
+  if (!canEdit()) return;
   if (event.button !== 0) return;
   if (event.target.closest("button, input, textarea, select, label")) return;
 
@@ -717,6 +731,7 @@ function renderAnnotations() {
 }
 
 function startAnnotationDrag(event, annotation, element) {
+  if (!canEdit()) return;
   if (event.button !== 0) return;
   selectedAnnotationId = annotation.id;
   element.setPointerCapture(event.pointerId);
@@ -1260,6 +1275,7 @@ function selectPerson(id) {
 }
 
 function addPerson() {
+  if (!requireEditor()) return;
   const id = crypto.randomUUID();
   const person = {
     id,
@@ -1279,6 +1295,7 @@ function addPerson() {
 }
 
 function deleteSelectedPerson() {
+  if (!requireEditor()) return;
   const person = getSelected();
   if (!person) return;
   const ok = window.confirm(`Biztosan törlöd?\n\n${person.name}`);
@@ -1296,6 +1313,7 @@ function deleteSelectedPerson() {
 }
 
 function addRelationship(kind) {
+  if (!requireEditor()) return;
   const person = getSelected();
   if (!person) return;
 
@@ -1341,6 +1359,7 @@ function addRelationship(kind) {
 }
 
 function removeParent(childId, parentId) {
+  if (!requireEditor()) return;
   const child = getPerson(childId);
   if (!child) return;
   child.parents = (child.parents || []).filter((id) => id !== parentId);
@@ -1348,11 +1367,13 @@ function removeParent(childId, parentId) {
 }
 
 function removePartnerRelationship(relId) {
+  if (!requireEditor()) return;
   data.relationships = data.relationships.filter((rel) => rel.id !== relId);
   persistAndRender();
 }
 
 function addAnnotation() {
+  if (!requireEditor()) return;
   const scroll = $("#stageScroll");
   const annotation = {
     id: crypto.randomUUID(),
@@ -1369,6 +1390,7 @@ function addAnnotation() {
 }
 
 function deleteSelectedAnnotation() {
+  if (!requireEditor()) return;
   if (!selectedAnnotationId) return;
   data.annotations = data.annotations.filter((annotation) => annotation.id !== selectedAnnotationId);
   selectedAnnotationId = data.annotations[0]?.id || null;
@@ -1376,6 +1398,7 @@ function deleteSelectedAnnotation() {
 }
 
 function addEvent() {
+  if (!requireEditor()) return;
   const currentYear = numberOrBlank(data.meta.currentYear) || 2032;
   const event = {
     id: crypto.randomUUID(),
@@ -1394,6 +1417,7 @@ function addEvent() {
 }
 
 function deleteSelectedEvent() {
+  if (!requireEditor()) return;
   if (!selectedEventId) return;
   data.events = data.events.filter((event) => event.id !== selectedEventId);
   selectedEventId = data.events[0]?.id || null;
@@ -1426,6 +1450,7 @@ function relationshipKey(a, b) {
 }
 
 function resetPersonPositions() {
+  if (!requireEditor()) return;
   const ok = window.confirm("Újraszámoljam az automatikus elrendezést? Ez törli a kézzel húzott karakterpozíciókat.");
   if (!ok) return;
   data.people.forEach((person) => { delete person.position; });
@@ -1478,6 +1503,7 @@ function exportJson() {
 }
 
 function importJson(event) {
+  if (!requireEditor()) { event.target.value = ""; return; }
   const file = event.target.files?.[0];
   if (!file) return;
   const reader = new FileReader();
@@ -1498,6 +1524,7 @@ function importJson(event) {
 }
 
 async function resetSample() {
+  if (!requireEditor()) return;
   const ok = window.confirm("Biztosan üres családfára váltasz? A böngészős aktuális mentés felülíródik.");
   if (!ok) return;
   data = normalize(emptyTreeData());
@@ -1511,7 +1538,7 @@ async function resetSample() {
 function clearLocal() {
   localStorage.removeItem(STORAGE_KEY);
   OLD_STORAGE_KEYS.forEach((key) => localStorage.removeItem(key));
-  alert("A böngészős mentés törölve. Frissítés után az üres data/family.json töltődik be.");
+  alert("A böngészős mentés törölve. Frissítés után a Firebase publikus adata vagy az üres data/family.json töltődik be.");
 }
 
 async function exportPng() {
@@ -1578,6 +1605,62 @@ function inlineSvgSize(root, width, height) {
   svg.setAttribute("height", height);
 }
 
+function normalizedEditorEmails() {
+  return (firebaseState.editorEmails || [])
+    .map((email) => String(email).trim().toLowerCase())
+    .filter(Boolean)
+    .filter((email) => !email.includes("példa") && !email.includes("example.com"));
+}
+
+function canEdit() {
+  if (!firebaseState.authEnabled) return true;
+  const userEmail = String(firebaseState.user?.email || "").trim().toLowerCase();
+  if (!userEmail) return false;
+  const allowed = normalizedEditorEmails();
+  // Publikus használatnál a szerkesztői UI csak akkor nyílik meg, ha az e-mail szerepel a listában.
+  if (!allowed.length) return false;
+  return allowed.includes(userEmail);
+}
+
+function requireEditor() {
+  if (canEdit()) return true;
+  setFirebaseStatus("Ez csak engedélyezett szerkesztői belépés után módosítható.", true);
+  return false;
+}
+
+function updateAccessMode() {
+  const editor = canEdit();
+  document.body.classList.toggle("edit-mode", editor);
+  document.body.classList.toggle("view-only", !editor);
+
+  const status = $("#accessStatus");
+  if (status) {
+    status.classList.toggle("editor-ok", editor);
+    status.classList.toggle("viewer", !editor);
+    if (editor) status.textContent = firebaseState.user?.email ? `Szerkesztő: ${firebaseState.user.email}` : "Szerkesztői mód";
+    else if (firebaseState.user?.email) status.textContent = `Néző: ${firebaseState.user.email} · nincs szerkesztői jog`;
+    else status.textContent = "Nézői mód";
+  }
+
+  const signInTop = $("#editorSignInTop");
+  const signOutTop = $("#editorSignOutTop");
+  if (signInTop) signInTop.classList.toggle("hidden", Boolean(firebaseState.user));
+  if (signOutTop) signOutTop.classList.toggle("hidden", !firebaseState.user);
+}
+
+async function autoLoadFirebaseForPublicView() {
+  try {
+    const state = await connectFirebase();
+    if (state.autoLoadFromFirebase) {
+      setFirebaseStatus("Publikus Firebase-betöltés…");
+      await loadFromFirebase({ silent: true, publicAutoLoad: true });
+    }
+  } catch (error) {
+    // Publikus nézetben is látható legyen, miért maradt üres a családfa.
+    setFirebaseStatus(`Publikus Firebase-betöltés nem sikerült: ${friendlyFirebaseError(error)}`, true);
+  }
+}
+
 async function connectFirebase() {
   if (firebaseState.ready) return firebaseState;
   setFirebaseStatus("Firebase konfiguráció keresése…");
@@ -1587,6 +1670,8 @@ async function connectFirebase() {
     const firebaseOptions = config.firebaseOptions || config.default || null;
     const firestorePath = config.firestorePath || "trees/main";
     const authEnabled = config.authEnabled === true;
+    const editorEmails = Array.isArray(config.editorEmails) ? config.editorEmails.map((email) => String(email).trim().toLowerCase()).filter(Boolean) : [];
+    const autoLoadFromFirebase = config.autoLoadFromFirebase !== false;
     if (!firebaseOptions || !firebaseOptions.projectId) throw new Error("A firebaseOptions hiányzik vagy nincs projectId.");
 
     const appModule = await import(`https://www.gstatic.com/firebasejs/${FIREBASE_SDK_VERSION}/firebase-app.js`);
@@ -1610,6 +1695,8 @@ async function connectFirebase() {
       ref,
       auth,
       authEnabled,
+      editorEmails,
+      autoLoadFromFirebase,
       user: auth?.currentUser || null
     };
 
@@ -1617,10 +1704,13 @@ async function connectFirebase() {
       authModule.onAuthStateChanged(auth, (user) => {
         firebaseState.user = user || null;
         renderFirebaseAuthState();
+        updateAccessMode();
+        render();
       });
     }
 
     renderFirebaseAuthState();
+    updateAccessMode();
     setFirebaseStatus(`Firebase csatlakozva: ${firestorePath}${authEnabled ? " · Auth bekapcsolva" : ""}`);
     return firebaseState;
   } catch (error) {
@@ -1696,32 +1786,37 @@ function renderFirebaseAuthState() {
   }
 }
 
-async function loadFromFirebase() {
+async function loadFromFirebase(options = {}) {
   try {
     const state = await connectFirebase();
     const { getDoc } = state.modules.firestoreModule;
     const snap = await getDoc(state.ref);
     if (!snap.exists()) {
-      setFirebaseStatus("A megadott Firestore dokumentum még üres. Először ments felhőbe.", true);
-      return;
+      setFirebaseStatus("A megadott Firestore dokumentum még üres: nincs trees/main dokumentum. Először szerkesztőként ments felhőbe.", true);
+      return false;
     }
     const remote = snap.data();
-    data = normalize(remote.tree || remote);
+    const remoteTree = remote.tree || remote;
+    data = normalize(remoteTree);
     selectedId = data.people[0]?.id || null;
     selectedAnnotationId = data.annotations[0]?.id || null;
     selectedEventId = data.events[0]?.id || null;
     persistAndRender();
-    setFirebaseStatus("Felhőből betöltve.");
+    const count = data.people.length;
+    setFirebaseStatus(options.silent ? `Publikus nézet betöltve Firebase-ből. Szereplők: ${count}.` : `Felhőből betöltve. Szereplők: ${count}.`);
+    return true;
   } catch (error) {
+    // Privát / külső böngészőben ez a legfontosabb hibaüzenet, ezért silent módban sem nyeljük el teljesen.
     setFirebaseStatus(`Felhő betöltés sikertelen: ${friendlyFirebaseError(error)}`, true);
+    return false;
   }
 }
 
 async function saveToFirebase() {
   try {
     const state = await connectFirebase();
-    if (state.authEnabled && !state.user) {
-      setFirebaseStatus("Felhő mentéshez előbb lépj be admin felhasználóval.", true);
+    if (!canEdit()) {
+      setFirebaseStatus("Felhő mentéshez engedélyezett szerkesztői Google-fiókkal kell belépni.", true);
       return;
     }
     const { setDoc, serverTimestamp } = state.modules.firestoreModule;

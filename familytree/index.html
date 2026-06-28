@@ -22,10 +22,14 @@
       <button id="zoomOut" title="Kicsinyítés – egérgörgővel is működik" type="button">−</button>
       <button id="zoomReset" title="Alaphelyzet" type="button">100%</button>
       <button id="zoomIn" title="Nagyítás – egérgörgővel is működik" type="button">+</button>
-      <button id="autoLayout" title="Automatikus elrendezés" type="button">Auto layout</button>
+      <button id="publicCloudLoad" title="Publikus nézet frissítése Firebase-ből" type="button">Felhő frissítés</button>
+      <button id="editorSignInTop" class="primary" type="button">Szerkesztői belépés</button>
+      <button id="editorSignOutTop" class="hidden" type="button">Kilépés</button>
+      <span id="accessStatus" class="access-status muted">Nézői mód</span>
+      <button id="autoLayout" class="editor-only" title="Automatikus elrendezés" type="button">Auto layout</button>
       <button id="exportPng" title="Kép export" type="button">PNG</button>
-      <button id="exportJson" class="primary" type="button">JSON mentés</button>
-      <label class="file-button">
+      <button id="exportJson" class="primary editor-only" type="button">JSON mentés</button>
+      <label class="file-button editor-only">
         JSON betöltés
         <input id="importJson" type="file" accept="application/json,.json" />
       </label>
@@ -53,7 +57,7 @@
       <div id="timeline" class="timeline"></div>
     </section>
 
-    <aside class="editor" aria-label="Családfa szerkesztő">
+    <aside class="editor editor-only" aria-label="Családfa szerkesztő">
       <details open>
         <summary>Fa adatai</summary>
         <label>Név

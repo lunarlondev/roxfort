@@ -10,5 +10,15 @@ export const firebaseOptions = {
 
 export const firestorePath = "trees/main";
 
-// true: megjelenik az admin belépés. Ajánlott provider: Google.
+// true: publikus olvasás mellett a szerkesztés Google-belépéshez kötött.
 export const authEnabled = true;
+
+// A felületen csak ezeknek az e-mail címeknek jelenik meg a szerkesztőpanel.
+// Ugyanezeket az e-maileket írd be a firestore.rules fájlba is.
+export const editorEmails = [
+  // "sajat.email@gmail.com",
+  // "masik.szerkeszto@gmail.com"
+];
+
+// true: a publikus nézet oldalbetöltéskor automatikusan betölti a trees/main dokumentumot.
+export const autoLoadFromFirebase = true;

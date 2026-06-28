@@ -1,100 +1,147 @@
-# Firebase beállítás – RPG családfa, Google-belépéssel
+# Firebase beállítás – publikus olvasás, whitelistes szerkesztés
 
-Ez a verzió GitHub Pagesen is működik, a családfát pedig Cloud Firestore dokumentumba tudja menteni. Ajánlott üzemmód: publikus olvasás, csak a megadott Google-fiókos admin e-mail írhat.
+Ez a verzió arra készült, hogy:
 
-## 1. Firebase projekt és Web app
+- a családfa külsők számára publikus legyen,
+- mindenki tudja nézni / olvasni,
+- szerkeszteni csak az általad megadott Google-fiókok tudjanak.
 
-1. Nyisd meg a Firebase Console-t.
-2. Válassz meglévő projektet vagy hozz létre újat.
-3. Project overview → Web app ikon.
-4. Regisztráld az appot.
-5. Másold ki a `firebaseConfig` objektumot.
+## 1. Google-belépés bekapcsolása
 
-## 2. Firestore bekapcsolása
-
-1. Build → Firestore Database.
-2. Create database.
-3. Válaszd a production módot.
-4. Régió: ami neked kényelmes; európai kampányhoz egy EU régió jó választás.
-
-## 3. Auth bekapcsolása Google-lal
-
-1. Build → Authentication.
-2. Sign-in method / Sign-in providers.
-3. Google → Enable / Engedélyezés.
-4. Project support email: válaszd ki a saját e-mail címedet.
-5. Save / Mentés.
-
-Az e-mail+jelszó belépés nem kötelező. A webappban csak tartalék opcióként maradt benne.
-
-Ha GitHub Pagesen használod az oldalt, menj ide is:
+Firebase Console:
 
 ```text
-Authentication → Settings → Authorized domains
+Authentication → Sign-in method / Sign-in providers → Google → Enable → Save
 ```
 
-Add hozzá a GitHub Pages domainedet, például:
+A Project support email mezőnél válaszd ki a saját e-mail címedet.
+
+## 2. Authorized domain GitHub Pageshez
+
+Firebase Console:
+
+```text
+Authentication → Settings → Authorized domains → Add domain
+```
+
+Ha az oldalad például:
+
+```text
+https://felhasznalonev.github.io/rpg-family-tree/
+```
+
+akkor ezt add meg:
 
 ```text
 felhasznalonev.github.io
 ```
 
-## 4. Konfig fájl
+## 3. Firestore adatbázis
 
-Másold:
+Firebase Console:
 
 ```text
-firebase-config.example.js → firebase-config.js
+Firestore Database → Create database
 ```
 
-Majd töltsd ki:
+Ajánlott:
+
+```text
+Production mode
+```
+
+Az adat helye a projektben:
+
+```text
+Firestore Database → Data → trees → main
+```
+
+Ha még nincs `trees/main`, akkor az appban szerkesztőként belépve nyomj egy **Felhő mentés** gombot.
+
+## 4. Szerkesztők listája a webappban
+
+Nyisd meg a `firebase-config.js` fájlt, és töltsd ki:
 
 ```js
-export const firebaseOptions = {
-  apiKey: "...",
-  authDomain: "...firebaseapp.com",
-  projectId: "...",
-  storageBucket: "...firebasestorage.app",
-  messagingSenderId: "...",
-  appId: "..."
-};
-
-export const firestorePath = "trees/main";
-export const authEnabled = true;
+export const editorEmails = [
+  "sajat.email@gmail.com",
+  "masik.szerkeszto@gmail.com"
+];
 ```
 
-A `firestorePath` dokumentumútvonal legyen. Jó példa: `trees/main`, `trees/viharvar`, `campaigns/varryn-tree`. Rossz példa: `trees`, mert az collection, nem dokumentum.
+Csak ezeknek az e-maileknek fog megjelenni a szerkesztőpanel.
 
 ## 5. Firestore Rules
 
-A `firestore.rules` fájlban cseréld ki ezt:
+Firebase Console:
 
-```js
-"TE_EMAIL_CIMED@example.com"
+```text
+Firestore Database → Rules
 ```
 
-arra a Google-fiókos admin e-mail címedre, amivel be fogsz lépni. Több admin is lehet:
+Másold be ezt, a saját e-mail címeiddel:
 
 ```js
-"meselo@example.com",
-"jatekos-admin@example.com"
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isEditor() {
+      return request.auth != null
+        && request.auth.token.email in [
+          "sajat.email@gmail.com",
+          "masik.szerkeszto@gmail.com"
+        ];
+    }
+
+    match /trees/{treeId} {
+      // A végeredmény mindenki számára nézhető / olvasható.
+      allow read: if true;
+
+      // Írni csak a megadott Google-fiókok tudnak.
+      allow create, update, delete: if isEditor();
+    }
+  }
+}
 ```
 
-Utána Firebase Console → Firestore Database → Rules fülre másold be a szabályt, majd Publish.
+Majd:
 
-## 6. Első mentés
+```text
+Publish
+```
 
-1. Nyisd meg az oldalt helyben vagy GitHub Pagesen.
-2. Firebase / Firestore panel.
-3. Firebase csatlakozás.
-4. Belépés Google-lal.
-5. Felhő mentés.
-6. Ezután kipróbálhatod a Felhő betöltés és Élő sync gombokat.
+## 6. Használat
 
-## Tesztelés nyitott szabállyal
+Külső látogató:
 
-Ha csak gyorsan ellenőrizni akarod, hogy a config és a kapcsolat jó-e, ideiglenesen használhatod a `firestore.TEST-ONLY.rules` fájlt. Ez mindenkinek enged írást, ezért utána azonnal állítsd vissza a biztonságos szabályt.
+```text
+Megnyitja az oldalt → automatikusan látja a Firebase-ben mentett családfát.
+```
 
-## GitHub Pages megjegyzés
+Szerkesztő:
 
-A `firebase-config.js` fájlt fel kell tölteni a GitHub Pages oldal mellé, különben a böngésző nem tud csatlakozni. A Firebase webes config nem admin titkos kulcs; a védelmet a Firestore Rules és a Firebase Auth adja.
+```text
+Megnyitja az oldalt
+→ Szerkesztői belépés
+→ Google-fiók kiválasztása
+→ szerkesztőpanel megjelenik
+→ módosítások
+→ Felhő mentés
+```
+
+## 7. Fontos
+
+A `firebase-config.js` fájlban lévő Firebase web config nem admin titkos kulcs. A tényleges adatvédelmet a Firestore Rules adja.
+
+Ha valaki nincs benne a Firestore Rules e-mail listájában, akkor nem tud írni az adatbázisba, akkor sem, ha a böngészőben megpróbálja meghívni a mentést.
+
+
+## Publikus nézet hibaelhárítás
+
+Ha privát ablakban üres a családfa, akkor az oldal nem tudja olvasni a `trees/main` Firestore dokumentumot. Ellenőrizd:
+
+1. Firebase Console → Firestore Database → Data alatt létezik-e: `trees / main`.
+2. Firebase Console → Firestore Database → Rules alatt a `/trees/{treeId}` blokkban ez szerepel-e: `allow read: if true;`.
+3. A GitHubra feltöltött `firebase-config.js` fájlban ez van-e: `export const firestorePath = "trees/main";`.
+4. Az oldalon a státuszsor mit ír: a v3.6.1 már publikus módban is kiírja, ha jogosultsági vagy útvonalhiba van.
+
