@@ -807,3 +807,12 @@ select[multiple] {
 .empty-tree-hint {
   pointer-events: none;
 }
+
+/* v3.5: görgős zoom finomítása */
+.stage-scroll {
+  touch-action: none;
+}
+
+.stage {
+  will-change: transform;
+}

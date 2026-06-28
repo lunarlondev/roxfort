@@ -6,6 +6,9 @@ const CARD_H = 356;
 const GAP_X = 96;
 const GAP_Y = 160;
 const FIREBASE_SDK_VERSION = "11.10.0";
+const MIN_ZOOM = 0.18;
+const MAX_ZOOM = 2.6;
+const WHEEL_ZOOM_SENSITIVITY = 0.00135;
 
 let data = null;
 let selectedId = null;
@@ -391,6 +394,15 @@ function bindUi() {
 
 function bindStagePanning() {
   if (!stageScroll) return;
+
+  stageScroll.addEventListener("wheel", (event) => {
+    if (activeView !== "tree") return;
+    // Görgő = zoom a családfa-vásznon. A timeline és az oldalsó szerkesztő továbbra is normálisan görgethető.
+    event.preventDefault();
+    const direction = event.deltaY > 0 ? -1 : 1;
+    const factor = Math.exp(direction * Math.abs(event.deltaY) * WHEEL_ZOOM_SENSITIVITY);
+    setZoomAt(zoom * factor, event.clientX, event.clientY);
+  }, { passive: false });
 
   stageScroll.addEventListener("pointerdown", (event) => {
     if (activeView !== "tree" || event.button !== 0) return;
@@ -1407,16 +1419,32 @@ function resetPersonPositions() {
 }
 
 function setZoom(value) {
+  const rect = stageScroll.getBoundingClientRect();
+  setZoomAt(value, rect.left + rect.width / 2, rect.top + rect.height / 2);
+}
+
+function setZoomAt(value, clientX, clientY) {
   const previousZoom = zoom;
   const rect = stageScroll.getBoundingClientRect();
-  const centerX = (stageScroll.scrollLeft + rect.width / 2) / previousZoom;
-  const centerY = (stageScroll.scrollTop + rect.height / 2) / previousZoom;
+  const style = window.getComputedStyle(stageScroll);
+  const paddingLeft = Number.parseFloat(style.paddingLeft) || 0;
+  const paddingTop = Number.parseFloat(style.paddingTop) || 0;
+  const viewportX = clientX - rect.left;
+  const viewportY = clientY - rect.top;
+  const worldX = (stageScroll.scrollLeft + viewportX - paddingLeft) / previousZoom;
+  const worldY = (stageScroll.scrollTop + viewportY - paddingTop) / previousZoom;
 
-  zoom = Math.max(0.32, Math.min(1.9, Number(value.toFixed(2))));
+  zoom = clampZoom(value);
   applyStageScale();
 
-  stageScroll.scrollLeft = Math.max(0, centerX * zoom - rect.width / 2);
-  stageScroll.scrollTop = Math.max(0, centerY * zoom - rect.height / 2);
+  stageScroll.scrollLeft = Math.max(0, worldX * zoom - viewportX + paddingLeft);
+  stageScroll.scrollTop = Math.max(0, worldY * zoom - viewportY + paddingTop);
+}
+
+function clampZoom(value) {
+  const numeric = Number(value);
+  const safe = Number.isFinite(numeric) ? numeric : 1;
+  return Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, Number(safe.toFixed(3))));
 }
 
 function applyStageScale() {
