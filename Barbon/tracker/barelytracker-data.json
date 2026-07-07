@@ -2130,7 +2130,6 @@
       "location": "Mocsár, Tiltott Rengeteg",
       "topic": "",
       "date": "2005. 10. 31. hétfő - 2005. 11. 01. kedd",
-      "location": "",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,21276.0.html",
       "image": "https://i.pinimg.com/736x/cf/ce/f9/cfcef9980bf5200eb1d0d97b43766f19.jpg",
       "triggerWarning": "",
@@ -2138,6 +2137,7 @@
       "meta": {
         "Név": "Malachi Maddock",
         "Dátum": "2005. 10. 31. hétfő - 2005. 11. 01. kedd"
+	  }
       },
 	  {
       "id": "g042",
