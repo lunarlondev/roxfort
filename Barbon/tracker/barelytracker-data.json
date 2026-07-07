@@ -1888,7 +1888,7 @@
       "id": "e07",
       "categoryId": "2005-2006-tanev-2-felev",
       "title": "nephilim",
-      "status": "Aktív",
+      "status": "Lezárt",
       "characters": [
         {
           "name": "Lucinda Yaxley",
@@ -2036,7 +2036,7 @@
       "id": "g040",
       "categoryId": "2005-2006-tanev-2-felev",
       "title": "Team Calamity",
-      "status": "Aktív",
+      "status": "Lezárt",
       "characters": [
         {
           "name": "Hagen Romanov",
@@ -2127,17 +2127,60 @@
           "featured": true
         }
       ],
-      "name": "Malachi Maddock",
+      "location": "Mocsár, Tiltott Rengeteg",
       "topic": "",
       "date": "2005. 10. 31. hétfő - 2005. 11. 01. kedd",
       "location": "",
       "link": "https://www.roxfort.frpg.hu/index.php/topic,21276.0.html",
       "image": "https://i.pinimg.com/736x/cf/ce/f9/cfcef9980bf5200eb1d0d97b43766f19.jpg",
       "triggerWarning": "",
-      "summary": "",
+      "summary": "Alternatív idősík, ahol a Tűz Serlege más bajnokokat választott magának.",
       "meta": {
         "Név": "Malachi Maddock",
         "Dátum": "2005. 10. 31. hétfő - 2005. 11. 01. kedd"
+      },
+	  {
+      "id": "g042",
+      "categoryId": "2005-2006-tanev-2-felev",
+      "title": "A Harmadik Próba",
+      "status": "Aktív",
+      "characters": [
+        {
+          "name": "Sienna Scrimgeour",
+          "image": "actors/sienna.jpg",
+          "featured": true
+        },
+        {
+          "name": "Connor O'Hara",
+          "image": "actors/connor.jpg",
+          "featured": true
+        },
+		{
+          "name": "Inès de Saint-Vinant",
+          "image": "actors/ines.jpg",
+          "featured": true
+        },
+		{
+          "name": "Vale Bate",
+          "image": "actors/vale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Lolita Delacour",
+          "image": "actors/lolita.jpg",
+          "featured": true
+        }
+      ],
+      "location": "Tiltott Rengeteg",
+      "topic": "",
+      "date": "2005. 10. 31. hétfő - 2005. 11. 01. kedd",
+      "location": "",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,21317.msg129629.html#msg129629",
+      "image": "https://i.pinimg.com/736x/bf/c9/02/bfc90267ffcf9a70ba7c35c5916fb104.jpg",
+      "triggerWarning": "mild káromkodás, szégyenítés, káros nézetek, vérmegjelenítés, erőszak",
+      "summary": "",
+      "meta": {
+        "Dátum": "2006. 05. 26. szombat"
       }
     }
   ]
