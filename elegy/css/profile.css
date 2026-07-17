@@ -82,3 +82,4 @@
 .profile-footer a { color: var(--muted); font-family: Cinzel, Georgia, serif; font-size: 10px; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
 .story-intro { position: relative; z-index: 2; margin-bottom: 13px; padding: 10px 12px; border-left: 2px solid rgba(167,66,95,.64); color: var(--muted); font-size: 12px; line-height: 1.55; background: linear-gradient(90deg, rgba(111,38,59,.1), transparent); }
 .knowledge-paragraph, .knowledge-spell__description { text-align: justify; text-justify: inter-word; }
+.knowledge-paragraph {white-space: pre-line;}
