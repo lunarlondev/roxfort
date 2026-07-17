@@ -151,7 +151,8 @@
 .knowledge-spell__status::after {
   content: attr(data-tooltip);
   position: absolute;
-  bottom: calc(100% + 11px);
+  top: calc(100% + 11px);
+bottom: auto;
   left: 50%;
   z-index: 20;
   width: max-content;
