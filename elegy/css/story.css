@@ -11,7 +11,7 @@
 .story-engine__scene { min-height: 118px; padding: 14px 15px; border: 1px solid rgba(221,197,190,.11); border-radius: 10px; background: linear-gradient(rgba(0,0,0,.48), rgba(0,0,0,.48)), var(--texture-2) center / 700px auto; box-shadow: inset 0 0 38px rgba(0,0,0,.5); }
 .story-engine__scene-title { margin-bottom: 8px; color: rgba(232,217,209,.96); font-family: Cinzel, Georgia, serif; font-size: 13px; letter-spacing: .04em; }
 .story-engine__scene-title:empty { display: none; }
-.story-engine__text { color: rgba(238,227,218,.9); font-size: 14px; line-height: 1.72; }
+.story-engine__text { color: rgba(238,227,218,.9); font-size: 14px; line-height: 1.72; text-align: justify; }
 .story-engine__text p { margin: 0 0 12px; }
 .story-engine__text p:last-child { margin-bottom: 0; }
 .story-engine__choices { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 9px; margin-top: 12px; }
