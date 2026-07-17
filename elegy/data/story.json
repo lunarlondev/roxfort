@@ -296,7 +296,7 @@
       "choices": [
         {
           "id": "s1_route_map_continue",
-          "text": "A felismert tájékozódási pontok felé vezeted Destinationt.",
+          "text": "Tovább a csapóajtóhoz",
           "next": "s1_site_found_map",
           "tags": [
             "normal"
