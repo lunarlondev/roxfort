@@ -17,7 +17,7 @@
 .profile-section::before { content: ''; position: absolute; inset: -55px -70px auto; height: 190px; pointer-events: none; opacity: .09; filter: grayscale(1) contrast(1.2); background: var(--texture-4) center 28% / 720px auto no-repeat; mix-blend-mode: screen; transform: rotate(2deg); }
 .profile-section::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(120deg, transparent 0 64%, rgba(111,38,59,.035)); }
 .profile-section__heading { position: relative; z-index: 2; display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
-.profile-section__heading h2 { flex: 0 0 auto; margin: 0; font-family: Cinzel, Georgia, serif; font-size: 17px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.profile-section__heading h2 { flex: 0 0 auto; margin: 0; font-family: "IM Fell DW Pica SC", serif; font-size: 17px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; }
 .profile-section__heading span { height: 1px; flex: 1; background: linear-gradient(90deg, rgba(167,66,95,.7), rgba(216,203,187,.14), transparent); }
 .profile-subsection { position: relative; z-index: 2; margin-top: 18px; }
 .profile-subsection h3 { margin: 0 0 10px; color: rgba(230,217,208,.92); font-family: Cinzel, Georgia, serif; font-size: 14px; font-weight: 500; letter-spacing: .06em; }
