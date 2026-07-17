@@ -101,7 +101,7 @@
 	{ "type": "quote", "text": "No spell can reawaken the dead,’ said Dumbledore heavily. ‘All that would have happened is a kind of reverse echo." },
       { "type": "paragraph", "text": "A nekromágia, vagy nekromancia sötét tudománya azóta számot tart az emberek, boszorkányok és varázslók érdeklődésére, amióta azok képessé váltak felismerni az élet és halál közötti különbséget. A lét és nemlét közötti határt éppen ez óta a pillanat óta tapogatják kíváncsi kezek, böködik varázslatos pálcák és őrülnek bele fantasztikus elmék abba a törvényszerűségbe, hogy a halálból nincs valódi visszatérés." },
       { "type": "paragraph", "text": "Ami egyszer meghalt, nem támad már fel. Nem ugyanúgy tér vissza semmi, amit visszatérőnek, élőhalottnak, zombinak, inferusnak vagy akár kísértetnek neveznek a halál végérvényesen megváltoztatja az egykorvolt élő természetét." },
-	  { "type": "paragraph", "text": Mindennek ellenére, a halál kutatása nem felesleges és meddő tudomány. Mind a varázsos, mind a varázsmentes világ sokat profitál a halál, a halottak tanulmányozásából." },
+	  { "type": "paragraph", "text": "Mindennek ellenére, a halál kutatása nem felesleges és meddő tudomány. Mind a varázsos, mind a varázsmentes világ sokat profitál a halál, a halottak tanulmányozásából." },
 	  { "type": "heading", "text": "A holtak emlékezete" },
       { "type": "paragraph", "text": "Egy külön alfejezet hosszabb magyarázata. Tetszőleges számú bekezdés, alcím, idézet és varázslatkártya helyezhető el ebben a listában." },
       { "type": "quote", "text": "Aki a halottakat kérdezi, annak el kell viselnie, ha egyszer ők is kérdeznek." },
