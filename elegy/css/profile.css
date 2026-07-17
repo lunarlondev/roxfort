@@ -83,3 +83,93 @@
 .story-intro { position: relative; z-index: 2; margin-bottom: 13px; padding: 10px 12px; border-left: 2px solid rgba(167,66,95,.64); color: var(--muted); font-size: 12px; line-height: 1.55; background: linear-gradient(90deg, rgba(111,38,59,.1), transparent); }
 .knowledge-paragraph, .knowledge-spell__description { text-align: justify; text-justify: inter-word; }
 .knowledge-paragraph {white-space: pre-line;}
+
+.knowledge-spell__title {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 9px;
+}
+
+.knowledge-spell__name {
+  margin-bottom: 0;
+}
+
+.knowledge-spell__status {
+  position: relative;
+  flex: 0 0 auto;
+  width: 17px;
+  height: 17px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  cursor: help;
+  opacity: .9;
+  transform: rotate(45deg);
+  box-shadow:
+    inset 0 0 0 3px rgba(0, 0, 0, .45),
+    0 0 9px currentColor;
+}
+
+.knowledge-spell__status::before {
+  content: "✦";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 9px;
+  line-height: 1;
+  transform: rotate(-45deg);
+}
+
+.knowledge-spell__status--supported {
+  color: rgba(106, 181, 128, .95);
+  background: rgba(48, 105, 66, .35);
+}
+
+.knowledge-spell__status--tolerated {
+  color: rgba(220, 152, 76, .96);
+  background: rgba(127, 75, 26, .38);
+}
+
+.knowledge-spell__status--forbidden {
+  color: rgba(203, 72, 83, .96);
+  background: rgba(119, 28, 39, .4);
+}
+
+.knowledge-spell__status::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 11px);
+  left: 50%;
+  z-index: 20;
+  width: max-content;
+  max-width: min(300px, 75vw);
+  padding: 9px 11px;
+  border: 1px solid rgba(221, 197, 190, .18);
+  border-radius: 7px;
+  color: rgba(239, 229, 220, .94);
+  background:
+    linear-gradient(180deg, rgba(31, 22, 29, .98), rgba(9, 7, 10, .98));
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .65);
+  font-family: inherit;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  text-transform: none;
+  white-space: normal;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-50%) rotate(-45deg) translateY(4px);
+  transition: opacity .18s ease, transform .18s ease;
+}
+
+.knowledge-spell__status:hover::after,
+.knowledge-spell__status:focus::after {
+  opacity: 1;
+  transform: translateX(-50%) rotate(-45deg) translateY(0);
+}
