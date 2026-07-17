@@ -64,7 +64,7 @@
       "choices": [
         {
           "id": "s1_after_radio_classical",
-          "text": "Elkészíted a reggelidet",
+          "text": "A reggeliddel kezdesz foglalkozni.",
           "next": "s1_first_breakfast",
           "tags": [
             "normal"
@@ -75,7 +75,9 @@
     "s1_radio_local_reaction": {
       "title": "Helyi adás",
       "paragraphs": [
-        "[IDE ÍRD A RÖVID REAKCIÓT A HELYI VARÁZSRÁDIÓ MŰSORÁRA. UTALHATSZ NEBRASKÁRA, A KÖRNYÉK HÍREIRE VAGY A BIRTOK IDEGENSÉGÉRE.]"
+        "Egy népszerű zenész, Lorcan d'Eath számát hallgatod a rádióból. Te is ismered a dalt – annak sikere átívelt az Óceánon, és eljutott még oda is, ahová Requiem Dreadmoor száműzte magát a Felsőház utasítására. Szádra veszed a dallamot, és együtt énekeled azt az énekessel. Meglehetősen felszabadítónak találod.",
+		"Még akkor is dúdolod a dalt, amikor az véget ért, és a műsorvezető hangja veszi azt át. A gyors időjárás jelentést követően a MACUSA legújabb intézkedéseit és a Salem Hagyatéka Párt sikereit hallgatod azokról a lépésekről, amiket a varázslótársadalom megóvása érdekében tesznek. Nem érted annyira a politikát, igazából nem is érdekel – ha engem kérdezel, ostoba vagy hozzá - , de tudod, hogy Siofra nénéd szeretné, ha részt vennél a játszmájukban.",
+		"Bátyádra mosolyogsz dudorászás közben, amikor az betér a konyhába, nyomában szerencsétlen házimanótokkal, akit képtelenek vagytok végre tisztességesen eltemetni."
       ],
       "choices": [
         {
