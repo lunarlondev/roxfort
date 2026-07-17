@@ -7,10 +7,11 @@
   },
   "nodes": {
     "s1_return_to_estate": {
-      "title": "I. Fejezet: Visszatérés",
+      "title": "I. Fejezet: Nebraska",
       "paragraphs": [
-        "[IDE ÍRD, AHOGYAN A CSALÁD HOSSZÚ UTAZÁS UTÁN VISSZATÉR AZ EGYESÜLT ÁLLAMOKBAN ÁLLÓ BIRTOKRA. ÉVTIZEDEK ÓTA EGYIKÜK SEM JÁRT ITT.]",
-        "Az autóban még hétköznapinak tűnik minden. A birtok történetéről és az apa egykori kísérleteiről egyelőre csak elejtett félmondatok hangzanak el."
+        "Szórakozottan tekergeted a régi varázsrádiót a konyhában. Elteltek az első nappalok és éjjelek, mióta visszatértetek Ammanból, bár a nagy visszatérés legfeljebb a pszichopata apádnak jelent bármit.",
+        "Ha ez is a hely, ami most menedéket nyújt neked, és melynek alapjaiba mélyen bevésődtek a Dreadmoorok emlékei, számodra Nebraska végtelen kukoricaföldjei és a birtokotok körül terpeszkedő, elhanyagolt és elvadult földek semmivel sem otthonosabb, mint bármelyik szoba, amit valaha elhagytál. Meg kell még tanulnod elengedni Amman napfényben kifakult mészkőházait, a dombokra kapaszkodó utcákat, és azt a különös órát alkonyat előtt, amikor az egész város arany színűvé változott. Még ha jelenleg nem is biztonságos számotokra – hisz a Noctua okkal menekített ki titeket onnan - , Nebraska akkor is idegen marad előtted.",
+		"Nem hitted, hogy működni fog még a rádió, most mégis úgy tűnik, hogy a vastag porfelhőt leszámítva nincs vele semmi probléma. Kiválasztod a csatornát, amit a reggelid mellé hallgatnál."
       ],
       "choices": [
         {
@@ -28,7 +29,7 @@
         },
         {
           "id": "s1_radio_local",
-          "text": "A környék helyi rádióját hallgatod.",
+          "text": "A környék helyi varázsrádió csatornáját hallgatod.",
           "next": "s1_first_breakfast",
           "tags": [
             "normal"
@@ -41,7 +42,7 @@
         },
         {
           "id": "s1_radio_silence",
-          "text": "Kikapcsolod a rádiót, és inkább az elsuhanó tájat figyeled.",
+          "text": "Inkább kikapcsolod a rádiót.",
           "next": "s1_first_breakfast",
           "tags": [
             "normal"
