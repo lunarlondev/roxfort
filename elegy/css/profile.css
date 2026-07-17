@@ -66,7 +66,7 @@
 .knowledge-spell { position: relative; overflow: hidden; padding: 13px; border: 1px solid rgba(167,66,95,.3); border-radius: 10px; background: radial-gradient(260px 100px at 100% 0, rgba(111,38,59,.19), transparent), rgba(0,0,0,.27); }
 .knowledge-spell::after { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .07; background: var(--texture-4) center / cover; mix-blend-mode: screen; }
 .knowledge-spell__name { position: relative; z-index: 1; margin-bottom: 6px; color: rgba(239,229,220,.96); font-family: Cinzel, Georgia, serif; font-size: 13px; }
-.knowledge-spell__meta { position: relative; z-index: 1; margin-bottom: 8px; color: rgba(167,66,95,.9); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; }
+.knowledge-spell__meta { position: relative; z-index: 1; margin-bottom: 8px; color: rgba(253,187,206,.9); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; }
 .knowledge-spell__description { position: relative; z-index: 1; color: rgba(235,223,215,.84); font-size: 12px; line-height: 1.58; }
 .profile-list { position: relative; z-index: 2; display: grid; gap: 8px; }
 .profile-list__item { padding: 10px 12px; border: 1px solid rgba(221,197,190,.11); border-radius: 9px; color: rgba(235,223,215,.87); font-size: 12px; line-height: 1.52; background: rgba(0,0,0,.2); }
