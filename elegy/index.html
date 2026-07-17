@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09070a">
+  <title>Nekromanta karakterlap</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/profile.css">
+  <link rel="stylesheet" href="css/story.css">
+  <link rel="stylesheet" href="css/story-effects.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <main class="profile-shell" id="top">
+    <header class="profile-hero" aria-labelledby="characterName">
+      <div class="profile-hero__veil" aria-hidden="true"></div>
+      <h1 class="profile-hero__name" id="characterName">ELEGY DREADMOOR</h1>
+      <div class="profile-hero__portraits" id="headerImages" aria-label="Karakterhangulat-képek"></div>
+      <blockquote class="profile-hero__motto" id="characterMotto"></blockquote>
+    </header>
+
+    <section class="profile-section" id="alapok">
+      <div class="profile-section__heading"><h2>Alapok</h2><span aria-hidden="true"></span></div>
+      <div class="profile-kv-grid" id="basicData"></div>
+    </section>
+
+    <section class="profile-section" id="mult">
+      <div class="profile-section__heading"><h2>A múlt</h2><span aria-hidden="true"></span></div>
+      <div class="story-intro" id="storyIntro"></div>
+      <div class="story-engine" id="storyApp" aria-live="polite">
+        <div class="story-engine__topbar">
+          <div>
+            <div class="story-engine__eyebrow">Interaktív történet</div>
+            <h3 class="story-engine__title" id="storyTitle">Történet</h3>
+          </div>
+          <div class="story-engine__progress" id="storyProgress">0 / 0 befejezés</div>
+        </div>
+        <div class="story-engine__stage" id="storyStage">
+          <figure class="story-engine__media" id="storyMedia" hidden><img id="storyImage" alt=""></figure>
+          <div class="story-engine__scene">
+            <div class="story-engine__scene-title" id="storySceneTitle"></div>
+            <div class="story-engine__text" id="storyText"></div>
+          </div>
+          <div class="story-engine__choices" id="storyChoices"></div>
+          <div class="story-engine__status" id="storyStatus" aria-live="assertive"></div>
+          <div class="story-engine__route" id="storyRoute" hidden></div>
+          <div class="story-engine__endings" id="storyEndings" hidden></div>
+        </div>
+        <div class="story-engine__controls">
+          <button class="story-control" id="storyBackBtn" type="button">Vissza</button>
+          <button class="story-control" id="storyRestartBtn" type="button">Új útvonal</button>
+        </div>
+      </div>
+
+      <div class="profile-subsection">
+        <h3>Idővonal</h3>
+        <div class="character-timeline" id="characterTimeline"></div>
+      </div>
+    </section>
+
+    <section class="profile-section" id="szemelyiseg">
+      <div class="profile-section__heading"><h2>Személyiség</h2><span aria-hidden="true"></span></div>
+      <div class="profile-prose" id="personalityText"></div>
+      <div class="profile-prompt-grid" id="personalityPrompts"></div>
+    </section>
+
+    <section class="profile-section" id="aprosagok">
+      <div class="profile-section__heading"><h2>Apróságok</h2><span aria-hidden="true"></span></div>
+      <div class="profile-facts" id="triviaData"></div>
+    </section>
+
+    <section class="profile-section" id="csalad">
+      <div class="profile-section__heading"><h2>A család</h2><span aria-hidden="true"></span></div>
+      <div class="profile-family-grid" id="familyMembers"></div>
+      <div class="profile-subsection">
+        <h3>Családtörténet</h3>
+        <div class="profile-prose" id="familyHistory"></div>
+      </div>
+    </section>
+
+    <section class="profile-section" id="kulsosegek">
+      <div class="profile-section__heading"><h2>Külsőségek</h2><span aria-hidden="true"></span></div>
+      <div class="profile-kv-grid" id="appearanceData"></div>
+      <div class="profile-subsection">
+        <h3>Kinézet</h3>
+        <div class="profile-prose" id="appearanceText"></div>
+      </div>
+    </section>
+
+    <section class="profile-section" id="tudas">
+      <div class="profile-section__heading"><h2>A tudás</h2><span aria-hidden="true"></span></div>
+      <div class="profile-subsection">
+        <h3>Nekromágia</h3>
+        <div class="knowledge-blocks" id="necromancyBlocks"></div>
+      </div>
+      <div class="profile-subsection">
+        <h3>Varázslói ismeretek</h3>
+        <div class="profile-prose" id="wizardKnowledge"></div>
+      </div>
+      <div class="profile-kv-grid" id="educationData"></div>
+    </section>
+
+    <section class="profile-section" id="egyeb">
+      <div class="profile-section__heading"><h2>Egyéb</h2><span aria-hidden="true"></span></div>
+      <div class="profile-list" id="additionalItems"></div>
+    </section>
+
+    <section class="profile-section" id="forrasok">
+      <div class="profile-section__heading"><h2>Források</h2><span aria-hidden="true"></span></div>
+      <ul class="profile-sources" id="sourceList"></ul>
+    </section>
+
+    <footer class="profile-footer"><a href="#top">Vissza a tetejére</a></footer>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

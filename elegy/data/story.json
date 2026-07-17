@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "id": "necromancer-profile-story",
+    "version": 1,
+    "title": "A ravatal mögött",
+    "start": "start"
+  },
+  "nodes": {
+    "start": {
+      "title": "A meghívás",
+      "paragraphs": [
+        "Éjfél után érkezel a családi kápolnához. A vasajtó tárva áll, pedig jól emlékszel rá, hogy délután még három külön zárral csuktad be. Odabentről gyertyafüst és nedves föld szaga sodródik feléd.",
+        "A levél, amely idehívott, a zsebedben lapul. A saját kézírásoddal készült, mégsem emlékszel rá, hogy valaha megírtad volna."
+      ],
+      "choices": [
+        { "id": "enter_chapel", "text": "Belépsz a kápolnába.", "next": "chapel", "tags": ["normal"] },
+        { "id": "turn_away", "text": "Nem engeded, hogy a halottak döntsenek helyetted.", "next": "ending_denial", "tags": ["critical"], "effect": "critical" },
+        { "id": "remember_hidden_door", "text": "Emlékszel az oltár mögötti ajtóra, amely korábban nem létezett.", "next": "hidden_archive", "tags": ["secret", "special"], "effect": "glitch", "unlock": { "type": "endingSeen", "id": "ECHO" } }
+      ]
+    },
+    "chapel": {
+      "title": "A ravatal",
+      "paragraphs": [
+        "A gyertyák úgy égnek, mintha a lángjukat üveg mögé zárták volna. A kápolna közepén fekete fátyollal borított ravatal áll. Nem látod, kit rejt, de minden lélegzetvétellel biztosabb vagy benne, hogy ismered az arcát.",
+        "A falon egy megkopott sírfelirat húzódik. A betűk között nedvesség csillog, a kövek alól pedig alig hallható kaparászás felel a szíved dobbanásaira."
+      ],
+      "media": { "src": "images/story/chapel.jpg", "alt": "Sötét családi kápolna gyertyákkal", "position": "center 44%" },
+      "choices": [
+        { "id": "approach_bier", "text": "A ravatalhoz lépsz, és félrehajtod a fátylat.", "next": "coffin", "tags": ["critical"], "effect": "critical" },
+        { "id": "read_epitaph", "text": "Elolvasod a falba vésett, alig látható sírfeliratot.", "next": "epitaph_key", "tags": ["normal"] },
+        { "id": "listen_to_silence", "text": "Nem mozdulsz. Elég sokáig figyeled a csendet ahhoz, hogy a csend figyeljen vissza.", "next": "whisper_stair", "tags": ["secret"], "effect": "glitch", "unlock": { "type": "waitOnNode", "milliseconds": 8000 } }
+      ]
+    },
+    "epitaph_key": {
+      "title": "A név alatt",
+      "paragraphs": [
+        "A felirat nem halálozási dátumot őriz, hanem egy figyelmeztetést: Ne nevezd nevén azt, amit vissza akarsz hívni. Az utolsó szó alatt vékony ezüstkulcs simul a habarcsba, mintha a fal növesztette volna.",
+        "Amikor hozzáérsz, a ravatal felől egyetlen, nagyon lassú lélegzet hallatszik."
+      ],
+      "choices": [
+        { "id": "take_silver_key", "text": "Kiemeld az ezüstkulcsot a falból.", "next": "coffin", "tags": ["special"], "effects": { "set": { "silverKey": true } } },
+        { "id": "leave_silver_key", "text": "A kulcsot a helyén hagyod, és a ravatalhoz mész.", "next": "coffin", "tags": ["normal"] }
+      ]
+    },
+    "coffin": {
+      "title": "A fekete fátyol alatt",
+      "paragraphs": [
+        "A ravatalon fekvő test arca a tiéd, csak idősebb és nyugodtabb. A bőre alatt sötét erek rajzolnak térképet, mellkasán pedig egyetlen fekete rózsa nyugszik. Nem hervadt el: lassan, szabályosan lélegzik.",
+        "A halott szempillája megrezdül, amikor közelebb hajolsz."
+      ],
+      "choices": [
+        { "id": "open_coffin", "text": "Megérinted a test homlokát, és megkezded az ébresztés első lépését.", "next": "body", "tags": ["critical"], "effect": "critical", "effects": { "increment": { "deathAffinity": 1 } } },
+        { "id": "kneel_and_pray", "text": "Letérdelsz, és először nem varázslattal, hanem szóval próbálkozol.", "next": "prayer", "tags": ["normal"] },
+        { "id": "unlock_rib_cage", "text": "Az ezüstkulcsot a bordák között kirajzolódó zárba illeszted.", "next": "heart_chamber", "tags": ["secret", "critical"], "effect": "glitch", "unlock": { "all": [ { "type": "runChoice", "id": "read_epitaph" }, { "type": "flag", "key": "silverKey", "operator": "eq", "value": true } ] } }
+      ]
+    },
+    "body": {
+      "title": "Az első mozdulat",
+      "paragraphs": [
+        "A test szája kinyílik, de hang helyett hideg levegő ömlik belőle. A rózsa szirmai egyenként emelkednek fel a mellkasról, és szabályos körbe rendeződnek körülötted. A rítus már elkezdődött, pedig még nem mondtál ki egyetlen igét sem.",
+        "Most még megszakíthatod. Később talán már nem te döntesz."
+      ],
+      "media": { "src": "images/story/body.jpg", "alt": "Fekete rózsával borított ravatal", "position": "center 35%" },
+      "choices": [
+        { "id": "begin_ritual", "text": "Végigvezeted a rítust, bármit is kérjen cserébe.", "next": "ritual", "tags": ["critical"], "effect": "critical", "effects": { "increment": { "deathAffinity": 2 } } },
+        { "id": "close_the_coffin", "text": "Visszahajtod a fátylat, és megadod a halottnak a nyugalmat.", "next": "ending_mercy", "tags": ["normal"] },
+        { "id": "touch_dead_hand", "text": "Megfogod a kezét, mert már tudod, hogy a test nem ugyanaz, mint aki benne lakott.", "next": "ghost", "tags": ["secret", "special"], "effect": "glitch", "unlock": { "type": "endingCount", "operator": "gte", "value": 2 } }
+      ]
+    },
+    "prayer": {
+      "title": "A név nélküli ima",
+      "paragraphs": [
+        "A szavaid eleinte elvesznek a boltozatban. A harmadik mondat után azonban valaki folytatja őket mögötted. A hang nem ismerős, mégis minden hangsúlyát előre tudod.",
+        "A jelenlét arra vár, hogy nevet adj neki — vagy hogy végre ne próbáld meghatározni."
+      ],
+      "choices": [
+        { "id": "speak_the_name", "text": "Kimondod azt a nevet, amely elsőként jut eszedbe.", "next": "ghost", "tags": ["critical"], "effect": "critical" },
+        { "id": "keep_silence", "text": "Csendben maradsz, amíg a másik hang is elhallgat.", "next": "ending_silence", "tags": ["normal"] }
+      ]
+    },
+    "whisper_stair": {
+      "title": "A lépcső, amely kivárt",
+      "paragraphs": [
+        "A kaparászás ritmusa egyszer csak érthetővé válik. Nem a kövek alól jön: maga a kápolna ismétel egy mondatot, amelyet valaha te mondtál ki. Az oltár mellett keskeny lépcső rajzolódik ki a falból.",
+        "Lent nem ég fény, de valami fémesen csillog a sötétben."
+      ],
+      "choices": [
+        { "id": "descend_stairs", "text": "Lemész a föld alatti terembe.", "next": "undercroft", "tags": ["secret"], "effect": "glitch" },
+        { "id": "return_to_chapel", "text": "Nem követed a hangot; visszatérsz a ravatalhoz.", "next": "chapel", "tags": ["normal"] }
+      ]
+    },
+    "undercroft": {
+      "title": "Az alsó kör",
+      "paragraphs": [
+        "A kripta alatt újabb terem húzódik. Közepén csontokból kirakott kör, annak belsejében pedig vékony, fekete korona lebeg. Minden ága egy-egy emberi ujjpercből készült, mégis úgy fénylik, mint az ónix.",
+        "A kör peremén a saját lábnyomaidat látod. Némelyik frissebb, mint az, amelyben most állsz."
+      ],
+      "media": { "src": "images/story/undercroft.jpg", "alt": "Csontkör egy föld alatti teremben", "position": "center" },
+      "choices": [
+        { "id": "take_bone_crown", "text": "A fejedre teszed a csontkoronát.", "next": "ending_crown", "tags": ["critical"], "effect": "critical" },
+        { "id": "break_bone_circle", "text": "Széttöröd a kört, mielőtt újra bezárulhatna körülötted.", "next": "ending_echo", "tags": ["secret"], "effect": "glitch" }
+      ]
+    },
+    "ritual": {
+      "title": "Az ár",
+      "paragraphs": [
+        "A rózsaszirmok megállnak a levegőben. A halott szeme kinyílik, de a tekintete mögött még nincs személy. A rítus két lehetséges árat mutat neked: a véredet, amely új testet adhat neki, vagy egy emlékedet, amelyből önmagát építheti fel.",
+        "Bármelyiket választod, valami úgy távozik belőled, hogy nem tudod majd pontosan megnevezni a hiányát."
+      ],
+      "choices": [
+        { "id": "pay_with_blood", "text": "A véreddel fizetsz, és megtartod az emlékeidet.", "next": "ending_blood", "tags": ["critical"], "effect": "critical" },
+        { "id": "pay_with_memory", "text": "Átadod neki a legszebb emlékedet, hogy legyen miből visszatérnie.", "next": "ending_empty", "tags": ["special"], "effect": "glitch" }
+      ]
+    },
+    "ghost": {
+      "title": "Aki nem a testben volt",
+      "paragraphs": [
+        "A kápolna sarkában áttetsző alak jelenik meg. Nem a ravatalon fekvő testhez tartozik, hanem hozzád: egy olyan változatod, aki már végigjárta ezt az éjszakát. Arra kér, ne ismételd meg ugyanazt a hibát.",
+        "A szellem nem tud távozni, amíg engedélyt nem adsz neki — vagy amíg magadhoz nem kötöd."
+      ],
+      "choices": [
+        { "id": "release_ghost", "text": "Elengeded a szellemet, és vele együtt azt az életet is, amely nem a tiéd volt.", "next": "ending_remembered", "tags": ["normal"] },
+        { "id": "bind_ghost", "text": "Magadhoz kötöd, hogy minden következő alkalommal emlékeztessen.", "next": "ending_echo", "tags": ["critical"], "effect": "critical" }
+      ]
+    },
+    "heart_chamber": {
+      "title": "A zárt szív",
+      "paragraphs": [
+        "A kulcs fordul, a bordák pedig hangtalanul szétnyílnak. A mellkasban nem szív dobog, hanem apró, lezárt ajtó. A túloldaláról gyerekkori nevetésed hallatszik, majd egy második hang, amely ugyanazt a nevetést utánozza.",
+        "Most már érted: a testet nem feltámasztani akarták. Börtönnek készítették."
+      ],
+      "choices": [
+        { "id": "open_heart_door", "text": "Kinyitod a mellkasba zárt ajtót.", "next": "ending_heart", "tags": ["secret", "critical"], "effect": "glitch" },
+        { "id": "seal_heart_door", "text": "Visszazárod az ajtót, és a kulcsot magaddal viszed.", "next": "ending_mercy", "tags": ["special"] }
+      ]
+    },
+    "hidden_archive": {
+      "title": "Az emlékező könyvtár",
+      "paragraphs": [
+        "Az oltár mögött keskeny ajtó nyílik. A helyiségben egyetlen fekete könyv fekszik, lapjain az összes korábbi döntésed kézírása sorakozik. Olyan választások is szerepelnek benne, amelyeket ebben az életben még nem hoztál meg.",
+        "A könyv utolsó lapja üres. A tinta azonban már gyűlik a toll hegyén."
+      ],
+      "choices": [
+        { "id": "open_black_book", "text": "Elolvasod az utolsó, még meg nem írt oldalt.", "next": "ending_archive", "tags": ["secret", "critical"], "effect": "glitch" },
+        { "id": "close_black_book", "text": "Becsukod a könyvet, és újra az éjszaka elejére lépsz.", "next": "start", "tags": ["special"], "effect": "glitch" }
+      ]
+    },
+    "ending_denial": { "type": "ending", "endingId": "DENIAL", "order": 1, "title": "A bezárt ajtó", "paragraphs": ["Hazamész, és reggelig hallod, ahogy valaki a saját hangodon kopog az ablakodon. A kápolnához többé nem térsz vissza — legalábbis ebben az emlékezetben nem."] },
+    "ending_mercy": { "type": "ending", "endingId": "MERCY", "order": 2, "title": "Irgalom a holtaknak", "paragraphs": ["Nem hozol vissza senkit. A gyertyák egyenként kialszanak, a kápolna pedig először tűnik valóban üresnek. A veszteség veled marad, de többé nem követel testet magának."] },
+    "ending_silence": { "type": "ending", "endingId": "SILENCE", "order": 3, "title": "A név nélküli csend", "paragraphs": ["A jelenlét név nélkül nem tud alakot ölteni. Hajnalra eltűnik, és csak egyetlen mondat marad a falon: Néha az a legnagyobb varázslat, amit nem mondunk ki."] },
+    "ending_crown": { "type": "ending", "endingId": "CROWN", "order": 4, "title": "A csontkorona", "paragraphs": ["A korona felismer. A kripta összes halottja egyszerre hajt fejet, de amikor visszatérsz a felszínre, már nem emlékszel rá, hogyan kell levenni."] },
+    "ending_echo": { "type": "ending", "endingId": "ECHO", "order": 5, "title": "A visszhang emlékezete", "paragraphs": ["Széttöröd a kört, de a történet nem ér véget. Valami megőrzi helyetted az éjszaka minden változatát. Legközelebb olyan ajtót is észreveszel majd, amely korábban nem létezett."] },
+    "ending_blood": { "type": "ending", "endingId": "BLOOD", "order": 6, "title": "A vérből épített test", "paragraphs": ["A halott felkel, lélegzik és kimondja a neved. Te azonban már nem érzed a saját pulzusodat. A rítus sikerült; csak azt nem döntöttétek el, melyikőtök tért vissza."] },
+    "ending_empty": { "type": "ending", "endingId": "EMPTY", "order": 7, "title": "Az üres hely", "paragraphs": ["A test megtelik a legszebb emlékeddel, és mosolyogni kezd. Tudod, hogy valaha fontos volt neked ez a mosoly, de többé nem érted, miért."] },
+    "ending_remembered": { "type": "ending", "endingId": "REMEMBERED", "order": 8, "title": "Aki végre emlékezett", "paragraphs": ["A szellem távozik, de az emlékei benned maradnak. Nem a jövőt látod, hanem az összes hibát, amelyet többé nem vagy köteles megismételni."] },
+    "ending_heart": { "type": "ending", "endingId": "HEART", "order": 9, "title": "A mellkas mögötti ajtó", "paragraphs": ["Az ajtó kinyílik, és a kápolnát elárasztja a gyerekkori nevetés. A test összeomlik, a bezárt lélek pedig kiszabadul. Csak később veszed észre, hogy a hang azóta is a bordáid mögül jön."] },
+    "ending_archive": { "type": "ending", "endingId": "ARCHIVE", "order": 10, "title": "Az utolsó oldal", "paragraphs": ["Elolvasod a még meg nem történt befejezést. A könyv becsukódik, a böngésző pedig emlékezni fog rá akkor is, amikor te már nem. Valahol egy új sor jelenik meg a neved alatt."] }
+  }
+}

@@ -1,0 +1,15 @@
+.story-engine__stage.is-leaving { opacity: 0; filter: blur(5px); transform: translateY(-6px); }
+.story-engine__stage.is-entering { animation: story-enter .34s ease both; }
+.story-engine__stage.effect-critical { animation: story-critical-flash .42s ease both; }
+.story-engine__stage.effect-glitch { animation: story-glitch-stage .38s steps(2,end) both; }
+.story-engine__stage.effect-glitch::before { content: ''; position: absolute; inset: 0; z-index: 10; pointer-events: none; opacity: 0; background: repeating-linear-gradient(0deg, transparent 0 3px, rgba(255,255,255,.04) 4px 5px); animation: story-scan .38s steps(2,end) both; }
+.story-choice--critical { animation: critical-breathe 2.8s ease-in-out infinite; }
+.story-choice--secret { animation: secret-signal 3.4s steps(1,end) infinite; }
+.story-choice--secret .story-choice__label { text-shadow: 1px 0 rgba(167,66,95,.35), -1px 0 rgba(170,173,183,.28); }
+@keyframes story-enter { from { opacity: 0; filter: blur(4px); transform: translateY(7px); } to { opacity: 1; filter: blur(0); transform: translateY(0); } }
+@keyframes story-critical-flash { 0% { box-shadow: inset 0 0 0 rgba(167,66,95,0); } 28% { box-shadow: inset 0 0 70px rgba(127,25,52,.28); } 100% { box-shadow: inset 0 0 0 rgba(167,66,95,0); } }
+@keyframes story-glitch-stage { 0% { transform: translate(0); } 18% { transform: translate(-3px,1px); filter: contrast(1.25); } 36% { transform: translate(3px,-1px); } 52% { transform: translate(-1px,0); filter: hue-rotate(-14deg); } 100% { transform: translate(0); filter: none; } }
+@keyframes story-scan { 0% { opacity: 0; transform: translateY(-10%); } 25% { opacity: .65; } 100% { opacity: 0; transform: translateY(10%); } }
+@keyframes critical-breathe { 0%,100% { box-shadow: 0 0 0 rgba(167,66,95,0); } 50% { box-shadow: 0 0 13px rgba(167,66,95,.14); } }
+@keyframes secret-signal { 0%,78%,100% { transform: translate(0); } 80% { transform: translate(-1px,0); } 82% { transform: translate(1px,0); } 84% { transform: translate(0); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; } }
