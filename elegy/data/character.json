@@ -142,7 +142,17 @@
 	{ "title": "Jelnyelv", "text": "Destinationnel gyakran jelnyelven kommunikálnak." }
   ],
   "sources": [
-    { "label": "Első forrás", "url": "https://example.com", "note": "Rövid megjegyzés a forráshoz." },
-    { "label": "Második forrás", "url": "https://example.org" }
+    { "label": "HP Wiki - Inferius", "url": "https://harrypotter.fandom.com/wiki/Inferius", "note": "A Hogwarts Legacy hülyeségeinek nem figyelembe vételével." },
+    { "label": "HP Wiki - Necromancy", "url": "https://harrypotter.fandom.com/wiki/Necromancy" },
+	{ "label": "HP Wiki - Living Dead", "url": "https://harrypotter.fandom.com/wiki/Living_Dead" },
+	{ "label": "HP Wiki - Vampire", "url": "https://harrypotter.fandom.com/wiki/Vampire" },
+	{ "label": "HP Wiki - Zombie", "url": "https://harrypotter.fandom.com/wiki/Zombie" },
+	{ "label": "HP Wiki - Lorcan d'Eath", "url": "https://harrypotter.fandom.com/wiki/Lorcan_d'Eath" },
+	{ "label": "HP Wiki - Resurrection Stone", "url": "https://harrypotter.fandom.com/wiki/Resurrection_Stone" },
+	{ "label": "HP Wiki - Death Chamber", "url": "https://harrypotter.fandom.com/wiki/Death_Chamber" },
+	{ "label": "HP Wiki - Living Dead", "url": "https://harrypotter.fandom.com/wiki/Living_Dead" },
+	{ "label": "HP Wiki - Ekrizdis", "url": "https://harrypotter.fandom.com/wiki/Ekrizdis" },
+	{ "label": "HP Wiki - Scrourers", "url": "https://harrypotter.fandom.com/wiki/Scourers" },
+	{ "label": "Wikipedia - Roanoke Colony", "url": "https://en.wikipedia.org/wiki/Roanoke_Colony" }
   ]
 }
