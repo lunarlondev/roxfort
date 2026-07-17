@@ -63,7 +63,17 @@
 .knowledge-heading { margin: 7px 0 0; color: rgba(232,217,209,.95); font-family: Cinzel, Georgia, serif; font-size: 13px; letter-spacing: .05em; }
 .knowledge-paragraph { margin: 0; padding: 12px 13px; border: 1px solid rgba(221,197,190,.1); border-radius: 9px; color: rgba(235,223,215,.86); font-size: 13px; line-height: 1.7; background: rgba(0,0,0,.2); }
 .knowledge-quote { margin: 2px 0; padding: 13px 16px; border-left: 2px solid rgba(167,66,95,.72); color: rgba(231,216,207,.89); font-size: 16px; font-style: italic; line-height: 1.5; background: linear-gradient(90deg, rgba(111,38,59,.14), transparent); }
-.knowledge-spell { position: relative; overflow: hidden; padding: 13px; border: 1px solid rgba(167,66,95,.3); border-radius: 10px; background: radial-gradient(260px 100px at 100% 0, rgba(111,38,59,.19), transparent), rgba(0,0,0,.27); }
+.knowledge-spell {
+  position: relative;
+  overflow: visible;
+  padding: 13px;
+  border: 1px solid rgba(167,66,95,.3);
+  border-radius: 10px;
+  background:
+    radial-gradient(260px 100px at 100% 0, rgba(111,38,59,.19), transparent),
+    rgba(0,0,0,.27);
+}
+
 .knowledge-spell::after { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .07; background: var(--texture-4) center / cover; mix-blend-mode: screen; }
 .knowledge-spell__name { position: relative; z-index: 1; margin-bottom: 6px; color: rgba(239,229,220,.96); font-family: Cinzel, Georgia, serif; font-size: 13px; }
 .knowledge-spell__meta { position: relative; z-index: 1; margin-bottom: 8px; color: rgba(253,187,206,.9); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; }
