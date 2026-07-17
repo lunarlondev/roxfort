@@ -55,10 +55,10 @@
   "family": {
     "members": [
       { "role": "Apa", "name": "Requiem Dreadmoor", "age": "90 éves", "status": "aranyvérű", "description": "Az apa leírása." },
-      { "role": "Anya", "name": "Anya neve", "age": "xx éves", "status": "aranyvérű", "description": "Az anya leírása." },
-      { "role": "Testvér", "name": "Első testvér neve", "age": "xx éves", "status": "aranyvérű", "description": "Az első testvér leírása." },
-      { "role": "Testvér", "name": "Második testvér neve", "age": "xx éves", "status": "kvibli", "description": "A második testvér leírása." },
-      { "role": "Házimanó", "name": "Rigor Mortis", "description": "A házimanó leírása." }
+      { "role": "Anya", "name": "Lucia Dreadmoor (née Orlyk)", "age": "xx éves", "status": "aranyvérű", "description": "Az anya leírása." },
+      { "role": "Testvér", "name": "Destination Dreadmoor", "age": "xx éves", "status": "aranyvérű", "description": "Az első testvér leírása." },
+      { "role": "Testvér", "name": "Desolation Dreadmoor", "age": "xx éves", "status": "kvibli", "description": "Destination ikertestvére. Sajnos kviblinek született - bár a családfő így is talált módot arra, hogy hasznos legyen. Mindenkinek azt mondták, meghalt." },
+      { "role": "Házimanó", "name": "Rigor Mortis", "description": "A család szeretett házimanója, akitől holta után se tudtak megválni. Egyszerű inferus bábként szolgálja tovább a családot, igaz, mágia nélkül." }
     ],
     "history": [
       "A család történetének első hosszabb bekezdése. A család eredete, hagyományai és társadalmi helyzete kerülhet ide.",
