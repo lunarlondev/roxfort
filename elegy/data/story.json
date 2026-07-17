@@ -144,7 +144,7 @@
         },
         {
           "id": "s1_book_skip",
-          "text": "Nem vagy éhes. Inkább körülnézel a házban.",
+          "text": "Nem olvasol semmit.",
           "next": "s1_book_skip_reaction",
           "tags": [
             "normal"
@@ -197,7 +197,8 @@
     "s1_book_skip_reaction": {
       "title": "I. Fejezet: Nebraska",
       "paragraphs": [
-        "[IDE ÍRD A RÖVID REAKCIÓT ARRA, HOGY KIHAGYOD A REGGELIT ÉS KÖRÜLNÉZEL A HÁZBAN. EZ AKÁR KÖZELEBB IS VIHET AZ ELSZABADULÓ INFERUS HELYSZÍNÉHEZ, DE A FŐ TÖRTÉNETET NEM VÁLTOZTATJA MEG.]"
+        "Már jól ismered Bogár Bárd meséit. Anyátok eleget mesélte el nektek számotokra megnyugtató hangján azokon a közös éjjeleken, amikor a betegsége és állapota nem nyomta őt le a mostaninál rosszabb állapotba. Hasonló példány lapul a te ládádban is, igaz, arabul.",
+		"Elkerüli a figyelmed a kis füzet. A lefosztott polcon csak pár kódex és régi térkép maradt, amik azonban nem bizonyulnak számodra elég érdekesnek."
       ],
       "choices": [
         {
