@@ -1,7 +1,7 @@
 {
   "meta": {
     "id": "necromancer-eye-story",
-    "version": 4,
+    "version": 5,
     "title": "Szemet szemért",
     "start": "s1_return_to_estate"
   },
@@ -212,246 +212,60 @@
       ]
     },
     "s1_attack_start": {
-      "title": "I. Fejezet: A száraz föld",
+      "title": "I. Fejezet: Inferius",
       "paragraphs": [
-        "[IDE ÍRD A JELENETVÁLTÁST: NÉHÁNY ÓRÁVAL KÉSŐBB REQUIEM ELKÜLD TÉGED ÉS DESTINATIONT A BIRTOK ELVADULT KUKORICAFÖLDJÉRE, HOGY KERESSÉTEK MEG A RÉGI MELLÉKÉPÜLETET.]",
-        "[REQUIEM EGY PONTATLAN TÉRKÉPET ÉS EGY RÉGI AZONOSÍTÓJELET AD. AZ ÉPÜLETBŐL EGY VASALT LÁDÁT VAGY BIRTOKVÉDELMI FELJEGYZÉSEKET KELL VISSZAHOZNOTOK. AZ ELÁSOTT INFERUSOKRÓL NEM BESZÉL, MERT ÚGY HISZI, NEM JELENTHETNEK VESZÉLYT A CSALÁDJÁRA.]",
-        "[MUTASD BE A SZÁRAZ, DERÉKIG ÉRŐ GAZT, AZ ÖSSZETÖREDEZETT KUKORICASZÁRAKAT, A ROZSDÁS KERÍTÉSEKET ÉS AZ ELTŰNT ÖSVÉNYEKET.]"
+        "Csak egy pontatlan térképet kaptatok apátoktól, és egy-egy medált családotok pecsétjével. Kérdés nélkül inferiusokkal szennyezett földre vet titeket. Gondoskodása, hogy az ereklyével legalább nem tesz titeket teremtményei áldozatává, már majdnem azt feltételezi, hogy akár még érezhet is valamit gyermekei iránt.",
+        "Bár valójában elég büszke rátok. Az élők közül ti vagytok a kedvenc teremtményei. Igazán kár lenne értetek.",
+        "Száraz, derékig érő gazban tapostok a terjedelmes birtokon. Ruhád széle beleakad az egyik elszáradt, összetöredezett kukoricaszárba. Senki földjén is lehetnétek, pedig ez a föld valójában a tiétek még akkor is, ha a Felsőház visszakövetelte azt tőletek. Apátok viszont annyi meglepetést ásott el a termőföld alá, hogy nem érte meg vesződniük vele. Egyszerűen elrejtették azt a magnixok elől, és erős védővarázslatokkal érték el azt, hogy illetéktelenek akkor se akarjanak a területre tévedni, ha valamiért hirtelen vonzónak találnák ezt a kietlenséget.",
+        "Jól tudod, hogy a legtöbb inferius a föld alatt van – noha pár példány lomhán néz utánatok. Apátok pecsétje megvéd titeket, hisz sajátjaiként ismernek fel titeket. Vélhetően ha ez nem lenne rajtatok, már rég ti is halottak lennétek. Abba persze nem gondolsz bele, hogy mégis honnan szerzett ennyi testet, de az ilyen részletek felett rendszeresen elsikkadsz. Pedig apád fekete mágus, és oka van annak, hogy még a Felsőház se mutatkozik vele szívesen. A te szemedben viszont mégis csak az apád, akivel annyit utaztatok, aki megtanította neked használni a mágiát, és aki végérvényesen megdicséri a ruhát, amit magadra öltesz.",
+        "Apátok is csak homályosan emlékszik arra, pontosan hogyan is néz ki az a lejáró, amire szüksége van. A korral jár, nem az igazi már, nem olyan, mint fénykorában. A térkép és Requiem emlékei szerint három tájékozódási pont segíthet titeket: egy régi, kiszáradt kút, melyben utoljára nagyapátok, Sepulcher Dreadmoor idejében csoboghatott élet; egy villám sújtotta fa, mely egykor apátok pálcájának fáját biztosította; valamint egy szélkerék, ami mára minden bizonnyal berozsdásodott.",
+        "Több, mint ötven éve viszont, hogy apátok egyáltalán az államban járt. A térkép pontatlan, a táj pedig teljesen megváltozott az idők folyamán."
       ],
       "choices": [
         {
-          "id": "s1_leave_for_outbuilding",
-          "text": "Elindultok a régi melléképület felé.",
-          "next": "s1_field_route",
-          "tags": [
-            "normal"
-          ]
-        }
-      ]
-    },
-    "s1_field_route": {
-      "title": "Az eltűnt ösvény",
-      "paragraphs": [
-        "[IDE ÍRD, HOGY REQUIEM TÉRKÉPE MÁR NEM ILLESZKEDIK A BIRTOKHOZ. A JELÖLT FÁK KIDŐLTEK, AZ UTAKAT BENŐTTE A KUKORICA, A FÖLD PEDIG ÉVTIZEDEK ALATT MEGVÁLTOZOTT.]",
-        "El kell döntened, hogyan keresitek meg az épületet."
-      ],
-      "choices": [
-        {
-          "id": "s1_follow_old_map",
-          "text": "Megpróbálod követni Requiem régi térképét.",
-          "next": "s1_follow_old_map_scene",
+          "id": "s1_route_map",
+          "text": "Alaposabban összeveted a térképet azzal, amit magatok körül láttok.",
+          "next": "s1_route_map_scene",
           "tags": [
             "normal"
           ],
           "effects": {
             "set": {
-              "fieldRoute": "map",
-              "foundWardMarker": true
+              "fieldRoute": "map"
             }
           }
         },
         {
-          "id": "s1_follow_death_magic",
-          "text": "Megkéred Destinationt, hogy kövesse a föld alatt húzódó halálmágiát.",
-          "next": "s1_follow_death_magic_scene",
+          "id": "s1_route_follow_des",
+          "text": "Destinationt követed. Logikusan ott lesz a lejáró, ahol több inferius őrködik.",
+          "next": "s1_route_des_scene",
           "tags": [
             "normal"
           ],
           "effects": {
             "set": {
-              "fieldRoute": "death-magic",
-              "sensedBuriedDead": true
+              "fieldRoute": "destination"
             }
           }
         },
         {
-          "id": "s1_clear_field_path",
-          "text": "Varázslattal utat tisztítasz a száraz kukoricában.",
-          "next": "s1_clear_field_path_scene",
+          "id": "s1_route_clear_magic",
+          "text": "Varázslattal megtisztítod magatok előtt az utat.",
+          "next": "s1_route_clear_scene",
           "tags": [
             "normal"
           ],
           "effects": {
             "set": {
-              "fieldRoute": "cleared-path",
-              "clearedFieldPath": true
+              "fieldRoute": "magic",
+              "extraInferiAwakened": true
             }
           }
-        }
-      ]
-    },
-    "s1_follow_old_map_scene": {
-      "title": "Régi tájékozódási pontok",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN PRÓBÁLJÁTOK ÖSSZEEGYEZTETNI A TÉRKÉPET A MEGVÁLTOZOTT TÁJJAL.]",
-        "[ÚTKÖZBEN MEGTALÁLSZ EGY FÉLIG ELDŐLT, CSONTTAL VAGY VASSAL JELÖLT RÉGI VÉDELMI OSZLOPOT. A JELE KÉSŐBB FELHASZNÁLHATÓ LESZ AZ INFERUSOK ELLEN.]"
-      ],
-      "choices": [
-        {
-          "id": "s1_continue_after_map",
-          "text": "A jel alapján folytatjátok a keresést.",
-          "next": "s1_outbuilding_found",
-          "tags": [
-            "normal"
-          ]
-        }
-      ]
-    },
-    "s1_follow_death_magic_scene": {
-      "title": "A föld alatti jelenlét",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN ÉRZÉKEL DESTINATION TÖBB, EGYMÁSTÓL ELKÜLÖNÜLŐ HALOTT JELENLÉTET A FÖLD ALATT.]",
-        "[MÉG NEM TUDJÁTOK, HOGY INFERUSOKRÓL VAN SZÓ. DESTINATION ELŐSZÖR RÉGI TEMETKEZÉSRE VAGY REQUIEM EGYIK KÍSÉRLETÉNEK MARADVÁNYAIRA GYANAKSZIK.]"
-      ],
-      "choices": [
-        {
-          "id": "s1_continue_after_sensing",
-          "text": "A legerősebb jelenlét felé indultok.",
-          "next": "s1_outbuilding_found",
-          "tags": [
-            "normal"
-          ]
-        }
-      ]
-    },
-    "s1_clear_field_path_scene": {
-      "title": "A megtisztított út",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN SÖPRÖD FÉLRE VARÁZSLATTAL A GAZT ÉS A KISZÁRADT KUKORICASZÁRAKAT. A MEGTISZTÍTOTT SÁV KÉSŐBB MENEKÜLÉSI ÚTVONALKÉNT HASZNÁLHATÓ.]",
-        "[A VARÁZSLAT KÖZBEN A FELSŐ TALAJRÉTEG MEGREPED, ÉS EGY FÖLD ALÁ TEMETETT VÉDELMI JEL EGYIK VONALA ÉSZREVÉTLENÜL MEGSZAKAD.]"
-      ],
-      "choices": [
-        {
-          "id": "s1_continue_after_clearing",
-          "text": "A szabaddá tett ösvényen haladtok tovább.",
-          "next": "s1_outbuilding_found",
-          "tags": [
-            "normal"
-          ]
-        }
-      ]
-    },
-    "s1_outbuilding_found": {
-      "title": "A melléképület",
-      "paragraphs": [
-        "[IDE ÍRD A FÉLIG BESZAKADT, GAZZAL ÉS KUKORICÁVAL BENŐTT MELLÉKÉPÜLET FELFEDEZÉSÉT.]",
-        "[AZ ÉPÜLET KÖRÜL FURCSÁN SZABÁLYOS MÉLYEDÉSEK HÚZÓDNAK. AZ AJTÓN VAGY A KÜSZÖBÖN REQUIEM RÉGI NEKROMÁGIKUS PECSÉTJE LÁTHATÓ, DE EGY RÉSZE HIÁNYZIK.]"
-      ],
-      "choices": [
-        {
-          "id": "s1_inspect_broken_seal",
-          "text": "Megvizsgálod a sérült pecsétet.",
-          "next": "s1_inspect_broken_seal_scene",
-          "tags": [
-            "normal"
-          ],
-          "effects": {
-            "set": {
-              "outbuildingSearch": "seal",
-              "inspectedBrokenSeal": true
-            }
-          }
-        },
-        {
-          "id": "s1_search_outbuilding",
-          "text": "Belépsz a melléképületbe, és megkeresed Requiem ládáját.",
-          "next": "s1_search_outbuilding_scene",
-          "tags": [
-            "normal"
-          ],
-          "effects": {
-            "set": {
-              "outbuildingSearch": "interior",
-              "recoveredSignalToken": true
-            }
-          }
-        },
-        {
-          "id": "s1_circle_outbuilding",
-          "text": "Előbb körüljárod az épületet.",
-          "next": "s1_circle_outbuilding_scene",
-          "tags": [
-            "normal"
-          ],
-          "effects": {
-            "set": {
-              "outbuildingSearch": "perimeter",
-              "countedBurialPits": true
-            }
-          }
-        }
-      ]
-    },
-    "s1_inspect_broken_seal_scene": {
-      "title": "A hiányzó vonal",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN ISMERED FEL, HOGY A PECSÉT NEM EGYSZERŰEN VÉDI AZ ÉPÜLETET: EGY NAGYOBB, FÖLD ALATT FUTÓ RENDSZER KÖZPONTI PARANCSJELE.]",
-        "[NEM ÉRTED MINDEN RÉSZLETÉT, DE MEGJEGYZED, HOL SZAKADT MEG A VONAL. EZ KÉSŐBB LEHETŐVÉ TESZI A VEZÉRLÉS RÉSZLEGES HELYREÁLLÍTÁSÁT.]"
-      ],
-      "choices": [
-        {
-          "id": "s1_continue_after_seal",
-          "text": "Destinationnek is megmutatod a sérülést.",
-          "next": "s1_omen_sequence",
-          "tags": [
-            "normal"
-          ]
-        }
-      ]
-    },
-    "s1_search_outbuilding_scene": {
-      "title": "A vasalt láda",
-      "paragraphs": [
-        "[IDE ÍRD A MELLÉKÉPÜLET BELSŐ TERÉT ÉS A REQUIEM ÁLTAL KERESETT LÁDA MEGTALÁLÁSÁT.]",
-        "[A LÁDÁBAN VAGY MELLETTE TALÁLTOK EGY RÉGI JELZŐESZKÖZT, AMELLYEL REQUIEMET AZONNAL ÉRTESÍTENI LEHET. EGY TÖREDÉKES FELJEGYZÉS UTALHAT ARRA IS, HOGY A TERÜLET VÉDELMÉT TÖBB ELÁSOTT TEST BIZTOSÍTOTTA.]"
-      ],
-      "choices": [
-        {
-          "id": "s1_continue_after_outbuilding_search",
-          "text": "A jelzőeszközt magadhoz veszed.",
-          "next": "s1_omen_sequence",
-          "tags": [
-            "normal"
-          ]
-        }
-      ]
-    },
-    "s1_circle_outbuilding_scene": {
-      "title": "A szabályos mélyedések",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN ISMERED FEL, HOGY A MÉLYEDÉSEK NEM VÉLETLENSZERŰEK. EGY VÉDELMI GYŰRŰT ALKOTNAK A MELLÉKÉPÜLET KÖRÜL.]",
-        "[MEGSZÁMOLOD ŐKET, ÉS ÉSZREVESZEL EGYETLEN ÜRES SÁVOT A FORMÁCIÓBAN. EZ KÉSŐBB MENEKÜLÉSI LEHETŐSÉGET AD.]"
-      ],
-      "choices": [
-        {
-          "id": "s1_continue_after_counting_pits",
-          "text": "Visszatérsz Destination mellé.",
-          "next": "s1_omen_sequence",
-          "tags": [
-            "normal"
-          ]
-        }
-      ]
-    },
-    "s1_omen_sequence": {
-      "title": "Három koppanás",
-      "paragraphs": [
-        "[IDE ÍRD A PONTOSAN MEGJEGYEZHETŐ ESEMÉNYSORT: A SZÉL ELÁLL; A KUKORICASZÁRAK MÉGIS ZÖRÖGNEK; DESTINATION LEHAJOL A PECSÉTHEZ; A FÖLD ALÓL HÁROM TOMPA KOPPANÁS HALLATSZIK; EGY VARJÚ FELRÖPPEN A TETŐRŐL.]",
-        "Destination azt mondja, hogy valami nincs rendben ezzel a hellyel."
-      ],
-      "choices": [
-        {
-          "id": "s1_face_first_movement",
-          "text": "Pálcát emelsz, és a megmozduló föld felé fordulsz.",
-          "next": "s1_first_inferus",
-          "tags": [
-            "normal"
-          ]
         },
         {
           "id": "s1_dejavu_refusal",
-          "text": "Elkapod Destination karját. Már tudod, melyik sír fog először megnyílni.",
-          "next": "s1_dejavu_scene",
+          "text": "Pontosan tudod, merre kell mennetek.",
+          "next": "s1_route_dejavu_scene",
           "tags": [
             "secret",
             "critical"
@@ -463,178 +277,101 @@
           },
           "effects": {
             "set": {
+              "fieldRoute": "deja-vu",
               "dejaVu": true
             }
           }
         }
       ]
     },
-    "s1_first_inferus": {
-      "title": "Az első őrszem",
+    "s1_route_map_scene": {
+      "title": "A térkép nyomán",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN TÖRI ÁT AZ ELSŐ INFERUS A KISZÁRADT FÖLDET. NE TÁMADJON AZONNAL: ELŐSZÖR FORDULJON REQUIEM JELÉNEK IRÁNYÁBA, ÉS HABOZZON.]",
-        "[LÁTSZÓDJON, HOGY EREDETILEG NEM LENNE SZABAD ELLENSÉGKÉNT FELISMERnie TITEKET, DE A SÉRÜLT PARANCSRENDSZER HIBÁSAN MŰKÖDIK.]"
+        "[IDE ÍRD, HOGYAN VETED ÖSSZE A TÉRKÉPEN SZEREPLŐ KUTAT, VILLÁM SÚJTOTTA FÁT ÉS SZÉLKEREKET A MEGVÁLTOZOTT TÁJJAL. A TÉRKÉP PONTATLAN, DE A HÁROM JELBŐL KÖVETKEZTETNI TUDSZ A LEJÁRÓ HELYÉRE.]",
+        "[MIKÖZBEN ÁTBÚJSZ EGY ROZSDÁS KERÍTÉSRÉSZ VAGY TÜSKÉS INDÁK KÖZÖTT, A MEDÁL LÁNCA FENNAKAD ÉS ELSZAKAD. NEM VESZED ÉSZRE, HOGY A CSALÁDI PECSÉT A GAZ KÖZÉ HULLIK.]"
       ],
       "choices": [
         {
-          "id": "s1_show_father_mark",
-          "text": "Felmutatod Requiem azonosítójelét.",
-          "next": "s1_show_father_mark_scene",
+          "id": "s1_route_map_continue",
+          "text": "A felismert tájékozódási pontok felé vezeted Destinationt.",
+          "next": "s1_site_found_map",
           "tags": [
             "normal"
           ],
           "effects": {
             "set": {
-              "firstInferusResponse": "father-mark",
-              "disabledFirstInferus": true
+              "protagonistMedalLost": true,
+              "medalLossVariant": "map-snag",
+              "protagonistProtected": false,
+              "destinationProtected": true
             }
           }
-        },
+        }
+      ]
+    },
+    "s1_route_des_scene": {
+      "title": "Destination nyomában",
+      "paragraphs": [
+        "[IDE ÍRD, HOGYAN FIGYELI DESTINATION A FÖLDET ÉS AZ INFERIUSOK ELHELYEZKEDÉSÉT. NEM MÁGIÁT HASZNÁL, HANEM EGYSZERŰEN FELISMERI, HOGY A SŰRŰBBEN ŐRZÖTT TERÜLET REJTHETI A LEJÁRÓT.]",
+        "[EGY LOMHÁN UTÁNATOK FORDULÓ INFERIUS MELLETT KELL ELMENNETEK. NEM TÁMAD, DE AMIKOR A GAZBAN KITÉRSZ ELŐLE, A MEDÁLOD LÁNCA EGY KISZÁRADT KUKORICASZÁRBA AKAD ÉS LECSÚSZIK RÓLAD. NEM VESZED ÉSZRE.]"
+      ],
+      "choices": [
         {
-          "id": "s1_let_destination_bind",
-          "text": "Hagyod, hogy Destination megpróbálja megfékezni.",
-          "next": "s1_destination_bind_scene",
+          "id": "s1_route_des_continue",
+          "text": "Rábízod magad Destination következtetésére.",
+          "next": "s1_site_found_des",
           "tags": [
             "normal"
           ],
           "effects": {
             "set": {
-              "firstInferusResponse": "destination-binding",
-              "destinationBoundInferus": true
-            }
-          }
-        },
-        {
-          "id": "s1_burn_first_inferus",
-          "text": "Tűzzel támadsz, mielőtt közelebb érne.",
-          "next": "s1_field_fire_scene",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical",
-          "effects": {
-            "set": {
-              "firstInferusResponse": "fire",
-              "fieldFireStarted": true
+              "protagonistMedalLost": true,
+              "medalLossVariant": "following-des",
+              "protagonistProtected": false,
+              "destinationProtected": true
             }
           }
         }
       ]
     },
-    "s1_show_father_mark_scene": {
-      "title": "A régi engedelmesség",
+    "s1_route_clear_scene": {
+      "title": "Letarolt út",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN ÁLL MEG VAGY ERESZKEDIK TÉRDRE AZ ELSŐ INFERUS REQUIEM JELE ELŐTT. A DÖNTÉS TÉNYLEG MŰKÖDIK.]",
-        "[EZUTÁN A JEL VAGY A FÖLD ALATTI PECSÉT MEGREPED, ÉS A KUKORICAFÖLD TÖBB PONTJÁRÓL ÚJABB MOZGÁS HALLATSZIK. AZ AZONOSÍTÓ NEM AZ EGÉSZ RENDSZERRE HAT.]"
+        "[IDE ÍRD, HOGYAN SÖPRÖD FÉLRE VARÁZSLATTAL A DERÉKIG ÉRŐ GAZT ÉS A SZÁRAZ KUKORICASZÁRAKAT. A LEJÁRÓHOZ VEZETŐ RÉGI ÖSVÉNY FOKOZATOSAN KIRAJZOLÓDIK.]",
+        "[A VARÁZSLAT MEGMOZGATJA A FELSŐ TALAJRÉTEGET ÉS TÖBB ELÁSOTT INFERIUST IS FELZAVAR. MÉG NEM TÁMADNAK, DE KÉSŐBB TÖBBEN INDULNAK MAJD UTÁNATOK.]",
+        "[A LÖKÉSHULLÁM VAGY EGY FELCSAPÓ NÖVÉNYSZÁR ELSZAKÍTJA A MEDÁL LÁNCÁT. A PECSÉT A FELFORGATOTT FÖLD ALÁ KERÜL, TE PEDIG NEM VESZED ÉSZRE.]"
       ],
       "choices": [
         {
-          "id": "s1_continue_after_father_mark",
-          "text": "A többi megmozduló sír felé fordulsz.",
-          "next": "s1_inferi_ring_wakes",
+          "id": "s1_route_clear_continue",
+          "text": "A feltárt ösvényen haladtok tovább.",
+          "next": "s1_site_found_clear",
           "tags": [
             "normal"
-          ]
-        }
-      ]
-    },
-    "s1_destination_bind_scene": {
-      "title": "A hálózat",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN FOGJA MEG DESTINATION AZ ELSŐ INFERUST MOZGATÓ HALÁLMÁGIÁT, ÉS HOGYAN KÉNYSZERÍTI MEGÁLLÁSRA.]",
-        "[A DÖNTÉS SIKERES, DE A KAPCSOLATON KERESZTÜL DESTINATION RÁJÖN, HOGY NEM EGYETLEN TESTET IRÁNYÍT A PECSÉT. AZ EGÉSZ FÖLD ALATTI VÉDELMI GYŰRŰ FELÉBRED.]"
-      ],
-      "choices": [
-        {
-          "id": "s1_continue_after_destination_binding",
-          "text": "Segítesz neki megtartani az első testet.",
-          "next": "s1_inferi_ring_wakes",
-          "tags": [
-            "normal"
-          ]
-        }
-      ]
-    },
-    "s1_field_fire_scene": {
-      "title": "Tűz a kukoricában",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN HŐKÖL VISSZA ÉS GYULLAD MEG AZ ELSŐ INFERUS. A TŰZ VALÓBAN HATÁSOS ELLENE.]",
-        "[A LÁNG AZONBAN ÁTUGRIK A KISZÁRADT KUKORICASZÁRAKRA. AZ EGYIK OLDALON TŰZFALAT KÉPEZ, MÁSHOL VISZONT MEGREPESZTI A FÖLDET, ÉS FELÉBRESZTI A TÖBBI ELÁSOTT TESTET.]"
-      ],
-      "choices": [
-        {
-          "id": "s1_continue_after_field_fire",
-          "text": "Hátrálsz a terjedő lángok elől.",
-          "next": "s1_inferi_ring_wakes",
-          "tags": [
-            "critical"
           ],
-          "effect": "critical"
-        }
-      ]
-    },
-    "s1_dejavu_scene": {
-      "title": "A már átélt pillanat",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN ISMERED FEL A HÁROM KOPPANÁST, A VARJÚT ÉS DESTINATION MONDATÁT. NEM PUSZTA ÉRZÉS: PONTOSAN TUDOD, HONNAN JÖN AZ ELSŐ TÁMADÁS.]",
-        "[A KARAKTER EMLÉKSZIK A KÉSŐBBI SZEMRE, ANNAK KÍNZÁSÁRA ÉS A SAJÁT HALÁLÁRA, DE NEM TUDJA, MENNYIT VÁLTOZTATHAT MEG.]"
-      ],
-      "choices": [
-        {
-          "id": "s1_dejavu_warn_brother",
-          "text": "Félrerántod Destinationt a megnyíló sír mellől.",
-          "next": "s1_dejavu_success_scene",
-          "tags": [
-            "critical"
-          ],
-          "effect": "glitch",
           "effects": {
             "set": {
-              "dejaVuAction": "warn-brother"
-            }
-          }
-        },
-        {
-          "id": "s1_dejavu_attack_first",
-          "text": "Még azelőtt támadsz, hogy az első inferus áttörné a földet.",
-          "next": "s1_dejavu_success_scene",
-          "tags": [
-            "critical"
-          ],
-          "effect": "glitch",
-          "effects": {
-            "set": {
-              "dejaVuAction": "attack-first"
-            }
-          }
-        },
-        {
-          "id": "s1_dejavu_run",
-          "text": "Azonnal az általad biztonságosnak hitt irányba indultok.",
-          "next": "s1_dejavu_success_scene",
-          "tags": [
-            "critical"
-          ],
-          "effect": "glitch",
-          "effects": {
-            "set": {
-              "dejaVuAction": "run"
+              "protagonistMedalLost": true,
+              "medalLossVariant": "clearing-spell",
+              "protagonistProtected": false,
+              "destinationProtected": true,
+              "extraInferiAwakened": true
             }
           }
         }
       ]
     },
-    "s1_dejavu_success_scene": {
-      "title": "A megváltoztatott kezdet",
+    "s1_route_dejavu_scene": {
+      "title": "Az ismerős út",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN SIKERÜL TÉNYLEG ELKERÜLNI AZ EMLÉKEKBEN ÉLŐ ELSŐ TÁMADÁST. DESTINATION NEM KERÜL UGYANABBA A HELYZETBE, ÉS AZ ELSŐ INFERUS NEM ÚGY TÖR ELŐ, AHOGYAN KORÁBBAN.]",
-        "[A BEAVATKOZÁS MIATT AZONBAN ÁTLÉPTEK A VÉDELMI GYŰRŰ EGY MÁSIK VONALÁN, VAGY A VISSZATARTOTT MÁGIA EGYSZERRE TÖBB HELYEN TÖRI ÁT A FÖLDET. A RÉSZLETEK MEGVÁLTOZTAK, DE A TÁMADÁS NEM MARAD EL.]"
+        "[IDE ÍRD, HOGYAN NEM KELL SEM A TÉRKÉPET, SEM AZ INFERIUSOKAT FIGYELNED. EMLÉKSZEL A KANYAROKRA, A KIDŐLT KERÍTÉSRE ÉS ARRA A HELYRE, AHOL A LEJÁRÓ REJTŐZIK, NOHA EBBEN AZ ÉLETBEN MÉG NEM JÁRTÁL OTT.]",
+        "[TUDATOSAN ELKERÜLÖD AZT A HELYET, AHOL EMLÉKEID SZERINT A SAJÁT MEDÁLOD ELVESZETT. EMIATT DESTINATION HALAD ÁT ELŐTTED A SZŰK RÉSEN, ÉS AZ Ő MEDÁLJÁNAK LÁNCA AKAD FENN. A PECSÉT A GAZBA HULLIK, DE EGYIKŐTÖK SEM VESZI ÉSZRE.]"
       ],
       "choices": [
         {
-          "id": "s1_continue_after_changed_beginning",
-          "text": "A megváltozott támadással nézel szembe.",
-          "next": "s1_inferi_ring_wakes",
+          "id": "s1_route_dejavu_continue",
+          "text": "Emlékeid alapján egyenesen a lejáróhoz vezeted.",
+          "next": "s1_site_found_dejavu",
           "tags": [
             "secret",
             "critical"
@@ -642,485 +379,167 @@
           "effect": "glitch",
           "effects": {
             "set": {
-              "firstAttackAvoided": true
+              "protagonistMedalLost": false,
+              "destinationMedalLost": true,
+              "protagonistProtected": true,
+              "destinationProtected": false,
+              "medalLossVariant": "destination-dejavu"
             }
           }
         }
       ]
     },
-    "s1_inferi_ring_wakes": {
-      "title": "A védelmi gyűrű",
+    "s1_site_found_map": {
+      "title": "A régi lejáró",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN REPED MEG A TALAJ A MELLÉKÉPÜLET KÖRÜL, ÉS HOGYAN EMELKEDIK KI TÖBB, KÜLÖNBÖZŐ ÁLLAPOTBAN LÉVŐ INFERUS.]",
-        "[VÁLJON VILÁGOSSÁ, HOGY REQUIEM TUDATOS FORMÁCIÓBAN ÁSTA EL ŐKET A MELLÉKÉPÜLET VÉDELMÉRE. A HIBÁS PARANCS MOST BEHATOLÓKÉNT AZONOSÍT TITEKET.]"
+        "[IDE ÍRD A MEGTALÁLT HELYSZÍNT: A GAZ ÉS A SZÁRAZ KUKORICA ALATT KIRAJZOLÓDIK A RÉGI MELLÉKÉPÜLET VAGY FÖLD ALATTI LEJÁRÓ. A HELYET REQUIEM INFERIUSAI ŐRZIK, DE A MEDÁLOK MIATT EGYELŐRE NEM TÁMADNAK.]",
+        "[A LEJÁRÓBAN KÉT OLYAN TÁRGYAT TALÁLTOK, AMELYEK KÖZÜL BÁRMELYIK FONTOS LEHET REQUIEMNEK. NINCS IDŐTÖK ÉS HELYETEK MINDKETTŐT MAGATOKKAL VINNI.]"
       ],
       "choices": [
         {
-          "id": "s1_protect_brother",
-          "text": "Destination elé állsz, és magadra vonod az inferusokat.",
-          "next": "s1_protect_brother_scene",
+          "id": "s1_take_sealed_case_map",
+          "text": "A fekete vasból készült, pecsétes kazettát viszed el.",
+          "next": "s1_return_omens_normal",
           "tags": [
             "normal"
           ],
           "effects": {
             "set": {
-              "protectedBrother": true,
-              "attackGoal": "protect-brother"
+              "retrievedItem": "sealed-case"
             }
           }
         },
         {
-          "id": "s1_restore_command",
-          "text": "A sérült parancsjelhez rohansz.",
-          "next": "s1_restore_command_scene",
+          "id": "s1_take_control_rod_map",
+          "text": "A csontfoglalatba zárt régi vezérlőpálcát veszed magadhoz.",
+          "next": "s1_return_omens_normal",
           "tags": [
             "normal"
           ],
           "effects": {
             "set": {
-              "attackGoal": "restore-command"
+              "retrievedItem": "control-rod"
             }
           }
-        },
+        }
+      ]
+    },
+    "s1_site_found_des": {
+      "title": "A régi lejáró",
+      "paragraphs": [
+        "[IDE ÍRD A MEGTALÁLT HELYSZÍNT: A GAZ ÉS A SZÁRAZ KUKORICA ALATT KIRAJZOLÓDIK A RÉGI MELLÉKÉPÜLET VAGY FÖLD ALATTI LEJÁRÓ. A HELYET REQUIEM INFERIUSAI ŐRZIK, DE A MEDÁLOK MIATT EGYELŐRE NEM TÁMADNAK.]",
+        "[A LEJÁRÓBAN KÉT OLYAN TÁRGYAT TALÁLTOK, AMELYEK KÖZÜL BÁRMELYIK FONTOS LEHET REQUIEMNEK. NINCS IDŐTÖK ÉS HELYETEK MINDKETTŐT MAGATOKKAL VINNI.]"
+      ],
+      "choices": [
         {
-          "id": "s1_retreat",
-          "text": "Megpróbálod elcsalni őket Destinationtől, és segítséget hívni.",
-          "next": "s1_retreat_scene",
+          "id": "s1_take_sealed_case_des",
+          "text": "A fekete vasból készült, pecsétes kazettát viszed el.",
+          "next": "s1_return_omens_normal",
           "tags": [
             "normal"
           ],
           "effects": {
             "set": {
-              "attackGoal": "lure-and-signal",
-              "luredInferiAway": true
+              "retrievedItem": "sealed-case"
             }
           }
         },
         {
-          "id": "s1_break_encirclement",
-          "text": "A korábban megszámolt sírok közti üres sáv felé törsz.",
-          "next": "s1_break_encirclement_scene",
-          "tags": [
-            "special"
-          ],
-          "effect": "glitch",
-          "unlock": {
-            "type": "flag",
-            "key": "countedBurialPits",
-            "operator": "eq",
-            "value": true
-          },
-          "effects": {
-            "set": {
-              "attackGoal": "break-encirclement",
-              "escapedEncirclement": true
-            }
-          }
-        },
-        {
-          "id": "s1_use_foreknowledge",
-          "text": "Nem oda mozdulsz, ahol az emlékeid szerint elveszítetted a szemed.",
-          "next": "s1_dejavu_final_scene",
-          "tags": [
-            "secret",
-            "critical"
-          ],
-          "effect": "glitch",
-          "unlock": {
-            "type": "flag",
-            "key": "dejaVu",
-            "operator": "eq",
-            "value": true
-          }
-        }
-      ]
-    },
-    "s1_protect_brother_scene": {
-      "title": "A testvéred előtt",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN RÁNTOD KI DESTINATIONT KÉT INFERUS KÖZÜL, MAJD MAGADRA VONOD A TÁMADÓK FIGYELMÉT.]",
-        "[A VÁLASZTÁSNAK LEGYEN LÁTHATÓ EREDMÉNYE: DESTINATION KISZABADUL, NEM SZERZI MEG AZT A SÉRÜLÉST, AMELY EGYÉBKÉNT ÉRTE VOLNA, ÉS IDŐT KAP A SAJÁT MÁGIÁJÁHOZ.]"
-      ],
-      "choices": [
-        {
-          "id": "s1_touch_inferus",
-          "text": "Megérinted az inferust mozgató halálmágiát, ahogyan Destination mutatta.",
-          "next": "s1_protect_magic_success",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical",
-          "unlock": {
-            "type": "flag",
-            "key": "sensedBuriedDead",
-            "operator": "eq",
-            "value": true
-          },
-          "effects": {
-            "set": {
-              "touchedInferusMagic": true,
-              "eyeLossVariant": "death-magic"
-            }
-          }
-        },
-        {
-          "id": "s1_burn_inferus",
-          "text": "Tűzzel tartod távol a hozzád legközelebb érő testet.",
-          "next": "s1_protect_fire_success",
+          "id": "s1_take_control_rod_des",
+          "text": "A csontfoglalatba zárt régi vezérlőpálcát veszed magadhoz.",
+          "next": "s1_return_omens_normal",
           "tags": [
             "normal"
           ],
           "effects": {
             "set": {
-              "eyeLossVariant": "claw"
+              "retrievedItem": "control-rod"
             }
           }
-        },
+        }
+      ]
+    },
+    "s1_site_found_clear": {
+      "title": "A régi lejáró",
+      "paragraphs": [
+        "[IDE ÍRD A MEGTALÁLT HELYSZÍNT: A GAZ ÉS A SZÁRAZ KUKORICA ALATT KIRAJZOLÓDIK A RÉGI MELLÉKÉPÜLET VAGY FÖLD ALATTI LEJÁRÓ. A HELYET REQUIEM INFERIUSAI ŐRZIK, DE A MEDÁLOK MIATT EGYELŐRE NEM TÁMADNAK.]",
+        "[A LEJÁRÓBAN KÉT OLYAN TÁRGYAT TALÁLTOK, AMELYEK KÖZÜL BÁRMELYIK FONTOS LEHET REQUIEMNEK. NINCS IDŐTÖK ÉS HELYETEK MINDKETTŐT MAGATOKKAL VINNI.]"
+      ],
+      "choices": [
         {
-          "id": "s1_shield_brother",
-          "text": "Minden erődet Destination védelmére fordítod.",
-          "next": "s1_protect_shield_success",
+          "id": "s1_take_sealed_case_clear",
+          "text": "A fekete vasból készült, pecsétes kazettát viszed el.",
+          "next": "s1_return_omens_clear",
           "tags": [
             "normal"
           ],
           "effects": {
             "set": {
-              "eyeLossVariant": "impact"
-            }
-          }
-        }
-      ]
-    },
-    "s1_protect_magic_success": {
-      "title": "Közös parancs",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN SIKERÜL DESTINATIONNEL EGYÜTT MEGÁLLÍTANOTOK VAGY VISSZAFORDÍTANOTOK EGY INFERUST. A TESTVÉRED BIZTONSÁGBA KERÜL.]",
-        "[A HALÁLMÁGIA KAPCSOLATA AZONBAN VISSZACSAP, ÉS A FŐSZEREPLŐ SZEMÉN KERESZTÜL TALÁL UTAT.]"
-      ],
-      "choices": [
-        {
-          "id": "s1_continue_after_protect_magic",
-          "text": "Megpróbálod elengedni a halott testet.",
-          "next": "s1_eye_loss_magic",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical"
-        }
-      ]
-    },
-    "s1_protect_fire_success": {
-      "title": "A lángok mögött",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN ALAKUL KI TŰZFAL KÖZTETEK ÉS AZ INFERUSOK EGY RÉSZE KÖZÖTT. DESTINATION KISZABADUL, A TERV TEHÁT SIKERÜL.]",
-        "[EGY FÖLD ALATT MARADT VAGY A LÁNGOKON ÁTTÖRŐ INFERUS AZONBAN VÁRATLAN IRÁNYBÓL ÉR EL.]"
-      ],
-      "choices": [
-        {
-          "id": "s1_continue_after_protect_fire",
-          "text": "Megfordulsz a mögötted hallatszó reccsenésre.",
-          "next": "s1_eye_loss_claw",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical"
-        }
-      ]
-    },
-    "s1_protect_shield_success": {
-      "title": "A megtartott pajzs",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN TARTJA KI A PAJZS AZ INFERUSOK ROHAMÁT, ÉS HOGYAN JUT DESTINATION BIZTONSÁGOSABB HELYRE.]",
-        "[A TERHELÉS VAGY EGY OLDALRÓL ÉRKEZŐ TEST BETASZÍT A MELLÉKÉPÜLET ROMJAI KÖZÉ.]"
-      ],
-      "choices": [
-        {
-          "id": "s1_continue_after_protect_shield",
-          "text": "A pajzs szétesik körülötted.",
-          "next": "s1_eye_loss_impact",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical"
-        }
-      ]
-    },
-    "s1_restore_command_scene": {
-      "title": "A megszakadt vezérlés",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN ÉRED EL A MELLÉKÉPÜLET KÜSZÖBÉN VAGY FALÁN LÉVŐ KÖZPONTI PARANCSJELET, MIKÖZBEN DESTINATION FELTARTJA AZ INFERUSOKAT.]",
-        "[A CÉL NEM AZ, HOGY MINDET ELPUSZTÍTSD, HANEM HOGY ÚJRA PARANCSOT ADJ A TELJES VÉDELMI GYŰRŰNEK.]"
-      ],
-      "choices": [
-        {
-          "id": "s1_repair_known_seal",
-          "text": "A korábban megvizsgált hiányzó vonalat állítod helyre.",
-          "next": "s1_command_magic_success",
-          "tags": [
-            "special",
-            "critical"
-          ],
-          "effect": "critical",
-          "unlock": {
-            "type": "flag",
-            "key": "inspectedBrokenSeal",
-            "operator": "eq",
-            "value": true
-          },
-          "effects": {
-            "set": {
-              "partiallyRestoredCommand": true,
-              "eyeLossVariant": "death-magic"
+              "retrievedItem": "sealed-case"
             }
           }
         },
         {
-          "id": "s1_force_father_mark",
-          "text": "Requiem azonosítójelét a sérült pecséthez nyomod.",
-          "next": "s1_command_impact_success",
+          "id": "s1_take_control_rod_clear",
+          "text": "A csontfoglalatba zárt régi vezérlőpálcát veszed magadhoz.",
+          "next": "s1_return_omens_clear",
           "tags": [
             "normal"
           ],
           "effects": {
             "set": {
-              "partiallyRestoredCommand": true,
-              "eyeLossVariant": "impact"
-            }
-          }
-        },
-        {
-          "id": "s1_copy_ward_marker",
-          "text": "A mezőn talált védelmi oszlop jelét másolod a pecsétre.",
-          "next": "s1_command_claw_success",
-          "tags": [
-            "special"
-          ],
-          "effect": "glitch",
-          "unlock": {
-            "type": "flag",
-            "key": "foundWardMarker",
-            "operator": "eq",
-            "value": true
-          },
-          "effects": {
-            "set": {
-              "partiallyRestoredCommand": true,
-              "eyeLossVariant": "claw"
+              "retrievedItem": "control-rod"
             }
           }
         }
       ]
     },
-    "s1_command_magic_success": {
-      "title": "A helyreállított vonal",
+    "s1_site_found_dejavu": {
+      "title": "A régi lejáró",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN ROGY TÉRDRE VAGY MEREVEDIK MEG AZ INFERUSOK TÖBBSÉGE, AMIKOR HELYREÁLLÍTOD A PARANCSJELET. A DÖNTÉS MAJDNEM TELJESEN MEGOLDJA A HELYZETET.]",
-        "[EGY VEZÉRLÉSBŐL KISZAKADT TEST TOVÁBB MOZOG, MIKÖZBEN A PECSÉTBE VEZETETT HALÁLMÁGIA VISSZAÁRAMLIK BELÉD.]"
+        "[IDE ÍRD A MEGTALÁLT HELYSZÍNT: A GAZ ÉS A SZÁRAZ KUKORICA ALATT KIRAJZOLÓDIK A RÉGI MELLÉKÉPÜLET VAGY FÖLD ALATTI LEJÁRÓ. A HELYET REQUIEM INFERIUSAI ŐRZIK, DE A MEDÁLOK MIATT EGYELŐRE NEM TÁMADNAK.]",
+        "[A LEJÁRÓBAN KÉT OLYAN TÁRGYAT TALÁLTOK, AMELYEK KÖZÜL BÁRMELYIK FONTOS LEHET REQUIEMNEK. NINCS IDŐTÖK ÉS HELYETEK MINDKETTŐT MAGATOKKAL VINNI.]"
       ],
       "choices": [
         {
-          "id": "s1_continue_after_command_magic",
-          "text": "Megpróbálod lezárni magad előtt a kapcsolatot.",
-          "next": "s1_eye_loss_magic",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical"
-        }
-      ]
-    },
-    "s1_command_impact_success": {
-      "title": "Az engedelmesség pillanata",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN ISMERI FEL A RENDSZER REQUIEM JELÉT, ÉS HOGYAN ÁLL MEG AZ INFERUSOK NAGY RÉSZE.]",
-        "[A TÚLTERHELT PECSÉT VAGY A MELLÉKÉPÜLET FALA EZUTÁN SZÉTROBBAN, ÉS A LÖKÉSHULLÁM A ROMOK KÖZÉ TASZÍT.]"
-      ],
-      "choices": [
-        {
-          "id": "s1_continue_after_command_impact",
-          "text": "A fal rád omló darabjai elől próbálsz kitérni.",
-          "next": "s1_eye_loss_impact",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical"
-        }
-      ]
-    },
-    "s1_command_claw_success": {
-      "title": "A kölcsönzött jel",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN FOGADJA EL A RENDSZER A RÉGI VÉDELMI OSZLOPRÓL LEMÁSOLT JELET, ÉS HOGYAN HÚZÓDIK VISSZA AZ INFERUSOK TÖBBSÉGE.]",
-        "[AZ EGYIK TESTET A HIÁNYOS JEL NEM ÉRI EL. AKKOR TÁMAD, AMIKOR MÁR AZT HISZED, HOGY SIKERÜLT LEÁLLÍTANI MINDENT.]"
-      ],
-      "choices": [
-        {
-          "id": "s1_continue_after_command_claw",
-          "text": "Az utolsó mozgó test felé fordulsz.",
-          "next": "s1_eye_loss_claw",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical"
-        }
-      ]
-    },
-    "s1_retreat_scene": {
-      "title": "A kukoricasorok között",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN VONOD MAGADRA AZ INFERUSOK FIGYELMÉT, HOGY DESTINATION ELTÁVOLODHASSON A MELLÉKÉPÜLETTŐL.]",
-        "[A TERV CÉLJA, HOGY IDŐT NYERJ, ÉRTESÍTSD REQUIEMET, ÉS OLYAN HELYRE VEZESD A TESTEKET, AHOL NEM KERÍTENEK BE.]"
-      ],
-      "choices": [
-        {
-          "id": "s1_signal_father",
-          "text": "Aktiválod a melléképületben talált jelzőeszközt.",
-          "next": "s1_retreat_signal_success",
-          "tags": [
-            "special"
-          ],
-          "effect": "glitch",
-          "unlock": {
-            "type": "flag",
-            "key": "recoveredSignalToken",
-            "operator": "eq",
-            "value": true
-          },
-          "effects": {
-            "set": {
-              "fatherWarnedEarly": true,
-              "eyeLossVariant": "claw"
-            }
-          }
-        },
-        {
-          "id": "s1_use_cleared_path",
-          "text": "A korábban megtisztított ösvényre csalod őket.",
-          "next": "s1_retreat_path_success",
-          "tags": [
-            "special"
-          ],
-          "effect": "glitch",
-          "unlock": {
-            "type": "flag",
-            "key": "clearedFieldPath",
-            "operator": "eq",
-            "value": true
-          },
-          "effects": {
-            "set": {
-              "usedClearedPath": true,
-              "eyeLossVariant": "impact"
-            }
-          }
-        },
-        {
-          "id": "s1_cast_signal_flare",
-          "text": "Erős jelzővarázslatot küldesz a birtok fölé.",
-          "next": "s1_retreat_flare_success",
+          "id": "s1_take_sealed_case_dejavu",
+          "text": "A fekete vasból készült, pecsétes kazettát viszed el.",
+          "next": "s1_dejavu_medal_transfer",
           "tags": [
             "normal"
           ],
           "effects": {
             "set": {
-              "fatherWarnedEarly": true,
-              "eyeLossVariant": "death-magic"
+              "retrievedItem": "sealed-case"
             }
           }
-        }
-      ]
-    },
-    "s1_retreat_signal_success": {
-      "title": "A válaszjel",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN AKTIVÁLÓDIK A RÉGI JELZŐESZKÖZ, ÉS HOGYAN ÉRKEZIK REQUIEMTŐL AZONNALI VÁLASZ. A JÁTÉKOS TUDJA, HOGY SEGÍTSÉG ÚTON VAN.]",
-        "[DESTINATION BIZTONSÁGOSABB HELYRE JUT, DE EGY INFERUS A KUKORICA ALATT KÖVETI A FŐSZEREPLŐT, ÉS KÖZVETLEN KÖZELRŐL TÖR ELŐ.]"
-      ],
-      "choices": [
+        },
         {
-          "id": "s1_continue_after_signal_success",
-          "text": "Kitartasz, amíg Requiem megérkezik.",
-          "next": "s1_eye_loss_claw",
+          "id": "s1_take_control_rod_dejavu",
+          "text": "A csontfoglalatba zárt régi vezérlőpálcát veszed magadhoz.",
+          "next": "s1_dejavu_medal_transfer",
           "tags": [
-            "critical"
+            "normal"
           ],
-          "effect": "critical"
-        }
-      ]
-    },
-    "s1_retreat_path_success": {
-      "title": "A nyitott út",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN TUDTOK GYORSABBAN MOZOGNI A KORÁBBAN MEGTISZTÍTOTT SÁVBAN. AZ INFERUSOK NEM TUDNAK TELJESEN BEKERÍTENI, DESTINATION PEDIG KIJUT A KÖZVETLEN VESZÉLYBŐL.]",
-        "[A MENEKÜLÉS KÖZBEN EGY TEST NEKILÖK EGY ROZSDÁS GÉPNEK, KERÍTÉSOSZLOPNAK VAGY A MELLÉKÉPÜLET KIÁLLÓ GERENDÁJÁNAK.]"
-      ],
-      "choices": [
-        {
-          "id": "s1_continue_after_path_success",
-          "text": "Megpróbálod visszanyerni az egyensúlyodat.",
-          "next": "s1_eye_loss_impact",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical"
-        }
-      ]
-    },
-    "s1_retreat_flare_success": {
-      "title": "Fény a birtok fölött",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN LÖVÖD FEL A JELZŐVARÁZSLATOT, ÉS HOGYAN VÁLASZOL RÁ A TÁVOLBÓL A BIRTOK MÁGIÁJA VAGY REQUIEM.]",
-        "[A NAGY EREJŰ VARÁZSLAT MAGÁRA VONJA AZ INFERUSOKAT, DE DESTINATIONTŐL ELTERELI ŐKET. AZ EGYIK TEST MÁGIÁJA A JELZŐVARÁZSLATTAL ÜTKÖZVE VISSZACSAP.]"
-      ],
-      "choices": [
-        {
-          "id": "s1_continue_after_flare_success",
-          "text": "A visszacsapó mágia ellen védekezel.",
-          "next": "s1_eye_loss_magic",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical"
-        }
-      ]
-    },
-    "s1_break_encirclement_scene": {
-      "title": "Az egyetlen üres sáv",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN HASZNÁLOD FEL A KORÁBBAN MEGFIGYELT FORMÁCIÓT, ÉS HOGYAN VEZETED DESTINATIONT AZON AZ EGYETLEN ÚTVONALON, AHOL NINCS ELÁSOTT INFERUS.]",
-        "[A DÖNTÉS MEGAKADÁLYOZZA A TELJES BEKERÍTÉST. DESTINATION KIJUT A GYŰRŰBŐL, ÉS AZ INFERUSOK TÖBBSÉGE LEMARAD.]",
-        "[EGY TESTET AZONBAN NEM A SZABÁLYOS FORMÁCIÓ RÉSZEKÉNT ÁSTAK EL, VAGY AZ ÉVTIZEDEK ALATT ELMOZDULT A HELYÉRŐL. AZ ÚTVONAL VÉGÉN EZ TÖR ELŐ.]"
-      ],
-      "choices": [
-        {
-          "id": "s1_continue_after_breaking_encirclement",
-          "text": "Destinationt továbbküldöd, és szembefordulsz az utolsó testtel.",
-          "next": "s1_eye_loss_claw",
-          "tags": [
-            "special",
-            "critical"
-          ],
-          "effect": "critical",
           "effects": {
             "set": {
-              "eyeLossVariant": "claw"
+              "retrievedItem": "control-rod"
             }
           }
         }
       ]
     },
-    "s1_dejavu_final_scene": {
-      "title": "A másik hely",
+    "s1_dejavu_medal_transfer": {
+      "title": "A hiányzó pecsét",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN HASZNÁLOD FEL A KORÁBBI HALÁLBÓL MEGMARADT EMLÉKEKET. KIKERÜLÖD AZT A TESTET, MOZGÁST VAGY ROMDARABOT, AMELY KORÁBBAN A SZEMEDBE KERÜLT.]",
-        "[A KARAKTER EGY PILLANATRA BIZTOS ABBAN, HOGY MEGTÖRTE AZ ESEMÉNYEKET. DESTINATIONT IS MÁS HELYRE JUTTATJA, ÍGY AZ EMLÉKEKBEN LÁTOTT TÁMADÁS VALÓBAN NEM TÖRTÉNIK MEG.]",
-        "[A MEGVÁLTOZTATOTT HELYZETBEN AZONBAN EGY MÁSIK INFERUS, A TŰZ, A PECSÉT VISSZACSAPÁSA VAGY REQUIEM ÉRKEZŐ VARÁZSLATÁNAK REPESZE ÚJ MÓDON OKOZZA A SÉRÜLÉST.]"
+        "[IDE ÍRD, HOGYAN INDULTOK VISSZA A KIVÁLASZTOTT TÁRGGYAL. AZ ELSŐ BALJÓS JELNÉL – PÉLDÁUL AMIKOR AZ INFERIUSOK EGYSZERRE FORDULNAK FELÉTEK – ÉSZREVESZED, HOGY DESTINATION NYAKÁBÓL HIÁNYZIK A MEDÁL.]",
+        "[EMLÉKSZEL RÁ, MI TÖRTÉNIK AZZAL, AKIT NEM VÉD REQUIEM PECSÉTJE. NINCS VALÓDI VÁLASZTÁSOD: DESTINATION AKÁR TILTAKOZIK, AKÁR NEM, NEKI ADOD A SAJÁTODAT.]"
       ],
       "choices": [
         {
-          "id": "s1_continue_after_foreknowledge",
-          "text": "A régi sérülést elkerülöd – de valami más ér el.",
-          "next": "s1_eye_loss_dejavu",
+          "id": "s1_force_medal_on_destination",
+          "text": "Destination nyakába akasztod a saját medálodat.",
+          "next": "s1_return_omens_dejavu",
           "tags": [
             "secret",
             "critical"
@@ -1128,24 +547,26 @@
           "effect": "glitch",
           "effects": {
             "set": {
-              "eyeLossVariant": "deja-vu"
+              "medalTransferredToDestination": true,
+              "protagonistProtected": false,
+              "destinationProtected": true
             }
           }
         }
       ]
     },
-    "s1_eye_loss_claw": {
-      "title": "A karom nyoma",
+    "s1_return_omens_normal": {
+      "title": "Visszaút",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN ÉRI EL A FŐSZEREPLŐT EGY UTOLSÓ, VEZÉRLÉSBŐL KISZAKADT VAGY VÁRATLAN HELYRŐL ELŐTÖRŐ INFERUS.]",
-        "[A KORÁBBI VÁLASZTÁS EREDMÉNYE MARADJON ÉRVÉNYBEN: DESTINATION MEGMENEKÜLT, AZ INFERUSOK EGY RÉSZE MEGÁLLT, VAGY REQUIEM MÁR ÚTON VAN. A SÉRÜLÉS CSAK EZUTÁN KÖVETKEZZEN BE.]",
-        "[AZ INFERUS KÖRME, TÖRÖTT CSONTJA VAGY KISZÁRADT UJJA RONCSOLJA SZÉT AZ EGYIK SZEMET.]"
+        "[IDE ÍRD, HOGYAN INDULTOK VISSZA A KIVÁLASZTOTT TÁRGGYAL. A SZÉL ELÁLL, A SZÁRAZ KUKORICA MÉGIS ZÖRÖG, A KÖZELI INFERIUSOK PEDIG EGYSZERRE FORDÍTJÁK FELÉTEK A FEJÜKET.]",
+        "[DESTINATION MELLETT ELMENNEK, MINTHA NEM IS LÁTNÁK. CSAK RÁD FIGYELNEK. EKKOR MÉG NEM ÉRTED, HOGY ÚTKÖZBEN ELVESZÍTETTED A MEDÁLODAT.]",
+        "[AZ ELSŐ INFERIUS EGYRE GYORSABBAN INDUL FELÉD, MAJD ÚJABBAK MOZGÁSA HALLATSZIK A GAZBAN.]"
       ],
       "choices": [
         {
-          "id": "s1_continue_after_claw",
-          "text": "A földre zuhansz.",
-          "next": "s1_requiem_arrives",
+          "id": "s1_begin_attack_normal",
+          "text": "Felkészülsz a támadásra.",
+          "next": "s1_attack_choice_normal",
           "tags": [
             "critical"
           ],
@@ -1153,18 +574,18 @@
         }
       ]
     },
-    "s1_eye_loss_magic": {
-      "title": "A halál érintése",
+    "s1_return_omens_clear": {
+      "title": "A felzavart föld",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN CSAP VISSZA AZ INFERUSOKAT MOZGATÓ HALÁLMÁGIA A FŐSZEREPLŐBE.]",
-        "[A KORÁBBI VÁLASZTÁS SIKERE MARADJON LÁTHATÓ: A PARANCS RÉSZBEN HELYREÁLLT, DESTINATION KIJUTOTT, VAGY REQUIEM MEGKAPTA A JELZÉST.]",
-        "[A MÁGIA A SZEMEN KERESZTÜL TALÁL UTAT, ÉS BELÜLRŐL PUSZTÍTJA EL VAGY HALASZTJA EL A SZÖVETET.]"
+        "[IDE ÍRD A VISSZAÚT BALJÓS JELEIT. A SZÉL ELÁLL, A KUKORICA MÉGIS ZÖRÖG, ÉS AZ INFERIUSOK EGYSZERRE FORDULNAK FELÉTEK.]",
+        "[DESTINATIONT A MEDÁLJA MIATT FIGYELMEN KÍVÜL HAGYJÁK. CSAK RÁD FIGYELNEK, MERT A SAJÁT PECSÉTEDET ELVESZÍTETTED.]",
+        "[A KORÁBBI ÚTTISZTÍTÓ VARÁZSLAT TÖBB ELÁSOTT TESTET IS FELZAVART. NEM EGY-KÉT INFERIUS INDUL UTÁNATOK, HANEM EGÉSZ SOROKBAN MOZOGNI KEZD A FÖLD ÉS A GAZ.]"
       ],
       "choices": [
         {
-          "id": "s1_continue_after_magic",
-          "text": "Elengeded a mágiát, de már késő.",
-          "next": "s1_requiem_arrives",
+          "id": "s1_begin_attack_clear",
+          "text": "Felkészülsz a támadásra.",
+          "next": "s1_attack_choice_normal",
           "tags": [
             "critical"
           ],
@@ -1172,37 +593,18 @@
         }
       ]
     },
-    "s1_eye_loss_impact": {
-      "title": "A zuhanás",
+    "s1_return_omens_dejavu": {
+      "title": "A megismétlődő jel",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN LÖKI AZ INFERUS, A LÖKÉSHULLÁM VAGY A SZÉTESŐ MELLÉKÉPÜLET A FŐSZEREPLŐT EGY KIÁLLÓ GERENDÁNAK, ROZSDÁS GÉPNEK VAGY KŐDARABNAK.]",
-        "[A KORÁBBI DÖNTÉS EREDMÉNYE MARADJON MEG: A PAJZS MEGVÉDTE DESTINATIONT, A MENEKÜLÉSI ÚT MŰKÖDÖTT, VAGY AZ INFERUSOK TÖBBSÉGE MEGÁLLT.]",
-        "[A BECSAPÓDÁS RONCSOLJA SZÉT AZ EGYIK SZEMET.]"
+        "[IDE ÍRD UGYANAZOKAT A BALJÓS JELEKET, AMELYEKRE A KARAKTER EMLÉKSZIK: A SZÉL ELÁLL, A KUKORICA ZÖRÖG, AZ INFERIUSOK FEJE EGYSZERRE FORDUL FELÉJÜK.]",
+        "[DESTINATIONT A TŐLED KAPOTT MEDÁL VÉDI. AZ INFERIUSOK MELLETTE ELMENNEK, ÉS CSAK RÁD FIGYELNEK.]",
+        "[TUDOD, MI KÖVETKEZIK. AZT IS TUDOD, HOGY LEGUTÓBB MIT PRÓBÁLTÁL. EZÚTTAL MÁSKÉPP AKAROD VÉGIGCSINÁLNI.]"
       ],
       "choices": [
         {
-          "id": "s1_continue_after_impact",
-          "text": "A látásod egyik fele sötétségbe borul.",
-          "next": "s1_requiem_arrives",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical"
-        }
-      ]
-    },
-    "s1_eye_loss_dejavu": {
-      "title": "A megváltozott végzet",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN KERÜLI EL A KARAKTER PONTOSAN AZT A SÉRÜLÉST, AMELYRE AZ ELŐZŐ ÉLETÉBŐL EMLÉKSZIK.]",
-        "[MUTASD MEG, HOGY A DÉJÀ VU VALÓBAN MEGVÁLTOZTATTA A JELENETET ÉS DESTINATION HELYZETÉT.]",
-        "[EZUTÁN EGY TELJESEN MÁSIK OK – EGY MÁSODIK INFERUS, EGY REPESZ, A TŰZ VAGY A VEZÉRLÉS VISSZACSAPÁSA – MÉGIS ELPUSZTÍTJA UGYANAZT A SZEMET.]"
-      ],
-      "choices": [
-        {
-          "id": "s1_continue_after_dejavu",
-          "text": "Nem így emlékeztél rá.",
-          "next": "s1_requiem_arrives",
+          "id": "s1_begin_attack_dejavu",
+          "text": "Megpróbálod megváltoztatni a történteket.",
+          "next": "s1_attack_choice_dejavu",
           "tags": [
             "secret",
             "critical"
@@ -1211,19 +613,289 @@
         }
       ]
     },
-    "s1_requiem_arrives": {
-      "title": "Az alkotó parancsa",
+    "s1_attack_choice_normal": {
+      "title": "A támadás",
       "paragraphs": [
-        "[IDE ÍRD REQUIEM MEGÉRKEZÉSÉT. A VÁLASZTÁSOKTÓL FÜGGŐEN KORÁBBAN VAGY KÉSŐBB ÉR ODA, DE A FŐSZEREPLŐ MÉG ÉRZÉKELJE A JELENLÉTÉT.]",
-        "[REQUIEM NE HOSSZÚ PÁRBAJT VÍVJON. EGY PARANCSSZÓVAL, KÉZMOZDULATTAL VAGY A VALÓDI IRÁNYÍTÓJEL AKTIVÁLÁSÁVAL AZONNAL TÉRDRE KÉNYSZERÍTI VAGY MOZGÁSKÉPTELENNÉ TESZI AZ ÖSSZES INFERUST.]",
-        "[UTALJ ARRA, HOGY ÉSZREVESZI A HIÁNYOS PARANCSJELET ÉS A FŐSZEREPLŐ KORÁBBI DÖNTÉSEINEK NYOMAIT: A TÜZET, A HELYREÁLLÍTOTT VONALAT, A MEGMENTETT DESTINATIONT VAGY A JELZŐESZKÖZT.]",
-        "„Ennek nem lett volna szabad megtörténnie.”"
+        "[IDE ÍRD, HOGYAN TÖRNEK ELŐ AZ INFERIUSOK A GAZBÓL ÉS A KISZÁRADT FÖLDBŐL. DESTINATIONT NEM TÁMADJÁK, MERT RAJTA MÉG OTT VAN REQUIEM PECSÉTJE.]",
+        "[A KARAKTER FELISMERI, HOGY DESTINATION KÖZELÉBEN MARADVA TALÁN KIJUTHAT, VAGY MEGPRÓBÁLHATJA A TESTEK ELLEN LEGHATÁSOSABB FEGYVERT: A TÜZET.]"
       ],
       "choices": [
         {
-          "id": "s1_after_requiem_command",
-          "text": "Megpróbálsz Requiemre fókuszálni.",
-          "next": "s1_eye_lost_checkpoint",
+          "id": "s1_try_escape",
+          "text": "Destination mellett maradva próbálsz kimenekülni a kukoricaföldről.",
+          "next": "s1_escape_attempt_normal",
+          "tags": [
+            "normal"
+          ],
+          "effects": {
+            "set": {
+              "attackStrategy": "escape"
+            }
+          }
+        },
+        {
+          "id": "s1_try_fire",
+          "text": "Tűzzel próbálod feltartóztatni az inferiusokat.",
+          "next": "s1_fire_attempt_normal",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical",
+          "effects": {
+            "set": {
+              "attackStrategy": "fire"
+            }
+          }
+        }
+      ]
+    },
+    "s1_attack_choice_dejavu": {
+      "title": "A támadás újra",
+      "paragraphs": [
+        "[IDE ÍRD A TÁMADÁS ISMERŐS KEZDETÉT. A KARAKTER ELŐRE LÁTJA AZ ELSŐ MOZGÁSOKAT, ÉS TUDJA, HOGY DESTINATION MEDÁLJA MIATT CSAK ŐT FOGJÁK ÜLDÖZNI.]",
+        "[UGYANAZT A KÉT LEHETŐSÉGET LÁTJA MAGA ELŐTT, DE EZÚTTAL TUDATOSAN MÁSHOGYAN PRÓBÁLJA VÉGREHAJTANI.]"
+      ],
+      "choices": [
+        {
+          "id": "s1_try_escape_dejavu",
+          "text": "Destination mellett maradsz, de most előre kerülöd az ismerős csapdákat.",
+          "next": "s1_escape_attempt_dejavu",
+          "tags": [
+            "secret"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "attackStrategy": "escape-dejavu"
+            }
+          }
+        },
+        {
+          "id": "s1_try_fire_dejavu",
+          "text": "Tüzet idézel, de nem ugyanúgy, ahogyan emlékeid szerint tetted.",
+          "next": "s1_fire_attempt_dejavu",
+          "tags": [
+            "secret",
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "attackStrategy": "fire-dejavu"
+            }
+          }
+        }
+      ]
+    },
+    "s1_escape_attempt_normal": {
+      "title": "Destination árnyékában",
+      "paragraphs": [
+        "[IDE ÍRD, HOGYAN PRÓBÁLSZ SZOROSAN DESTINATION MELLETT MARADNI. AZ INFERIUSOK KIKERÜLIK ŐT, DE A GAZ, A FÖLDBŐL ELŐTÖRŐ TESTEK ÉS A PÁNIK FOLYAMATOSAN SZÉTSZAKÍTJÁK A KÖZTETEK LÉVŐ TÁVOLSÁGOT.]"
+      ],
+      "choices": [
+        {
+          "id": "s1_escape_separate",
+          "text": "A gyorsabb kijutásért átvágsz egy másik kukoricasoron.",
+          "next": "s1_eye_escape_separated",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical",
+          "effects": {
+            "set": {
+              "escapeOutcome": "separated",
+              "eyeLossVariant": "escape-separated"
+            }
+          }
+        },
+        {
+          "id": "s1_escape_stay_close",
+          "text": "Nem engeded el Destination karját, bármi történjék.",
+          "next": "s1_eye_escape_together",
+          "tags": [
+            "normal"
+          ],
+          "effects": {
+            "set": {
+              "escapeOutcome": "together",
+              "eyeLossVariant": "escape-together"
+            }
+          }
+        }
+      ]
+    },
+    "s1_fire_attempt_normal": {
+      "title": "Tűz a száraz mezőn",
+      "paragraphs": [
+        "[IDE ÍRD, HOGYAN KAPNAK LÁNGRA AZ ELSŐ INFERIUSOK. A TŰZ HATÁSOS ELLENÜK, DE A SZÁRAZ KUKORICAFÖLDÖN MINDEN VARÁZSLAT VESZÉLYESEN GYORSAN TERJED.]"
+      ],
+      "choices": [
+        {
+          "id": "s1_fire_ring",
+          "text": "Szűk tűzgyűrűt emelsz magatok köré.",
+          "next": "s1_eye_fire_ring",
+          "tags": [
+            "normal"
+          ],
+          "effects": {
+            "set": {
+              "fireOutcome": "ring",
+              "eyeLossVariant": "fire-ring"
+            }
+          }
+        },
+        {
+          "id": "s1_fire_wild",
+          "text": "Szabadjára engeded a lángokat, hogy mindent elborítsanak.",
+          "next": "s1_eye_fire_chaos",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical",
+          "effects": {
+            "set": {
+              "fireOutcome": "wildfire",
+              "eyeLossVariant": "fire-chaos"
+            }
+          }
+        }
+      ]
+    },
+    "s1_escape_attempt_dejavu": {
+      "title": "Az ismert menekülés",
+      "paragraphs": [
+        "[IDE ÍRD, HOGYAN EMLÉKSZEL, HOL SZAKADTATOK EL VAGY HOL PRÓBÁLTÁL DESTINATION MELLETT MARADNI. MOST TUDATOSAN MÁS LÉPÉSEKET TESZEL, DE AZ INFERIUSOK MOZGÁSA IS MEGVÁLTOZIK A DÖNTÉSEID MIATT.]"
+      ],
+      "choices": [
+        {
+          "id": "s1_escape_separate_dejavu",
+          "text": "Másik sort választasz, hogy elkerüld a korábbi támadót.",
+          "next": "s1_eye_escape_separated_dejavu",
+          "tags": [
+            "secret",
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "escapeOutcome": "separated-dejavu",
+              "eyeLossVariant": "escape-separated-dejavu"
+            }
+          }
+        },
+        {
+          "id": "s1_escape_stay_close_dejavu",
+          "text": "Még szorosabban kapaszkodsz Destinationbe, mint az emlékeidben.",
+          "next": "s1_eye_escape_together_dejavu",
+          "tags": [
+            "secret"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "escapeOutcome": "together-dejavu",
+              "eyeLossVariant": "escape-together-dejavu"
+            }
+          }
+        }
+      ]
+    },
+    "s1_fire_attempt_dejavu": {
+      "title": "Az ismert lángok",
+      "paragraphs": [
+        "[IDE ÍRD, HOGYAN EMLÉKSZEL A TŰZ TERJEDÉSÉRE ÉS ARRA, HONNAN ÉRKEZETT A VÉGZETES TÁMADÁS. EZÚTTAL MÓDOSÍTOD A VARÁZSLAT ALAKJÁT VAGY IRÁNYÁT, DE A SZÁRAZ MEZŐ KISZÁMÍTHATATLANUL REAGÁL.]"
+      ],
+      "choices": [
+        {
+          "id": "s1_fire_ring_dejavu",
+          "text": "Más helyen és szűkebben zárod körbe magatokat tűzzel.",
+          "next": "s1_eye_fire_ring_dejavu",
+          "tags": [
+            "secret"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "fireOutcome": "ring-dejavu",
+              "eyeLossVariant": "fire-ring-dejavu"
+            }
+          }
+        },
+        {
+          "id": "s1_fire_wild_dejavu",
+          "text": "Más irányba tereled a lángokat, hogy elkerüld a korábbi káoszt.",
+          "next": "s1_eye_fire_chaos_dejavu",
+          "tags": [
+            "secret",
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "fireOutcome": "wildfire-dejavu",
+              "eyeLossVariant": "fire-chaos-dejavu"
+            }
+          }
+        }
+      ]
+    },
+    "s1_eye_escape_separated": {
+      "title": "Elszakadva",
+      "paragraphs": [
+        "[IDE ÍRD, HOGYAN SZAKADSZ EL DESTINATIONTŐL. AZ INFERIUSOK AZONNAL KÖRÜLVESZNEK, ÉS AZ EGYIKÜK FIZIKAI TÁMADÁSA VAGY A MENEKÜLÉS KÖZBENI ÜTKÖZÉS ELPUSZTÍTJA AZ EGYIK SZEMEDET.]",
+        "[DESTINATION VISSZAFORDUL ÉRTED, SAJÁT MEDÁLJA VÉDELMÉBEN ÁTVÁG KÖZTÜK, ÉS KIMENT A TESTEK KÖZÜL.]"
+      ],
+      "choices": [
+        {
+          "id": "s1_after_eye_escape_separated",
+          "text": "Destination hangját követed a sötétedő világban.",
+          "next": "s1_cut_to_chapter_two",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical",
+          "effects": {
+            "set": {
+              "savedByDestination": true
+            }
+          }
+        }
+      ]
+    },
+    "s1_eye_escape_together": {
+      "title": "Egymás mellett",
+      "paragraphs": [
+        "[IDE ÍRD, HOGYAN NEM SZAKADSZ EL DESTINATIONTŐL. AZ INFERIUSOK KIKERÜLIK ŐT, DE HOZZÁD ÍGY IS ELÉRNEK: EGY OLDALRÓL ÉRKEZŐ TEST, TÖRMELÉK VAGY KARMOLÁS ELPUSZTÍTJA AZ EGYIK SZEMEDET.]",
+        "[DESTINATION AZONNAL MAGÁHOZ HÚZ, ÉS A MEDÁLJA VÉDELMÉBEN KIVEZET A TÁMADÓK KÖZÜL.]"
+      ],
+      "choices": [
+        {
+          "id": "s1_after_eye_escape_together",
+          "text": "Rábízod magad Destinationre.",
+          "next": "s1_cut_to_chapter_two",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical",
+          "effects": {
+            "set": {
+              "savedByDestination": true
+            }
+          }
+        }
+      ]
+    },
+    "s1_eye_fire_ring": {
+      "title": "A körön belül",
+      "paragraphs": [
+        "[IDE ÍRD, HOGYAN ZÁRJA KI A TŰZGYŰRŰ AZ INFERIUSOK TÖBBSÉGÉT. A TERV MŰKÖDIK, DE EGY TEST MÁR A KÖRÖN BELÜL MARADT.]",
+        "[A FÜSTBEN ÉS A LÁNGOK FÉNYÉBEN KÉSŐN VESZED ÉSZRE. AZ INFERIUS TÁMADÁSA ELPUSZTÍTJA AZ EGYIK SZEMEDET.]"
+      ],
+      "choices": [
+        {
+          "id": "s1_after_eye_fire_ring",
+          "text": "A tűz és a fájdalom összemosódik.",
+          "next": "s1_cut_to_chapter_two",
           "tags": [
             "critical"
           ],
@@ -1231,21 +903,140 @@
         }
       ]
     },
-    "s1_eye_lost_checkpoint": {
-      "title": "Az első veszteség",
+    "s1_eye_fire_chaos": {
+      "title": "Mindent felemésztő lángok",
       "paragraphs": [
-        "[IDE ÍRD AZ ELSŐ SZAKASZ KÖZÖS LEZÁRÁSÁT. REQUIEM VAGY DESTINATION ÉR A FŐSZEREPLŐHÖZ, MIKÖZBEN A KUKORICAFÖLDÖN ELCSENDESÜLNEK AZ INFERUSOK.]",
-        "[A KORÁBBI DÖNTÉSEK KÖVETKEZMÉNYEI MARADJANAK ÉRVÉNYESEK, DE BÁRMELYIK ÚTVONALON A FŐSZEREPLŐ ELVESZÍTETTE AZ EGYIK SZEMÉT.]",
-        "[A FÁJDALOM, A VÉRZÉS ÉS A SOKK MIATT ELVESZÍTI AZ ESZMÉLETÉT. INNEN MINDEN ÁG A MÁSODIK SZAKASZRA VEZET.]"
+        "[IDE ÍRD, HOGYAN TERJED EL A TŰZ A TELJES KUKORICAFÖLDÖN. INFERIUSOK, GAZ, A RÉGI MELLÉKÉPÜLET ÉS REQUIEM ELHANYAGOLT FÖLDJE EGYARÁNT LÁNGRA KAP.]",
+        "[A KÁOSZBAN EGY INFERIUS, EGY FELCSAPÓ TÖRMELÉK VAGY A TŰZVARÁZSLAT VISSZACSAPÁSA ELPUSZTÍTJA AZ EGYIK SZEMEDET.]"
       ],
       "choices": [
         {
-          "id": "s1_enter_intermezzo",
-          "text": "Napokkal később magadhoz térsz.",
+          "id": "s1_after_eye_fire_chaos",
+          "text": "A lángoló mező látványa féloldalasan kihuny.",
+          "next": "s1_cut_to_chapter_two",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical"
+        }
+      ]
+    },
+    "s1_eye_escape_separated_dejavu": {
+      "title": "Másik sor, ugyanaz a vég",
+      "paragraphs": [
+        "[IDE ÍRD, HOGYAN KERÜLÖD EL AZT A HELYET, AHOL EMLÉKEID SZERINT ELSZAKADTÁL DESTINATIONTŐL. EGY MÁSIK KUKORICASORT VÁLASZTASZ, DE EZZEL EGY MÁSIK INFERIUS ÚTJÁBA KERÜLSZ.]",
+        "[A SZEMED MÁS MÓDON, DE UGYANÚGY ELVÉSZ. DESTINATION VISSZAFORDUL ÉRTED ÉS KIMENT.]",
+        "[A FÁJDALOM KÖZBEN MEGÉRTED: NEM UGYANAZOK A MOZGÁSOK ISMÉTLŐDNEK, HANEM UGYANAZ A VÉGPONT TALÁL MAGÁNAK ÚJ UTAT. EZÚTTAL NEM KÜZDESZ EZ ELLEN TOVÁBB.]"
+      ],
+      "choices": [
+        {
+          "id": "s1_after_eye_escape_separated_dejavu",
+          "text": "Elfogadod, hogy ezt nem tudtad elkerülni.",
+          "next": "s1_cut_to_chapter_two",
+          "tags": [
+            "secret",
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "savedByDestination": true,
+              "acceptedEyeLoss": true
+            }
+          }
+        }
+      ]
+    },
+    "s1_eye_escape_together_dejavu": {
+      "title": "Szorosabb kapaszkodás",
+      "paragraphs": [
+        "[IDE ÍRD, HOGYAN MARADSZ DESTINATION MELLETT OTT IS, AHOL EMLÉKEID SZERINT KORÁBBAN ELSZAKADTATOK. AZ EREDETI TÁMADÁST VALÓBAN ELKERÜLÖD.]",
+        "[EGY MÁSIK TEST VAGY TÖRMELÉK AZONBAN OLDALRÓL ÉR, ÉS MÁS MÓDON PUSZTÍTJA EL UGYANAZT A SZEMEDET. DESTINATION AZONNAL KIMENT.]",
+        "[RÁJÖSSZ, HOGY A DÖNTÉSED NEM VOLT HIÁBAVALÓ: MÁS TÖRTÉNT, DESTINATION MÁSHOL ÁLL, ÉS MÉGIS IDE JUTOTTÁL. ELFOGADOD A VESZTESÉGET.]"
+      ],
+      "choices": [
+        {
+          "id": "s1_after_eye_escape_together_dejavu",
+          "text": "Nem próbálod többé visszaforgatni ezt a pillanatot.",
+          "next": "s1_cut_to_chapter_two",
+          "tags": [
+            "secret",
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "savedByDestination": true,
+              "acceptedEyeLoss": true
+            }
+          }
+        }
+      ]
+    },
+    "s1_eye_fire_ring_dejavu": {
+      "title": "Átrajzolt kör",
+      "paragraphs": [
+        "[IDE ÍRD, HOGYAN MÁSHOL ÉS MÁSKÉPP HÚZOD MEG A TŰZGYŰRŰT, HOGY AZ EMLÉKEIDBEN BENT MARADT INFERIUS EZÚTTAL KÍVÜL REKEDJEN. A TERV SIKERÜL.]",
+        "[EGY MÁSIK, A FÖLD ALATT REJTŐZŐ TEST AZONBAN A KÖR KÖZEPÉN TÖR ELŐ, ÉS ELPUSZTÍTJA AZ EGYIK SZEMEDET.]",
+        "[MÁR NEM LEP MEG. MEGVÁLTOZTATTAD AZ OKOT, DE NEM A VÉGET. ELFOGADOD, AMI KÖVETKEZIK.]"
+      ],
+      "choices": [
+        {
+          "id": "s1_after_eye_fire_ring_dejavu",
+          "text": "Leengeded a pálcádat.",
+          "next": "s1_cut_to_chapter_two",
+          "tags": [
+            "secret",
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "acceptedEyeLoss": true
+            }
+          }
+        }
+      ]
+    },
+    "s1_eye_fire_chaos_dejavu": {
+      "title": "Másként terjedő tűz",
+      "paragraphs": [
+        "[IDE ÍRD, HOGYAN TERELED MÁSFELÉ A LÁNGOKAT, HOGY ELKERÜLD AZ EMLÉKEIDBEN LÁTOTT TŰZVIHART. A KORÁBBI ÚTVONAL VALÓBAN NEM ÉG LE.]",
+        "[A SZÉL VAGY A FELZAVART INFERIUSOK MOZGÁSA MIATT A TŰZ ÚJ IRÁNYBÓL CSAP VISSZA. A KÁOSZ MÁSKÉNT ALAKUL, DE AZ EGYIK SZEMED UGYANÚGY ELVÉSZ.]",
+        "[NEM ÉRZED TÖBBÉ ÚGY, HOGY ROSSZUL VÁLASZTOTTÁL. A VÉGZET NEM A DÖNTÉSED BÜNTETÉSE VOLT. ELFOGADOD.]"
+      ],
+      "choices": [
+        {
+          "id": "s1_after_eye_fire_chaos_dejavu",
+          "text": "Hagyod, hogy a jelenet véget érjen.",
+          "next": "s1_cut_to_chapter_two",
+          "tags": [
+            "secret",
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "acceptedEyeLoss": true
+            }
+          }
+        }
+      ]
+    },
+    "s1_cut_to_chapter_two": {
+      "title": "CUT",
+      "paragraphs": [
+        "[A KÉP A SZEMSÉRÜLÉS, A FÁJDALOM ÉS A KÁOSZ PILLANATÁBAN MEGSZAKAD. NE ÍRD LE MÉG A HAZAJUTÁST VAGY A GYÓGYÍTÁST; A KÖVETKEZŐ JELENET MÁR A MÁSODIK FEJEZETBEN KEZDŐDIK.]"
+      ],
+      "choices": [
+        {
+          "id": "s1_cut_enter_chapter_two",
+          "text": "II. fejezet",
           "next": "s2_wake_after_attack",
           "tags": [
-            "normal"
-          ]
+            "critical"
+          ],
+          "effect": "critical"
         }
       ]
     },
@@ -1295,11 +1086,11 @@
             "all": [
               {
                 "type": "runChoice",
-                "id": "s1_protect_brother"
+                "id": "s1_route_follow_des"
               },
               {
                 "type": "runChoice",
-                "id": "s1_touch_inferus"
+                "id": "s1_escape_stay_close"
               }
             ]
           },
