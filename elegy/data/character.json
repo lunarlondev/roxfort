@@ -54,11 +54,11 @@
   ],
   "family": {
     "members": [
-      { "role": "Apa", "name": "Apa neve", "age": "xx éves", "status": "státusz", "description": "Az apa leírása." },
-      { "role": "Anya", "name": "Anya neve", "age": "xx éves", "status": "státusz", "description": "Az anya leírása." },
-      { "role": "Testvér", "name": "Első testvér neve", "age": "xx éves", "status": "státusz", "description": "Az első testvér leírása." },
-      { "role": "Testvér", "name": "Második testvér neve", "age": "xx éves", "status": "státusz", "description": "A második testvér leírása." },
-      { "role": "Házimanó", "name": "Házimanó neve", "description": "A házimanó leírása." }
+      { "role": "Apa", "name": "Requiem Dreadmoor", "age": "90 éves", "status": "aranyvérű", "description": "Az apa leírása." },
+      { "role": "Anya", "name": "Anya neve", "age": "xx éves", "status": "aranyvérű", "description": "Az anya leírása." },
+      { "role": "Testvér", "name": "Első testvér neve", "age": "xx éves", "status": "aranyvérű", "description": "Az első testvér leírása." },
+      { "role": "Testvér", "name": "Második testvér neve", "age": "xx éves", "status": "kvibli", "description": "A második testvér leírása." },
+      { "role": "Házimanó", "name": "Rigor Mortis", "description": "A házimanó leírása." }
     ],
     "history": [
       "A család történetének első hosszabb bekezdése. A család eredete, hagyományai és társadalmi helyzete kerülhet ide.",
@@ -68,11 +68,11 @@
   },
   "appearance": {
     "details": [
-      { "label": "Magasság", "value": "xxx cm" },
-      { "label": "Testalkat", "value": "xxx" },
-      { "label": "Szemszín", "value": "xxx" },
-      { "label": "Hajszín", "value": "xxx" },
-      { "label": "Avialany", "value": "xxx" }
+      { "label": "Magasság", "value": "159 cm" },
+      { "label": "Testalkat", "value": "kifejezetten vékony, aprócska" },
+      { "label": "Szemszín", "value": "heterokróm; jobb szeme kék, bal szeme barnás-vöröses" },
+      { "label": "Hajszín", "value": "piszkosszőke" },
+      { "label": "Avialany", "value": "Nastya Kreslina" }
     ],
     "description": [
       "A karakter megjelenésének első bekezdése. Arcvonások, testtartás, mozgás és első benyomás.",
@@ -103,7 +103,8 @@
   },
   "additional": [
     { "title": "Kiemelendő részlet", "text": "Egyéb fontos információ a karakterről." },
-    { "title": "Megjegyzés", "text": "További listaszerű elem." }
+    { "title": "Megjegyzés", "text": "Destinationnel gyakran jelnyelven kommunikálnak." },
+	{ "title": "Megjegyzés", "text": "Hegedűn játszik és kifejezetten szép, természetes énekhangja van (amit volt is alkalma képezni)." }
   ],
   "sources": [
     { "label": "Első forrás", "url": "https://example.com", "note": "Rövid megjegyzés a forráshoz." },
