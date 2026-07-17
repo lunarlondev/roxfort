@@ -58,12 +58,13 @@
     "s1_radio_classical_reaction": {
       "title": "Komolyzene",
       "paragraphs": [
-        "[IDE ÍRD A RÖVID REAKCIÓT ARRA, HOGY KOMOLYZENE SZÓLAL MEG A RÁDIÓBAN.]"
+        "Nem ismered a dalt, ami a rádióból szól. Talán pár olasz szót megértesz, de nem eleget –még sincs szükséged rá, hogy összeálljon a története. A dal fájdalmát így is érzed az énekesnő szopránján át. ",
+		"Rámosolyogsz fivéredre, amikor ő is helyet foglal a konyhában, nyomában a nyamvadt és rég döglött házimanótokkal, aki a róla lehulló földet és port takarítja."
       ],
       "choices": [
         {
           "id": "s1_after_radio_classical",
-          "text": "A reggeliddel kezdesz foglalkozni.",
+          "text": "Elkészíted a reggelidet",
           "next": "s1_first_breakfast",
           "tags": [
             "normal"
