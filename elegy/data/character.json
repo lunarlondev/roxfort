@@ -12,10 +12,11 @@
     { "label": "Jelszó", "value": "l'esprit de l'escalier." },
     { "label": "Nem", "value": "nő" },
     { "label": "Születési hely", "value": "Amman, Jordánia" },
-    { "label": "Születési idő", "value": "xxxx. xx. xx." },
-    { "label": "Kor", "value": "xx" },
+    { "label": "Születési idő", "value": "1987. 10. 31." },
+    { "label": "Kor", "value": "18" },
     { "label": "Vér", "value": "arany" },
-    { "label": "Iskola", "value": "iskola neve" }
+    { "label": "Iskola", "value": "iskola neve" },
+	{ "label": "Szervezet", "value": "Noctua Tenebrosa" }
   ],
   "story": {
     "dataSource": "data/story.json",
@@ -24,7 +25,7 @@
   },
   "past": {
     "timeline": [
-      { "date": "XXXX", "text": "Esemény" },
+      { "date": "1987", "text": "Elegy Dreadmoor születése. Távol Amerikától, Jordániában lát napvilágot, minek után a Dreadmoorok Alsóházát a Felsőház kiutasította az Egyesült Államokból." },
       { "date": "XXXX", "text": "Esemény" },
       { "date": "XXXX", "text": "Esemény" }
     ]
