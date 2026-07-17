@@ -24,9 +24,9 @@
   },
   "past": {
     "timeline": [
-      { "date": "XXXX", "text": "Az első fontos mérföldkő rövid leírása." },
-      { "date": "XXXX", "text": "Egy későbbi esemény, amely megváltoztatta a karakter életét." },
-      { "date": "XXXX", "text": "A jelenhez vezető legfontosabb történés." }
+      { "date": "XXXX", "text": "Esemény" },
+      { "date": "XXXX", "text": "Esemény" },
+      { "date": "XXXX", "text": "Esemény" }
     ]
   },
   "personality": {
@@ -91,9 +91,9 @@
       { "label": "Avialany", "value": "Nastya Kreslina" }
     ],
     "description": [
-      "A karakter megjelenésének első bekezdése. Arcvonások, testtartás, mozgás és első benyomás.",
-      "A második bekezdés a ruházatot, jellegzetes részleteket, hegeket, ékszereket vagy más ismertetőjegyeket írhatja le.",
-      "A harmadik bekezdésben a hang, az illat vagy a különleges kisugárzás is megjelenhet."
+      "Megjelenés leírása 1",
+      "Megjelenés leírása 2",
+      "Megjelenés leírása 3"
     ]
   },
   "knowledge": {
@@ -139,8 +139,8 @@
 	],
     "wizardKnowledge": [
       "A karakter valós varázslói ismereteinek első bekezdése.",
-      "A második bekezdésben szerepelhetnek az erősségei, gyengeségei és tanulmányi szokásai.",
-      "A harmadik bekezdés tisztázhatja, hogy a nekromágiáról szóló általános leírásból mire képes ténylegesen."
+      "Második",
+      "Harmadik."
     ],
     "education": [
       { "label": "Iskola", "value": "magántanuló" },
