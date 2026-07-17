@@ -1,15 +1,111 @@
 {
   "meta": {
     "id": "necromancer-eye-story",
-    "version": 1,
+    "version": 2,
     "title": "A másik szem",
-    "start": "s1_attack_start"
+    "start": "s1_return_to_estate"
   },
   "nodes": {
-    "s1_attack_start": {
-      "title": "I. Fejezet: Az Inferus",
+    "s1_return_to_estate": {
+      "title": "I. Fejezet: Visszatérés",
       "paragraphs": [
-        "[IDE ÍRD AZ INFERUSTÁMADÁS NYITÁNYÁT.]",
+        "[IDE ÍRD, AHOGYAN A CSALÁD HOSSZÚ UTAZÁS UTÁN VISSZATÉR AZ EGYESÜLT ÁLLAMOKBAN ÁLLÓ BIRTOKRA. ÉVTIZEDEK ÓTA EGYIKÜK SEM JÁRT ITT.]",
+        "Az autóban még hétköznapinak tűnik minden. A birtok történetéről és az apa egykori kísérleteiről egyelőre csak elejtett félmondatok hangzanak el."
+      ],
+      "choices": [
+        {
+          "id": "s1_radio_classical",
+          "text": "Megkeresel egy komolyzenei adót.",
+          "next": "s1_first_breakfast",
+          "tags": [
+            "normal"
+          ],
+          "effects": {
+            "set": {
+              "radioChoice": "classical"
+            }
+          }
+        },
+        {
+          "id": "s1_radio_local",
+          "text": "A környék helyi rádióját hallgatod.",
+          "next": "s1_first_breakfast",
+          "tags": [
+            "normal"
+          ],
+          "effects": {
+            "set": {
+              "radioChoice": "local"
+            }
+          }
+        },
+        {
+          "id": "s1_radio_silence",
+          "text": "Kikapcsolod a rádiót, és inkább az elsuhanó tájat figyeled.",
+          "next": "s1_first_breakfast",
+          "tags": [
+            "normal"
+          ],
+          "effects": {
+            "set": {
+              "radioChoice": "silence"
+            }
+          }
+        }
+      ]
+    },
+    "s1_first_breakfast": {
+      "title": "Az első reggel",
+      "paragraphs": [
+        "[IDE ÍRD A BIRTOKON TÖLTÖTT ELSŐ ÉJSZAKA ÉS AZ ELSŐ REGGEL HANGULATÁT. A HÁZ RÉGI, POROS ÉS IDEGENÜL ISMERŐS.]",
+        "Az apa nem beszél arról, hogy a birtok lezárt részeiben még mindig ott vannak az évtizedekkel korábban hátrahagyott inferusai."
+      ],
+      "choices": [
+        {
+          "id": "s1_breakfast_sweet",
+          "text": "Valami édeset keresel reggelire.",
+          "next": "s1_attack_start",
+          "tags": [
+            "normal"
+          ],
+          "effects": {
+            "set": {
+              "breakfastChoice": "sweet"
+            }
+          }
+        },
+        {
+          "id": "s1_breakfast_savory",
+          "text": "Tojást és pirítóst készítesz.",
+          "next": "s1_attack_start",
+          "tags": [
+            "normal"
+          ],
+          "effects": {
+            "set": {
+              "breakfastChoice": "savory"
+            }
+          }
+        },
+        {
+          "id": "s1_breakfast_skip",
+          "text": "Nem vagy éhes. Inkább körülnézel a házban.",
+          "next": "s1_attack_start",
+          "tags": [
+            "normal"
+          ],
+          "effects": {
+            "set": {
+              "breakfastChoice": "skipped"
+            }
+          }
+        }
+      ]
+    },
+    "s1_attack_start": {
+      "title": "Az elszabadult inferus",
+      "paragraphs": [
+        "[IDE ÍRD, HOGYAN DERÜL KI, HOGY AZ APA ÉVTIZEDEKKEL KORÁBBAN INFERUSOKAT HAGYOTT A BIRTOK EGY LEZÁRT RÉSZÉBEN. AZ EGYIKÜK KISZABADUL, ÉS A CSALÁDRA TÁMAD.]",
         "A karakter még mindkét szemével lát. A jelenet végkimenetele minden útvonalon ugyanaz lesz: elveszíti az egyik szemét."
       ],
       "choices": [
