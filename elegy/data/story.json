@@ -287,8 +287,11 @@
     "s1_route_map_scene": {
       "title": "A térkép nyomán",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN VETED ÖSSZE A TÉRKÉPEN SZEREPLŐ KUTAT, VILLÁM SÚJTOTTA FÁT ÉS SZÉLKEREKET A MEGVÁLTOZOTT TÁJJAL. A TÉRKÉP PONTATLAN, DE A HÁROM JELBŐL KÖVETKEZTETNI TUDSZ A LEJÁRÓ HELYÉRE.]",
-        "[MIKÖZBEN ÁTBÚJSZ EGY ROZSDÁS KERÍTÉSRÉSZ VAGY TÜSKÉS INDÁK KÖZÖTT, A MEDÁL LÁNCA FENNAKAD ÉS ELSZAKAD. NEM VESZED ÉSZRE, HOGY A CSALÁDI PECSÉT A GAZ KÖZÉ HULLIK.]"
+        "Talán kicsit időigényesebb a megoldás, de nincs okotok sietni.",
+		"Elsőnek a kutat találod meg. Épp szerencséd volt, amikor felnéztél a térképből és megláttad a távoli objektumot",
+		"Ahogyan odaértek, tájoló bűbájjal északnak fordulsz, és a térkép alapján keresed a fát apátok térképe és orális emlékezete alapján. Korhadt már a fa törzse, de épp mellette új élet burjánzik a vad vidéken.",
+		"A szélkeréknek sajnos nyoma sincs. Már rég az enyészeté lehet, de mindez már nem számít. Épp elég támpontot szereztél hozzá, hogy megtaláljátok a csapóajtót, amit apátok keresett.",
+		"Persze okosabb lett volna, ha a kútnál maradsz, vagy ott hazafordulsz. Észre se veszed, hogy ahogy a korhadt fát közelíted meg, miként akad bele a nyakláncod egy tüskés indába. Hangját se hallod, ahogy a lánc elszakad és a földre hullik."
       ],
       "choices": [
         {
