@@ -1,12 +1,12 @@
 {
   "header": {
-    "name": "KARAKTER NEVE",
+    "name": "ELEGY DREADMOOR",
     "images": [
       { "src": "images/aes-1.jpg", "alt": "Első hangulatkép" },
       { "src": "images/aes-2.jpg", "alt": "Második hangulatkép" },
       { "src": "images/aes-3.jpg", "alt": "Harmadik hangulatkép" }
     ],
-    "motto": "A halál nem ajtó, csak egy függöny, amelyet néha félre lehet húzni."
+    "motto": "...and you'll never be pure again."
   },
   "basics": [
     { "label": "Jelszó", "value": "jelszó" },
