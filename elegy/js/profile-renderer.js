@@ -171,12 +171,17 @@ export class ProfileRenderer {
     `knowledge-spell__status knowledge-spell__status--${statusData.className}`
   );
 
-  statusIcon.dataset.tooltip = block.meta || statusData.label;
   statusIcon.setAttribute(
     "aria-label",
     `${statusData.label}: ${block.meta || ""}`
   );
   statusIcon.tabIndex = 0;
+
+bindSpellTooltip(
+  this.root,
+  statusIcon,
+  block.meta || statusData.label
+);
 
   const spellName = createElement(
     "div",
@@ -194,6 +199,93 @@ export class ProfileRenderer {
       block.description || ""
     )
   );
+
+function getSpellTooltip(root = document) {
+  let tooltip = root.getElementById("spellTooltip");
+
+  if (!tooltip) {
+    tooltip = createElement("div", "knowledge-spell-tooltip");
+    tooltip.id = "spellTooltip";
+    tooltip.setAttribute("role", "tooltip");
+    root.body.appendChild(tooltip);
+
+    const hideTooltip = () => {
+      tooltip.classList.remove("is-visible");
+    };
+
+    window.addEventListener("resize", hideTooltip);
+    window.addEventListener("scroll", hideTooltip, true);
+  }
+
+  return tooltip;
+}
+
+function positionSpellTooltip(tooltip, anchor) {
+  const anchorRect = anchor.getBoundingClientRect();
+  const gap = 10;
+  const viewportPadding = 12;
+
+  const tooltipWidth = tooltip.offsetWidth;
+  const tooltipHeight = tooltip.offsetHeight;
+
+  let left =
+    anchorRect.left +
+    anchorRect.width / 2 -
+    tooltipWidth / 2;
+
+  left = Math.max(
+    viewportPadding,
+    Math.min(
+      left,
+      window.innerWidth - tooltipWidth - viewportPadding
+    )
+  );
+
+  let top = anchorRect.bottom + gap;
+
+  /* Ha alul nem fér el, kerüljön az ikon fölé. */
+  if (
+    top + tooltipHeight >
+    window.innerHeight - viewportPadding
+  ) {
+    top = anchorRect.top - tooltipHeight - gap;
+  }
+
+  top = Math.max(
+    viewportPadding,
+    Math.min(
+      top,
+      window.innerHeight - tooltipHeight - viewportPadding
+    )
+  );
+
+  tooltip.style.left = `${left}px`;
+  tooltip.style.top = `${top}px`;
+}
+
+function bindSpellTooltip(root, anchor, text) {
+  const tooltip = getSpellTooltip(root);
+
+  const showTooltip = () => {
+    if (!text) return;
+
+    tooltip.textContent = text;
+    tooltip.classList.add("is-visible");
+
+    positionSpellTooltip(tooltip, anchor);
+  };
+
+  const hideTooltip = () => {
+    tooltip.classList.remove("is-visible");
+  };
+
+  anchor.addEventListener("mouseenter", showTooltip);
+  anchor.addEventListener("mouseleave", hideTooltip);
+  anchor.addEventListener("focus", showTooltip);
+  anchor.addEventListener("blur", hideTooltip);
+
+  anchor.setAttribute("aria-describedby", tooltip.id);
+}
 
   blocks.appendChild(card);
 }

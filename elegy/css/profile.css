@@ -148,40 +148,56 @@
   background: rgba(119, 28, 39, .4);
 }
 
-.knowledge-spell__status::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  top: calc(100% + 11px);
-bottom: auto;
-  left: 8px;
-  z-index: 20;
+.knowledge-spell-tooltip {
+  position: fixed;
+  z-index: 99999;
+
+  box-sizing: border-box;
   width: max-content;
-  max-width: min(300px, 75vw);
-  padding: 9px 11px;
-  border: 1px solid rgba(221, 197, 190, .18);
+  max-width: min(320px, calc(100vw - 24px));
+
+  padding: 10px 12px;
+  border: 1px solid rgba(221, 197, 190, .2);
   border-radius: 7px;
-  color: rgba(239, 229, 220, .94);
+
+  color: rgba(239, 229, 220, .95);
   background:
-    linear-gradient(180deg, rgba(31, 22, 29, .98), rgba(9, 7, 10, .98));
-  box-shadow: 0 10px 25px rgba(0, 0, 0, .65);
+    linear-gradient(
+      180deg,
+      rgba(31, 22, 29, .98),
+      rgba(9, 7, 10, .98)
+    );
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, .72),
+    inset 0 0 18px rgba(111, 38, 59, .09);
+
   font-family: inherit;
   font-size: 10px;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.55;
   letter-spacing: normal;
   text-align: left;
   text-transform: none;
   white-space: normal;
+  overflow-wrap: anywhere;
+
   pointer-events: none;
+  visibility: hidden;
   opacity: 0;
-transform: rotate(-45deg) translateY(4px);
-transform-origin: top left;
-  transition: opacity .18s ease, transform .18s ease;
+
+  transform: translateY(5px);
+
+  transition:
+    opacity .16s ease,
+    transform .16s ease,
+    visibility .16s ease;
 }
 
-.knowledge-spell__status:hover::after,
-.knowledge-spell__status:focus::after {
+.knowledge-spell-tooltip.is-visible {
+  visibility: visible;
   opacity: 1;
-  transform: rotate(-45deg) translateY(0);
+  transform: translateY(0);
+overflow: hidden;
 }
