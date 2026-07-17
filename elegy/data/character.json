@@ -9,9 +9,9 @@
     "motto": "...and you'll never be pure again."
   },
   "basics": [
-    { "label": "Jelszó", "value": "jelszó" },
+    { "label": "Jelszó", "value": "l'esprit de l'escalier." },
     { "label": "Nem", "value": "nő" },
-    { "label": "Születési hely", "value": "xxx" },
+    { "label": "Születési hely", "value": "Amman, Jordánia" },
     { "label": "Születési idő", "value": "xxxx. xx. xx." },
     { "label": "Kor", "value": "xx" },
     { "label": "Vér", "value": "arany" },
@@ -19,8 +19,8 @@
   ],
   "story": {
     "dataSource": "data/story.json",
-    "description": "A történet az olvasó döntései szerint több irányba ágazik. Bizonyos lehetőségek csak várakozás, korábbi döntések vagy már megtalált befejezések után jelennek meg.",
-    "warning": "halál, gyász, testábrázolás, nekromágia"
+    "description": "A történet az olvasó döntései szerint több irányba ágazik. Bizonyos döntések csak különleges módon fedezhetőek fel.",
+    "warning": "halál bálványozása, szektás magatartás"
   },
   "past": {
     "timeline": [
