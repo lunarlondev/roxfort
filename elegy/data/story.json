@@ -59,7 +59,7 @@
       "title": "I. Fejezet: Nebraska",
       "paragraphs": [
         "Nem ismered a dalt, ami a rádióból szól. Talán pár olasz szót megértesz, de nem eleget –még sincs szükséged rá, hogy összeálljon a története. A dal fájdalmát így is érzed az énekesnő szopránján át. ",
-		"Rámosolyogsz fivéredre, amikor ő is helyet foglal a nappaliban, nyomában a nyamvadt és rég döglött házimanótokkal, aki a róla lehulló földet és port takarítja."
+        "Rámosolyogsz fivéredre, amikor ő is helyet foglal a nappaliban, nyomában a nyamvadt és rég döglött házimanótokkal, aki a róla lehulló földet és port takarítja."
       ],
       "choices": [
         {
@@ -76,8 +76,8 @@
       "title": "I. Fejezet: Nebraska",
       "paragraphs": [
         "Egy népszerű zenész, Lorcan d'Eath számát hallgatod a rádióból. Te is ismered a dalt – annak sikere átívelt az Óceánon, és eljutott még oda is, ahová Requiem Dreadmoor száműzte magát a Felsőház utasítására. Szádra veszed a dallamot, és együtt énekeled azt az énekessel. Meglehetősen felszabadítónak találod.",
-		"Még akkor is dúdolod a dalt, amikor az véget ért, és a műsorvezető hangja veszi azt át. A gyors időjárás jelentést követően a MACUSA legújabb intézkedéseit és a Salem Hagyatéka Párt sikereit hallgatod azokról a lépésekről, amiket a varázslótársadalom megóvása érdekében tesznek. Nem érted annyira a politikát, igazából nem is érdekel – ha engem kérdezel, ostoba vagy hozzá - , de tudod, hogy Siofra nénéd szeretné, ha részt vennél a játszmájukban.",
-		"Bátyádra mosolyogsz dudorászás közben, amikor az betér a nappaliba, nyomában szerencsétlen házimanótokkal, akit képtelenek vagytok végre tisztességesen eltemetni."
+        "Még akkor is dúdolod a dalt, amikor az véget ért, és a műsorvezető hangja veszi azt át. A gyors időjárás jelentést követően a MACUSA legújabb intézkedéseit és a Salem Hagyatéka Párt sikereit hallgatod azokról a lépésekről, amiket a varázslótársadalom megóvása érdekében tesznek. Nem érted annyira a politikát, igazából nem is érdekel – ha engem kérdezel, ostoba vagy hozzá - , de tudod, hogy Siofra nénéd szeretné, ha részt vennél a játszmájukban.",
+        "Bátyádra mosolyogsz dudorászás közben, amikor az betér a nappaliba, nyomában szerencsétlen házimanótokkal, akit képtelenek vagytok végre tisztességesen eltemetni."
       ],
       "choices": [
         {
@@ -94,7 +94,7 @@
       "title": "I. Fejezet: Nebraska",
       "paragraphs": [
         "Egyszerűen nem találsz semmit, ami ízlésednek és hangulatodnak megfelelő. Percekig játszol az eszközzel, de végül feladod, és megnyomod rajta a nagy, piros gombot. Persze attól még hiányzik a zene; egy régi dalba kezdesz bele, amit még édesanyád tanított ukránul. Egyébként nem beszéled a nyelvet, és imperioval se kényszeríthetnének arra, hogy lefordítsd a szövegét.",
-		"Testvéredre mosolyogsz, amikor az megérkezik a nappalitokba. Rigor Mortis, a halott házimanótok árnyékként követi, hogy takarítsa utána a róla lehulló koszt és port."
+        "Testvéredre mosolyogsz, amikor az megérkezik a nappalitokba. Rigor Mortis, a halott házimanótok árnyékként követi, hogy takarítsa utána a róla lehulló koszt és port."
       ],
       "choices": [
         {
@@ -112,8 +112,8 @@
       "paragraphs": [
         "Figyelmed a szemközti könyvespolcra terelődik. A sötét faállvány egészen a mennyezetig ér, polcait azonban vastag pókháló és por borítja. Rigor Mortis nem épp a leggyorsabb házimanó a világon.",
         "Pálcádért nyúlsz, hogy lesöpörd róla az évtizedek elhagyatottságának nyomát. A legtöbb kötetet Requiem magával vitte, amikor elhagyta az Államokat, más könyveket pedig a Felsőház kobzott el. Minden évben beszélgetsz Siofra nénéddel. Talán ő tudja, hogy hol lehet a Dreadmoor könyvtár azon része, melyet apád nem tudott magával vinni. Azt azért nem hiszed, hogy tűzre vetették volna a tudást, még ha a Felsőház nem is gyakorolja azt, amiben apád és bátyád olyan mesteriek.",
-		"Neked nem adatott meg a tehetség a húshoz, jó érzéked van viszont máshoz.",
-		"Lassan eloszlik körülötted a porfelhő, és láthatóvá válik, mi maradt az egykori gyűjteményből. Csak pár könyv maradt, ami elkerülte a Dreadmoorok figyelmét, melyek közül kettő szúr szemet számodra különösen."
+        "Neked nem adatott meg a tehetség a húshoz, jó érzéked van viszont máshoz.",
+        "Lassan eloszlik körülötted a porfelhő, és láthatóvá válik, mi maradt az egykori gyűjteményből. Csak pár könyv maradt, ami elkerülte a Dreadmoorok figyelmét, melyek közül kettő szúr szemet számodra különösen."
       ],
       "choices": [
         {
@@ -125,20 +125,20 @@
           ],
           "effects": {
             "set": {
-              "breakfastChoice": "bogarbard"
+              "bookChoice": "beetlebard"
             }
           }
         },
         {
           "id": "s1_kutatnaplo",
-          "text": "Tojást és pirítóst készítesz.",
+          "text": "Kutatónapló",
           "next": "s1_kutatnaplo_reaction",
           "tags": [
             "normal"
           ],
           "effects": {
             "set": {
-              "breakfastChoice": "savory"
+              "bookChoice": "kutatnaplo"
             }
           }
         },
@@ -151,7 +151,7 @@
           ],
           "effects": {
             "set": {
-              "breakfastChoice": "skipped"
+              "bookChoice": "skipped"
             }
           }
         }
@@ -161,12 +161,12 @@
       "title": "I. Fejezet: Nebraska",
       "paragraphs": [
         "Egy vékony, ütött-kopott példányt veszel a kezedbe a Bogár Bárd meséiből. A gerince már alig tartja magát, a borítóra festett alakok pedig sértődötten húzódnak a képkeretük szélére a több évtizedes elhanyagoltság miatt. Giles unokaöcséd (vagy unokatestvéred? borzalmasan bizonytalan vagy a pontos megnevezésben a kusza családfátok láttán) bizonyára méltatlankodna rajta rendesen, ha ezt látná.",
-		"Természetesen ismered történeteiket, ahogyan azt ismeri minden varázslógyerek, talán mindegy is, a világ mely táján nőttek fel. Eljelelsz a bátyádnak, hogy nézze csak, milyen fogást találtál, mielőtt felcsapnád azt, hogy átéld ezeket a régi meséket.",
-		"A lapok szélein halvány, gyermeki kézírásra leszel figyelmes. Nem a tiéd, hiszen te sosem jártál Nebraskában. Csak Siofráék ünnepségein jelentél meg, ha valamire meghívtak – és mindig végtelenül kényelmetlennek, idegennek érezted magad. Talán az apádé lehet, vagy valamelyik féltestvéredé, akik még apád első vagy második feleségétől születtek. Jót mosolyogsz az elrontott betűkön és szavakon, és még jobbat a kis rajzokon. Egy pálca, egy üst, és egy nevetségesen nagy fogú nyúl. Egy másik lapon valaki bajuszt rajzolt a kút mellett sértődötten ácsorgó lovagra. Megkönnyíted létezését azáltal, hogy egy pálcaintéssel eltünteted róla ezt a bajszot, még ha meg is semmisítesz vele egy apró, régi emléket."
+        "Természetesen ismered történeteiket, ahogyan azt ismeri minden varázslógyerek, talán mindegy is, a világ mely táján nőttek fel. Eljelelsz a bátyádnak, hogy nézze csak, milyen fogást találtál, mielőtt felcsapnád azt, hogy átéld ezeket a régi meséket.",
+        "A lapok szélein halvány, gyermeki kézírásra leszel figyelmes. Nem a tiéd, hiszen te sosem jártál Nebraskában. Csak Siofráék ünnepségein jelentél meg, ha valamire meghívtak – és mindig végtelenül kényelmetlennek, idegennek érezted magad. Talán az apádé lehet, vagy valamelyik féltestvéredé, akik még apád első vagy második feleségétől születtek. Jót mosolyogsz az elrontott betűkön és szavakon, és még jobbat a kis rajzokon. Egy pálca, egy üst, és egy nevetségesen nagy fogú nyúl. Egy másik lapon valaki bajuszt rajzolt a kút mellett sértődötten ácsorgó lovagra. Megkönnyíted létezését azáltal, hogy egy pálcaintéssel eltünteted róla ezt a bajszot, még ha meg is semmisítesz vele egy apró, régi emléket."
       ],
       "choices": [
         {
-          "id": "s1_beetlebard",
+          "id": "s1_after_beetlebard",
           "text": "Folytatod a reggelt.",
           "next": "s1_attack_start",
           "tags": [
@@ -182,7 +182,7 @@
       ],
       "choices": [
         {
-          "id": "s1_kutatnaplo",
+          "id": "s1_after_kutatnaplo",
           "text": "Folytatod a reggelt.",
           "next": "s1_attack_start",
           "tags": [
@@ -198,7 +198,7 @@
       ],
       "choices": [
         {
-          "id": "s1_book_skip",
+          "id": "s1_after_book_skip",
           "text": "Továbbindulsz a házban.",
           "next": "s1_attack_start",
           "tags": [
