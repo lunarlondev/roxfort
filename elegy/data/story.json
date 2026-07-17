@@ -224,7 +224,7 @@
       "choices": [
         {
           "id": "s1_route_map",
-          "text": "Alaposabban összeveted a térképet azzal, amit magatok körül láttok.",
+          "text": "Alaposabban összeveted a térképet a környezettel.",
           "next": "s1_route_map_scene",
           "tags": [
             "normal"
@@ -237,7 +237,7 @@
         },
         {
           "id": "s1_route_follow_des",
-          "text": "Destinationt követed. Logikusan ott lesz a lejáró, ahol több inferius őrködik.",
+          "text": "Destinationt követed.",
           "next": "s1_route_des_scene",
           "tags": [
             "normal"
@@ -250,7 +250,7 @@
         },
         {
           "id": "s1_route_clear_magic",
-          "text": "Varázslattal megtisztítod magatok előtt az utat.",
+          "text": "Tarolóátokkal megtisztítod magad előtt az utat.",
           "next": "s1_route_clear_scene",
           "tags": [
             "normal"
