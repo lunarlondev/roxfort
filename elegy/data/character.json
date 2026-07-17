@@ -19,8 +19,8 @@
   ],
   "story": {
     "dataSource": "data/story.json",
-    "description": "A történet az olvasó döntései szerint több irányba ágazik. Bizonyos döntések csak különleges módon fedezhetőek fel.",
-    "warning": "halál bálványozása, szektás magatartás"
+    "description": "Ebben az előtörténetben Te döntesz arról, hogy mi történik, és Te irányíthatod a karaktert is - hasonlóan ahhoz, ahogyan Requiem Dreadmoor játszik a holtakkal. A karakter története ebből fakadóan zavaros; talán minden megtörtént a leírtak közül egyszerre. Talán egyik sem. Három titkos választás rejtőzik a sorok között. Egy, amit türelemmel oldasz fel, egy, amit meghozott döntéseid láttatnak veled, és egy, amihez a Halál nyújt ösvényt számodra.",
+    "warning": "halál bálványozása, szektás magatartás, grafikus erőszak"
   },
   "past": {
     "timeline": [
