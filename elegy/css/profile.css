@@ -153,7 +153,7 @@
   position: absolute;
   top: calc(100% + 11px);
 bottom: auto;
-  left: 50%;
+  left: 8px;
   z-index: 20;
   width: max-content;
   max-width: min(300px, 75vw);
@@ -175,12 +175,13 @@ bottom: auto;
   white-space: normal;
   pointer-events: none;
   opacity: 0;
-  transform: translateX(-50%) rotate(-45deg) translateY(4px);
+transform: rotate(-45deg) translateY(4px);
+transform-origin: top left;
   transition: opacity .18s ease, transform .18s ease;
 }
 
 .knowledge-spell__status:hover::after,
 .knowledge-spell__status:focus::after {
   opacity: 1;
-  transform: translateX(-50%) rotate(-45deg) translateY(0);
+  transform: rotate(-45deg) translateY(0);
 }
