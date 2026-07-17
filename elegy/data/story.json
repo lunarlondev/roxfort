@@ -9,7 +9,7 @@
     "s1_return_to_estate": {
       "title": "I. Fejezet: Nebraska",
       "paragraphs": [
-        "Szórakozottan tekergeted a régi varázsrádiót a konyhában. Elteltek az első nappalok és éjjelek, mióta visszatértetek Ammanból, bár a nagy visszatérés legfeljebb a pszichopata apádnak jelent bármit.",
+        "Szórakozottan tekergeted a régi varázsrádiót a nappaliban. Elteltek az első nappalok és éjjelek, mióta visszatértetek Ammanból, bár a nagy visszatérés legfeljebb a pszichopata apádnak jelent bármit.",
         "Ha ez is a hely, ami most menedéket nyújt neked, és melynek alapjaiba mélyen bevésődtek a Dreadmoorok emlékei, számodra Nebraska végtelen kukoricaföldjei és a birtokotok körül terpeszkedő, elhanyagolt és elvadult földek semmivel sem otthonosabb, mint bármelyik szoba, amit valaha elhagytál. Meg kell még tanulnod elengedni Amman napfényben kifakult mészkőházait, a dombokra kapaszkodó utcákat, és azt a különös órát alkonyat előtt, amikor az egész város arany színűvé változott. Még ha jelenleg nem is biztonságos számotokra – hisz a Noctua okkal menekített ki titeket onnan - , Nebraska akkor is idegen marad előtted.",
         "Nem hitted, hogy működni fog még a rádió, most mégis úgy tűnik, hogy a vastag porfelhőt leszámítva nincs vele semmi probléma. Kiválasztod a csatornát, amit a reggelid mellé hallgatnál."
       ],
@@ -59,13 +59,13 @@
       "title": "I. Fejezet: Nebraska",
       "paragraphs": [
         "Nem ismered a dalt, ami a rádióból szól. Talán pár olasz szót megértesz, de nem eleget –még sincs szükséged rá, hogy összeálljon a története. A dal fájdalmát így is érzed az énekesnő szopránján át. ",
-		"Rámosolyogsz fivéredre, amikor ő is helyet foglal a konyhában, nyomában a nyamvadt és rég döglött házimanótokkal, aki a róla lehulló földet és port takarítja."
+		"Rámosolyogsz fivéredre, amikor ő is helyet foglal a nappaliban, nyomában a nyamvadt és rég döglött házimanótokkal, aki a róla lehulló földet és port takarítja."
       ],
       "choices": [
         {
           "id": "s1_after_radio_classical",
-          "text": "A reggeliddel kezdesz foglalkozni.",
-          "next": "s1_first_breakfast",
+          "text": "A könyvespolcon böngészel.",
+          "next": "s1_first_book",
           "tags": [
             "normal"
           ]
@@ -77,13 +77,13 @@
       "paragraphs": [
         "Egy népszerű zenész, Lorcan d'Eath számát hallgatod a rádióból. Te is ismered a dalt – annak sikere átívelt az Óceánon, és eljutott még oda is, ahová Requiem Dreadmoor száműzte magát a Felsőház utasítására. Szádra veszed a dallamot, és együtt énekeled azt az énekessel. Meglehetősen felszabadítónak találod.",
 		"Még akkor is dúdolod a dalt, amikor az véget ért, és a műsorvezető hangja veszi azt át. A gyors időjárás jelentést követően a MACUSA legújabb intézkedéseit és a Salem Hagyatéka Párt sikereit hallgatod azokról a lépésekről, amiket a varázslótársadalom megóvása érdekében tesznek. Nem érted annyira a politikát, igazából nem is érdekel – ha engem kérdezel, ostoba vagy hozzá - , de tudod, hogy Siofra nénéd szeretné, ha részt vennél a játszmájukban.",
-		"Bátyádra mosolyogsz dudorászás közben, amikor az betér a konyhába, nyomában szerencsétlen házimanótokkal, akit képtelenek vagytok végre tisztességesen eltemetni."
+		"Bátyádra mosolyogsz dudorászás közben, amikor az betér a nappaliba, nyomában szerencsétlen házimanótokkal, akit képtelenek vagytok végre tisztességesen eltemetni."
       ],
       "choices": [
         {
           "id": "s1_after_radio_local",
-          "text": "A reggeliddel kezdesz foglalkozni.",
-          "next": "s1_first_breakfast",
+          "text": "A könyvespolcon böngészel.",
+          "next": "s1_first_book",
           "tags": [
             "normal"
           ]
@@ -94,20 +94,20 @@
       "title": "I. Fejezet: Nebraska",
       "paragraphs": [
         "Egyszerűen nem találsz semmit, ami ízlésednek és hangulatodnak megfelelő. Percekig játszol az eszközzel, de végül feladod, és megnyomod rajta a nagy, piros gombot. Persze attól még hiányzik a zene; egy régi dalba kezdesz bele, amit még édesanyád tanított ukránul. Egyébként nem beszéled a nyelvet, és imperioval se kényszeríthetnének arra, hogy lefordítsd a szövegét.",
-		"Testvéredre mosolyogsz, amikor az megérkezik a konyhába. Rigor Mortis, a halott házimanótok árnyékként követi, hogy takarítsa utána a róla lehulló koszt és port."
+		"Testvéredre mosolyogsz, amikor az megérkezik a nappalitokba. Rigor Mortis, a halott házimanótok árnyékként követi, hogy takarítsa utána a róla lehulló koszt és port."
       ],
       "choices": [
         {
           "id": "s1_after_radio_silence",
-          "text": "A reggeliddel kezdesz foglalkozni.",
-          "next": "s1_first_breakfast",
+          "text": "A könyvespolcon böngészel.",
+          "next": "s1_first_book",
           "tags": [
             "normal"
           ]
         }
       ]
     },
-    "s1_first_breakfast": {
+    "s1_first_book": {
       "title": "I. Fejezet: Nebraska",
       "paragraphs": [
         "[IDE ÍRD A BIRTOKON TÖLTÖTT ELSŐ ÉJSZAKA ÉS AZ ELSŐ REGGEL HANGULATÁT. A HÁZ RÉGI, POROS ÉS IDEGENÜL ISMERŐS.]",
