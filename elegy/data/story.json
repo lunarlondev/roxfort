@@ -1,7 +1,7 @@
 {
   "meta": {
     "id": "necromancer-eye-story",
-    "version": 2,
+    "version": 3,
     "title": "A másik szem",
     "start": "s1_return_to_estate"
   },
@@ -11,13 +11,13 @@
       "paragraphs": [
         "Szórakozottan tekergeted a régi varázsrádiót a konyhában. Elteltek az első nappalok és éjjelek, mióta visszatértetek Ammanból, bár a nagy visszatérés legfeljebb a pszichopata apádnak jelent bármit.",
         "Ha ez is a hely, ami most menedéket nyújt neked, és melynek alapjaiba mélyen bevésődtek a Dreadmoorok emlékei, számodra Nebraska végtelen kukoricaföldjei és a birtokotok körül terpeszkedő, elhanyagolt és elvadult földek semmivel sem otthonosabb, mint bármelyik szoba, amit valaha elhagytál. Meg kell még tanulnod elengedni Amman napfényben kifakult mészkőházait, a dombokra kapaszkodó utcákat, és azt a különös órát alkonyat előtt, amikor az egész város arany színűvé változott. Még ha jelenleg nem is biztonságos számotokra – hisz a Noctua okkal menekített ki titeket onnan - , Nebraska akkor is idegen marad előtted.",
-		"Nem hitted, hogy működni fog még a rádió, most mégis úgy tűnik, hogy a vastag porfelhőt leszámítva nincs vele semmi probléma. Kiválasztod a csatornát, amit a reggelid mellé hallgatnál."
+        "Nem hitted, hogy működni fog még a rádió, most mégis úgy tűnik, hogy a vastag porfelhőt leszámítva nincs vele semmi probléma. Kiválasztod a csatornát, amit a reggelid mellé hallgatnál."
       ],
       "choices": [
         {
           "id": "s1_radio_classical",
           "text": "Megkeresel egy komolyzenei adót.",
-          "next": "s1_first_breakfast",
+          "next": "s1_radio_classical_reaction",
           "tags": [
             "normal"
           ],
@@ -30,7 +30,7 @@
         {
           "id": "s1_radio_local",
           "text": "A környék helyi varázsrádió csatornáját hallgatod.",
-          "next": "s1_first_breakfast",
+          "next": "s1_radio_local_reaction",
           "tags": [
             "normal"
           ],
@@ -43,7 +43,7 @@
         {
           "id": "s1_radio_silence",
           "text": "Inkább kikapcsolod a rádiót.",
-          "next": "s1_first_breakfast",
+          "next": "s1_radio_silence_reaction",
           "tags": [
             "normal"
           ],
@@ -52,6 +52,54 @@
               "radioChoice": "silence"
             }
           }
+        }
+      ]
+    },
+    "s1_radio_classical_reaction": {
+      "title": "Komolyzene",
+      "paragraphs": [
+        "[IDE ÍRD A RÖVID REAKCIÓT ARRA, HOGY KOMOLYZENE SZÓLAL MEG A RÁDIÓBAN.]"
+      ],
+      "choices": [
+        {
+          "id": "s1_after_radio_classical",
+          "text": "A reggeliddel kezdesz foglalkozni.",
+          "next": "s1_first_breakfast",
+          "tags": [
+            "normal"
+          ]
+        }
+      ]
+    },
+    "s1_radio_local_reaction": {
+      "title": "Helyi adás",
+      "paragraphs": [
+        "[IDE ÍRD A RÖVID REAKCIÓT A HELYI VARÁZSRÁDIÓ MŰSORÁRA. UTALHATSZ NEBRASKÁRA, A KÖRNYÉK HÍREIRE VAGY A BIRTOK IDEGENSÉGÉRE.]"
+      ],
+      "choices": [
+        {
+          "id": "s1_after_radio_local",
+          "text": "A reggeliddel kezdesz foglalkozni.",
+          "next": "s1_first_breakfast",
+          "tags": [
+            "normal"
+          ]
+        }
+      ]
+    },
+    "s1_radio_silence_reaction": {
+      "title": "Csend",
+      "paragraphs": [
+        "[IDE ÍRD A RÖVID REAKCIÓT ARRA, HOGY KIKAPCSOLOD A RÁDIÓT. A HÁZ CSENDJE ÍGY FELTŰNŐBBÉ VÁLHAT.]"
+      ],
+      "choices": [
+        {
+          "id": "s1_after_radio_silence",
+          "text": "A reggeliddel kezdesz foglalkozni.",
+          "next": "s1_first_breakfast",
+          "tags": [
+            "normal"
+          ]
         }
       ]
     },
@@ -65,7 +113,7 @@
         {
           "id": "s1_breakfast_sweet",
           "text": "Valami édeset keresel reggelire.",
-          "next": "s1_attack_start",
+          "next": "s1_breakfast_sweet_reaction",
           "tags": [
             "normal"
           ],
@@ -78,7 +126,7 @@
         {
           "id": "s1_breakfast_savory",
           "text": "Tojást és pirítóst készítesz.",
-          "next": "s1_attack_start",
+          "next": "s1_breakfast_savory_reaction",
           "tags": [
             "normal"
           ],
@@ -91,7 +139,7 @@
         {
           "id": "s1_breakfast_skip",
           "text": "Nem vagy éhes. Inkább körülnézel a házban.",
-          "next": "s1_attack_start",
+          "next": "s1_breakfast_skip_reaction",
           "tags": [
             "normal"
           ],
@@ -100,6 +148,54 @@
               "breakfastChoice": "skipped"
             }
           }
+        }
+      ]
+    },
+    "s1_breakfast_sweet_reaction": {
+      "title": "Valami édes",
+      "paragraphs": [
+        "[IDE ÍRD A RÖVID REAKCIÓT AZ ÉDES REGGELIRE. LEHET BENNE TALÁLT ÉTEL, ÍZ, EMLÉK VAGY A KONYHA ÁLLAPOTA.]"
+      ],
+      "choices": [
+        {
+          "id": "s1_after_breakfast_sweet",
+          "text": "Folytatod a reggelt.",
+          "next": "s1_attack_start",
+          "tags": [
+            "normal"
+          ]
+        }
+      ]
+    },
+    "s1_breakfast_savory_reaction": {
+      "title": "Tojás és pirítós",
+      "paragraphs": [
+        "[IDE ÍRD A RÖVID REAKCIÓT A TOJÁS ÉS PIRÍTÓS ELKÉSZÍTÉSÉRE. A HÉTKÖZNAPI MOZGÁSOK ELLENPONTOZHATJÁK A HÁZ NYUGTALANSÁGÁT.]"
+      ],
+      "choices": [
+        {
+          "id": "s1_after_breakfast_savory",
+          "text": "Folytatod a reggelt.",
+          "next": "s1_attack_start",
+          "tags": [
+            "normal"
+          ]
+        }
+      ]
+    },
+    "s1_breakfast_skip_reaction": {
+      "title": "Üres gyomor",
+      "paragraphs": [
+        "[IDE ÍRD A RÖVID REAKCIÓT ARRA, HOGY KIHAGYOD A REGGELIT ÉS KÖRÜLNÉZEL A HÁZBAN. EZ AKÁR KÖZELEBB IS VIHET AZ ELSZABADULÓ INFERUS HELYSZÍNÉHEZ, DE A FŐ TÖRTÉNETET NEM VÁLTOZTATJA MEG.]"
+      ],
+      "choices": [
+        {
+          "id": "s1_after_breakfast_skip",
+          "text": "Továbbindulsz a házban.",
+          "next": "s1_attack_start",
+          "tags": [
+            "normal"
+          ]
         }
       ]
     },
