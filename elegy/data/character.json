@@ -31,9 +31,9 @@
   },
   "personality": {
     "description": [
-      "A karakter személyiségének első bekezdése. Itt lehet bemutatni a legfontosabb tulajdonságait, a viselkedését és azt, milyen benyomást tesz másokra.",
-      "A második bekezdés a belső ellentmondásairól, kapcsolódásairól és döntési mintáiról szólhat.",
-      "A harmadik bekezdésben helyet kaphatnak a gyengeségei, félelmei és azok a vonások, amelyeket ritkán mutat meg."
+      "Leírás",
+      "Leírás",
+      "Leírás"
     ],
     "prompts": [
       { "title": "Merengő", "label": "Legjobb emlék", "text": "A karakter legjobb emléke." },
