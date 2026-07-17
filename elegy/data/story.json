@@ -110,27 +110,29 @@
     "s1_first_book": {
       "title": "I. Fejezet: Nebraska",
       "paragraphs": [
-        "[IDE ÍRD A BIRTOKON TÖLTÖTT ELSŐ ÉJSZAKA ÉS AZ ELSŐ REGGEL HANGULATÁT. A HÁZ RÉGI, POROS ÉS IDEGENÜL ISMERŐS.]",
-        "Az apa nem beszél arról, hogy a birtok lezárt részeiben még mindig ott vannak az évtizedekkel korábban hátrahagyott inferusai."
+        "Figyelmed a szemközti könyvespolcra terelődik. A sötét faállvány egészen a mennyezetig ér, polcait azonban vastag pókháló és por borítja. Rigor Mortis nem épp a leggyorsabb házimanó a világon.",
+        "Pálcádért nyúlsz, hogy lesöpörd róla az évtizedek elhagyatottságának nyomát. A legtöbb kötetet Requiem magával vitte, amikor elhagyta az Államokat, más könyveket pedig a Felsőház kobzott el. Minden évben beszélgetsz Siofra nénéddel. Talán ő tudja, hogy hol lehet a Dreadmoor könyvtár azon része, melyet apád nem tudott magával vinni. Azt azért nem hiszed, hogy tűzre vetették volna a tudást, még ha a Felsőház nem is gyakorolja azt, amiben apád és bátyád olyan mesteriek.",
+		"Neked nem adatott meg a tehetség a húshoz, jó érzéked van viszont máshoz.",
+		"Lassan eloszlik körülötted a porfelhő, és láthatóvá válik, mi maradt az egykori gyűjteményből. Csak pár könyv maradt, ami elkerülte a Dreadmoorok figyelmét, melyek közül kettő szúr szemet számodra különösen."
       ],
       "choices": [
         {
-          "id": "s1_breakfast_sweet",
-          "text": "Valami édeset keresel reggelire.",
-          "next": "s1_breakfast_sweet_reaction",
+          "id": "s1_beetlebard",
+          "text": "Bogár Bárd meséi",
+          "next": "s1_beetlebard_reaction",
           "tags": [
             "normal"
           ],
           "effects": {
             "set": {
-              "breakfastChoice": "sweet"
+              "breakfastChoice": "bogarbard"
             }
           }
         },
         {
-          "id": "s1_breakfast_savory",
+          "id": "s1_kutatnaplo",
           "text": "Tojást és pirítóst készítesz.",
-          "next": "s1_breakfast_savory_reaction",
+          "next": "s1_kutatnaplo_reaction",
           "tags": [
             "normal"
           ],
@@ -141,9 +143,9 @@
           }
         },
         {
-          "id": "s1_breakfast_skip",
+          "id": "s1_book_skip",
           "text": "Nem vagy éhes. Inkább körülnézel a házban.",
-          "next": "s1_breakfast_skip_reaction",
+          "next": "s1_book_skip_reaction",
           "tags": [
             "normal"
           ],
@@ -155,14 +157,16 @@
         }
       ]
     },
-    "s1_breakfast_sweet_reaction": {
-      "title": "Valami édes",
+    "s1_beetlebard_reaction": {
+      "title": "I. Fejezet: Nebraska",
       "paragraphs": [
-        "[IDE ÍRD A RÖVID REAKCIÓT AZ ÉDES REGGELIRE. LEHET BENNE TALÁLT ÉTEL, ÍZ, EMLÉK VAGY A KONYHA ÁLLAPOTA.]"
+        "Egy vékony, ütött-kopott példányt veszel a kezedbe a Bogár Bárd meséiből. A gerince már alig tartja magát, a borítóra festett alakok pedig sértődötten húzódnak a képkeretük szélére a több évtizedes elhanyagoltság miatt. Giles unokaöcséd (vagy unokatestvéred? borzalmasan bizonytalan vagy a pontos megnevezésben a kusza családfátok láttán) bizonyára méltatlankodna rajta rendesen, ha ezt látná.",
+		"Természetesen ismered történeteiket, ahogyan azt ismeri minden varázslógyerek, talán mindegy is, a világ mely táján nőttek fel. Eljelelsz a bátyádnak, hogy nézze csak, milyen fogást találtál, mielőtt felcsapnád azt, hogy átéld ezeket a régi meséket.",
+		"A lapok szélein halvány, gyermeki kézírásra leszel figyelmes. Nem a tiéd, hiszen te sosem jártál Nebraskában. Csak Siofráék ünnepségein jelentél meg, ha valamire meghívtak – és mindig végtelenül kényelmetlennek, idegennek érezted magad. Talán az apádé lehet, vagy valamelyik féltestvéredé, akik még apád első vagy második feleségétől születtek. Jót mosolyogsz az elrontott betűkön és szavakon, és még jobbat a kis rajzokon. Egy pálca, egy üst, és egy nevetségesen nagy fogú nyúl. Egy másik lapon valaki bajuszt rajzolt a kút mellett sértődötten ácsorgó lovagra. Megkönnyíted létezését azáltal, hogy egy pálcaintéssel eltünteted róla ezt a bajszot, még ha meg is semmisítesz vele egy apró, régi emléket."
       ],
       "choices": [
         {
-          "id": "s1_after_breakfast_sweet",
+          "id": "s1_beetlebard",
           "text": "Folytatod a reggelt.",
           "next": "s1_attack_start",
           "tags": [
@@ -171,14 +175,14 @@
         }
       ]
     },
-    "s1_breakfast_savory_reaction": {
-      "title": "Tojás és pirítós",
+    "s1_kutatnaplo_reaction": {
+      "title": "I. Fejezet: Nebraska",
       "paragraphs": [
         "[IDE ÍRD A RÖVID REAKCIÓT A TOJÁS ÉS PIRÍTÓS ELKÉSZÍTÉSÉRE. A HÉTKÖZNAPI MOZGÁSOK ELLENPONTOZHATJÁK A HÁZ NYUGTALANSÁGÁT.]"
       ],
       "choices": [
         {
-          "id": "s1_after_breakfast_savory",
+          "id": "s1_kutatnaplo",
           "text": "Folytatod a reggelt.",
           "next": "s1_attack_start",
           "tags": [
@@ -187,14 +191,14 @@
         }
       ]
     },
-    "s1_breakfast_skip_reaction": {
-      "title": "Üres gyomor",
+    "s1_book_skip_reaction": {
+      "title": "I. Fejezet: Nebraska",
       "paragraphs": [
         "[IDE ÍRD A RÖVID REAKCIÓT ARRA, HOGY KIHAGYOD A REGGELIT ÉS KÖRÜLNÉZEL A HÁZBAN. EZ AKÁR KÖZELEBB IS VIHET AZ ELSZABADULÓ INFERUS HELYSZÍNÉHEZ, DE A FŐ TÖRTÉNETET NEM VÁLTOZTATJA MEG.]"
       ],
       "choices": [
         {
-          "id": "s1_after_breakfast_skip",
+          "id": "s1_book_skip",
           "text": "Továbbindulsz a házban.",
           "next": "s1_attack_start",
           "tags": [
