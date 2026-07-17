@@ -145,12 +145,58 @@ export class ProfileRenderer {
       if (block.type === "paragraph") blocks.appendChild(createElement("p", "knowledge-paragraph", block.text));
       if (block.type === "quote") blocks.appendChild(createElement("blockquote", "knowledge-quote", block.text));
       if (block.type === "spell") {
-        const card = createElement("article", "knowledge-spell");
-        card.appendChild(createElement("div", "knowledge-spell__name", block.name));
-        if (block.meta) card.appendChild(createElement("div", "knowledge-spell__meta", block.meta));
-        card.appendChild(createElement("div", "knowledge-spell__description", block.description || ""));
-        blocks.appendChild(card);
-      }
+  const card = createElement("article", "knowledge-spell");
+
+  const titleRow = createElement("div", "knowledge-spell__title");
+
+  const statusMap = {
+    supported: {
+      className: "supported",
+      label: "Támogatott"
+    },
+    tolerated: {
+      className: "tolerated",
+      label: "Tűrt"
+    },
+    forbidden: {
+      className: "forbidden",
+      label: "Tiltott"
+    }
+  };
+
+  const statusData = statusMap[block.status] || statusMap.forbidden;
+
+  const statusIcon = createElement(
+    "span",
+    `knowledge-spell__status knowledge-spell__status--${statusData.className}`
+  );
+
+  statusIcon.dataset.tooltip = block.meta || statusData.label;
+  statusIcon.setAttribute(
+    "aria-label",
+    `${statusData.label}: ${block.meta || ""}`
+  );
+  statusIcon.tabIndex = 0;
+
+  const spellName = createElement(
+    "div",
+    "knowledge-spell__name",
+    block.name
+  );
+
+  titleRow.append(statusIcon, spellName);
+  card.appendChild(titleRow);
+
+  card.appendChild(
+    createElement(
+      "div",
+      "knowledge-spell__description",
+      block.description || ""
+    )
+  );
+
+  blocks.appendChild(card);
+}
     });
     renderParagraphs(this.root.getElementById("wizardKnowledge"), knowledge.wizardKnowledge || []);
     const education = this.root.getElementById("educationData");
