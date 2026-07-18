@@ -636,8 +636,11 @@
     "s1_attack_choice_normal": {
       "title": "A támadás",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN TÖRNEK ELŐ AZ INFERIUSOK A GAZBÓL ÉS A KISZÁRADT FÖLDBŐL. DESTINATIONT NEM TÁMADJÁK, MERT RAJTA MÉG OTT VAN REQUIEM PECSÉTJE.]",
-        "[A KARAKTER FELISMERI, HOGY DESTINATION KÖZELÉBEN MARADVA TALÁN KIJUTHAT, VAGY MEGPRÓBÁLHATJA A TESTEK ELLEN LEGHATÁSOSABB FEGYVERT: A TÜZET.]"
+        "Apád jól megtanított téged harcolni.",
+		"Vagy ha nem apád, akkor az aktuális mesterek, akikre a párbajozási képességeid csiszolását bízta.",
+		"Ismered a gyengéjüket, hogy is ne ismernéd, hiszen Dreadmoor vagy. Tudod, hogy a tűznél nincs hatékonyabb ellenük. Emlékszel a tanításokból azokra a kísérletekre, melyek megpróbálták legalább valamelyest tűzállóvá tenni őket, de tudomásod szerint mind sikertelenek voltak. Még apádnak sem sikerült, pedig apád lenyűgöző munkát végzett, ezt el kell ismerni. Körülöttetek azonban szárazság, a tűz pedig a legnehezebben kordában tartható elem.",
+		"Talán a baj elkerülhető, ha szorosan Destination mellett maradsz. Őt védi apád amulettje, észre se veszik őt. Akkor elég lenne csak azt a párat legyőzni?",
+		"Az inferus, aki elsőként indult meg feléd, hamarosan odaér. Gyorsan kell döntened, mielőtt odaér."
       ],
       "choices": [
         {
