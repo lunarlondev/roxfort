@@ -1031,9 +1031,11 @@
     "s1_eye_fire_chaos_dejavu": {
       "title": "Másként terjedő tűz",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN TERELED MÁSFELÉ A LÁNGOKAT, HOGY ELKERÜLD AZ EMLÉKEIDBEN LÁTOTT TŰZVIHART. A KORÁBBI ÚTVONAL VALÓBAN NEM ÉG LE.]",
-        "[A SZÉL VAGY A FELZAVART INFERIUSOK MOZGÁSA MIATT A TŰZ ÚJ IRÁNYBÓL CSAP VISSZA. A KÁOSZ MÁSKÉNT ALAKUL, DE AZ EGYIK SZEMED UGYANÚGY ELVÉSZ.]",
-        "[NEM ÉRZED TÖBBÉ ÚGY, HOGY ROSSZUL VÁLASZTOTTÁL. A VÉGZET NEM A DÖNTÉSED BÜNTETÉSE VOLT. ELFOGADOD.]"
+        "A földre irányítod a pálcád. Megvárod, míg páran kilépnek, majd újabb ezüstös-kék fény fut végig a bunker kövein, a beázásokból összegyűlt víz pedig egy szempillantás alatt megdermed körülöttük.",
+        "Felkúszik a jog a bokájukra, ráfagy mezítelen lábszárukra, és odaköti őket a padlóhoz. Nyújtóznak feléd, de te a kijárat felé hátrálsz. Már úgyis hallod testvéred kétségbeesett kiabálását, hogy rendben vagy-e. Visszatért, talán apáddal, talán a medállal, de mindenképpen megmenekülsz.",
+        "Legalábbis röpke pillanatra ezt gondolod.",
+		"Az egyik inferus inkább eltöri a saját lábát, csak hogy végezhessen veled, a vélt betolakodóval. Nem számítasz rá, minden gyorsan és hirtelen történik, ahogyan felsőtestével neked veti magát. Ujjai, melyeken egy darab körmöt se számolsz össze, arcodnak feszülnek, hogy meggyalázzák azt. De végül is így igazságos. Ti, Dreadmoorok is meggyaláztátok az ő testét.",
+		"Feltörik mögötted az ajtót, Des hangját varázslatok követik, de túl késő már."
       ],
       "choices": [
         {
