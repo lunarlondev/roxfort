@@ -551,13 +551,16 @@
     "s1_dejavu_medal_transfer": {
       "title": "A hiányzó pecsét",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN INDULTOK VISSZA A KIVÁLASZTOTT TÁRGGYAL. AZ ELSŐ BALJÓS JELNÉL – PÉLDÁUL AMIKOR AZ INFERIUSOK EGYSZERRE FORDULNAK FELÉTEK – ÉSZREVESZED, HOGY DESTINATION NYAKÁBÓL HIÁNYZIK A MEDÁL.]",
-        "[EMLÉKSZEL RÁ, MI TÖRTÉNIK AZZAL, AKIT NEM VÉD REQUIEM PECSÉTJE. NINCS VALÓDI VÁLASZTÁSOD: DESTINATION AKÁR TILTAKOZIK, AKÁR NEM, NEKI ADOD A SAJÁTODAT.]"
-      ],
+        "Biztos vagy a dolgodban, hogy most nem történik meg ugyanaz, mint amire emlékszel. Lerázhatod magadról a deja vu érzést, és abban a hitben indulhatsz el, hogy sikerült a kezedbe venned sorsodat.",
+		"Az Élettől kaptál egy második esélyt.",
+		"A létra első fokára lépnél, amikor mégis elgondolkozol kissé. Hiába tudod, hogy most nem történhet meg ugyanaz, közben mégis megtámad téged egy új érzés, hogy valamiről megfeledkeztetek. Hátrapillantva keresed Des tekintetét, amikor észreveszed a hiányt a nyakában. Erősebben markolsz rá a létra szélére, a gondolat pedig, hogy bátyád élheti át ugyanazokat a borzalmakat, mint te, megrémiszt. Nem érdekes, hogy a faszálkák felsértik a tenyered.",
+		"Elengeded a rozoga létrát, hogy beszámolhass Desnek újfent arról, hogy mi történt. Most sem kételkedik szavaidban – és ugyanannyira félt téged, mint te őt. Kioldod a medált a nyakadból, hogy az övébe rakhasd, amíg ő segítségért indul, téged pedig védőbűbájjal zár be a bunkerbe, amíg vissza nem tud jönni érted. Nem tudod, mennyi idő, míg visszatér, de nincs okod nem bízni benned. Elfoglalod magad; belelapozgatsz az itt maradt könyvekbe, megkeresed a furcsa szag forrását (biztosan az egyik üvegből jön), és átböngészed az itt maradt holmikat, apád és nagyapád örökségét.",
+		"Inkább azt az évek óta beázott falrészt nézted volna meg, ami még védte a helyiséget az inferusok jelenlététől."
+             ],
       "choices": [
         {
           "id": "s1_force_medal_on_destination",
-          "text": "Destination nyakába akasztod a saját medálodat.",
+          "text": "Várod a megmentést.",
           "next": "s1_return_omens_dejavu",
           "tags": [
             "secret",
@@ -577,9 +580,9 @@
     "s1_return_omens_normal": {
       "title": "Visszaút",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN INDULTOK VISSZA A KIVÁLASZTOTT TÁRGGYAL. A SZÉL ELÁLL, A SZÁRAZ KUKORICA MÉGIS ZÖRÖG, A KÖZELI INFERIUSOK PEDIG EGYSZERRE FORDÍTJÁK FELÉTEK A FEJÜKET.]",
-        "[DESTINATION MELLETT ELMENNEK, MINTHA NEM IS LÁTNÁK. CSAK RÁD FIGYELNEK. EKKOR MÉG NEM ÉRTED, HOGY ÚTKÖZBEN ELVESZÍTETTED A MEDÁLODAT.]",
-        "[AZ ELSŐ INFERIUS EGYRE GYORSABBAN INDUL FELÉD, MAJD ÚJABBAK MOZGÁSA HALLATSZIK A GAZBAN.]"
+        "Megannyi más, érdekes dolgot lelhetnétek itt. Ellenállsz a kísértésnek, hogy beleless az itt hagyott fényképekbe, vagy alaposabban megszemléld, mit rejtenek a polcokon sorakozó üvegek. Nem szeretnél visszaélni apád bizalmával. Teljesen érthetetlen, hogy vagy képes szeretni őt, de az egész családotok degeneráltakból áll, ami ezt is megmagyarázza. Teljesen mindegy, Felsőházról beszélünk, akik oly sok pénzt fecsérelnek emberi álarcotokba, vagy rólatok, az Alsóházról, akik… nos, ha képes lennél kritikus lenni önmagadhoz, akkor pontosan látnád és tudnád, hogy mi a probléma.",
+        "Amint összeszedtétek, amire szükségetek van – a csontmarkolatú pálcát és a diafilmet apád felkavaró kísérleteiről - , megindultok kifelé. Elfogadod Des kezét az utolsó létrafokoknál, valamiért azonban borsódzik a hátad, amikor az egyik inferust közeledni látod. Apátok azért adta rátok az általa készített ereklyét, hogy lehetőleg ne gyarapítsátok a holtakat. Ne most, nem ilyen körülmények között, mert még szüksége van rátok – ha hazudik is nektek valódi céljairól.",
+        "Egyszerre fordítja feléd az összes. Rád néznek, egyenesen rád, mintha Destinationt észre se vennék. Még nem érted, hogy út közben valamikor elveszítetted, amit apádtól kaptál. Az egyik inferus szinte követhetetlen sebességgel indul meg feléd."
       ],
       "choices": [
         {
@@ -596,9 +599,10 @@
     "s1_return_omens_clear": {
       "title": "A felzavart föld",
       "paragraphs": [
-        "[IDE ÍRD A VISSZAÚT BALJÓS JELEIT. A SZÉL ELÁLL, A KUKORICA MÉGIS ZÖRÖG, ÉS AZ INFERIUSOK EGYSZERRE FORDULNAK FELÉTEK.]",
-        "[DESTINATIONT A MEDÁLJA MIATT FIGYELMEN KÍVÜL HAGYJÁK. CSAK RÁD FIGYELNEK, MERT A SAJÁT PECSÉTEDET ELVESZÍTETTED.]",
-        "[A KORÁBBI ÚTTISZTÍTÓ VARÁZSLAT TÖBB ELÁSOTT TESTET IS FELZAVART. NEM EGY-KÉT INFERIUS INDUL UTÁNATOK, HANEM EGÉSZ SOROKBAN MOZOGNI KEZD A FÖLD ÉS A GAZ.]"
+        "Megannyi más, érdekes dolgot lelhetnétek itt. Ellenállsz a kísértésnek, hogy beleless az itt hagyott fényképekbe, vagy alaposabban megszemléld, mit rejtenek a polcokon sorakozó üvegek. Nem szeretnél visszaélni apád bizalmával. Teljesen érthetetlen, hogy vagy képes szeretni őt, de az egész családotok degeneráltakból áll, ami ezt is megmagyarázza. Teljesen mindegy, Felsőházról beszélünk, akik oly sok pénzt fecsérelnek emberi álarcotokba, vagy rólatok, az Alsóházról, akik… nos, ha képes lennél kritikus lenni önmagadhoz, akkor pontosan látnád és tudnád, hogy mi a probléma.",
+        "Amint összeszedtétek, amire szükségetek van – a csontmarkolatú pálcát és a diafilmet apád felkavaró kísérleteiről - , megindultok kifelé. Elfogadod Des kezét az utolsó létrafokoknál, valamiért azonban borsódzik a hátad, amikor az egyik inferust közeledni látod. Apátok azért adta rátok az általa készített ereklyét, hogy lehetőleg ne gyarapítsátok a holtakat. Ne most, nem ilyen körülmények között, mert még szüksége van rátok – ha hazudik is nektek valódi céljairól.",
+        "Egyszerre fordítja feléd az összes. Rád néznek, egyenesen rád, mintha Destinationt észre se vennék. Még nem érted, hogy út közben valamikor elveszítetted, amit apádtól kaptál. És mintha sokkal többen lennének, mint amennyien érkezésetekkor voltak. Varázslatod, amivel apátok bunkerét találtad meg, felzavarta a földben nyugvó bábokat is.",
+		"Többen is megrohamoznak téged azért, hogy elpusztítsanak, mint betolakodót."
       ],
       "choices": [
         {
