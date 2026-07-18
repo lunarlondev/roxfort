@@ -296,7 +296,7 @@
       "choices": [
         {
           "id": "s1_route_map_continue",
-          "text": "Tovább a csapóajtóhoz",
+          "text": "Tovább a csapóajtóhoz.",
           "next": "s1_site_found_map",
           "tags": [
             "normal"
@@ -315,13 +315,16 @@
     "s1_route_des_scene": {
       "title": "Destination nyomában",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN FIGYELI DESTINATION A FÖLDET ÉS AZ INFERIUSOK ELHELYEZKEDÉSÉT. NEM MÁGIÁT HASZNÁL, HANEM EGYSZERŰEN FELISMERI, HOGY A SŰRŰBBEN ŐRZÖTT TERÜLET REJTHETI A LEJÁRÓT.]",
-        "[EGY LOMHÁN UTÁNATOK FORDULÓ INFERIUS MELLETT KELL ELMENNETEK. NEM TÁMAD, DE AMIKOR A GAZBAN KITÉRSZ ELŐLE, A MEDÁLOD LÁNCA EGY KISZÁRADT KUKORICASZÁRBA AKAD ÉS LECSÚSZIK RÓLAD. NEM VESZED ÉSZRE.]"
+        "A név kötelez – és ki másnak lenne célravezetőbb neve, mint Destinationnek?",
+		"Engeded, hogy fivéred vezessen. Csontos ujjaid összefonod az övéivel, miközben az inferusokkal fertőzött földön sétáltok. Átgázoltok a sűrű füvön, és csak olykor álltok meg azért, hogy Des ellenőrizze a térképet és a területet.",
+		"Ritkábban pillant a térképre, mint te tennéd. Te ezt még nem tudod, de stratégikusan keresi azokat a csomópontokat, amiket sűrűbben őriznek pszichopata apátok mocskos teremtményei.  Te nem ijedsz meg tőlük, mert igazán nem találsz bennük semmi rémisztőt. Megszoktad, talán kicsit vonz is. Életed első táncát is egy bábtól kaptad kislány korodban."
+		"Nevetésetek telíti meg a helyet, míg meg nem találjátok a csapóajtót nagyrészt Destination ösztöneire és meglátásaira hagyatkozva. Ahogyan pálcáddal felnyitod a csapóajtó tetejét, az egyik közeli inferus felétek fordul, de nem veszel róla tudomást.",
+		"Még nem vetted észre, hogy nevetgélés helyett inkább az apátoktól kapott medálra kellett volna figyelned, amit valahol elszórtál a földön."	
       ],
       "choices": [
         {
           "id": "s1_route_des_continue",
-          "text": "Rábízod magad Destination következtetésére.",
+          "text": "Tovább a csapóajtóhoz.",
           "next": "s1_site_found_des",
           "tags": [
             "normal"
@@ -340,14 +343,17 @@
     "s1_route_clear_scene": {
       "title": "Letarolt út",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN SÖPRÖD FÉLRE VARÁZSLATTAL A DERÉKIG ÉRŐ GAZT ÉS A SZÁRAZ KUKORICASZÁRAKAT. A LEJÁRÓHOZ VEZETŐ RÉGI ÖSVÉNY FOKOZATOSAN KIRAJZOLÓDIK.]",
-        "[A VARÁZSLAT MEGMOZGATJA A FELSŐ TALAJRÉTEGET ÉS TÖBB ELÁSOTT INFERIUST IS FELZAVAR. MÉG NEM TÁMADNAK, DE KÉSŐBB TÖBBEN INDULNAK MAJD UTÁNATOK.]",
-        "[A LÖKÉSHULLÁM VAGY EGY FELCSAPÓ NÖVÉNYSZÁR ELSZAKÍTJA A MEDÁL LÁNCÁT. A PECSÉT A FELFORGATOTT FÖLD ALÁ KERÜL, TE PEDIG NEM VESZED ÉSZRE.]"
+        "Évtizedek teltek el azóta, hogy élő ember erre a földre lépett volna, de még a vadvilág teremtményei is kerülik ezt a szentségtelen helyet.",
+		"Rövid ideig próbálkozol csak azzal, hogy megpróbáld megfejteni a térképet, de nem látod se a kutat, se a villám sújtotta fát, sem pedig a szélkereket.",
+		"Pálcádért nyúlsz, amikor a gaz már olyan nagy, hogy egyáltalán nem látsz ki belőle. Kifejezetten tehetséges vagy abban, hogyan forgasd azt akár arra, hogy megvédd magad, vagy arra, hogyan árts vele másoknak. Nem jártatok hagyományos iskolába, ti már nem amerikai földön születtetek, és tőletek messzi volt mind az Ilvermorny, mind anyátok alma matere, a Koldovstoretz. A Durmstrangban persze tárt karokkal fogadtak volna, de azokban a zavaros időkben apátok úgy döntött, inkább maga mellett tart titeket Ammanban – vagy amerre épp a lábai vezették.",
+		"Talán mégis csak lapul benne némi altruizmus.",
+		"Tarolóátkod nem kíméli az útba eső inferusokat sem, akiket nem láthattatok a sűrű növényzetben. Nem számít, nincsenek érzéseik. Még a földet is megbolygatod vele, ahogyan tiszta ösvényeket nyitsz azért, hogy előrébb jussatok. Néhány percbe telik csupán, hogy megleljétek azt a csapóajtót.",
+		"Bár talán jobban jártatok volna, ha inkább a nyakatokban függő nyakláncra koncentráltok, ami az egyik lökéshullám miatt észrevétlenül a puha, megbolygatott földbe hullik."
       ],
       "choices": [
         {
           "id": "s1_route_clear_continue",
-          "text": "A feltárt ösvényen haladtok tovább.",
+          "text": "Tovább a csapóajtóhoz.",
           "next": "s1_site_found_clear",
           "tags": [
             "normal"
@@ -367,13 +373,15 @@
     "s1_route_dejavu_scene": {
       "title": "Az ismerős út",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN NEM KELL SEM A TÉRKÉPET, SEM AZ INFERIUSOKAT FIGYELNED. EMLÉKSZEL A KANYAROKRA, A KIDŐLT KERÍTÉSRE ÉS ARRA A HELYRE, AHOL A LEJÁRÓ REJTŐZIK, NOHA EBBEN AZ ÉLETBEN MÉG NEM JÁRTÁL OTT.]",
-        "[TUDATOSAN ELKERÜLÖD AZT A HELYET, AHOL EMLÉKEID SZERINT A SAJÁT MEDÁLOD ELVESZETT. EMIATT DESTINATION HALAD ÁT ELŐTTED A SZŰK RÉSEN, ÉS AZ Ő MEDÁLJÁNAK LÁNCA AKAD FENN. A PECSÉT A GAZBA HULLIK, DE EGYIKŐTÖK SEM VESZI ÉSZRE.]"
-      ],
+        "Nincs szükséged a térképre. Pontosan tudod, hova kell menned.",
+		"Furcsa játékot játszik veled a képzeleted – emlék lenne? Mintha ismernéd az apró gödröket, amik megbújnak a száraz gaz alatt, és valahogy tudod, hogy a lenyugvó nap felé kell fordulni azon inferus mellett, amelyiknek a feje szinte teljesen le van válva a nyakáról.",
+		"Saját nyakadhoz kapsz – emlékszel a medálra, amit apátoktól kaptál, és emlékszel arra is, hogy milyen következményei voltak annak, hogy ezt elveszítetted. Még egyszer nem fogod megengedni, hogy ez megtörténjen. Próbálod elmagyarázni Destinationnek, hogy te már jártál itt, és ez veletek már megtörtént egyszer, de nem tudod elmagyarázni, mégis miként is lehetséges ez. Legfeljebb akkor jártatok az Államokban, ha a Felsőház meghívott titeket valamilyen családi ünnepségre.",
+		"Nem tudsz értelmes magyarázatot adni a dologra, de szerencsére nem is kell. A bátyád nagyon szeret téged. Hisz neked."
+				],
       "choices": [
         {
           "id": "s1_route_dejavu_continue",
-          "text": "Emlékeid alapján egyenesen a lejáróhoz vezeted.",
+          "text": "Tovább a csapóajtóhoz",
           "next": "s1_site_found_dejavu",
           "tags": [
             "secret",
