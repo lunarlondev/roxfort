@@ -212,12 +212,12 @@
       ]
     },
     "s1_attack_start": {
-      "title": "I. Fejezet: Inferius",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Csak egy pontatlan térképet kaptatok apátoktól, és egy-egy medált családotok pecsétjével. Kérdés nélkül inferiusokkal szennyezett földre vet titeket. Gondoskodása, hogy az ereklyével legalább nem tesz titeket teremtményei áldozatává, már majdnem azt feltételezi, hogy akár még érezhet is valamit gyermekei iránt.",
         "Bár valójában elég büszke rátok. Az élők közül ti vagytok a kedvenc teremtményei. Igazán kár lenne értetek.",
         "Száraz, derékig érő gazban tapostok a terjedelmes birtokon. Ruhád széle beleakad az egyik elszáradt, összetöredezett kukoricaszárba. Senki földjén is lehetnétek, pedig ez a föld valójában a tiétek még akkor is, ha a Felsőház visszakövetelte azt tőletek. Apátok viszont annyi meglepetést ásott el a termőföld alá, hogy nem érte meg vesződniük vele. Egyszerűen elrejtették azt a magnixok elől, és erős védővarázslatokkal érték el azt, hogy illetéktelenek akkor se akarjanak a területre tévedni, ha valamiért hirtelen vonzónak találnák ezt a kietlenséget.",
-        "Jól tudod, hogy a legtöbb inferius a föld alatt van – noha pár példány lomhán néz utánatok. Apátok pecsétje megvéd titeket, hisz sajátjaiként ismernek fel titeket. Vélhetően ha ez nem lenne rajtatok, már rég ti is halottak lennétek. Abba persze nem gondolsz bele, hogy mégis honnan szerzett ennyi testet, de az ilyen részletek felett rendszeresen elsikkadsz. Pedig apád fekete mágus, és oka van annak, hogy még a Felsőház se mutatkozik vele szívesen. A te szemedben viszont mégis csak az apád, akivel annyit utaztatok, aki megtanította neked használni a mágiát, és aki végérvényesen megdicséri a ruhát, amit magadra öltesz.",
+        "Jól tudod, hogy a legtöbb inferus a föld alatt van – noha pár példány lomhán néz utánatok. Apátok pecsétje megvéd titeket, hisz sajátjaiként ismernek fel titeket. Vélhetően ha ez nem lenne rajtatok, már rég ti is halottak lennétek. Abba persze nem gondolsz bele, hogy mégis honnan szerzett ennyi testet, de az ilyen részletek felett rendszeresen elsikkadsz. Pedig apád fekete mágus, és oka van annak, hogy még a Felsőház se mutatkozik vele szívesen. A te szemedben viszont mégis csak az apád, akivel annyit utaztatok, aki megtanította neked használni a mágiát, és aki végérvényesen megdicséri a ruhát, amit magadra öltesz.",
         "Apátok is csak homályosan emlékszik arra, pontosan hogyan is néz ki az a lejáró, amire szüksége van. A korral jár, nem az igazi már, nem olyan, mint fénykorában. A térkép és Requiem emlékei szerint három tájékozódási pont segíthet titeket: egy régi, kiszáradt kút, melyben utoljára nagyapátok, Sepulcher Dreadmoor idejében csoboghatott élet; egy villám sújtotta fa, mely egykor apátok pálcájának fáját biztosította; valamint egy szélkerék, ami mára minden bizonnyal berozsdásodott.",
         "Több, mint ötven éve viszont, hogy apátok egyáltalán az államban járt. A térkép pontatlan, a táj pedig teljesen megváltozott az idők folyamán."
       ],
@@ -285,7 +285,7 @@
       ]
     },
     "s1_route_map_scene": {
-      "title": "A térkép nyomán",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Talán kicsit időigényesebb a megoldás, de nincs okotok sietni.",
 		"Elsőnek a kutat találod meg. Épp szerencséd volt, amikor felnéztél a térképből és megláttad a távoli objektumot",
@@ -313,7 +313,7 @@
       ]
     },
     "s1_route_des_scene": {
-      "title": "Destination nyomában",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "A név kötelez – és ki másnak lenne célravezetőbb neve, mint Destinationnek?",
 		"Engeded, hogy fivéred vezessen. Csontos ujjaid összefonod az övéivel, miközben az inferusokkal fertőzött földön sétáltok. Átgázoltok a sűrű füvön, és csak olykor álltok meg azért, hogy Des ellenőrizze a térképet és a területet.",
@@ -341,7 +341,7 @@
       ]
     },
     "s1_route_clear_scene": {
-      "title": "Letarolt út",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Évtizedek teltek el azóta, hogy élő ember erre a földre lépett volna, de még a vadvilág teremtményei is kerülik ezt a szentségtelen helyet.",
 		"Rövid ideig próbálkozol csak azzal, hogy megpróbáld megfejteni a térképet, de nem látod se a kutat, se a villám sújtotta fát, sem pedig a szélkereket.",
@@ -371,7 +371,7 @@
       ]
     },
     "s1_route_dejavu_scene": {
-      "title": "Az ismerős út",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Nincs szükséged a térképre. Pontosan tudod, hova kell menned.",
 		"Furcsa játékot játszik veled a képzeleted – emlék lenne? Mintha ismernéd az apró gödröket, amik megbújnak a száraz gaz alatt, és valahogy tudod, hogy a lenyugvó nap felé kell fordulni azon inferus mellett, amelyiknek a feje szinte teljesen le van válva a nyakáról.",
@@ -401,7 +401,7 @@
       ]
     },
     "s1_site_found_map": {
-      "title": "A régi lejáró",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Talán észre se vennétek a föld alatti lejárót, ha nem keresnétek azt célzottan. Ócska, fából és vasból álló csapóajtót nyittok fel egy pálcaintéssel. Apátok még csak arra se vette a fáradtságot, hogy mágikusan lezárja ezt; túlontúl bízott abban, hogy a bábjai majd megvédik, ami az övé.",
 		"Igaza volt.",
@@ -438,7 +438,7 @@
       ]
     },
     "s1_site_found_des": {
-      "title": "A régi lejáró",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Talán észre se vennétek a föld alatti lejárót, ha nem keresnétek azt célzottan. Ócska, fából és vasból álló csapóajtót nyittok fel egy pálcaintéssel. Apátok még csak arra se vette a fáradtságot, hogy mágikusan lezárja ezt; túlontúl bízott abban, hogy a bábjai majd megvédik, ami az övé.",
 		"Igaza volt.",
@@ -476,7 +476,7 @@
       ]
     },
     "s1_site_found_clear": {
-      "title": "A régi lejáró",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Talán észre se vennétek a föld alatti lejárót, ha nem keresnétek azt célzottan. Ócska, fából és vasból álló csapóajtót nyittok fel egy pálcaintéssel. Apátok még csak arra se vette a fáradtságot, hogy mágikusan lezárja ezt; túlontúl bízott abban, hogy a bábjai majd megvédik, ami az övé.",
 		"Igaza volt.",
@@ -513,7 +513,7 @@
       ]
     },
     "s1_site_found_dejavu": {
-      "title": "A régi lejáró",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Emlékszel a csapóajtóra, és emlékszel arra is, hogy mi minden van ott.",
 		"Ismerősen terjed tüdődben a penész, a rozsda és az ismeretlen szag, amit még mindig nem tudsz hova kötni. Jelenleg nem is tartod fontosnak. Csak minél hamarabb vissza akarsz jutni a biztonságba, mielőtt az újra megtörténik. Persze most a nyakadban apád védelme; a biztonság kedvéért kényszeresen ellenőrzöd azt újra, mielőtt leérnél a lejárat aljára. Előre mész, most a te fényed fogja vezetni Destinationt, és nem fogod engedni, hogy még egyszer megtörténjen ugyanaz. Előre figyelmezteted őt a hetedik lépcsőfokról is, amire úgy emlékszel, betört alattad.",
@@ -549,7 +549,7 @@
       ]
     },
     "s1_dejavu_medal_transfer": {
-      "title": "A hiányzó pecsét",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Biztos vagy a dolgodban, hogy most nem történik meg ugyanaz, mint amire emlékszel. Lerázhatod magadról a deja vu érzést, és abban a hitben indulhatsz el, hogy sikerült a kezedbe venned sorsodat.",
 		"Az Élettől kaptál egy második esélyt.",
@@ -576,7 +576,7 @@
       ]
     },
     "s1_return_omens_normal": {
-      "title": "Visszaút",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Megannyi más, érdekes dolgot lelhetnétek itt. Ellenállsz a kísértésnek, hogy beleless az itt hagyott fényképekbe, vagy alaposabban megszemléld, mit rejtenek a polcokon sorakozó üvegek. Nem szeretnél visszaélni apád bizalmával. Teljesen érthetetlen, hogy vagy képes szeretni őt, de az egész családotok degeneráltakból áll, ami ezt is megmagyarázza. Teljesen mindegy, Felsőházról beszélünk, akik oly sok pénzt fecsérelnek emberi álarcotokba, vagy rólatok, az Alsóházról, akik… nos, ha képes lennél kritikus lenni önmagadhoz, akkor pontosan látnád és tudnád, hogy mi a probléma.",
         "Amint összeszedtétek, amire szükségetek van – a csontmarkolatú pálcát és a diafilmet apád felkavaró kísérleteiről - , megindultok kifelé. Elfogadod Des kezét az utolsó létrafokoknál, valamiért azonban borsódzik a hátad, amikor az egyik inferust közeledni látod. Apátok azért adta rátok az általa készített ereklyét, hogy lehetőleg ne gyarapítsátok a holtakat. Ne most, nem ilyen körülmények között, mert még szüksége van rátok – ha hazudik is nektek valódi céljairól.",
@@ -595,7 +595,7 @@
       ]
     },
     "s1_return_omens_clear": {
-      "title": "A felzavart föld",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Megannyi más, érdekes dolgot lelhetnétek itt. Ellenállsz a kísértésnek, hogy beleless az itt hagyott fényképekbe, vagy alaposabban megszemléld, mit rejtenek a polcokon sorakozó üvegek. Nem szeretnél visszaélni apád bizalmával. Teljesen érthetetlen, hogy vagy képes szeretni őt, de az egész családotok degeneráltakból áll, ami ezt is megmagyarázza. Teljesen mindegy, Felsőházról beszélünk, akik oly sok pénzt fecsérelnek emberi álarcotokba, vagy rólatok, az Alsóházról, akik… nos, ha képes lennél kritikus lenni önmagadhoz, akkor pontosan látnád és tudnád, hogy mi a probléma.",
         "Amint összeszedtétek, amire szükségetek van – a csontmarkolatú pálcát és a diafilmet apád felkavaró kísérleteiről - , megindultok kifelé. Elfogadod Des kezét az utolsó létrafokoknál, valamiért azonban borsódzik a hátad, amikor az egyik inferust közeledni látod. Apátok azért adta rátok az általa készített ereklyét, hogy lehetőleg ne gyarapítsátok a holtakat. Ne most, nem ilyen körülmények között, mert még szüksége van rátok – ha hazudik is nektek valódi céljairól.",
@@ -615,7 +615,7 @@
       ]
     },
     "s1_return_omens_dejavu": {
-      "title": "A megismétlődő jel",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Elengeded a rozoga létrát, hogy beszámolhass Desnek újfent arról, hogy mi történt. Most sem kételkedik szavaidban – és ugyanannyira félt téged, mint te őt. Kioldod a medált a nyakadból, hogy az övébe rakhasd, amíg ő segítségért indul, téged pedig védőbűbájjal zár be a bunkerbe, amíg vissza nem tud jönni érted. Nem tudod, mennyi idő, míg visszatér, de nincs okod nem bízni benned. Elfoglalod magad; belelapozgatsz az itt maradt könyvekbe, megkeresed a furcsa szag forrását (biztosan az egyik üvegből jön), és átböngészed az itt maradt holmikat, apád és nagyapád örökségét.",
 		"Inkább azt az évek óta beázott falrészt nézted volna meg, ami még védte a helyiséget az inferusok jelenlététől."
@@ -634,7 +634,7 @@
       ]
     },
     "s1_attack_choice_normal": {
-      "title": "A támadás",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Apád jól megtanított téged harcolni.",
 		"Vagy ha nem apád, akkor az aktuális mesterek, akikre a párbajozási képességeid csiszolását bízta.",
@@ -673,7 +673,7 @@
       ]
     },
     "s1_attack_choice_dejavu": {
-      "title": "A támadás újra",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Vélhetően apád nyaklánca nélkül is meg tudnád védeni magad egy inferustól. Talán kettőtől vagy többtől. Bármennyit is tanultál apádtól – vagy az általa fizetett, más mesterektől – a párbajozásról, egy ekkora hordával szemben nem lenne esélyed.",
         "Tapasztaltad. Nem tudod, megmagyarázni, hogyan és miért, de tudod, hogy már megtörtént veled.",
@@ -714,7 +714,7 @@
       ]
     },
     "s1_escape_attempt_normal": {
-      "title": "Destination árnyékában",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Olyan közel húzódsz hozzá, amennyire csak tudsz. Először csontos vállad ér csak hozzá karjához, ám aztán pókujjaid is belemarkolnak, mialatt pálcát fogsz a támadóidra másik kezeddel.",
 		"A teremtmény pedig rád néz. Kizárólag rád.",
@@ -757,7 +757,7 @@
       ]
     },
     "s1_fire_attempt_normal": {
-      "title": "Tűz a száraz mezőn",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Leválsz testvéredtől, hogy ő segítségért rohanjon.",
 		"Pálcád az elsőként érkező inferusra szegezed, és hagyod, hogy a lángok beborítsák a testét. Tesz még pár lépést, mielőtt összerogyna előtted. Ha nem is érzi a fájdalmat, ha nem is retten meg a tűztől, ez az egyetlen, ami tényleg és igazán hatékony ellenük.",
@@ -797,7 +797,7 @@
       ]
     },
     "s1_confringo_attempt_dejavu": {
-      "title": "Az ismert menekülés",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Pálcád már a kezedben van, mire az inferus válla is áttöri a falat. A téglák egyenként hullanak a padlóra, mögötte pedig újabb mozgást vélsz felfedezni. Nem egyedül jött.",
 		"Pálcád előre szegezed, a Confringo-t követő vörös fény pedig telibe találja az inferust. A csonttörés hangja mással összetéveszthetetlen. Még több tégla hullik a földre – talán ezzel csak nagyobb problémát okoztál, mint amiben eddig voltál.",
@@ -838,7 +838,7 @@
       ]
     },
     "s1_glacius_attempt_dejavu": {
-      "title": "Az ismert lángok",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Ezüstös-kék fény távozik pálcádból, egyenesen a betolakodóra. Tudod, hogy nem a jég a legjobb megoldás, de zárt térben tűzzel játszani olyan veszélyes, hogy talán jobban járnál még azzal is, ha csendben megvárnád, míg magukkal ragadnak.",
 		"A bejutni kívánó test egy szempillantás alatt megmerevedik a jégtől. Először azt hiszed, sikerült, néhány másodpercig úgy is tűnik. A mögötte tolakodó testek azonban egyszerűen kinyomják őt a résen, mint egy fogkrémet.",
@@ -879,7 +879,7 @@
       ]
     },
     "s1_eye_escape_separated": {
-      "title": "Elszakadva",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Nem harcolsz a közétek ékelődő inferussal, és nem próbálod meg elkapni Destination karját.",
 		"Nincs olyan messze a ház, innen már látjátok a növényzet fölött, és ha egyenesen arra indulsz futva, akkor jóval korábban elérheted a védőbűbájok határát, mint a már bejárt ösvényeken.",
@@ -907,7 +907,7 @@
       ]
     },
     "s1_eye_escape_together": {
-      "title": "Egymás mellett",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Darabokra robbantod a közétek álló inferust. Nem foglalkozol azzal, hogy ruhád a maradványaival szennyeződik. Majd lesz másik.",
 		"Nem szakadhatsz el a bátyádtól.",
@@ -936,7 +936,7 @@
       ]
     },
     "s1_eye_fire_ring": {
-      "title": "A körön belül",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Legjobbnak tartod, ha nem kockáztatsz. Nem szeretnéd az egész birtokot lángokban látni, hisz még a Felsőházatok is tisztelte annyira apátok munkáját, hogy ne gyújtsanak fel mindent.",
 		"Pont ott csapnak fel a lángok, ahol kijelölted határát. Óvatos mozdulatokkal húzod magad köré a kört, és nem engeded továbbterjedni azt a száraz növényzeten. A vékony lángfalak a magasba csapnak, áthatolhatatlan akadályt állítva az inferusok számára. Kívül rekedt az összes, míg te a kör közepén maradsz. Az inferusokat sikerült feltartóztatnod.",
@@ -956,7 +956,7 @@
       ]
     },
     "s1_eye_fire_chaos": {
-      "title": "Mindent felemésztő lángok",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Hasztalan mindet irányítani, ha az életed a tét. Meg se próbálod hát irányítani.",
         "Végighúzod magad előtt a pálcád, és engeded továbbterjedni azt a kiszáradt, halott növényzeten át. Megcsapja az égett hús szaga az orrodat, ahogyan a lángok felkúsznak a holtak testére, de ugyanúgy átugranak a száraz gazra, felkúsznak a kukoricaszárakon, és felfalnak mindent, amit tudnak.",
@@ -978,7 +978,7 @@
       ]
     },
     "s1_eye_escape_separated_dejavu": {
-      "title": "Másik sor, ugyanaz a vég",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Pálcád hegyéből sötét lángokat szórsz magad köré, hogy elzárd az utat közted és a támadóid között. Eleven falat emelsz magatok közé, hogy megvédhesd magad. Gondolkodás nélkül próbálnak átfutni a lángokon, amik azonban azonnal végigfutnak a rothadó testeken.",
 		"Apád teremtményei nem érzik a fájdalmat. Tudatuk sincs, amivel felfognák, hogy mi az.",
@@ -1005,7 +1005,7 @@
       ]
     },
     "s1_eye_escape_together_dejavu": {
-      "title": "Szorosabb kapaszkodás",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Az átokkal most nem a falra célzol. A flipendo egyenesen az első előretörő inferus mellkasába csapódik. Hátralököd ugyan, de az ártás nem volt elég erős ahhoz, hogy teljesen megállítsa. Nincs most időd rá – a mögötte lévőre szegezed pálcádat, még mielőtt az kibújna a fal résén át.",
 		"Már hallod a bejárat felől, hogy Des visszaérkezett hozzád, talán épp apáddal, vagy a megtalált medállal. Biztos voltál benne, hogy sikerrel fog járni. Biztos voltál benne, hogy ezúttal minden másként lesz. Biztos voltál benne, hogy…",
@@ -1032,7 +1032,7 @@
       ]
     },
     "s1_eye_fire_ring_dejavu": {
-      "title": "Átrajzolt kör",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Nem állítod meg őket teljesen, de feltartod őket addig, amíg a segítség érkezik. Tudod, milyen gyorsan képesek mozogni, mégis csak apátok mágiája mozgatja őket. A varázslatod láthatatlan súlyként nehezedik rájuk, mozgásuk sebessége pedig drasztikusan lecsökken.",
 		"Már hallod a mozgolódást a csapóajtó felett. Biztos vagy a sikeredben, és biztos vagy benne, hogy sikerül élve megúsznod az egészet. Visszakiabálsz testvérednek és apádnak, hogy jól vagy.",
@@ -1058,7 +1058,7 @@
       ]
     },
     "s1_eye_fire_chaos_dejavu": {
-      "title": "Másként terjedő tűz",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "A földre irányítod a pálcád. Megvárod, míg páran kilépnek, majd újabb ezüstös-kék fény fut végig a bunker kövein, a beázásokból összegyűlt víz pedig egy szempillantás alatt megdermed körülöttük.",
         "Felkúszik a jég a bokájukra, ráfagy mezítelen lábszárukra, és odaköti őket a padlóhoz. Nyújtóznak feléd, de te a kijárat felé hátrálsz. Már úgyis hallod testvéred kétségbeesett kiabálását, hogy rendben vagy-e. Visszatért, talán apáddal, talán a medállal, de mindenképpen megmenekülsz.",
@@ -1085,7 +1085,7 @@
       ]
     },
     "s1_cut_to_chapter_two": {
-      "title": "I. Epizód - VÉGE",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Vérben ázva görnyedsz a földre, mialatt apádék gondoskodnak arról, hogy élve kijuthass innen."
       ],
@@ -1102,7 +1102,7 @@
       ]
     },
     "s2_wake_after_attack": {
-      "title": "II. fejezet — Az idegen szem",
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
         "[A KÉP A CUT UTÁN EGY SÖTÉT, CSENDES SZOBÁBAN TÉR VISSZA. EZ A CSOMÓPONT CSAK AZ I. FEJEZET NORMÁL VAGY DÉJÀ VU FOLYTATÁSÁNAK SZÉTVÁLASZTÁSÁRA SZOLGÁL.]"
       ],
@@ -1262,7 +1262,7 @@
       ]
     },
     "s2_wake_normal": {
-      "title": "Bekötött szemmel",
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
         "[IDE ÍRD AZ INTERMEZZO NYITÁNYÁT. A KARAKTER BEKÖTÖTT SZEMMEL ÉBRED A SAJÁT SZOBÁJÁBAN. NEM KELL RÉSZLETEZNI, HOGYAN JUTOTT HAZA.]",
         "[MUTASD BE AZ ANYÁT A JELENETEN KERESZTÜL. VÁMPÍR: HIDEG AZ ÉRINTÉSE, NEM LÉLEGZIK, A SÖTÉT SZOBÁBAN IS TÖKÉLETESEN TÁJÉKOZÓDIK. UGYANAKKOR GONDOSKODÓ ÉS MEGNYUGTATÓAN VISELKEDIK.]",
@@ -1298,7 +1298,7 @@
       ]
     },
     "s2_origin_evasion_normal": {
-      "title": "Az élet elvesz és ad",
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
         "[AZ ANYA KITÉRŐ, SZINTE KÖLTŐI VÁLASZT AD: AZ ÉLET ELVESZ, ÉS AZ ÉLET AD. NEM MONDJA MEG EGYENESEN, KITŐL VAGY MILYEN KÖRÜLMÉNYEK KÖZÖTT SZEREZTE A SZEMET.]",
         "[A HANGJA LEHET GYENGÉD, DE A VÁLASZA LEZÁRÓ. ÚGY BESZÉL A BEAVATKOZÁSRÓL, MINTHA A DÖNTÉS MÁR MEGSZÜLETETT VOLNA.]"
@@ -1334,7 +1334,7 @@
       ]
     },
     "s2_origin_raven_normal": {
-      "title": "A varjú ajándéka",
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
         "[AZ ANYA ELMONDJA, HOGY A SZEMET EGY VARJÚ AJÁNLOTTA FEL ÖNKÉNT. ÁLLÍTÁSA SZERINT A LÁTÓ MÁR HALDOKLOTT, Ő PEDIG CSAK KEGYELEMDÖFÉST ADOTT NEKI.]",
         "[A TÖRTÉNET LEGYEN HIHETŐNEK TŰNŐ, DE GYANÚSAN KEREK. AZ ANYA NEM ENGED TOVÁBBI KÉRDÉSEKET, ÉS VISSZATÉR A PROCEDÚRA ELŐKÉSZÍTÉSÉHEZ.]"
@@ -1356,7 +1356,7 @@
       ]
     },
     "s2_preprocedure_normal": {
-      "title": "A procedúra előtt",
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
         "[IDE ÍRD A BEAVATKOZÁS ELŐTTI ZAVAROS, TÖREDEZETT KÉPEKET: ESZKÖZÖK CSÖRRENÉSE, BÁJITAL ILLATA, AZ ANYA HIDEG KEZE ÉS A FÉL SZEMMEL ÉRZÉKELT SZOBA.]",
         "[AZ ANYA EGY ALTATÓ VAGY BÓDÍTÓ BÁJITALT AD. A KARAKTER ELŐTT MÉG OTT VAN A LEJÁRÓBÓL ELHOZOTT TÁRGY IS.]",
@@ -1412,7 +1412,7 @@
       ]
     },
     "s2_hidden_twin_normal": {
-      "title": "Ugyanaz az arc",
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
         "[A VEZÉRLŐPÁLCA A HÁZ EGY ELZÁRT, RITKÁN HASZNÁLT RÉSZÉHEZ VEZET. A KARAKTER EGY LEZÁRT HELYISÉGBEN MEGTALÁLJA A HALOTTNAK HITT MÁSIK BÁTYJÁT.]",
         "[ELSŐ PILLANTÁSRA DESTINATIONNEK TŰNIK, DE SOVÁNYABB, GYENGÉBB ÉS LÁTHATÓAN LE VAN AMORTIZÁLVA. BESZÉDKÉPTELEN. MOZGÁSA ÉS REAKCIÓI NEM TELJESEN EMBERIEK.]",
@@ -1451,7 +1451,7 @@
       ]
     },
     "s2_twin_attack_normal": {
-      "title": "A kezek a nyakadon",
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
         "[AMIKOR A KARAKTER A KORLÁTOZÁSHOZ VAGY A TESTVÉRHEZ ÉR, A BÁTY HIRTELEN RÁTÁMAD ÉS FOJTOGATNI KEZDI. NEM VILÁGOS, HOGY ÉHSÉG, FÉLELEM, ÖSZTÖN VAGY VALAMILYEN BEÉPÍTETT PARANCS MOZGATJA.]",
         "[AZ ANYA ÉRKEZIK ÉS MEGMENTI A KARAKTERT. A BÁTY AZONNAL ELENGEDI, HÁTRÁL VAGY ÖSSZEGÖRNYED: EGYÉRTELMŰEN RETTEG AZ ANYÁTÓL.]",
@@ -1470,7 +1470,7 @@
       ]
     },
     "s2_twin_fear_normal": {
-      "title": "A néma közeledés",
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
         "[A KARAKTER HÁTRÁL. A BÁTY ÉSZREVESZI, FIGYELI, ESETLEG LASSAN KÖZELEDNI KEZD, DE NEM KELL AZONNAL RÁTÁMADNIA.]",
         "[AZ ANYA MEGTALÁLJA A KARAKTERT ÉS MEGNYUGTATJA. MARADJON BIZONYTALAN, HOGY ANYAI GYENGÉDSÉGET, VÁMPÍRI RÁHATÁST VAGY BŰBÁJT HASZNÁL.]",
@@ -1489,7 +1489,7 @@
       ]
     },
     "s2_implant_normal": {
-      "title": "Az idegen szerv",
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
         "[IDE ÍRD A NORMÁL SZEMBEÜLTETÉS TÖREDEZETT JELENETÉT. A KARAKTER ELKÁBUL, CSAK HANGOKAT, ÉRINTÉSEKET ÉS RÖVID FÁJDALOMKITÖRÉSEKET ÉRZÉKEL.]",
         "[A SZEM BEÜLTETÉSE MINDEN NORMÁL II. FEJEZETES ÁGON MEGTÖRTÉNIK.]"
@@ -1513,7 +1513,7 @@
       ]
     },
     "s2_eye_implanted_normal": {
-      "title": "A második tekintet",
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
         "[A BEAVATKOZÁS UTÁN A KARAKTER ELŐSZÖR MÉG CSAK FÉNYT ÉS MOZGÁST ÉRZÉKEL AZ ÚJ SZEMMEL. VALAMI AZONBAN MÁR AZ ELSŐ PILLANATBAN NEM TERMÉSZETES.]",
         "[NÉHÁNY NAP TELIK EL. A SEB GYÓGYUL, AZ IDEGEN SZEM PEDIG EGYRE MÉLYEBBEN KAPCSOLÓDIK A TESTHEZ.]"
@@ -1530,7 +1530,7 @@
       ]
     },
     "s2_wake_dejavu": {
-      "title": "Bekötött szemmel — újra",
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
         "[IDE ÍRD UGYANAZT AZ ÉBREDÉST, DE A KARAKTER MÁR EMLÉKSZIK A SZOBÁRA, AZ ANYA HIDEG ÉRINTÉSÉRE ÉS ARRA A MONDATRA, HOGY TALÁLT NEKI EGY ÚJ SZEMET.]",
         "[AZ ANYA KÖZLI, HOGY A SZEM EGY RENDKÍVÜL ERŐS LÁTÓÉ VOLT. A KARAKTER TUDJA, HOGY A SZEM PARAZITAKÉNT FOG VISELKEDNI.]"
@@ -1554,7 +1554,7 @@
       ]
     },
     "s2_dejavu_protest": {
-      "title": "Amit már tudsz",
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
         "[A KARAKTER ELMONDJA, HOGY A SZEMET NEM ÖNKÉNT ADTÁK, HOGY A SZEM NEM AKARJA ŐT, ÉS HOGY EZT EGYSZER MÁR VÉGIGÉLTE.]",
         "[MEGPRÓBÁLJA ELMAGYARÁZNI, HOGY A SZEM KÍNOZNI FOGJA, BELEKAPASZKODIK AZ EMLÉKEIBE, ÉS VÉGÜL A HALÁLÁBA KERGETI.]",
@@ -1574,7 +1574,7 @@
       ]
     },
     "s2_preprocedure_dejavu": {
-      "title": "Az ismert procedúra előtt",
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
         "[A KARAKTER FELISMERI A BÁJITAL ÍZÉT, AZ ESZKÖZÖK HANGJÁT ÉS AZT A PILLANATOT, AMIKOR AZ ANYA RÖVID IDŐRE MAGÁRA HAGYJA.]",
         "[TUDJA, HOGY HA MEGISSZA A BÁJITALT, A BEÜLTETÉS UGYANÚGY MEGTÖRTÉNIK. UGYANAKKOR MOST EMLÉKSZIK EGY NYITVA MARADÓ AJTÓRA ÉS A HÁZ ELZÁRT RÉSZÉRE.]"
@@ -1614,7 +1614,7 @@
       ]
     },
     "s2_hidden_twin_dejavu": {
-      "title": "A másik báty — újra",
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
         "[A KARAKTER EMLÉKEI ALAPJÁN JUT EL A HÁZ ELZÁRT RÉSZÉBE. MÁR AZ AJTÓ KINYITÁSA ELŐTT TUDJA, HOGY DESTINATIONNEL AZONOS ARCOT FOG LÁTNI.]",
         "[A HALOTTNAK HITT BÁTY EBBEN AZ ÉLETBEN IS OTT VAN: GYENGE, LEAMORTIZÁLT ÉS BESZÉDKÉPTELEN. A FELFEDEZÉS MOST AZT BIZONYÍTJA, HOGY A KORÁBBI EMLÉKEK NEM PUSZTA LÁTOMÁSOK VOLTAK.]"
@@ -1652,7 +1652,7 @@
       ]
     },
     "s2_twin_attack_dejavu": {
-      "title": "Ugyanazok a kezek",
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
         "[A BÁTY A KISZABADÍTÁSI KÍSÉRLETRE RÁTÁMAD A KARAKTERRE ÉS FOJTOGATNI KEZDI. A KARAKTER EMLÉKSZIK A MOZDULATRA, DE ETTŐL MÉG NEM TUDJA MEGÁLLÍTANI.]",
         "[AZ ANYA MEGMENTI. A BÁTY TŐLE MOST IS AZONNAL VISSZAHŐKÖL ÉS LÁTHATÓAN RETTEG.]",
@@ -1672,7 +1672,7 @@
       ]
     },
     "s2_twin_fear_dejavu": {
-      "title": "Az ismert félelem",
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
         "[A KARAKTER HÁTRÁL. AZ ANYA MEGTALÁLJA, MEGNYUGTATJA VAGY RÁHATÁSSAL ENGEDELMESSÉ TESZI.]",
         "[A KARAKTER MÁR TUDJA, HOGY MAGYARÁZATOT NEM FOG KAPNI. AZ ANYA VISSZAVEZETI A BEÜLTETÉSHEZ.]",
@@ -1692,7 +1692,7 @@
       ]
     },
     "s2_implant_dejavu": {
-      "title": "A már ismert fájdalom",
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
         "[IDE ÍRD A SZEMBEÜLTETÉST A DÉJÀ VU NÉZŐPONTJÁBÓL. A KARAKTER ELŐRE ISMERI AZ ESZKÖZÖK HANGJÁT, A FÁJDALOM ÜTEMÉT ÉS AZT A PILLANATOT, AMIKOR A SZEM KAPCSOLÓDNI KEZD.]",
         "[ÉRZI, HOGY A SZEM ELLENÁLL NEKI, ÉS MÁR A BEÜLTETÉS KÖZBEN TUDJA, HOGY A PROCEDÚRA SIKERÜLNI FOG.]"
@@ -1717,7 +1717,7 @@
       ]
     },
     "s2_eye_implanted_dejavu": {
-      "title": "A második tekintet — újra",
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
         "[A KARAKTER MÁR AZ ELSŐ FÉNYFOLTOKBÓL FELISMERI AZ IDEGEN SZEMET. TUDJA, HOGY NÉHÁNY NAPON BELÜL MEGKEZDŐDNEK A LÁTOMÁSOK.]",
         "[EZÚTTAL NEM VÁRJA MEG, HOGY A PARAZITA FOKOZATOSAN FELFEDJE MAGÁT. MÁR TUDJA, MI KÖVETKEZIK.]"
@@ -1736,7 +1736,7 @@
       ]
     },
     "s3_normal_recovery": {
-      "title": "III. fejezet — Amit a szem lát",
+      "title": "III. Fejezet — Parazita",
       "paragraphs": [
         "[IDE ÍRD A GYÓGYULÁS NAPJAIT. KEZDETBEN AZ ÚJ SZEM JOBBAN LÁT, MINT AZ EREDETI: SÖTÉTBEN, FALAKON TÚLI MOZGÁSBAN ÉS MÁSOK KÖVETKEZŐ MOZDULATAIBAN IS ÉSZREVESZ RÉSZLETEKET.]",
         "[EZUTÁN MEGJELENNEK A PARAZITA TÜNETEI: A SZEM AKKOR IS LÁT, AMIKOR LEHUNYOD; ÖNÁLLÓAN MOZOG A TÜKÖRBEN; IDEGEN EMLÉKEKET MUTAT; ÉS A SAJÁT FÉLELMEIDBŐL ÉPÍT LÁTOMÁSOKAT.]",
@@ -1808,7 +1808,7 @@
       ]
     },
     "s3_mother_binding_offer": {
-      "title": "Az anya vére",
+      "title": "III. Fejezet — Parazita",
       "paragraphs": [
         "[AZ ANYA FELISMERI, HOGY A SZEM MÁR NEM TÁVOLÍTHATÓ EL BIZTONSÁGOSAN, DE A SAJÁT VÁMPÍRVÉRÉVEL ÉS EGY RITUÁLIS KÖTÉSSEL KORLÁTOZHATJA.]",
         "[A KÖTÉS ELNÉMÍTHATJA A LÁTOMÁSOKAT, DE ÖSSZEKAPCSOLJA A KARAKTER ÉRZÉKELÉSÉT AZ ANYÁVAL. AZ ANYA KÉSŐBB A SZEMÉN KERESZTÜL LÁTHAT, ÉREZHETI A FÉLELMÉT, VAGY RÖVID IDŐRE A TEKINTETÉT IS IRÁNYÍTHATJA.]"
@@ -1834,7 +1834,7 @@
       ]
     },
     "s3_parasite_torment": {
-      "title": "Gyökerek a koponyában",
+      "title": "III. Fejezet — Parazita",
       "paragraphs": [
         "[A SZEM EGYRE SZEMÉLYESEBB LÁTOMÁSOKKAL KÍNOZZA A KARAKTERT. ÖSSZEKEVERI A VALÓS JÖVŐKET, LEHETSÉGES JÖVŐKET ÉS SZÁNDÉKOS HAZUGSÁGOKAT.]",
         "[A KARAKTER FIZIKAILAG IS ÉRZI A PARAZITÁT: FINOM GYÖKEREK FUTNAK A SZEMÜREGBŐL AZ IDEGEK ÉS AZ AGY FELÉ. A SZEM MÁR NEM KÜLÖNÁLLÓ SZERV.]"
@@ -1865,7 +1865,7 @@
       ]
     },
     "s3_harness_eye": {
-      "title": "A látó öröksége",
+      "title": "III. Fejezet — Parazita",
       "paragraphs": [
         "[A KARAKTER KÉRDÉSEKET TESZ FEL A SZEMNEK, EMBEREKRE NÉZVE JÖVŐKET KERES, ÉS MEGPRÓBÁLJA ELVÁLASZTANI A HASZNOS KÉPEKET A MANIPULÁCIÓTÓL.]",
         "[A SZEM EGYRE TÖBB HATALMAT AD, DE CSERÉBE IDEGEN EMLÉKEKET, SZOKÁSOKAT ÉS KÉSŐBB AZ ELŐZŐ LÁTÓ SZEMÉLYISÉGÉNEK DARABJAIT ÜLTETI A KARAKTERBE.]",
@@ -1901,7 +1901,7 @@
       ]
     },
     "s3_twin_suffering": {
-      "title": "A falak mögötti élet",
+      "title": "III. Fejezet — Parazita",
       "paragraphs": [
         "[A SZEM NEMCSAK KÉPEKET, HANEM A BEZÁRT BÁTY TESTI ÉS ÉRZELMI SZENVEDÉSÉT IS ÁTADJA: A SÖTÉTSÉGET, AZ ÉHSÉGET, A BESZÉDKÉPTELENSÉGET, AZ ANYÁTÓL VALÓ RETTEGÉST ÉS DESTINATION LÉPTEIT A FALAKON TÚL.]",
         "[A KARAKTER MEGÉRTI, HOGY A II. FEJEZETBENI TÁMADÁS NEM FELTÉTLENÜL ROSSZINDULAT VOLT. LEHETETT FÉLELEM, ZAVARTSÁG, ÉHSÉG VAGY BELÉ NEVELT REFLEX.]",
@@ -1929,7 +1929,7 @@
       ]
     },
     "s3_major_vision": {
-      "title": "Amit nem lehet lehunyni",
+      "title": "III. Fejezet — Parazita",
       "paragraphs": [
         "[IDE ÍRD A HOSSZÚ, KIEMELT LÁTOMÁST. A SZEM ÖSSZEKEVERI A LÁTÓ HALÁLÁT, A KARAKTER SAJÁT LEHETSÉGES HALÁLÁT, A CSALÁDJA VESZTESÉGEIT ÉS OLYAN KÉPEKET, AMELYEK TALÁN MÉG NEM TÖRTÉNTEK MEG.]",
         "[A SZEM ARRA SZÁMÍT, HOGY A KARAKTER MEGRÉMÜL, MEGSZAKÍTJA A KÉPET, SEGÍTSÉGET KÉR VAGY KÍSÉRLETET TESZ AZ ELTÁVOLÍTÁSÁRA.]",
@@ -1989,7 +1989,7 @@
       ]
     },
     "s3_patient_revelation": {
-      "title": "A teljes emlék",
+      "title": "III. Fejezet — Parazita",
       "paragraphs": [
         "[MIVEL A KARAKTER NEM FORDUL EL ÉS NEM PRÓBÁLJA IRÁNYÍTANI, A SZEM ABBAHAGYJA A FÉLELEMKELTŐ VÁGÁSOKAT, ÉS EGYBEN MUTATJA MEG AZ ELŐZŐ LÁTÓ TÖRTÉNETÉT.]",
         "[LÁTHATÓVÁ VÁLIK A LÁTÓ FOGSÁGA, A SZEM ÁTADÁSÁNAK VALÓDI KÖRÜLMÉNYE, AZ ANYA SZEREPE ÉS AZ A PILLANAT, AMIKOR A SZEM FELISMERTE AZ ÚJ HORDOZÓJÁT.]",
@@ -2009,7 +2009,7 @@
       ]
     },
     "s3_dejavu_recovery": {
-      "title": "III. fejezet — A már ismert parazita",
+      "title": "III. Fejezet — Parazita",
       "paragraphs": [
         "[A DÉJÀ VU ÚTVONALON NINCS LASSÚ FELFEDEZÉS. A KARAKTER TUDJA, HOGY A SZEM IDEGEKEN KERESZTÜL GYÖKERET ERESZT, OLVASSA AZ EMLÉKEIT, ÉS A FÉLELMEIBŐL ÉPÍT LÁTOMÁSOKAT.]",
         "[TUDJA AZT IS, HOGY AZ ELŐZŐ ÉLETBEN AZ ELTÁVOLÍTÁSÁBA HALT BELE. MOST KÉT LEHETŐSÉGE MARAD: ÚJRA MEGKÍSÉRLI UGYANAZT, VAGY NEM ISMÉTLI MEG A HIBÁT.]",
