@@ -810,7 +810,7 @@
         },
         {
           "id": "s1_escape_stay_close_dejavu",
-          "text": "Reducto",
+          "text": "Flipendo!",
           "next": "s1_eye_escape_together_dejavu",
           "tags": [
             "secret"
@@ -976,7 +976,10 @@
     "s1_eye_escape_together_dejavu": {
       "title": "Szorosabb kapaszkodás",
       "paragraphs": [
-        "[reducto]"
+        "Az átokkal most nem a falra célzol. A flipendo egyenesen az első előretörő inferus mellkasába csapódik. Hátralököd ugyan, de az ártás nem volt elég erős ahhoz, hogy teljesen megállítsa. Nincs most időd rá – a mögötte lévőre szegezed pálcádat, még mielőtt az kibújna a fal résén át.",
+		"Már hallod a bejárat felől, hogy Des visszaérkezett hozzád, talán épp apáddal, vagy a megtalált medállal. Biztos voltál benne, hogy sikerrel fog járni. Biztos voltál benne, hogy ezúttal minden másként lesz. Biztos voltál benne, hogy…",
+		"Az első inferus, akit megátkoztál, elég közel kerül hozzád ahhoz, hogy megtámadhasson. Kezedet ösztönösen arcod elé veted. Felsérti a bőröd körömtelen végű kezeivel, és kiveri a pálcád a kezedből. Hallod a csapóajtót kinyílni, csak egy kicsit kell kitartanod, hamarosan vége a rémálomnak.",
+		"De a sorsod elől nincs menekvés."
       ],
       "choices": [
         {
@@ -1045,6 +1048,7 @@
             }
           }
         }
+      ]
       ]
     },
     "s1_cut_to_chapter_two": {
