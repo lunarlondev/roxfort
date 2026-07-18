@@ -759,12 +759,15 @@
     "s1_fire_attempt_normal": {
       "title": "Tűz a száraz mezőn",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN KAPNAK LÁNGRA AZ ELSŐ INFERIUSOK. A TŰZ HATÁSOS ELLENÜK, DE A SZÁRAZ KUKORICAFÖLDÖN MINDEN VARÁZSLAT VESZÉLYESEN GYORSAN TERJED.]"
+        "Leválsz testvéredtől, hogy ő segítségért rohanjon.",
+		"Pálcád az elsőként érkező inferusra szegezed, és hagyod, hogy a lángok beborítsák a testét. Tesz még pár lépést, mielőtt összerogyna előtted. Ha nem is érzi a fájdalmat, ha nem is retten meg a tűztől, ez az egyetlen, ami tényleg és igazán hatékony ellenük.",
+		"Újabb inferus lép a helyére, de te már gyakorlott mozdulatokkal támadod meg, mielőtt ő támadna meg téged. Aggódsz a száraz növényzet miatt, nyilván pillanatok alatt lángra lobbanhat. Akkor pedig nem csak az inferusok fognak égni.",
+		"Megpróbálhatsz egy óvatos tűzkört emelni magad köré, amin nem tudnak behatolni, vagy kihasználhatod a tűz maximális erejét azért, hogy megvédd magad."
       ],
       "choices": [
         {
           "id": "s1_fire_ring",
-          "text": "Szűk tűzgyűrűt emelsz magatok köré.",
+          "text": "Szűk tűzgyűrűt emelsz magad köré.",
           "next": "s1_eye_fire_ring",
           "tags": [
             "normal"
@@ -778,7 +781,7 @@
         },
         {
           "id": "s1_fire_wild",
-          "text": "Szabadjára engeded a lángokat, hogy mindent elborítsanak.",
+          "text": "Szabadjára engeded a lángokat.",
           "next": "s1_eye_fire_chaos",
           "tags": [
             "critical"
