@@ -1361,9 +1361,8 @@
           "text": "Megiszod a bájitalt, és megvárod a procedúra végét.",
           "next": "s2_implant_normal",
           "tags": [
-            "critical"
+            "normal"
           ],
-          "effect": "critical",
           "effects": {
             "set": {
               "procedureChoice": "waited"
