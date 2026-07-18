@@ -645,7 +645,7 @@
       "choices": [
         {
           "id": "s1_try_escape",
-          "text": "Destination mellett maradva próbálsz kimenekülni a kukoricaföldről.",
+          "text": "Szorosan Destination mellett maradsz.",
           "next": "s1_escape_attempt_normal",
           "tags": [
             "normal"
@@ -716,12 +716,18 @@
     "s1_escape_attempt_normal": {
       "title": "Destination árnyékában",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN PRÓBÁLSZ SZOROSAN DESTINATION MELLETT MARADNI. AZ INFERIUSOK KIKERÜLIK ŐT, DE A GAZ, A FÖLDBŐL ELŐTÖRŐ TESTEK ÉS A PÁNIK FOLYAMATOSAN SZÉTSZAKÍTJÁK A KÖZTETEK LÉVŐ TÁVOLSÁGOT.]"
+        "Olyan közel húzódsz hozzá, amennyire csak tudsz. Először csontos vállad ér csak hozzá karjához, ám aztán pókujjaid is belemarkolnak, mialatt pálcát fogsz a támadóidra másik kezeddel.",
+		"A teremtmény pedig rád néz. Kizárólag rád.",
+		"Flipendoval döntöd hátra a testét, majd újabb ártásaid követik a többit. Átkaid sikeresen hátravetik az első hullámot, és kitörtök fenyegető gyűrűjükből. Nem használsz tüzet – nem érzed, hogy kontroll alatt tarthatnád ebben a száraz időben.",
+		"Bátyád módszeresen kikerülik, akik az utatokba állnak. Próbálod tartani a lépést vele, Des pedig szinte húz magával, hogy le ne maradj. Ahogy egyre mélyebbre merültök a méteres gazban és vad kukoricásban, úgy bukkannak fel újabb vállak és kezek a föld alól és a sűrű fűből.",
+		"Destination karja kicsúszik ujjaid közül. Csuklója után kapnál, de apád egy újabb teremtménye a megszámlálhatatlanból állja utadat.",
+		"A biztonságos terület, a házatok már látótávolságon belül van. Gyorsabban tudnál futni, ha nem Des keze után kéne kapkodnod, miközben tudod, hogy neki nem eshet baja. Az utat lerövidítheted, ha nem keresitek ugyanazt a kitaposott ösvényt, amin jöttetek, hanem egyenesen a ház felé szaladsz a kukoricáson át.",
+		"De a sűrű növényzet biztosan tele van velük, és a pálcádon – és Des távoli átkain túl – nincs semmi, ami megvédhetne téged. Biztonságosabb lenne vele együtt haladni."
       ],
       "choices": [
         {
           "id": "s1_escape_separate",
-          "text": "A gyorsabb kijutásért átvágsz egy másik kukoricasoron.",
+          "text": "Levágod az utat a kukoricasoron.",
           "next": "s1_eye_escape_separated",
           "tags": [
             "critical"
@@ -736,7 +742,7 @@
         },
         {
           "id": "s1_escape_stay_close",
-          "text": "Nem engeded el Destination karját, bármi történjék.",
+          "text": "Nem szakadsz el Destinationtől, bármi történjék.",
           "next": "s1_eye_escape_together",
           "tags": [
             "normal"
@@ -872,8 +878,13 @@
     "s1_eye_escape_separated": {
       "title": "Elszakadva",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN SZAKADSZ EL DESTINATIONTŐL. AZ INFERIUSOK AZONNAL KÖRÜLVESZNEK, ÉS AZ EGYIKÜK FIZIKAI TÁMADÁSA VAGY A MENEKÜLÉS KÖZBENI ÜTKÖZÉS ELPUSZTÍTJA AZ EGYIK SZEMEDET.]",
-        "[DESTINATION VISSZAFORDUL ÉRTED, SAJÁT MEDÁLJA VÉDELMÉBEN ÁTVÁG KÖZTÜK, ÉS KIMENT A TESTEK KÖZÜL.]"
+        "Nem harcolsz a közétek ékelődő inferussal, és nem próbálod meg elkapni Destination karját.",
+		"Nincs olyan messze a ház, innen már látjátok a növényzet fölött, és ha egyenesen arra indulsz futva, akkor jóval korábban elérheted a védőbűbájok határát, mint a már bejárt ösvényeken.",
+		"Recsegnek és ropognak alattad a kukoricaszárak. Egy tarolóátokkal löksz félre egy újabb példányt, amelyik elállja az utadat, és játszi könnyedséggel ugrasz át egy földből kiálló kart. Des a nevedet kiáltja mögötted. Hallod pattanó átkainak hangját, egy épp a fejed mellett suhan el, hogy megvédjen a közelgő veszélytől.",
+		"Megrúgod a következő arcát, aki az utadba kerül. Hallod, hogy az állkapcsa eltörik, de nincs időd hátrafordulni, hogy jobban megnézd magadnak. Közel, egészen közel kerülsz a határhoz.",
+		"Ruhád, amit nem egy ilyen alkalomra kellett volna felvenned, beleakad egy makacsabb növénybe. Erősen rántasz rajta egyet, hogy kiszabadítsd magad, nem érdekes az se, ha tönkreteszed vele. Mindez azonban épp elég idő volt ahhoz, hogy feltartsd magad. A rád nehezedő, hirtelen súlytól a földre esel, és tehetetlenül visongasz és kapálózol, hogy engedjen el. A fájdalmat, amit átélsz, nem tudod mihez hasonlítani. Soha nem félted a halált, hiszen Dreadmoor vagy, elmondásotok szerint ti vagytok a Halál legnagyobb tisztelői – bár a Laveau-ház hallani sem akar rólatok - , mégis méltatlannak érzed, hogy így kell elragadjon téged a vég.",
+		"Egy fehér villanást érzékelsz csak, és az égető fájdalmat arcodban, amit megmagyarázni még nem vagy képes magadnak, mielőtt a világ elsötétül előtted."
+  
       ],
       "choices": [
         {
@@ -895,8 +906,12 @@
     "s1_eye_escape_together": {
       "title": "Egymás mellett",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN NEM SZAKADSZ EL DESTINATIONTŐL. AZ INFERIUSOK KIKERÜLIK ŐT, DE HOZZÁD ÍGY IS ELÉRNEK: EGY OLDALRÓL ÉRKEZŐ TEST, TÖRMELÉK VAGY KARMOLÁS ELPUSZTÍTJA AZ EGYIK SZEMEDET.]",
-        "[DESTINATION AZONNAL MAGÁHOZ HÚZ, ÉS A MEDÁLJA VÉDELMÉBEN KIVEZET A TÁMADÓK KÖZÜL.]"
+        "Nem harcolsz a közétek ékelődő inferussal, és nem próbálod meg elkapni Destination karját.",
+		"Nincs olyan messze a ház, innen már látjátok a növényzet fölött, és ha egyenesen arra indulsz futva, akkor jóval korábban elérheted a védőbűbájok határát, mint a már bejárt ösvényeken.",
+		"Recsegnek és ropognak alattad a kukoricaszárak. Egy tarolóátokkal löksz félre egy újabb példányt, amelyik elállja az utadat, és játszi könnyedséggel ugrasz át egy földből kiálló kart. Des a nevedet kiáltja mögötted. Hallod pattanó átkainak hangját, egy épp a fejed mellett suhan el, hogy megvédjen a közelgő veszélytől.",
+		"Megrúgod a következő arcát, aki az utadba kerül. Hallod, hogy az állkapcsa eltörik, de nincs időd hátrafordulni, hogy jobban megnézd magadnak. Közel, egészen közel kerülsz a határhoz.",
+		"Ruhád, amit nem egy ilyen alkalomra kellett volna felvenned, beleakad egy makacsabb növénybe. Erősen rántasz rajta egyet, hogy kiszabadítsd magad, nem érdekes az se, ha tönkreteszed vele. Mindez azonban épp elég idő volt ahhoz, hogy feltartsd magad. A rád nehezedő, hirtelen súlytól a földre esel, és tehetetlenül visongasz és kapálózol, hogy engedjen el. A fájdalmat, amit átélsz, nem tudod mihez hasonlítani. Soha nem félted a halált, hiszen Dreadmoor vagy, elmondásotok szerint ti vagytok a Halál legnagyobb tisztelői – bár a Laveau-ház hallani sem akar rólatok - , mégis méltatlannak érzed, hogy így kell elragadjon téged a vég.",
+		"Egy fehér villanást érzékelsz csak, és az égető fájdalmat arcodban, amit megmagyarázni még nem vagy képes magadnak, mielőtt a világ elsötétül előtted."
       ],
       "choices": [
         {
