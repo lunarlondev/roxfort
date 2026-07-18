@@ -794,7 +794,7 @@
       "choices": [
         {
           "id": "s1_escape_separate_dejavu",
-          "text": "Protego Diabolica",
+          "text": "Tűzkör idézése",
           "next": "s1_eye_escape_separated_dejavu",
           "tags": [
             "secret",
