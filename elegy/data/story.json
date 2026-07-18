@@ -553,14 +553,12 @@
       "paragraphs": [
         "Biztos vagy a dolgodban, hogy most nem történik meg ugyanaz, mint amire emlékszel. Lerázhatod magadról a deja vu érzést, és abban a hitben indulhatsz el, hogy sikerült a kezedbe venned sorsodat.",
 		"Az Élettől kaptál egy második esélyt.",
-		"A létra első fokára lépnél, amikor mégis elgondolkozol kissé. Hiába tudod, hogy most nem történhet meg ugyanaz, közben mégis megtámad téged egy új érzés, hogy valamiről megfeledkeztetek. Hátrapillantva keresed Des tekintetét, amikor észreveszed a hiányt a nyakában. Erősebben markolsz rá a létra szélére, a gondolat pedig, hogy bátyád élheti át ugyanazokat a borzalmakat, mint te, megrémiszt. Nem érdekes, hogy a faszálkák felsértik a tenyered.",
-		"Elengeded a rozoga létrát, hogy beszámolhass Desnek újfent arról, hogy mi történt. Most sem kételkedik szavaidban – és ugyanannyira félt téged, mint te őt. Kioldod a medált a nyakadból, hogy az övébe rakhasd, amíg ő segítségért indul, téged pedig védőbűbájjal zár be a bunkerbe, amíg vissza nem tud jönni érted. Nem tudod, mennyi idő, míg visszatér, de nincs okod nem bízni benned. Elfoglalod magad; belelapozgatsz az itt maradt könyvekbe, megkeresed a furcsa szag forrását (biztosan az egyik üvegből jön), és átböngészed az itt maradt holmikat, apád és nagyapád örökségét.",
-		"Inkább azt az évek óta beázott falrészt nézted volna meg, ami még védte a helyiséget az inferusok jelenlététől."
+		"A létra első fokára lépnél, amikor mégis elgondolkozol kissé. Hiába tudod, hogy most nem történhet meg ugyanaz, közben mégis megtámad téged egy új érzés, hogy valamiről megfeledkeztetek. Hátrapillantva keresed Des tekintetét, amikor észreveszed a hiányt a nyakában. Erősebben markolsz rá a létra szélére, a gondolat pedig, hogy bátyád élheti át ugyanazokat a borzalmakat, mint te, megrémiszt. Nem érdekes, hogy a faszálkák felsértik a tenyered."
              ],
       "choices": [
         {
           "id": "s1_force_medal_on_destination",
-          "text": "Várod a megmentést.",
+          "text": "Elengeded a létrát.",
           "next": "s1_return_omens_dejavu",
           "tags": [
             "secret",
@@ -619,14 +617,13 @@
     "s1_return_omens_dejavu": {
       "title": "A megismétlődő jel",
       "paragraphs": [
-        "[IDE ÍRD UGYANAZOKAT A BALJÓS JELEKET, AMELYEKRE A KARAKTER EMLÉKSZIK: A SZÉL ELÁLL, A KUKORICA ZÖRÖG, AZ INFERIUSOK FEJE EGYSZERRE FORDUL FELÉJÜK.]",
-        "[DESTINATIONT A TŐLED KAPOTT MEDÁL VÉDI. AZ INFERIUSOK MELLETTE ELMENNEK, ÉS CSAK RÁD FIGYELNEK.]",
-        "[TUDOD, MI KÖVETKEZIK. AZT IS TUDOD, HOGY LEGUTÓBB MIT PRÓBÁLTÁL. EZÚTTAL MÁSKÉPP AKAROD VÉGIGCSINÁLNI.]"
+        "Elengeded a rozoga létrát, hogy beszámolhass Desnek újfent arról, hogy mi történt. Most sem kételkedik szavaidban – és ugyanannyira félt téged, mint te őt. Kioldod a medált a nyakadból, hogy az övébe rakhasd, amíg ő segítségért indul, téged pedig védőbűbájjal zár be a bunkerbe, amíg vissza nem tud jönni érted. Nem tudod, mennyi idő, míg visszatér, de nincs okod nem bízni benned. Elfoglalod magad; belelapozgatsz az itt maradt könyvekbe, megkeresed a furcsa szag forrását (biztosan az egyik üvegből jön), és átböngészed az itt maradt holmikat, apád és nagyapád örökségét.",
+		"Inkább azt az évek óta beázott falrészt nézted volna meg, ami még védte a helyiséget az inferusok jelenlététől."
       ],
       "choices": [
         {
           "id": "s1_begin_attack_dejavu",
-          "text": "Megpróbálod megváltoztatni a történteket.",
+          "text": "Várod a megmentést.",
           "next": "s1_attack_choice_dejavu",
           "tags": [
             "secret",
