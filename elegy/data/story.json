@@ -787,12 +787,14 @@
     "s1_confringo_attempt_dejavu": {
       "title": "Az ismert menekülés",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN EMLÉKSZEL, HOL SZAKADTATOK EL VAGY HOL PRÓBÁLTÁL DESTINATION MELLETT MARADNI. MOST TUDATOSAN MÁS LÉPÉSEKET TESZEL, DE AZ INFERIUSOK MOZGÁSA IS MEGVÁLTOZIK A DÖNTÉSEID MIATT.]"
+        "Pálcád már a kezedben van, mire az inferus válla is áttöri a falat. A téglák egyenként hullanak a padlóra, mögötte pedig újabb mozgást vélsz felfedezni. Nem egyedül jött.",
+		"Pálcád előre szegezed, a Confringo-t követő vörös fény pedig telibe találja az inferust. A csonttörés hangja mással összetéveszthetetlen. Még több tégla hullik a földre – talán ezzel csak nagyobb problémát okoztál, mint amiben eddig voltál.",
+		"Egyet meg tudtál állítani ugyan, de a következő pillanatban az egész falszakasz megreped."
       ],
       "choices": [
         {
           "id": "s1_escape_separate_dejavu",
-          "text": "Másik sort választasz, hogy elkerüld a korábbi támadót.",
+          "text": "Protego Diabolica",
           "next": "s1_eye_escape_separated_dejavu",
           "tags": [
             "secret",
@@ -947,9 +949,7 @@
     "s1_eye_escape_separated_dejavu": {
       "title": "Másik sor, ugyanaz a vég",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN KERÜLÖD EL AZT A HELYET, AHOL EMLÉKEID SZERINT ELSZAKADTÁL DESTINATIONTŐL. EGY MÁSIK KUKORICASORT VÁLASZTASZ, DE EZZEL EGY MÁSIK INFERIUS ÚTJÁBA KERÜLSZ.]",
-        "[A SZEMED MÁS MÓDON, DE UGYANÚGY ELVÉSZ. DESTINATION VISSZAFORDUL ÉRTED ÉS KIMENT.]",
-        "[A FÁJDALOM KÖZBEN MEGÉRTED: NEM UGYANAZOK A MOZGÁSOK ISMÉTLŐDNEK, HANEM UGYANAZ A VÉGPONT TALÁL MAGÁNAK ÚJ UTAT. EZÚTTAL NEM KÜZDESZ EZ ELLEN TOVÁBB.]"
+        "[IDE ÍRD, HOGYAN]"
       ],
       "choices": [
         {
