@@ -938,8 +938,10 @@
     "s1_eye_fire_ring": {
       "title": "A körön belül",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN ZÁRJA KI A TŰZGYŰRŰ AZ INFERIUSOK TÖBBSÉGÉT. A TERV MŰKÖDIK, DE EGY TEST MÁR A KÖRÖN BELÜL MARADT.]",
-        "[A FÜSTBEN ÉS A LÁNGOK FÉNYÉBEN KÉSŐN VESZED ÉSZRE. AZ INFERIUS TÁMADÁSA ELPUSZTÍTJA AZ EGYIK SZEMEDET.]"
+        "Legjobbnak tartod, ha nem kockáztatsz. Nem szeretnéd az egész birtokot lángokban látni, hisz még a Felsőházatok is tisztelte annyira apátok munkáját, hogy ne gyújtsanak fel mindent.",
+		"Pont ott csapnak fel a lángok, ahol kijelölted határát. Óvatos mozdulatokkal húzod magad köré a kört, és nem engeded továbbterjedni azt a száraz növényzeten. A vékony lángfalak a magasba csapnak, áthatolhatatlan akadályt állítva az inferusok számára. Kívül rekedt az összes, míg te a kör közepén maradsz. Az inferusokat sikerült feltartóztatnod.",
+		"Hosszas ideig kell fenntartanod a varázslatot, mire Destination hangját meghallod. Apáddal együtt tért vissza, hallod őket a nevedet kiáltani, a hőség azonban téged is megizzaszt, és eltorzítja érzékszerveidet. Nem tudod pontosan meghatározni, hogy pontosan hol lehet.",
+		"A sűrű füst egyre fojtogatóbbá válik, ahogyan azt belélegzed. Köhögni kezdesz, és a szemeid is könnyeznek; ruhaujjad arcod elé emeled, de már túl késő hozzá. A köhögéstől szakítod meg a varázslatot, a megidézett lángok eltűnnek, az egyik kívül rekedt inferus pedig sokkal gyorsabban támad, mint ahogyan bátyád vagy az apád reagálni tudnának."
       ],
       "choices": [
         {
@@ -956,13 +958,17 @@
     "s1_eye_fire_chaos": {
       "title": "Mindent felemésztő lángok",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN TERJED EL A TŰZ A TELJES KUKORICAFÖLDÖN. INFERIUSOK, GAZ, A RÉGI MELLÉKÉPÜLET ÉS REQUIEM ELHANYAGOLT FÖLDJE EGYARÁNT LÁNGRA KAP.]",
-        "[A KÁOSZBAN EGY INFERIUS, EGY FELCSAPÓ TÖRMELÉK VAGY A TŰZVARÁZSLAT VISSZACSAPÁSA ELPUSZTÍTJA AZ EGYIK SZEMEDET.]"
+        "Hasztalan mindet irányítani, ha az életed a tét. Meg se próbálod hát irányítani.",
+        "Végighúzod magad előtt a pálcád, és engeded továbbterjedni azt a kiszáradt, halott növényzeten át. Megcsapja az égett hús szaga az orrodat, ahogyan a lángok felkúsznak a holtak testére, de ugyanúgy átugranak a száraz gazra, felkúsznak a kukoricaszárakon, és felfalnak mindent, amit tudnak.",
+		"A birtok perceken belül lángokban áll. Számítottál rá, hogy a tűz majd gyorsan fog terjedni, de arra még te sem, hogy ennyire gyorsan. Égő testek botorkálnak a földeteken, de legalább nem feléd. Sorra omlanak össze a holtak, te pedig futsz, futni kezdesz a házatok felé.",
+		"A füst és a hőség végigmarja torkodat, ahogyan egyre közelebb és közelebb kerülsz. A távolban már látod apádat és Destinationt. Reméled, apád megbocsájt majd, hogy így tudtad csak igazán menteni magad.",
+		"Apád varázslattal próbál utat nyitni feléd, Des pedig úgy indul el feléd, mintha nem lenne holnap. Pálcáddal félresöpröd az utadba álló, élő kukoricaszárakat. Az egyik, ami szinte teljesen megszenesedett, éles törik ketté, felső része pedig arcodnak csapódik. Nincs időd arra, hogy félrefordítsd a fejed.",
+		"A törött szár hegyes vége egyenesen a szemedbe fúródik. Megtorpansz, és nem is érted még, mi történt. Elveszíted az egyensúlyod a parázsló földön, és mintha a tűz égetne, égetne téged a szemednél."
       ],
       "choices": [
         {
           "id": "s1_after_eye_fire_chaos",
-          "text": "A lángoló mező látványa féloldalasan kihuny.",
+          "text": "A lángoló mező látványa lassan elhalványodik.",
           "next": "s1_cut_to_chapter_two",
           "tags": [
             "critical"
