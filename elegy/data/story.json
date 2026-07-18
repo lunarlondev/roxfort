@@ -810,7 +810,7 @@
         },
         {
           "id": "s1_escape_stay_close_dejavu",
-          "text": "Még szorosabban kapaszkodsz Destinationbe, mint az emlékeidben.",
+          "text": "Reducto",
           "next": "s1_eye_escape_together_dejavu",
           "tags": [
             "secret"
@@ -976,9 +976,7 @@
     "s1_eye_escape_together_dejavu": {
       "title": "Szorosabb kapaszkodás",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN MARADSZ DESTINATION MELLETT OTT IS, AHOL EMLÉKEID SZERINT KORÁBBAN ELSZAKADTATOK. AZ EREDETI TÁMADÁST VALÓBAN ELKERÜLÖD.]",
-        "[EGY MÁSIK TEST VAGY TÖRMELÉK AZONBAN OLDALRÓL ÉR, ÉS MÁS MÓDON PUSZTÍTJA EL UGYANAZT A SZEMEDET. DESTINATION AZONNAL KIMENT.]",
-        "[RÁJÖSSZ, HOGY A DÖNTÉSED NEM VOLT HIÁBAVALÓ: MÁS TÖRTÉNT, DESTINATION MÁSHOL ÁLL, ÉS MÉGIS IDE JUTOTTÁL. ELFOGADOD A VESZTESÉGET.]"
+        "[reducto]"
       ],
       "choices": [
         {
