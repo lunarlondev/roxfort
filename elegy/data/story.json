@@ -121,8 +121,9 @@
           "text": "Bogár Bárd meséi",
           "next": "s1_beetlebard_reaction",
           "tags": [
-            "normal"
+            "critical"
           ],
+		  "effect": "critical"
           "effects": {
             "set": {
               "bookChoice": "beetlebard"
@@ -134,11 +135,12 @@
           "text": "Kutatónapló",
           "next": "s1_kutatnaplo_reaction",
           "tags": [
-            "normal"
+            "critical"
           ],
+		  "effect": "critical"
           "effects": {
             "set": {
-              "bookChoice": "kutatnaplo"
+              "bookChoice": "critical"
             }
           }
         },
@@ -149,6 +151,7 @@
           "tags": [
             "normal"
           ],
+		  "effect": "critical"
           "effects": {
             "set": {
               "bookChoice": "skipped"
@@ -227,8 +230,9 @@
           "text": "Alaposabban összeveted a térképet a környezettel.",
           "next": "s1_route_map_scene",
           "tags": [
-            "normal"
+            "critical"
           ],
+		  "effect": "critical"
           "effects": {
             "set": {
               "fieldRoute": "map"
@@ -240,8 +244,9 @@
           "text": "Destinationt követed.",
           "next": "s1_route_des_scene",
           "tags": [
-            "normal"
+            "critical"
           ],
+		  "effect": "critical"
           "effects": {
             "set": {
               "fieldRoute": "destination"
@@ -253,8 +258,9 @@
           "text": "Tarolóátokkal megtisztítod magad előtt az utat.",
           "next": "s1_route_clear_scene",
           "tags": [
-            "normal"
+            "critical"
           ],
+		  "effect": "critical"
           "effects": {
             "set": {
               "fieldRoute": "magic",
@@ -414,8 +420,9 @@
           "text": "Egy bársonyba csomagolt, csontfoglalatba zárt, régi pálcát viszel el a tárolóból.",
           "next": "s1_return_omens_normal",
           "tags": [
-            "normal"
+            "critical"
           ],
+		  "effect": "critical"
           "effects": {
             "set": {
               "retrievedItem": "sealed-case"
@@ -427,8 +434,9 @@
           "text": "A beomlott műhelyből viszed el a diafilmet, amit apád kért.",
           "next": "s1_return_omens_normal",
           "tags": [
-            "normal"
+            "critical"
           ],
+		  "effect": "critical"
           "effects": {
             "set": {
               "retrievedItem": "control-rod"
@@ -452,8 +460,9 @@
           "text": "Egy bársonyba csomagolt, csontfoglalatba zárt, régi pálcát viszel el a tárolóból.",
           "next": "s1_return_omens_normal",
           "tags": [
-            "normal"
+            "critical"
           ],
+		  "tags": ["critical"],
           "effects": {
             "set": {
               "retrievedItem": "sealed-case"
@@ -465,8 +474,9 @@
           "text": "A beomlott műhelyből viszed el a diafilmet, amit apád kért.",
           "next": "s1_return_omens_normal",
           "tags": [
-            "normal"
+            "critical"
           ],
+		  "tags": ["critical"],
           "effects": {
             "set": {
               "retrievedItem": "control-rod"
@@ -489,8 +499,9 @@
           "text": "Egy bársonyba csomagolt, csontfoglalatba zárt, régi pálcát viszel el a tárolóból.",
           "next": "s1_return_omens_clear",
           "tags": [
-            "normal"
+            "critical"
           ],
+		  "effect": "critical"
           "effects": {
             "set": {
               "retrievedItem": "sealed-case"
@@ -502,8 +513,9 @@
           "text": "A beomlott műhelyből viszed el a diafilmet, amit apád kért.",
           "next": "s1_return_omens_clear",
           "tags": [
-            "normal"
+            "critical"
           ],
+		  "effect": "critical"
           "effects": {
             "set": {
               "retrievedItem": "control-rod"
@@ -648,8 +660,9 @@
           "text": "Szorosan Destination mellett maradsz.",
           "next": "s1_escape_attempt_normal",
           "tags": [
-            "normal"
+            "critical"
           ],
+		  "effect": "critical"
           "effects": {
             "set": {
               "attackStrategy": "escape"
@@ -663,7 +676,7 @@
           "tags": [
             "critical"
           ],
-          "effect": "critical",
+          "effect": "critical"
           "effects": {
             "set": {
               "attackStrategy": "fire"
@@ -732,7 +745,7 @@
           "tags": [
             "critical"
           ],
-          "effect": "critical",
+          "effect": "critical"
           "effects": {
             "set": {
               "escapeOutcome": "separated",
@@ -745,8 +758,9 @@
           "text": "Nem szakadsz el Destinationtől, bármi történjék.",
           "next": "s1_eye_escape_together",
           "tags": [
-            "normal"
+            "critical"
           ],
+		  "effect": "critical"
           "effects": {
             "set": {
               "escapeOutcome": "together",
@@ -770,8 +784,9 @@
           "text": "Szűk tűzgyűrűt emelsz magad köré.",
           "next": "s1_eye_fire_ring",
           "tags": [
-            "normal"
+            "critical"
           ],
+		  "effect": "critical"
           "effects": {
             "set": {
               "fireOutcome": "ring",
@@ -786,7 +801,7 @@
           "tags": [
             "critical"
           ],
-          "effect": "critical",
+          "effect": "critical"
           "effects": {
             "set": {
               "fireOutcome": "wildfire",
@@ -897,7 +912,7 @@
           "tags": [
             "critical"
           ],
-          "effect": "critical",
+          "effect": "critical"
           "effects": {
             "set": {
               "savedByDestination": true
@@ -926,7 +941,7 @@
           "tags": [
             "critical"
           ],
-          "effect": "critical",
+          "effect": "critical"
           "effects": {
             "set": {
               "savedByDestination": true
@@ -1114,7 +1129,7 @@
           "tags": [
             "critical"
           ],
-          "effect": "critical",
+          "effect": "critical"
           "unlock": {
             "type": "runChoice",
             "id": "s1_after_eye_escape_separated"
@@ -1132,7 +1147,7 @@
           "tags": [
             "critical"
           ],
-          "effect": "critical",
+          "effect": "critical"
           "unlock": {
             "type": "runChoice",
             "id": "s1_after_eye_escape_together"
@@ -1150,7 +1165,7 @@
           "tags": [
             "critical"
           ],
-          "effect": "critical",
+          "effect": "critical"
           "unlock": {
             "type": "runChoice",
             "id": "s1_after_eye_fire_ring"
@@ -1168,7 +1183,7 @@
           "tags": [
             "critical"
           ],
-          "effect": "critical",
+          "effect": "critical"
           "unlock": {
             "type": "runChoice",
             "id": "s1_after_eye_fire_chaos"
@@ -1311,7 +1326,7 @@
           "tags": [
             "critical"
           ],
-          "effect": "critical",
+          "effect": "critical"
           "effects": {
             "set": {
               "pressedMotherForTruth": true
@@ -1370,7 +1385,7 @@
           "tags": [
             "critical"
           ],
-          "effect": "critical",
+          "effect": "critical"
           "effects": {
             "set": {
               "procedureChoice": "waited"
@@ -1502,7 +1517,7 @@
           "tags": [
             "critical"
           ],
-          "effect": "critical",
+          "effect": "critical"
           "effects": {
             "set": {
               "eyeImplanted": true,
@@ -1748,8 +1763,9 @@
           "text": "Elmondod az anyádnak, mit tesz veled a szem.",
           "next": "s3_mother_binding_offer",
           "tags": [
-            "normal"
+            "critical"
           ],
+		  "effect": "critical"
           "effects": {
             "set": {
               "finalApproach": "mother"
@@ -1763,7 +1779,7 @@
           "tags": [
             "critical"
           ],
-          "effect": "critical",
+          "effect": "critical"
           "effects": {
             "set": {
               "finalApproach": "endure"
@@ -1777,7 +1793,7 @@
           "tags": [
             "critical"
           ],
-          "effect": "critical",
+          "effect": "critical"
           "effects": {
             "set": {
               "finalApproach": "power"
@@ -1828,8 +1844,9 @@
           "text": "Nem engeded, hogy még egyszer rendelkezzen a tested felett.",
           "next": "s3_major_vision",
           "tags": [
-            "normal"
-          ]
+            "critical"
+          ],
+		  "effect": "critical"
         }
       ]
     },
@@ -1847,7 +1864,7 @@
           "tags": [
             "critical"
           ],
-          "effect": "critical",
+          "effect": "critical"
           "effects": {
             "set": {
               "finalChoice": "remove-eye"
@@ -1859,8 +1876,9 @@
           "text": "Nem nyúlsz hozzá. Megvárod a következő látomást.",
           "next": "s3_major_vision",
           "tags": [
-            "normal"
-          ]
+            "critical"
+          ],
+		  "effect": "critical"
         }
       ]
     },
@@ -1951,7 +1969,7 @@
           "tags": [
             "critical"
           ],
-          "effect": "critical",
+          "effect": "critical"
           "effects": {
             "set": {
               "finalChoice": "remove-eye-after-vision"
