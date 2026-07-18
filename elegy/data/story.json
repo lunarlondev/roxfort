@@ -682,7 +682,7 @@
         {
           "id": "s1_try_escape_dejavu",
           "text": "CONFRINGO!",
-          "next": "s1_confringp_attempt_dejavu",
+          "next": "s1_confringo_attempt_dejavu",
           "tags": [
             "secret"
           ],
