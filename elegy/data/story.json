@@ -976,12 +976,12 @@
     "s1_eye_escape_together_dejavu": {
       "title": "Szorosabb kapaszkodás",
       "paragraphs": [
-        "[reducto]"
+        "[reducto] Vérben ázva görnyedsz a földre, mialatt apádék gondoskodnak arról, hogy élve kijuthass innen, és pontosan tudod, hogy nem szabadulhatsz a parazitádtól."
       ],
       "choices": [
         {
           "id": "s1_after_eye_escape_together_dejavu",
-          "text": "Vérben ázva görnyedsz a földre, mialatt apádék gondoskodnak arról, hogy élve kijuthass innen, és pontosan tudod, hogy nem szabadulhatsz a parazitádtól.",
+          "text": "xxxxxxxx",
           "next": "s1_cut_to_chapter_two",
           "tags": [
             "secret",
