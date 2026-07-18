@@ -672,14 +672,17 @@
     "s1_attack_choice_dejavu": {
       "title": "A támadás újra",
       "paragraphs": [
-        "[IDE ÍRD A TÁMADÁS ISMERŐS KEZDETÉT. A KARAKTER ELŐRE LÁTJA AZ ELSŐ MOZGÁSOKAT, ÉS TUDJA, HOGY DESTINATION MEDÁLJA MIATT CSAK ŐT FOGJÁK ÜLDÖZNI.]",
-        "[UGYANAZT A KÉT LEHETŐSÉGET LÁTJA MAGA ELŐTT, DE EZÚTTAL TUDATOSAN MÁSHOGYAN PRÓBÁLJA VÉGREHAJTANI.]"
+        "Vélhetően apád nyaklánca nélkül is meg tudnád védeni magad egy inferustól. Talán kettőtől vagy többtől. Bármennyit is tanultál apádtól – vagy az általa fizetett, más mesterektől – a párbajozásról, egy ekkora hordával szemben nem lenne esélyed.",
+        "Tapasztaltad. Nem tudod, megmagyarázni, hogyan és miért, de tudod, hogy már megtörtént veled.",
+		"Hamis biztonságérzetet nyújtanak a falak, és hamis biztonságérzetet ad a tudat, hogy Des már segítségért indult. Apátok se bízta kizárólag téglákra és a földre a helyiség védelmét. Évtizedekkel ezelőtt a téglákba és falra festett rúnái tartották távol a teremtményeit, akik így nem tudtak illetéktelenül behatolni a bunkerbe.",
+		"Egykor.",
+		"Először patkánynak hiszed a kaparászást, esetleg lehulló földnek. Föld… ez lehetséges, érzed a jellegzetes illatát, semmivel se tévesztenéd össze. A hang azonban nem szűnik meg. Revelioval próbálod felfedni forrását; még épp látod a mágikus függönyön át, amikor a tégla kimozdul, és kidugja rothadó végtagját a résen át. Sokkal gyorsabb és sokkal ügyesebb, mint amire egy ember képes lenne, azonban ezeket a dolgokat apád mágiája mozgatja, és nem az Élet."
       ],
       "choices": [
         {
           "id": "s1_try_escape_dejavu",
-          "text": "Destination mellett maradsz, de most előre kerülöd az ismerős csapdákat.",
-          "next": "s1_escape_attempt_dejavu",
+          "text": "CONFRINGO!",
+          "next": "s1_confringp_attempt_dejavu",
           "tags": [
             "secret"
           ],
@@ -692,8 +695,8 @@
         },
         {
           "id": "s1_try_fire_dejavu",
-          "text": "Tüzet idézel, de nem ugyanúgy, ahogyan emlékeid szerint tetted.",
-          "next": "s1_fire_attempt_dejavu",
+          "text": "GLACIUS!",
+          "next": "s1_glacius_attempt_dejavu",
           "tags": [
             "secret",
             "critical"
@@ -781,7 +784,7 @@
         }
       ]
     },
-    "s1_escape_attempt_dejavu": {
+    "s1_confringo_attempt_dejavu": {
       "title": "Az ismert menekülés",
       "paragraphs": [
         "[IDE ÍRD, HOGYAN EMLÉKSZEL, HOL SZAKADTATOK EL VAGY HOL PRÓBÁLTÁL DESTINATION MELLETT MARADNI. MOST TUDATOSAN MÁS LÉPÉSEKET TESZEL, DE AZ INFERIUSOK MOZGÁSA IS MEGVÁLTOZIK A DÖNTÉSEID MIATT.]"
@@ -820,7 +823,7 @@
         }
       ]
     },
-    "s1_fire_attempt_dejavu": {
+    "s1_glacius_attempt_dejavu": {
       "title": "Az ismert lángok",
       "paragraphs": [
         "[IDE ÍRD, HOGYAN EMLÉKSZEL A TŰZ TERJEDÉSÉRE ÉS ARRA, HONNAN ÉRKEZETT A VÉGZETES TÁMADÁS. EZÚTTAL MÓDOSÍTOD A VARÁZSLAT ALAKJÁT VAGY IRÁNYÁT, DE A SZÁRAZ MEZŐ KISZÁMÍTHATATLANUL REAGÁL.]"
