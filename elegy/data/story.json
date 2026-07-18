@@ -1040,7 +1040,7 @@
       "choices": [
         {
           "id": "s1_after_eye_fire_chaos_dejavu",
-          "text": "Hagyod, hogy a jelenet véget érjen.",
+          "text": "Van-e valódi hatásod sorsodra?",
           "next": "s1_cut_to_chapter_two",
           "tags": [
             "secret",
