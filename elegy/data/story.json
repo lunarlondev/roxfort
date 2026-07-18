@@ -983,7 +983,7 @@
       "choices": [
         {
           "id": "s1_after_eye_escape_together_dejavu",
-          "text": "Nem próbálod többé visszaforgatni ezt a pillanatot.",
+          "text": "Vérben ázva görnyedsz a földre, mialatt apádék gondoskodnak arról, hogy élve kijuthass innen, és pontosan tudod, hogy nem szabadulhatsz a parazitádtól.",
           "next": "s1_cut_to_chapter_two",
           "tags": [
             "secret",
