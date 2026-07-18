@@ -1044,42 +1044,285 @@
       ]
     },
     "s2_wake_after_attack": {
-      "title": "II. szakasz — Az idegen szem",
+      "title": "II. fejezet — Az idegen szem",
       "paragraphs": [
-        "[IDE ÍRD AZ INTERMEZZO NYITÁNYÁT. A KARAKTER BEKÖTÖTT SZEMMEL ÉBRED, ÉS ÉRZÉKELI, HOGY IDEGEN VAN A HÁZBAN.]",
-        "Az anyja közli, hogy szerzett számára egy új szemet egy rendkívül erős látótól."
+        "[A KÉP A CUT UTÁN EGY SÖTÉT, CSENDES SZOBÁBAN TÉR VISSZA. EZ A CSOMÓPONT CSAK AZ I. FEJEZET NORMÁL VAGY DÉJÀ VU FOLYTATÁSÁNAK SZÉTVÁLASZTÁSÁRA SZOLGÁL.]"
       ],
       "choices": [
         {
-          "id": "s2_follow_mother",
-          "text": "Az anyád után lopakodsz.",
-          "next": "s2_witness_seer_murder",
+          "id": "s2_enter_normal_after_escape_separated",
+          "text": "Magadhoz térsz.",
+          "next": "s2_wake_normal",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical",
+          "unlock": {
+            "type": "runChoice",
+            "id": "s1_after_eye_escape_separated"
+          },
+          "effects": {
+            "set": {
+              "chapterTwoRoute": "normal"
+            }
+          }
+        },
+        {
+          "id": "s2_enter_normal_after_escape_together",
+          "text": "Magadhoz térsz.",
+          "next": "s2_wake_normal",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical",
+          "unlock": {
+            "type": "runChoice",
+            "id": "s1_after_eye_escape_together"
+          },
+          "effects": {
+            "set": {
+              "chapterTwoRoute": "normal"
+            }
+          }
+        },
+        {
+          "id": "s2_enter_normal_after_fire_ring",
+          "text": "Magadhoz térsz.",
+          "next": "s2_wake_normal",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical",
+          "unlock": {
+            "type": "runChoice",
+            "id": "s1_after_eye_fire_ring"
+          },
+          "effects": {
+            "set": {
+              "chapterTwoRoute": "normal"
+            }
+          }
+        },
+        {
+          "id": "s2_enter_normal_after_fire_chaos",
+          "text": "Magadhoz térsz.",
+          "next": "s2_wake_normal",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical",
+          "unlock": {
+            "type": "runChoice",
+            "id": "s1_after_eye_fire_chaos"
+          },
+          "effects": {
+            "set": {
+              "chapterTwoRoute": "normal"
+            }
+          }
+        },
+        {
+          "id": "s2_enter_dejavu_after_escape_separated",
+          "text": "Újra magadhoz térsz.",
+          "next": "s2_wake_dejavu",
+          "tags": [
+            "secret",
+            "critical"
+          ],
+          "effect": "glitch",
+          "unlock": {
+            "type": "runChoice",
+            "id": "s1_after_eye_escape_separated_dejavu"
+          },
+          "effects": {
+            "set": {
+              "chapterTwoRoute": "deja-vu",
+              "dejaVu": true
+            }
+          }
+        },
+        {
+          "id": "s2_enter_dejavu_after_escape_together",
+          "text": "Újra magadhoz térsz.",
+          "next": "s2_wake_dejavu",
+          "tags": [
+            "secret",
+            "critical"
+          ],
+          "effect": "glitch",
+          "unlock": {
+            "type": "runChoice",
+            "id": "s1_after_eye_escape_together_dejavu"
+          },
+          "effects": {
+            "set": {
+              "chapterTwoRoute": "deja-vu",
+              "dejaVu": true
+            }
+          }
+        },
+        {
+          "id": "s2_enter_dejavu_after_fire_ring",
+          "text": "Újra magadhoz térsz.",
+          "next": "s2_wake_dejavu",
+          "tags": [
+            "secret",
+            "critical"
+          ],
+          "effect": "glitch",
+          "unlock": {
+            "type": "runChoice",
+            "id": "s1_after_eye_fire_ring_dejavu"
+          },
+          "effects": {
+            "set": {
+              "chapterTwoRoute": "deja-vu",
+              "dejaVu": true
+            }
+          }
+        },
+        {
+          "id": "s2_enter_dejavu_after_fire_chaos",
+          "text": "Újra magadhoz térsz.",
+          "next": "s2_wake_dejavu",
+          "tags": [
+            "secret",
+            "critical"
+          ],
+          "effect": "glitch",
+          "unlock": {
+            "type": "runChoice",
+            "id": "s1_after_eye_fire_chaos_dejavu"
+          },
+          "effects": {
+            "set": {
+              "chapterTwoRoute": "deja-vu",
+              "dejaVu": true
+            }
+          }
+        }
+      ]
+    },
+    "s2_wake_normal": {
+      "title": "Bekötött szemmel",
+      "paragraphs": [
+        "[IDE ÍRD AZ INTERMEZZO NYITÁNYÁT. A KARAKTER BEKÖTÖTT SZEMMEL ÉBRED A SAJÁT SZOBÁJÁBAN. NEM KELL RÉSZLETEZNI, HOGYAN JUTOTT HAZA.]",
+        "[MUTASD BE AZ ANYÁT A JELENETEN KERESZTÜL. VÁMPÍR: HIDEG AZ ÉRINTÉSE, NEM LÉLEGZIK, A SÖTÉT SZOBÁBAN IS TÖKÉLETESEN TÁJÉKOZÓDIK. UGYANAKKOR GONDOSKODÓ ÉS MEGNYUGTATÓAN VISELKEDIK.]",
+        "[AZ ANYA KÖZLI, HOGY TALÁLT NEKED EGY ÚJ SZEMET. EGY RENDKÍVÜL ERŐS LÁTÓÉ VOLT, ÉS HAMAROSAN BE FOGJA ÜLTETNI.]"
+      ],
+      "choices": [
+        {
+          "id": "s2_normal_ask_origin",
+          "text": "Megkérdezed, honnan szerezte.",
+          "next": "s2_origin_evasion_normal",
           "tags": [
             "normal"
           ],
           "effects": {
             "set": {
-              "followedMother": true
+              "questionedEyeOrigin": true
             }
           }
         },
         {
-          "id": "s2_remain_in_room",
-          "text": "A szobában maradsz, és hallgatózol.",
-          "next": "s2_hear_seer_death",
+          "id": "s2_normal_accept_decision",
+          "text": "Elfogadod a döntését, és várakozol.",
+          "next": "s2_preprocedure_normal",
           "tags": [
             "normal"
           ],
           "effects": {
             "set": {
-              "heardSeerDeath": true
+              "implantReaction": "accepted-without-questions"
+            }
+          }
+        }
+      ]
+    },
+    "s2_origin_evasion_normal": {
+      "title": "Az élet elvesz és ad",
+      "paragraphs": [
+        "[AZ ANYA KITÉRŐ, SZINTE KÖLTŐI VÁLASZT AD: AZ ÉLET ELVESZ, ÉS AZ ÉLET AD. NEM MONDJA MEG EGYENESEN, KITŐL VAGY MILYEN KÖRÜLMÉNYEK KÖZÖTT SZEREZTE A SZEMET.]",
+        "[A HANGJA LEHET GYENGÉD, DE A VÁLASZA LEZÁRÓ. ÚGY BESZÉL A BEAVATKOZÁSRÓL, MINTHA A DÖNTÉS MÁR MEGSZÜLETETT VOLNA.]"
+      ],
+      "choices": [
+        {
+          "id": "s2_normal_press_origin",
+          "text": "Tovább faggatózol.",
+          "next": "s2_origin_raven_normal",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical",
+          "effects": {
+            "set": {
+              "pressedMotherForTruth": true
             }
           }
         },
         {
-          "id": "s2_follow_hidden_presence",
-          "text": "Nem az anyád után indulsz. A ház másik végéből áradó halott jelenlétet követed.",
-          "next": "s2_hidden_twin",
+          "id": "s2_normal_accept_evasion",
+          "text": "Elfogadod a választ, és várakozol.",
+          "next": "s2_preprocedure_normal",
+          "tags": [
+            "normal"
+          ],
+          "effects": {
+            "set": {
+              "implantReaction": "accepted-evasion"
+            }
+          }
+        }
+      ]
+    },
+    "s2_origin_raven_normal": {
+      "title": "A varjú ajándéka",
+      "paragraphs": [
+        "[AZ ANYA ELMONDJA, HOGY A SZEMET EGY VARJÚ AJÁNLOTTA FEL ÖNKÉNT. ÁLLÍTÁSA SZERINT A LÁTÓ MÁR HALDOKLOTT, Ő PEDIG CSAK KEGYELEMDÖFÉST ADOTT NEKI.]",
+        "[A TÖRTÉNET LEGYEN HIHETŐNEK TŰNŐ, DE GYANÚSAN KEREK. AZ ANYA NEM ENGED TOVÁBBI KÉRDÉSEKET, ÉS VISSZATÉR A PROCEDÚRA ELŐKÉSZÍTÉSÉHEZ.]"
+      ],
+      "choices": [
+        {
+          "id": "s2_normal_accept_raven_story",
+          "text": "Elfogadod a magyarázatát, és várakozol.",
+          "next": "s2_preprocedure_normal",
+          "tags": [
+            "normal"
+          ],
+          "effects": {
+            "set": {
+              "motherEyeStory": "voluntary-raven-mercy"
+            }
+          }
+        }
+      ]
+    },
+    "s2_preprocedure_normal": {
+      "title": "A procedúra előtt",
+      "paragraphs": [
+        "[IDE ÍRD A BEAVATKOZÁS ELŐTTI ZAVAROS, TÖREDEZETT KÉPEKET: ESZKÖZÖK CSÖRRENÉSE, BÁJITAL ILLATA, AZ ANYA HIDEG KEZE ÉS A FÉL SZEMMEL ÉRZÉKELT SZOBA.]",
+        "[AZ ANYA EGY ALTATÓ VAGY BÓDÍTÓ BÁJITALT AD. A KARAKTER ELŐTT MÉG OTT VAN A LEJÁRÓBÓL ELHOZOTT TÁRGY IS.]",
+        "[HA A KARAKTER A KUTATÓNAPLÓT OLVASTA ÉS A VEZÉRLŐPÁLCÁT HOZTA EL, FELISMERHETI, HOGY A PÁLCA VALAMILYEN MEGKÖTÖTT VAGY MESTERSÉGESEN ÉLETBEN TARTOTT TESTRE REAGÁL A HÁZBAN.]"
+      ],
+      "choices": [
+        {
+          "id": "s2_normal_drink_potion",
+          "text": "Megiszod a bájitalt, és megvárod a procedúra végét.",
+          "next": "s2_implant_normal",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical",
+          "effects": {
+            "set": {
+              "procedureChoice": "waited"
+            }
+          }
+        },
+        {
+          "id": "s2_normal_follow_control_rod",
+          "text": "Követed a vezérlőpálca lüktetését.",
+          "next": "s2_hidden_twin_normal",
           "tags": [
             "secret",
             "special"
@@ -1088,107 +1331,40 @@
           "unlock": {
             "all": [
               {
-                "type": "runChoice",
-                "id": "s1_route_follow_des"
+                "type": "flag",
+                "key": "bookChoice",
+                "operator": "eq",
+                "value": "kutatnaplo"
               },
               {
-                "type": "runChoice",
-                "id": "s1_escape_stay_close"
+                "type": "flag",
+                "key": "retrievedItem",
+                "operator": "eq",
+                "value": "control-rod"
               }
             ]
           },
           "effects": {
             "set": {
-              "sawHiddenTwin": true
+              "sawHiddenTwin": true,
+              "hiddenTwinDiscovery": "control-rod"
             }
           }
         }
       ]
     },
-    "s2_witness_seer_murder": {
-      "title": "A látó utolsó pillanata",
+    "s2_hidden_twin_normal": {
+      "title": "Ugyanaz az arc",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN LESZ A KARAKTER SZEMTANÚJA A LÁTÓ HALÁLÁNAK ÉS A SZEM ELVÉTELÉNEK.]",
-        "Nyitva hagyhatod, hogy gyilkosság, kegyelemdöfés vagy korábbi alku történt-e."
+        "[A VEZÉRLŐPÁLCA A HÁZ EGY ELZÁRT, RITKÁN HASZNÁLT RÉSZÉHEZ VEZET. A KARAKTER EGY LEZÁRT HELYISÉGBEN MEGTALÁLJA A HALOTTNAK HITT MÁSIK BÁTYJÁT.]",
+        "[ELSŐ PILLANTÁSRA DESTINATIONNEK TŰNIK, DE SOVÁNYABB, GYENGÉBB ÉS LÁTHATÓAN LE VAN AMORTIZÁLVA. BESZÉDKÉPTELEN. MOZGÁSA ÉS REAKCIÓI NEM TELJESEN EMBERIEK.]",
+        "[NE MAGYARÁZD EL MÉG, MI TÖRTÉNT VELE. A FELFEDEZÉS ÉS A BIZONYTALANSÁG LEGYEN A JELENET KÖZÉPPONTJA.]"
       ],
       "choices": [
         {
-          "id": "s2_hide_from_mother",
-          "text": "Elrejtőzöl, és végignézed.",
-          "next": "s2_after_seer_murder",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical",
-          "effects": {
-            "set": {
-              "sawSeerMurder": true,
-              "confrontedMotherEarly": false
-            }
-          }
-        },
-        {
-          "id": "s2_confront_mother_at_murder",
-          "text": "Előlépsz, és kérdőre vonod az anyádat.",
-          "next": "s2_after_seer_murder",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical",
-          "effects": {
-            "set": {
-              "sawSeerMurder": true,
-              "confrontedMotherEarly": true
-            }
-          }
-        }
-      ]
-    },
-    "s2_after_seer_murder": {
-      "title": "A vérrel hozott ajándék",
-      "paragraphs": [
-        "[IDE ÍRD A GYILKOSSÁG UTÁNI RÖVID KÖVETKEZMÉNYT.]",
-        "A karakter tudja, hogy az új szem a látóé volt."
-      ],
-      "choices": [
-        {
-          "id": "s2_go_to_eye_offer_after_murder",
-          "text": "Szembenézel az anyáddal és azzal, amit hozott neked.",
-          "next": "s2_eye_offer",
-          "tags": [
-            "normal"
-          ]
-        }
-      ]
-    },
-    "s2_hear_seer_death": {
-      "title": "A falon túli hangok",
-      "paragraphs": [
-        "[IDE ÍRD, MIT HALL A KARAKTER A SZOBÁJÁBÓL: IDEGEN HANG, FÉM, EGY RÖVID SIKOLY, MAJD CSEND.]",
-        "Nem tudhatja biztosan, mi történt, csak azt, hogy az anyja véres ruhában tér vissza."
-      ],
-      "choices": [
-        {
-          "id": "s2_go_to_eye_offer_after_hearing",
-          "text": "Megvárod, hogy az anyád belépjen.",
-          "next": "s2_eye_offer",
-          "tags": [
-            "normal"
-          ]
-        }
-      ]
-    },
-    "s2_hidden_twin": {
-      "title": "A másik báty",
-      "paragraphs": [
-        "[IDE ÍRD A TALÁLKOZÁST A HALOTTNAK HITT IKERBÁTTYAL.]",
-        "Ugyanúgy néz ki, mint a családdal élő testvére, de nem beszél, nem mehet napra, és a jelenléte természetellenes."
-      ],
-      "choices": [
-        {
-          "id": "s2_reach_for_hidden_twin",
-          "text": "Megpróbálod megérinteni.",
-          "next": "s2_hidden_twin_interrupted",
+          "id": "s2_normal_try_free_twin",
+          "text": "Megpróbálod kiszabadítani.",
+          "next": "s2_twin_attack_normal",
           "tags": [
             "secret",
             "critical"
@@ -1196,305 +1372,364 @@
           "effect": "glitch",
           "effects": {
             "set": {
-              "hiddenTwinContact": true
+              "hiddenTwinReaction": "tried-to-free"
             }
           }
         },
         {
-          "id": "s2_observe_hidden_twin",
-          "text": "Távolról figyeled, mielőtt észrevenne.",
-          "next": "s2_hidden_twin_interrupted",
+          "id": "s2_normal_fear_twin",
+          "text": "Megrémülsz tőle, és hátrálni kezdesz.",
+          "next": "s2_twin_fear_normal",
           "tags": [
             "secret"
           ],
           "effect": "glitch",
           "effects": {
             "set": {
-              "hiddenTwinContact": false
+              "hiddenTwinReaction": "feared"
             }
           }
         }
       ]
     },
-    "s2_hidden_twin_interrupted": {
-      "title": "A bezárt ajtó",
+    "s2_twin_attack_normal": {
+      "title": "A kezek a nyakadon",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN SZAKÍTJA FÉLBE VALAKI A TALÁLKOZÁST, ÉS HOGYAN KERÜL VISSZA A KARAKTER AZ ANYJÁHOZ.]"
+        "[AMIKOR A KARAKTER A KORLÁTOZÁSHOZ VAGY A TESTVÉRHEZ ÉR, A BÁTY HIRTELEN RÁTÁMAD ÉS FOJTOGATNI KEZDI. NEM VILÁGOS, HOGY ÉHSÉG, FÉLELEM, ÖSZTÖN VAGY VALAMILYEN BEÉPÍTETT PARANCS MOZGATJA.]",
+        "[AZ ANYA ÉRKEZIK ÉS MEGMENTI A KARAKTERT. A BÁTY AZONNAL ELENGEDI, HÁTRÁL VAGY ÖSSZEGÖRNYED: EGYÉRTELMŰEN RETTEG AZ ANYÁTÓL.]",
+        "[AZ ANYA NEM AD ÉRDEMI MAGYARÁZATOT. VISSZAVISZI A KARAKTERT A BEAVATKOZÁSHOZ.]"
       ],
       "choices": [
         {
-          "id": "s2_go_to_eye_offer_after_twin",
-          "text": "Az anyád elé állsz.",
-          "next": "s2_eye_offer",
-          "tags": [
-            "normal"
-          ]
-        }
-      ]
-    },
-    "s2_eye_offer": {
-      "title": "Az új szem",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN MUTATJA MEG AZ ANYA A LÁTÓTÓL SZERZETT SZEMET.]",
-        "Bármelyik választás történik, a szem beültetése végül megtörténik."
-      ],
-      "choices": [
-        {
-          "id": "s2_accept_eye",
-          "text": "Beleegyezel a beültetésbe.",
-          "next": "s2_accept_eye_scene",
-          "tags": [
-            "normal"
-          ],
-          "effects": {
-            "set": {
-              "implantReaction": "accepted"
-            }
-          }
-        },
-        {
-          "id": "s2_demand_truth",
-          "text": "Előbb tudni akarod, honnan származik.",
-          "next": "s2_demand_truth_scene",
+          "id": "s2_normal_return_after_twin_attack",
+          "text": "Visszamész vele a procedúrához.",
+          "next": "s2_implant_normal",
           "tags": [
             "critical"
           ],
-          "effect": "critical",
-          "effects": {
-            "set": {
-              "implantReaction": "demanded-truth"
-            }
-          }
-        },
-        {
-          "id": "s2_refuse_eye",
-          "text": "Visszautasítod. Nem akarod magadban érezni ezt a szemet.",
-          "next": "s2_refuse_eye_scene",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical",
-          "effects": {
-            "set": {
-              "implantReaction": "refused"
-            }
-          }
+          "effect": "critical"
         }
       ]
     },
-    "s2_accept_eye_scene": {
-      "title": "Beleegyezés",
+    "s2_twin_fear_normal": {
+      "title": "A néma közeledés",
       "paragraphs": [
-        "[IDE ÍRD AZ ÖNKÉNTESNEK TŰNŐ BEAVATKOZÁS ELŐKÉSZÍTÉSÉT.]"
+        "[A KARAKTER HÁTRÁL. A BÁTY ÉSZREVESZI, FIGYELI, ESETLEG LASSAN KÖZELEDNI KEZD, DE NEM KELL AZONNAL RÁTÁMADNIA.]",
+        "[AZ ANYA MEGTALÁLJA A KARAKTERT ÉS MEGNYUGTATJA. MARADJON BIZONYTALAN, HOGY ANYAI GYENGÉDSÉGET, VÁMPÍRI RÁHATÁST VAGY BŰBÁJT HASZNÁL.]",
+        "[NEM MONDJA EL, KIT LÁTOTT A KARAKTER. VISSZAVEZETI A BEAVATKOZÁSHOZ.]"
       ],
       "choices": [
         {
-          "id": "s2_accept_implant",
+          "id": "s2_normal_return_after_twin_fear",
+          "text": "Hagyod, hogy visszavezessen.",
+          "next": "s2_implant_normal",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical"
+        }
+      ]
+    },
+    "s2_implant_normal": {
+      "title": "Az idegen szerv",
+      "paragraphs": [
+        "[IDE ÍRD A NORMÁL SZEMBEÜLTETÉS TÖREDEZETT JELENETÉT. A KARAKTER ELKÁBUL, CSAK HANGOKAT, ÉRINTÉSEKET ÉS RÖVID FÁJDALOMKITÖRÉSEKET ÉRZÉKEL.]",
+        "[A SZEM BEÜLTETÉSE MINDEN NORMÁL II. FEJEZETES ÁGON MEGTÖRTÉNIK.]"
+      ],
+      "choices": [
+        {
+          "id": "s2_normal_finish_implant",
           "text": "Lehunyod a megmaradt szemed.",
-          "next": "s2_eye_implanted_checkpoint",
+          "next": "s2_eye_implanted_normal",
           "tags": [
             "critical"
           ],
-          "effect": "critical"
+          "effect": "critical",
+          "effects": {
+            "set": {
+              "eyeImplanted": true,
+              "implantRoute": "normal"
+            }
+          }
         }
       ]
     },
-    "s2_demand_truth_scene": {
-      "title": "Fél igazságok",
-      "paragraphs": [
-        "[IDE ÍRD AZ ANYA MAGYARÁZATÁT VAGY HAZUGSÁGÁT A SZEM EREDETÉRŐL.]",
-        "A válasz nem akadályozza meg a beavatkozást."
-      ],
-      "choices": [
-        {
-          "id": "s2_truth_implant",
-          "text": "Nincs több időd kérdezni.",
-          "next": "s2_eye_implanted_checkpoint",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical"
-        }
-      ]
-    },
-    "s2_refuse_eye_scene": {
-      "title": "Tiltakozás",
-      "paragraphs": [
-        "[IDE ÍRD A TILTAKOZÁST. DÉJÀ VU ÚTVONALON A KARAKTER TUDJA, HOGY EZ A SZEM FOGJA KÍNOZNI ÉS A HALÁLÁBA KERGETNI.]",
-        "Az anya lefogja, elkábítja vagy más módon végrehajtja a beavatkozást."
-      ],
-      "choices": [
-        {
-          "id": "s2_forced_implant",
-          "text": "A sötétség ellen hiába küzdesz.",
-          "next": "s2_eye_implanted_checkpoint",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical"
-        }
-      ]
-    },
-    "s2_eye_implanted_checkpoint": {
+    "s2_eye_implanted_normal": {
       "title": "A második tekintet",
       "paragraphs": [
-        "[IDE ÍRD A MÁSODIK SZAKASZ KÖZÖS LEZÁRÁSÁT.]",
-        "Bármelyik útvonalat választotta az olvasó, a karakter megkapta az új szemet. Néhány nap telik el, mielőtt a látomások felerősödnek."
+        "[A BEAVATKOZÁS UTÁN A KARAKTER ELŐSZÖR MÉG CSAK FÉNYT ÉS MOZGÁST ÉRZÉKEL AZ ÚJ SZEMMEL. VALAMI AZONBAN MÁR AZ ELSŐ PILLANATBAN NEM TERMÉSZETES.]",
+        "[NÉHÁNY NAP TELIK EL. A SEB GYÓGYUL, AZ IDEGEN SZEM PEDIG EGYRE MÉLYEBBEN KAPCSOLÓDIK A TESTHEZ.]"
       ],
       "choices": [
         {
-          "id": "s2_enter_visions",
+          "id": "s2_normal_enter_final_chapter",
           "text": "Néhány nappal később.",
-          "next": "s3_recovery",
+          "next": "s3_normal_recovery",
           "tags": [
             "normal"
           ]
         }
       ]
     },
-    "s3_recovery": {
-      "title": "III. szakasz — Amit a szem lát",
+    "s2_wake_dejavu": {
+      "title": "Bekötött szemmel — újra",
       "paragraphs": [
-        "[IDE ÍRD A REGENERÁLÓDÁS NAPJAIT ÉS AZ ELSŐ, MÉG BIZONYTALAN LÁTOMÁSOKAT.]",
-        "A szem fizikailag gyógyul, de idegen emlékeket, lehetséges jövőket és szándékosan kegyetlen képeket mutat."
+        "[IDE ÍRD UGYANAZT AZ ÉBREDÉST, DE A KARAKTER MÁR EMLÉKSZIK A SZOBÁRA, AZ ANYA HIDEG ÉRINTÉSÉRE ÉS ARRA A MONDATRA, HOGY TALÁLT NEKI EGY ÚJ SZEMET.]",
+        "[AZ ANYA KÖZLI, HOGY A SZEM EGY RENDKÍVÜL ERŐS LÁTÓÉ VOLT. A KARAKTER TUDJA, HOGY A SZEM PARAZITAKÉNT FOG VISELKEDNI.]"
       ],
       "choices": [
         {
-          "id": "s3_tell_mother",
-          "text": "Elmondod az anyádnak, mit látsz.",
-          "next": "s3_mother_response",
+          "id": "s2_dejavu_protest_parasite",
+          "text": "Tiltakozol a parazita ellen.",
+          "next": "s2_dejavu_protest",
+          "tags": [
+            "secret",
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "implantReaction": "dejavu-refusal"
+            }
+          }
+        }
+      ]
+    },
+    "s2_dejavu_protest": {
+      "title": "Amit már tudsz",
+      "paragraphs": [
+        "[A KARAKTER ELMONDJA, HOGY A SZEMET NEM ÖNKÉNT ADTÁK, HOGY A SZEM NEM AKARJA ŐT, ÉS HOGY EZT EGYSZER MÁR VÉGIGÉLTE.]",
+        "[MEGPRÓBÁLJA ELMAGYARÁZNI, HOGY A SZEM KÍNOZNI FOGJA, BELEKAPASZKODIK AZ EMLÉKEIBE, ÉS VÉGÜL A HALÁLÁBA KERGETI.]",
+        "[AZ ANYA A TILTAKOZÁST TRAUMÁNAK, LÁZÁLOMNAK VAGY LÁTOMÁSNAK TEKINTI. A FIGYELMEZTETÉS CSAK MÉG JOBBAN MEGGYŐZI ARRÓL, HOGY A BEAVATKOZÁST VÉGRE KELL HAJTANIA.]"
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_mother_insists",
+          "text": "Anyád nem enged a döntéséből.",
+          "next": "s2_preprocedure_dejavu",
+          "tags": [
+            "secret",
+            "critical"
+          ],
+          "effect": "glitch"
+        }
+      ]
+    },
+    "s2_preprocedure_dejavu": {
+      "title": "Az ismert procedúra előtt",
+      "paragraphs": [
+        "[A KARAKTER FELISMERI A BÁJITAL ÍZÉT, AZ ESZKÖZÖK HANGJÁT ÉS AZT A PILLANATOT, AMIKOR AZ ANYA RÖVID IDŐRE MAGÁRA HAGYJA.]",
+        "[TUDJA, HOGY HA MEGISSZA A BÁJITALT, A BEÜLTETÉS UGYANÚGY MEGTÖRTÉNIK. UGYANAKKOR MOST EMLÉKSZIK EGY NYITVA MARADÓ AJTÓRA ÉS A HÁZ ELZÁRT RÉSZÉRE.]"
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_drink_potion",
+          "text": "Megiszod a bájitalt, és megvárod a procedúra végét.",
+          "next": "s2_implant_dejavu",
+          "tags": [
+            "secret",
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "procedureChoice": "dejavu-waited"
+            }
+          }
+        },
+        {
+          "id": "s2_dejavu_escape",
+          "text": "Megpróbálsz megszökni.",
+          "next": "s2_hidden_twin_dejavu",
+          "tags": [
+            "secret",
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "sawHiddenTwin": true,
+              "hiddenTwinDiscovery": "deja-vu"
+            }
+          }
+        }
+      ]
+    },
+    "s2_hidden_twin_dejavu": {
+      "title": "A másik báty — újra",
+      "paragraphs": [
+        "[A KARAKTER EMLÉKEI ALAPJÁN JUT EL A HÁZ ELZÁRT RÉSZÉBE. MÁR AZ AJTÓ KINYITÁSA ELŐTT TUDJA, HOGY DESTINATIONNEL AZONOS ARCOT FOG LÁTNI.]",
+        "[A HALOTTNAK HITT BÁTY EBBEN AZ ÉLETBEN IS OTT VAN: GYENGE, LEAMORTIZÁLT ÉS BESZÉDKÉPTELEN. A FELFEDEZÉS MOST AZT BIZONYÍTJA, HOGY A KORÁBBI EMLÉKEK NEM PUSZTA LÁTOMÁSOK VOLTAK.]"
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_try_free_twin",
+          "text": "Megpróbálod kiszabadítani.",
+          "next": "s2_twin_attack_dejavu",
+          "tags": [
+            "secret",
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "hiddenTwinReaction": "dejavu-tried-to-free"
+            }
+          }
+        },
+        {
+          "id": "s2_dejavu_fear_twin",
+          "text": "Megrémülsz tőle, és hátrálni kezdesz.",
+          "next": "s2_twin_fear_dejavu",
+          "tags": [
+            "secret"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "hiddenTwinReaction": "dejavu-feared"
+            }
+          }
+        }
+      ]
+    },
+    "s2_twin_attack_dejavu": {
+      "title": "Ugyanazok a kezek",
+      "paragraphs": [
+        "[A BÁTY A KISZABADÍTÁSI KÍSÉRLETRE RÁTÁMAD A KARAKTERRE ÉS FOJTOGATNI KEZDI. A KARAKTER EMLÉKSZIK A MOZDULATRA, DE ETTŐL MÉG NEM TUDJA MEGÁLLÍTANI.]",
+        "[AZ ANYA MEGMENTI. A BÁTY TŐLE MOST IS AZONNAL VISSZAHŐKÖL ÉS LÁTHATÓAN RETTEG.]",
+        "[AZ ANYA VISSZAVISZI A KARAKTERT A BEÜLTETÉSHEZ. A DÉJÀ VU ÚTVONAL NEM TÉR VISSZA A NORMÁL ÁGRA.]"
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_return_after_twin_attack",
+          "text": "Újra a procedúra elé kerülsz.",
+          "next": "s2_implant_dejavu",
+          "tags": [
+            "secret",
+            "critical"
+          ],
+          "effect": "glitch"
+        }
+      ]
+    },
+    "s2_twin_fear_dejavu": {
+      "title": "Az ismert félelem",
+      "paragraphs": [
+        "[A KARAKTER HÁTRÁL. AZ ANYA MEGTALÁLJA, MEGNYUGTATJA VAGY RÁHATÁSSAL ENGEDELMESSÉ TESZI.]",
+        "[A KARAKTER MÁR TUDJA, HOGY MAGYARÁZATOT NEM FOG KAPNI. AZ ANYA VISSZAVEZETI A BEÜLTETÉSHEZ.]",
+        "[A DÉJÀ VU ÚTVONAL NEM TÉR VISSZA A NORMÁL ÁGRA.]"
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_return_after_twin_fear",
+          "text": "Hagyod, hogy újra visszavezessen.",
+          "next": "s2_implant_dejavu",
+          "tags": [
+            "secret",
+            "critical"
+          ],
+          "effect": "glitch"
+        }
+      ]
+    },
+    "s2_implant_dejavu": {
+      "title": "A már ismert fájdalom",
+      "paragraphs": [
+        "[IDE ÍRD A SZEMBEÜLTETÉST A DÉJÀ VU NÉZŐPONTJÁBÓL. A KARAKTER ELŐRE ISMERI AZ ESZKÖZÖK HANGJÁT, A FÁJDALOM ÜTEMÉT ÉS AZT A PILLANATOT, AMIKOR A SZEM KAPCSOLÓDNI KEZD.]",
+        "[ÉRZI, HOGY A SZEM ELLENÁLL NEKI, ÉS MÁR A BEÜLTETÉS KÖZBEN TUDJA, HOGY A PROCEDÚRA SIKERÜLNI FOG.]"
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_finish_implant",
+          "text": "Hagyod, hogy a jelenet ismét végigfusson.",
+          "next": "s2_eye_implanted_dejavu",
+          "tags": [
+            "secret",
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "eyeImplanted": true,
+              "implantRoute": "deja-vu"
+            }
+          }
+        }
+      ]
+    },
+    "s2_eye_implanted_dejavu": {
+      "title": "A második tekintet — újra",
+      "paragraphs": [
+        "[A KARAKTER MÁR AZ ELSŐ FÉNYFOLTOKBÓL FELISMERI AZ IDEGEN SZEMET. TUDJA, HOGY NÉHÁNY NAPON BELÜL MEGKEZDŐDNEK A LÁTOMÁSOK.]",
+        "[EZÚTTAL NEM VÁRJA MEG, HOGY A PARAZITA FOKOZATOSAN FELFEDJE MAGÁT. MÁR TUDJA, MI KÖVETKEZIK.]"
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_enter_final_chapter",
+          "text": "Elérkezik az ismert pillanat.",
+          "next": "s3_dejavu_recovery",
+          "tags": [
+            "secret",
+            "critical"
+          ],
+          "effect": "glitch"
+        }
+      ]
+    },
+    "s3_normal_recovery": {
+      "title": "III. fejezet — Amit a szem lát",
+      "paragraphs": [
+        "[IDE ÍRD A GYÓGYULÁS NAPJAIT. KEZDETBEN AZ ÚJ SZEM JOBBAN LÁT, MINT AZ EREDETI: SÖTÉTBEN, FALAKON TÚLI MOZGÁSBAN ÉS MÁSOK KÖVETKEZŐ MOZDULATAIBAN IS ÉSZREVESZ RÉSZLETEKET.]",
+        "[EZUTÁN MEGJELENNEK A PARAZITA TÜNETEI: A SZEM AKKOR IS LÁT, AMIKOR LEHUNYOD; ÖNÁLLÓAN MOZOG A TÜKÖRBEN; IDEGEN EMLÉKEKET MUTAT; ÉS A SAJÁT FÉLELMEIDBŐL ÉPÍT LÁTOMÁSOKAT.]",
+        "[A KARAKTER FELISMERI, HOGY A SZEM IDEGPÁLYÁKON KERESZTÜL GYÖKERET ERESZTETT, OLVASSA AZ EMLÉKEIT, ÉS A FIGYELMÉBŐL, FÉLELMÉBŐL VAGY A HASZNÁLATÁBÓL TÁPLÁLKOZIK.]"
+      ],
+      "choices": [
+        {
+          "id": "s3_normal_tell_mother",
+          "text": "Elmondod az anyádnak, mit tesz veled a szem.",
+          "next": "s3_mother_binding_offer",
           "tags": [
             "normal"
           ],
           "effects": {
             "set": {
-              "visionReaction": "told-mother"
+              "finalApproach": "mother"
             }
           }
         },
         {
-          "id": "s3_hide_visions",
-          "text": "Eltitkolod a látomásokat.",
-          "next": "s3_hide_visions_scene",
-          "tags": [
-            "normal"
-          ],
-          "effects": {
-            "set": {
-              "visionReaction": "hidden"
-            }
-          }
-        },
-        {
-          "id": "s3_examine_eye",
-          "text": "Egyedül próbálod megvizsgálni és tesztelni a szemet.",
-          "next": "s3_examine_eye_scene",
+          "id": "s3_normal_hide_and_endure",
+          "text": "Eltitkolod, és egyedül próbálod elviselni.",
+          "next": "s3_parasite_torment",
           "tags": [
             "critical"
           ],
           "effect": "critical",
           "effects": {
             "set": {
-              "visionReaction": "examined"
+              "finalApproach": "endure"
             }
           }
-        }
-      ]
-    },
-    "s3_mother_response": {
-      "title": "Az anya válasza",
-      "paragraphs": [
-        "[IDE ÍRD, MIT MOND AZ ANYA A LÁTOMÁSOKRÓL, ÉS MENNYIT ÁRUL EL A SZEM EREJÉRŐL.]"
-      ],
-      "choices": [
-        {
-          "id": "s3_accept_binding_help",
-          "text": "Engeded, hogy megpróbálja lezárni a szem erejét.",
-          "next": "ending_eye_bound",
-          "tags": [
-            "normal"
-          ]
         },
         {
-          "id": "s3_refuse_binding_help",
-          "text": "Nem engeded, hogy még egyszer hozzád érjen.",
-          "next": "s3_major_vision",
+          "id": "s3_normal_test_power",
+          "text": "Megpróbálod tudatosan használni a képességét.",
+          "next": "s3_harness_eye",
           "tags": [
-            "critical"
-          ],
-          "effect": "critical"
-        },
-        {
-          "id": "s3_accuse_mother",
-          "text": "A látó halálával szembesíted.",
-          "next": "s3_mother_truth",
-          "tags": [
-            "special",
             "critical"
           ],
           "effect": "critical",
-          "unlock": {
-            "type": "flag",
-            "key": "sawSeerMurder",
-            "operator": "eq",
-            "value": true
+          "effects": {
+            "set": {
+              "finalApproach": "power"
+            }
           }
-        }
-      ]
-    },
-    "s3_hide_visions_scene": {
-      "title": "A becsukott ajtó mögött",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN KÍNOZZA A SZEM TITOKBAN A KARAKTERT, ÉS HOGYAN MUTAT EGYRE SZEMÉLYESEBB KÉPEKET.]"
-      ],
-      "choices": [
-        {
-          "id": "s3_endure_in_silence",
-          "text": "Továbbra sem kérsz segítséget.",
-          "next": "s3_eye_torment",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical"
         },
         {
-          "id": "s3_seek_control",
-          "text": "Megpróbálod akarattal irányítani, mit mutasson.",
-          "next": "s3_major_vision",
-          "tags": [
-            "normal"
-          ]
-        }
-      ]
-    },
-    "s3_examine_eye_scene": {
-      "title": "Az idegen akarat",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN FEDEZI FEL A KARAKTER, HOGY A SZEM NEM PUSZTA ESZKÖZ: SZÁNDÉKOSAN VÁLOGATJA ÉS TORZÍTJA A KÉPEKET.]"
-      ],
-      "choices": [
-        {
-          "id": "s3_offer_eye_bargain",
-          "text": "Megpróbálsz alkut kötni vele.",
-          "next": "ending_eye_pact",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical"
-        },
-        {
-          "id": "s3_force_deeper_vision",
-          "text": "Erővel kényszeríted, hogy mutassa meg az igazat.",
-          "next": "s3_major_vision",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical"
-        },
-        {
-          "id": "s3_follow_twin_trace",
-          "text": "A szemmel a házban rejtett bátyád nyomát keresed.",
-          "next": "s3_hidden_twin_truth",
+          "id": "s3_normal_follow_twin_suffering",
+          "text": "Megkeresed, miért mutatja újra és újra a bezárt bátyád szenvedését.",
+          "next": "s3_twin_suffering",
           "tags": [
             "secret",
             "special"
@@ -1505,54 +1740,34 @@
             "key": "sawHiddenTwin",
             "operator": "eq",
             "value": true
+          },
+          "effects": {
+            "set": {
+              "finalApproach": "compassion"
+            }
           }
         }
       ]
     },
-    "s3_mother_truth": {
-      "title": "A látó ára",
+    "s3_mother_binding_offer": {
+      "title": "Az anya vére",
       "paragraphs": [
-        "[IDE ÍRD AZ ANYÁVAL VALÓ SZEMBESÍTÉST ÉS A LÁTÓ HALÁLÁNAK IGAZSÁGÁT VAGY EGY ÚJABB, BIZONYTALAN VÁLTOZATÁT.]"
+        "[AZ ANYA FELISMERI, HOGY A SZEM MÁR NEM TÁVOLÍTHATÓ EL BIZTONSÁGOSAN, DE A SAJÁT VÁMPÍRVÉRÉVEL ÉS EGY RITUÁLIS KÖTÉSSEL KORLÁTOZHATJA.]",
+        "[A KÖTÉS ELNÉMÍTHATJA A LÁTOMÁSOKAT, DE ÖSSZEKAPCSOLJA A KARAKTER ÉRZÉKELÉSÉT AZ ANYÁVAL. AZ ANYA KÉSŐBB A SZEMÉN KERESZTÜL LÁTHAT, ÉREZHETI A FÉLELMÉT, VAGY RÖVID IDŐRE A TEKINTETÉT IS IRÁNYÍTHATJA.]"
       ],
       "choices": [
         {
-          "id": "s3_believe_mother",
-          "text": "Elfogadod az anyád magyarázatát.",
-          "next": "ending_mother_of_eyes",
-          "tags": [
-            "normal"
-          ]
-        },
-        {
-          "id": "s3_reject_mother_truth",
-          "text": "Nem hiszel neki, és a szemet kényszeríted válaszra.",
-          "next": "s3_major_vision",
+          "id": "s3_accept_mother_binding",
+          "text": "Engeded, hogy magához kösse a szemet.",
+          "next": "ending_mother_leash",
           "tags": [
             "critical"
           ],
           "effect": "critical"
-        }
-      ]
-    },
-    "s3_hidden_twin_truth": {
-      "title": "Két egyforma arc",
-      "paragraphs": [
-        "[IDE ÍRD, MIT MUTAT A SZEM A HALOTTNAK HITT IKERBÁTYRÓL: MI TÖRTÉNT VELE, MIÉRT NEM BESZÉL, ÉS MIÉRT NEM ÉRHETI NAPFÉNY.]"
-      ],
-      "choices": [
-        {
-          "id": "s3_accept_hidden_twin_truth",
-          "text": "Elfogadod, amit láttál, és megkeresed őt.",
-          "next": "ending_hidden_twin",
-          "tags": [
-            "secret",
-            "critical"
-          ],
-          "effect": "glitch"
         },
         {
-          "id": "s3_turn_from_hidden_twin_truth",
-          "text": "Elfordulsz az igazságtól.",
+          "id": "s3_refuse_mother_binding",
+          "text": "Nem engeded, hogy még egyszer rendelkezzen a tested felett.",
           "next": "s3_major_vision",
           "tags": [
             "normal"
@@ -1560,11 +1775,11 @@
         }
       ]
     },
-    "s3_eye_torment": {
-      "title": "A szem kegyetlensége",
+    "s3_parasite_torment": {
+      "title": "Gyökerek a koponyában",
       "paragraphs": [
-        "[IDE ÍRD A LEGSZEMÉLYESEBB ÉS LEGGONOSZABB LÁTOMÁSOKAT, AMELYEKKEL A SZEM SZÁNDÉKOSAN KÍNOZZA A KARAKTERT.]",
-        "Itt válik elérhetővé a szem saját kezű eltávolítása."
+        "[A SZEM EGYRE SZEMÉLYESEBB LÁTOMÁSOKKAL KÍNOZZA A KARAKTERT. ÖSSZEKEVERI A VALÓS JÖVŐKET, LEHETSÉGES JÖVŐKET ÉS SZÁNDÉKOS HAZUGSÁGOKAT.]",
+        "[A KARAKTER FIZIKAILAG IS ÉRZI A PARAZITÁT: FINOM GYÖKEREK FUTNAK A SZEMÜREGBŐL AZ IDEGEK ÉS AZ AGY FELÉ. A SZEM MÁR NEM KÜLÖNÁLLÓ SZERV.]"
       ],
       "choices": [
         {
@@ -1574,11 +1789,80 @@
           "tags": [
             "critical"
           ],
+          "effect": "critical",
+          "effects": {
+            "set": {
+              "finalChoice": "remove-eye"
+            }
+          }
+        },
+        {
+          "id": "s3_endure_until_major_vision",
+          "text": "Nem nyúlsz hozzá. Megvárod a következő látomást.",
+          "next": "s3_major_vision",
+          "tags": [
+            "normal"
+          ]
+        }
+      ]
+    },
+    "s3_harness_eye": {
+      "title": "A látó öröksége",
+      "paragraphs": [
+        "[A KARAKTER KÉRDÉSEKET TESZ FEL A SZEMNEK, EMBEREKRE NÉZVE JÖVŐKET KERES, ÉS MEGPRÓBÁLJA ELVÁLASZTANI A HASZNOS KÉPEKET A MANIPULÁCIÓTÓL.]",
+        "[A SZEM EGYRE TÖBB HATALMAT AD, DE CSERÉBE IDEGEN EMLÉKEKET, SZOKÁSOKAT ÉS KÉSŐBB AZ ELŐZŐ LÁTÓ SZEMÉLYISÉGÉNEK DARABJAIT ÜLTETI A KARAKTERBE.]",
+        "[MÁSIK LEHETŐSÉGKÉNT A SZEM OLYAN ESEMÉNYEKET MUTAT, AMELYEK CSAK AKKOR HALLGATNAK EL, HA A KARAKTER SAJÁT KEZŰLEG BETELJESÍTI ŐKET.]"
+      ],
+      "choices": [
+        {
+          "id": "s3_accept_seer_inheritance",
+          "text": "Befogadod az előző látó emlékeit a hatalmával együtt.",
+          "next": "ending_seer_heir",
+          "tags": [
+            "critical"
+          ],
           "effect": "critical"
         },
         {
-          "id": "s3_endure_torment",
-          "text": "Nem adod meg neki azt az örömöt, hogy megtörj.",
+          "id": "s3_fulfill_eye_visions",
+          "text": "Valóra váltod a képeket, hogy a szem végre elhallgasson.",
+          "next": "ending_fulfiller",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical"
+        },
+        {
+          "id": "s3_stop_using_eye",
+          "text": "Nem adsz neki több feladatot. Megvárod, mit mutat magától.",
+          "next": "s3_major_vision",
+          "tags": [
+            "normal"
+          ]
+        }
+      ]
+    },
+    "s3_twin_suffering": {
+      "title": "A falak mögötti élet",
+      "paragraphs": [
+        "[A SZEM NEMCSAK KÉPEKET, HANEM A BEZÁRT BÁTY TESTI ÉS ÉRZELMI SZENVEDÉSÉT IS ÁTADJA: A SÖTÉTSÉGET, AZ ÉHSÉGET, A BESZÉDKÉPTELENSÉGET, AZ ANYÁTÓL VALÓ RETTEGÉST ÉS DESTINATION LÉPTEIT A FALAKON TÚL.]",
+        "[A KARAKTER MEGÉRTI, HOGY A II. FEJEZETBENI TÁMADÁS NEM FELTÉTLENÜL ROSSZINDULAT VOLT. LEHETETT FÉLELEM, ZAVARTSÁG, ÉHSÉG VAGY BELÉ NEVELT REFLEX.]",
+        "[A SZEM EREJE LEHETŐVÉ TESZI, HOGY A KARAKTER OLYAN SZENVEDÉST IS ÉSZREVEGYEN, AMELYET MÁSOK ELREJTENEK VAGY NEM AKARNAK LÁTNI.]"
+      ],
+      "choices": [
+        {
+          "id": "s3_offer_twin_company",
+          "text": "Lemész hozzá. Nem szabadítod ki és nem érinted meg; csak mellette maradsz.",
+          "next": "ending_what_others_dont_see",
+          "tags": [
+            "secret",
+            "critical"
+          ],
+          "effect": "glitch"
+        },
+        {
+          "id": "s3_turn_away_from_twin_suffering",
+          "text": "Nem bírod tovább érezni. Elfordulsz tőle.",
           "next": "s3_major_vision",
           "tags": [
             "normal"
@@ -1587,33 +1871,48 @@
       ]
     },
     "s3_major_vision": {
-      "title": "A legerősebb látomás",
+      "title": "Amit nem lehet lehunyni",
       "paragraphs": [
-        "[IDE ÍRD A HOSSZÚ, KIEMELT LÁTOMÁST. A KARAKTER SAJÁT HOLTTESTÉT, EGY LEHETSÉGES HALÁLHELYZETET VAGY MÁS SZEMÉLYEK JÖVŐBELI VESZTESÉGÉT LÁTJA.]",
-        "A harmadik választás csak akkor jelenik meg, ha az olvasó kivárja a megadott időt."
+        "[IDE ÍRD A HOSSZÚ, KIEMELT LÁTOMÁST. A SZEM ÖSSZEKEVERI A LÁTÓ HALÁLÁT, A KARAKTER SAJÁT LEHETSÉGES HALÁLÁT, A CSALÁDJA VESZTESÉGEIT ÉS OLYAN KÉPEKET, AMELYEK TALÁN MÉG NEM TÖRTÉNTEK MEG.]",
+        "[A SZEM ARRA SZÁMÍT, HOGY A KARAKTER MEGRÉMÜL, MEGSZAKÍTJA A KÉPET, SEGÍTSÉGET KÉR VAGY KÍSÉRLETET TESZ AZ ELTÁVOLÍTÁSÁRA.]",
+        "[A NEGYEDIK, HIDDEN VÁLASZTÁS CSAK HÉT PERC — 420000 EZREDMÁSODPERC — ELTELTE UTÁN JELENIK MEG.]"
       ],
       "choices": [
         {
-          "id": "s3_break_vision",
-          "text": "Megpróbálod megszakítani a látomást.",
-          "next": "s3_after_broken_vision",
+          "id": "s3_break_vision_and_accept_binding",
+          "text": "Megszakítod a látomást, és elfogadod anyád segítségét.",
+          "next": "ending_mother_leash",
           "tags": [
             "normal"
           ]
         },
         {
-          "id": "s3_follow_vision",
-          "text": "Tudatosan követed a látomás fonalát.",
-          "next": "s3_control_vision",
+          "id": "s3_remove_eye_after_vision",
+          "text": "Nem engeded, hogy még egyszer megmutassa. Kitéped magadból.",
+          "next": "ending_eye_removal_death",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical",
+          "effects": {
+            "set": {
+              "finalChoice": "remove-eye-after-vision"
+            }
+          }
+        },
+        {
+          "id": "s3_turn_vision_into_power",
+          "text": "Nem menekülsz előle. Megpróbálod a saját céljaidra használni.",
+          "next": "s3_harness_eye",
           "tags": [
             "critical"
           ],
           "effect": "critical"
         },
         {
-          "id": "s3_endure_complete_vision",
-          "text": "Nem fordulsz el. Hagyod, hogy mindent megmutasson.",
-          "next": "s3_own_death_vision",
+          "id": "s3_wait_for_eye_message",
+          "text": "Nem rémülsz meg. Türelmesen megvárod, mit akar valójában mutatni.",
+          "next": "s3_patient_revelation",
           "tags": [
             "secret",
             "critical"
@@ -1621,93 +1920,73 @@
           "effect": "glitch",
           "unlock": {
             "type": "waitOnNode",
-            "milliseconds": 25000
+            "milliseconds": 420000
           },
           "effects": {
             "set": {
-              "sawCompleteDeathVision": true
+              "waitedForEye": true
             }
           }
         }
       ]
     },
-    "s3_after_broken_vision": {
-      "title": "A megszakított kép",
+    "s3_patient_revelation": {
+      "title": "A teljes emlék",
       "paragraphs": [
-        "[IDE ÍRD, MIT VESZÍT VAGY MIT ŐRIZ MEG A KARAKTER, AMIKOR ERŐVEL KISZAKÍTJA MAGÁT A LÁTOMÁSBÓL.]"
+        "[MIVEL A KARAKTER NEM FORDUL EL ÉS NEM PRÓBÁLJA IRÁNYÍTANI, A SZEM ABBAHAGYJA A FÉLELEMKELTŐ VÁGÁSOKAT, ÉS EGYBEN MUTATJA MEG AZ ELŐZŐ LÁTÓ TÖRTÉNETÉT.]",
+        "[LÁTHATÓVÁ VÁLIK A LÁTÓ FOGSÁGA, A SZEM ÁTADÁSÁNAK VALÓDI KÖRÜLMÉNYE, AZ ANYA SZEREPE ÉS AZ A PILLANAT, AMIKOR A SZEM FELISMERTE AZ ÚJ HORDOZÓJÁT.]",
+        "[KIDERÜLHET, HOGY A PARAZITA EGYIK CÉLJA AZ VOLT, HOGY VALAKI VÉGRE TELJESEN VÉGIGNÉZZE ÉS MEGŐRIZZE AZ EMLÉKEIT. MARADJON BIZONYTALAN, HOGY EZ IGAZSÁG VAGY A SZEM LEGTÖKÉLETESEBB MANIPULÁCIÓJA.]"
       ],
       "choices": [
         {
-          "id": "s3_ask_mother_to_bind",
-          "text": "Megkéred az anyádat, hogy zárja le a szemet.",
-          "next": "ending_eye_bound",
-          "tags": [
-            "normal"
-          ]
-        },
-        {
-          "id": "s3_remove_eye_after_vision",
-          "text": "Nem viseled tovább. Megpróbálod eltávolítani.",
-          "next": "ending_eye_removal_death",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical"
-        }
-      ]
-    },
-    "s3_control_vision": {
-      "title": "A látó öröksége",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN PRÓBÁLJA A KARAKTER IRÁNYÍTANI A LÁTOMÁST, ÉS HOGYAN VÁLIK A SZEM EREJE RÉSZBEN HASZNÁLHATÓVÁ.]"
-      ],
-      "choices": [
-        {
-          "id": "s3_accept_seer_legacy",
-          "text": "Elfogadod a látó örökségét és megtanulsz együtt élni vele.",
-          "next": "ending_seer_heir",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical"
-        },
-        {
-          "id": "s3_negotiate_with_eye",
-          "text": "Nem engedelmeskedsz neki, hanem feltételeket szabsz.",
-          "next": "ending_eye_pact",
-          "tags": [
-            "special"
-          ],
-          "effect": "glitch"
-        }
-      ]
-    },
-    "s3_own_death_vision": {
-      "title": "A saját halálod",
-      "paragraphs": [
-        "[IDE ÍRD A TELJES, IDŐZÍTETT SECRET LÁTOMÁST A KARAKTER SAJÁT HALÁLÁRÓL.]",
-        "Maradjon bizonytalan, hogy biztos jövőt, elkerülhető lehetőséget vagy a szem szándékos hazugságát látta-e."
-      ],
-      "choices": [
-        {
-          "id": "s3_accept_foreseen_death",
-          "text": "Megjegyzed minden részletét.",
-          "next": "ending_death_foreseen",
+          "id": "s3_accept_complete_memory",
+          "text": "Megőrzöd mindazt, amit megmutatott.",
+          "next": "ending_patient_witness",
           "tags": [
             "secret",
             "critical"
           ],
           "effect": "glitch"
-        },
+        }
+      ]
+    },
+    "s3_dejavu_recovery": {
+      "title": "III. fejezet — A már ismert parazita",
+      "paragraphs": [
+        "[A DÉJÀ VU ÚTVONALON NINCS LASSÚ FELFEDEZÉS. A KARAKTER TUDJA, HOGY A SZEM IDEGEKEN KERESZTÜL GYÖKERET ERESZT, OLVASSA AZ EMLÉKEIT, ÉS A FÉLELMEIBŐL ÉPÍT LÁTOMÁSOKAT.]",
+        "[TUDJA AZT IS, HOGY AZ ELŐZŐ ÉLETBEN AZ ELTÁVOLÍTÁSÁBA HALT BELE. MOST KÉT LEHETŐSÉGE MARAD: ÚJRA MEGKÍSÉRLI UGYANAZT, VAGY NEM ISMÉTLI MEG A HIBÁT.]",
+        "[ERRŐL A CSOMÓPONTRÓL KIZÁRÓLAG DÉJÀ VU ENDINGEK ÉRHETŐK EL.]"
+      ],
+      "choices": [
         {
-          "id": "s3_tear_eye_out_after_death_vision",
-          "text": "Nem engeded, hogy még egyszer megmutassa. Kitéped magadból.",
-          "next": "ending_eye_removal_death",
+          "id": "s3_dejavu_remove_again",
+          "text": "Ezúttal gyorsabban és pontosabban téped ki.",
+          "next": "ending_dejavu_loop_death",
           "tags": [
             "secret",
             "critical"
           ],
-          "effect": "glitch"
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "finalChoice": "repeat-removal"
+            }
+          }
+        },
+        {
+          "id": "s3_dejavu_choose_coexistence",
+          "text": "Nem ismétled meg. Megtanulsz együtt élni vele.",
+          "next": "ending_dejavu_coexist",
+          "tags": [
+            "secret",
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "finalChoice": "coexist"
+            }
+          }
         }
       ]
     },
@@ -1717,62 +1996,87 @@
       "order": 1,
       "title": "A szem nélküli vég",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN SIKERÜL ELTÁVOLÍTANI AZ ÚJ SZEMET, DE A KARAKTER BELEHAL A VÉRZÉSBE, A MÁGIKUS SOKKBA VAGY A SZEMHEZ KÖTÖTT ERŐ ÖSSZEOMLÁSÁBA.]",
-        "Ez az ending oldja fel a következő végigjátszás elején a déjà vu Secret választást."
+        "[A KARAKTER SAJÁT KEZŰLEG ELTÁVOLÍTJA AZ ÚJ SZEMET. A SZEM MÁR ÖSSZENŐTT AZ IDEGEKKEL, ÉS GYÖKEREI A KOPONYA BELSEJÉBE FUTNAK.]",
+        "[AZ ELTÁVOLÍTÁS SIKERÜL, DE A KARAKTER BELEHAL A VÉRZÉSBE, A MÁGIKUS SOKKBA, AZ AGYI SÉRÜLÉSBE VAGY ABBA, HOGY A PARAZITA MAGÁVAL TÉPI A HOZZÁ KÖTÖTT RÉSZEIT.]",
+        "Ez az ending oldja fel a következő végigjátszásban a Déjà Vu választást."
       ]
     },
-    "ending_death_foreseen": {
+    "ending_patient_witness": {
       "type": "ending",
-      "endingId": "DEATH_FORESEEN",
+      "endingId": "PATIENT_WITNESS",
       "order": 2,
-      "title": "A már ismert halál",
+      "title": "A tanú",
       "paragraphs": [
-        "[IDE ÍRD A BEFEJEZÉST, AMELYBEN A KARAKTER PONTOSAN EMLÉKSZIK A SAJÁT LEHETSÉGES HALÁLÁRA, DE NEM TUDJA, ELKERÜLHETŐ-E.]"
+        "[A SZEM A TELJES TÖRTÉNET MEGMUTATÁSA UTÁN ELCSENDESÜL. A KARAKTER ÉLETBEN MARAD, DE AZ ELŐZŐ LÁTÓ EMLÉKEI VÉGLEG ÖSSZEKEVEREDNEK A SAJÁTJAIVAL.]",
+        "[NÉHA NEM TUDJA, MELYIKÜK ÉLETÉRE EMLÉKSZIK, ÉS A TÜKÖRBEN OLYKOR AZ ELŐZŐ HORDOZÓ NEVÉN SZÓLÍTJA MAGÁT.]",
+        "[MARADJON BIZONYTALAN, HOGY A SZEM MEGNYUGODOTT, VAGY EGYSZERŰEN ELÉRTE, AMIT AKART.]"
       ]
     },
-    "ending_eye_pact": {
+    "ending_dejavu_loop_death": {
       "type": "ending",
-      "endingId": "EYE_PACT",
+      "endingId": "DEJAVU_LOOP_DEATH",
       "order": 3,
-      "title": "Egyezség az idegennel",
+      "title": "Ugyanaz a vég",
       "paragraphs": [
-        "[IDE ÍRD AZ ALKUT A SZEMMEL. MARADJON KÉTSÉGES, HOGY A KARAKTER IRÁNYÍTJA-E A SZEMET, VAGY A SZEM IDOMÍTOTTA ŐT.]"
+        "[A KARAKTER AZ ELŐZŐ HALÁL MINDEN RÉSZLETÉT ISMERI. MÁS ESZKÖZT, GYORSABB MOZGÁST VAGY ELŐKÉSZÍTETT VÉDELMET HASZNÁL, DE AZ ELTÁVOLÍTÁS EZÚTTAL IS HALÁLOS.]",
+        "[NEM UGYANAZ A HIBA ISMÉTLŐDIK MEG: AZ ELTÁVOLÍTÁS ÖNMAGÁBAN VÉGZETES, MERT A SZEM ADDIGRA MÁR A TEST RÉSZE.]",
+        "[A KÖR ÚJRA BEZÁRUL.]"
       ]
     },
-    "ending_eye_bound": {
+    "ending_dejavu_coexist": {
       "type": "ending",
-      "endingId": "EYE_BOUND",
+      "endingId": "DEJAVU_COEXIST",
       "order": 4,
-      "title": "A lezárt tekintet",
+      "title": "Két tekintet",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN KORLÁTOZZA AZ ANYA RITUÁLISAN A SZEM EREJÉT, ÉS MILYEN ÁRAT FIZET ÉRTE A KARAKTER.]"
+        "[A KARAKTER SZABÁLYOKAT ALAKÍT KI: NEM REAGÁL AZ ELSŐ LÁTOMÁSRA, FELJEGYZI A KÉPEKET, MÁS BIZONYÍTÉK NÉLKÜL NEM CSELEKSZIK, ÉS MEGTANULJA FELISMERNI A PARAZITA ÉHSÉGÉT ÉS MANIPULÁCIÓJÁT.]",
+        "[SE A KARAKTER, SE A SZEM NEM GYŐZ TELJESEN. EGYÜTT ÉLNEK, MIKÖZBEN FOLYAMATOSAN FIGYELIK EGYMÁST.]",
+        "[A ZÁRÓKÉPBEN AZ EGYIK SZEM A TÜKÖRKÉPET NÉZI, A MÁSIK PEDIG VALAMIT A KARAKTER VÁLLA MÖGÖTT, AMI MÉG NINCS OTT.]"
+      ]
+    },
+    "ending_mother_leash": {
+      "type": "ending",
+      "endingId": "MOTHER_LEASH",
+      "order": 5,
+      "title": "Az anya póráza",
+      "paragraphs": [
+        "[AZ ANYA VÁMPÍRVÉRREL ÉS RITUÁLIS KÖTÉSSEL ELNÉMÍTJA A SZEMET. A LÁTOMÁSOK MEGSZŰNNEK, A KARAKTER ÉLETBEN MARAD.]",
+        "[AZ ÁR: AZ ANYA BÁRMIKOR LÁTHAT A KARAKTER SZEMÉN KERESZTÜL, ÉRZI A FÉLELMÉT, ÉS TALÁN RÖVID IDŐRE A TEKINTETÉT IS IRÁNYÍTHATJA.]",
+        "[A ZÁRÓJELENETBEN A KARAKTER VALAMIT EL AKAR REJTENI ELŐLE, DE AZ ÚJ SZEM MAGÁTÓL AZ ANYA FELÉ FORDUL.]"
       ]
     },
     "ending_seer_heir": {
       "type": "ending",
       "endingId": "SEER_HEIR",
-      "order": 5,
+      "order": 6,
       "title": "A látó örököse",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN TANULJA MEG A KARAKTER HASZNÁLNI A SZEM EREJÉT, ÉS MIT VESZ ÁT AZ ELŐZŐ TULAJDONOSBÓL.]"
+        "[A KARAKTER MEGTANULJA HASZNÁLNI A SZEM EREJÉT, ÉS EGYRE PONTOSABBAN LÁTJA A LEHETSÉGES JÖVŐKET.]",
+        "[KÖZBEN IDEGEN NYELVEN ÍR, AZ ELŐZŐ LÁTÓ KÉZÍRÁSÁT HASZNÁLJA, ISMERETLEN EMBEREKET ISMER FEL, ÉS SAJÁT GYERMEKKORÁNAK RÉSZLETEIT FELEJTI EL.]",
+        "[MARADJON BIZONYTALAN, HOGY ÖRÖKÖLTE A LÁTÓ EREJÉT, ÖSSZEOLVADT VELE, VAGY A HALOTT LÁTÓ TALÁLT MAGÁNAK ÚJ TESTET.]"
       ]
     },
-    "ending_hidden_twin": {
+    "ending_fulfiller": {
       "type": "ending",
-      "endingId": "HIDDEN_TWIN",
-      "order": 6,
-      "title": "A napfénytől elzárt testvér",
-      "paragraphs": [
-        "[IDE ÍRD A HALOTTNAK HITT IKERBÁTY IGAZSÁGÁNAK BEFEJEZÉSÉT.]"
-      ]
-    },
-    "ending_mother_of_eyes": {
-      "type": "ending",
-      "endingId": "MOTHER_OF_EYES",
+      "endingId": "FULFILLER",
       "order": 7,
-      "title": "Az anya igazsága",
+      "title": "A beteljesítő",
       "paragraphs": [
-        "[IDE ÍRD AZ ANYA, A LÁTÓ ÉS AZ ÚJ SZEM KÖZÖTTI ALKU VAGY BŰN VÉGSŐ FELTÁRÁSÁT.]"
+        "[A KARAKTER RÁJÖN, HOGY A SZEM BIZONYOS LÁTOMÁSAI CSAK AKKOR HALLGATNAK EL, HA Ő MAGA VALÓSÍTJA MEG ŐKET.]",
+        "[ELŐSZÖR KISEBB ESEMÉNYEKET RENDEZ MEG, KÉSŐBB EMBEREKET MANIPULÁL, VÉGÜL PEDIG MÁR ÁLDOZATOKAT IS KIVÁLASZT A SZEM NYUGALMÁÉRT.]",
+        "[A VÉGÉN A SZEM ÚJ KÉPET MUTAT VALAKIRŐL, AKIT A KARAKTER SZERET. Ő MÁR NEM KÉRDEZI MEG, IGAZ-E; CSAK ELKEZDI ELŐKÉSZÍTENI.]"
+      ]
+    },
+    "ending_what_others_dont_see": {
+      "type": "ending",
+      "endingId": "WHAT_OTHERS_DONT_SEE",
+      "order": 8,
+      "title": "Amit más nem lát",
+      "paragraphs": [
+        "[A KARAKTER ÚJRA ÉS ÚJRA LEMEGY A BEZÁRT BÁTYJÁHOZ. NEM PRÓBÁLJA KISZABADÍTANI, NEM KÖVETEL FELISMERÉST, ÉS NEM ÉRINTI MEG; CSAK BESZÉL HOZZÁ ÉS TÁRSASÁGOT NYÚJT.]",
+        "[A VÁLTOZÁS LASSÚ. A BÁTY IDŐVEL FELISMERI A LÉPTEIT, KÖZELEBB ÜL, ÁTVESZ EGY TÁRGYAT, VAGY SAJÁT AKARATÁBÓL MEGÉRINTI A KEZÉT. NEM GYÓGYUL MEG CSODÁLATOSAN, DE MÁR NINCS TELJESEN EGYEDÜL.]",
+        "[A KARAKTER A SZEM HATALMÁT EZUTÁN ARRA HASZNÁLJA, HOGY ÉSZREVEGYE AZ ELREJTETT, KIMONDATLAN SZENVEDÉST, ÉS SEGÍTSEN AZOKNAK, AKIKET MÁSOK NEM LÁTNAK.]",
+        "[MARADJON BIZONYTALAN, HOGY A SZEM EGYÜTTÉRZÉST TANÍTOTT, VAGY EGYSZERŰEN RÁJÖTT, HOGY MÁSOK FÁJDALMÁN KERESZTÜL TEHETI MAGÁT NÉLKÜLÖZHETETLENNÉ.]"
       ]
     }
   }
