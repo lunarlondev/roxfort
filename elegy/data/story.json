@@ -403,13 +403,15 @@
     "s1_site_found_map": {
       "title": "A régi lejáró",
       "paragraphs": [
-        "[IDE ÍRD A MEGTALÁLT HELYSZÍNT: A GAZ ÉS A SZÁRAZ KUKORICA ALATT KIRAJZOLÓDIK A RÉGI MELLÉKÉPÜLET VAGY FÖLD ALATTI LEJÁRÓ. A HELYET REQUIEM INFERIUSAI ŐRZIK, DE A MEDÁLOK MIATT EGYELŐRE NEM TÁMADNAK.]",
-        "[A LEJÁRÓBAN KÉT OLYAN TÁRGYAT TALÁLTOK, AMELYEK KÖZÜL BÁRMELYIK FONTOS LEHET REQUIEMNEK. NINCS IDŐTÖK ÉS HELYETEK MINDKETTŐT MAGATOKKAL VINNI.]"
+        "Talán észre se vennétek a föld alatti lejárót, ha nem keresnétek azt célzottan. Ócska, fából és vasból álló csapóajtót nyittok fel egy pálcaintéssel. Apátok még csak arra se vette a fáradtságot, hogy mágikusan lezárja ezt; túlontúl bízott abban, hogy a bábjai majd megvédik, ami az övé.",
+		"Igaza volt.",
+		"Egyértelműen nem bolygatta senki a bunkert. A dohos üresség szaga terjed a levegőben, keveredve az oxidálódott fémével, a penésszel, és valami fanyar-édes illattal, amit nem tudsz meghatározni.",
+		"Bátyád ereszkedik le elsőként, te pedig az ő pálcájának fényét követed lefelé. Elfogadod segítő kezét az utolsó lépéseknél, amikor megreped alattad a hetedik lépcsőfok. Jobbra üres tárolóhelyiségek sorakoznak, balra pedig apátok beomlott műhelyének maradványai. Apátok pontosan elmondta, hogy mi az a két dolog, amit innen hozzatok majd vissza. Az egyiket saját zsebedbe teszed, a másikat pedig hagyod, hogy Destiny vigye el."
       ],
       "choices": [
         {
           "id": "s1_take_sealed_case_map",
-          "text": "A fekete vasból készült, pecsétes kazettát viszed el.",
+          "text": "Egy bársonyba csomagolt, csontfoglalatba zárt, régi pálcát viszel el a tárolóból.",
           "next": "s1_return_omens_normal",
           "tags": [
             "normal"
@@ -422,7 +424,7 @@
         },
         {
           "id": "s1_take_control_rod_map",
-          "text": "A csontfoglalatba zárt régi vezérlőpálcát veszed magadhoz.",
+          "text": "A beomlott műhelyből viszed el a diafilmet, amit apád kért.",
           "next": "s1_return_omens_normal",
           "tags": [
             "normal"
@@ -438,13 +440,16 @@
     "s1_site_found_des": {
       "title": "A régi lejáró",
       "paragraphs": [
-        "[IDE ÍRD A MEGTALÁLT HELYSZÍNT: A GAZ ÉS A SZÁRAZ KUKORICA ALATT KIRAJZOLÓDIK A RÉGI MELLÉKÉPÜLET VAGY FÖLD ALATTI LEJÁRÓ. A HELYET REQUIEM INFERIUSAI ŐRZIK, DE A MEDÁLOK MIATT EGYELŐRE NEM TÁMADNAK.]",
-        "[A LEJÁRÓBAN KÉT OLYAN TÁRGYAT TALÁLTOK, AMELYEK KÖZÜL BÁRMELYIK FONTOS LEHET REQUIEMNEK. NINCS IDŐTÖK ÉS HELYETEK MINDKETTŐT MAGATOKKAL VINNI.]"
+        "Talán észre se vennétek a föld alatti lejárót, ha nem keresnétek azt célzottan. Ócska, fából és vasból álló csapóajtót nyittok fel egy pálcaintéssel. Apátok még csak arra se vette a fáradtságot, hogy mágikusan lezárja ezt; túlontúl bízott abban, hogy a bábjai majd megvédik, ami az övé.",
+		"Igaza volt.",
+		"Egyértelműen nem bolygatta senki a bunkert. A dohos üresség szaga terjed a levegőben, keveredve az oxidálódott fémével, a penésszel, és valami fanyar-édes illattal, amit nem tudsz meghatározni.",
+		"Bátyád ereszkedik le elsőként, te pedig az ő pálcájának fényét követed lefelé. Elfogadod segítő kezét az utolsó lépéseknél, amikor megreped alattad a hetedik lépcsőfok. Jobbra üres tárolóhelyiségek sorakoznak, balra pedig apátok beomlott műhelyének maradványai. Apátok pontosan elmondta, hogy mi az a két dolog, amit innen hozzatok majd vissza. Az egyiket saját zsebedbe teszed, a másikat pedig hagyod, hogy Destiny vigye el."
+
       ],
       "choices": [
         {
           "id": "s1_take_sealed_case_des",
-          "text": "A fekete vasból készült, pecsétes kazettát viszed el.",
+          "text": "Egy bársonyba csomagolt, csontfoglalatba zárt, régi pálcát viszel el a tárolóból.",
           "next": "s1_return_omens_normal",
           "tags": [
             "normal"
@@ -457,7 +462,7 @@
         },
         {
           "id": "s1_take_control_rod_des",
-          "text": "A csontfoglalatba zárt régi vezérlőpálcát veszed magadhoz.",
+          "text": "A beomlott műhelyből viszed el a diafilmet, amit apád kért.",
           "next": "s1_return_omens_normal",
           "tags": [
             "normal"
@@ -473,13 +478,15 @@
     "s1_site_found_clear": {
       "title": "A régi lejáró",
       "paragraphs": [
-        "[IDE ÍRD A MEGTALÁLT HELYSZÍNT: A GAZ ÉS A SZÁRAZ KUKORICA ALATT KIRAJZOLÓDIK A RÉGI MELLÉKÉPÜLET VAGY FÖLD ALATTI LEJÁRÓ. A HELYET REQUIEM INFERIUSAI ŐRZIK, DE A MEDÁLOK MIATT EGYELŐRE NEM TÁMADNAK.]",
-        "[A LEJÁRÓBAN KÉT OLYAN TÁRGYAT TALÁLTOK, AMELYEK KÖZÜL BÁRMELYIK FONTOS LEHET REQUIEMNEK. NINCS IDŐTÖK ÉS HELYETEK MINDKETTŐT MAGATOKKAL VINNI.]"
+        "Talán észre se vennétek a föld alatti lejárót, ha nem keresnétek azt célzottan. Ócska, fából és vasból álló csapóajtót nyittok fel egy pálcaintéssel. Apátok még csak arra se vette a fáradtságot, hogy mágikusan lezárja ezt; túlontúl bízott abban, hogy a bábjai majd megvédik, ami az övé.",
+		"Igaza volt.",
+		"Egyértelműen nem bolygatta senki a bunkert. A dohos üresség szaga terjed a levegőben, keveredve az oxidálódott fémével, a penésszel, és valami fanyar-édes illattal, amit nem tudsz meghatározni.",
+		"Bátyád ereszkedik le elsőként, te pedig az ő pálcájának fényét követed lefelé. Elfogadod segítő kezét az utolsó lépéseknél, amikor megreped alattad a hetedik lépcsőfok. Jobbra üres tárolóhelyiségek sorakoznak, balra pedig apátok beomlott műhelyének maradványai. Apátok pontosan elmondta, hogy mi az a két dolog, amit innen hozzatok majd vissza. Az egyiket saját zsebedbe teszed, a másikat pedig hagyod, hogy Destiny vigye el."
       ],
       "choices": [
         {
           "id": "s1_take_sealed_case_clear",
-          "text": "A fekete vasból készült, pecsétes kazettát viszed el.",
+          "text": "Egy bársonyba csomagolt, csontfoglalatba zárt, régi pálcát viszel el a tárolóból.",
           "next": "s1_return_omens_clear",
           "tags": [
             "normal"
@@ -492,7 +499,7 @@
         },
         {
           "id": "s1_take_control_rod_clear",
-          "text": "A csontfoglalatba zárt régi vezérlőpálcát veszed magadhoz.",
+          "text": "A beomlott műhelyből viszed el a diafilmet, amit apád kért.",
           "next": "s1_return_omens_clear",
           "tags": [
             "normal"
@@ -508,13 +515,14 @@
     "s1_site_found_dejavu": {
       "title": "A régi lejáró",
       "paragraphs": [
-        "[IDE ÍRD A MEGTALÁLT HELYSZÍNT: A GAZ ÉS A SZÁRAZ KUKORICA ALATT KIRAJZOLÓDIK A RÉGI MELLÉKÉPÜLET VAGY FÖLD ALATTI LEJÁRÓ. A HELYET REQUIEM INFERIUSAI ŐRZIK, DE A MEDÁLOK MIATT EGYELŐRE NEM TÁMADNAK.]",
-        "[A LEJÁRÓBAN KÉT OLYAN TÁRGYAT TALÁLTOK, AMELYEK KÖZÜL BÁRMELYIK FONTOS LEHET REQUIEMNEK. NINCS IDŐTÖK ÉS HELYETEK MINDKETTŐT MAGATOKKAL VINNI.]"
+        "Emlékszel a csapóajtóra, és emlékszel arra is, hogy mi minden van ott.",
+		"Ismerősen terjed tüdődben a penész, a rozsda és az ismeretlen szag, amit még mindig nem tudsz hova kötni. Jelenleg nem is tartod fontosnak. Csak minél hamarabb vissza akarsz jutni a biztonságba, mielőtt az újra megtörténik. Persze most a nyakadban apád védelme; a biztonság kedvéért kényszeresen ellenőrzöd azt újra, mielőtt leérnél a lejárat aljára. Előre mész, most a te fényed fogja vezetni Destinationt, és nem fogod engedni, hogy még egyszer megtörténjen ugyanaz. Előre figyelmezteted őt a hetedik lépcsőfokról is, amire úgy emlékszel, betört alattad.",
+		"Pontosan emlékszel rá, melyik tárgy hol van pontosan, így sokkal rövidebb idő alatt tudjátok felkapni, ami apátoknak értékes, hogy eltűnhessetek innen."
       ],
       "choices": [
         {
           "id": "s1_take_sealed_case_dejavu",
-          "text": "A fekete vasból készült, pecsétes kazettát viszed el.",
+          "text": "Egy bársonyba csomagolt, csontfoglalatba zárt, régi pálcát viszel el a tárolóból.",
           "next": "s1_dejavu_medal_transfer",
           "tags": [
             "normal"
@@ -527,7 +535,7 @@
         },
         {
           "id": "s1_take_control_rod_dejavu",
-          "text": "A csontfoglalatba zárt régi vezérlőpálcát veszed magadhoz.",
+          "text": "A beomlott műhelyből viszed el a diafilmet, amit apád kért.",
           "next": "s1_dejavu_medal_transfer",
           "tags": [
             "normal"
