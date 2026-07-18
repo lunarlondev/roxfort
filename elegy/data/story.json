@@ -906,12 +906,19 @@
     "s1_eye_escape_together": {
       "title": "Egymás mellett",
       "paragraphs": [
-        "ideideide",
+        "Darabokra robbantod a közétek álló inferust. Nem foglalkozol azzal, hogy ruhád a maradványaival szennyeződik. Majd lesz másik.",
+		"Nem szakadhatsz el a bátyádtól.",
+		"Bár a házatok látótávolságban van, a közvetlen út a vadkukoricáson át vezet, ami csak még több veszélyt rejteget számotokra. Vagyis hát számodra. Egyedül számodra.",
+		"Nem akarod elengedni őt többé. Járt utat járatlanra cserélni nem mindig érdemes, együtt haladtok hát visszafelé a már kitaposott ösvényen. Az utat Des vezeti előtted, te pedig azokat az inferusokat tartod távol, akik hátulról próbálnának megközelíteni titeket. ",
+		"Működik, úgy tűnik, működik… ",
+		"Apád teremtményei módszeresen kerülik Destinationt. Természetellenes mozdulatokkal állnak félre az útjából, mintha a bátyád nem lenne több, mint egy megkerülendő akadály. Belekapaszkodsz hátulról a ruhájába, mintha a rajta lógó medál téged is védhetne. Egyikük sem ér hozzád, azonban üldözőbe vesznek, amint elhaladtok mellettük.",
+		"Egyre közelebb vagytok a házhoz, közel a védőmágiák határához, ahol már biztonságban vagytok. Átkaid azonban egyre ritkábban érnek célba. Alig maradt már hely mögötted, ahová hátralökhetnéd őket. A kitaposott ösvényt megtöltik a feltápászkodó testek, és bármilyen gyorsak is vagytok, tőlük nem lehettek azok.",
+		"Ujjaid elengedik bátyád ruhájának szegletét. Kénytelen vagy, mert magukkal ragadnak. Behúzzák apró testedet maguk közé, és meg sem tudod mondani, hogy minek a fájdalmát érzed a legélesebben. Érzed, ahogy felpattan az ér a nyakadon, és azt, ahogyan a lábaid természetellenesen fordulnak ki alattad. Pálcád kiesik kezedből, arcodon pedig minden eddiginél élesebb, égetőbb fájdalmat érzel."
       ],
       "choices": [
         {
           "id": "s1_after_eye_escape_together",
-          "text": "Rábízod magad Destinationre.",
+          "text": "Apád és Destination hangjára bízod magad.",
           "next": "s1_cut_to_chapter_two",
           "tags": [
             "critical"
