@@ -828,12 +828,14 @@
     "s1_glacius_attempt_dejavu": {
       "title": "Az ismert lángok",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN EMLÉKSZEL A TŰZ TERJEDÉSÉRE ÉS ARRA, HONNAN ÉRKEZETT A VÉGZETES TÁMADÁS. EZÚTTAL MÓDOSÍTOD A VARÁZSLAT ALAKJÁT VAGY IRÁNYÁT, DE A SZÁRAZ MEZŐ KISZÁMÍTHATATLANUL REAGÁL.]"
+        "Ezüstös-kék fény távozik pálcádból, egyenesen a betolakodóra. Tudod, hogy nem a jég a legjobb megoldás, de zárt térben tűzzel játszani olyan veszélyes, hogy talán jobban járnál még azzal is, ha csendben megvárnád, míg magukkal ragadnak.",
+		"A bejutni kívánó test egy szempillantás alatt megmerevedik a jégtől. Először azt hiszed, sikerült, néhány másodpercig úgy is tűnik. A mögötte tolakodó testek azonban egyszerűen kinyomják őt a résen, mint egy fogkrémet.",
+		"A fagyott test darabokra törik. A szemed láttára válik le karja, és jéggé dermedt maradványok csúfítják apád penész-szagú bunkerének dohos padlóját. Újabb inferusok érkeznek a résen megállíthatatlanul."
       ],
       "choices": [
         {
           "id": "s1_fire_ring_dejavu",
-          "text": "Más helyen és szűkebben zárod körbe magatokat tűzzel.",
+          "text": "Arresto Momentum!",
           "next": "s1_eye_fire_ring_dejavu",
           "tags": [
             "secret"
@@ -848,7 +850,7 @@
         },
         {
           "id": "s1_fire_wild_dejavu",
-          "text": "Más irányba tereled a lángokat, hogy elkerüld a korábbi káoszt.",
+          "text": "Megfagyasztod alattuk a padlót.",
           "next": "s1_eye_fire_chaos_dejavu",
           "tags": [
             "secret",
@@ -1003,14 +1005,15 @@
     "s1_eye_fire_ring_dejavu": {
       "title": "Átrajzolt kör",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN MÁSHOL ÉS MÁSKÉPP HÚZOD MEG A TŰZGYŰRŰT, HOGY AZ EMLÉKEIDBEN BENT MARADT INFERIUS EZÚTTAL KÍVÜL REKEDJEN. A TERV SIKERÜL.]",
-        "[EGY MÁSIK, A FÖLD ALATT REJTŐZŐ TEST AZONBAN A KÖR KÖZEPÉN TÖR ELŐ, ÉS ELPUSZTÍTJA AZ EGYIK SZEMEDET.]",
-        "[MÁR NEM LEP MEG. MEGVÁLTOZTATTAD AZ OKOT, DE NEM A VÉGET. ELFOGADOD, AMI KÖVETKEZIK.]"
+        "Nem állítod meg őket teljesen, de feltartod őket addig, amíg a segítség érkezik. Tudod, milyen gyorsan képesek mozogni, mégis csak apátok mágiája mozgatja őket. A varázslatod láthatatlan súlyként nehezedik rájuk, mozgásuk sebessége pedig drasztikusan lecsökken.",
+		"Már hallod a mozgolódást a csapóajtó felett. Biztos vagy a sikeredben, és biztos vagy benne, hogy sikerül élve megúsznod az egészet. Visszakiabálsz testvérednek és apádnak, hogy jól vagy.",
+		"Hiba volt.",
+		"A kar, ami az egyik inferusból vált le, bokádig settenkedett és a földre tarol. A lelassított inferusok beérnek; érzel egy harapást a lábadon, érzed a rád nehezedő súlyokat, amiktől hirtelen nagyon nehézzé válik lélegezni, és érzed azt is, hogy ismét az arcodhoz, a szemedhez nyúlnak."
       ],
       "choices": [
         {
           "id": "s1_after_eye_fire_ring_dejavu",
-          "text": "Leengeded a pálcádat.",
+          "text": "Ismered már a végzeted.",
           "next": "s1_cut_to_chapter_two",
           "tags": [
             "secret",
