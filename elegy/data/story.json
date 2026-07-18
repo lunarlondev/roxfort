@@ -976,12 +976,12 @@
     "s1_eye_escape_together_dejavu": {
       "title": "Szorosabb kapaszkodás",
       "paragraphs": [
-        "[reducto] Vérben ázva görnyedsz a földre, mialatt apádék gondoskodnak arról, hogy élve kijuthass innen, és pontosan tudod, hogy nem szabadulhatsz a parazitádtól."
+        "[reducto]"
       ],
       "choices": [
         {
           "id": "s1_after_eye_escape_together_dejavu",
-          "text": "xxxxxxxx",
+          "text": "Minden újra megtörténik...",
           "next": "s1_cut_to_chapter_two",
           "tags": [
             "secret",
@@ -1050,7 +1050,7 @@
     "s1_cut_to_chapter_two": {
       "title": "CUT",
       "paragraphs": [
-        "[A KÉP A SZEMSÉRÜLÉS, A FÁJDALOM ÉS A KÁOSZ PILLANATÁBAN MEGSZAKAD. NE ÍRD LE MÉG A HAZAJUTÁST VAGY A GYÓGYÍTÁST; A KÖVETKEZŐ JELENET MÁR A MÁSODIK FEJEZETBEN KEZDŐDIK.]"
+        "Vérben ázva görnyedsz a földre, mialatt apádék gondoskodnak arról, hogy élve kijuthass innen."
       ],
       "choices": [
         {
