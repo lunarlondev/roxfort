@@ -1095,7 +1095,7 @@
       "choices": [
         {
           "id": "s1_cut_enter_chapter_two",
-          "text": "II. fejezet",
+          "text": "Kalandod itt véget ér...",
           "next": "s2_wake_after_attack",
           "tags": [
             "normal"
