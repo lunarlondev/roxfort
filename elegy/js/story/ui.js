@@ -341,9 +341,27 @@ export class StoryUI {
     this.renderRoute(node);
     this.renderEndingGallery();
 
+    const presentation =
+      node.presentation &&
+      typeof node.presentation === "object"
+        ? node.presentation
+        : {};
+
     /*
-     * A gallery ekkor már létezik, ezért a StoryEffects meg tudja
-     * találni és animálni a megfelelő ending-chipet.
+     * Minden ending elérésekor lefut a nagyméretű ending-overlay.
+     * Az isNew jelzi, hogy első feloldásról vagy ismételt endingről van szó.
+     */
+    dispatchStoryEvent("story:endingReached", {
+      id: node.endingId,
+      title: node.title || "Befejezés",
+      order: node.order || null,
+      isNew,
+      style: presentation.endingStyle || "default"
+    });
+
+    /*
+     * Az ending-chip külön feloldási animációja csak az első
+     * felfedezéskor fusson le.
      */
     if (isNew) {
       dispatchStoryEvent("story:endingUnlocked", {
