@@ -39,6 +39,7 @@ export class StoryUI {
      * ismételten elindítsa a sérülés-, halál- vagy chapter-effektet.
      */
     this.lastPresentedNodeId = null;
+    this.started = false;
 
     this.elements = {
       title: root.getElementById("storyTitle"),
@@ -60,6 +61,55 @@ export class StoryUI {
     this.elements.title.textContent = this.engine.meta.title || "Történet";
     this.elements.back.addEventListener("click", () => this.goBack());
     this.elements.restart.addEventListener("click", () => this.restart());
+    this.renderStartGate();
+  }
+
+  renderStartGate() {
+    this.clearTimers();
+    this.started = false;
+    this.lastPresentedNodeId = null;
+
+    this.renderMedia(null);
+
+    this.elements.sceneTitle.textContent = "";
+    this.elements.text.innerHTML = "";
+    this.elements.choices.innerHTML = "";
+    this.elements.status.textContent = "";
+    this.elements.route.hidden = true;
+    this.elements.route.innerHTML = "";
+    this.elements.endings.hidden = true;
+    this.elements.endings.innerHTML = "";
+
+    const prompt =
+      this.engine.meta.startPrompt ||
+      "A történet csak akkor kezdődik el, amikor készen állsz belépni.";
+
+    this.elements.text.appendChild(
+      createElement("p", "story-start-prompt", prompt)
+    );
+
+    const startButton = createElement(
+      "button",
+      "story-control story-start-button",
+      this.engine.meta.startButtonText || "A történet kezdete"
+    );
+
+    startButton.type = "button";
+    startButton.addEventListener("click", () => this.startStory());
+
+    this.elements.choices.appendChild(startButton);
+
+    this.updateProgress();
+    this.elements.back.disabled = true;
+    this.elements.restart.disabled = true;
+  }
+
+  startStory() {
+    if (this.started) return;
+
+    this.started = true;
+    this.lastPresentedNodeId = null;
+    this.elements.restart.disabled = false;
     this.renderCurrent();
   }
 
@@ -466,7 +516,7 @@ export class StoryUI {
    * }
    */
   emitPresentationForNode(node, nodeId, { force = false } = {}) {
-    if (!node) return;
+    if (!node || !this.started) return;
 
     if (!force && this.lastPresentedNodeId === nodeId) {
       return;
@@ -527,13 +577,32 @@ export class StoryUI {
       });
     }
 
-    const timelineSource = presentation.timeline;
+    const timelineItems = [];
 
-    if (timelineSource) {
-      const timelineItems = Array.isArray(timelineSource)
-        ? timelineSource
-        : [timelineSource];
+    if (presentation.timeline) {
+      timelineItems.push(
+        ...(Array.isArray(presentation.timeline)
+          ? presentation.timeline
+          : [presentation.timeline])
+      );
+    }
 
+    /*
+     * Kizárólag ending node-oknál kerülnek a normál ending-bejegyzés
+     * után az endinghez tartozó, kézzel megadott utóélet-elemek.
+     */
+    if (
+      node.type === "ending" &&
+      presentation.afterEndingTimeline
+    ) {
+      timelineItems.push(
+        ...(Array.isArray(presentation.afterEndingTimeline)
+          ? presentation.afterEndingTimeline
+          : [presentation.afterEndingTimeline])
+      );
+    }
+
+    if (timelineItems.length) {
       dispatchStoryEvent("story:routeUpdate", {
         items: timelineItems
       });
@@ -545,6 +614,8 @@ export class StoryUI {
    * mert a main.js jelenlegi sorrendjében az effektkezelő később indul.
    */
   emitCurrentPresentation({ force = true } = {}) {
+    if (!this.started) return;
+
     const nodeId = this.state.run.current;
     const node = this.engine.getNode(nodeId);
 
@@ -580,8 +651,10 @@ export class StoryUI {
     this.state.resetRun();
 
     /*
-     * Így a kezdő node chapter/presentation effektje újra lefuthat.
+     * Az olvasó már belépett a történetbe, ezért az Új útvonal
+     * nem visz vissza a kezdőgombhoz, hanem azonnal újraindítja.
      */
+    this.started = true;
     this.lastPresentedNodeId = null;
 
     dispatchStoryEvent("story:restart");

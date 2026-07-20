@@ -3,7 +3,9 @@
     "id": "necromancer-eye-story",
     "version": 5,
     "title": "Szemet szemért",
-    "start": "s1_return_to_estate"
+    "start": "s1_return_to_estate",
+    "startButtonText": "Az előtörténet olvasása",
+    "startPrompt": "Az előtörténet csak akkor kezdődik el, amikor készen állsz belépni."
   },
   "nodes": {
     "s1_return_to_estate": {
@@ -63,7 +65,8 @@
         "chapter": {
           "roman": "0",
           "label": "Prológus",
-          "title": "Nebraska"
+          "title": "Nebraska",
+          "duration": 4800
         },
         "chapterImage": true
       }
@@ -311,7 +314,8 @@
         "chapter": {
           "roman": "I",
           "label": "Fejezet",
-          "title": "Aratás"
+          "title": "Aratás",
+          "duration": 4800
         },
         "chapterImage": true
       }
@@ -1321,7 +1325,8 @@
         "chapter": {
           "roman": "II",
           "label": "Fejezet",
-          "title": "Anya"
+          "title": "Anya",
+          "duration": 4800
         },
         "chapterImage": true
       }
@@ -1908,7 +1913,8 @@
         "chapter": {
           "roman": "III",
           "label": "Fejezet",
-          "title": "Parazita"
+          "title": "Parazita",
+          "duration": 4800
         },
         "chapterImage": true
       }
@@ -2166,7 +2172,8 @@
         "chapter": {
           "roman": "III",
           "label": "Fejezet",
-          "title": "Parazita"
+          "title": "Parazita",
+          "duration": 4800
         },
         "chapterImage": true
       }
@@ -2188,7 +2195,8 @@
           "date": "Befejezés",
           "icon": "†",
           "text": "Befejezés: A szem nélküli vég."
-        }
+        },
+        "afterEndingTimeline": []
       }
     },
     "ending_patient_witness": {
@@ -2207,7 +2215,8 @@
           "date": "Befejezés",
           "icon": "†",
           "text": "Befejezés: A tanú."
-        }
+        },
+        "afterEndingTimeline": []
       }
     },
     "ending_dejavu_loop_death": {
@@ -2227,7 +2236,8 @@
           "date": "Befejezés",
           "icon": "†",
           "text": "Befejezés: Ugyanaz a vég."
-        }
+        },
+        "afterEndingTimeline": []
       }
     },
     "ending_dejavu_coexist": {
@@ -2246,7 +2256,8 @@
           "date": "Befejezés",
           "icon": "†",
           "text": "Befejezés: Két tekintet."
-        }
+        },
+        "afterEndingTimeline": []
       }
     },
     "ending_mother_leash": {
@@ -2265,7 +2276,8 @@
           "date": "Befejezés",
           "icon": "†",
           "text": "Befejezés: Az anya póráza."
-        }
+        },
+        "afterEndingTimeline": []
       }
     },
     "ending_seer_heir": {
@@ -2284,7 +2296,8 @@
           "date": "Befejezés",
           "icon": "†",
           "text": "Befejezés: A látó örököse."
-        }
+        },
+        "afterEndingTimeline": []
       }
     },
     "ending_fulfiller": {
@@ -2303,7 +2316,8 @@
           "date": "Befejezés",
           "icon": "†",
           "text": "Befejezés: A beteljesítő."
-        }
+        },
+        "afterEndingTimeline": []
       }
     },
     "ending_what_others_dont_see": {
@@ -2323,7 +2337,8 @@
           "date": "Befejezés",
           "icon": "†",
           "text": "Befejezés: Amit más nem lát."
-        }
+        },
+        "afterEndingTimeline": []
       }
     }
   }
