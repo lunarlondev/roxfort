@@ -20,8 +20,8 @@
   ],
   "story": {
     "dataSource": "data/story.json",
-    "description": "Ebben az előtörténetben Te döntesz arról, hogy mi történik, és Te irányíthatod a karaktert is - hasonlóan ahhoz, ahogyan Requiem Dreadmoor játszik a holtakkal. A karakter története ebből fakadóan zavaros és absztrakt; talán minden megtörtént a leírtak közül egyszerre. Talán egyik sem. Három titkos választás rejtőzik a sorok között. Egy, amit türelemmel oldasz fel, egy, amit meghozott döntéseid láttatnak veled, és egy, amihez a Halál mutat ösvényt számodra.",
-    "warning": "halál bálványozása, szektás magatartás, grafikus erőszak"
+    "description": "Az előtörténet vizuális effekteket és interaktív elemeket tartalmaz.",
+    "warning": "halál bálványozása, szektás magatartás, grafikus erőszak, bodyhorror, halottgyalázás"
   },
   "past": {
     "timeline": [
@@ -127,9 +127,12 @@
 	  { "type": "paragraph", "text": "A Regenerációs bájital holt összetevői, a Dicsőség keze vagy éppen maga a Feltámadás köve azt jelzi, hogy a nekromanciának nem csak önállóan, de más mágiaágakkal kombinálva is komoly helye van a varázslás-módszertanban.\n\nA múmiák porított, darabolt összetevőinek használata, más élőlények tartósított szerveinek felhasználása nem számít nekromanciának, hiszen ott a halott hús összetevő, de nem maga a mágiával manipulálni kívánt anyag.\n\nA Regenerációs bájital a holt csontból, a szolga húsából és az ellenség vérével a vérmágiával együtt egy olyan, élő testet alkot összetevőiből, ami nekromanciának minősül, ám a recept hétköznapi varázslók számára nem elérhető, bájitalos könyvekben meg nem található a maga teljességében.\n\nA Dicsőség keze egy tolvaj tartósított keze, ami a saját zsírjából és hajából formált gyertyával csak annak világít, aki tartja. Az egyik legnépszerűbb és leggyakrabban forgalomba hozott nekromanciával készített használati tárgynak számít, ami az egykori tolvaj emlékmás egy részét az elhunyt húsában, kezében megpecsételi, ezzel egy nem teljes értékű és tudatú kísértetet rögzítve benne, hanem pusztán az önző szándékát, ami továbbra is szolgálja azt, aki a kezében fogja, tévesen vélve úgy, hogy az önmaga.\n\nA Feltámadás köve anyagában alighanem azonos a Minisztérium Halál kamrájában található boltívvel, ezért képes a Függöny túloldalán levő árnyakat megidézni annak, aki használja. Ők nem kísértetek, ők a halottak, akik azonban már soha nem jönnek vissza egészen, hogyan hogyan jelenhetnek meg pontosan az egy olyan tudás, ami a kővel együtt elveszett."}
 	],
     "wizardKnowledge": [
-      "A karakter valós varázslói ismereteinek első bekezdése.",
-      "Második",
-      "Harmadik."
+      "Elegy soha nem járt hagyományos iskolába. Bár apja az Egyesült Államok állampolgára, és a legnagyobb családi eseményekre a Felsőház meghívta az Alsóházat is, ő már - bátyjával és néhány féltestvérével egyetemben - nem járt se az Ilvermornyba, se más, hagyományos varázslóiskolába. Valószínűleg a Durmstrangban szívesen látták volna, azonban az akkori, zavaros politikai helyzet miatt Requiem jobbnak látta azt, ha legfiatalabb gyermekeit inkább maga mellett tartja és önállóan oktatja.",
+      "Így tudásának java részét Requiem maga adta át számára. Az elméleti dolgokban, mint amilyen a mágiatörténelem, édesanyja készítette fel a vizsgákra. Gyakorta alkalmaztak mestereket is arra, hogy az oktatásukat segítsék, különösen, ha az adott témában a gyermekeik tehetségesebbnek bizonyultak, vagy ha utazásaik közben adódott egy rendkívüli lehetőség, hogy valaki jelentőstől tanulhassanak.",
+      "Elegy kitűnő párbajozó lehetne. Fókuszált, nem gondolkozik sokat, a varázslatait és bűbájait képes kreatívan alkalmazni, és elsajátított pár olyan ártást és átkot is, amit iskolai szinten nem, vagy csak ritkán oktatnak. Requiem nem félt akkor sem, amikor fekete mágiát kezdett el oktatni neki.",
+	  "Elegy azonban a család életmódja miatt elég keveset járt tartósan a sajátjától eltérő varázslóközösségekben, így a saját korosztályával is ritkán tudott szocializálódni. Ez a párbajokra is azt jelenti, hogy nincs elég valós tapasztalata, nem adódott alkalma arra, hogy ténylegesen összemérje a tudását másokkal. Nehezen méri fel azt is, hogy ténylegesen milyen kárt okozhat azokkal a varázslatokkal, amit Requiem, vagy egy általa fizetett mester tanított számára. Nem érti és nem érzi azt, ha túlzásba esik.",
+	  "Jó elméleti alapjai vannak nekromágiában, hiszen eleve olyan környezetből érkezik, ahol ez nem számít tabunak. Nem annyira ügyes viszont, mint bátyja, belőle hiányzik az ösztönös tehetség. Képes egyszerűbb bábokat létrehozni állatokból, de azok nem kifejezetten erősek, és nem is feltétlenül sikerülnek. Jó tehetsége és érzéke van viszont arra, hogy az élőholtakat irányítsa, még ha az irányított élőholt, például vámpír tudatában is van annak, hogy épp a hatása alatt áll.",
+	  "A balesetét követően egy erős látó szemét kapta meg, és ezáltal megörökölte a látói képességét is. A szem ugyan valóban rendkívül erős látomásokat közvetít felé, azonban ezek ritkán megbízhatóak. A szerv egyfajta parazitaként működik benne, és kedvére kínozza őt olyan képekkel, amiket nem akar látni, vagy amik összezavaróak lehetnek. Előfordul az is, hogy egy eseménysor összes lehetséges és elképzelhető változatát közvetíti számára, túlterhelve vele a befogadó képességét."
     ],
     "education": [
       { "label": "Iskola", "value": "magántanuló" },
@@ -142,7 +145,9 @@
     
 	{ "title": "Varázstalan tehetségek", "text": "Hegedűn játszik és kifejezetten szép, természetes énekhangja van (amit volt is alkalma képezni)." },
 	{ "title": "Nyelvismeret", "text": "Angol anyanyelvű. Jól ismeri a latin és ógörög nyelveket, illetve beszéli az arab jordániai dialektusát." },
-	{ "title": "Jelnyelv", "text": "Destinationnel gyakran jelnyelven kommunikálnak." }
+	{ "title": "Jelnyelv", "text": "Destinationnel gyakran jelnyelven kommunikálnak." ,
+	{ "title": "Köszönet", "text": "A plottársamnak, Destinationnek, illetve Danielnek a rugalmasságért, hogy ez megszülethessen." },
+	{ "title": "Megjegyzés", "text": "Ez a max, amit kódokkal ki tudok hozni. Itt kéne abbahagynom." },
   ],
   "sources": [
     { "label": "HP Wiki - Inferius", "url": "https://harrypotter.fandom.com/wiki/Inferius", "note": "A Hogwarts Legacy hülyeségeinek nem figyelembe vételével." },
