@@ -53,7 +53,20 @@
             }
           }
         }
-      ]
+      ],
+      "media": {
+        "src": "images/story/chapter-nebraska.jpg",
+        "alt": "A nebraskai Dreadmoor-birtok komor hangulatképe",
+        "position": "center"
+      },
+      "presentation": {
+        "chapter": {
+          "roman": "0",
+          "label": "Prológus",
+          "title": "Nebraska"
+        },
+        "chapterImage": true
+      }
     },
     "s1_radio_classical_reaction": {
       "title": "0. Fejezet: Nebraska",
@@ -288,7 +301,20 @@
             }
           }
         }
-      ]
+      ],
+      "media": {
+        "src": "images/story/chapter-aratas.jpg",
+        "alt": "Kiszáradt nebraskai kukoricaföld",
+        "position": "center"
+      },
+      "presentation": {
+        "chapter": {
+          "roman": "I",
+          "label": "Fejezet",
+          "title": "Aratás"
+        },
+        "chapterImage": true
+      }
     },
     "s1_route_map_scene": {
       "title": "I. Fejezet: Aratás",
@@ -914,7 +940,10 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "effect": "critical-injury"
+      }
     },
     "s1_eye_escape_together": {
       "title": "I. Fejezet: Aratás",
@@ -942,7 +971,10 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "effect": "critical-injury"
+      }
     },
     "s1_eye_fire_ring": {
       "title": "I. Fejezet: Aratás",
@@ -961,7 +993,10 @@
             "normal"
           ]
         }
-      ]
+      ],
+      "presentation": {
+        "effect": "critical-injury"
+      }
     },
     "s1_eye_fire_chaos": {
       "title": "I. Fejezet: Aratás",
@@ -982,7 +1017,10 @@
             "normal"
           ]
         }
-      ]
+      ],
+      "presentation": {
+        "effect": "critical-injury"
+      }
     },
     "s1_eye_escape_separated_dejavu": {
       "title": "I. Fejezet: Aratás",
@@ -1008,7 +1046,10 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "effect": "critical-injury"
+      }
     },
     "s1_eye_escape_together_dejavu": {
       "title": "I. Fejezet: Aratás",
@@ -1034,7 +1075,10 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "effect": "critical-injury"
+      }
     },
     "s1_eye_fire_ring_dejavu": {
       "title": "I. Fejezet: Aratás",
@@ -1059,7 +1103,10 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "effect": "critical-injury"
+      }
     },
     "s1_eye_fire_chaos_dejavu": {
       "title": "I. Fejezet: Aratás",
@@ -1085,7 +1132,10 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "effect": "critical-injury"
+      }
     },
     "s1_cut_to_chapter_two": {
       "title": "I. Fejezet: Aratás",
@@ -1101,7 +1151,15 @@
             "normal"
           ]
         }
-      ]
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "eye-loss",
+          "date": "I. fejezet",
+          "icon": "◉",
+          "text": "Az inferusok támadása során elveszítette az egyik szemét."
+        }
+      }
     },
     "s2_wake_after_attack": {
       "title": "II. Fejezet — Anya",
@@ -1253,7 +1311,20 @@
             }
           }
         }
-      ]
+      ],
+      "media": {
+        "src": "images/story/chapter-anya.jpg",
+        "alt": "Sötét szoba a beavatkozás előtt",
+        "position": "center"
+      },
+      "presentation": {
+        "chapter": {
+          "roman": "II",
+          "label": "Fejezet",
+          "title": "Anya"
+        },
+        "chapterImage": true
+      }
     },
     "s2_wake_normal": {
       "title": "II. Fejezet — Anya",
@@ -1440,7 +1511,15 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "hidden-twin-discovered",
+          "date": "II. fejezet",
+          "icon": "†",
+          "text": "Megtalálta a halottnak hitt bátyját a ház elzárt részében."
+        }
+      }
     },
     "s2_twin_attack_normal": {
       "title": "II. Fejezet — Anya",
@@ -1458,7 +1537,10 @@
             "normal"
           ]
         }
-      ]
+      ],
+      "presentation": {
+        "effect": "hit"
+      }
     },
     "s2_twin_fear_normal": {
       "title": "II. Fejezet — Anya",
@@ -1516,7 +1598,15 @@
             "normal"
           ]
         }
-      ]
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "seer-eye-implanted",
+          "date": "II. fejezet",
+          "icon": "✦",
+          "text": "Anyja beültette az erős látótól származó idegen szemet."
+        }
+      }
     },
     "s2_wake_dejavu": {
       "title": "II. Fejezet — Anya",
@@ -1635,7 +1725,15 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "hidden-twin-discovered",
+          "date": "II. fejezet",
+          "icon": "†",
+          "text": "Megtalálta a halottnak hitt bátyját a ház elzárt részében."
+        }
+      }
     },
     "s2_twin_attack_dejavu": {
       "title": "II. Fejezet — Anya",
@@ -1654,7 +1752,10 @@
           ],
           "effect": "glitch"
         }
-      ]
+      ],
+      "presentation": {
+        "effect": "hit"
+      }
     },
     "s2_twin_fear_dejavu": {
       "title": "II. Fejezet — Anya",
@@ -1715,7 +1816,15 @@
           ],
           "effect": "glitch"
         }
-      ]
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "seer-eye-implanted",
+          "date": "II. fejezet",
+          "icon": "✦",
+          "text": "Anyja beültette az erős látótól származó idegen szemet."
+        }
+      }
     },
     "s3_normal_recovery": {
       "title": "III. Fejezet — Parazita",
@@ -1789,7 +1898,20 @@
             }
           }
         }
-      ]
+      ],
+      "media": {
+        "src": "images/story/chapter-parazita.jpg",
+        "alt": "Az idegen szem nyugtalanító hangulatképe",
+        "position": "center"
+      },
+      "presentation": {
+        "chapter": {
+          "roman": "III",
+          "label": "Fejezet",
+          "title": "Parazita"
+        },
+        "chapterImage": true
+      }
     },
     "s3_mother_binding_offer": {
       "title": "III. Fejezet — Parazita",
@@ -2034,7 +2156,20 @@
             }
           }
         }
-      ]
+      ],
+      "media": {
+        "src": "images/story/chapter-parazita.jpg",
+        "alt": "Az idegen szem nyugtalanító hangulatképe",
+        "position": "center"
+      },
+      "presentation": {
+        "chapter": {
+          "roman": "III",
+          "label": "Fejezet",
+          "title": "Parazita"
+        },
+        "chapterImage": true
+      }
     },
     "ending_eye_removal_death": {
       "type": "ending",
@@ -2045,7 +2180,16 @@
         "[A KARAKTER SAJÁT KEZŰLEG ELTÁVOLÍTJA AZ ÚJ SZEMET. A SZEM MÁR ÖSSZENŐTT AZ IDEGEKKEL, ÉS GYÖKEREI A KOPONYA BELSEJÉBE FUTNAK.]",
         "[AZ ELTÁVOLÍTÁS SIKERÜL, DE A KARAKTER BELEHAL A VÉRZÉSBE, A MÁGIKUS SOKKBA, AZ AGYI SÉRÜLÉSBE VAGY ABBA, HOGY A PARAZITA MAGÁVAL TÉPI A HOZZÁ KÖTÖTT RÉSZEIT.]",
         "Ez az ending oldja fel a következő végigjátszásban a Déjà Vu választást."
-      ]
+      ],
+      "presentation": {
+        "effect": "death",
+        "timeline": {
+          "id": "ending-EYE_REMOVAL_DEATH",
+          "date": "Befejezés",
+          "icon": "†",
+          "text": "Befejezés: A szem nélküli vég."
+        }
+      }
     },
     "ending_patient_witness": {
       "type": "ending",
@@ -2056,7 +2200,15 @@
         "[A SZEM A TELJES TÖRTÉNET MEGMUTATÁSA UTÁN ELCSENDESÜL. A KARAKTER ÉLETBEN MARAD, DE AZ ELŐZŐ LÁTÓ EMLÉKEI VÉGLEG ÖSSZEKEVEREDNEK A SAJÁTJAIVAL.]",
         "[NÉHA NEM TUDJA, MELYIKÜK ÉLETÉRE EMLÉKSZIK, ÉS A TÜKÖRBEN OLYKOR AZ ELŐZŐ HORDOZÓ NEVÉN SZÓLÍTJA MAGÁT.]",
         "[MARADJON BIZONYTALAN, HOGY A SZEM MEGNYUGODOTT, VAGY EGYSZERŰEN ELÉRTE, AMIT AKART.]"
-      ]
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "ending-PATIENT_WITNESS",
+          "date": "Befejezés",
+          "icon": "†",
+          "text": "Befejezés: A tanú."
+        }
+      }
     },
     "ending_dejavu_loop_death": {
       "type": "ending",
@@ -2067,7 +2219,16 @@
         "[A KARAKTER AZ ELŐZŐ HALÁL MINDEN RÉSZLETÉT ISMERI. MÁS ESZKÖZT, GYORSABB MOZGÁST VAGY ELŐKÉSZÍTETT VÉDELMET HASZNÁL, DE AZ ELTÁVOLÍTÁS EZÚTTAL IS HALÁLOS.]",
         "[NEM UGYANAZ A HIBA ISMÉTLŐDIK MEG: AZ ELTÁVOLÍTÁS ÖNMAGÁBAN VÉGZETES, MERT A SZEM ADDIGRA MÁR A TEST RÉSZE.]",
         "[A KÖR ÚJRA BEZÁRUL.]"
-      ]
+      ],
+      "presentation": {
+        "effect": "death",
+        "timeline": {
+          "id": "ending-DEJAVU_LOOP_DEATH",
+          "date": "Befejezés",
+          "icon": "†",
+          "text": "Befejezés: Ugyanaz a vég."
+        }
+      }
     },
     "ending_dejavu_coexist": {
       "type": "ending",
@@ -2078,7 +2239,15 @@
         "[A KARAKTER SZABÁLYOKAT ALAKÍT KI: NEM REAGÁL AZ ELSŐ LÁTOMÁSRA, FELJEGYZI A KÉPEKET, MÁS BIZONYÍTÉK NÉLKÜL NEM CSELEKSZIK, ÉS MEGTANULJA FELISMERNI A PARAZITA ÉHSÉGÉT ÉS MANIPULÁCIÓJÁT.]",
         "[SE A KARAKTER, SE A SZEM NEM GYŐZ TELJESEN. EGYÜTT ÉLNEK, MIKÖZBEN FOLYAMATOSAN FIGYELIK EGYMÁST.]",
         "[A ZÁRÓKÉPBEN AZ EGYIK SZEM A TÜKÖRKÉPET NÉZI, A MÁSIK PEDIG VALAMIT A KARAKTER VÁLLA MÖGÖTT, AMI MÉG NINCS OTT.]"
-      ]
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "ending-DEJAVU_COEXIST",
+          "date": "Befejezés",
+          "icon": "†",
+          "text": "Befejezés: Két tekintet."
+        }
+      }
     },
     "ending_mother_leash": {
       "type": "ending",
@@ -2089,7 +2258,15 @@
         "[AZ ANYA VÁMPÍRVÉRREL ÉS RITUÁLIS KÖTÉSSEL ELNÉMÍTJA A SZEMET. A LÁTOMÁSOK MEGSZŰNNEK, A KARAKTER ÉLETBEN MARAD.]",
         "[AZ ÁR: AZ ANYA BÁRMIKOR LÁTHAT A KARAKTER SZEMÉN KERESZTÜL, ÉRZI A FÉLELMÉT, ÉS TALÁN RÖVID IDŐRE A TEKINTETÉT IS IRÁNYÍTHATJA.]",
         "[A ZÁRÓJELENETBEN A KARAKTER VALAMIT EL AKAR REJTENI ELŐLE, DE AZ ÚJ SZEM MAGÁTÓL AZ ANYA FELÉ FORDUL.]"
-      ]
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "ending-MOTHER_LEASH",
+          "date": "Befejezés",
+          "icon": "†",
+          "text": "Befejezés: Az anya póráza."
+        }
+      }
     },
     "ending_seer_heir": {
       "type": "ending",
@@ -2100,7 +2277,15 @@
         "[A KARAKTER MEGTANULJA HASZNÁLNI A SZEM EREJÉT, ÉS EGYRE PONTOSABBAN LÁTJA A LEHETSÉGES JÖVŐKET.]",
         "[KÖZBEN IDEGEN NYELVEN ÍR, AZ ELŐZŐ LÁTÓ KÉZÍRÁSÁT HASZNÁLJA, ISMERETLEN EMBEREKET ISMER FEL, ÉS SAJÁT GYERMEKKORÁNAK RÉSZLETEIT FELEJTI EL.]",
         "[MARADJON BIZONYTALAN, HOGY ÖRÖKÖLTE A LÁTÓ EREJÉT, ÖSSZEOLVADT VELE, VAGY A HALOTT LÁTÓ TALÁLT MAGÁNAK ÚJ TESTET.]"
-      ]
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "ending-SEER_HEIR",
+          "date": "Befejezés",
+          "icon": "†",
+          "text": "Befejezés: A látó örököse."
+        }
+      }
     },
     "ending_fulfiller": {
       "type": "ending",
@@ -2111,7 +2296,15 @@
         "[A KARAKTER RÁJÖN, HOGY A SZEM BIZONYOS LÁTOMÁSAI CSAK AKKOR HALLGATNAK EL, HA Ő MAGA VALÓSÍTJA MEG ŐKET.]",
         "[ELŐSZÖR KISEBB ESEMÉNYEKET RENDEZ MEG, KÉSŐBB EMBEREKET MANIPULÁL, VÉGÜL PEDIG MÁR ÁLDOZATOKAT IS KIVÁLASZT A SZEM NYUGALMÁÉRT.]",
         "[A VÉGÉN A SZEM ÚJ KÉPET MUTAT VALAKIRŐL, AKIT A KARAKTER SZERET. Ő MÁR NEM KÉRDEZI MEG, IGAZ-E; CSAK ELKEZDI ELŐKÉSZÍTENI.]"
-      ]
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "ending-FULFILLER",
+          "date": "Befejezés",
+          "icon": "†",
+          "text": "Befejezés: A beteljesítő."
+        }
+      }
     },
     "ending_what_others_dont_see": {
       "type": "ending",
@@ -2123,7 +2316,15 @@
         "[A VÁLTOZÁS LASSÚ. A BÁTY IDŐVEL FELISMERI A LÉPTEIT, KÖZELEBB ÜL, ÁTVESZ EGY TÁRGYAT, VAGY SAJÁT AKARATÁBÓL MEGÉRINTI A KEZÉT. NEM GYÓGYUL MEG CSODÁLATOSAN, DE MÁR NINCS TELJESEN EGYEDÜL.]",
         "[A KARAKTER A SZEM HATALMÁT EZUTÁN ARRA HASZNÁLJA, HOGY ÉSZREVEGYE AZ ELREJTETT, KIMONDATLAN SZENVEDÉST, ÉS SEGÍTSEN AZOKNAK, AKIKET MÁSOK NEM LÁTNAK.]",
         "[MARADJON BIZONYTALAN, HOGY A SZEM EGYÜTTÉRZÉST TANÍTOTT, VAGY EGYSZERŰEN RÁJÖTT, HOGY MÁSOK FÁJDALMÁN KERESZTÜL TEHETI MAGÁT NÉLKÜLÖZHETETLENNÉ.]"
-      ]
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "ending-WHAT_OTHERS_DONT_SEE",
+          "date": "Befejezés",
+          "icon": "†",
+          "text": "Befejezés: Amit más nem lát."
+        }
+      }
     }
   }
 }

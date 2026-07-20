@@ -350,3 +350,178 @@ body.fx-death .story-engine {
   from { opacity: 0; transform: translateY(-4px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+body.fx-critical-injury .story-engine {
+  animation: critical-injury-glitch 1.05s steps(2, end);
+}
+
+body.fx-critical-injury .screen-fx__flash {
+  animation: critical-injury-flash .9s steps(2, end);
+}
+
+body.fx-critical-injury .screen-fx__noise {
+  animation: critical-injury-noise 1.05s steps(3, end);
+}
+
+body.fx-critical-injury .story-engine__stage::before,
+body.fx-critical-injury .story-engine__stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+
+body.fx-critical-injury .story-engine__stage::before {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(154, 24, 55, .22),
+      transparent 34%,
+      rgba(185, 197, 211, .11) 67%,
+      transparent
+    );
+  mix-blend-mode: screen;
+  animation: injury-slice-one .72s steps(2, end);
+}
+
+body.fx-critical-injury .story-engine__stage::after {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 3px,
+      rgba(255,255,255,.055) 4px 5px
+    );
+  animation: injury-scan .85s steps(4, end);
+}
+
+@keyframes critical-injury-glitch {
+  0% {
+    transform: translate(0);
+    filter: none;
+  }
+
+  8% {
+    transform: translate(-7px, 2px) skewX(-1deg);
+    filter: contrast(1.5) saturate(.55);
+  }
+
+  15% {
+    transform: translate(8px, -2px);
+    filter: hue-rotate(-22deg) contrast(1.25);
+  }
+
+  24% {
+    transform: translate(-3px, 1px);
+  }
+
+  36% {
+    transform: translate(4px, 0);
+    filter: grayscale(.7) contrast(1.45);
+  }
+
+  48% {
+    transform: translate(-2px, -1px);
+  }
+
+  65% {
+    transform: translate(1px, 0);
+    filter: contrast(1.12);
+  }
+
+  100% {
+    transform: translate(0);
+    filter: none;
+  }
+}
+
+@keyframes critical-injury-flash {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  9% {
+    opacity: .9;
+    background:
+      radial-gradient(
+        circle at 50% 42%,
+        rgba(235,225,218,.23),
+        transparent 25%
+      ),
+      rgba(108, 8, 32, .62);
+  }
+
+  19% {
+    opacity: .15;
+  }
+
+  33% {
+    opacity: .55;
+    background: rgba(25, 2, 9, .72);
+  }
+}
+
+@keyframes critical-injury-noise {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  10%,
+  24%,
+  38% {
+    opacity: .28;
+  }
+
+  16%,
+  31%,
+  51% {
+    opacity: .05;
+  }
+}
+
+@keyframes injury-slice-one {
+  0% {
+    opacity: 0;
+    clip-path: inset(0);
+    transform: translateX(0);
+  }
+
+  14% {
+    opacity: .85;
+    clip-path: inset(18% 0 63% 0);
+    transform: translateX(-13px);
+  }
+
+  30% {
+    clip-path: inset(51% 0 29% 0);
+    transform: translateX(10px);
+  }
+
+  54% {
+    opacity: .42;
+    clip-path: inset(72% 0 11% 0);
+    transform: translateX(-5px);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes injury-scan {
+  0% {
+    opacity: 0;
+    transform: translateY(-8%);
+  }
+
+  16% {
+    opacity: .72;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(8%);
+  }
+}

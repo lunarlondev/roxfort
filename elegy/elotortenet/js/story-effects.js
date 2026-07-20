@@ -22,14 +22,24 @@ export class StoryEffects {
     this.knownEndingKeys = new Set();
     this.initialized = false;
 
-    this.handleSceneChange = this.handleSceneChange.bind(this);
-    this.handleChapterStart = this.handleChapterStart.bind(this);
-    this.handleHit = this.handleHit.bind(this);
-    this.handleDeath = this.handleDeath.bind(this);
-    this.handleEndingUnlocked = this.handleEndingUnlocked.bind(this);
-    this.handleRouteUpdate = this.handleRouteUpdate.bind(this);
-    this.handleRestartEvent = this.handleRestartEvent.bind(this);
-    this.handleRestartClick = this.handleRestartClick.bind(this);
+    this.handleSceneChange =
+      this.handleSceneChange.bind(this);
+    this.handleChapterStart =
+      this.handleChapterStart.bind(this);
+    this.handleHit =
+      this.handleHit.bind(this);
+    this.handleCriticalInjury =
+      this.handleCriticalInjury.bind(this);
+    this.handleDeath =
+      this.handleDeath.bind(this);
+    this.handleEndingUnlocked =
+      this.handleEndingUnlocked.bind(this);
+    this.handleRouteUpdate =
+      this.handleRouteUpdate.bind(this);
+    this.handleRestartEvent =
+      this.handleRestartEvent.bind(this);
+    this.handleRestartClick =
+      this.handleRestartClick.bind(this);
   }
 
   init() {
@@ -46,6 +56,17 @@ export class StoryEffects {
     this.observeChoices();
     this.observeEndings();
     this.bindEvents();
+
+    /*
+     * A main.js-ben a StoryUI initje megelőzheti a StoryEffects initjét.
+     * Emiatt az első node eseményeit egyszer újraküldjük, amikor már
+     * minden listener biztosan él.
+     */
+    this.setTimer(() => {
+      this.ui?.emitCurrentPresentation?.({
+        force: true
+      });
+    }, 0);
   }
 
   cacheElements() {
@@ -60,21 +81,61 @@ export class StoryEffects {
     this.refs.media = get("storyMedia");
     this.refs.restartButton = get("storyRestartBtn");
 
-    this.refs.chapterTransition = get("chapterTransition");
-    this.refs.chapterRoman = get("chapterTransitionRoman");
-    this.refs.chapterLabel = get("chapterTransitionLabel");
-    this.refs.chapterTitle = get("chapterTransitionTitle");
+    this.refs.chapterTransition =
+      get("chapterTransition");
+    this.refs.chapterRoman =
+      get("chapterTransitionRoman");
+    this.refs.chapterLabel =
+      get("chapterTransitionLabel");
+    this.refs.chapterTitle =
+      get("chapterTransitionTitle");
   }
 
   bindEvents() {
-    document.addEventListener("story:sceneChange", this.handleSceneChange);
-    document.addEventListener("story:chapterStart", this.handleChapterStart);
-    document.addEventListener("story:hit", this.handleHit);
-    document.addEventListener("story:death", this.handleDeath);
-    document.addEventListener("story:endingUnlocked", this.handleEndingUnlocked);
-    document.addEventListener("story:routeUpdate", this.handleRouteUpdate);
-    document.addEventListener("story:restart", this.handleRestartEvent);
+    document.addEventListener(
+      "story:sceneChange",
+      this.handleSceneChange
+    );
 
+    document.addEventListener(
+      "story:chapterStart",
+      this.handleChapterStart
+    );
+
+    document.addEventListener(
+      "story:hit",
+      this.handleHit
+    );
+
+    document.addEventListener(
+      "story:criticalInjury",
+      this.handleCriticalInjury
+    );
+
+    document.addEventListener(
+      "story:death",
+      this.handleDeath
+    );
+
+    document.addEventListener(
+      "story:endingUnlocked",
+      this.handleEndingUnlocked
+    );
+
+    document.addEventListener(
+      "story:routeUpdate",
+      this.handleRouteUpdate
+    );
+
+    document.addEventListener(
+      "story:restart",
+      this.handleRestartEvent
+    );
+
+    /*
+     * Tartalék arra az esetre, ha egy későbbi UI-változatból
+     * véletlenül kimaradna a story:restart esemény.
+     */
     this.refs.restartButton?.addEventListener(
       "click",
       this.handleRestartClick
@@ -83,7 +144,15 @@ export class StoryEffects {
 
   handleSceneChange(event) {
     const detail = event.detail || {};
-    this.transitionScene(detail.type || "scene");
+
+    this.transitionScene(
+      detail.type || "scene"
+    );
+
+    this.refs.media?.classList.toggle(
+      "story-engine__media--chapter",
+      detail.chapterImage === true
+    );
   }
 
   handleChapterStart(event) {
@@ -94,17 +163,31 @@ export class StoryEffects {
     this.playHit();
   }
 
+  handleCriticalInjury() {
+    this.playCriticalInjury();
+  }
+
   handleDeath() {
     this.playDeath();
   }
 
   handleEndingUnlocked(event) {
-    const endingId = String(event.detail?.id || "");
+    const endingId = String(
+      event.detail?.id || ""
+    );
+
     if (!endingId) return;
 
+    this.knownEndingKeys.add(endingId);
+
     const chip = Array.from(
-      this.refs.endings?.querySelectorAll(".story-ending-chip") || []
-    ).find((item) => item.dataset.endingId === endingId);
+      this.refs.endings?.querySelectorAll(
+        ".story-ending-chip"
+      ) || []
+    ).find(
+      (item) =>
+        item.dataset.endingId === endingId
+    );
 
     if (chip) {
       this.revealEnding(chip);
@@ -119,7 +202,9 @@ export class StoryEffects {
     }
 
     if (Array.isArray(detail.items)) {
-      detail.items.forEach((item) => this.appendTimelineItem(item));
+      detail.items.forEach(
+        (item) => this.appendTimelineItem(item)
+      );
     }
   }
 
@@ -129,10 +214,6 @@ export class StoryEffects {
   }
 
   handleRestartClick() {
-    /*
-     * A történet saját újrakezdési eseménye mellett ez biztonsági
-     * tartalék: a fix timeline-elemek maradnak, a dinamikusak törlődnek.
-     */
     this.setTimer(() => {
       this.resetDynamicTimeline();
       this.clearScreenEffects();
@@ -199,9 +280,32 @@ export class StoryEffects {
     this.pulseBodyClass("fx-shake", 340);
   }
 
-  playDeath() {
-    document.body.classList.remove("fx-death");
+  /**
+   * Ehhez a CSS-ben az fx-critical-injury body class
+   * és a hozzá tartozó glitch keyframe-ek szükségesek.
+   */
+  playCriticalInjury() {
+    this.clearTransientInjuryEffects();
+
     void document.body.offsetWidth;
+
+    document.body.classList.add(
+      "fx-critical-injury"
+    );
+
+    this.setTimer(() => {
+      document.body.classList.remove(
+        "fx-critical-injury"
+      );
+    }, 1120);
+  }
+
+  playDeath() {
+    this.clearTransientInjuryEffects();
+    document.body.classList.remove("fx-death");
+
+    void document.body.offsetWidth;
+
     document.body.classList.add("fx-death");
 
     this.setTimer(() => {
@@ -219,10 +323,19 @@ export class StoryEffects {
     }, duration);
   }
 
+  clearTransientInjuryEffects() {
+    document.body.classList.remove(
+      "fx-hit",
+      "fx-shake",
+      "fx-critical-injury"
+    );
+  }
+
   clearScreenEffects() {
     document.body.classList.remove(
       "fx-hit",
       "fx-shake",
+      "fx-critical-injury",
       "fx-death"
     );
   }
@@ -232,9 +345,15 @@ export class StoryEffects {
     if (!container) return;
 
     container
-      .querySelectorAll(".story-choice--critical")
+      .querySelectorAll(
+        ".story-choice--critical"
+      )
       .forEach((choice, index) => {
-        if (choice.dataset.fxCriticalReady === "1") return;
+        if (
+          choice.dataset.fxCriticalReady === "1"
+        ) {
+          return;
+        }
 
         choice.dataset.fxCriticalReady = "1";
 
@@ -242,13 +361,17 @@ export class StoryEffects {
           choice.classList.add("is-emphasized");
 
           this.setTimer(() => {
-            choice.classList.remove("is-emphasized");
+            choice.classList.remove(
+              "is-emphasized"
+            );
           }, 1600);
         }, index * 90);
       });
 
     container
-      .querySelectorAll(".story-choice--secret")
+      .querySelectorAll(
+        ".story-choice--secret"
+      )
       .forEach((choice) => {
         choice.dataset.fxSecretReady = "1";
       });
@@ -270,10 +393,26 @@ export class StoryEffects {
   }
 
   rememberExistingEndings() {
+    const seenEndings =
+      this.state?.meta?.seenEndings;
+
+    if (Array.isArray(seenEndings)) {
+      seenEndings.forEach((endingId) => {
+        this.knownEndingKeys.add(
+          String(endingId)
+        );
+      });
+      return;
+    }
+
     this.refs.endings
-      ?.querySelectorAll(".story-ending-chip--found")
+      ?.querySelectorAll(
+        ".story-ending-chip--found"
+      )
       .forEach((chip) => {
-        this.knownEndingKeys.add(this.getEndingKey(chip));
+        this.knownEndingKeys.add(
+          this.getEndingKey(chip)
+        );
       });
   }
 
@@ -282,11 +421,15 @@ export class StoryEffects {
 
     const observer = new MutationObserver(() => {
       this.refs.endings
-        .querySelectorAll(".story-ending-chip--found")
+        .querySelectorAll(
+          ".story-ending-chip--found"
+        )
         .forEach((chip) => {
           const key = this.getEndingKey(chip);
 
-          if (this.knownEndingKeys.has(key)) return;
+          if (this.knownEndingKeys.has(key)) {
+            return;
+          }
 
           this.knownEndingKeys.add(key);
           this.revealEnding(chip);
@@ -297,7 +440,10 @@ export class StoryEffects {
       childList: true,
       subtree: true,
       attributes: true,
-      attributeFilter: ["class", "data-ending-id"]
+      attributeFilter: [
+        "class",
+        "data-ending-id"
+      ]
     });
 
     this.observers.push(observer);
@@ -308,7 +454,9 @@ export class StoryEffects {
       chip.dataset.endingId ||
       chip.textContent.trim() ||
       String(
-        Array.from(chip.parentElement?.children || []).indexOf(chip)
+        Array.from(
+          chip.parentElement?.children || []
+        ).indexOf(chip)
       )
     );
   }
@@ -321,12 +469,16 @@ export class StoryEffects {
     chip.classList.add("is-newly-found");
 
     this.setTimer(() => {
-      chip.classList.remove("is-newly-found");
+      chip.classList.remove(
+        "is-newly-found"
+      );
     }, 1500);
   }
 
   getFamilyMembers() {
-    return Array.isArray(this.character.family?.members)
+    return Array.isArray(
+      this.character.family?.members
+    )
       ? this.character.family.members
       : [];
   }
@@ -346,12 +498,21 @@ export class StoryEffects {
     if (!container) return;
 
     const members = this.getFamilyMembers();
-    const cards = container.querySelectorAll(".profile-family-card");
+    const cards = container.querySelectorAll(
+      ".profile-family-card"
+    );
 
     cards.forEach((card, index) => {
-      if (card.querySelector(".profile-family-card__portrait")) return;
+      if (
+        card.querySelector(
+          ".profile-family-card__portrait"
+        )
+      ) {
+        return;
+      }
 
       const member = members[index] || {};
+
       const portraitUrl =
         card.dataset.portrait ||
         this.getPortraitUrl(member);
@@ -361,7 +522,8 @@ export class StoryEffects {
       card.dataset.portrait = portraitUrl;
 
       const wrapper = document.createElement("div");
-      wrapper.className = "profile-family-card__portrait";
+      wrapper.className =
+        "profile-family-card__portrait";
       wrapper.setAttribute("aria-hidden", "true");
 
       const image = document.createElement("img");
@@ -397,7 +559,9 @@ export class StoryEffects {
 
   markFixedTimelineItems() {
     this.refs.timeline
-      ?.querySelectorAll(".character-timeline__item")
+      ?.querySelectorAll(
+        ".character-timeline__item"
+      )
       .forEach((item) => {
         item.dataset.timelineFixed = "true";
       });
@@ -405,41 +569,62 @@ export class StoryEffects {
 
   appendTimelineItem(item) {
     const timeline = this.refs.timeline;
+
     if (!timeline || !item?.text) return;
 
     const key =
-      item.id ||
+      String(item.id || "") ||
       `${item.date || "Történet"}::${item.text}`;
 
     const duplicate = Array.from(
-      timeline.querySelectorAll('[data-timeline-dynamic="true"]')
-    ).some((entry) => entry.dataset.timelineKey === key);
+      timeline.querySelectorAll(
+        '[data-timeline-dynamic="true"]'
+      )
+    ).some(
+      (entry) =>
+        entry.dataset.timelineKey === key
+    );
 
     if (duplicate) return;
 
     const entry = document.createElement("article");
     entry.className =
-      "character-timeline__item character-timeline__item--dynamic";
+      "character-timeline__item " +
+      "character-timeline__item--dynamic";
+
     entry.dataset.timelineDynamic = "true";
     entry.dataset.timelineKey = key;
 
     const date = document.createElement("div");
-    date.className = "character-timeline__date";
+    date.className =
+      "character-timeline__date";
 
     if (item.icon) {
-      const badge = document.createElement("span");
-      badge.className = "character-timeline__date-badge";
+      const badge =
+        document.createElement("span");
+
+      badge.className =
+        "character-timeline__date-badge";
       badge.textContent = item.icon;
-      badge.setAttribute("aria-hidden", "true");
+      badge.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
       date.appendChild(badge);
     }
 
-    const dateText = document.createElement("span");
-    dateText.textContent = item.date || "Történet";
+    const dateText =
+      document.createElement("span");
+
+    dateText.textContent =
+      item.date || "Történet";
+
     date.appendChild(dateText);
 
     const text = document.createElement("div");
-    text.className = "character-timeline__text";
+    text.className =
+      "character-timeline__text";
     text.textContent = item.text;
 
     entry.append(date, text);
@@ -448,7 +633,9 @@ export class StoryEffects {
 
   resetDynamicTimeline() {
     this.refs.timeline
-      ?.querySelectorAll('[data-timeline-dynamic="true"]')
+      ?.querySelectorAll(
+        '[data-timeline-dynamic="true"]'
+      )
       .forEach((entry) => entry.remove());
   }
 
@@ -463,10 +650,16 @@ export class StoryEffects {
   }
 
   destroy() {
-    this.observers.forEach((observer) => observer.disconnect());
+    this.observers.forEach(
+      (observer) => observer.disconnect()
+    );
+
     this.observers = [];
 
-    this.timers.forEach((timer) => clearTimeout(timer));
+    this.timers.forEach(
+      (timer) => clearTimeout(timer)
+    );
+
     this.timers.clear();
 
     this.refs.restartButton?.removeEventListener(
@@ -478,20 +671,37 @@ export class StoryEffects {
       "story:sceneChange",
       this.handleSceneChange
     );
+
     document.removeEventListener(
       "story:chapterStart",
       this.handleChapterStart
     );
-    document.removeEventListener("story:hit", this.handleHit);
-    document.removeEventListener("story:death", this.handleDeath);
+
+    document.removeEventListener(
+      "story:hit",
+      this.handleHit
+    );
+
+    document.removeEventListener(
+      "story:criticalInjury",
+      this.handleCriticalInjury
+    );
+
+    document.removeEventListener(
+      "story:death",
+      this.handleDeath
+    );
+
     document.removeEventListener(
       "story:endingUnlocked",
       this.handleEndingUnlocked
     );
+
     document.removeEventListener(
       "story:routeUpdate",
       this.handleRouteUpdate
     );
+
     document.removeEventListener(
       "story:restart",
       this.handleRestartEvent
