@@ -5,7 +5,7 @@
     "title": "Szemet szemért",
     "start": "s1_return_to_estate",
     "startButtonText": "Az előtörténet olvasása",
-    "startPrompt": "Ebben az előtörténetben Te döntesz arról, hogy mi történik, és - rendkívüli módon - Te irányíthatod a karaktert is hasonlóan ahhoz, ahogyan korunk legnagyobb nekromágusa, Requiem Dreadmoor játszik a holtakkal. A karakter története ebből fakadóan zavaros és absztrakt; talán minden megtörtént a leírtak közül egyszerre. Talán egyik sem. Három titkos választás rejtőzik a sorok között. Egy, amit türelemmel oldasz fel, egy, amit meghozott döntéseid láttatnak veled, és egy, amihez a Halál mutat ösvényt számodra."
+    "startPrompt": "Az előtörténet csak akkor kezdődik el, amikor készen állsz belépni."
   },
   "nodes": {
     "s1_return_to_estate": {
@@ -2196,7 +2196,8 @@
           "icon": "†",
           "text": "Befejezés: A szem nélküli vég."
         },
-        "afterEndingTimeline": []
+        "afterEndingTimeline": [],
+        "endingStyle": "death"
       }
     },
     "ending_patient_witness": {
@@ -2216,7 +2217,8 @@
           "icon": "†",
           "text": "Befejezés: A tanú."
         },
-        "afterEndingTimeline": []
+        "afterEndingTimeline": [],
+        "endingStyle": "revelation"
       }
     },
     "ending_dejavu_loop_death": {
@@ -2237,7 +2239,8 @@
           "icon": "†",
           "text": "Befejezés: Ugyanaz a vég."
         },
-        "afterEndingTimeline": []
+        "afterEndingTimeline": [],
+        "endingStyle": "death-loop"
       }
     },
     "ending_dejavu_coexist": {
@@ -2257,7 +2260,8 @@
           "icon": "†",
           "text": "Befejezés: Két tekintet."
         },
-        "afterEndingTimeline": []
+        "afterEndingTimeline": [],
+        "endingStyle": "coexist"
       }
     },
     "ending_mother_leash": {
@@ -2277,7 +2281,8 @@
           "icon": "†",
           "text": "Befejezés: Az anya póráza."
         },
-        "afterEndingTimeline": []
+        "afterEndingTimeline": [],
+        "endingStyle": "control"
       }
     },
     "ending_seer_heir": {
@@ -2297,7 +2302,8 @@
           "icon": "†",
           "text": "Befejezés: A látó örököse."
         },
-        "afterEndingTimeline": []
+        "afterEndingTimeline": [],
+        "endingStyle": "ascension"
       }
     },
     "ending_fulfiller": {
@@ -2317,7 +2323,8 @@
           "icon": "†",
           "text": "Befejezés: A beteljesítő."
         },
-        "afterEndingTimeline": []
+        "afterEndingTimeline": [],
+        "endingStyle": "corruption"
       }
     },
     "ending_what_others_dont_see": {
@@ -2338,7 +2345,8 @@
           "icon": "†",
           "text": "Befejezés: Amit más nem lát."
         },
-        "afterEndingTimeline": []
+        "afterEndingTimeline": [],
+        "endingStyle": "compassion"
       }
     }
   }
