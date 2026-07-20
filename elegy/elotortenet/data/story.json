@@ -1162,8 +1162,12 @@
     "s2_wake_after_attack": {
       "title": "II. Fejezet — Anya",
       "paragraphs": [
-        "[A KÉP A CUT UTÁN EGY SÖTÉT, CSENDES SZOBÁBAN TÉR VISSZA. EZ A CSOMÓPONT CSAK AZ I. FEJEZET NORMÁL VAGY DÉJÀ VU FOLYTATÁSÁNAK SZÉTVÁLASZTÁSÁRA SZOLGÁL.]"
-      ],
+        "Csendet hallasz. Most először igazán csendet.",
+		"Először azt gondolod, meghaltál. Különös módon soha nem gondoltál bele úgy igazán abba, hogy ez veled is bármikor megtörténhet, pedig ésszerű volna. Akárcsak a többi degenerált a családotokban, te is megszállottan tiszteled, sőt, szereted őt. Mégis hihetetlennek tűnik annak gondolata, hogy ténylegesen eljön érted a vég, mikor még ilyen fiatal vagy. Hiszen a huszadik életévedet is csak novemberben töltöd majd be.",
+		"Aztán eszedbe jut anyád és a betegsége. Anyád miattad nem fog soha megöregedni, miattad nem képes többet pálcát a kezében forgatni, és miattad nem mehet többet a fényre. Ezt nyíltan persze sosem éreztették veled; a te szüleid úgy gondolják, hogy felülemelkedtek az ilyen piti dolgokon, és azt is felfogják ép ésszel, hogy nem a te hibád Lucia betegsége. Mégis felelősnek érzed magad, mert a te világra jöveteled után romlott az állapota. Mintha egyenesen te átkoztad volna meg.",
+		"Érzed azonban virágos parfümének illatát, és hallod őt matatni a félhomályban.",
+		"Nem érzel semmilyen fájdalmat. Csak az emlékeid vívnak háborút benned, míg konszenzusra nem jutsz azzal kapcsolatban, hogy mi is történt. Minden nagyon zavaros, minden nagyon hirtelen történt. Hát és a szemed…"		
+		],
       "choices": [
         {
           "id": "s2_enter_normal_after_escape_separated",
@@ -1328,9 +1332,9 @@
     "s2_wake_normal": {
       "title": "II. Fejezet — Anya",
       "paragraphs": [
-        "[IDE ÍRD AZ INTERMEZZO NYITÁNYÁT. A KARAKTER BEKÖTÖTT SZEMMEL ÉBRED A SAJÁT SZOBÁJÁBAN. NEM KELL RÉSZLETEZNI, HOGYAN JUTOTT HAZA.]",
-        "[MUTASD BE AZ ANYÁT A JELENETEN KERESZTÜL. VÁMPÍR: HIDEG AZ ÉRINTÉSE, NEM LÉLEGZIK, A SÖTÉT SZOBÁBAN IS TÖKÉLETESEN TÁJÉKOZÓDIK. UGYANAKKOR GONDOSKODÓ ÉS MEGNYUGTATÓAN VISELKEDIK.]",
-        "[AZ ANYA KÖZLI, HOGY TALÁLT NEKED EGY ÚJ SZEMET. EGY RENDKÍVÜL ERŐS LÁTÓÉ VOLT, ÉS HAMAROSAN BE FOGJA ÜLTETNI.]"
+        "Odakapsz hozzá, de azt puha kötés fedi. Érzed, hogy elveszítettél valamit, ami pótolhatatlan, és ha normális ember lennél, akkor most sokként érne téged a veszteség. Titeket azonban arra neveltek, hogy a veszteségeket az élet szerves részeként ismerjétek el. Végigsimítasz a kötésen egyszer, miután felülsz, és egyszerűen beletörődsz abba, hogy az életed megváltozik.",
+        "Anyád észreveszi, hogy mocorogsz. Abbahagyja a dolgok rendezgetését a szekrényeden – a házimanótoknak kifejezetten rossz az esztétikai érzéke, de mit is várunk egy bábtól, akinek önálló gondolata és akarata sincs - , és az ágyad szélére ül. Vékony, hideg ujjaival simogatni kezdi a hajad.",
+		"Meglepő, hogy egy ilyen helyzet mit ki nem tud hozni egy anyából. Olykor napok-hetek telnek el úgy, hogy szinte ki se mozdul az ágyából. A vámpír-kór, amivel apád létezésben tartja, nem képes meggyógyítani őt, csak az állapotromlását akadályozza tovább. Előfordul, hogy az utazásaitokon is otthon hagyjátok. Te ezt nem tudtad sokáig, de amikor apád úgy döntött, Indiába mentek vagy Dél-Amerikába, anyátok valójában több hónapos, közönséges emberek számára leginkább alváshoz hasonlító állapotban pihent mélyen egy koporsó alján, hogy a fájdalmak után regenerálódjon. Az elmúlt időszakot is nehezen élte meg – különösen az utazást az Atlanti Óceánon - , most is pihennie kéne. Ő mégis a te arcodat simogatja. Jó hírrel szolgál. Talált számodra egy új szemet, méghozzá nem is akármilyet. Egy rendkívül erős látóé volt, akinek a tekintete elmondása szerint olyan dolgokat is észrevett, amiket az Idő kereke még nem is döntött el véglegesen. Anyád úgy beszél róla, mintha csak egy új ékszert szerzett volna neked. Hüvelykujja gyengéden végigsimít a kötésed alján, és közli veled, hogy hamarosan újra látni fogsz. Természetesen nem kérdezi meg, hogy szeretnéd-e."
       ],
       "choices": [
         {
@@ -1364,8 +1368,9 @@
     "s2_origin_evasion_normal": {
       "title": "II. Fejezet — Anya",
       "paragraphs": [
-        "[AZ ANYA KITÉRŐ, SZINTE KÖLTŐI VÁLASZT AD: AZ ÉLET ELVESZ, ÉS AZ ÉLET AD. NEM MONDJA MEG EGYENESEN, KITŐL VAGY MILYEN KÖRÜLMÉNYEK KÖZÖTT SZEREZTE A SZEMET.]",
-        "[A HANGJA LEHET GYENGÉD, DE A VÁLASZA LEZÁRÓ. ÚGY BESZÉL A BEAVATKOZÁSRÓL, MINTHA A DÖNTÉS MÁR MEGSZÜLETETT VOLNA.]"
+        "Fél szemed a fésülködő asztalod tükrére siklik. Anyádat természetesen nem látod benne, hisz neki nincs tükörképe. Saját, megcsonkított másod néz vissza rád, ahogyan anyád válaszát várod.",
+        "Az élet néha elvész, és néha ad. Válasza költői, de hiányzik belőle minden, ami konkrét. Nem is gondol arra, hogy ellenkezni kívánnál. Ruhaujjából egy bájitalt vesz elő, hogy biztosítson arról, az egészből semmit se fogsz érezni.",
+		"Sűrű, opálos folyadék mozdul a fiolában. Ahogyan felpattintja a dugót, édeskés illat terjed szét a szobában. Most is olyan gyengéden nyújtja feléd, mintha csak egy meghűlés elleni italról lenne szó."
       ],
       "choices": [
         {
