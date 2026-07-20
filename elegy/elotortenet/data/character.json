@@ -63,7 +63,7 @@
       { "role": "Testvér", "name": "Destination Dreadmoor", "age": "xx éves", "status": "aranyvérű", "image": "images/destination.jpg", "description": "Az első testvér leírása." },
       { "role": "Testvér", "name": "Desolation Dreadmoor", "age": "xx éves", "status": "kvibli", "image": "images/desolation.jpg", "description": "Destination ikertestvére. Sajnos kviblinek született - bár a családfő így is talált módot arra, hogy hasznos legyen. Mindenkinek azt mondták, meghalt." },
       { "role": "Házimanó", "name": "Rigor Mortis", "image": "images/rigormortis.jpg", "description": "A család szeretett házimanója, akitől holta után se tudtak megválni. Egyszerű inferus bábként szolgálja tovább a családot, igaz, mágia nélkül." },
-	  { "role": "Házimanó", "name": "Siofra Mordrake (née Dreadmoor)", "image": "images/siofra.jpg", "description": "Felsőház" }
+	  { "role": "Távoli nagynéni", "name": "Siofra Mordrake (née Dreadmoor)", "image": "images/siofra.jpg", "description": "Felsőház" }
 	],
     "history": [
       "A Dreadmoor család önbevallása alapján egészen a 15. század fekete mágusáig, Ekrizdisig szereti visszavezetni magát, holott az állítást igazolni és alátámasztani semmilyen módon se tudják. A mágiatörténelem jelenlegi álláspontja szerint Ekrizdis a saját magányába és a kísérleteibe őrült bele a szigetére épített erődítményében, amit ma Azkabannak neveznek. Vélhetően az állítás nem igaz, a család mégis büszkén ragaszkodik ehhez a narratívához – és kellően meggyőzőek az erre fogékonyak köreiben, akik szeretnek hinni a vérvonalak sötét dicsőségében.",
