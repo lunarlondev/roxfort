@@ -20,14 +20,17 @@
   ],
   "story": {
     "dataSource": "data/story.json",
-    "description": "Ebben az előtörténetben Te döntesz arról, hogy mi történik, és Te irányíthatod a karaktert is - hasonlóan ahhoz, ahogyan Requiem Dreadmoor játszik a holtakkal. A karakter története ebből fakadóan zavaros és absztrakt; talán minden megtörtént a leírtak közül egyszerre. Talán egyik sem. Három titkos választás rejtőzik a sorok között. Egy, amit türelemmel oldasz fel, egy, amit meghozott döntéseid láttatnak veled, és egy, amihez a Halál mutat ösvényt számodra.",
+    "description": "Ebben az előtörténetben Te döntesz arról, hogy mi történik, és Te irányíthatod a karaktert is - hasonlóan ahhoz, ahogyan Requiem Dreadmoor játszik a holtakkal.\n\nA karakter története ebből fakadóan zavaros és absztrakt; talán minden megtörtént a leírtak közül egyszerre. Talán egyik sem.\n\nHárom titkos választás rejtőzik a sorok között. Egy, amit türelemmel oldasz fel, egy, amit meghozott döntéseid láttatnak veled, és egy, amihez a Halál mutat ösvényt számodra.",
     "warning": "halál bálványozása, szektás magatartás, grafikus erőszak"
   },
   "past": {
     "timeline": [
       { "date": "1987", "text": "Elegy Dreadmoor születése. Távol Amerikától, Jordániában lát napvilágot, minek után a Dreadmoorok Alsóházát a Felsőház kiutasította az Egyesült Államokból." },
-      { "date": "XXXX", "text": "Esemény" },
-      { "date": "XXXX", "text": "Esemény" }
+      { "date": "1997", "text": "Bár családi eseményeken meghívásra néhányszor meglátogatják az Egyesült Államokat, nem élhetnek ott, és nem járhat az Ilvermornyba. 10 évesen kapja meg pálcáját. Magántanulóként kezdi meg a tanulását apjától, édesanyjától, és az általuk fizetett mesterektől. Diákévei alatt sokat ingáznak a világban." },
+      { "date": "2003", "text": "Sikeres RBF vizsgát tesz le." },
+	  { "date": "2005", "text": "Leteszi a RAVASZ vizsgáit." },
+	  { "date": "2005", "text": "Bár a család Alsóháza apolitikus, a Felsőháztól egyre gyakrabban kapnak jelentősnek számító híreket az Államokból." },
+	  { "date": "2006", "text": "A közel-keleti helyzet miatt a MACUSA kimenti az aranyvérű családokat. A Dreadmoorok Alsóháza ismét Amerikában van. A birtokaikat a Felsőház ötven éve magáénak követelte, azonban néhányat (különösebben a veszélyesebbeket) visszakapták tőlük. Elegyék a nebraskai birtokra kerülnek." }
     ]
   },
   "personality": {

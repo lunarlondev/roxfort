@@ -5,7 +5,7 @@
     "title": "Szemet szemért",
     "start": "s1_return_to_estate",
     "startButtonText": "Az előtörténet olvasása",
-    "startPrompt": "Az előtörténet csak akkor kezdődik el, amikor készen állsz belépni."
+    "startPrompt": "Ebben az előtörténetben Te döntesz arról, hogy mi történik, és - rendkívüli módon - Te irányíthatod a karaktert is hasonlóan ahhoz, ahogyan korunk legnagyobb nekromágusa, Requiem Dreadmoor játszik a holtakkal. A karakter története ebből fakadóan zavaros és absztrakt; talán minden megtörtént a leírtak közül egyszerre. Talán egyik sem. Három titkos választás rejtőzik a sorok között. Egy, amit türelemmel oldasz fel, egy, amit meghozott döntéseid láttatnak veled, és egy, amihez a Halál mutat ösvényt számodra."
   },
   "nodes": {
     "s1_return_to_estate": {
