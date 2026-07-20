@@ -52,7 +52,7 @@
 .profile-family-card__role { position: relative; z-index: 1; margin-bottom: 6px; color: var(--faint); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
 .profile-family-card__name { position: relative; z-index: 1; margin-bottom: 5px; color: rgba(239,229,220,.94); font-family: Cinzel, Georgia, serif; font-size: 13px; }
 .profile-family-card__meta { position: relative; z-index: 1; margin-bottom: 8px; color: rgba(167,66,95,.9); font-size: 11px; }
-.profile-family-card__description { position: relative; z-index: 1; color: rgba(235,223,215,.84); font-size: 11px; line-height: 1.58; }
+.profile-family-card__description { position: relative; z-index: 1; color: rgba(235,223,215,.84); font-size: 11px; line-height: 1.58; text-align: justify;;}
 .character-timeline { position: relative; z-index: 2; display: grid; gap: 10px; padding-left: 19px; }
 .character-timeline::before { content: ''; position: absolute; top: 6px; bottom: 7px; left: 6px; width: 1px; background: linear-gradient(180deg, rgba(167,66,95,.75), rgba(216,203,187,.1)); }
 .character-timeline__item { position: relative; padding: 10px 11px; border: 1px solid rgba(221,197,190,.11); border-radius: 9px; background: rgba(0,0,0,.2); }
@@ -200,4 +200,189 @@
   opacity: 1;
   transform: translateY(0);
 overflow: hidden;
+}
+
+
+/* ===== FEJLÉCEK / FINOMABB VIZUÁLIS RANGSOR ===== */
+
+.profile-section__heading {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.profile-section__heading::before,
+.profile-section__heading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgba(216,203,187,.32);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(167,66,95,.88), rgba(66,16,32,.55));
+  box-shadow: 0 0 10px rgba(167,66,95,.18);
+  transform: translateY(-50%);
+}
+
+.profile-section__heading::before { left: -2px; }
+.profile-section__heading::after { right: -2px; }
+
+.profile-section__heading h2 {
+  position: relative;
+}
+
+.profile-section__heading h2::before {
+  content: '✦';
+  margin-right: 9px;
+  color: rgba(167,66,95,.84);
+  font-size: 11px;
+  vertical-align: middle;
+}
+
+/* ===== CSALÁDI KÁRTYÁK HOVER PORTRÉ ===== */
+
+.profile-family-card {
+  min-height: 170px;
+  isolation: isolate;
+  transition:
+    transform .28s ease,
+    border-color .28s ease,
+    box-shadow .28s ease,
+    background .28s ease;
+}
+
+.profile-family-card:hover {
+  border-color: rgba(167,66,95,.36);
+  background: rgba(8,6,9,.34);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(0,0,0,.34);
+}
+
+.profile-family-card__portrait {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity .32s ease, transform .42s ease, filter .42s ease;
+  transform: scale(1.03);
+  pointer-events: none;
+}
+
+.profile-family-card__portrait::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(4,3,4,.10), rgba(4,3,4,.82)),
+    radial-gradient(circle at 50% 32%, transparent 20%, rgba(0,0,0,.52) 100%);
+}
+
+.profile-family-card__portrait img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  filter: grayscale(.75) sepia(.18) contrast(1.08) brightness(.62);
+  transform: scale(1.04);
+  transition: transform .42s ease, filter .42s ease;
+}
+
+.profile-family-card:hover .profile-family-card__portrait {
+  opacity: .52;
+  transform: scale(1);
+}
+
+.profile-family-card:hover .profile-family-card__portrait img {
+  filter: grayscale(.42) sepia(.10) contrast(1.03) brightness(.7);
+  transform: scale(1.02);
+}
+
+.profile-family-card__role,
+.profile-family-card__name,
+.profile-family-card__meta,
+.profile-family-card__description {
+  position: relative;
+  z-index: 2;
+}
+
+.profile-family-card__name {
+  padding-right: 30px;
+}
+
+.profile-family-card__name::after {
+  content: '✦';
+  position: absolute;
+  top: 1px;
+  right: 0;
+  color: rgba(216,203,187,.26);
+  font-size: 13px;
+  text-shadow: 0 0 8px rgba(167,66,95,.14);
+}
+
+/* opcionális: ha nincs kép, akkor ne történjen semmi */
+.profile-family-card:not([data-portrait]) .profile-family-card__name::after {
+  opacity: .45;
+}
+
+/* ===== TIMELINE FINOMÍTÁS ===== */
+
+.character-timeline__item {
+  transition:
+    transform .24s ease,
+    border-color .24s ease,
+    background .24s ease,
+    box-shadow .24s ease;
+}
+
+.character-timeline__item:hover {
+  transform: translateX(2px);
+  border-color: rgba(167,66,95,.28);
+  background: rgba(12,9,14,.32);
+  box-shadow: 0 8px 18px rgba(0,0,0,.18);
+}
+
+.character-timeline__item--dynamic {
+  border-color: rgba(167,66,95,.22);
+  background:
+    radial-gradient(180px 80px at 0 0, rgba(111,38,59,.12), transparent),
+    rgba(0,0,0,.2);
+}
+
+.character-timeline__date {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.character-timeline__date-badge {
+  display: inline-grid;
+  place-items: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border: 1px solid rgba(221,197,190,.16);
+  border-radius: 999px;
+  color: rgba(239,229,220,.8);
+  font-size: 9px;
+  background: rgba(0,0,0,.28);
+}
+
+/* ===== HANGULAT / INICIÁLÉ A HOSSZABB PRÓZÁKHOZ ===== */
+
+.profile-prose > p:first-child::first-letter {
+  float: left;
+  margin: .08em .12em 0 0;
+  color: rgba(167,66,95,.9);
+  font-family: "IM Fell DW Pica SC", serif;
+  font-size: 3.1em;
+  line-height: .78;
+  text-shadow: 0 0 12px rgba(111,38,59,.18);
+}
+
+/* scrollbox teteje-alja finom fade */
+.profile-prose,
+.profile-scrollbox {
+  mask-image: linear-gradient(to bottom, transparent 0, black 12px, black calc(100% - 12px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, black 12px, black calc(100% - 12px), transparent 100%);
 }
