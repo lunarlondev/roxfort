@@ -21,6 +21,7 @@ export class StoryEffects {
     this.timers = new Set();
     this.knownEndingKeys = new Set();
     this.initialized = false;
+    this.chapterDuration = 4200;
 
     this.handleSceneChange =
       this.handleSceneChange.bind(this);
@@ -56,17 +57,6 @@ export class StoryEffects {
     this.observeChoices();
     this.observeEndings();
     this.bindEvents();
-
-    /*
-     * A main.js-ben a StoryUI initje megelőzheti a StoryEffects initjét.
-     * Emiatt az első node eseményeit egyszer újraküldjük, amikor már
-     * minden listener biztosan él.
-     */
-    this.setTimer(() => {
-      this.ui?.emitCurrentPresentation?.({
-        force: true
-      });
-    }, 0);
   }
 
   cacheElements() {
@@ -249,10 +239,16 @@ export class StoryEffects {
   showChapter({
     roman = "I",
     label = "Fejezet",
-    title = "Új fejezet"
+    title = "Új fejezet",
+    duration = this.chapterDuration
   } = {}) {
     const overlay = this.refs.chapterTransition;
     if (!overlay) return;
+
+    const resolvedDuration =
+      Number.isFinite(Number(duration)) && Number(duration) >= 1000
+        ? Number(duration)
+        : this.chapterDuration;
 
     if (this.refs.chapterRoman) {
       this.refs.chapterRoman.textContent = roman;
@@ -266,13 +262,27 @@ export class StoryEffects {
       this.refs.chapterTitle.textContent = title;
     }
 
+    /*
+     * Az inline animationDuration felülírja a régi 1.75s CSS-időt,
+     * így a CSS-fájlt nem kötelező emiatt módosítani.
+     */
+    const animatedElements = [
+      overlay,
+      overlay.querySelector(".chapter-transition__sigil"),
+      overlay.querySelector(".chapter-transition__inner")
+    ].filter(Boolean);
+
+    animatedElements.forEach((element) => {
+      element.style.animationDuration = `${resolvedDuration}ms`;
+    });
+
     overlay.classList.remove("is-active");
     void overlay.offsetWidth;
     overlay.classList.add("is-active");
 
     this.setTimer(() => {
       overlay.classList.remove("is-active");
-    }, 1780);
+    }, resolvedDuration + 80);
   }
 
   playHit() {
