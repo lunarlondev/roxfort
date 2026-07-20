@@ -1,0 +1,352 @@
+/* ===== GLOBÁLIS KÉPERNYŐ EFFEKTEK ===== */
+
+.screen-fx {
+  position: fixed;
+  inset: 0;
+  z-index: 9996;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.screen-fx__vignette,
+.screen-fx__flash,
+.screen-fx__noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.screen-fx__vignette {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 35%, rgba(0,0,0,.24) 74%, rgba(0,0,0,.78) 100%);
+}
+
+.screen-fx__flash {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,.20), transparent 48%),
+    linear-gradient(180deg, rgba(129,21,39,.24), rgba(18,2,6,.56));
+  mix-blend-mode: screen;
+}
+
+.screen-fx__noise {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,.028) 0 1px,
+      transparent 1px 3px
+    );
+  mix-blend-mode: overlay;
+}
+
+/* találat */
+body.fx-hit .screen-fx__flash {
+  animation: fx-hit-flash .45s ease;
+}
+
+body.fx-hit .screen-fx__vignette {
+  animation: fx-hit-vignette .52s ease;
+}
+
+body.fx-shake .story-engine {
+  animation: fx-story-shake .28s linear;
+}
+
+@keyframes fx-hit-flash {
+  0% { opacity: 0; }
+  15% { opacity: .95; }
+  100% { opacity: 0; }
+}
+
+@keyframes fx-hit-vignette {
+  0% { opacity: 0; }
+  18% { opacity: .8; }
+  100% { opacity: 0; }
+}
+
+@keyframes fx-story-shake {
+  0%   { transform: translateX(0); }
+  20%  { transform: translateX(-3px); }
+  40%  { transform: translateX(4px); }
+  60%  { transform: translateX(-2px); }
+  80%  { transform: translateX(2px); }
+  100% { transform: translateX(0); }
+}
+
+/* halál */
+body.fx-death .screen-fx__vignette {
+  animation: fx-death-vignette 1.65s ease forwards;
+}
+
+body.fx-death .screen-fx__flash {
+  animation: fx-death-drain 1.65s ease forwards;
+}
+
+body.fx-death .screen-fx__noise {
+  animation: fx-death-noise 1.65s ease forwards;
+}
+
+body.fx-death .story-engine {
+  animation: fx-death-sink 1.45s ease forwards;
+}
+
+@keyframes fx-death-vignette {
+  0%   { opacity: 0; }
+  15%  { opacity: .75; }
+  58%  { opacity: .95; }
+  100% { opacity: 1; }
+}
+
+@keyframes fx-death-drain {
+  0%   { opacity: 0; }
+  12%  { opacity: .35; }
+  100% { opacity: .08; }
+}
+
+@keyframes fx-death-noise {
+  0%   { opacity: 0; }
+  24%  { opacity: .16; }
+  100% { opacity: .09; }
+}
+
+@keyframes fx-death-sink {
+  0% {
+    filter: grayscale(0) blur(0);
+    transform: scale(1);
+    opacity: 1;
+  }
+  35% {
+    filter: grayscale(.35) blur(1px);
+    transform: scale(.998);
+    opacity: .95;
+  }
+  100% {
+    filter: grayscale(.9) blur(1.6px);
+    transform: scale(.992);
+    opacity: .72;
+  }
+}
+
+/* ===== FEJEZETVÁLTÓ OVERLAY ===== */
+
+.chapter-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 9997;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at center, rgba(8,5,7,.25), rgba(4,3,4,.96)),
+    linear-gradient(180deg, rgba(0,0,0,.16), rgba(0,0,0,.78));
+}
+
+.chapter-transition__sigil {
+  position: absolute;
+  width: min(56vw, 340px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(216,203,187,.08);
+  border-radius: 50%;
+  opacity: .12;
+  box-shadow:
+    0 0 0 24px rgba(216,203,187,.012),
+    0 0 48px rgba(111,38,59,.12);
+}
+
+.chapter-transition__sigil::before,
+.chapter-transition__sigil::after {
+  content: '';
+  position: absolute;
+  inset: 18%;
+  border: 1px solid rgba(216,203,187,.12);
+  border-radius: 50%;
+}
+
+.chapter-transition__sigil::after {
+  inset: 34%;
+}
+
+.chapter-transition__inner {
+  position: relative;
+  text-align: center;
+}
+
+.chapter-transition__roman {
+  position: absolute;
+  inset: auto 0 42%;
+  font-family: "IM Fell DW Pica SC", serif;
+  font-size: clamp(72px, 18vw, 170px);
+  line-height: 1;
+  letter-spacing: .08em;
+  color: rgba(216,203,187,.11);
+  text-transform: uppercase;
+  text-shadow: 0 0 32px rgba(111,38,59,.12);
+  transform: translateY(-50%);
+}
+
+.chapter-transition__label {
+  position: relative;
+  margin-bottom: 12px;
+  color: rgba(203,184,180,.72);
+  font-family: Cinzel, Georgia, serif;
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.chapter-transition__title {
+  position: relative;
+  padding: 0 22px;
+  color: rgba(239,229,220,.95);
+  font-family: "IM Fell DW Pica SC", serif;
+  font-size: clamp(28px, 5.6vw, 48px);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 16px rgba(111,38,59,.24),
+    0 2px 18px rgba(0,0,0,.7);
+}
+
+.chapter-transition__title::before,
+.chapter-transition__title::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: clamp(36px, 10vw, 90px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(167,66,95,.6), rgba(216,203,187,.2));
+  transform: translateY(-50%);
+}
+
+.chapter-transition__title::before { right: 100%; margin-right: 12px; }
+.chapter-transition__title::after  { left: 100%; margin-left: 12px; transform: translateY(-50%) scaleX(-1); }
+
+.chapter-transition.is-active {
+  visibility: visible;
+  animation: chapter-transition-sequence 1.75s ease forwards;
+}
+
+.chapter-transition.is-active .chapter-transition__sigil {
+  animation: chapter-sigil-pop 1.75s ease forwards;
+}
+
+.chapter-transition.is-active .chapter-transition__inner {
+  animation: chapter-inner-rise 1.75s ease forwards;
+}
+
+@keyframes chapter-transition-sequence {
+  0%   { opacity: 0; }
+  12%  { opacity: 1; }
+  82%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes chapter-sigil-pop {
+  0%   { opacity: 0; transform: scale(.76) rotate(-12deg); }
+  20%  { opacity: .15; transform: scale(1) rotate(0); }
+  82%  { opacity: .12; transform: scale(1.03) rotate(2deg); }
+  100% { opacity: 0; transform: scale(1.06) rotate(4deg); }
+}
+
+@keyframes chapter-inner-rise {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(22px) scale(.98);
+  }
+  18% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+  84% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateY(-12px) scale(1.01);
+  }
+}
+
+/* ===== BEFEJEZÉS FELOLDÁS DRÁMAI ===== */
+
+.story-ending-chip.is-newly-found {
+  animation: ending-chip-reveal 1.35s ease;
+}
+
+.story-ending-chip.is-newly-found::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 92px;
+  height: 92px;
+  border: 2px solid rgba(167,66,95,.28);
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(.22) rotate(-18deg);
+  box-shadow:
+    inset 0 0 0 3px rgba(111,38,59,.12),
+    0 0 18px rgba(111,38,59,.16);
+  animation: ending-seal-stamp .78s .12s ease forwards;
+}
+
+.story-ending-chip.is-newly-found::after {
+  content: 'FELFEDEZVE';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 2px 6px;
+  border: 1px solid rgba(167,66,95,.28);
+  border-radius: 999px;
+  color: rgba(253,226,232,.88);
+  font-family: Cinzel, Georgia, serif;
+  font-size: 7px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  background: rgba(71,16,29,.38);
+  box-shadow: 0 6px 12px rgba(0,0,0,.18);
+  opacity: 0;
+  animation: ending-tag-fade .6s .36s ease forwards;
+}
+
+@keyframes ending-chip-reveal {
+  0% {
+    transform: scale(.98);
+    filter: brightness(.75);
+  }
+  20% {
+    transform: scale(1.02);
+    filter: brightness(1.12);
+  }
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+@keyframes ending-seal-stamp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.22) rotate(-18deg);
+  }
+  55% {
+    opacity: .82;
+    transform: translate(-50%, -50%) scale(1.04) rotate(-11deg);
+  }
+  100% {
+    opacity: .52;
+    transform: translate(-50%, -50%) scale(1) rotate(-12deg);
+  }
+}
+
+@keyframes ending-tag-fade {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
