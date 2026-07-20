@@ -386,3 +386,216 @@ overflow: hidden;
   mask-image: linear-gradient(to bottom, transparent 0, black 12px, black calc(100% - 12px), transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, transparent 0, black 12px, black calc(100% - 12px), transparent 100%);
 }
+
+/* =========================================================
+   CSALÁDI KÁRTYÁK — PORTRÉ ALAPÁLLAPOT, SZÖVEG HOVERRE
+   ========================================================= */
+.profile-family-grid { align-items: stretch; }
+.profile-family-card {
+  height: 238px;
+  min-height: 238px;
+  padding: 15px;
+  background: linear-gradient(180deg, rgba(5,4,6,.18), rgba(5,4,6,.5)), rgba(0,0,0,.32);
+}
+.profile-family-card[data-portrait] { cursor: default; }
+.profile-family-card[data-portrait]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(circle at 50% 20%, rgba(111,38,59,.16), transparent 42%), linear-gradient(180deg, rgba(10,7,11,.94), rgba(4,3,5,.985));
+  transition: opacity .34s ease;
+}
+.profile-family-card__portrait {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity .34s ease, transform .46s ease, filter .46s ease;
+}
+.profile-family-card__portrait::after {
+  background: linear-gradient(180deg, rgba(3,2,3,.04) 28%, rgba(3,2,3,.74) 100%), radial-gradient(circle at 50% 34%, transparent 30%, rgba(0,0,0,.34) 100%);
+}
+.profile-family-card__portrait img {
+  filter: grayscale(.38) sepia(.10) contrast(1.08) brightness(.82);
+  transform: scale(1.015);
+}
+.profile-family-card__role,
+.profile-family-card__name,
+.profile-family-card__meta,
+.profile-family-card__description {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .26s ease, transform .34s ease;
+}
+.profile-family-card__role { margin-bottom: 5px; }
+.profile-family-card__name { margin-bottom: 5px; padding-right: 24px; }
+.profile-family-card__meta { margin-bottom: 8px; }
+.profile-family-card__description {
+  max-height: 148px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 7px;
+  line-height: 1.55;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(143,91,102,.78) rgba(8,6,8,.34);
+}
+.profile-family-card__description::-webkit-scrollbar { width: 6px; }
+.profile-family-card__description::-webkit-scrollbar-track { border-radius: 999px; background: rgba(8,6,8,.34); }
+.profile-family-card__description::-webkit-scrollbar-thumb {
+  border: 1px solid rgba(221,197,190,.13);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(154,95,109,.88), rgba(76,45,57,.94));
+}
+.profile-family-card[data-portrait]:hover,
+.profile-family-card[data-portrait]:focus-within {
+  transform: translateY(-3px);
+  border-color: rgba(167,66,95,.42);
+  box-shadow: 0 16px 30px rgba(0,0,0,.46), 0 0 20px rgba(111,38,59,.12);
+}
+.profile-family-card[data-portrait]:hover::before,
+.profile-family-card[data-portrait]:focus-within::before { opacity: 1; }
+.profile-family-card[data-portrait]:hover .profile-family-card__portrait,
+.profile-family-card[data-portrait]:focus-within .profile-family-card__portrait {
+  opacity: 0;
+  transform: scale(1.075);
+  filter: blur(4px);
+}
+.profile-family-card[data-portrait]:hover .profile-family-card__role,
+.profile-family-card[data-portrait]:hover .profile-family-card__name,
+.profile-family-card[data-portrait]:hover .profile-family-card__meta,
+.profile-family-card[data-portrait]:hover .profile-family-card__description,
+.profile-family-card[data-portrait]:focus-within .profile-family-card__role,
+.profile-family-card[data-portrait]:focus-within .profile-family-card__name,
+.profile-family-card[data-portrait]:focus-within .profile-family-card__meta,
+.profile-family-card[data-portrait]:focus-within .profile-family-card__description {
+  opacity: 1;
+  transform: translateY(0);
+}
+.profile-family-card[data-portrait]:hover .profile-family-card__role,
+.profile-family-card[data-portrait]:focus-within .profile-family-card__role { transition-delay: .06s; }
+.profile-family-card[data-portrait]:hover .profile-family-card__name,
+.profile-family-card[data-portrait]:focus-within .profile-family-card__name { transition-delay: .10s; }
+.profile-family-card[data-portrait]:hover .profile-family-card__meta,
+.profile-family-card[data-portrait]:focus-within .profile-family-card__meta { transition-delay: .14s; }
+.profile-family-card[data-portrait]:hover .profile-family-card__description,
+.profile-family-card[data-portrait]:focus-within .profile-family-card__description { transition-delay: .18s; }
+.profile-family-card:not([data-portrait]) .profile-family-card__role,
+.profile-family-card:not([data-portrait]) .profile-family-card__name,
+.profile-family-card:not([data-portrait]) .profile-family-card__meta,
+.profile-family-card:not([data-portrait]) .profile-family-card__description {
+  opacity: 1;
+  transform: none;
+}
+
+/* =========================================================
+   RAVASZ EREDMÉNYEK
+   ========================================================= */
+.ravasz-results {
+  position: relative;
+  margin-top: 12px;
+  overflow: hidden;
+  padding: 12px;
+  border: 1px solid rgba(221,197,190,.12);
+  border-radius: 10px;
+  background: radial-gradient(260px 120px at 100% 0, rgba(111,38,59,.14), transparent 72%), rgba(0,0,0,.25);
+  box-shadow: inset 0 0 24px rgba(0,0,0,.34);
+}
+.ravasz-results::after {
+  content: '✦';
+  position: absolute;
+  top: 9px;
+  right: 12px;
+  color: rgba(216,203,187,.09);
+  font-size: 42px;
+  line-height: 1;
+  pointer-events: none;
+}
+.ravasz-results__header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.ravasz-results__eyebrow {
+  margin-bottom: 2px;
+  color: var(--faint);
+  font-size: 8px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.ravasz-results h4 {
+  margin: 0;
+  color: rgba(239,229,220,.94);
+  font-family: Cinzel, Georgia, serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .055em;
+}
+.ravasz-results__legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 5px 8px;
+  max-width: 310px;
+  color: rgba(203,184,180,.68);
+  font-size: 8px;
+  line-height: 1.3;
+}
+.ravasz-results__legend span { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
+.ravasz-results__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 6px 8px;
+}
+.ravasz-result {
+  display: flex;
+  min-width: 0;
+  min-height: 34px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9px;
+  padding: 7px 8px 7px 10px;
+  border: 1px solid rgba(221,197,190,.09);
+  border-radius: 8px;
+  color: rgba(235,223,215,.85);
+  font-size: 10px;
+  line-height: 1.28;
+  background: rgba(0,0,0,.2);
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+.ravasz-result:hover { transform: translateY(-1px); border-color: rgba(167,66,95,.26); background: rgba(18,12,18,.34); }
+.ravasz-result > span { min-width: 0; overflow-wrap: anywhere; }
+.ravasz-grade {
+  display: inline-grid;
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-family: Cinzel, Georgia, serif;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1;
+  box-shadow: inset 0 0 0 3px rgba(0,0,0,.32), 0 0 9px currentColor;
+}
+.ravasz-grade--e { color: rgba(166,174,190,.92); background: rgba(76,83,101,.4); }
+.ravasz-grade--v { color: rgba(194,125,154,.96); background: rgba(105,48,72,.44); }
+.ravasz-grade--k {
+  color: rgba(237,196,92,.98);
+  background: rgba(125,88,18,.48);
+  box-shadow: inset 0 0 0 3px rgba(0,0,0,.3), 0 0 11px rgba(237,196,92,.52);
+}
+.ravasz-results__legend .ravasz-grade {
+  width: 17px;
+  height: 17px;
+  font-size: 7px;
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,.32), 0 0 6px currentColor;
+}

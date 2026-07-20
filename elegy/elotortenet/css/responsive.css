@@ -39,3 +39,38 @@
   }
   .story-engine__media { height: 170px; }
 }
+
+@media (hover: none), (pointer: coarse) {
+  .profile-family-card {
+    height: 270px;
+    min-height: 270px;
+    padding-top: 126px;
+  }
+  .profile-family-card[data-portrait]::before {
+    opacity: 1;
+    background: linear-gradient(180deg, transparent 0 38%, rgba(7,5,8,.92) 50%, rgba(4,3,5,.99) 100%);
+  }
+  .profile-family-card__portrait {
+    bottom: auto;
+    height: 145px;
+    opacity: .78;
+  }
+  .profile-family-card__portrait::after {
+    background: linear-gradient(180deg, rgba(3,2,3,.02), rgba(3,2,3,.82));
+  }
+  .profile-family-card__role,
+  .profile-family-card__name,
+  .profile-family-card__meta,
+  .profile-family-card__description {
+    opacity: 1;
+    transform: none;
+  }
+  .profile-family-card__description { max-height: 94px; }
+}
+
+@media (max-width: 520px) {
+  .ravasz-results__header { display: block; }
+  .ravasz-results__legend { justify-content: flex-start; max-width: none; margin-top: 8px; }
+  .ravasz-results__grid { grid-template-columns: 1fr; }
+  .profile-family-card { height: 228px; min-height: 228px; }
+}
