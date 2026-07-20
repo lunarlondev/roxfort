@@ -171,7 +171,18 @@ export class StoryEffects {
   }
 
   handleEndingReached(event) {
-    this.playEndingReveal(event.detail || {});
+    const detail = event.detail || {};
+
+    /*
+     * Az ending lezárása ugyanazt a vizuális nyelvet használja,
+     * mint a fejezetcímek: nagy háttérfelirat, kis címke és főcím.
+     */
+    this.showChapter({
+      roman: "VÉGE",
+      label: detail.isNew ? "Új befejezés" : "Befejezés",
+      title: detail.title || "Az út véget ért",
+      duration: detail.duration || 4800
+    });
   }
 
   ensureEndingOverlay() {

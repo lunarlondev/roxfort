@@ -364,63 +364,287 @@
     0 0 15px rgba(167,66,95,.15);
 }
 
+/*
+ * A critical választások megjelenésekor rövid, enyhe glitch fut le.
+ * Nem folyamatos, ezért olvasható marad, és nem versenyez a súlyos
+ * sérüléshez tartozó erősebb képernyőeffekttel.
+ */
 .story-choice--critical.is-emphasized {
-  animation: critical-choice-pulse 1.5s ease;
+  animation: critical-choice-glitch 1.15s steps(1, end);
 }
 
-@keyframes critical-choice-pulse {
-  0% {
-    box-shadow: 0 0 0 rgba(167,66,95,0);
-    transform: translateY(0);
-  }
-  26% {
-    box-shadow:
-      0 0 0 1px rgba(167,66,95,.18),
-      0 0 24px rgba(167,66,95,.18);
-    transform: translateY(-1px);
-  }
+.story-choice--critical.is-emphasized .story-choice__label {
+  animation: critical-choice-label-glitch 1.15s steps(1, end);
+}
+
+@keyframes critical-choice-glitch {
+  0%,
+  9%,
+  24%,
+  41%,
   100% {
-    box-shadow: 0 0 0 rgba(167,66,95,0);
-    transform: translateY(0);
+    transform: translate(0, 0) skewX(0);
+    filter: none;
+  }
+
+  11% {
+    transform: translate(-2px, 1px) skewX(-.35deg);
+    filter: contrast(1.12);
+    box-shadow:
+      -2px 0 rgba(111,38,59,.22),
+      2px 0 rgba(170,173,183,.12),
+      0 0 18px rgba(167,66,95,.16);
+  }
+
+  14% {
+    transform: translate(2px, -1px) skewX(.3deg);
+    filter: contrast(1.06) saturate(.9);
+  }
+
+  31% {
+    transform: translate(-1px, 0);
+    box-shadow:
+      1px 0 rgba(167,66,95,.18),
+      -1px 0 rgba(170,173,183,.1);
+  }
+
+  35% {
+    transform: translate(1px, 0);
   }
 }
 
-/* secret */
+@keyframes critical-choice-label-glitch {
+  0%,
+  10%,
+  16%,
+  30%,
+  37%,
+  100% {
+    text-shadow: none;
+    transform: translateX(0);
+  }
+
+  12% {
+    text-shadow:
+      -1px 0 rgba(200,78,107,.5),
+      1px 0 rgba(180,190,210,.22);
+    transform: translateX(1px);
+  }
+
+  33% {
+    text-shadow:
+      1px 0 rgba(200,78,107,.34),
+      -1px 0 rgba(180,190,210,.16);
+    transform: translateX(-1px);
+  }
+}
+
+/* secret — ugyanaz a csillanó hatás, arany színvilággal */
 .story-choice--secret {
-  border-color: rgba(170,173,183,.4);
+  border-color: rgba(218,177,82,.52);
+  color: rgba(248,233,188,.96);
   background:
-    radial-gradient(220px 70px at 0 0, rgba(170,173,183,.13), transparent),
-    rgba(0,0,0,.4);
+    radial-gradient(240px 80px at 0 0, rgba(218,177,82,.18), transparent 70%),
+    radial-gradient(190px 70px at 100% 120%, rgba(125,88,18,.14), transparent),
+    rgba(0,0,0,.42);
+  box-shadow:
+    inset 0 0 18px rgba(218,177,82,.025),
+    0 0 12px rgba(218,177,82,.05);
 }
 
 .story-choice--secret::before {
   width: 3px;
-  background: linear-gradient(180deg, #d1d3da, #5c5e69);
-  box-shadow: 0 0 12px rgba(170,173,183,.38);
+  background: linear-gradient(180deg, #f0ce73, #8c5b16);
+  box-shadow:
+    0 0 8px rgba(240,206,115,.62),
+    0 0 17px rgba(177,119,26,.3);
 }
 
 .story-choice--secret::after {
-  opacity: .22;
+  opacity: .3;
   background:
-    linear-gradient(115deg, transparent 0 18%, rgba(255,255,255,.09) 34%, transparent 54%),
-    linear-gradient(180deg, rgba(170,173,183,.02), rgba(170,173,183,.08));
+    linear-gradient(
+      115deg,
+      transparent 0 17%,
+      rgba(255,244,199,.04) 24%,
+      rgba(255,228,139,.2) 34%,
+      rgba(255,248,220,.08) 42%,
+      transparent 55%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(232,193,97,.02),
+      rgba(174,116,24,.1)
+    );
+  background-size: 220px 100%, 100% 100%;
+  background-repeat: no-repeat;
   animation: secret-choice-shimmer 3.2s linear infinite;
 }
 
+.story-choice--secret .story-choice__mark {
+  color: rgba(237,196,92,.9);
+  text-shadow: 0 0 9px rgba(218,177,82,.24);
+}
+
 .story-choice--secret:hover {
-  border-color: rgba(206,210,220,.56);
+  border-color: rgba(244,207,112,.78);
+  background:
+    radial-gradient(250px 90px at 0 0, rgba(232,193,97,.23), transparent 72%),
+    radial-gradient(190px 70px at 100% 120%, rgba(145,96,18,.18), transparent),
+    rgba(18,13,5,.5);
   box-shadow:
-    0 8px 25px rgba(27,28,35,.35),
-    0 0 18px rgba(170,173,183,.12);
+    0 8px 25px rgba(27,20,5,.38),
+    0 0 16px rgba(218,177,82,.2),
+    inset 0 0 20px rgba(244,207,112,.04);
 }
 
 @keyframes secret-choice-shimmer {
   0% { background-position: -220px 0, 0 0; }
-  100% { background-position: 220px 0, 0 0; }
+  100% { background-position: calc(100% + 220px) 0, 0 0; }
 }
 
 .story-choice--special {
   border-color: rgba(112,72,111,.55);
+}
+
+/* A secret arany kerete akkor is elsőbbséget élvez, ha special tagje is van. */
+.story-choice--secret.story-choice--special {
+  border-color: rgba(218,177,82,.52);
+}
+
+.story-choice--secret.story-choice--special:hover {
+  border-color: rgba(244,207,112,.78);
+}
+
+/* ===== CRITICAL VÁLASZTÁS UTÁNI FINOM JELENET-GLITCH ===== */
+
+.story-engine__stage.is-entering.effect-critical {
+  animation: story-critical-enter .38s steps(1, end);
+}
+
+.story-engine__stage.effect-critical::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0 18%,
+      rgba(167,66,95,.09) 18% 48%,
+      rgba(190,198,211,.045) 48% 64%,
+      transparent 64%
+    );
+  mix-blend-mode: screen;
+  animation: story-critical-slice .38s steps(2, end);
+}
+
+.story-engine__stage.effect-critical .story-engine__scene-title,
+.story-engine__stage.effect-critical .story-engine__text {
+  animation: story-critical-text .38s steps(1, end);
+}
+
+@keyframes story-critical-enter {
+  0% {
+    opacity: .25;
+    filter: blur(5px) saturate(.82);
+    transform: translateY(9px) scale(.994);
+  }
+
+  34% {
+    opacity: .78;
+    filter: blur(1px) contrast(1.1) saturate(.88);
+    transform: translate(-2px, 2px) skewX(-.25deg);
+  }
+
+  43% {
+    opacity: .9;
+    filter: contrast(1.05);
+    transform: translate(2px, 0);
+  }
+
+  58% {
+    transform: translate(-1px, 0);
+  }
+
+  72% {
+    transform: translate(1px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    filter: none;
+    transform: translate(0) scale(1);
+  }
+}
+
+@keyframes story-critical-slice {
+  0%,
+  100% {
+    opacity: 0;
+    clip-path: inset(0);
+    transform: translateX(0);
+  }
+
+  34% {
+    opacity: .72;
+    clip-path: inset(24% 0 61% 0);
+    transform: translateX(-5px);
+  }
+
+  50% {
+    opacity: .42;
+    clip-path: inset(58% 0 27% 0);
+    transform: translateX(4px);
+  }
+
+  68% {
+    opacity: .24;
+    clip-path: inset(76% 0 12% 0);
+    transform: translateX(-2px);
+  }
+}
+
+@keyframes story-critical-text {
+  0%,
+  32%,
+  48%,
+  100% {
+    text-shadow: none;
+    transform: translateX(0);
+  }
+
+  37% {
+    text-shadow:
+      -1px 0 rgba(190,70,99,.3),
+      1px 0 rgba(190,198,211,.13);
+    transform: translateX(1px);
+  }
+
+  43% {
+    text-shadow:
+      1px 0 rgba(190,70,99,.2),
+      -1px 0 rgba(190,198,211,.1);
+    transform: translateX(-1px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-choice--critical.is-emphasized,
+  .story-choice--critical.is-emphasized .story-choice__label,
+  .story-engine__stage.is-entering.effect-critical,
+  .story-engine__stage.effect-critical::before,
+  .story-engine__stage.effect-critical .story-engine__scene-title,
+  .story-engine__stage.effect-critical .story-engine__text {
+    animation: none !important;
+  }
+
+  .story-choice--secret::after {
+    animation: none;
+    background-position: 50% 0, 0 0;
+  }
 }
 
 .story-engine__status {

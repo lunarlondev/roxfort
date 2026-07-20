@@ -1487,7 +1487,7 @@
           "text": "Megpróbálod kiszabadítani.",
           "next": "s2_twin_attack_normal",
           "tags": [
-            "secret"
+            "critical"
           ],
           "effect": "glitch",
           "effects": {
@@ -1501,7 +1501,7 @@
           "text": "Megrémülsz tőle, és hátrálni kezdesz.",
           "next": "s2_twin_fear_normal",
           "tags": [
-            "secret"
+            "critical"
           ],
           "effect": "glitch",
           "effects": {
@@ -1878,8 +1878,6 @@
           "text": "Megkeresed, miért mutatja újra és újra a bezárt bátyád szenvedését.",
           "next": "s3_twin_suffering",
           "tags": [
-            "secret",
-            "special",
             "critical"
           ],
           "effect": "glitch",
@@ -2020,7 +2018,6 @@
           "text": "Lemész hozzá. Nem szabadítod ki és nem érinted meg; csak mellette maradsz.",
           "next": "ending_what_others_dont_see",
           "tags": [
-            "secret",
             "critical"
           ],
           "effect": "glitch"
@@ -2110,7 +2107,7 @@
           "text": "Megőrzöd mindazt, amit megmutatott.",
           "next": "ending_patient_witness",
           "tags": [
-            "secret"
+            "normal"
           ],
           "effect": "glitch"
         }
@@ -2293,13 +2290,13 @@
           "text": "Megtanulja használni a szem erejét."
         },
         "afterEndingTimeline": [
-		{
-    "id": "seerheir1",
-    "date": "2006",
-    "icon": "⌂",
-    "text": "A Felsőház utasítására belép a Noctua Tenbrosába. A beavatást bátyjával külünösebb nehézség nélkül, felkészülten teljesíti."
-  }
-  ],
+          {
+            "id": "seerheir1",
+            "date": "2006",
+            "icon": "⌂",
+            "text": "A Felsőház utasítására belép a Noctua Tenbrosába. A beavatást bátyjával külünösebb nehézség nélkül, felkészülten teljesíti."
+          }
+        ],
         "endingStyle": "ascension"
       }
     },
