@@ -1404,8 +1404,10 @@
     "s2_origin_raven_normal": {
       "title": "II. Fejezet — Anya",
       "paragraphs": [
-        "[AZ ANYA ELMONDJA, HOGY A SZEMET EGY VARJÚ AJÁNLOTTA FEL ÖNKÉNT. ÁLLÍTÁSA SZERINT A LÁTÓ MÁR HALDOKLOTT, Ő PEDIG CSAK KEGYELEMDÖFÉST ADOTT NEKI.]",
-        "[A TÖRTÉNET LEGYEN HIHETŐNEK TŰNŐ, DE GYANÚSAN KEREK. AZ ANYA NEM ENGED TOVÁBBI KÉRDÉSEKET, ÉS VISSZATÉR A PROCEDÚRA ELŐKÉSZÍTÉSÉHEZ.]"
+        "Néhány másodpercig csend hull kettőtök közé, mielőtt anyád megadná magát. Ha ez az ára annak, hogy megnyugvást hozzon, kész azt számodra megadni.",
+        "Beszámol arról, hogy egy varjú hozta azt neki. Egyenesen hozzá érkezett azért, hogy felajánlja a szemet, mert ez volt a dolga. A látó már jóval korábban megjósolta saját halálát, és azáltal, hogy felfedte magát anyád előtt, az önbeteljesítő jóslatát teljesítette.",
+		"Anyád elmondása szerint a látó már olyan sérüléseket hordozott, amire nincs bájital és nincs mágia, mi megnyugvást hoz. Kegyelemdöfés volt, amit készséggel megadott annak, aki ezt kérte.",
+		"Újra a bájitalt nyújtja feléd. A látó történetes nem érdekes, amikor a tiéd csak most kezdődik el."
       ],
       "choices": [
         {
