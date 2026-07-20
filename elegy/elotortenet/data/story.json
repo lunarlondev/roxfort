@@ -2288,11 +2288,18 @@
       "presentation": {
         "timeline": {
           "id": "ending-SEER_HEIR",
-          "date": "Befejezés",
+          "date": "2006",
           "icon": "†",
-          "text": "Befejezés: A látó örököse."
+          "text": "Megtanulja használni a szem erejét."
         },
-        "afterEndingTimeline": [],
+        "afterEndingTimeline": [
+		{
+    "id": "seerheir1",
+    "date": "2006",
+    "icon": "⌂",
+    "text": "A Felsőház utasítására belép a Noctua Tenbrosába. A beavatást bátyjával külünösebb nehézség nélkül, felkészülten teljesíti."
+  }
+  ],
         "endingStyle": "ascension"
       }
     },
