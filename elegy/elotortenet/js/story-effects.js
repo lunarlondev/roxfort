@@ -33,6 +33,8 @@ export class StoryEffects {
       this.handleCriticalInjury.bind(this);
     this.handleDeath =
       this.handleDeath.bind(this);
+    this.handleEndingReached =
+      this.handleEndingReached.bind(this);
     this.handleEndingUnlocked =
       this.handleEndingUnlocked.bind(this);
     this.handleRouteUpdate =
@@ -48,6 +50,8 @@ export class StoryEffects {
     this.initialized = true;
 
     this.cacheElements();
+    this.ensureEndingOverlay();
+    this.ensureEndingStyles();
     this.markFixedTimelineItems();
     this.decorateFamilyCards();
     this.prepareChoices();
@@ -108,6 +112,11 @@ export class StoryEffects {
     );
 
     document.addEventListener(
+      "story:endingReached",
+      this.handleEndingReached
+    );
+
+    document.addEventListener(
       "story:endingUnlocked",
       this.handleEndingUnlocked
     );
@@ -159,6 +168,597 @@ export class StoryEffects {
 
   handleDeath() {
     this.playDeath();
+  }
+
+  handleEndingReached(event) {
+    this.playEndingReveal(event.detail || {});
+  }
+
+  ensureEndingOverlay() {
+    let overlay = this.root.getElementById("endingReveal");
+
+    if (!overlay) {
+      overlay = document.createElement("div");
+      overlay.id = "endingReveal";
+      overlay.className = "ending-reveal";
+      overlay.hidden = true;
+      overlay.setAttribute("aria-live", "polite");
+      overlay.setAttribute("aria-atomic", "true");
+
+      overlay.innerHTML = `
+        <div class="ending-reveal__veil"></div>
+        <div class="ending-reveal__noise"></div>
+        <div class="ending-reveal__ring ending-reveal__ring--outer"></div>
+        <div class="ending-reveal__ring ending-reveal__ring--inner"></div>
+        <div class="ending-reveal__particles" aria-hidden="true"></div>
+        <div class="ending-reveal__content">
+          <div class="ending-reveal__eyebrow"></div>
+          <div class="ending-reveal__number"></div>
+          <div class="ending-reveal__title"></div>
+          <div class="ending-reveal__line"></div>
+          <div class="ending-reveal__hint">Az út véget ért.</div>
+        </div>
+      `;
+
+      document.body.appendChild(overlay);
+    }
+
+    this.refs.endingReveal = overlay;
+    this.refs.endingEyebrow =
+      overlay.querySelector(".ending-reveal__eyebrow");
+    this.refs.endingNumber =
+      overlay.querySelector(".ending-reveal__number");
+    this.refs.endingTitle =
+      overlay.querySelector(".ending-reveal__title");
+    this.refs.endingParticles =
+      overlay.querySelector(".ending-reveal__particles");
+
+    this.createEndingParticles();
+  }
+
+  createEndingParticles() {
+    const container = this.refs.endingParticles;
+    if (!container || container.childElementCount) return;
+
+    for (let index = 0; index < 18; index += 1) {
+      const particle = document.createElement("span");
+      particle.className = "ending-reveal__particle";
+      particle.style.setProperty("--particle-index", index);
+      particle.style.setProperty(
+        "--particle-x",
+        `${8 + ((index * 37) % 84)}%`
+      );
+      particle.style.setProperty(
+        "--particle-delay",
+        `${(index % 7) * 90}ms`
+      );
+      container.appendChild(particle);
+    }
+  }
+
+  ensureEndingStyles() {
+    if (this.root.getElementById("storyEndingEffectsStyles")) {
+      return;
+    }
+
+    const style = document.createElement("style");
+    style.id = "storyEndingEffectsStyles";
+    style.textContent = `
+      .ending-reveal {
+        --ending-accent: 205, 186, 165;
+        --ending-accent-strong: 237, 221, 203;
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        color: rgb(var(--ending-accent-strong));
+        isolation: isolate;
+      }
+
+      .ending-reveal[hidden] {
+        display: none;
+      }
+
+      .ending-reveal.is-active {
+        visibility: visible;
+        animation: ending-reveal-shell 4.8s both;
+      }
+
+      .ending-reveal__veil,
+      .ending-reveal__noise,
+      .ending-reveal__particles,
+      .ending-reveal__ring {
+        position: absolute;
+        inset: 0;
+      }
+
+      .ending-reveal__veil {
+        z-index: -4;
+        background:
+          radial-gradient(
+            circle at 50% 45%,
+            rgba(var(--ending-accent), .16),
+            transparent 30%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(3, 4, 7, .82),
+            rgba(2, 2, 4, .97)
+          );
+        backdrop-filter: blur(7px) brightness(.52);
+      }
+
+      .ending-reveal__noise {
+        z-index: -1;
+        opacity: .16;
+        background-image:
+          repeating-linear-gradient(
+            0deg,
+            transparent 0 3px,
+            rgba(255, 255, 255, .05) 4px 5px
+          );
+        mix-blend-mode: screen;
+        animation: ending-reveal-noise .22s steps(2, end) infinite;
+      }
+
+      .ending-reveal__ring {
+        z-index: -2;
+        margin: auto;
+        border-radius: 50%;
+        border: 1px solid rgba(var(--ending-accent), .45);
+        box-shadow:
+          0 0 35px rgba(var(--ending-accent), .18),
+          inset 0 0 35px rgba(var(--ending-accent), .08);
+      }
+
+      .ending-reveal__ring--outer {
+        width: min(72vw, 720px);
+        height: min(72vw, 720px);
+        animation: ending-ring-outer 4.8s ease-out both;
+      }
+
+      .ending-reveal__ring--inner {
+        width: min(49vw, 490px);
+        height: min(49vw, 490px);
+        border-style: dashed;
+        animation: ending-ring-inner 4.8s ease-out both;
+      }
+
+      .ending-reveal__content {
+        position: relative;
+        width: min(88vw, 820px);
+        padding: 42px 28px;
+        text-align: center;
+        text-shadow:
+          0 0 24px rgba(var(--ending-accent), .34),
+          0 2px 2px rgba(0, 0, 0, .9);
+      }
+
+      .ending-reveal__eyebrow {
+        margin-bottom: 18px;
+        color: rgba(var(--ending-accent-strong), .76);
+        font-size: clamp(.72rem, 1.2vw, .9rem);
+        letter-spacing: .42em;
+        text-transform: uppercase;
+        opacity: 0;
+        animation: ending-eyebrow 4.8s both;
+      }
+
+      .ending-reveal__number {
+        margin-bottom: 10px;
+        color: rgba(var(--ending-accent), .8);
+        font-size: clamp(.76rem, 1.4vw, 1rem);
+        letter-spacing: .26em;
+        opacity: 0;
+        animation: ending-number 4.8s both;
+      }
+
+      .ending-reveal__title {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2.2rem, 7vw, 5.8rem);
+        font-weight: 400;
+        line-height: .98;
+        letter-spacing: .04em;
+        text-wrap: balance;
+        opacity: 0;
+        transform: scale(.88);
+        animation: ending-title 4.8s cubic-bezier(.16, .8, .24, 1) both;
+      }
+
+      .ending-reveal__line {
+        width: min(58vw, 420px);
+        height: 1px;
+        margin: 28px auto 18px;
+        background:
+          linear-gradient(
+            90deg,
+            transparent,
+            rgba(var(--ending-accent-strong), .85),
+            transparent
+          );
+        transform: scaleX(0);
+        animation: ending-line 4.8s ease-out both;
+      }
+
+      .ending-reveal__hint {
+        color: rgba(var(--ending-accent-strong), .58);
+        font-size: .82rem;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        opacity: 0;
+        animation: ending-hint 4.8s both;
+      }
+
+      .ending-reveal__particle {
+        --particle-x: 50%;
+        --particle-delay: 0ms;
+        position: absolute;
+        left: var(--particle-x);
+        bottom: -8%;
+        width: 2px;
+        height: 22px;
+        border-radius: 50%;
+        background: rgba(var(--ending-accent-strong), .72);
+        box-shadow: 0 0 10px rgba(var(--ending-accent), .54);
+        opacity: 0;
+        animation:
+          ending-particle-rise 3.4s
+          var(--particle-delay)
+          ease-out both;
+      }
+
+      .ending-reveal--death,
+      .ending-reveal--death-loop {
+        --ending-accent: 143, 17, 44;
+        --ending-accent-strong: 236, 176, 185;
+      }
+
+      .ending-reveal--revelation {
+        --ending-accent: 154, 177, 208;
+        --ending-accent-strong: 226, 235, 246;
+      }
+
+      .ending-reveal--coexist {
+        --ending-accent: 131, 102, 168;
+        --ending-accent-strong: 226, 210, 247;
+      }
+
+      .ending-reveal--control {
+        --ending-accent: 123, 36, 69;
+        --ending-accent-strong: 235, 197, 212;
+      }
+
+      .ending-reveal--ascension {
+        --ending-accent: 178, 146, 82;
+        --ending-accent-strong: 247, 226, 175;
+      }
+
+      .ending-reveal--corruption {
+        --ending-accent: 101, 135, 78;
+        --ending-accent-strong: 211, 230, 191;
+      }
+
+      .ending-reveal--compassion {
+        --ending-accent: 132, 171, 163;
+        --ending-accent-strong: 216, 240, 235;
+      }
+
+      .ending-reveal--death.is-active .ending-reveal__content,
+      .ending-reveal--death-loop.is-active .ending-reveal__content {
+        animation: ending-death-shudder 4.8s steps(2, end) both;
+      }
+
+      .ending-reveal--death.is-active .ending-reveal__veil,
+      .ending-reveal--death-loop.is-active .ending-reveal__veil {
+        animation: ending-death-veil 4.8s both;
+      }
+
+      .ending-reveal--corruption.is-active .ending-reveal__title {
+        animation:
+          ending-title 4.8s cubic-bezier(.16, .8, .24, 1) both,
+          ending-corruption-pulse .34s steps(2, end) 6;
+      }
+
+      body.fx-ending-reveal .story-engine {
+        filter: blur(2px) brightness(.5) saturate(.65);
+        transform: scale(.992);
+        transition:
+          filter .35s ease,
+          transform .35s ease;
+      }
+
+      @keyframes ending-reveal-shell {
+        0% {
+          opacity: 0;
+        }
+        8%, 82% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes ending-reveal-noise {
+        0% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(-2px, 1px);
+        }
+        100% {
+          transform: translate(1px, -1px);
+        }
+      }
+
+      @keyframes ending-ring-outer {
+        0% {
+          opacity: 0;
+          transform: scale(.44) rotate(-18deg);
+        }
+        24% {
+          opacity: .75;
+        }
+        75% {
+          opacity: .4;
+        }
+        100% {
+          opacity: 0;
+          transform: scale(1.18) rotate(18deg);
+        }
+      }
+
+      @keyframes ending-ring-inner {
+        0% {
+          opacity: 0;
+          transform: scale(1.34) rotate(35deg);
+        }
+        22% {
+          opacity: .65;
+        }
+        100% {
+          opacity: 0;
+          transform: scale(.72) rotate(-40deg);
+        }
+      }
+
+      @keyframes ending-eyebrow {
+        0%, 10% {
+          opacity: 0;
+          transform: translateY(-12px);
+        }
+        22%, 78% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes ending-number {
+        0%, 15% {
+          opacity: 0;
+        }
+        28%, 76% {
+          opacity: .9;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes ending-title {
+        0%, 14% {
+          opacity: 0;
+          transform: scale(.84) translateY(16px);
+          letter-spacing: .18em;
+          filter: blur(8px);
+        }
+        31%, 76% {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+          letter-spacing: .04em;
+          filter: blur(0);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(1.035);
+          filter: blur(3px);
+        }
+      }
+
+      @keyframes ending-line {
+        0%, 22% {
+          transform: scaleX(0);
+          opacity: 0;
+        }
+        38%, 78% {
+          transform: scaleX(1);
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes ending-hint {
+        0%, 32% {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        46%, 77% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes ending-particle-rise {
+        0%, 12% {
+          opacity: 0;
+          transform: translateY(0) scaleY(.35);
+        }
+        28% {
+          opacity: .65;
+        }
+        100% {
+          opacity: 0;
+          transform:
+            translateY(-112vh)
+            translateX(calc((var(--particle-index) - 9) * 2px))
+            scaleY(1.5);
+        }
+      }
+
+      @keyframes ending-death-shudder {
+        0%, 17%, 100% {
+          transform: translate(0);
+        }
+        19% {
+          transform: translate(-9px, 3px) skewX(-1deg);
+        }
+        21% {
+          transform: translate(8px, -2px);
+        }
+        24% {
+          transform: translate(-4px, 1px);
+        }
+        29% {
+          transform: translate(3px, 0);
+        }
+      }
+
+      @keyframes ending-death-veil {
+        0% {
+          background: rgba(0, 0, 0, 1);
+        }
+        13% {
+          background: rgba(91, 0, 20, .92);
+        }
+        18% {
+          background: rgba(0, 0, 0, .98);
+        }
+        22% {
+          background: rgba(125, 5, 34, .78);
+        }
+        32%, 100% {
+          background:
+            radial-gradient(
+              circle at 50% 45%,
+              rgba(143, 17, 44, .16),
+              transparent 30%
+            ),
+            linear-gradient(
+              180deg,
+              rgba(3, 4, 7, .88),
+              rgba(2, 2, 4, .98)
+            );
+        }
+      }
+
+      @keyframes ending-corruption-pulse {
+        0%, 100% {
+          text-shadow:
+            0 0 24px rgba(var(--ending-accent), .34),
+            0 2px 2px rgba(0, 0, 0, .9);
+        }
+        50% {
+          text-shadow:
+            -5px 0 rgba(100, 150, 78, .55),
+            5px 0 rgba(100, 54, 122, .38),
+            0 0 34px rgba(var(--ending-accent), .7);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .ending-reveal *,
+        .ending-reveal {
+          animation-duration: .01ms !important;
+          animation-iteration-count: 1 !important;
+        }
+      }
+    `;
+
+    document.head.appendChild(style);
+  }
+
+  playEndingReveal({
+    id = "",
+    title = "Befejezés",
+    order = null,
+    isNew = false,
+    style = "default"
+  } = {}) {
+    const overlay = this.refs.endingReveal;
+    if (!overlay) return;
+
+    const normalizedStyle = String(style || "default")
+      .trim()
+      .toLowerCase()
+      .replaceAll("_", "-");
+
+    const allowedStyles = new Set([
+      "default",
+      "death",
+      "death-loop",
+      "revelation",
+      "coexist",
+      "control",
+      "ascension",
+      "corruption",
+      "compassion"
+    ]);
+
+    const resolvedStyle = allowedStyles.has(normalizedStyle)
+      ? normalizedStyle
+      : "default";
+
+    overlay.className =
+      `ending-reveal ending-reveal--${resolvedStyle}`;
+
+    if (this.refs.endingEyebrow) {
+      this.refs.endingEyebrow.textContent =
+        isNew ? "Új befejezés" : "Befejezés";
+    }
+
+    if (this.refs.endingNumber) {
+      this.refs.endingNumber.textContent =
+        order ? `${order}. befejezés` : id;
+    }
+
+    if (this.refs.endingTitle) {
+      this.refs.endingTitle.textContent = title;
+    }
+
+    overlay.hidden = false;
+    document.body.classList.add("fx-ending-reveal");
+
+    void overlay.offsetWidth;
+    overlay.classList.add("is-active");
+
+    if (
+      resolvedStyle === "death" ||
+      resolvedStyle === "death-loop"
+    ) {
+      this.playDeath();
+    }
+
+    this.setTimer(() => {
+      overlay.classList.remove("is-active");
+      document.body.classList.remove("fx-ending-reveal");
+
+      this.setTimer(() => {
+        overlay.hidden = true;
+      }, 120);
+    }, 4920);
   }
 
   handleEndingUnlocked(event) {
@@ -346,7 +946,8 @@ export class StoryEffects {
       "fx-hit",
       "fx-shake",
       "fx-critical-injury",
-      "fx-death"
+      "fx-death",
+      "fx-ending-reveal"
     );
   }
 
@@ -700,6 +1301,11 @@ export class StoryEffects {
     document.removeEventListener(
       "story:death",
       this.handleDeath
+    );
+
+    document.removeEventListener(
+      "story:endingReached",
+      this.handleEndingReached
     );
 
     document.removeEventListener(
