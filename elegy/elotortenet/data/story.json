@@ -5,7 +5,7 @@
     "title": "Szemet szemért",
     "start": "s1_return_to_estate",
     "startButtonText": "Kezdjük az olvasást!",
-    "startPrompt": "Az előtörténet csak akkor kezdődik el, ha rákattintasz a gombra."
+    "startPrompt": "Ebben az előtörténetben Te döntesz arról, hogy mi történik, és Te irányíthatod a karaktert is - hasonlóan ahhoz, ahogyan korunk legnagyobb nekromágusa, Requiem Dreadmoor játszik a holtakkal. A karakter története ebből fakadóan zavaros és absztrakt; talán minden megtörtént a leírtak közül egyszerre. Talán egyik sem.\n\nHárom titkos választás rejtőzik a sorok között. Egy, amit türelemmel oldasz fel, egy, amit meghozott döntéseid láttatnak veled, és egy, amihez a Halál mutat ösvényt számodra."
   },
   "nodes": {
     "s1_return_to_estate": {
@@ -420,9 +420,9 @@
           "text": "Tovább a csapóajtóhoz",
           "next": "s1_site_found_dejavu",
           "tags": [
-            "secret"
+            "normal"
           ],
-          "effect": "glitch",
+          "effect": "normal",
           "effects": {
             "set": {
               "protagonistMedalLost": false,
@@ -601,9 +601,9 @@
           "text": "Elengeded a létrát.",
           "next": "s1_return_omens_dejavu",
           "tags": [
-            "secret"
+            "normal"
           ],
-          "effect": "glitch",
+          "effect": "normal",
           "effects": {
             "set": {
               "medalTransferredToDestination": true,
@@ -663,9 +663,9 @@
           "text": "Várod a megmentést.",
           "next": "s1_attack_choice_dejavu",
           "tags": [
-            "secret"
+            "normal"
           ],
-          "effect": "glitch"
+          "effect": "normal"
         }
       ]
     },
@@ -724,10 +724,9 @@
           "text": "CONFRINGO!",
           "next": "s1_confringo_attempt_dejavu",
           "tags": [
-            "secret",
             "critical"
           ],
-          "effect": "glitch",
+          "effect": "critical",
           "effects": {
             "set": {
               "attackStrategy": "escape-dejavu"
@@ -739,10 +738,9 @@
           "text": "GLACIUS!",
           "next": "s1_glacius_attempt_dejavu",
           "tags": [
-            "secret",
             "critical"
           ],
-          "effect": "glitch",
+          "effect": "critical",
           "effects": {
             "set": {
               "attackStrategy": "fire-dejavu"
@@ -849,10 +847,9 @@
           "text": "Tűzkör idézése",
           "next": "s1_eye_escape_separated_dejavu",
           "tags": [
-            "secret",
             "critical"
           ],
-          "effect": "glitch",
+          "effect": "critical",
           "effects": {
             "set": {
               "escapeOutcome": "separated-dejavu",
@@ -865,10 +862,9 @@
           "text": "Flipendo!",
           "next": "s1_eye_escape_together_dejavu",
           "tags": [
-            "secret",
             "critical"
           ],
-          "effect": "glitch",
+          "effect": "critical",
           "effects": {
             "set": {
               "escapeOutcome": "together-dejavu",
@@ -891,10 +887,9 @@
           "text": "Arresto Momentum!",
           "next": "s1_eye_fire_ring_dejavu",
           "tags": [
-            "secret",
             "critical"
           ],
-          "effect": "glitch",
+          "effect": "critical",
           "effects": {
             "set": {
               "fireOutcome": "ring-dejavu",
@@ -907,10 +902,9 @@
           "text": "Megfagyasztod alattuk a padlót.",
           "next": "s1_eye_fire_chaos_dejavu",
           "tags": [
-            "secret",
             "critical"
           ],
-          "effect": "glitch",
+          "effect": "critical",
           "effects": {
             "set": {
               "fireOutcome": "wildfire-dejavu",
@@ -1040,9 +1034,9 @@
           "text": "Elfogadod, hogy ezt nem tudtad elkerülni.",
           "next": "s1_cut_to_chapter_two",
           "tags": [
-            "secret"
+            "critical"
           ],
-          "effect": "glitch",
+          "effect": "critical",
           "effects": {
             "set": {
               "savedByDestination": true,
@@ -1069,9 +1063,9 @@
           "text": "Minden újra megtörténik...",
           "next": "s1_cut_to_chapter_two",
           "tags": [
-            "secret"
+            "critical"
           ],
-          "effect": "glitch",
+          "effect": "critical",
           "effects": {
             "set": {
               "savedByDestination": true,
@@ -1098,9 +1092,9 @@
           "text": "Ismered már a végzeted.",
           "next": "s1_cut_to_chapter_two",
           "tags": [
-            "secret"
+            "critical"
           ],
-          "effect": "glitch",
+          "effect": "critical",
           "effects": {
             "set": {
               "acceptedEyeLoss": true
@@ -1127,9 +1121,9 @@
           "text": "Van-e valódi hatásod sorsodra?",
           "next": "s1_cut_to_chapter_two",
           "tags": [
-            "secret"
+            "critical"
           ],
-          "effect": "glitch",
+          "effect": "critical",
           "effects": {
             "set": {
               "acceptedEyeLoss": true
@@ -1244,9 +1238,9 @@
           "text": "Újra magadhoz térsz.",
           "next": "s2_wake_dejavu",
           "tags": [
-            "secret"
+            "normal"
           ],
-          "effect": "glitch",
+          "effect": "normal",
           "unlock": {
             "type": "runChoice",
             "id": "s1_after_eye_escape_separated_dejavu"
@@ -1263,9 +1257,9 @@
           "text": "Újra magadhoz térsz.",
           "next": "s2_wake_dejavu",
           "tags": [
-            "secret"
+            "normal"
           ],
-          "effect": "glitch",
+          "effect": "normal",
           "unlock": {
             "type": "runChoice",
             "id": "s1_after_eye_escape_together_dejavu"
@@ -1282,9 +1276,9 @@
           "text": "Újra magadhoz térsz.",
           "next": "s2_wake_dejavu",
           "tags": [
-            "secret"
+            "normal"
           ],
-          "effect": "glitch",
+          "effect": "normal",
           "unlock": {
             "type": "runChoice",
             "id": "s1_after_eye_fire_ring_dejavu"
@@ -1301,9 +1295,9 @@
           "text": "Újra magadhoz térsz.",
           "next": "s2_wake_dejavu",
           "tags": [
-            "secret"
+            "normal"
           ],
-          "effect": "glitch",
+          "effect": "normal",
           "unlock": {
             "type": "runChoice",
             "id": "s1_after_eye_fire_chaos_dejavu"
@@ -1625,9 +1619,9 @@
           "text": "Tiltakozol a parazita ellen.",
           "next": "s2_dejavu_protest",
           "tags": [
-            "secret"
+            "normal"
           ],
-          "effect": "glitch",
+          "effect": "normal",
           "effects": {
             "set": {
               "implantReaction": "dejavu-refusal"
@@ -1649,9 +1643,9 @@
           "text": "Anyád nem enged a döntéséből.",
           "next": "s2_preprocedure_dejavu",
           "tags": [
-            "secret"
+            "normal"
           ],
-          "effect": "glitch"
+          "effect": "normal"
         }
       ]
     },
@@ -1667,7 +1661,6 @@
           "text": "Megiszod a bájitalt, és megvárod a procedúra végét.",
           "next": "s2_implant_dejavu",
           "tags": [
-            "secret",
             "critical"
           ],
           "effect": "glitch",
@@ -1682,7 +1675,6 @@
           "text": "Megpróbálsz megszökni.",
           "next": "s2_hidden_twin_dejavu",
           "tags": [
-            "secret",
             "critical"
           ],
           "effect": "glitch",
@@ -1707,9 +1699,9 @@
           "text": "Megpróbálod kiszabadítani.",
           "next": "s2_twin_attack_dejavu",
           "tags": [
-            "secret"
+            "normal"
           ],
-          "effect": "glitch",
+          "effect": "normal",
           "effects": {
             "set": {
               "hiddenTwinReaction": "dejavu-tried-to-free"
@@ -1721,9 +1713,9 @@
           "text": "Megrémülsz tőle, és hátrálni kezdesz.",
           "next": "s2_twin_fear_dejavu",
           "tags": [
-            "secret"
+            "normal"
           ],
-          "effect": "glitch",
+          "effect": "normal",
           "effects": {
             "set": {
               "hiddenTwinReaction": "dejavu-feared"
@@ -1753,9 +1745,9 @@
           "text": "Újra a procedúra elé kerülsz.",
           "next": "s2_implant_dejavu",
           "tags": [
-            "secret"
+            "normal"
           ],
-          "effect": "glitch"
+          "effect": "normal"
         }
       ],
       "presentation": {
@@ -1775,9 +1767,9 @@
           "text": "Hagyod, hogy újra visszavezessen.",
           "next": "s2_implant_dejavu",
           "tags": [
-            "secret"
+            "normal"
           ],
-          "effect": "glitch"
+          "effect": "normal"
         }
       ]
     },
@@ -1793,9 +1785,9 @@
           "text": "Hagyod, hogy a jelenet ismét végigfusson.",
           "next": "s2_eye_implanted_dejavu",
           "tags": [
-            "secret"
+            "normal"
           ],
-          "effect": "glitch",
+          "effect": "normal",
           "effects": {
             "set": {
               "eyeImplanted": true,
@@ -1817,9 +1809,9 @@
           "text": "Elérkezik az ismert pillanat.",
           "next": "s3_dejavu_recovery",
           "tags": [
-            "secret"
+            "normal"
           ],
-          "effect": "glitch"
+          "effect": "normal"
         }
       ],
       "presentation": {
@@ -2137,7 +2129,6 @@
           "text": "Ezúttal gyorsabban és pontosabban téped ki.",
           "next": "ending_dejavu_loop_death",
           "tags": [
-            "secret",
             "critical"
           ],
           "effect": "glitch",
@@ -2152,7 +2143,6 @@
           "text": "Nem ismétled meg. Megtanulsz együtt élni vele.",
           "next": "ending_dejavu_coexist",
           "tags": [
-            "secret",
             "critical"
           ],
           "effect": "glitch",
