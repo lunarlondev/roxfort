@@ -2041,8 +2041,9 @@
     "s2_implant_dejavu": {
       "title": "II. Fejezet — Anya",
       "paragraphs": [
-        "[IDE ÍRD A SZEMBEÜLTETÉST A DÉJÀ VU NÉZŐPONTJÁBÓL. A KARAKTER ELŐRE ISMERI AZ ESZKÖZÖK HANGJÁT, A FÁJDALOM ÜTEMÉT ÉS AZT A PILLANATOT, AMIKOR A SZEM KAPCSOLÓDNI KEZD.]",
-        "[ÉRZI, HOGY A SZEM ELLENÁLL NEKI, ÉS MÁR A BEÜLTETÉS KÖZBEN TUDJA, HOGY A PROCEDÚRA SIKERÜLNI FOG.]"
+        " Óvatosan emeled ajkaidhoz a bájitalt. Ismered már az ízét, és anyád kérését, hogy kicsi kortyokban vedd magadhoz az italt, még ha ez nem is ebben az életben hangzott el tőle.",
+        "Ismét sötétedni kezd a világ. Még érzed, hogy tested elernyed az ágyon, és nagyjából magadnál vagy akkor is, amikor elvisznek téged valahova máshova.",
+		"Hamarosan ismét találkozol velem."
       ],
       "choices": [
         {
@@ -2065,13 +2066,13 @@
     "s2_eye_implanted_dejavu": {
       "title": "II. Fejezet — Anya",
       "paragraphs": [
-        "[A KARAKTER MÁR AZ ELSŐ FÉNYFOLTOKBÓL FELISMERI AZ IDEGEN SZEMET. TUDJA, HOGY NÉHÁNY NAPON BELÜL MEGKEZDŐDNEK A LÁTOMÁSOK.]",
-        "[EZÚTTAL NEM VÁRJA MEG, HOGY A PARAZITA FOKOZATOSAN FELFEDJE MAGÁT. MÁR TUDJA, MI KÖVETKEZIK.]"
+        "Mert valamiért képtelen vagy megszabadulni tőlem. Így van, ugye? Te mindent megtettél, még a Halált is vállaltad, csak hogy ne kelljen rajtam keresztül nézned, de az se volt elég.",
+        "[És lám, most mégis itt vagy te és én. Képtelen vagy kezedbe venni a sorsodat, csak egy gally vagy a folyó áramlatában, és haladsz a vízesés felé. Idegen húsba ültetnek, ezért idegenként is viselkedem. Tudom, hogy már most gondolkozol rajta, hogy újra megtedd, de az csak felesleges volna, nem igaz?"
       ],
       "choices": [
         {
           "id": "s2_dejavu_enter_final_chapter",
-          "text": "Elérkezik az ismert pillanat.",
+          "text": "Újra egyek vagyunk, csak te meg én.",
           "next": "s3_dejavu_recovery",
           "tags": [
             "normal"
