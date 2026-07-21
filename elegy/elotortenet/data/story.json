@@ -5,7 +5,10 @@
     "title": "Szemet szemért",
     "start": "s1_return_to_estate",
     "startButtonText": "Kezdjük az olvasást!",
-    "startPrompt": "Ebben az előtörténetben Te döntesz arról, hogy mi történik, és Te irányíthatod a karaktert is - hasonlóan ahhoz, ahogyan korunk legnagyobb nekromágusa, Requiem Dreadmoor játszik a holtakkal. A karakter története ebből fakadóan zavaros és absztrakt; talán minden megtörtént a leírtak közül egyszerre. Talán egyik sem.\n\nAz Idővonal választásaid alapján alakul át.\n\nHárom titkos választás rejtőzik a sorok között. Egy, amit türelemmel oldasz fel, egy, amit meghozott döntéseid láttatnak veled, és egy, amihez a Halál mutat ösvényt számodra."
+    "startPrompt": "Ebben az előtörténetben Te döntesz arról, hogy mi történik, és Te irányíthatod a karaktert is - hasonlóan ahhoz, ahogyan korunk legnagyobb nekromágusa, Requiem Dreadmoor játszik a holtakkal.",
+	"A karakter története ebből fakadóan zavaros és absztrakt; talán minden megtörtént a leírtak közül egyszerre. Talán egyik sem.",
+	"Az Idővonal választásaid alapján alakul át.",
+	"Három titkos választás rejtőzik a sorok között. Egy, amit türelemmel oldasz fel, egy, amit meghozott döntéseid láttatnak veled, és egy, melyhez a Halál nyit látható ösvényt számodra."
   },
   "nodes": {
     "s1_return_to_estate": {
