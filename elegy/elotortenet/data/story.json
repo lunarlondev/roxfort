@@ -1525,9 +1525,13 @@
     "s2_hidden_twin_revealed_normal": {
       "title": "II. Fejezet — Anya",
       "paragraphs": [
-        "[A VEZÉRLŐPÁLCA A HÁZ EGY ELZÁRT, RITKÁN HASZNÁLT RÉSZÉHEZ VEZET. A KARAKTER EGY LEZÁRT HELYISÉGBEN MEGTALÁLJA A HALOTTNAK HITT MÁSIK BÁTYJÁT.]",
-        "[ELSŐ PILLANTÁSRA DESTINATIONNEK TŰNIK, DE SOVÁNYABB, GYENGÉBB ÉS LÁTHATÓAN LE VAN AMORTIZÁLVA. BESZÉDKÉPTELEN. MOZGÁSA ÉS REAKCIÓI NEM TELJESEN EMBERIEK.]",
-        "[NE MAGYARÁZD EL MÉG, MI TÖRTÉNT VELE. A FELFEDEZÉS ÉS A BIZONYTALANSÁG LEGYEN A JELENET KÖZÉPPONTJA.]"
+        "Egyenesen belököd az ajtót.",
+        "Sötét függönyökkel takart szobában találod magad. A szobában egyetlen ágy van, az alak mégis a földön kuporog hátát a falnak vetve. Mezítelenül terül el előtted valaki, akiről azt hiszed, hogy ismered. Egy pillanatra tényleg azt hiszed, hogy Destination az. Ugyanaz a szőke haj, ugyanazok a ragyogó szemek. Az arca azonban sokkal keskenyebb az övénél. Olyan, mintha egyenesen a rosszul sikerült, torz tükörképét látnád, ami kiszívta belőle az összes erőt. Bal karja természetellenesen simul saját testéhez, tartásában pedig látod az enyhe gerincferdülés jelét. Régi átokhegek futnak végig a nyakán, a csuklóján és a testén.",
+        "Megpróbál szólni hozzád, de csak artikulálatlan nyöszörgés hagyja el ezen szánalmas lény ajkait. Észreveszed lábán a láncot, mely ehhez a helyhez rögzíti őt, mint egy fenevadat.",
+		"A bátyád az. Tényleg a bátyád az.",
+		"Nem ő, hanem a másik.",
+		"Nincsenek emlékeid róla, de tudtad, hogy Destinationnek ikertestvére is született. Nem minden generációt áldott meg az Élet ikertestvérekkel, pedig az első Dreadmoorok is ikertestvérek, Malachias és Ysoria is ikrek voltak. Néha elfantáziáltál róla, hogy milyen lehetne, ha neked is lenne egy ikertestvéred, de ott volt neked Destiny, és nem kívánhatnál nála jobb testvért.",
+		"Néha tartottatok megemlékezéseket Desolationról. Úgy gondoltátok, hogy halott, szüleitek ezt mondták nektek. Mindig nagy szeretettel gondoltál arra az ideára, ami Desolation lehet. De bármit is képzeltél, bárhogy is gondoltad, az mégsem az, mint ez itt, előtted."
       ],
       "choices": [
         {
@@ -1571,9 +1575,11 @@
     "s2_twin_attack_normal": {
       "title": "II. Fejezet — Anya",
       "paragraphs": [
-        "[AMIKOR A KARAKTER A KORLÁTOZÁSHOZ VAGY A TESTVÉRHEZ ÉR, A BÁTY HIRTELEN RÁTÁMAD ÉS FOJTOGATNI KEZDI. NEM VILÁGOS, HOGY ÉHSÉG, FÉLELEM, ÖSZTÖN VAGY VALAMILYEN BEÉPÍTETT PARANCS MOZGATJA.]",
-        "[AZ ANYA ÉRKEZIK ÉS MEGMENTI A KARAKTERT. A BÁTY AZONNAL ELENGEDI, HÁTRÁL VAGY ÖSSZEGÖRNYED: EGYÉRTELMŰEN RETTEG AZ ANYÁTÓL.]",
-        "[AZ ANYA NEM AD ÉRDEMI MAGYARÁZATOT. VISSZAVISZI A KARAKTERT A BEAVATKOZÁSHOZ.]"
+        "Nem hagyhatod így itt. Naiv vagy – még nem rakod össze a képet, hogy a szüleid pontosan tisztában vannak Desolation nyomorával, hisz egyenesen ők taszították őt bele. Pedig nagyon is jól tudod, hogy apád lelkes az új kísérletekkel kapcsolatban. Azért az a sok kutatónapló és diafilm.",
+		"Pálcád a láncokra szegezed, Desolation tekintete azonban a kezedben lévő pálcára tapad. Nincs időd értelmezni a rémületet az arcán. Torkából kétségbeesett, könyörgő hang szakad fel, te pedig hiába próbálod megnyugtatni, hogy csak segíteni akarsz. Nem ért téged, nem érti, mit mondasz.",
+		"Aztán ahogy mozdítod a pálcádat, hogy kiszabadítsd, a sovány test neked ront. Fél kézzel üti le a karodat, a varázslatod pedig visszapattan a falról, hogy végleg keresztet vessen az ósdi, lemálló tapétának. Ujjai csuklód köré fonódnak, körmei a bőrödbe vájnak, majd amint elengedi, a torkod után kap. Mindkét kezével rászorít – az éppel, és azzal is, ami kissé mintha torznak hatna. Hüvelykujjai légcsövednek feszülnek, hátad pedig a falnak csapódik épp ott, ahová az átkod pattant. Hiába próbálod lefejteni magadról az ujjait, Desolation csak egyre kétségbeesetten kapaszkodik beléd. Erőtlenül hallatsz egy rekedt nyögést, de nem hat semmit az egész.",
+		"Anyád élesen csattanó hangja parancsol megálljt halálodnak – rövid időn belül kétszer is találkoztál családotok legfőbb múzsájával, és egyszer se vitt magával. Desolation azonnal elengedi a nyakad. Szó szerint félretaszít téged; a földre esel, levegő után kapkodsz, testvéred pedig összekuporodik a sarokban, mintha ezzel láthatatlanná tudna válni. Anyád jelenlétében rád se mer nézni.",
+		"Anyád úgy helyezkedik, hogy teljesen kitakarja előled bátyádat. Leguggol melléd, hűvös ujjait pedig az állad alá csúsztatja, hogy megnézze a sérülésed. Ahogy meggyőződött róla, hogy a sokkon kívül nincs további bajod, visszaparancsol a szobádba, hogy átess végre a procedúrán."
       ],
       "choices": [
         {
