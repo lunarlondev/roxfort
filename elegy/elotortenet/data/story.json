@@ -2147,7 +2147,7 @@
         },
         {
           "id": "s3_fulfill_eye_visions",
-          "text": "Valóra váltod a képeket, hogy a szem végre elhallgasson.",
+          "text": "Valóra váltod a látomásban lévő képeket.",
           "next": "ending_fulfiller",
           "tags": [
             "critical"
@@ -2519,9 +2519,19 @@
       "order": 6,
       "title": "A látó örököse",
       "paragraphs": [
-        "[A KARAKTER MEGTANULJA HASZNÁLNI A SZEM EREJÉT, ÉS EGYRE PONTOSABBAN LÁTJA A LEHETSÉGES JÖVŐKET.]",
-        "[KÖZBEN IDEGEN NYELVEN ÍR, AZ ELŐZŐ LÁTÓ KÉZÍRÁSÁT HASZNÁLJA, ISMERETLEN EMBEREKET ISMER FEL, ÉS SAJÁT GYERMEKKORÁNAK RÉSZLETEIT FELEJTI EL.]",
-        "[MARADJON BIZONYTALAN, HOGY ÖRÖKÖLTE A LÁTÓ EREJÉT, ÖSSZEOLVADT VELE, VAGY A HALOTT LÁTÓ TALÁLT MAGÁNAK ÚJ TESTET.]"
+        "Nem várod meg a holnapot. Nem vagy hajlandó tovább sodródni a képek között, mintha csak te lennél az idegen a testben, nem pedig én. Ez egyszer te akarsz rendelkezni önmagad felett. Készen állsz arra, hogy akaraterőddel lenyomd az enyémet.",
+		"Az utolsó képen azt látod, hogy Destination belekapaszkodik az ásóba. Közelebb lépsz hozzá, mintha te magad lépnél be a látomásba, hogy hatással légy a benne lévő képre. Látod a sírgödör mélyén bátyád torz képmását a lesoványodott testben. A holtakat azonban nem érdemes szánni. Az élőket kell.",
+		"Megsimogatod bátyád arcát, aki enged érintésednek és lehajtja feléd a fejét. Gyengéd csókot lehelsz homlokára, éppen úgy, ahogy anyád is szokta azt tenni. Alakja a jelenettel együtt elillan, eltűnik a vöröslő Hold is, a tűző Nap jelenti a következő veszélyt. A képek azonban tovább próbálnak kínozni téged. Újra látod, ahogyan apádat meggyalázzák az inferusok, és azt, ahogyan anyád egyszerűen hamuvá ég a Napban.",
+		"Ez nem a valóság, nincs valójában nálad a pálcád. Mégis a kezedben tartasz egyet. Az érintése nem ismerős, mert ennek csontból faragták a markolatát, és sokkal nehezebb a súlya, mint a tiédé. Ezt a pálcát találtátok a bársony kendőben apátok bunkerében, ez volt az a pálca, amiért a szemedet adtad. Vagyis… fizikailag persze nincs nálad, apádnak adtad, de képzeleted valahogy mégis úgy dönt, hogy ezt az emlékképet vetíti ki a látomásodba.",
+		"Nevezheted-e egyáltalán látomásnak, ha tudod, hogy ezek a képek soha nem fognak megtörténni? Nem több ez, mint közös fantáziánk bizarr szüleménye, ahol megpróbálsz Istent játszani. Talán sikerül is – egyetlen pálcasuhintásod varázsol éjszakát az égboltra, és kék tűz égeti fel az összes inferust, mielőtt apádból nem marad több, mint pár szétszórt húscafat.",
+		"Nem elégszel meg ennyivel, mélyebbre kívánsz menni.",
+		"Engem keresel, a választ rám, a forrásomat. Megtalálsz a Zsebpiszok-köz mocskos sikátoraiban, a Szent Mungo normális emberektől elzárt osztályán, de még ott, a Roxfort szomszédságában is abban az ócska, erdei vadászkunyhóban, ahová forrásom a Roxmortsból lopott festményét hordozta. Varjak sokasága kísér téged, hogy megmutasson valamit magamból, és velem együtt énekled azt az olasz operát, aminek eddig a szövegét sem ismerted.",
+		"Látod, ahogyan az erdei remete a hívásra útra kel, hosszas röpte után pedig megjelenik előtte az egyik éjszaka, nem sokkal azelőtt, hogy útra keltetek volna. Fortunának nevezi – és érted, hogy ez felőle valami különös megszállottság, mert mindent a képzelt Istennője köré épített.",
+		"Elkezdesz hát hinni benne te is.",
+		"Látod, hogy anyád mit művel vele. A remete, akitől származom, nem volt talán ártalmatlan, de mégis nehezen látsz bele mást, mint Isten ártatlan báránykáját. Egy naiv és lelkes bolond, aki kész volt arra, hogy anyádat szolgálja, mert elhitte, hogy az Istennője maga részesítette őt abban a kegyben, hogy végre találkozhat vele. Látod azonban a múltam, látod tisztán, hogyan fosztja meg szeme világától a Varjút, és miként fogyasztja el a vérét, miután megszerzett belőle mindent, ami számára értékes. Egyetlen arcrezzenés nélkül nézed végig, mert látni, tudni, érteni akarsz mindent. Látod, hogy valamilyen tartósító folyadékba rak engem, és látod a metamorfózisom, ahogyan zöldből kékké változom.",
+		"Éjfél elmúlt, mire visszatérsz a valóságba.",
+		"Úgy gondolod, legyőztél. Úgy gondolod, mostantól mindenben te irányítasz. Valóban, jóval engedelmesebb vagyok, mióta nálad vannak előző életem emlékei.",
+		"Siofra néni mondja majd először neked, hogy a kézírásod drasztikusan megváltozott."
       ],
       "presentation": {
         "timeline": {
