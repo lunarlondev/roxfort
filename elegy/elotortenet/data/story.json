@@ -1153,7 +1153,7 @@
       "presentation": {
         "timeline": {
           "id": "eye-loss",
-          "date": "I. fejezet",
+          "date": "2006",
           "icon": "◉",
           "text": "Az inferusok támadása során elveszítette az egyik szemét."
         }
@@ -1163,11 +1163,11 @@
       "title": "II. Fejezet — Anya",
       "paragraphs": [
         "Csendet hallasz. Most először igazán csendet.",
-		"Először azt gondolod, meghaltál. Különös módon soha nem gondoltál bele úgy igazán abba, hogy ez veled is bármikor megtörténhet, pedig ésszerű volna. Akárcsak a többi degenerált a családotokban, te is megszállottan tiszteled, sőt, szereted őt. Mégis hihetetlennek tűnik annak gondolata, hogy ténylegesen eljön érted a vég, mikor még ilyen fiatal vagy. Hiszen a huszadik életévedet is csak novemberben töltöd majd be.",
-		"Aztán eszedbe jut anyád és a betegsége. Anyád miattad nem fog soha megöregedni, miattad nem képes többet pálcát a kezében forgatni, és miattad nem mehet többet a fényre. Ezt nyíltan persze sosem éreztették veled; a te szüleid úgy gondolják, hogy felülemelkedtek az ilyen piti dolgokon, és azt is felfogják ép ésszel, hogy nem a te hibád Lucia betegsége. Mégis felelősnek érzed magad, mert a te világra jöveteled után romlott az állapota. Mintha egyenesen te átkoztad volna meg.",
-		"Érzed azonban virágos parfümének illatát, és hallod őt matatni a félhomályban.",
-		"Nem érzel semmilyen fájdalmat. Csak az emlékeid vívnak háborút benned, míg konszenzusra nem jutsz azzal kapcsolatban, hogy mi is történt. Minden nagyon zavaros, minden nagyon hirtelen történt. Hát és a szemed…"		
-		],
+        "Először azt gondolod, meghaltál. Különös módon soha nem gondoltál bele úgy igazán abba, hogy ez veled is bármikor megtörténhet, pedig ésszerű volna. Akárcsak a többi degenerált a családotokban, te is megszállottan tiszteled, sőt, szereted őt. Mégis hihetetlennek tűnik annak gondolata, hogy ténylegesen eljön érted a vég, mikor még ilyen fiatal vagy. Hiszen a huszadik életévedet is csak novemberben töltöd majd be.",
+        "Aztán eszedbe jut anyád és a betegsége. Anyád miattad nem fog soha megöregedni, miattad nem képes többet pálcát a kezében forgatni, és miattad nem mehet többet a fényre. Ezt nyíltan persze sosem éreztették veled; a te szüleid úgy gondolják, hogy felülemelkedtek az ilyen piti dolgokon, és azt is felfogják ép ésszel, hogy nem a te hibád Lucia betegsége. Mégis felelősnek érzed magad, mert a te világra jöveteled után romlott az állapota. Mintha egyenesen te átkoztad volna meg.",
+        "Érzed azonban virágos parfümének illatát, és hallod őt matatni a félhomályban.",
+        "Nem érzel semmilyen fájdalmat. Csak az emlékeid vívnak háborút benned, míg konszenzusra nem jutsz azzal kapcsolatban, hogy mi is történt. Minden nagyon zavaros, minden nagyon hirtelen történt. Hát és a szemed…"
+      ],
       "choices": [
         {
           "id": "s2_enter_normal_after_escape_separated",
@@ -1334,7 +1334,7 @@
       "paragraphs": [
         "Odakapsz hozzá, de azt puha kötés fedi. Érzed, hogy elveszítettél valamit, ami pótolhatatlan, és ha normális ember lennél, akkor most sokként érne téged a veszteség. Titeket azonban arra neveltek, hogy a veszteségeket az élet szerves részeként ismerjétek el. Végigsimítasz a kötésen egyszer, miután felülsz, és egyszerűen beletörődsz abba, hogy az életed megváltozik.",
         "Anyád észreveszi, hogy mocorogsz. Abbahagyja a dolgok rendezgetését a szekrényeden – a házimanótoknak kifejezetten rossz az esztétikai érzéke, de mit is várunk egy bábtól, akinek önálló gondolata és akarata sincs - , és az ágyad szélére ül. Vékony, hideg ujjaival simogatni kezdi a hajad.",
-		"Meglepő, hogy egy ilyen helyzet mit ki nem tud hozni egy anyából. Olykor napok-hetek telnek el úgy, hogy szinte ki se mozdul az ágyából. A vámpír-kór, amivel apád létezésben tartja, nem képes meggyógyítani őt, csak az állapotromlását akadályozza tovább. Előfordul, hogy az utazásaitokon is otthon hagyjátok. Te ezt nem tudtad sokáig, de amikor apád úgy döntött, Indiába mentek vagy Dél-Amerikába, anyátok valójában több hónapos, közönséges emberek számára leginkább alváshoz hasonlító állapotban pihent mélyen egy koporsó alján, hogy a fájdalmak után regenerálódjon. Az elmúlt időszakot is nehezen élte meg – különösen az utazást az Atlanti Óceánon - , most is pihennie kéne. Ő mégis a te arcodat simogatja. Jó hírrel szolgál. Talált számodra egy új szemet, méghozzá nem is akármilyet. Egy rendkívül erős látóé volt, akinek a tekintete elmondása szerint olyan dolgokat is észrevett, amiket az Idő kereke még nem is döntött el véglegesen. Anyád úgy beszél róla, mintha csak egy új ékszert szerzett volna neked. Hüvelykujja gyengéden végigsimít a kötésed alján, és közli veled, hogy hamarosan újra látni fogsz. Természetesen nem kérdezi meg, hogy szeretnéd-e."
+        "Meglepő, hogy egy ilyen helyzet mit ki nem tud hozni egy anyából. Olykor napok-hetek telnek el úgy, hogy szinte ki se mozdul az ágyából. A vámpír-kór, amivel apád létezésben tartja, nem képes meggyógyítani őt, csak az állapotromlását akadályozza tovább. Előfordul, hogy az utazásaitokon is otthon hagyjátok. Te ezt nem tudtad sokáig, de amikor apád úgy döntött, Indiába mentek vagy Dél-Amerikába, anyátok valójában több hónapos, közönséges emberek számára leginkább alváshoz hasonlító állapotban pihent mélyen egy koporsó alján, hogy a fájdalmak után regenerálódjon. Az elmúlt időszakot is nehezen élte meg – különösen az utazást az Atlanti Óceánon - , most is pihennie kéne. Ő mégis a te arcodat simogatja. Jó hírrel szolgál. Talált számodra egy új szemet, méghozzá nem is akármilyet. Egy rendkívül erős látóé volt, akinek a tekintete elmondása szerint olyan dolgokat is észrevett, amiket az Idő kereke még nem is döntött el véglegesen. Anyád úgy beszél róla, mintha csak egy új ékszert szerzett volna neked. Hüvelykujja gyengéden végigsimít a kötésed alján, és közli veled, hogy hamarosan újra látni fogsz. Természetesen nem kérdezi meg, hogy szeretnéd-e."
       ],
       "choices": [
         {
@@ -1370,7 +1370,7 @@
       "paragraphs": [
         "Fél szemed a fésülködő asztalod tükrére siklik. Anyádat természetesen nem látod benne, hisz neki nincs tükörképe. Saját, megcsonkított másod néz vissza rád, ahogyan anyád válaszát várod.",
         "Az élet néha elvész, és néha ad. Válasza költői, de hiányzik belőle minden, ami konkrét. Nem is gondol arra, hogy ellenkezni kívánnál. Ruhaujjából egy bájitalt vesz elő, hogy biztosítson arról, az egészből semmit se fogsz érezni.",
-		"Sűrű, opálos folyadék mozdul a fiolában. Ahogyan felpattintja a dugót, édeskés illat terjed szét a szobában. Most is olyan gyengéden nyújtja feléd, mintha csak egy meghűlés elleni italról lenne szó."
+        "Sűrű, opálos folyadék mozdul a fiolában. Ahogyan felpattintja a dugót, édeskés illat terjed szét a szobában. Most is olyan gyengéden nyújtja feléd, mintha csak egy meghűlés elleni italról lenne szó."
       ],
       "choices": [
         {
@@ -1406,8 +1406,8 @@
       "paragraphs": [
         "Néhány másodpercig csend hull kettőtök közé, mielőtt anyád megadná magát. Ha ez az ára annak, hogy megnyugvást hozzon, kész azt számodra megadni.",
         "Beszámol arról, hogy egy varjú hozta azt neki. Egyenesen hozzá érkezett azért, hogy felajánlja a szemet, mert ez volt a dolga. A látó már jóval korábban megjósolta saját halálát, és azáltal, hogy felfedte magát anyád előtt, az önbeteljesítő jóslatát teljesítette.",
-		"Anyád elmondása szerint a látó már olyan sérüléseket hordozott, amire nincs bájital és nincs mágia, mi megnyugvást hoz. Kegyelemdöfés volt, amit készséggel megadott annak, aki ezt kérte.",
-		"Újra a bájitalt nyújtja feléd. A látó történetes nem érdekes, amikor a tiéd csak most kezdődik el."
+        "Anyád elmondása szerint a látó már olyan sérüléseket hordozott, amire nincs bájital és nincs mágia, mi megnyugvást hoz. Kegyelemdöfés volt, amit készséggel megadott annak, aki ezt kérte.",
+        "Újra a bájitalt nyújtja feléd. A látó történetes nem érdekes, amikor a tiéd csak most kezdődik el."
       ],
       "choices": [
         {
@@ -1428,14 +1428,12 @@
     "s2_preprocedure_normal": {
       "title": "II. Fejezet — Anya",
       "paragraphs": [
-        "[IDE ÍRD A BEAVATKOZÁS ELŐTTI ZAVAROS, TÖREDEZETT KÉPEKET: ESZKÖZÖK CSÖRRENÉSE, BÁJITAL ILLATA, AZ ANYA HIDEG KEZE ÉS A FÉL SZEMMEL ÉRZÉKELT SZOBA.]",
-        "[AZ ANYA EGY ALTATÓ VAGY BÓDÍTÓ BÁJITALT AD. A KARAKTER ELŐTT MÉG OTT VAN A LEJÁRÓBÓL ELHOZOTT TÁRGY IS.]",
-        "[HA A KARAKTER A KUTATÓNAPLÓT OLVASTA ÉS A VEZÉRLŐPÁLCÁT HOZTA EL, FELISMERHETI, HOGY A PÁLCA VALAMILYEN MEGKÖTÖTT VAGY MESTERSÉGESEN ÉLETBEN TARTOTT TESTRE REAGÁL A HÁZBAN.]"
+        "Ujjaid rászorulnak anyád hideg kezére. Fájdalmad csillapították ugyan, de most érzed csak igazán, hogy valójában milyen gyenge is vagy. Magadra hagy, amíg a bájitalodat elfogyasztod."
       ],
       "choices": [
         {
           "id": "s2_normal_drink_potion",
-          "text": "Megiszod a bájitalt, és megvárod a procedúra végét.",
+          "text": "Megiszod a bájitalt.",
           "next": "s2_implant_normal",
           "tags": [
             "normal"
@@ -1448,7 +1446,7 @@
         },
         {
           "id": "s2_normal_follow_control_rod",
-          "text": "Követed a vezérlőpálca lüktetését.",
+          "text": "Mi ez a hang?",
           "next": "s2_hidden_twin_normal",
           "tags": [
             "secret",
@@ -1474,7 +1472,7 @@
           },
           "effects": {
             "set": {
-              "sawHiddenTwin": true,
+              "hiddenTwinRoomFound": true,
               "hiddenTwinDiscovery": "control-rod"
             }
           }
@@ -1482,6 +1480,46 @@
       ]
     },
     "s2_hidden_twin_normal": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "[A VEZÉRLŐPÁLCA A HÁZ EGY ELZÁRT, RITKÁN HASZNÁLT RÉSZÉHEZ VEZET. A KARAKTER MEGTALÁLJA A LEZÁRT HELYISÉGET, AHONNAN A HANG ÉRKEZIK, DE MÉG NEM LÉP BE.]",
+        "[AZ AJTÓ RÉSÉN VAGY A KÜSZÖBRŐL ANNYIT ÉRZÉKEL, HOGY VALAKIT REJTEGETNEK ODABENT. DÖNTHET ÚGY, HOGY BELÉP, VAGY VISSZAFORDUL A SAJÁT SZOBÁJÁBA ÉS MEGISSZA A BÁJITALT.]"
+      ],
+      "choices": [
+        {
+          "id": "s2_normal_enter_hidden_twin_room",
+          "text": "Belépsz a helyiségbe.",
+          "next": "s2_hidden_twin_revealed_normal",
+          "tags": [
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "sawHiddenTwin": true,
+              "hiddenTwinEntered": true
+            }
+          }
+        },
+        {
+          "id": "s2_normal_turn_back_before_twin",
+          "text": "Nem mész be. Visszatérsz a szobádba, és megiszod a bájitalt.",
+          "next": "s2_implant_normal",
+          "tags": [
+            "critical"
+          ],
+          "effect": "normal",
+          "effects": {
+            "set": {
+              "hiddenTwinEntered": false,
+              "declinedHiddenTwinRoom": true,
+              "procedureChoice": "returned-and-drank"
+            }
+          }
+        }
+      ]
+    },
+    "s2_hidden_twin_revealed_normal": {
       "title": "II. Fejezet — Anya",
       "paragraphs": [
         "[A VEZÉRLŐPÁLCA A HÁZ EGY ELZÁRT, RITKÁN HASZNÁLT RÉSZÉHEZ VEZET. A KARAKTER EGY LEZÁRT HELYISÉGBEN MEGTALÁLJA A HALOTTNAK HITT MÁSIK BÁTYJÁT.]",
@@ -1687,7 +1725,7 @@
           "effect": "glitch",
           "effects": {
             "set": {
-              "sawHiddenTwin": true,
+              "hiddenTwinRoomFound": true,
               "hiddenTwinDiscovery": "deja-vu"
             }
           }
@@ -1695,6 +1733,46 @@
       ]
     },
     "s2_hidden_twin_dejavu": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "[A KARAKTER EMLÉKEI ALAPJÁN JUT EL A HÁZ ELZÁRT RÉSZÉBE. FELISMERI AZ AJTÓT, ÉS MÁR A KINYITÁSA ELŐTT TUDJA, KIT REJTENEK MÖGÖTTE.]",
+        "[MOST MÉG VISSZAFORDULHAT. HA NEM LÉP BE, VISSZATÉRHET A SAJÁT SZOBÁJÁBA, MEGIHATJA A BÁJITALT, ÉS HAGYHATJA, HOGY A BEAVATKOZÁS ÚJRA MEGTÖRTÉNJEN.]"
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_enter_hidden_twin_room",
+          "text": "Kinyitod az ajtót, és belépsz.",
+          "next": "s2_hidden_twin_revealed_dejavu",
+          "tags": [
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "sawHiddenTwin": true,
+              "hiddenTwinEntered": true
+            }
+          }
+        },
+        {
+          "id": "s2_dejavu_turn_back_before_twin",
+          "text": "Nem lépsz be. Visszatérsz a szobádba, és megiszod a bájitalt.",
+          "next": "s2_implant_dejavu",
+          "tags": [
+            "critical"
+          ],
+          "effect": "normal",
+          "effects": {
+            "set": {
+              "hiddenTwinEntered": false,
+              "declinedHiddenTwinRoom": true,
+              "procedureChoice": "dejavu-returned-and-drank"
+            }
+          }
+        }
+      ]
+    },
+    "s2_hidden_twin_revealed_dejavu": {
       "title": "II. Fejezet — Anya",
       "paragraphs": [
         "[A KARAKTER EMLÉKEI ALAPJÁN JUT EL A HÁZ ELZÁRT RÉSZÉBE. MÁR AZ AJTÓ KINYITÁSA ELŐTT TUDJA, HOGY DESTINATIONNEL AZONOS ARCOT FOG LÁTNI.]",

@@ -516,128 +516,9 @@
   border-color: rgba(244,207,112,.78);
 }
 
-/* ===== CRITICAL VÁLASZTÁS UTÁNI FINOM JELENET-GLITCH ===== */
-
-.story-engine__stage.is-entering.effect-critical {
-  animation: story-critical-enter .38s steps(1, end);
-}
-
-.story-engine__stage.effect-critical::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 30;
-  pointer-events: none;
-  opacity: 0;
-  background:
-    linear-gradient(
-      90deg,
-      transparent 0 18%,
-      rgba(167,66,95,.09) 18% 48%,
-      rgba(190,198,211,.045) 48% 64%,
-      transparent 64%
-    );
-  mix-blend-mode: screen;
-  animation: story-critical-slice .38s steps(2, end);
-}
-
-.story-engine__stage.effect-critical .story-engine__scene-title,
-.story-engine__stage.effect-critical .story-engine__text {
-  animation: story-critical-text .38s steps(1, end);
-}
-
-@keyframes story-critical-enter {
-  0% {
-    opacity: .25;
-    filter: blur(5px) saturate(.82);
-    transform: translateY(9px) scale(.994);
-  }
-
-  34% {
-    opacity: .78;
-    filter: blur(1px) contrast(1.1) saturate(.88);
-    transform: translate(-2px, 2px) skewX(-.25deg);
-  }
-
-  43% {
-    opacity: .9;
-    filter: contrast(1.05);
-    transform: translate(2px, 0);
-  }
-
-  58% {
-    transform: translate(-1px, 0);
-  }
-
-  72% {
-    transform: translate(1px, 0);
-  }
-
-  100% {
-    opacity: 1;
-    filter: none;
-    transform: translate(0) scale(1);
-  }
-}
-
-@keyframes story-critical-slice {
-  0%,
-  100% {
-    opacity: 0;
-    clip-path: inset(0);
-    transform: translateX(0);
-  }
-
-  34% {
-    opacity: .72;
-    clip-path: inset(24% 0 61% 0);
-    transform: translateX(-5px);
-  }
-
-  50% {
-    opacity: .42;
-    clip-path: inset(58% 0 27% 0);
-    transform: translateX(4px);
-  }
-
-  68% {
-    opacity: .24;
-    clip-path: inset(76% 0 12% 0);
-    transform: translateX(-2px);
-  }
-}
-
-@keyframes story-critical-text {
-  0%,
-  32%,
-  48%,
-  100% {
-    text-shadow: none;
-    transform: translateX(0);
-  }
-
-  37% {
-    text-shadow:
-      -1px 0 rgba(190,70,99,.3),
-      1px 0 rgba(190,198,211,.13);
-    transform: translateX(1px);
-  }
-
-  43% {
-    text-shadow:
-      1px 0 rgba(190,70,99,.2),
-      -1px 0 rgba(190,198,211,.1);
-    transform: translateX(-1px);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .story-choice--critical.is-emphasized,
-  .story-choice--critical.is-emphasized .story-choice__label,
-  .story-engine__stage.is-entering.effect-critical,
-  .story-engine__stage.effect-critical::before,
-  .story-engine__stage.effect-critical .story-engine__scene-title,
-  .story-engine__stage.effect-critical .story-engine__text {
+  .story-choice--critical.is-emphasized .story-choice__label {
     animation: none !important;
   }
 
@@ -799,8 +680,4 @@
   font-size: 12px;
   line-height: 1.5;
   background: rgba(111,38,59,.14);
-}
-
-.story-start-prompt {
-  white-space: pre-line;
 }
