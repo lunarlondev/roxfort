@@ -2048,7 +2048,7 @@
       "choices": [
         {
           "id": "s2_dejavu_finish_implant",
-          "text": "Hagyod, hogy a jelenet ismét végigfusson.",
+          "text": "Nem rendelkezhetsz saját tested felett.",
           "next": "s2_eye_implanted_dejavu",
           "tags": [
             "normal"
@@ -2067,7 +2067,7 @@
       "title": "II. Fejezet — Anya",
       "paragraphs": [
         "Mert valamiért képtelen vagy megszabadulni tőlem. Így van, ugye? Te mindent megtettél, még a Halált is vállaltad, csak hogy ne kelljen rajtam keresztül nézned, de az se volt elég.",
-        "[És lám, most mégis itt vagy te és én. Képtelen vagy kezedbe venni a sorsodat, csak egy gally vagy a folyó áramlatában, és haladsz a vízesés felé. Idegen húsba ültetnek, ezért idegenként is viselkedem. Tudom, hogy már most gondolkozol rajta, hogy újra megtedd, de az csak felesleges volna, nem igaz?"
+        "És lám, most mégis itt vagy te és én. Képtelen vagy kezedbe venni a sorsodat, csak egy gally vagy a folyó áramlatában, és haladsz a vízesés felé. Idegen húsba ültetnek, ezért idegenként is viselkedem. Tudom, hogy már most gondolkozol rajta, hogy újra megtedd, de az csak felesleges volna, nem igaz?"
       ],
       "choices": [
         {
