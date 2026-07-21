@@ -2277,9 +2277,15 @@
     "s3_harness_eye": {
       "title": "III. Fejezet — Parazita",
       "paragraphs": [
-        "[A KARAKTER KÉRDÉSEKET TESZ FEL A SZEMNEK, EMBEREKRE NÉZVE JÖVŐKET KERES, ÉS MEGPRÓBÁLJA ELVÁLASZTANI A HASZNOS KÉPEKET A MANIPULÁCIÓTÓL.]",
-        "[A SZEM EGYRE TÖBB HATALMAT AD, DE CSERÉBE IDEGEN EMLÉKEKET, SZOKÁSOKAT ÉS KÉSŐBB AZ ELŐZŐ LÁTÓ SZEMÉLYISÉGÉNEK DARABJAIT ÜLTETI A KARAKTERBE.]",
-        "[MÁSIK LEHETŐSÉGKÉNT A SZEM OLYAN ESEMÉNYEKET MUTAT, AMELYEK CSAK AKKOR HALLGATNAK EL, HA A KARAKTER SAJÁT KEZŰLEG BETELJESÍTI ŐKET.]"
+        "Eleinte ezek nem többek, mint saját kísérleteid velem. Azonban én nem kommunikálok – nem szavak formájában, így azt gondolod, nincs is saját akaratom.",
+		"Jelentéktelen dolgokkal kezded a felfedezést. Próbálsz ráérezni arra, hogy Destination melyik ajtón fog belépni a nappaliba, vagy melyik féltestvéred érkezik majd látogatóba. Néha engedek a játékodnak, és megmutatom neked azt, amit kérsz. Nem nézel a tükörbe, én mégis látom azt, hogy elmosolyodsz.",
+		"Ahogy az idő telik, egyre többet akarsz. Megpróbálod kitalálni, hogy hogyan cselekszik Destination, vagy pontosan mi érkezik majd Siofra nénikéd levelében.",
+		"Des az egyik opcióban elfordul tőled, hogy kinézhessen az ablakon, a másikban megérinti a vállad, a harmadikban pedig ásít egy nagyot a kimerítő napja után. Olyan gyorsan követik egymást ezek a képek, hogy beleszédülsz, meg kell kapaszkodj a zongora szélében.",
+		"A három közül csak az egyik következik be.",
+		"Siofra levélben közölte veletek, hogy részt fogtok venni a Noctua beavatásán. Illetve nem közölte, erős javaslat talán a megfelelőbb szó, de teljesen mindegy, minek is nevezitek, tudod, hogy ez nem igazi választás. A leveleknél házassági ajánlatot is láttál, illetve egy felkérést, hogy légy a születendő újabb gyermekének a keresztanyja.",
+		"Örülsz, őszintén örülsz, hogy csak a beavatás miatt írt.",
+		"Próbálsz a részletekre figyelni, hogy valahogy megkülönböztethesd a valódi jövőképeket azoktól, amik sosem teljesülnek be. Néha egész jól ráérzel, de nyilvánvalóan ezt nem fogod egy-két hét alatt megtanulni. Értékelem az igyekezeted; minél többet gyakorolsz, én annál inkább igazodok hozzád. Néha meglepetéseket hagyok neked; reggelente tintás kézzel ébredsz, párnád mellett pedig a pergamen, amire rajzoltál egy erdőt és egy erdei kunyhót. Nem tudod, mit jelenthet, feleslegesen töröd rajta a fejed, mert nem fogom elmondani neked.",
+		"Még sem hagysz fel a kísérletekkel."
       ],
       "choices": [
         {
@@ -2342,9 +2348,13 @@
     "s3_major_vision": {
       "title": "III. Fejezet — Parazita",
       "paragraphs": [
-        "[IDE ÍRD A HOSSZÚ, KIEMELT LÁTOMÁST. A SZEM ÖSSZEKEVERI A LÁTÓ HALÁLÁT, A KARAKTER SAJÁT LEHETSÉGES HALÁLÁT, A CSALÁDJA VESZTESÉGEIT ÉS OLYAN KÉPEKET, AMELYEK TALÁN MÉG NEM TÖRTÉNTEK MEG.]",
-        "[A SZEM ARRA SZÁMÍT, HOGY A KARAKTER MEGRÉMÜL, MEGSZAKÍTJA A KÉPET, SEGÍTSÉGET KÉR VAGY KÍSÉRLETET TESZ AZ ELTÁVOLÍTÁSÁRA.]",
-        "[A NEGYEDIK, HIDDEN VÁLASZTÁS CSAK HÉT PERC — 420000 EZREDMÁSODPERC — ELTELTE UTÁN JELENIK MEG.]"
+        "Nem tudod még, mit kezdj velem, és hogyan oldod meg a helyzeted.",
+        "Amiket a következő időszakban látsz, azt nehezen tudod szavakba önteni. Bátyád végignézi, ahogy kezdesz elsorvadni mellette, te pedig újra és újra végignézed az ő halálát – és a másik életét is. Aztán a következő álmatlan éjszakád is forgolódással telik csupán. Hét perc van éjfélig – a kintről beszűrődő holdfény tisztán mutatja számodra az időt, én pedig gondoskodom róla, hogy jól lásd.",
+        "A következő pillanatban folyadékban úszol, mégis levegőt veszel belőle, mintha kopoltyúd lenne. Az érzés természetellenes, azonnal köhögnöd és fuldokolnod kell, amikor kirántod magad a látott képből. Csak rövid időre sikerül, a következő pillanatban ugyanis megint benne vagy.",
+		"Magasan lebegsz a nebraskai ház felett, anyád pedig a szabadban, a napfényben táncol. Bőre először füstöl, majd lángra kap. Apád már a földön fekszik, saját inferusai gyalázzák, ami a testéből maradt. Nem segíthet rajtuk senki. Kiabálsz anyádnak, hogy menjen be, apádnak pedig, hogy harcoljon, de mind hasztalan.",
+		"Majd az összes inferus rád emeli tekintetét.",
+		"Megszakad a kép. Egy pillanatra látod az órát, majd a vérvörös Hold alatt látod bátyádat sírni. Nem érted először, miért teszi, hisz ásó van a kezében. Ásni pedig igazán szeret. A sírgödörben saját, lesoványodott képmása fekszik éppen csak felismerhetően.",
+		"Az óra pedig csak ketyeg, ketyeg…"
       ],
       "choices": [
         {
@@ -2358,7 +2368,7 @@
         },
         {
           "id": "s3_remove_eye_after_vision",
-          "text": "Nem engeded, hogy még egyszer megmutassa. Kitéped magadból.",
+          "text": "Nem engeded uralkodni a parazitát. Kitéped magadból.",
           "next": "ending_eye_removal_death",
           "tags": [
             "critical"
@@ -2380,7 +2390,7 @@
         },
         {
           "id": "s3_attempt_remove_eye_after_vision_and_twin",
-          "text": "Nem engeded, hogy még egyszer megmutassa. Kitéped magadból.",
+          "text": "Nem engeded uralkodni a parazitát. Kitéped magadból.",
           "next": "s3_remove_eye_after_vision_blocked_by_twin",
           "tags": [
             "critical"
@@ -2400,7 +2410,7 @@
         },
         {
           "id": "s3_turn_vision_into_power",
-          "text": "Nem menekülsz előle. Megpróbálod a saját céljaidra használni.",
+          "text": "Nem menekülsz előle tovább. Megpróbálod a saját céljaidra használni.",
           "next": "s3_harness_eye",
           "tags": [
             "critical"
@@ -2431,14 +2441,17 @@
     "s3_patient_revelation": {
       "title": "III. Fejezet — Parazita",
       "paragraphs": [
-        "[MIVEL A KARAKTER NEM FORDUL EL ÉS NEM PRÓBÁLJA IRÁNYÍTANI, A SZEM ABBAHAGYJA A FÉLELEMKELTŐ VÁGÁSOKAT, ÉS EGYBEN MUTATJA MEG AZ ELŐZŐ LÁTÓ TÖRTÉNETÉT.]",
-        "[LÁTHATÓVÁ VÁLIK A LÁTÓ FOGSÁGA, A SZEM ÁTADÁSÁNAK VALÓDI KÖRÜLMÉNYE, AZ ANYA SZEREPE ÉS AZ A PILLANAT, AMIKOR A SZEM FELISMERTE AZ ÚJ HORDOZÓJÁT.]",
-        "[KIDERÜLHET, HOGY A PARAZITA EGYIK CÉLJA AZ VOLT, HOGY VALAKI VÉGRE TELJESEN VÉGIGNÉZZE ÉS MEGŐRIZZE AZ EMLÉKEIT. MARADJON BIZONYTALAN, HOGY EZ IGAZSÁG VAGY A SZEM LEGTÖKÉLETESEBB MANIPULÁCIÓJA.]"
+        "Ez egyszer azonban nem fordulsz el tőlem, mindegy, hány féle módon mutatom számodra szeretteid gyötrelmeit, vagy épp legrosszabb pillanatait. Holtjaid továbbra is körülötted táncolnak ebben a lázálomban, de nem hagyod, hogy a rémület felülemelkedjen rajta. Ezek a dolgok nem valósak, soha nem történtek meg, és az se biztos, hogy valaha meg fognak.",
+		"A falióra mutatója éppen éjfélt mutat, amikor elengedlek gyötrelmes fogságodból.",
+		"A képek megmerevednek, eltűnnek a síró és könyörgő hangok, amiket társítasz hozzájuk, benned azonban megszületik valami, amit nem tudsz nevén nevezni még. Arany színű fény világítja be a látótered, elmosva mindent a képekből, és apró, de fontos jelenetek sokaságát mutatom meg. Képes voltál nem megtörni alattam, Elegy Dreadmoor, így talán méltó vagy arra, hogy társak legyünk. Légy tanúja hát annak a valóságnak, amit senki sem elég erős látni!",
+		"Ezúttal nem a jövőbe, hanem a múltba kalauzollak el, hogy tanúja legyél egy látónak, ki Fortuna küldöttének gondolta magát. Látod, miként került egy brit varázsispotályba, ahol hosszas ideig tartották bent, mert elméje túl sérült volt ahhoz, hogy közösségbe engedjék.",
+		"Emelkedett révületben érkezhettek látomásai, ezt látod a tekintetén. Látod az általa elkövetett gyilkosságokat, de látod azt is, hogy a látomásai késztetik őt erre. Nem vagy rá mérges, inkább szánod őt, ahogy minden látomásban saját, eleve elrendeltetett jövőjét látja. Talán olyan embereket távolított el, akik később szörnyűbb dolgot tehettek volna – ezt nem tudhatod, hogy valóság, vagy csak feloldozás.",
+		"Naiv teremtményt látsz benne, ahogy egy tál spagettiért eladja magát és különleges adottságát. Látod aztán a Zsebkosz-köz felett repülni, majd azt, ahogyan leszáll egy erdőben, nem olyan messze egy kastélytól, hogy remeteként élje le életének utolsó szakaszát. Akkor és ott, életében először igazán szabadnak érezte magát. Énekhangjától libabőrös leszel, semmiképp se számítottál rá, hogy képes megtelíteni az erdőt a hangjával."
       ],
       "choices": [
         {
           "id": "s3_accept_complete_memory",
-          "text": "Megőrzöd mindazt, amit megmutatott.",
+          "text": "Tovább nézed, amit a szem mutatni akar.",
           "next": "ending_patient_witness",
           "tags": [
             "normal"
@@ -2555,18 +2568,26 @@
       "order": 2,
       "title": "A tanú",
       "paragraphs": [
-        "[A SZEM A TELJES TÖRTÉNET MEGMUTATÁSA UTÁN ELCSENDESÜL. A KARAKTER ÉLETBEN MARAD, DE AZ ELŐZŐ LÁTÓ EMLÉKEI VÉGLEG ÖSSZEKEVEREDNEK A SAJÁTJAIVAL.]",
-        "[NÉHA NEM TUDJA, MELYIKÜK ÉLETÉRE EMLÉKSZIK, ÉS A TÜKÖRBEN OLYKOR AZ ELŐZŐ HORDOZÓ NEVÉN SZÓLÍTJA MAGÁT.]",
-        "[MARADJON BIZONYTALAN, HOGY A SZEM MEGNYUGODOTT, VAGY EGYSZERŰEN ELÉRTE, AMIT AKART.]"
-      ],
+        "A következő pillanatban anyád előtt kuporog. Nagy távot tett meg eddig legfőbb múzsája, Fortuna parancsára. Napokon át követte a neki szánt jeleket, míg meg nem találta anyádat.",
+		"Anyád hagyja, hogy Istennőnek szólítsa. Nem javítja ki, nincs miért. Talán élvezi is, ahogyan lehajtott fejjel ott lehet előtte, és végre méltónak mutatkozhat a személyes találkozóra, miután ennyi éven át szolgálta őt.",
+		"Felkavaró látni, ahogyan anyád, aki neked akkor is az anyád, visszaél a látó bizalmával, és megfosztja őt a látásától, a vérétől és az életétől. Minden bizonnyal az áhítatos szolga nem erre számított.",
+		"Amikor véget ér a története, végre én is elcsendesedem benned. Az ő emlékei azonban nem távoznak belőled, azok örökkön benned maradnak. Úgy emlékszel London utcáira, mintha te magad rajzoltad volna a térképét, és valamiért azt is tudod, melyik Zsebkosz-közi ház alatt tudod meghúzni magad úgy, hogy ne vegyenek észre. Emlékeid örökké összefonódnak az övével, én pedig cserébe hálás leszek, örökkön szolgállak majd."
+		],
       "presentation": {
         "timeline": {
           "id": "ending-PATIENT_WITNESS",
-          "date": "Befejezés",
+          "date": "2006",
           "icon": "†",
-          "text": "Befejezés: A tanú."
+          "text": "Elegy befogadja azokat a látomásokat, amiket a szem meg akart mutatni neki. Megismeri a látó múltját és hozzákerülésének körülményeit."
         },
-        "afterEndingTimeline": [],
+        "afterEndingTimeline": [
+		{
+            "id": "seerheir1",
+            "date": "2006",
+            "icon": "⌂",
+            "text": "A Felsőház utasítására belép a Noctua Tenbrosába. A beavatást bátyjával rendkívüli módon, rekordidő alatt, bármiféle nehézség nélkül teljesíti."
+          }
+		  ],
         "endingStyle": "revelation"
       }
     },
@@ -2678,18 +2699,27 @@
       "order": 7,
       "title": "A beteljesítő",
       "paragraphs": [
-        "[A KARAKTER RÁJÖN, HOGY A SZEM BIZONYOS LÁTOMÁSAI CSAK AKKOR HALLGATNAK EL, HA Ő MAGA VALÓSÍTJA MEG ŐKET.]",
-        "[ELŐSZÖR KISEBB ESEMÉNYEKET RENDEZ MEG, KÉSŐBB EMBEREKET MANIPULÁL, VÉGÜL PEDIG MÁR ÁLDOZATOKAT IS KIVÁLASZT A SZEM NYUGALMÁÉRT.]",
-        "[A VÉGÉN A SZEM ÚJ KÉPET MUTAT VALAKIRŐL, AKIT A KARAKTER SZERET. Ő MÁR NEM KÉRDEZI MEG, IGAZ-E; CSAK ELKEZDI ELŐKÉSZÍTENI.]"
+        "Napokon át mutatom neked a madárijesztőt a kukoricás szélén. Megszoktad, hogy az mindig háttal áll a házatoknak, a látomásokban azonban szembefordul veletek. Desnek persze elmesélsz mindent; megszokássá válik, hogy minden egyes nap kimentek egyet sétálni, persze gondosan ügyelve arra, hogy apátok amulettje ezúttal ne hagyjon titeket cserben.",
+		"Találtál régi fotókat a házról, de még azokon is háttal állt a háznak. A látomásaid azonban nem hagynak nyugodni. Mindegy, mi másra próbálsz koncentrálni, én újra és újra ugyanazt mutatom meg neked, valahányszor lehunyod a szemed. Zsákfején csálén áll a szétfoszlott kalap, kabátját szétrágták a molyok és az idők. Az inferusokkal fertőzött területen adná magát, hogy valamelyik majd véletlen megmozdítja, ám azok mozdulatlanok, hisz nem érzékelnek olyan veszélyt, amit meg kell állítani.",
+		"Talán a szél lesz az, ami az esővel érkezik ebbe az aszályos időszakba. Reménykedsz benne, hogy történik majd valami, de hiába várod, a madárijesztő makacsul mutatja a hátát. Én viszont újra és újra ugyanazt a képet mutatom neked.",
+		"Az egyik hajnalban lesz aztán eleged belőle. Pálcádat a törzsének szegezed, hogy kimozdítsd a helyéről. Varázslatod végére pontosan úgy áll, ahogyan azt te láttad általam, egyenesen a ház, és a te ablakod felé.",
+		"Amint ezzel elkészültél, mélyen elhallgatok addig, amíg nem tudsz ismét a szolgálatomra állni."
       ],
       "presentation": {
         "timeline": {
           "id": "ending-FULFILLER",
           "date": "Befejezés",
           "icon": "†",
-          "text": "Befejezés: A beteljesítő."
+          "text": "Befejezés: Az önbeteljesítő."
         },
-        "afterEndingTimeline": [],
+        "afterEndingTimeline": [
+		{
+            "id": "seerheir1",
+            "date": "2006",
+            "icon": "⌂",
+            "text": "A Felsőház utasítására belép a Noctua Tenbrosába. A beavatást pocsékul teljesíti, alig éli túl."
+          }
+		  ],
         "endingStyle": "corruption"
       }
     },
