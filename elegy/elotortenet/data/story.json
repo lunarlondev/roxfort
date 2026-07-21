@@ -2083,7 +2083,7 @@
       "presentation": {
         "timeline": {
           "id": "seer-eye-implanted",
-          "date": "II. fejezet",
+          "date": "2006",
           "icon": "✦",
           "text": "Anyja beültette az erős látótól származó idegen szemet."
         }
@@ -2092,14 +2092,23 @@
     "s3_normal_recovery": {
       "title": "III. Fejezet — Parazita",
       "paragraphs": [
-        "[IDE ÍRD A GYÓGYULÁS NAPJAIT. KEZDETBEN AZ ÚJ SZEM JOBBAN LÁT, MINT AZ EREDETI: SÖTÉTBEN, FALAKON TÚLI MOZGÁSBAN ÉS MÁSOK KÖVETKEZŐ MOZDULATAIBAN IS ÉSZREVESZ RÉSZLETEKET.]",
-        "[EZUTÁN MEGJELENNEK A PARAZITA TÜNETEI: A SZEM AKKOR IS LÁT, AMIKOR LEHUNYOD; ÖNÁLLÓAN MOZOG A TÜKÖRBEN; IDEGEN EMLÉKEKET MUTAT; ÉS A SAJÁT FÉLELMEIDBŐL ÉPÍT LÁTOMÁSOKAT.]",
-        "[A KARAKTER FELISMERI, HOGY A SZEM IDEGPÁLYÁKON KERESZTÜL GYÖKERET ERESZTETT, OLVASSA AZ EMLÉKEIT, ÉS A FIGYELMÉBŐL, FÉLELMÉBŐL VAGY A HASZNÁLATÁBÓL TÁPLÁLKOZIK.]"
+        "Eseménytelenül telnek el a lábadozásoddal töltött napok.",
+		"Anyád naponta kétszer cserél rajtad kötést, és minden alkalommal gondosan megvizsgálja a sebed környékét. A gyógykrémek, amiket bőrödbe masszírozott, pár nap alatt az utolsó heget is eltüntette.",
+		"Az új szemed meglepően gyorsan illeszkedett a helyére. Nem érzel se gyulladást, se duzzanatot. Aztán lekerül rólad a kötés.",
+		"Először csak homályosan láttál velem, főleg mozgást és fényeket, de semmi konkrétat, hiába hunyorogsz és pislogsz. Mára azonban olyan élesen látsz vele, mint ahogy egy varjú figyeli ki röptéből az eleséget. Észreveszed azt is, hogy ha letakarod az ép szemed, a világ nem lesz tőle bizonytalanabb, éppen ellenkezőleg. Meglátod a fában a legapróbb, hajszálvékony repedéseket, Des bőrének minden pórusát, de még a porszemeket is a levegőben. Az új szem jobban lát tehát, mint a sajátod.",
+		"Persze attól még ember vagy; ilyen szempontból nincs különleges tulajdonságom attól eltekintve, hogy kiválóan működök. Éjszaka mégis kevesebb fényre van szükséged ahhoz is, hogy olvass, még ha a világ színtelenebbnek is tűnik akkor.",
+		"Majd elkezded azelőtt meglátni mások mozdulatát, mielőtt az tényleg megtörténne. Látod megbillenni a poharat az asztal szélén, még mielőtt az tényleg leesne, és látod apád ujjait is megfeszülni, mielőtt pálcájáért nyúlna. Látod, hogyan küzdi fel magát Rigor Mortis a padlásra mágia nélkül, hogy elvégezze a feladatát.",
+		"Csak akkor kezdődnek a furcsa dolgok, amikor már kezdesz ehhez hozzászokni. Hiába hunytad le a szemeid, továbbra is látod a szobát, ahol alszol. Megdörzsölöd szemhéjaidat és a hasadra fekszel, hátha akkor eltűnnek a képek, de nem szabadulsz attól, amit mutatok neked. A kép nem akar eltűnni.",
+		"Másnap reggel a tükörbe nézve barátkozol új kinézeteddel. Mindig is kék szemet szerettél volna, ahogyan az Destinationnek is van, de te apád barnáit örökölted.",
+		"Első pillantásra semmiben sem különbözöm a tükörben egy bármilyen másik szemgolyótól, ám amikor a hajadat kezded el fésülni, egy pillanatra oldalra mozdulok ki, teljesen függetlenül az eredeti szemedtől és az akaratodtól. Nem különösebben izgat egyébként sem, hogy mit akarsz.",
+		"Egy hét telik el az első valós látomásig. Éberen álmodsz, te még sem álomként éled meg az ott történteket, hanem úgy, mintha azok a saját emlékeid lennének. Biztosan tudod, hogy bár sok helyen jártál, de ezeken a helyeken soha, mégis úgy kapkodsz levegőért minden bevillanás után, mintha téged üldöztek volna az erdőben, vagy mintha te lettél volna a cruciatus átok hatása alatt. Pedig csak rövid képeket mutatok, egyszerű bevillanásokat, amik soha nem elegek ahhoz, hogy megértsd őket.",
+		"Arról viszont gondoskodom, hogy a lehető legrosszabb pillanatban történjen minden.",
+		"Jól tűröd a képzeld fájdalmat. A pszichopata apád kiváló munkát végzett veled, elismerésem. De megtörni látszol, amikor olyan félelmet, haragot és szenvedést mutatok neked, ami nem távolról érkezik – egyenesen Desolation jövőjéből."
       ],
       "choices": [
         {
           "id": "s3_normal_tell_mother",
-          "text": "Elmondod az anyádnak, mit tesz veled a szem.",
+          "text": "Segítséget kérsz anyádtól.",
           "next": "s3_mother_binding_offer",
           "tags": [
             "critical"
@@ -2113,7 +2122,7 @@
         },
         {
           "id": "s3_normal_hide_and_endure",
-          "text": "Eltitkolod, és egyedül próbálod elviselni.",
+          "text": "Egyedül próbálod elviselni.",
           "next": "s3_parasite_torment",
           "tags": [
             "critical"
@@ -2162,7 +2171,7 @@
       ],
       "media": {
         "src": "images/story/chapter-parazita.jpg",
-        "alt": "Az idegen szem nyugtalanító hangulatképe",
+        "alt": "chapter 3 aes",
         "position": "center"
       },
       "presentation": {
@@ -2178,13 +2187,16 @@
     "s3_mother_binding_offer": {
       "title": "III. Fejezet — Parazita",
       "paragraphs": [
-        "[AZ ANYA FELISMERI, HOGY A SZEM MÁR NEM TÁVOLÍTHATÓ EL BIZTONSÁGOSAN, DE A SAJÁT VÁMPÍRVÉRÉVEL ÉS EGY RITUÁLIS KÖTÉSSEL KORLÁTOZHATJA.]",
-        "[A KÖTÉS ELNÉMÍTHATJA A LÁTOMÁSOKAT, DE ÖSSZEKAPCSOLJA A KARAKTER ÉRZÉKELÉSÉT AZ ANYÁVAL. AZ ANYA KÉSŐBB A SZEMÉN KERESZTÜL LÁTHAT, ÉREZHETI A FÉLELMÉT, VAGY RÖVID IDŐRE A TEKINTETÉT IS IRÁNYÍTHATJA.]"
+        "Mert az eddig is mindig bevált. Szánlak téged, Elegy Dreadmoor, komolyan szánlak.",
+		"A legutóbbi látomástól a földre görnyedsz, bár szebb lennél a föld alatt, ahogy azt Destinationnel gyakoroltad. Alig kapsz levegőt a képektől. Anyád persze már ott térdel melletted, de ahogyan ránézel, olyan ősi és elemi riadalmat érzel, mint amit még soha. Pedig anyád arca különösen gyönyörű. Örökkön fiatal, és pofátlanul fiatal volt akkor is, amikor hozzáment apádhoz. Rémisztő a korkülönbség, állítólag, de te ezt csak akkortájt kezdted érteni, amikor nagyobb voltál, és többet jártál a világban. És bármilyen döbbenetes is, de anyád szerelemből választotta, hogy apád harmadik, és egyben kedvenc felesége is lesz.",
+		"Neked pedig az anyád, akit szeretsz, és aki mindig mindentől megóvott önmagát leszámítva. Most félsz tőle, mert valami, amit láttál vele kapcsolatban, rémisztővé akarja festeni a képét. Mégis megindul a nyelved, hogy elmeséld neki az elmúlt időszak megpróbáltatásait. Elmondasz neki mindent a látomásokból, hogy képtelen vagy aludni mellette, és az se segített, ha egyszerűen lekötötted.",
+		"Anyád pedig egyszer sem szakít félbe. Visszakaptad az anyádat – azt, aki nem engedné, hogy bántódásod essék, és azt, aki a javadat akarja. Mert a szemmel is ez volt a terve, igaz?",
+		"Miután végeztél, megemlít egy rituálét, amit apád végre tud hajtani rajtad. A szemet már nem távolíthatja el belőled, de megszabadíthat attól, amit látsz. Arra kér, hadd vegye le ezt a terhet a válladról. Átvenné tőled a látomások terhét, mert ő elbírja, még ha beteg is, de nem fog belerokkanni."
       ],
       "choices": [
         {
           "id": "s3_accept_mother_binding",
-          "text": "Engeded, hogy magához kösse a szemet.",
+          "text": "Engeded, hogy segítsen.",
           "next": "ending_mother_leash",
           "tags": [
             "critical"
@@ -2607,18 +2619,28 @@
       "order": 5,
       "title": "Az anya póráza",
       "paragraphs": [
-        "[AZ ANYA VÁMPÍRVÉRREL ÉS RITUÁLIS KÖTÉSSEL ELNÉMÍTJA A SZEMET. A LÁTOMÁSOK MEGSZŰNNEK, A KARAKTER ÉLETBEN MARAD.]",
-        "[AZ ÁR: AZ ANYA BÁRMIKOR LÁTHAT A KARAKTER SZEMÉN KERESZTÜL, ÉRZI A FÉLELMÉT, ÉS TALÁN RÖVID IDŐRE A TEKINTETÉT IS IRÁNYÍTHATJA.]",
-        "[A ZÁRÓJELENETBEN A KARAKTER VALAMIT EL AKAR REJTENI ELŐLE, DE AZ ÚJ SZEM MAGÁTÓL AZ ANYA FELÉ FORDUL.]"
+        "Anyád még aznap este elvisz apádhoz.",
+		"Ritka alkalom, hogy ketten együtt dolgoznak valamin, az azonban koránt sem ritka, ha ezt – látszólag – érted teszik. A szülői szeretet furcsán nyilvánul meg abberált családotokban, bár az kétségtelen, hogy a ti szüleitek legalább amennyire lehetett, tényleg megadták nektek, amit tudtak, testileg, szellemileg és érzelmileg is.",
+		"Kár, hogy csak erre telik tőlük, és még sajnálatosabb az önös érdekük benne.",
+		"Apád hosszabb ideig vizsgál, mielőtt előkészítené a rítust. Elég holttestet bontott már fel, ezúttal azonban még sem kezelhet úgy, mint valamelyik hullát ott, a kukoricásban.",
+		"A rítushoz anyád vérére is szükség van. Ennek természetesen semmi köze ahhoz, hogy anyád az éjszaka egyik teremtménye, azonban egy vérből valóak vagytok, az ő vére pedig felismer téged.",
+		"Kevésbé tudsz figyelni a rituálé menetére, bár azt még érzed, hogy a vörös vitaét új szemed mögé csöpögtetik. Hidegen mar a szemed mögé a vér, lassan pedig elzárul előled minden, amit az egyszerű látáson kívül mutatni tudok. A látomások megszűnnek, ha pedig lehunyod szemhéjaidat, akkor újra csak a sötétség marad.",
+		"A rítus azonban kétirányú. Időnként nem csak azt látja, amivel én megpróbálom megtörni, hanem azt is, hogy te mit látsz általam. Az egészből nem veszel észre semmit egészen addig, amíg valamit nem próbálsz meg elrejteni előle – persze sikertelenül."
       ],
       "presentation": {
         "timeline": {
           "id": "ending-MOTHER_LEASH",
-          "date": "Befejezés",
-          "icon": "†",
-          "text": "Befejezés: Az anya póráza."
+          "date": "2006",
+          "icon": "⏾",
+          "text": "Édesanyja egy rituáléval megszabadítja őt a kínzó látomásoktól."
         },
-        "afterEndingTimeline": [],
+        "afterEndingTimeline": [
+		{
+            "id": "seerheir1",
+            "date": "2006",
+            "icon": "⌂",
+            "text": "A Felsőház utasítására belép a Noctua Tenbrosába. A beavatást nehézségekkel teljesíti."
+          }],
         "endingStyle": "control"
       }
     },
