@@ -1246,13 +1246,76 @@
           ],
           "effect": "normal",
           "unlock": {
-            "type": "runChoice",
-            "id": "s1_after_eye_escape_separated_dejavu"
+            "all": [
+              {
+                "type": "runChoice",
+                "id": "s1_after_eye_escape_separated_dejavu"
+              },
+              {
+                "any": [
+                  {
+                    "type": "seenChoice",
+                    "id": "s2_normal_enter_hidden_twin_room"
+                  },
+                  {
+                    "type": "seenChoice",
+                    "id": "s2_dejavu_enter_hidden_twin_room_first"
+                  },
+                  {
+                    "type": "seenChoice",
+                    "id": "s2_dejavu_enter_hidden_twin_room"
+                  }
+                ]
+              }
+            ]
           },
           "effects": {
             "set": {
               "chapterTwoRoute": "deja-vu",
-              "dejaVu": true
+              "dejaVu": true,
+              "hiddenTwinPreviouslySeen": true
+            }
+          }
+        },
+        {
+          "id": "s2_enter_dejavu_after_escape_separated_first_twin_discovery",
+          "text": "Újra magadhoz térsz.",
+          "next": "s2_wake_dejavu_first",
+          "tags": [
+            "normal"
+          ],
+          "effect": "normal",
+          "unlock": {
+            "all": [
+              {
+                "type": "runChoice",
+                "id": "s1_after_eye_escape_separated_dejavu"
+              },
+              {
+                "not": {
+                  "any": [
+                    {
+                      "type": "seenChoice",
+                      "id": "s2_normal_enter_hidden_twin_room"
+                    },
+                    {
+                      "type": "seenChoice",
+                      "id": "s2_dejavu_enter_hidden_twin_room_first"
+                    },
+                    {
+                      "type": "seenChoice",
+                      "id": "s2_dejavu_enter_hidden_twin_room"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "effects": {
+            "set": {
+              "chapterTwoRoute": "deja-vu",
+              "dejaVu": true,
+              "hiddenTwinPreviouslySeen": false
             }
           }
         },
@@ -1265,13 +1328,76 @@
           ],
           "effect": "normal",
           "unlock": {
-            "type": "runChoice",
-            "id": "s1_after_eye_escape_together_dejavu"
+            "all": [
+              {
+                "type": "runChoice",
+                "id": "s1_after_eye_escape_together_dejavu"
+              },
+              {
+                "any": [
+                  {
+                    "type": "seenChoice",
+                    "id": "s2_normal_enter_hidden_twin_room"
+                  },
+                  {
+                    "type": "seenChoice",
+                    "id": "s2_dejavu_enter_hidden_twin_room_first"
+                  },
+                  {
+                    "type": "seenChoice",
+                    "id": "s2_dejavu_enter_hidden_twin_room"
+                  }
+                ]
+              }
+            ]
           },
           "effects": {
             "set": {
               "chapterTwoRoute": "deja-vu",
-              "dejaVu": true
+              "dejaVu": true,
+              "hiddenTwinPreviouslySeen": true
+            }
+          }
+        },
+        {
+          "id": "s2_enter_dejavu_after_escape_together_first_twin_discovery",
+          "text": "Újra magadhoz térsz.",
+          "next": "s2_wake_dejavu_first",
+          "tags": [
+            "normal"
+          ],
+          "effect": "normal",
+          "unlock": {
+            "all": [
+              {
+                "type": "runChoice",
+                "id": "s1_after_eye_escape_together_dejavu"
+              },
+              {
+                "not": {
+                  "any": [
+                    {
+                      "type": "seenChoice",
+                      "id": "s2_normal_enter_hidden_twin_room"
+                    },
+                    {
+                      "type": "seenChoice",
+                      "id": "s2_dejavu_enter_hidden_twin_room_first"
+                    },
+                    {
+                      "type": "seenChoice",
+                      "id": "s2_dejavu_enter_hidden_twin_room"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "effects": {
+            "set": {
+              "chapterTwoRoute": "deja-vu",
+              "dejaVu": true,
+              "hiddenTwinPreviouslySeen": false
             }
           }
         },
@@ -1284,13 +1410,76 @@
           ],
           "effect": "normal",
           "unlock": {
-            "type": "runChoice",
-            "id": "s1_after_eye_fire_ring_dejavu"
+            "all": [
+              {
+                "type": "runChoice",
+                "id": "s1_after_eye_fire_ring_dejavu"
+              },
+              {
+                "any": [
+                  {
+                    "type": "seenChoice",
+                    "id": "s2_normal_enter_hidden_twin_room"
+                  },
+                  {
+                    "type": "seenChoice",
+                    "id": "s2_dejavu_enter_hidden_twin_room_first"
+                  },
+                  {
+                    "type": "seenChoice",
+                    "id": "s2_dejavu_enter_hidden_twin_room"
+                  }
+                ]
+              }
+            ]
           },
           "effects": {
             "set": {
               "chapterTwoRoute": "deja-vu",
-              "dejaVu": true
+              "dejaVu": true,
+              "hiddenTwinPreviouslySeen": true
+            }
+          }
+        },
+        {
+          "id": "s2_enter_dejavu_after_fire_ring_first_twin_discovery",
+          "text": "Újra magadhoz térsz.",
+          "next": "s2_wake_dejavu_first",
+          "tags": [
+            "normal"
+          ],
+          "effect": "normal",
+          "unlock": {
+            "all": [
+              {
+                "type": "runChoice",
+                "id": "s1_after_eye_fire_ring_dejavu"
+              },
+              {
+                "not": {
+                  "any": [
+                    {
+                      "type": "seenChoice",
+                      "id": "s2_normal_enter_hidden_twin_room"
+                    },
+                    {
+                      "type": "seenChoice",
+                      "id": "s2_dejavu_enter_hidden_twin_room_first"
+                    },
+                    {
+                      "type": "seenChoice",
+                      "id": "s2_dejavu_enter_hidden_twin_room"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "effects": {
+            "set": {
+              "chapterTwoRoute": "deja-vu",
+              "dejaVu": true,
+              "hiddenTwinPreviouslySeen": false
             }
           }
         },
@@ -1303,13 +1492,76 @@
           ],
           "effect": "normal",
           "unlock": {
-            "type": "runChoice",
-            "id": "s1_after_eye_fire_chaos_dejavu"
+            "all": [
+              {
+                "type": "runChoice",
+                "id": "s1_after_eye_fire_chaos_dejavu"
+              },
+              {
+                "any": [
+                  {
+                    "type": "seenChoice",
+                    "id": "s2_normal_enter_hidden_twin_room"
+                  },
+                  {
+                    "type": "seenChoice",
+                    "id": "s2_dejavu_enter_hidden_twin_room_first"
+                  },
+                  {
+                    "type": "seenChoice",
+                    "id": "s2_dejavu_enter_hidden_twin_room"
+                  }
+                ]
+              }
+            ]
           },
           "effects": {
             "set": {
               "chapterTwoRoute": "deja-vu",
-              "dejaVu": true
+              "dejaVu": true,
+              "hiddenTwinPreviouslySeen": true
+            }
+          }
+        },
+        {
+          "id": "s2_enter_dejavu_after_fire_chaos_first_twin_discovery",
+          "text": "Újra magadhoz térsz.",
+          "next": "s2_wake_dejavu_first",
+          "tags": [
+            "normal"
+          ],
+          "effect": "normal",
+          "unlock": {
+            "all": [
+              {
+                "type": "runChoice",
+                "id": "s1_after_eye_fire_chaos_dejavu"
+              },
+              {
+                "not": {
+                  "any": [
+                    {
+                      "type": "seenChoice",
+                      "id": "s2_normal_enter_hidden_twin_room"
+                    },
+                    {
+                      "type": "seenChoice",
+                      "id": "s2_dejavu_enter_hidden_twin_room_first"
+                    },
+                    {
+                      "type": "seenChoice",
+                      "id": "s2_dejavu_enter_hidden_twin_room"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "effects": {
+            "set": {
+              "chapterTwoRoute": "deja-vu",
+              "dejaVu": true,
+              "hiddenTwinPreviouslySeen": false
             }
           }
         }
@@ -1484,9 +1736,9 @@
       "paragraphs": [
         "Artikulálatlan hangokat hallasz valahonnan nem túl messziről.",
         "Először úgy gondolod, csak Destiny lehet az, aki eljött azért, hogy vigyázzon rád, és csak a fejed játszik veled egy olyan játékot, hogy érthetetlenné mossa át a beszédét. Visszateszed a dugót a bájitalta, és bizonytalan lépésekkel kimész a folyosóra. Hiába hívod bátyád, ő azonban nem válaszol nevére.",
-		"Követed a hangot. Attól félsz, hogy őt se kímélték az inferusok, és valahogyan mégis megsérült. Mi másért is óbégatna? ",
-		"Megtorpansz az egyik ajtónál, ahonnan a hangok szűrődnek ki. A kilincsre szorul a kezed; érzed, hogy azt valaki kívülről bezárta, azonban az már olyan gyenge, hogy a varázslatod egy szempillantás alatt kinyitja majd azt. Hallod a neszezést odabentről, te pedig ahogy közelebb hajolsz az ajtóhoz, ismét bátyád nevét kérdezed.",
-		"A nyöszörgés pár pillanatra elhalkul a túloldalon, de aztán kapkodó, szabálytalan légzések sora veszi át a helyét. Úgy döntesz, hogy…"
+        "Követed a hangot. Attól félsz, hogy őt se kímélték az inferusok, és valahogyan mégis megsérült. Mi másért is óbégatna? ",
+        "Megtorpansz az egyik ajtónál, ahonnan a hangok szűrődnek ki. A kilincsre szorul a kezed; érzed, hogy azt valaki kívülről bezárta, azonban az már olyan gyenge, hogy a varázslatod egy szempillantás alatt kinyitja majd azt. Hallod a neszezést odabentről, te pedig ahogy közelebb hajolsz az ajtóhoz, ismét bátyád nevét kérdezed.",
+        "A nyöszörgés pár pillanatra elhalkul a túloldalon, de aztán kapkodó, szabálytalan légzések sora veszi át a helyét. Úgy döntesz, hogy…"
       ],
       "choices": [
         {
@@ -1528,10 +1780,10 @@
         "Egyenesen belököd az ajtót.",
         "Sötét függönyökkel takart szobában találod magad. A szobában egyetlen ágy van, az alak mégis a földön kuporog hátát a falnak vetve. Mezítelenül terül el előtted valaki, akiről azt hiszed, hogy ismered. Egy pillanatra tényleg azt hiszed, hogy Destination az. Ugyanaz a szőke haj, ugyanazok a ragyogó szemek. Az arca azonban sokkal keskenyebb az övénél. Olyan, mintha egyenesen a rosszul sikerült, torz tükörképét látnád, ami kiszívta belőle az összes erőt. Bal karja természetellenesen simul saját testéhez, tartásában pedig látod az enyhe gerincferdülés jelét. Régi átokhegek futnak végig a nyakán, a csuklóján és a testén.",
         "Megpróbál szólni hozzád, de csak artikulálatlan nyöszörgés hagyja el ezen szánalmas lény ajkait. Észreveszed lábán a láncot, mely ehhez a helyhez rögzíti őt, mint egy fenevadat.",
-		"A bátyád az. Tényleg a bátyád az.",
-		"Nem ő, hanem a másik.",
-		"Nincsenek emlékeid róla, de tudtad, hogy Destinationnek ikertestvére is született. Nem minden generációt áldott meg az Élet ikertestvérekkel, pedig az első Dreadmoorok is ikertestvérek, Malachias és Ysoria is ikrek voltak. Néha elfantáziáltál róla, hogy milyen lehetne, ha neked is lenne egy ikertestvéred, de ott volt neked Destiny, és nem kívánhatnál nála jobb testvért.",
-		"Néha tartottatok megemlékezéseket Desolationról. Úgy gondoltátok, hogy halott, szüleitek ezt mondták nektek. Mindig nagy szeretettel gondoltál arra az ideára, ami Desolation lehet. De bármit is képzeltél, bárhogy is gondoltad, az mégsem az, mint ez itt, előtted."
+        "A bátyád az. Tényleg a bátyád az.",
+        "Nem ő, hanem a másik.",
+        "Nincsenek emlékeid róla, de tudtad, hogy Destinationnek ikertestvére is született. Nem minden generációt áldott meg az Élet ikertestvérekkel, pedig az első Dreadmoorok is ikertestvérek, Malachias és Ysoria is ikrek voltak. Néha elfantáziáltál róla, hogy milyen lehetne, ha neked is lenne egy ikertestvéred, de ott volt neked Destiny, és nem kívánhatnál nála jobb testvért.",
+        "Néha tartottatok megemlékezéseket Desolationról. Úgy gondoltátok, hogy halott, szüleitek ezt mondták nektek. Mindig nagy szeretettel gondoltál arra az ideára, ami Desolation lehet. De bármit is képzeltél, bárhogy is gondoltad, az mégsem az, mint ez itt, előtted."
       ],
       "choices": [
         {
@@ -1576,10 +1828,10 @@
       "title": "II. Fejezet — Anya",
       "paragraphs": [
         "Nem hagyhatod így itt. Naiv vagy – még nem rakod össze a képet, hogy a szüleid pontosan tisztában vannak Desolation nyomorával, hisz egyenesen ők taszították őt bele. Pedig nagyon is jól tudod, hogy apád lelkes az új kísérletekkel kapcsolatban. Azért az a sok kutatónapló és diafilm.",
-		"Pálcád a láncokra szegezed, Desolation tekintete azonban a kezedben lévő pálcára tapad. Nincs időd értelmezni a rémületet az arcán. Torkából kétségbeesett, könyörgő hang szakad fel, te pedig hiába próbálod megnyugtatni, hogy csak segíteni akarsz. Nem ért téged, nem érti, mit mondasz.",
-		"Aztán ahogy mozdítod a pálcádat, hogy kiszabadítsd, a sovány test neked ront. Fél kézzel üti le a karodat, a varázslatod pedig visszapattan a falról, hogy végleg keresztet vessen az ósdi, lemálló tapétának. Ujjai csuklód köré fonódnak, körmei a bőrödbe vájnak, majd amint elengedi, a torkod után kap. Mindkét kezével rászorít – az éppel, és azzal is, ami kissé mintha torznak hatna. Hüvelykujjai légcsövednek feszülnek, hátad pedig a falnak csapódik épp ott, ahová az átkod pattant. Hiába próbálod lefejteni magadról az ujjait, Desolation csak egyre kétségbeesetten kapaszkodik beléd. Erőtlenül hallatsz egy rekedt nyögést, de nem hat semmit az egész.",
-		"Anyád élesen csattanó hangja parancsol megálljt halálodnak – rövid időn belül kétszer is találkoztál családotok legfőbb múzsájával, és egyszer se vitt magával. Desolation azonnal elengedi a nyakad. Szó szerint félretaszít téged; a földre esel, levegő után kapkodsz, testvéred pedig összekuporodik a sarokban, mintha ezzel láthatatlanná tudna válni. Anyád jelenlétében rád se mer nézni.",
-		"Anyád úgy helyezkedik, hogy teljesen kitakarja előled bátyádat. Leguggol melléd, hűvös ujjait pedig az állad alá csúsztatja, hogy megnézze a sérülésed. Ahogy meggyőződött róla, hogy a sokkon kívül nincs további bajod, visszaparancsol a szobádba, hogy átess végre a procedúrán."
+        "Pálcád a láncokra szegezed, Desolation tekintete azonban a kezedben lévő pálcára tapad. Nincs időd értelmezni a rémületet az arcán. Torkából kétségbeesett, könyörgő hang szakad fel, te pedig hiába próbálod megnyugtatni, hogy csak segíteni akarsz. Nem ért téged, nem érti, mit mondasz.",
+        "Aztán ahogy mozdítod a pálcádat, hogy kiszabadítsd, a sovány test neked ront. Fél kézzel üti le a karodat, a varázslatod pedig visszapattan a falról, hogy végleg keresztet vessen az ósdi, lemálló tapétának. Ujjai csuklód köré fonódnak, körmei a bőrödbe vájnak, majd amint elengedi, a torkod után kap. Mindkét kezével rászorít – az éppel, és azzal is, ami kissé mintha torznak hatna. Hüvelykujjai légcsövednek feszülnek, hátad pedig a falnak csapódik épp ott, ahová az átkod pattant. Hiába próbálod lefejteni magadról az ujjait, Desolation csak egyre kétségbeesetten kapaszkodik beléd. Erőtlenül hallatsz egy rekedt nyögést, de nem hat semmit az egész.",
+        "Anyád élesen csattanó hangja parancsol megálljt halálodnak – rövid időn belül kétszer is találkoztál családotok legfőbb múzsájával, és egyszer se vitt magával. Desolation azonnal elengedi a nyakad. Szó szerint félretaszít téged; a földre esel, levegő után kapkodsz, testvéred pedig összekuporodik a sarokban, mintha ezzel láthatatlanná tudna válni. Anyád jelenlétében rád se mer nézni.",
+        "Anyád úgy helyezkedik, hogy teljesen kitakarja előled bátyádat. Leguggol melléd, hűvös ujjait pedig az állad alá csúsztatja, hogy megnézze a sérülésed. Ahogy meggyőződött róla, hogy a sokkon kívül nincs további bajod, visszaparancsol a szobádba, hogy átess végre a procedúrán."
       ],
       "choices": [
         {
@@ -1599,9 +1851,9 @@
       "title": "II. Fejezet — Anya",
       "paragraphs": [
         "Túl sok ez neked. Pedig sok mindent elbír a gyomrod – Dreadmoor vagy, szinonimátok az abberáltság, főleg, ha az Alsóházból valóak vagytok, mint te magad. Eszedbe jut a kutatónapló, amit a polcon találtál, és a diasorok, amikre pár pillantást vetettél, mielőtt elvitted volna. Nem tudtad értelmezni őket, és nyilván nem is a bátyád lehetett azokon a képeken. Mégis érzed a hasonlóságokat.",
-		"Desolation látja, hogy figyeled. Megtesz feléd egy tétova lépést, a láncok azonban nem engedik őt tovább menni.",
-		"Hangokat hallasz a folyosó felől. Mielőtt még lehetőséged lenne hátrafordulni, anyád már ott van mögötted. Hideg kezét a válladra teszi. Nem kérdezi meg tőled, hogy mit keresel itt. Tudja, hogy érzed magadtól is, hogy nincs itt semmi keresnivalód. Szembe fordít saját magával, egy kósza tincset pedig kisöpör arcodból, mielőtt kedvesen megjegyezné, hogy elcsatangoltál. Szemed sarkából látod, hogy Desolation visszavonul a szoba egyik sarkába. Majd később talán eszedbe jut, hogy milyen rémültnek is tűnt valójában, amint megjelent itt anyád.",
-		"Becsukódik az ajtó mögötted, miután anyád azt mondja, ne törődj vele. Érzed, hogy nem fogtok erről beszélgetni. Visszakísér a szobádhoz, hogy megidd a bájitalodat a procedúra előtt."
+        "Desolation látja, hogy figyeled. Megtesz feléd egy tétova lépést, a láncok azonban nem engedik őt tovább menni.",
+        "Hangokat hallasz a folyosó felől. Mielőtt még lehetőséged lenne hátrafordulni, anyád már ott van mögötted. Hideg kezét a válladra teszi. Nem kérdezi meg tőled, hogy mit keresel itt. Tudja, hogy érzed magadtól is, hogy nincs itt semmi keresnivalód. Szembe fordít saját magával, egy kósza tincset pedig kisöpör arcodból, mielőtt kedvesen megjegyezné, hogy elcsatangoltál. Szemed sarkából látod, hogy Desolation visszavonul a szoba egyik sarkába. Majd később talán eszedbe jut, hogy milyen rémültnek is tűnt valójában, amint megjelent itt anyád.",
+        "Becsukódik az ajtó mögötted, miután anyád azt mondja, ne törődj vele. Érzed, hogy nem fogtok erről beszélgetni. Visszakísér a szobádhoz, hogy megidd a bájitalodat a procedúra előtt."
       ],
       "choices": [
         {
@@ -1642,8 +1894,8 @@
       "paragraphs": [
         "Nem érzel az egészből semmit.",
         "Gondos kezek veszik le a kötést fejedről, és még gondosabbak, akik mágiával hozzád csatolnak engem. Még eszméletednél vagy, amikor először találkozol az én kékemmel, bár egészen biztos vagyok abban, hogy a perverz családod csinált velem valamit, és zöld lehettem ezelőtt.",
-		"Abban a pillanatban, hogy összekapcsolódunk, érzed, hogy velem valami nem természetes. Nem érzel sajátodnak, és még nem is láttad pedig önnön képmásod tükörben.",
-		"A következő napokat pihenéssel töltöd."
+        "Abban a pillanatban, hogy összekapcsolódunk, érzed, hogy velem valami nem természetes. Nem érzel sajátodnak, és még nem is láttad pedig önnön képmásod tükörben.",
+        "A következő napokat pihenéssel töltöd."
       ],
       "choices": [
         {
@@ -1663,6 +1915,29 @@
           "text": "Anyja beültette az erős látótól származó idegen szemet."
         }
       }
+    },
+    "s2_wake_dejavu_first": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "[IDE ÍRD UGYANAZT AZ ÉBREDÉST, DE A KARAKTER NEM EMLÉKSZIK A SZOBÁRA VAGY A BÁTYJÁRA. AZ ANYA HIDEG ÉRINTÉSÉRE ÉS ARRA A MONDATRA EMLÉKSZIK, HOGY TALÁLT NEKI EGY ÚJ SZEMET.]",
+        "[AZ ANYA KÖZLI, HOGY A SZEM EGY RENDKÍVÜL ERŐS LÁTÓÉ VOLT. A KARAKTER TUDJA, HOGY A SZEM PARAZITAKÉNT FOG VISELKEDNI.]"
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_protest_parasite_first",
+          "text": "Tiltakozol a parazita ellen.",
+          "next": "s2_dejavu_protest",
+          "tags": [
+            "normal"
+          ],
+          "effect": "normal",
+          "effects": {
+            "set": {
+              "implantReaction": "dejavu-refusal"
+            }
+          }
+        }
+      ]
     },
     "s2_wake_dejavu": {
       "title": "II. Fejezet — Anya",
@@ -1740,7 +2015,191 @@
               "hiddenTwinRoomFound": true,
               "hiddenTwinDiscovery": "deja-vu"
             }
+          },
+          "unlock": {
+            "any": [
+              {
+                "type": "seenChoice",
+                "id": "s2_normal_enter_hidden_twin_room"
+              },
+              {
+                "type": "seenChoice",
+                "id": "s2_dejavu_enter_hidden_twin_room_first"
+              },
+              {
+                "type": "seenChoice",
+                "id": "s2_dejavu_enter_hidden_twin_room"
+              }
+            ]
           }
+        },
+        {
+          "id": "s2_dejavu_escape_first",
+          "text": "Megpróbálsz megszökni.",
+          "next": "s2_hidden_twin_dejavu_first",
+          "tags": [
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "hiddenTwinRoomFound": true,
+              "hiddenTwinDiscovery": "deja-vu-first"
+            }
+          },
+          "unlock": {
+            "not": {
+              "any": [
+                {
+                  "type": "seenChoice",
+                  "id": "s2_normal_enter_hidden_twin_room"
+                },
+                {
+                  "type": "seenChoice",
+                  "id": "s2_dejavu_enter_hidden_twin_room_first"
+                },
+                {
+                  "type": "seenChoice",
+                  "id": "s2_dejavu_enter_hidden_twin_room"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "s2_hidden_twin_dejavu_first": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "Artikulálatlan hangokat hallasz valahonnan nem túl messziről.",
+        "Először úgy gondolod, csak Destiny lehet az, aki eljött azért, hogy vigyázzon rád, és csak a fejed játszik veled egy olyan játékot, hogy érthetetlenné mossa át a beszédét. Visszateszed a dugót a bájitalta, és bizonytalan lépésekkel kimész a folyosóra. Hiába hívod bátyád, ő azonban nem válaszol nevére.",
+        "Követed a hangot. Attól félsz, hogy őt se kímélték az inferusok, és valahogyan mégis megsérült. Mi másért is óbégatna? ",
+        "Megtorpansz az egyik ajtónál, ahonnan a hangok szűrődnek ki. A kilincsre szorul a kezed; érzed, hogy azt valaki kívülről bezárta, azonban az már olyan gyenge, hogy a varázslatod egy szempillantás alatt kinyitja majd azt. Hallod a neszezést odabentről, te pedig ahogy közelebb hajolsz az ajtóhoz, ismét bátyád nevét kérdezed.",
+        "A nyöszörgés pár pillanatra elhalkul a túloldalon, de aztán kapkodó, szabálytalan légzések sora veszi át a helyét. Úgy döntesz, hogy…"
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_enter_hidden_twin_room_first",
+          "text": "Belépsz a helyiségbe.",
+          "next": "s2_hidden_twin_revealed_dejavu_first",
+          "tags": [
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "sawHiddenTwin": true,
+              "hiddenTwinEntered": true
+            }
+          }
+        },
+        {
+          "id": "s2_dejavu_turn_back_before_twin_first",
+          "text": "Inkább visszatérsz a szobádba, és megiszod a bájitalt.",
+          "next": "s2_implant_dejavu",
+          "tags": [
+            "critical"
+          ],
+          "effect": "normal",
+          "effects": {
+            "set": {
+              "hiddenTwinEntered": false,
+              "declinedHiddenTwinRoom": true,
+              "procedureChoice": "dejavu-first-returned-and-drank"
+            }
+          }
+        }
+      ]
+    },
+    "s2_hidden_twin_revealed_dejavu_first": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "Egyenesen belököd az ajtót.",
+        "Sötét függönyökkel takart szobában találod magad. A szobában egyetlen ágy van, az alak mégis a földön kuporog hátát a falnak vetve. Mezítelenül terül el előtted valaki, akiről azt hiszed, hogy ismered. Egy pillanatra tényleg azt hiszed, hogy Destination az. Ugyanaz a szőke haj, ugyanazok a ragyogó szemek. Az arca azonban sokkal keskenyebb az övénél. Olyan, mintha egyenesen a rosszul sikerült, torz tükörképét látnád, ami kiszívta belőle az összes erőt. Bal karja természetellenesen simul saját testéhez, tartásában pedig látod az enyhe gerincferdülés jelét. Régi átokhegek futnak végig a nyakán, a csuklóján és a testén.",
+        "Megpróbál szólni hozzád, de csak artikulálatlan nyöszörgés hagyja el ezen szánalmas lény ajkait. Észreveszed lábán a láncot, mely ehhez a helyhez rögzíti őt, mint egy fenevadat.",
+        "A bátyád az. Tényleg a bátyád az.",
+        "Nem ő, hanem a másik.",
+        "Nincsenek emlékeid róla, de tudtad, hogy Destinationnek ikertestvére is született. Nem minden generációt áldott meg az Élet ikertestvérekkel, pedig az első Dreadmoorok is ikertestvérek, Malachias és Ysoria is ikrek voltak. Néha elfantáziáltál róla, hogy milyen lehetne, ha neked is lenne egy ikertestvéred, de ott volt neked Destiny, és nem kívánhatnál nála jobb testvért.",
+        "Néha tartottatok megemlékezéseket Desolationról. Úgy gondoltátok, hogy halott, szüleitek ezt mondták nektek. Mindig nagy szeretettel gondoltál arra az ideára, ami Desolation lehet. De bármit is képzeltél, bárhogy is gondoltad, az mégsem az, mint ez itt, előtted."
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_try_free_twin_first",
+          "text": "Megpróbálod kiszabadítani.",
+          "next": "s2_twin_attack_dejavu_first",
+          "tags": [
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "hiddenTwinReaction": "dejavu-first-tried-to-free"
+            }
+          }
+        },
+        {
+          "id": "s2_dejavu_fear_twin_first",
+          "text": "Megrémülsz tőle, és hátrálni kezdesz.",
+          "next": "s2_twin_fear_dejavu_first",
+          "tags": [
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "hiddenTwinReaction": "dejavu-first-feared"
+            }
+          }
+        }
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "hidden-twin-discovered",
+          "date": "II. fejezet",
+          "icon": "†",
+          "text": "Megtalálta a halottnak hitt bátyját a ház elzárt részében."
+        }
+      }
+    },
+    "s2_twin_attack_dejavu_first": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "Nem hagyhatod így itt. Naiv vagy – még nem rakod össze a képet, hogy a szüleid pontosan tisztában vannak Desolation nyomorával, hisz egyenesen ők taszították őt bele. Pedig nagyon is jól tudod, hogy apád lelkes az új kísérletekkel kapcsolatban. Azért az a sok kutatónapló és diafilm.",
+        "Pálcád a láncokra szegezed, Desolation tekintete azonban a kezedben lévő pálcára tapad. Nincs időd értelmezni a rémületet az arcán. Torkából kétségbeesett, könyörgő hang szakad fel, te pedig hiába próbálod megnyugtatni, hogy csak segíteni akarsz. Nem ért téged, nem érti, mit mondasz.",
+        "Aztán ahogy mozdítod a pálcádat, hogy kiszabadítsd, a sovány test neked ront. Fél kézzel üti le a karodat, a varázslatod pedig visszapattan a falról, hogy végleg keresztet vessen az ósdi, lemálló tapétának. Ujjai csuklód köré fonódnak, körmei a bőrödbe vájnak, majd amint elengedi, a torkod után kap. Mindkét kezével rászorít – az éppel, és azzal is, ami kissé mintha torznak hatna. Hüvelykujjai légcsövednek feszülnek, hátad pedig a falnak csapódik épp ott, ahová az átkod pattant. Hiába próbálod lefejteni magadról az ujjait, Desolation csak egyre kétségbeesetten kapaszkodik beléd. Erőtlenül hallatsz egy rekedt nyögést, de nem hat semmit az egész.",
+        "Anyád élesen csattanó hangja parancsol megálljt halálodnak – rövid időn belül kétszer is találkoztál családotok legfőbb múzsájával, és egyszer se vitt magával. Desolation azonnal elengedi a nyakad. Szó szerint félretaszít téged; a földre esel, levegő után kapkodsz, testvéred pedig összekuporodik a sarokban, mintha ezzel láthatatlanná tudna válni. Anyád jelenlétében rád se mer nézni.",
+        "Anyád úgy helyezkedik, hogy teljesen kitakarja előled bátyádat. Leguggol melléd, hűvös ujjait pedig az állad alá csúsztatja, hogy megnézze a sérülésed. Ahogy meggyőződött róla, hogy a sokkon kívül nincs további bajod, visszaparancsol a szobádba, hogy átess végre a procedúrán."
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_return_after_twin_attack_first",
+          "text": "Visszamész vele a procedúrához.",
+          "next": "s2_implant_dejavu",
+          "tags": [
+            "normal"
+          ]
+        }
+      ],
+      "presentation": {
+        "effect": "hit"
+      }
+    },
+    "s2_twin_fear_dejavu_first": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "Túl sok ez neked. Pedig sok mindent elbír a gyomrod – Dreadmoor vagy, szinonimátok az abberáltság, főleg, ha az Alsóházból valóak vagytok, mint te magad. Eszedbe jut a kutatónapló, amit a polcon találtál, és a diasorok, amikre pár pillantást vetettél, mielőtt elvitted volna. Nem tudtad értelmezni őket, és nyilván nem is a bátyád lehetett azokon a képeken. Mégis érzed a hasonlóságokat.",
+        "Desolation látja, hogy figyeled. Megtesz feléd egy tétova lépést, a láncok azonban nem engedik őt tovább menni.",
+        "Hangokat hallasz a folyosó felől. Mielőtt még lehetőséged lenne hátrafordulni, anyád már ott van mögötted. Hideg kezét a válladra teszi. Nem kérdezi meg tőled, hogy mit keresel itt. Tudja, hogy érzed magadtól is, hogy nincs itt semmi keresnivalód. Szembe fordít saját magával, egy kósza tincset pedig kisöpör arcodból, mielőtt kedvesen megjegyezné, hogy elcsatangoltál. Szemed sarkából látod, hogy Desolation visszavonul a szoba egyik sarkába. Majd később talán eszedbe jut, hogy milyen rémültnek is tűnt valójában, amint megjelent itt anyád.",
+        "Becsukódik az ajtó mögötted, miután anyád azt mondja, ne törődj vele. Érzed, hogy nem fogtok erről beszélgetni. Visszakísér a szobádhoz, hogy megidd a bájitalodat a procedúra előtt."
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_return_after_twin_fear_first",
+          "text": "Hagyod, hogy visszavezessen.",
+          "next": "s2_implant_dejavu",
+          "tags": [
+            "normal"
+          ]
         }
       ]
     },
