@@ -1482,8 +1482,11 @@
     "s2_hidden_twin_normal": {
       "title": "II. Fejezet — Anya",
       "paragraphs": [
-        "[A VEZÉRLŐPÁLCA A HÁZ EGY ELZÁRT, RITKÁN HASZNÁLT RÉSZÉHEZ VEZET. A KARAKTER MEGTALÁLJA A LEZÁRT HELYISÉGET, AHONNAN A HANG ÉRKEZIK, DE MÉG NEM LÉP BE.]",
-        "[AZ AJTÓ RÉSÉN VAGY A KÜSZÖBRŐL ANNYIT ÉRZÉKEL, HOGY VALAKIT REJTEGETNEK ODABENT. DÖNTHET ÚGY, HOGY BELÉP, VAGY VISSZAFORDUL A SAJÁT SZOBÁJÁBA ÉS MEGISSZA A BÁJITALT.]"
+        "Artikulálatlan hangokat hallasz valahonnan nem túl messziről.",
+        "Először úgy gondolod, csak Destiny lehet az, aki eljött azért, hogy vigyázzon rád, és csak a fejed játszik veled egy olyan játékot, hogy érthetetlenné mossa át a beszédét. Visszateszed a dugót a bájitalta, és bizonytalan lépésekkel kimész a folyosóra. Hiába hívod bátyád, ő azonban nem válaszol nevére.",
+		"Követed a hangot. Attól félsz, hogy őt se kímélték az inferusok, és valahogyan mégis megsérült. Mi másért is óbégatna? ",
+		"Megtorpansz az egyik ajtónál, ahonnan a hangok szűrődnek ki. A kilincsre szorul a kezed; érzed, hogy azt valaki kívülről bezárta, azonban az már olyan gyenge, hogy a varázslatod egy szempillantás alatt kinyitja majd azt. Hallod a neszezést odabentről, te pedig ahogy közelebb hajolsz az ajtóhoz, ismét bátyád nevét kérdezed.",
+		"A nyöszörgés pár pillanatra elhalkul a túloldalon, de aztán kapkodó, szabálytalan légzések sora veszi át a helyét. Úgy döntesz, hogy…"
       ],
       "choices": [
         {
@@ -1503,7 +1506,7 @@
         },
         {
           "id": "s2_normal_turn_back_before_twin",
-          "text": "Nem mész be. Visszatérsz a szobádba, és megiszod a bájitalt.",
+          "text": "Inkább visszatérsz a szobádba, és megiszod a bájitalt.",
           "next": "s2_implant_normal",
           "tags": [
             "critical"
