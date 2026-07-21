@@ -1695,32 +1695,6 @@
         }
       ]
     },
-    "s2_wake_dejavu": {
-      "title": "II. Fejezet — Anya",
-      "paragraphs": [
-        "Azonnal a kötéshez nyúlsz. Ismerős már a puha szövet ujjad alatt, mely elvesztett szemedet takarja. Megözönlenek téged az emlékek. Minden olyan ismerős, mintha mindez már megtörtént volna veled egyszer.",
-        "Nem csak azokra a pillanatokra emlékszel, amit az inferusokkal való viaskodások alatt töltöttél. Emlékszel a láncra kötött bátyádra a lezárt szobában, aki még beszélni se volt képes hozzád. Emlékszel a bájital mézédes ízére, amit anyád halott ujjai közül kapsz majd kezedhez. Emlékszel arra az első pillanatra, amikor megláttál engem a tükörben önmagadban. Emlékszel a képekre, amiket akartam, hogy általam láss, és emlékszel arra a fájdalomra is, amit önmagadnak okoztál, csak hogy megszabadulhass tőlem.",
-        "De én itt vagyok veled újra, mindkettőnk rettentő örömére.",
-        "Felülsz, még mielőtt anyád abbahagyná dolgaid rendezgetését a szekrényen. Már azelőtt hallod a tárgy koppanását, mielőtt az tényleg megtörténne, és készülsz arra is, hogy a régi matrac, amin fekszel, besüpped majd, ahogy leül melléd.",
-        "Egyenesen az arcára nézel. Hagyod, hogy vékony, hideg ujjai hozzáérjenek arcodhoz éppen ott, ahol emlékeidben is történt. Abban a másik életben megnyugtatott az anyai érintés, és elsöpörte belőled a bizonytalanságot. Most azonban csak azok a borzalmak jutnak eszedbe, amit az általa választott ajándéka okozott számodra."
-      ],
-      "choices": [
-        {
-          "id": "s2_dejavu_protest_parasite",
-          "text": "Tiltakozol a parazita ellen.",
-          "next": "s2_dejavu_protest",
-          "tags": [
-            "normal"
-          ],
-          "effect": "normal",
-          "effects": {
-            "set": {
-              "implantReaction": "dejavu-refusal"
-            }
-          }
-        }
-      ]
-    },
     "s2_dejavu_protest": {
       "title": "II. Fejezet — Anya",
       "paragraphs": [
@@ -1909,132 +1883,6 @@
           "tags": [
             "normal"
           ]
-        }
-      ]
-    },
-    "s2_hidden_twin_dejavu": {
-      "title": "II. Fejezet — Anya",
-      "paragraphs": [
-        "[A KARAKTER EMLÉKEI ALAPJÁN JUT EL A HÁZ ELZÁRT RÉSZÉBE. FELISMERI AZ AJTÓT, ÉS MÁR A KINYITÁSA ELŐTT TUDJA, KIT REJTENEK MÖGÖTTE.]",
-        "[MOST MÉG VISSZAFORDULHAT. HA NEM LÉP BE, VISSZATÉRHET A SAJÁT SZOBÁJÁBA, MEGIHATJA A BÁJITALT, ÉS HAGYHATJA, HOGY A BEAVATKOZÁS ÚJRA MEGTÖRTÉNJEN.]"
-      ],
-      "choices": [
-        {
-          "id": "s2_dejavu_enter_hidden_twin_room",
-          "text": "Kinyitod az ajtót, és belépsz.",
-          "next": "s2_hidden_twin_revealed_dejavu",
-          "tags": [
-            "critical"
-          ],
-          "effect": "glitch",
-          "effects": {
-            "set": {
-              "sawHiddenTwin": true,
-              "hiddenTwinEntered": true
-            }
-          }
-        },
-        {
-          "id": "s2_dejavu_turn_back_before_twin",
-          "text": "Nem lépsz be. Visszatérsz a szobádba, és megiszod a bájitalt.",
-          "next": "s2_implant_dejavu",
-          "tags": [
-            "critical"
-          ],
-          "effect": "normal",
-          "effects": {
-            "set": {
-              "hiddenTwinEntered": false,
-              "declinedHiddenTwinRoom": true,
-              "procedureChoice": "dejavu-returned-and-drank"
-            }
-          }
-        }
-      ]
-    },
-    "s2_hidden_twin_revealed_dejavu": {
-      "title": "II. Fejezet — Anya",
-      "paragraphs": [
-        "[A KARAKTER EMLÉKEI ALAPJÁN JUT EL A HÁZ ELZÁRT RÉSZÉBE. MÁR AZ AJTÓ KINYITÁSA ELŐTT TUDJA, HOGY DESTINATIONNEL AZONOS ARCOT FOG LÁTNI.]",
-        "[A HALOTTNAK HITT BÁTY EBBEN AZ ÉLETBEN IS OTT VAN: GYENGE, LEAMORTIZÁLT ÉS BESZÉDKÉPTELEN. A FELFEDEZÉS MOST AZT BIZONYÍTJA, HOGY A KORÁBBI EMLÉKEK NEM PUSZTA LÁTOMÁSOK VOLTAK.]"
-      ],
-      "choices": [
-        {
-          "id": "s2_dejavu_try_free_twin",
-          "text": "Megpróbálod kiszabadítani.",
-          "next": "s2_twin_attack_dejavu",
-          "tags": [
-            "normal"
-          ],
-          "effect": "normal",
-          "effects": {
-            "set": {
-              "hiddenTwinReaction": "dejavu-tried-to-free"
-            }
-          }
-        },
-        {
-          "id": "s2_dejavu_fear_twin",
-          "text": "Megrémülsz tőle, és hátrálni kezdesz.",
-          "next": "s2_twin_fear_dejavu",
-          "tags": [
-            "normal"
-          ],
-          "effect": "normal",
-          "effects": {
-            "set": {
-              "hiddenTwinReaction": "dejavu-feared"
-            }
-          }
-        }
-      ],
-      "presentation": {
-        "timeline": {
-          "id": "hidden-twin-discovered",
-          "date": "II. fejezet",
-          "icon": "†",
-          "text": "Megtalálta a halottnak hitt bátyját a ház elzárt részében."
-        }
-      }
-    },
-    "s2_twin_attack_dejavu": {
-      "title": "II. Fejezet — Anya",
-      "paragraphs": [
-        "[A BÁTY A KISZABADÍTÁSI KÍSÉRLETRE RÁTÁMAD A KARAKTERRE ÉS FOJTOGATNI KEZDI. A KARAKTER EMLÉKSZIK A MOZDULATRA, DE ETTŐL MÉG NEM TUDJA MEGÁLLÍTANI.]",
-        "[AZ ANYA MEGMENTI. A BÁTY TŐLE MOST IS AZONNAL VISSZAHŐKÖL ÉS LÁTHATÓAN RETTEG.]",
-        "[AZ ANYA VISSZAVISZI A KARAKTERT A BEÜLTETÉSHEZ. A DÉJÀ VU ÚTVONAL NEM TÉR VISSZA A NORMÁL ÁGRA.]"
-      ],
-      "choices": [
-        {
-          "id": "s2_dejavu_return_after_twin_attack",
-          "text": "Újra a procedúra elé kerülsz.",
-          "next": "s2_implant_dejavu",
-          "tags": [
-            "normal"
-          ],
-          "effect": "normal"
-        }
-      ],
-      "presentation": {
-        "effect": "hit"
-      }
-    },
-    "s2_twin_fear_dejavu": {
-      "title": "II. Fejezet — Anya",
-      "paragraphs": [
-        "[A KARAKTER HÁTRÁL. AZ ANYA MEGTALÁLJA, MEGNYUGTATJA VAGY RÁHATÁSSAL ENGEDELMESSÉ TESZI.]",
-        "[A KARAKTER MÁR TUDJA, HOGY MAGYARÁZATOT NEM FOG KAPNI. AZ ANYA VISSZAVEZETI A BEÜLTETÉSHEZ.]",
-        "[A DÉJÀ VU ÚTVONAL NEM TÉR VISSZA A NORMÁL ÁGRA.]"
-      ],
-      "choices": [
-        {
-          "id": "s2_dejavu_return_after_twin_fear",
-          "text": "Hagyod, hogy újra visszavezessen.",
-          "next": "s2_implant_dejavu",
-          "tags": [
-            "normal"
-          ],
-          "effect": "normal"
         }
       ]
     },
@@ -2697,7 +2545,7 @@
       "type": "ending",
       "endingId": "FULFILLER",
       "order": 7,
-      "title": "A beteljesítő",
+      "title": "Az önbeteljesítő",
       "paragraphs": [
         "Napokon át mutatom neked a madárijesztőt a kukoricás szélén. Megszoktad, hogy az mindig háttal áll a házatoknak, a látomásokban azonban szembefordul veletek. Desnek persze elmesélsz mindent; megszokássá válik, hogy minden egyes nap kimentek egyet sétálni, persze gondosan ügyelve arra, hogy apátok amulettje ezúttal ne hagyjon titeket cserben.",
 		"Találtál régi fotókat a házról, de még azokon is háttal állt a háznak. A látomásaid azonban nem hagynak nyugodni. Mindegy, mi másra próbálsz koncentrálni, én újra és újra ugyanazt mutatom meg neked, valahányszor lehunyod a szemed. Zsákfején csálén áll a szétfoszlott kalap, kabátját szétrágták a molyok és az idők. Az inferusokkal fertőzött területen adná magát, hogy valamelyik majd véletlen megmozdítja, ám azok mozdulatlanok, hisz nem érzékelnek olyan veszélyt, amit meg kell állítani.",
