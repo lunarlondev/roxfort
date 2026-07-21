@@ -1598,9 +1598,10 @@
     "s2_twin_fear_normal": {
       "title": "II. Fejezet — Anya",
       "paragraphs": [
-        "[A KARAKTER HÁTRÁL. A BÁTY ÉSZREVESZI, FIGYELI, ESETLEG LASSAN KÖZELEDNI KEZD, DE NEM KELL AZONNAL RÁTÁMADNIA.]",
-        "[AZ ANYA MEGTALÁLJA A KARAKTERT ÉS MEGNYUGTATJA. MARADJON BIZONYTALAN, HOGY ANYAI GYENGÉDSÉGET, VÁMPÍRI RÁHATÁST VAGY BŰBÁJT HASZNÁL.]",
-        "[NEM MONDJA EL, KIT LÁTOTT A KARAKTER. VISSZAVEZETI A BEAVATKOZÁSHOZ.]"
+        "Túl sok ez neked. Pedig sok mindent elbír a gyomrod – Dreadmoor vagy, szinonimátok az abberáltság, főleg, ha az Alsóházból valóak vagytok, mint te magad. Eszedbe jut a kutatónapló, amit a polcon találtál, és a diasorok, amikre pár pillantást vetettél, mielőtt elvitted volna. Nem tudtad értelmezni őket, és nyilván nem is a bátyád lehetett azokon a képeken. Mégis érzed a hasonlóságokat.",
+		"Desolation látja, hogy figyeled. Megtesz feléd egy tétova lépést, a láncok azonban nem engedik őt tovább menni.",
+		"Hangokat hallasz a folyosó felől. Mielőtt még lehetőséged lenne hátrafordulni, anyád már ott van mögötted. Hideg kezét a válladra teszi. Nem kérdezi meg tőled, hogy mit keresel itt. Tudja, hogy érzed magadtól is, hogy nincs itt semmi keresnivalód. Szembe fordít saját magával, egy kósza tincset pedig kisöpör arcodból, mielőtt kedvesen megjegyezné, hogy elcsatangoltál. Szemed sarkából látod, hogy Desolation visszavonul a szoba egyik sarkába. Majd később talán eszedbe jut, hogy milyen rémültnek is tűnt valójában, amint megjelent itt anyád.",
+		"Becsukódik az ajtó mögötted, miután anyád azt mondja, ne törődj vele. Érzed, hogy nem fogtok erről beszélgetni. Visszakísér a szobádhoz, hogy megidd a bájitalodat a procedúra előtt."
       ],
       "choices": [
         {
@@ -1616,8 +1617,8 @@
     "s2_implant_normal": {
       "title": "II. Fejezet — Anya",
       "paragraphs": [
-        "[IDE ÍRD A NORMÁL SZEMBEÜLTETÉS TÖREDEZETT JELENETÉT. A KARAKTER ELKÁBUL, CSAK HANGOKAT, ÉRINTÉSEKET ÉS RÖVID FÁJDALOMKITÖRÉSEKET ÉRZÉKEL.]",
-        "[A SZEM BEÜLTETÉSE MINDEN NORMÁL II. FEJEZETES ÁGON MEGTÖRTÉNIK.]"
+        "Óvatosan emeled ajkaidhoz a bájitalt. Anyád türelemre intett, így apró, kicsi kortyokat veszel csak a méz ízű, opálos színű bájitalból.",
+        "Ismét sötétedni kezd a világ. Még érzed, hogy tested elernyed az ágyon, és nagyjából magadnál vagy akkor is, amikor elvisznek téged valahova máshova, hogy végre találkozz velem, a valódi végzeteddel."
       ],
       "choices": [
         {
@@ -1639,8 +1640,10 @@
     "s2_eye_implanted_normal": {
       "title": "II. Fejezet — Anya",
       "paragraphs": [
-        "[A BEAVATKOZÁS UTÁN A KARAKTER ELŐSZÖR MÉG CSAK FÉNYT ÉS MOZGÁST ÉRZÉKEL AZ ÚJ SZEMMEL. VALAMI AZONBAN MÁR AZ ELSŐ PILLANATBAN NEM TERMÉSZETES.]",
-        "[NÉHÁNY NAP TELIK EL. A SEB GYÓGYUL, AZ IDEGEN SZEM PEDIG EGYRE MÉLYEBBEN KAPCSOLÓDIK A TESTHEZ.]"
+        "Nem érzel az egészből semmit.",
+        "Gondos kezek veszik le a kötést fejedről, és még gondosabbak, akik mágiával hozzád csatolnak engem. Még eszméletednél vagy, amikor először találkozol az én kékemmel, bár egészen biztos vagyok abban, hogy a perverz családod csinált velem valamit, és zöld lehettem ezelőtt.",
+		"Abban a pillanatban, hogy összekapcsolódunk, érzed, hogy velem valami nem természetes. Nem érzel sajátodnak, és még nem is láttad pedig önnön képmásod tükörben.",
+		"A következő napokat pihenéssel töltöd."
       ],
       "choices": [
         {
