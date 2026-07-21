@@ -1919,8 +1919,12 @@
     "s2_wake_dejavu_first": {
       "title": "II. Fejezet — Anya",
       "paragraphs": [
-        "[IDE ÍRD UGYANAZT AZ ÉBREDÉST, DE A KARAKTER NEM EMLÉKSZIK A SZOBÁRA VAGY A BÁTYJÁRA. AZ ANYA HIDEG ÉRINTÉSÉRE ÉS ARRA A MONDATRA EMLÉKSZIK, HOGY TALÁLT NEKI EGY ÚJ SZEMET.]",
-        "[AZ ANYA KÖZLI, HOGY A SZEM EGY RENDKÍVÜL ERŐS LÁTÓÉ VOLT. A KARAKTER TUDJA, HOGY A SZEM PARAZITAKÉNT FOG VISELKEDNI.]"
+        "Azonnal a kötéshez nyúlsz. Ismerős már a puha szövet ujjad alatt, mely elvesztett szemedet takarja. Megözönlenek téged az emlékek. Minden olyan ismerős, mintha mindez már megtörtént volna veled egyszer.",
+        "Nem csak azokra a pillanatokra emlékszel, amit az inferusokkal való viaskodások alatt töltöttél. Emlékszel a bájital mézédes ízére, amit anyád halott ujjai közül kapsz majd kezedhez. Emlékszel arra az első pillanatra, amikor megláttál engem a tükörben önmagadban. Emlékszel a képekre, amiket akartam, hogy általam láss, és emlékszel arra a fájdalomra is, amit önmagadnak okoztál, csak hogy megszabadulhass tőlem.",
+		"De én itt vagyok veled újra, mindkettőnk rettentő örömére.",
+		"Felülsz, még mielőtt anyád abbahagyná dolgaid rendezgetését a szekrényen. Már azelőtt hallod a tárgy koppanását, mielőtt az tényleg megtörténne, és készülsz arra is, hogy a régi matrac, amin fekszel, besüpped majd, ahogy leül melléd.",
+		"Egyenesen az arcára nézel. Hagyod, hogy vékony, hideg ujjai hozzáérjenek arcodhoz éppen ott, ahol emlékeidben is történt. Abban a másik életben megnyugtatott az anyai érintés, és elsöpörte belőled a bizonytalanságot. Most azonban csak azok a borzalmak jutnak eszedbe, amit az általa választott ajándéka okozott számodra.",
+		"Megelőzöd őt a beszédben, hisz úgyis tudod, mit akar majd mondani neked. Próbálod elmagyarázni neki, hogy mit fogok tenni veled. Az őrületbe foglak kergetni, ismét, mert az erőszakra, amit anyád elkövetett ellenem, az erőszak a méltó válasz. Újra bele foglak kergetni halálodba, és teszem meg ezt újra és újra. Megmutatok neked mindent abból, amire nem állsz készen, éhséget, fájdalmat és idegen gondolatokat fogok beléd szivárogtatni, míg fel nem adod újra."
       ],
       "choices": [
         {
@@ -1942,8 +1946,12 @@
     "s2_wake_dejavu": {
       "title": "II. Fejezet — Anya",
       "paragraphs": [
-        "[IDE ÍRD UGYANAZT AZ ÉBREDÉST, DE A KARAKTER MÁR EMLÉKSZIK A SZOBÁRA, AZ ANYA HIDEG ÉRINTÉSÉRE ÉS ARRA A MONDATRA, HOGY TALÁLT NEKI EGY ÚJ SZEMET.]",
-        "[AZ ANYA KÖZLI, HOGY A SZEM EGY RENDKÍVÜL ERŐS LÁTÓÉ VOLT. A KARAKTER TUDJA, HOGY A SZEM PARAZITAKÉNT FOG VISELKEDNI.]"
+        "Azonnal a kötéshez nyúlsz. Ismerős már a puha szövet ujjad alatt, mely elvesztett szemedet takarja. Megözönlenek téged az emlékek. Minden olyan ismerős, mintha mindez már megtörtént volna veled egyszer.",
+        "Nem csak azokra a pillanatokra emlékszel, amit az inferusokkal való viaskodások alatt töltöttél. Emlékszel a láncra kötött bátyádra a lezárt szobában, aki még beszélni se volt képes hozzád. Emlékszel a bájital mézédes ízére, amit anyád halott ujjai közül kapsz majd kezedhez. Emlékszel arra az első pillanatra, amikor megláttál engem a tükörben önmagadban. Emlékszel a képekre, amiket akartam, hogy általam láss, és emlékszel arra a fájdalomra is, amit önmagadnak okoztál, csak hogy megszabadulhass tőlem.",
+		"De én itt vagyok veled újra, mindkettőnk rettentő örömére.",
+		"Felülsz, még mielőtt anyád abbahagyná dolgaid rendezgetését a szekrényen. Már azelőtt hallod a tárgy koppanását, mielőtt az tényleg megtörténne, és készülsz arra is, hogy a régi matrac, amin fekszel, besüpped majd, ahogy leül melléd.",
+		"Egyenesen az arcára nézel. Hagyod, hogy vékony, hideg ujjai hozzáérjenek arcodhoz éppen ott, ahol emlékeidben is történt. Abban a másik életben megnyugtatott az anyai érintés, és elsöpörte belőled a bizonytalanságot. Most azonban csak azok a borzalmak jutnak eszedbe, amit az általa választott ajándéka okozott számodra.",
+		"Megelőzöd őt a beszédben, hisz úgyis tudod, mit akar majd mondani neked. Próbálod elmagyarázni neki, hogy mit fogok tenni veled. Az őrületbe foglak kergetni, ismét, mert az erőszakra, amit anyád elkövetett ellenem, az erőszak a méltó válasz. Újra bele foglak kergetni halálodba, és teszem meg ezt újra és újra. Megmutatok neked mindent abból, amire nem állsz készen, éhséget, fájdalmat és idegen gondolatokat fogok beléd szivárogtatni, míg fel nem adod újra. Elmeséled azt is, hogy tudsz Desolationról, és tudod, hogy melyik szobában tartja őt."
       ],
       "choices": [
         {
