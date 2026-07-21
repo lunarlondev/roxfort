@@ -2392,11 +2392,15 @@
       "type": "ending",
       "endingId": "EYE_REMOVAL_DEATH",
       "order": 1,
-      "title": "A szem nélküli vég",
+      "title": "III. Fejezet — Parazita",
       "paragraphs": [
-        "[A KARAKTER SAJÁT KEZŰLEG ELTÁVOLÍTJA AZ ÚJ SZEMET. A SZEM MÁR ÖSSZENŐTT AZ IDEGEKKEL, ÉS GYÖKEREI A KOPONYA BELSEJÉBE FUTNAK.]",
-        "[AZ ELTÁVOLÍTÁS SIKERÜL, DE A KARAKTER BELEHAL A VÉRZÉSBE, A MÁGIKUS SOKKBA, AZ AGYI SÉRÜLÉSBE VAGY ABBA, HOGY A PARAZITA MAGÁVAL TÉPI A HOZZÁ KÖTÖTT RÉSZEIT.]",
-        "Ez az ending oldja fel a következő végigjátszásban a Déjà Vu választást."
+        "Nem várod meg a holnapot. Ennek itt és most véget fogsz vetni, mindegy, mi az ára.",
+        "Félig-meddig tudod kirántani magad a látomásból. Fél szemeddel a szobádat látod. Az ódon tapétát, amit nem kímélt a kor, a baldachinos ágyadhoz tartozó oszlopokat, és a fésülködő asztalodat, ahol a hajaddal és a sminkeddel foglalkozol, mióta Nebraskába jöttetek. Másik fél szemed azonban továbbra is egyszerre látja a vérvörös holdat és a napot. Egyszerre érzed az égő és a rothadó hús szagát. Kezed orrod elé emeled, hogy csillapítsd a hányingert, ami egészen szokatlan és újszerű élmény. Még soha nem voltál rosszul holttesttől, pedig láttál eleget. Segítettél balzsamozni a holtakat is szertartásokon.",
+		"Remegve kapaszkodsz meg az asztal szélében, ahogyan leülsz az előtte lévő székbe. Rövid ideig nézel szembe falfehér arcoddal. Barna íriszed már vörös a könnyektől, de én, a kék nyugodt vagyok. Pálcád egyenesen rám szegezed, hogy megölj vele, mint valami parazitát. Másik kezeddel kell kitámasztanod a csuklódat, hogy stabilan tarthasd magad. Elég egy rossz szög, egyetlen hiba, és nem csak engem fogsz vele elkárhoztatni, hanem saját magadat is.",
+		"De épp ezt akarod, nem? Úgy döntöttél, megszabadulsz tőlem, végleg és örökké, bármi is legyen az ára.",
+		"Azelőtt mondod ki az átkot, mielőtt meggondolhatnád magad. Gyorsan és kíméletesen akarod csinálni. Kár, hogy ez csak a gondolataidban sikerül így. Olyan mélyen eresztettem gyökeret benned, hogy hiába roncsolsz szét, most már benned vagyok, örökkön és örökké. Nincs olyan valóság, ahol tovább élhetsz nélkülem, Elegy Dreadmoor, mert mi ketten egyek vagyunk, míg világ a világ.",
+		"Vagy talán nem. Talán így, holtodban megszabadulhatsz tőlem.",
+		"Élettelen tested az asztalodra bukik fejjel előre, hogy másnap bátyád, szeretett bátyád rád találhasson."
       ],
       "presentation": {
         "effect": "death",
@@ -2404,9 +2408,16 @@
           "id": "ending-EYE_REMOVAL_DEATH",
           "date": "Befejezés",
           "icon": "†",
-          "text": "Befejezés: A szem nélküli vég."
+          "text": "Befejezés: Szabad halál."
         },
-        "afterEndingTimeline": [],
+        "afterEndingTimeline": [
+		{
+            "id": "seerheir1",
+            "date": "2006",
+            "icon": "†",
+            "text": "Meghal. A gyászidőszak miatt Destination hosszú időre halasztja belépését a Noctuába."
+          }
+		  ],
         "endingStyle": "death"
       }
     },
