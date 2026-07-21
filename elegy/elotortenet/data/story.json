@@ -1,9 +1,11 @@
 {
   "meta": {
     "id": "necromancer-eye-story",
-    "version": 5,
+    "version": 6,
     "title": "Szemet szemért",
-    "start": "s1_return_to_estate"
+    "start": "s1_return_to_estate",
+    "startButtonText": "Kezdjük az olvasást!",
+    "startPrompt": "Ebben az előtörténetben Te döntesz arról, hogy mi történik, és Te irányíthatod a karaktert is - hasonlóan ahhoz, ahogyan korunk legnagyobb nekromágusa, Requiem Dreadmoor játszik a holtakkal. A karakter története ebből fakadóan zavaros és absztrakt; talán minden megtörtént a leírtak közül egyszerre. Talán egyik sem.\n\nAz Idővonal választásaid alapján alakul át.\n\nHárom titkos választás rejtőzik a sorok között. Egy, amit türelemmel oldasz fel, egy, amit meghozott döntéseid láttatnak veled, és egy, amihez a Halál mutat ösvényt számodra."
   },
   "nodes": {
     "s1_return_to_estate": {
@@ -53,7 +55,21 @@
             }
           }
         }
-      ]
+      ],
+      "media": {
+        "src": "images/story/chapter-nebraska.jpg",
+        "alt": "A nebraskai Dreadmoor-birtok komor hangulatképe",
+        "position": "center"
+      },
+      "presentation": {
+        "chapter": {
+          "roman": "0",
+          "label": "Prológus",
+          "title": "Nebraska",
+          "duration": 4800
+        },
+        "chapterImage": true
+      }
     },
     "s1_radio_classical_reaction": {
       "title": "0. Fejezet: Nebraska",
@@ -121,39 +137,42 @@
           "text": "Bogár Bárd meséi",
           "next": "s1_beetlebard_reaction",
           "tags": [
-            "normal"
+            "critical"
           ],
           "effects": {
             "set": {
               "bookChoice": "beetlebard"
             }
-          }
+          },
+          "effect": "critical"
         },
         {
           "id": "s1_kutatnaplo",
           "text": "Kutatónapló",
           "next": "s1_kutatnaplo_reaction",
           "tags": [
-            "normal"
+            "critical"
           ],
           "effects": {
             "set": {
               "bookChoice": "kutatnaplo"
             }
-          }
+          },
+          "effect": "critical"
         },
         {
           "id": "s1_book_skip",
           "text": "Nem olvasol semmit.",
           "next": "s1_book_skip_reaction",
           "tags": [
-            "normal"
+            "critical"
           ],
           "effects": {
             "set": {
               "bookChoice": "skipped"
             }
-          }
+          },
+          "effect": "critical"
         }
       ]
     },
@@ -212,55 +231,58 @@
       ]
     },
     "s1_attack_start": {
-      "title": "I. Fejezet: Inferius",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
         "Csak egy pontatlan térképet kaptatok apátoktól, és egy-egy medált családotok pecsétjével. Kérdés nélkül inferiusokkal szennyezett földre vet titeket. Gondoskodása, hogy az ereklyével legalább nem tesz titeket teremtményei áldozatává, már majdnem azt feltételezi, hogy akár még érezhet is valamit gyermekei iránt.",
         "Bár valójában elég büszke rátok. Az élők közül ti vagytok a kedvenc teremtményei. Igazán kár lenne értetek.",
         "Száraz, derékig érő gazban tapostok a terjedelmes birtokon. Ruhád széle beleakad az egyik elszáradt, összetöredezett kukoricaszárba. Senki földjén is lehetnétek, pedig ez a föld valójában a tiétek még akkor is, ha a Felsőház visszakövetelte azt tőletek. Apátok viszont annyi meglepetést ásott el a termőföld alá, hogy nem érte meg vesződniük vele. Egyszerűen elrejtették azt a magnixok elől, és erős védővarázslatokkal érték el azt, hogy illetéktelenek akkor se akarjanak a területre tévedni, ha valamiért hirtelen vonzónak találnák ezt a kietlenséget.",
-        "Jól tudod, hogy a legtöbb inferius a föld alatt van – noha pár példány lomhán néz utánatok. Apátok pecsétje megvéd titeket, hisz sajátjaiként ismernek fel titeket. Vélhetően ha ez nem lenne rajtatok, már rég ti is halottak lennétek. Abba persze nem gondolsz bele, hogy mégis honnan szerzett ennyi testet, de az ilyen részletek felett rendszeresen elsikkadsz. Pedig apád fekete mágus, és oka van annak, hogy még a Felsőház se mutatkozik vele szívesen. A te szemedben viszont mégis csak az apád, akivel annyit utaztatok, aki megtanította neked használni a mágiát, és aki végérvényesen megdicséri a ruhát, amit magadra öltesz.",
+        "Jól tudod, hogy a legtöbb inferus a föld alatt van – noha pár példány lomhán néz utánatok. Apátok pecsétje megvéd titeket, hisz sajátjaiként ismernek fel titeket. Vélhetően ha ez nem lenne rajtatok, már rég ti is halottak lennétek. Abba persze nem gondolsz bele, hogy mégis honnan szerzett ennyi testet, de az ilyen részletek felett rendszeresen elsikkadsz. Pedig apád fekete mágus, és oka van annak, hogy még a Felsőház se mutatkozik vele szívesen. A te szemedben viszont mégis csak az apád, akivel annyit utaztatok, aki megtanította neked használni a mágiát, és aki végérvényesen megdicséri a ruhát, amit magadra öltesz.",
         "Apátok is csak homályosan emlékszik arra, pontosan hogyan is néz ki az a lejáró, amire szüksége van. A korral jár, nem az igazi már, nem olyan, mint fénykorában. A térkép és Requiem emlékei szerint három tájékozódási pont segíthet titeket: egy régi, kiszáradt kút, melyben utoljára nagyapátok, Sepulcher Dreadmoor idejében csoboghatott élet; egy villám sújtotta fa, mely egykor apátok pálcájának fáját biztosította; valamint egy szélkerék, ami mára minden bizonnyal berozsdásodott.",
         "Több, mint ötven éve viszont, hogy apátok egyáltalán az államban járt. A térkép pontatlan, a táj pedig teljesen megváltozott az idők folyamán."
       ],
       "choices": [
         {
           "id": "s1_route_map",
-          "text": "Alaposabban összeveted a térképet azzal, amit magatok körül láttok.",
+          "text": "Alaposabban összeveted a térképet a környezettel.",
           "next": "s1_route_map_scene",
           "tags": [
-            "normal"
+            "critical"
           ],
           "effects": {
             "set": {
               "fieldRoute": "map"
             }
-          }
+          },
+          "effect": "critical"
         },
         {
           "id": "s1_route_follow_des",
-          "text": "Destinationt követed. Logikusan ott lesz a lejáró, ahol több inferius őrködik.",
+          "text": "Destinationt követed.",
           "next": "s1_route_des_scene",
           "tags": [
-            "normal"
+            "critical"
           ],
           "effects": {
             "set": {
               "fieldRoute": "destination"
             }
-          }
+          },
+          "effect": "critical"
         },
         {
           "id": "s1_route_clear_magic",
-          "text": "Varázslattal megtisztítod magatok előtt az utat.",
+          "text": "Tarolóátokkal megtisztítod magad előtt az utat.",
           "next": "s1_route_clear_scene",
           "tags": [
-            "normal"
+            "critical"
           ],
           "effects": {
             "set": {
               "fieldRoute": "magic",
               "extraInferiAwakened": true
             }
-          }
+          },
+          "effect": "critical"
         },
         {
           "id": "s1_dejavu_refusal",
@@ -282,18 +304,35 @@
             }
           }
         }
-      ]
+      ],
+      "media": {
+        "src": "images/story/chapter-aratas.jpg",
+        "alt": "Kiszáradt nebraskai kukoricaföld",
+        "position": "center"
+      },
+      "presentation": {
+        "chapter": {
+          "roman": "I",
+          "label": "Fejezet",
+          "title": "Aratás",
+          "duration": 4800
+        },
+        "chapterImage": true
+      }
     },
     "s1_route_map_scene": {
-      "title": "A térkép nyomán",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN VETED ÖSSZE A TÉRKÉPEN SZEREPLŐ KUTAT, VILLÁM SÚJTOTTA FÁT ÉS SZÉLKEREKET A MEGVÁLTOZOTT TÁJJAL. A TÉRKÉP PONTATLAN, DE A HÁROM JELBŐL KÖVETKEZTETNI TUDSZ A LEJÁRÓ HELYÉRE.]",
-        "[MIKÖZBEN ÁTBÚJSZ EGY ROZSDÁS KERÍTÉSRÉSZ VAGY TÜSKÉS INDÁK KÖZÖTT, A MEDÁL LÁNCA FENNAKAD ÉS ELSZAKAD. NEM VESZED ÉSZRE, HOGY A CSALÁDI PECSÉT A GAZ KÖZÉ HULLIK.]"
+        "Talán kicsit időigényesebb a megoldás, de nincs okotok sietni.",
+        "Elsőnek a kutat találod meg. Épp szerencséd volt, amikor felnéztél a térképből és megláttad a távoli objektumot",
+        "Ahogyan odaértek, tájoló bűbájjal északnak fordulsz, és a térkép alapján keresed a fát apátok térképe és orális emlékezete alapján. Korhadt már a fa törzse, de épp mellette új élet burjánzik a vad vidéken.",
+        "A szélkeréknek sajnos nyoma sincs. Már rég az enyészeté lehet, de mindez már nem számít. Épp elég támpontot szereztél hozzá, hogy megtaláljátok a csapóajtót, amit apátok keresett.",
+        "Persze okosabb lett volna, ha a kútnál maradsz, vagy ott hazafordulsz. Észre se veszed, hogy ahogy a korhadt fát közelíted meg, miként akad bele a nyakláncod egy tüskés indába. Hangját se hallod, ahogy a lánc elszakad és a földre hullik."
       ],
       "choices": [
         {
           "id": "s1_route_map_continue",
-          "text": "A felismert tájékozódási pontok felé vezeted Destinationt.",
+          "text": "Tovább a csapóajtóhoz.",
           "next": "s1_site_found_map",
           "tags": [
             "normal"
@@ -310,15 +349,18 @@
       ]
     },
     "s1_route_des_scene": {
-      "title": "Destination nyomában",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN FIGYELI DESTINATION A FÖLDET ÉS AZ INFERIUSOK ELHELYEZKEDÉSÉT. NEM MÁGIÁT HASZNÁL, HANEM EGYSZERŰEN FELISMERI, HOGY A SŰRŰBBEN ŐRZÖTT TERÜLET REJTHETI A LEJÁRÓT.]",
-        "[EGY LOMHÁN UTÁNATOK FORDULÓ INFERIUS MELLETT KELL ELMENNETEK. NEM TÁMAD, DE AMIKOR A GAZBAN KITÉRSZ ELŐLE, A MEDÁLOD LÁNCA EGY KISZÁRADT KUKORICASZÁRBA AKAD ÉS LECSÚSZIK RÓLAD. NEM VESZED ÉSZRE.]"
+        "A név kötelez – és ki másnak lenne célravezetőbb neve, mint Destinationnek?",
+        "Engeded, hogy fivéred vezessen. Csontos ujjaid összefonod az övéivel, miközben az inferusokkal fertőzött földön sétáltok. Átgázoltok a sűrű füvön, és csak olykor álltok meg azért, hogy Des ellenőrizze a térképet és a területet.",
+        "Ritkábban pillant a térképre, mint te tennéd. Te ezt még nem tudod, de stratégikusan keresi azokat a csomópontokat, amiket sűrűbben őriznek pszichopata apátok mocskos teremtményei.  Te nem ijedsz meg tőlük, mert igazán nem találsz bennük semmi rémisztőt. Megszoktad, talán kicsit vonz is. Életed első táncát is egy bábtól kaptad kislány korodban.",
+        "Nevetésetek telíti meg a helyet, míg meg nem találjátok a csapóajtót nagyrészt Destination ösztöneire és meglátásaira hagyatkozva. Ahogyan pálcáddal felnyitod a csapóajtó tetejét, az egyik közeli inferus felétek fordul, de nem veszel róla tudomást.",
+        "Még nem vetted észre, hogy nevetgélés helyett inkább az apátoktól kapott medálra kellett volna figyelned, amit valahol elszórtál a földön."
       ],
       "choices": [
         {
           "id": "s1_route_des_continue",
-          "text": "Rábízod magad Destination következtetésére.",
+          "text": "Tovább a csapóajtóhoz.",
           "next": "s1_site_found_des",
           "tags": [
             "normal"
@@ -335,16 +377,19 @@
       ]
     },
     "s1_route_clear_scene": {
-      "title": "Letarolt út",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN SÖPRÖD FÉLRE VARÁZSLATTAL A DERÉKIG ÉRŐ GAZT ÉS A SZÁRAZ KUKORICASZÁRAKAT. A LEJÁRÓHOZ VEZETŐ RÉGI ÖSVÉNY FOKOZATOSAN KIRAJZOLÓDIK.]",
-        "[A VARÁZSLAT MEGMOZGATJA A FELSŐ TALAJRÉTEGET ÉS TÖBB ELÁSOTT INFERIUST IS FELZAVAR. MÉG NEM TÁMADNAK, DE KÉSŐBB TÖBBEN INDULNAK MAJD UTÁNATOK.]",
-        "[A LÖKÉSHULLÁM VAGY EGY FELCSAPÓ NÖVÉNYSZÁR ELSZAKÍTJA A MEDÁL LÁNCÁT. A PECSÉT A FELFORGATOTT FÖLD ALÁ KERÜL, TE PEDIG NEM VESZED ÉSZRE.]"
+        "Évtizedek teltek el azóta, hogy élő ember erre a földre lépett volna, de még a vadvilág teremtményei is kerülik ezt a szentségtelen helyet.",
+        "Rövid ideig próbálkozol csak azzal, hogy megpróbáld megfejteni a térképet, de nem látod se a kutat, se a villám sújtotta fát, sem pedig a szélkereket.",
+        "Pálcádért nyúlsz, amikor a gaz már olyan nagy, hogy egyáltalán nem látsz ki belőle. Kifejezetten tehetséges vagy abban, hogyan forgasd azt akár arra, hogy megvédd magad, vagy arra, hogyan árts vele másoknak. Nem jártatok hagyományos iskolába, ti már nem amerikai földön születtetek, és tőletek messzi volt mind az Ilvermorny, mind anyátok alma matere, a Koldovstoretz. A Durmstrangban persze tárt karokkal fogadtak volna, de azokban a zavaros időkben apátok úgy döntött, inkább maga mellett tart titeket Ammanban – vagy amerre épp a lábai vezették.",
+        "Talán mégis csak lapul benne némi altruizmus.",
+        "Tarolóátkod nem kíméli az útba eső inferusokat sem, akiket nem láthattatok a sűrű növényzetben. Nem számít, nincsenek érzéseik. Még a földet is megbolygatod vele, ahogyan tiszta ösvényeket nyitsz azért, hogy előrébb jussatok. Néhány percbe telik csupán, hogy megleljétek azt a csapóajtót.",
+        "Bár talán jobban jártatok volna, ha inkább a nyakatokban függő nyakláncra koncentráltok, ami az egyik lökéshullám miatt észrevétlenül a puha, megbolygatott földbe hullik."
       ],
       "choices": [
         {
           "id": "s1_route_clear_continue",
-          "text": "A feltárt ösvényen haladtok tovább.",
+          "text": "Tovább a csapóajtóhoz.",
           "next": "s1_site_found_clear",
           "tags": [
             "normal"
@@ -362,21 +407,22 @@
       ]
     },
     "s1_route_dejavu_scene": {
-      "title": "Az ismerős út",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN NEM KELL SEM A TÉRKÉPET, SEM AZ INFERIUSOKAT FIGYELNED. EMLÉKSZEL A KANYAROKRA, A KIDŐLT KERÍTÉSRE ÉS ARRA A HELYRE, AHOL A LEJÁRÓ REJTŐZIK, NOHA EBBEN AZ ÉLETBEN MÉG NEM JÁRTÁL OTT.]",
-        "[TUDATOSAN ELKERÜLÖD AZT A HELYET, AHOL EMLÉKEID SZERINT A SAJÁT MEDÁLOD ELVESZETT. EMIATT DESTINATION HALAD ÁT ELŐTTED A SZŰK RÉSEN, ÉS AZ Ő MEDÁLJÁNAK LÁNCA AKAD FENN. A PECSÉT A GAZBA HULLIK, DE EGYIKŐTÖK SEM VESZI ÉSZRE.]"
+        "Nincs szükséged a térképre. Pontosan tudod, hova kell menned.",
+        "Furcsa játékot játszik veled a képzeleted – emlék lenne? Mintha ismernéd az apró gödröket, amik megbújnak a száraz gaz alatt, és valahogy tudod, hogy a lenyugvó nap felé kell fordulni azon inferus mellett, amelyiknek a feje szinte teljesen le van válva a nyakáról.",
+        "Saját nyakadhoz kapsz – emlékszel a medálra, amit apátoktól kaptál, és emlékszel arra is, hogy milyen következményei voltak annak, hogy ezt elveszítetted. Még egyszer nem fogod megengedni, hogy ez megtörténjen. Próbálod elmagyarázni Destinationnek, hogy te már jártál itt, és ez veletek már megtörtént egyszer, de nem tudod elmagyarázni, mégis miként is lehetséges ez. Legfeljebb akkor jártatok az Államokban, ha a Felsőház meghívott titeket valamilyen családi ünnepségre.",
+        "Nem tudsz értelmes magyarázatot adni a dologra, de szerencsére nem is kell. A bátyád nagyon szeret téged. Hisz neked."
       ],
       "choices": [
         {
           "id": "s1_route_dejavu_continue",
-          "text": "Emlékeid alapján egyenesen a lejáróhoz vezeted.",
+          "text": "Tovább a csapóajtóhoz",
           "next": "s1_site_found_dejavu",
           "tags": [
-            "secret",
-            "critical"
+            "normal"
           ],
-          "effect": "glitch",
+          "effect": "normal",
           "effects": {
             "set": {
               "protagonistMedalLost": false,
@@ -390,120 +436,133 @@
       ]
     },
     "s1_site_found_map": {
-      "title": "A régi lejáró",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD A MEGTALÁLT HELYSZÍNT: A GAZ ÉS A SZÁRAZ KUKORICA ALATT KIRAJZOLÓDIK A RÉGI MELLÉKÉPÜLET VAGY FÖLD ALATTI LEJÁRÓ. A HELYET REQUIEM INFERIUSAI ŐRZIK, DE A MEDÁLOK MIATT EGYELŐRE NEM TÁMADNAK.]",
-        "[A LEJÁRÓBAN KÉT OLYAN TÁRGYAT TALÁLTOK, AMELYEK KÖZÜL BÁRMELYIK FONTOS LEHET REQUIEMNEK. NINCS IDŐTÖK ÉS HELYETEK MINDKETTŐT MAGATOKKAL VINNI.]"
+        "Talán észre se vennétek a föld alatti lejárót, ha nem keresnétek azt célzottan. Ócska, fából és vasból álló csapóajtót nyittok fel egy pálcaintéssel. Apátok még csak arra se vette a fáradtságot, hogy mágikusan lezárja ezt; túlontúl bízott abban, hogy a bábjai majd megvédik, ami az övé.",
+        "Igaza volt.",
+        "Egyértelműen nem bolygatta senki a bunkert. A dohos üresség szaga terjed a levegőben, keveredve az oxidálódott fémével, a penésszel, és valami fanyar-édes illattal, amit nem tudsz meghatározni.",
+        "Bátyád ereszkedik le elsőként, te pedig az ő pálcájának fényét követed lefelé. Elfogadod segítő kezét az utolsó lépéseknél, amikor megreped alattad a hetedik lépcsőfok. Jobbra üres tárolóhelyiségek sorakoznak, balra pedig apátok beomlott műhelyének maradványai. Apátok pontosan elmondta, hogy mi az a két dolog, amit innen hozzatok majd vissza. Az egyiket saját zsebedbe teszed, a másikat pedig hagyod, hogy Destiny vigye el."
       ],
       "choices": [
         {
           "id": "s1_take_sealed_case_map",
-          "text": "A fekete vasból készült, pecsétes kazettát viszed el.",
+          "text": "Egy bársonyba csomagolt, csontfoglalatba zárt, régi pálcát viszel el a tárolóból.",
           "next": "s1_return_omens_normal",
           "tags": [
-            "normal"
+            "critical"
           ],
           "effects": {
             "set": {
               "retrievedItem": "sealed-case"
             }
-          }
+          },
+          "effect": "critical"
         },
         {
           "id": "s1_take_control_rod_map",
-          "text": "A csontfoglalatba zárt régi vezérlőpálcát veszed magadhoz.",
+          "text": "A beomlott műhelyből viszed el a diafilmet, amit apád kért.",
           "next": "s1_return_omens_normal",
           "tags": [
-            "normal"
+            "critical"
           ],
           "effects": {
             "set": {
               "retrievedItem": "control-rod"
             }
-          }
+          },
+          "effect": "critical"
         }
       ]
     },
     "s1_site_found_des": {
-      "title": "A régi lejáró",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD A MEGTALÁLT HELYSZÍNT: A GAZ ÉS A SZÁRAZ KUKORICA ALATT KIRAJZOLÓDIK A RÉGI MELLÉKÉPÜLET VAGY FÖLD ALATTI LEJÁRÓ. A HELYET REQUIEM INFERIUSAI ŐRZIK, DE A MEDÁLOK MIATT EGYELŐRE NEM TÁMADNAK.]",
-        "[A LEJÁRÓBAN KÉT OLYAN TÁRGYAT TALÁLTOK, AMELYEK KÖZÜL BÁRMELYIK FONTOS LEHET REQUIEMNEK. NINCS IDŐTÖK ÉS HELYETEK MINDKETTŐT MAGATOKKAL VINNI.]"
+        "Talán észre se vennétek a föld alatti lejárót, ha nem keresnétek azt célzottan. Ócska, fából és vasból álló csapóajtót nyittok fel egy pálcaintéssel. Apátok még csak arra se vette a fáradtságot, hogy mágikusan lezárja ezt; túlontúl bízott abban, hogy a bábjai majd megvédik, ami az övé.",
+        "Igaza volt.",
+        "Egyértelműen nem bolygatta senki a bunkert. A dohos üresség szaga terjed a levegőben, keveredve az oxidálódott fémével, a penésszel, és valami fanyar-édes illattal, amit nem tudsz meghatározni.",
+        "Bátyád ereszkedik le elsőként, te pedig az ő pálcájának fényét követed lefelé. Elfogadod segítő kezét az utolsó lépéseknél, amikor megreped alattad a hetedik lépcsőfok. Jobbra üres tárolóhelyiségek sorakoznak, balra pedig apátok beomlott műhelyének maradványai. Apátok pontosan elmondta, hogy mi az a két dolog, amit innen hozzatok majd vissza. Az egyiket saját zsebedbe teszed, a másikat pedig hagyod, hogy Destiny vigye el."
       ],
       "choices": [
         {
           "id": "s1_take_sealed_case_des",
-          "text": "A fekete vasból készült, pecsétes kazettát viszed el.",
+          "text": "Egy bársonyba csomagolt, csontfoglalatba zárt, régi pálcát viszel el a tárolóból.",
           "next": "s1_return_omens_normal",
           "tags": [
-            "normal"
+            "critical"
           ],
           "effects": {
             "set": {
               "retrievedItem": "sealed-case"
             }
-          }
+          },
+          "effect": "critical"
         },
         {
           "id": "s1_take_control_rod_des",
-          "text": "A csontfoglalatba zárt régi vezérlőpálcát veszed magadhoz.",
+          "text": "A beomlott műhelyből viszed el a diafilmet, amit apád kért.",
           "next": "s1_return_omens_normal",
           "tags": [
-            "normal"
+            "critical"
           ],
           "effects": {
             "set": {
               "retrievedItem": "control-rod"
             }
-          }
+          },
+          "effect": "critical"
         }
       ]
     },
     "s1_site_found_clear": {
-      "title": "A régi lejáró",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD A MEGTALÁLT HELYSZÍNT: A GAZ ÉS A SZÁRAZ KUKORICA ALATT KIRAJZOLÓDIK A RÉGI MELLÉKÉPÜLET VAGY FÖLD ALATTI LEJÁRÓ. A HELYET REQUIEM INFERIUSAI ŐRZIK, DE A MEDÁLOK MIATT EGYELŐRE NEM TÁMADNAK.]",
-        "[A LEJÁRÓBAN KÉT OLYAN TÁRGYAT TALÁLTOK, AMELYEK KÖZÜL BÁRMELYIK FONTOS LEHET REQUIEMNEK. NINCS IDŐTÖK ÉS HELYETEK MINDKETTŐT MAGATOKKAL VINNI.]"
+        "Talán észre se vennétek a föld alatti lejárót, ha nem keresnétek azt célzottan. Ócska, fából és vasból álló csapóajtót nyittok fel egy pálcaintéssel. Apátok még csak arra se vette a fáradtságot, hogy mágikusan lezárja ezt; túlontúl bízott abban, hogy a bábjai majd megvédik, ami az övé.",
+        "Igaza volt.",
+        "Egyértelműen nem bolygatta senki a bunkert. A dohos üresség szaga terjed a levegőben, keveredve az oxidálódott fémével, a penésszel, és valami fanyar-édes illattal, amit nem tudsz meghatározni.",
+        "Bátyád ereszkedik le elsőként, te pedig az ő pálcájának fényét követed lefelé. Elfogadod segítő kezét az utolsó lépéseknél, amikor megreped alattad a hetedik lépcsőfok. Jobbra üres tárolóhelyiségek sorakoznak, balra pedig apátok beomlott műhelyének maradványai. Apátok pontosan elmondta, hogy mi az a két dolog, amit innen hozzatok majd vissza. Az egyiket saját zsebedbe teszed, a másikat pedig hagyod, hogy Destiny vigye el."
       ],
       "choices": [
         {
           "id": "s1_take_sealed_case_clear",
-          "text": "A fekete vasból készült, pecsétes kazettát viszed el.",
+          "text": "Egy bársonyba csomagolt, csontfoglalatba zárt, régi pálcát viszel el a tárolóból.",
           "next": "s1_return_omens_clear",
           "tags": [
-            "normal"
+            "critical"
           ],
           "effects": {
             "set": {
               "retrievedItem": "sealed-case"
             }
-          }
+          },
+          "effect": "critical"
         },
         {
           "id": "s1_take_control_rod_clear",
-          "text": "A csontfoglalatba zárt régi vezérlőpálcát veszed magadhoz.",
+          "text": "A beomlott műhelyből viszed el a diafilmet, amit apád kért.",
           "next": "s1_return_omens_clear",
           "tags": [
-            "normal"
+            "critical"
           ],
           "effects": {
             "set": {
               "retrievedItem": "control-rod"
             }
-          }
+          },
+          "effect": "critical"
         }
       ]
     },
     "s1_site_found_dejavu": {
-      "title": "A régi lejáró",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD A MEGTALÁLT HELYSZÍNT: A GAZ ÉS A SZÁRAZ KUKORICA ALATT KIRAJZOLÓDIK A RÉGI MELLÉKÉPÜLET VAGY FÖLD ALATTI LEJÁRÓ. A HELYET REQUIEM INFERIUSAI ŐRZIK, DE A MEDÁLOK MIATT EGYELŐRE NEM TÁMADNAK.]",
-        "[A LEJÁRÓBAN KÉT OLYAN TÁRGYAT TALÁLTOK, AMELYEK KÖZÜL BÁRMELYIK FONTOS LEHET REQUIEMNEK. NINCS IDŐTÖK ÉS HELYETEK MINDKETTŐT MAGATOKKAL VINNI.]"
+        "Emlékszel a csapóajtóra, és emlékszel arra is, hogy mi minden van ott.",
+        "Ismerősen terjed tüdődben a penész, a rozsda és az ismeretlen szag, amit még mindig nem tudsz hova kötni. Jelenleg nem is tartod fontosnak. Csak minél hamarabb vissza akarsz jutni a biztonságba, mielőtt az újra megtörténik. Persze most a nyakadban apád védelme; a biztonság kedvéért kényszeresen ellenőrzöd azt újra, mielőtt leérnél a lejárat aljára. Előre mész, most a te fényed fogja vezetni Destinationt, és nem fogod engedni, hogy még egyszer megtörténjen ugyanaz. Előre figyelmezteted őt a hetedik lépcsőfokról is, amire úgy emlékszel, betört alattad.",
+        "Pontosan emlékszel rá, melyik tárgy hol van pontosan, így sokkal rövidebb idő alatt tudjátok felkapni, ami apátoknak értékes, hogy eltűnhessetek innen."
       ],
       "choices": [
         {
           "id": "s1_take_sealed_case_dejavu",
-          "text": "A fekete vasból készült, pecsétes kazettát viszed el.",
+          "text": "Egy bársonyba csomagolt, csontfoglalatba zárt, régi pálcát viszel el a tárolóból.",
           "next": "s1_dejavu_medal_transfer",
           "tags": [
             "normal"
@@ -516,7 +575,7 @@
         },
         {
           "id": "s1_take_control_rod_dejavu",
-          "text": "A csontfoglalatba zárt régi vezérlőpálcát veszed magadhoz.",
+          "text": "A beomlott műhelyből viszed el a diafilmet, amit apád kért.",
           "next": "s1_dejavu_medal_transfer",
           "tags": [
             "normal"
@@ -530,21 +589,21 @@
       ]
     },
     "s1_dejavu_medal_transfer": {
-      "title": "A hiányzó pecsét",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN INDULTOK VISSZA A KIVÁLASZTOTT TÁRGGYAL. AZ ELSŐ BALJÓS JELNÉL – PÉLDÁUL AMIKOR AZ INFERIUSOK EGYSZERRE FORDULNAK FELÉTEK – ÉSZREVESZED, HOGY DESTINATION NYAKÁBÓL HIÁNYZIK A MEDÁL.]",
-        "[EMLÉKSZEL RÁ, MI TÖRTÉNIK AZZAL, AKIT NEM VÉD REQUIEM PECSÉTJE. NINCS VALÓDI VÁLASZTÁSOD: DESTINATION AKÁR TILTAKOZIK, AKÁR NEM, NEKI ADOD A SAJÁTODAT.]"
+        "Biztos vagy a dolgodban, hogy most nem történik meg ugyanaz, mint amire emlékszel. Lerázhatod magadról a deja vu érzést, és abban a hitben indulhatsz el, hogy sikerült a kezedbe venned sorsodat.",
+        "Az Élettől kaptál egy második esélyt.",
+        "A létra első fokára lépnél, amikor mégis elgondolkozol kissé. Hiába tudod, hogy most nem történhet meg ugyanaz, közben mégis megtámad téged egy új érzés, hogy valamiről megfeledkeztetek. Hátrapillantva keresed Des tekintetét, amikor észreveszed a hiányt a nyakában. Erősebben markolsz rá a létra szélére, a gondolat pedig, hogy bátyád élheti át ugyanazokat a borzalmakat, mint te, megrémiszt. Nem érdekes, hogy a faszálkák felsértik a tenyered."
       ],
       "choices": [
         {
           "id": "s1_force_medal_on_destination",
-          "text": "Destination nyakába akasztod a saját medálodat.",
+          "text": "Elengeded a létrát.",
           "next": "s1_return_omens_dejavu",
           "tags": [
-            "secret",
-            "critical"
+            "normal"
           ],
-          "effect": "glitch",
+          "effect": "normal",
           "effects": {
             "set": {
               "medalTransferredToDestination": true,
@@ -556,11 +615,11 @@
       ]
     },
     "s1_return_omens_normal": {
-      "title": "Visszaút",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN INDULTOK VISSZA A KIVÁLASZTOTT TÁRGGYAL. A SZÉL ELÁLL, A SZÁRAZ KUKORICA MÉGIS ZÖRÖG, A KÖZELI INFERIUSOK PEDIG EGYSZERRE FORDÍTJÁK FELÉTEK A FEJÜKET.]",
-        "[DESTINATION MELLETT ELMENNEK, MINTHA NEM IS LÁTNÁK. CSAK RÁD FIGYELNEK. EKKOR MÉG NEM ÉRTED, HOGY ÚTKÖZBEN ELVESZÍTETTED A MEDÁLODAT.]",
-        "[AZ ELSŐ INFERIUS EGYRE GYORSABBAN INDUL FELÉD, MAJD ÚJABBAK MOZGÁSA HALLATSZIK A GAZBAN.]"
+        "Megannyi más, érdekes dolgot lelhetnétek itt. Ellenállsz a kísértésnek, hogy beleless az itt hagyott fényképekbe, vagy alaposabban megszemléld, mit rejtenek a polcokon sorakozó üvegek. Nem szeretnél visszaélni apád bizalmával. Teljesen érthetetlen, hogy vagy képes szeretni őt, de az egész családotok degeneráltakból áll, ami ezt is megmagyarázza. Teljesen mindegy, Felsőházról beszélünk, akik oly sok pénzt fecsérelnek emberi álarcotokba, vagy rólatok, az Alsóházról, akik… nos, ha képes lennél kritikus lenni önmagadhoz, akkor pontosan látnád és tudnád, hogy mi a probléma.",
+        "Amint összeszedtétek, amire szükségetek van – a csontmarkolatú pálcát és a diafilmet apád felkavaró kísérleteiről - , megindultok kifelé. Elfogadod Des kezét az utolsó létrafokoknál, valamiért azonban borsódzik a hátad, amikor az egyik inferust közeledni látod. Apátok azért adta rátok az általa készített ereklyét, hogy lehetőleg ne gyarapítsátok a holtakat. Ne most, nem ilyen körülmények között, mert még szüksége van rátok – ha hazudik is nektek valódi céljairól.",
+        "Egyszerre fordítja feléd az összes. Rád néznek, egyenesen rád, mintha Destinationt észre se vennék. Még nem érted, hogy út közben valamikor elveszítetted, amit apádtól kaptál. Az egyik inferus szinte követhetetlen sebességgel indul meg feléd."
       ],
       "choices": [
         {
@@ -568,18 +627,18 @@
           "text": "Felkészülsz a támadásra.",
           "next": "s1_attack_choice_normal",
           "tags": [
-            "critical"
-          ],
-          "effect": "critical"
+            "normal"
+          ]
         }
       ]
     },
     "s1_return_omens_clear": {
-      "title": "A felzavart föld",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD A VISSZAÚT BALJÓS JELEIT. A SZÉL ELÁLL, A KUKORICA MÉGIS ZÖRÖG, ÉS AZ INFERIUSOK EGYSZERRE FORDULNAK FELÉTEK.]",
-        "[DESTINATIONT A MEDÁLJA MIATT FIGYELMEN KÍVÜL HAGYJÁK. CSAK RÁD FIGYELNEK, MERT A SAJÁT PECSÉTEDET ELVESZÍTETTED.]",
-        "[A KORÁBBI ÚTTISZTÍTÓ VARÁZSLAT TÖBB ELÁSOTT TESTET IS FELZAVART. NEM EGY-KÉT INFERIUS INDUL UTÁNATOK, HANEM EGÉSZ SOROKBAN MOZOGNI KEZD A FÖLD ÉS A GAZ.]"
+        "Megannyi más, érdekes dolgot lelhetnétek itt. Ellenállsz a kísértésnek, hogy beleless az itt hagyott fényképekbe, vagy alaposabban megszemléld, mit rejtenek a polcokon sorakozó üvegek. Nem szeretnél visszaélni apád bizalmával. Teljesen érthetetlen, hogy vagy képes szeretni őt, de az egész családotok degeneráltakból áll, ami ezt is megmagyarázza. Teljesen mindegy, Felsőházról beszélünk, akik oly sok pénzt fecsérelnek emberi álarcotokba, vagy rólatok, az Alsóházról, akik… nos, ha képes lennél kritikus lenni önmagadhoz, akkor pontosan látnád és tudnád, hogy mi a probléma.",
+        "Amint összeszedtétek, amire szükségetek van – a csontmarkolatú pálcát és a diafilmet apád felkavaró kísérleteiről - , megindultok kifelé. Elfogadod Des kezét az utolsó létrafokoknál, valamiért azonban borsódzik a hátad, amikor az egyik inferust közeledni látod. Apátok azért adta rátok az általa készített ereklyét, hogy lehetőleg ne gyarapítsátok a holtakat. Ne most, nem ilyen körülmények között, mert még szüksége van rátok – ha hazudik is nektek valódi céljairól.",
+        "Egyszerre fordítja feléd az összes. Rád néznek, egyenesen rád, mintha Destinationt észre se vennék. Még nem érted, hogy út közben valamikor elveszítetted, amit apádtól kaptál. És mintha sokkal többen lennének, mint amennyien érkezésetekkor voltak. Varázslatod, amivel apátok bunkerét találtad meg, felzavarta a földben nyugvó bábokat is.",
+        "Többen is megrohamoznak téged azért, hogy elpusztítsanak, mint betolakodót."
       ],
       "choices": [
         {
@@ -587,51 +646,52 @@
           "text": "Felkészülsz a támadásra.",
           "next": "s1_attack_choice_normal",
           "tags": [
-            "critical"
-          ],
-          "effect": "critical"
+            "normal"
+          ]
         }
       ]
     },
     "s1_return_omens_dejavu": {
-      "title": "A megismétlődő jel",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD UGYANAZOKAT A BALJÓS JELEKET, AMELYEKRE A KARAKTER EMLÉKSZIK: A SZÉL ELÁLL, A KUKORICA ZÖRÖG, AZ INFERIUSOK FEJE EGYSZERRE FORDUL FELÉJÜK.]",
-        "[DESTINATIONT A TŐLED KAPOTT MEDÁL VÉDI. AZ INFERIUSOK MELLETTE ELMENNEK, ÉS CSAK RÁD FIGYELNEK.]",
-        "[TUDOD, MI KÖVETKEZIK. AZT IS TUDOD, HOGY LEGUTÓBB MIT PRÓBÁLTÁL. EZÚTTAL MÁSKÉPP AKAROD VÉGIGCSINÁLNI.]"
+        "Elengeded a rozoga létrát, hogy beszámolhass Desnek újfent arról, hogy mi történt. Most sem kételkedik szavaidban – és ugyanannyira félt téged, mint te őt. Kioldod a medált a nyakadból, hogy az övébe rakhasd, amíg ő segítségért indul, téged pedig védőbűbájjal zár be a bunkerbe, amíg vissza nem tud jönni érted. Nem tudod, mennyi idő, míg visszatér, de nincs okod nem bízni benned. Elfoglalod magad; belelapozgatsz az itt maradt könyvekbe, megkeresed a furcsa szag forrását (biztosan az egyik üvegből jön), és átböngészed az itt maradt holmikat, apád és nagyapád örökségét.",
+        "Inkább azt az évek óta beázott falrészt nézted volna meg, ami még védte a helyiséget az inferusok jelenlététől."
       ],
       "choices": [
         {
           "id": "s1_begin_attack_dejavu",
-          "text": "Megpróbálod megváltoztatni a történteket.",
+          "text": "Várod a megmentést.",
           "next": "s1_attack_choice_dejavu",
           "tags": [
-            "secret",
-            "critical"
+            "normal"
           ],
-          "effect": "glitch"
+          "effect": "normal"
         }
       ]
     },
     "s1_attack_choice_normal": {
-      "title": "A támadás",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN TÖRNEK ELŐ AZ INFERIUSOK A GAZBÓL ÉS A KISZÁRADT FÖLDBŐL. DESTINATIONT NEM TÁMADJÁK, MERT RAJTA MÉG OTT VAN REQUIEM PECSÉTJE.]",
-        "[A KARAKTER FELISMERI, HOGY DESTINATION KÖZELÉBEN MARADVA TALÁN KIJUTHAT, VAGY MEGPRÓBÁLHATJA A TESTEK ELLEN LEGHATÁSOSABB FEGYVERT: A TÜZET.]"
+        "Apád jól megtanított téged harcolni.",
+        "Vagy ha nem apád, akkor az aktuális mesterek, akikre a párbajozási képességeid csiszolását bízta.",
+        "Ismered a gyengéjüket, hogy is ne ismernéd, hiszen Dreadmoor vagy. Tudod, hogy a tűznél nincs hatékonyabb ellenük. Emlékszel a tanításokból azokra a kísérletekre, melyek megpróbálták legalább valamelyest tűzállóvá tenni őket, de tudomásod szerint mind sikertelenek voltak. Még apádnak sem sikerült, pedig apád lenyűgöző munkát végzett, ezt el kell ismerni. Körülöttetek azonban szárazság, a tűz pedig a legnehezebben kordában tartható elem.",
+        "Talán a baj elkerülhető, ha szorosan Destination mellett maradsz. Őt védi apád amulettje, észre se veszik őt. Akkor elég lenne csak azt a párat legyőzni?",
+        "Az inferus, aki elsőként indult meg feléd, hamarosan odaér. Gyorsan kell döntened, mielőtt odaér."
       ],
       "choices": [
         {
           "id": "s1_try_escape",
-          "text": "Destination mellett maradva próbálsz kimenekülni a kukoricaföldről.",
+          "text": "Szorosan Destination mellett maradsz.",
           "next": "s1_escape_attempt_normal",
           "tags": [
-            "normal"
+            "critical"
           ],
           "effects": {
             "set": {
               "attackStrategy": "escape"
             }
-          }
+          },
+          "effect": "critical"
         },
         {
           "id": "s1_try_fire",
@@ -650,20 +710,23 @@
       ]
     },
     "s1_attack_choice_dejavu": {
-      "title": "A támadás újra",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD A TÁMADÁS ISMERŐS KEZDETÉT. A KARAKTER ELŐRE LÁTJA AZ ELSŐ MOZGÁSOKAT, ÉS TUDJA, HOGY DESTINATION MEDÁLJA MIATT CSAK ŐT FOGJÁK ÜLDÖZNI.]",
-        "[UGYANAZT A KÉT LEHETŐSÉGET LÁTJA MAGA ELŐTT, DE EZÚTTAL TUDATOSAN MÁSHOGYAN PRÓBÁLJA VÉGREHAJTANI.]"
+        "Vélhetően apád nyaklánca nélkül is meg tudnád védeni magad egy inferustól. Talán kettőtől vagy többtől. Bármennyit is tanultál apádtól – vagy az általa fizetett, más mesterektől – a párbajozásról, egy ekkora hordával szemben nem lenne esélyed.",
+        "Tapasztaltad. Nem tudod, megmagyarázni, hogyan és miért, de tudod, hogy már megtörtént veled.",
+        "Hamis biztonságérzetet nyújtanak a falak, és hamis biztonságérzetet ad a tudat, hogy Des már segítségért indult. Apátok se bízta kizárólag téglákra és a földre a helyiség védelmét. Évtizedekkel ezelőtt a téglákba és falra festett rúnái tartották távol a teremtményeit, akik így nem tudtak illetéktelenül behatolni a bunkerbe.",
+        "Egykor.",
+        "Először patkánynak hiszed a kaparászást, esetleg lehulló földnek. Föld… ez lehetséges, érzed a jellegzetes illatát, semmivel se tévesztenéd össze. A hang azonban nem szűnik meg. Revelioval próbálod felfedni forrását; még épp látod a mágikus függönyön át, amikor a tégla kimozdul, és kidugja rothadó végtagját a résen át. Sokkal gyorsabb és sokkal ügyesebb, mint amire egy ember képes lenne, azonban ezeket a dolgokat apád mágiája mozgatja, és nem az Élet."
       ],
       "choices": [
         {
           "id": "s1_try_escape_dejavu",
-          "text": "Destination mellett maradsz, de most előre kerülöd az ismerős csapdákat.",
-          "next": "s1_escape_attempt_dejavu",
+          "text": "CONFRINGO!",
+          "next": "s1_confringo_attempt_dejavu",
           "tags": [
-            "secret"
+            "critical"
           ],
-          "effect": "glitch",
+          "effect": "critical",
           "effects": {
             "set": {
               "attackStrategy": "escape-dejavu"
@@ -672,13 +735,12 @@
         },
         {
           "id": "s1_try_fire_dejavu",
-          "text": "Tüzet idézel, de nem ugyanúgy, ahogyan emlékeid szerint tetted.",
-          "next": "s1_fire_attempt_dejavu",
+          "text": "GLACIUS!",
+          "next": "s1_glacius_attempt_dejavu",
           "tags": [
-            "secret",
             "critical"
           ],
-          "effect": "glitch",
+          "effect": "critical",
           "effects": {
             "set": {
               "attackStrategy": "fire-dejavu"
@@ -688,14 +750,20 @@
       ]
     },
     "s1_escape_attempt_normal": {
-      "title": "Destination árnyékában",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN PRÓBÁLSZ SZOROSAN DESTINATION MELLETT MARADNI. AZ INFERIUSOK KIKERÜLIK ŐT, DE A GAZ, A FÖLDBŐL ELŐTÖRŐ TESTEK ÉS A PÁNIK FOLYAMATOSAN SZÉTSZAKÍTJÁK A KÖZTETEK LÉVŐ TÁVOLSÁGOT.]"
+        "Olyan közel húzódsz hozzá, amennyire csak tudsz. Először csontos vállad ér csak hozzá karjához, ám aztán pókujjaid is belemarkolnak, mialatt pálcát fogsz a támadóidra másik kezeddel.",
+        "A teremtmény pedig rád néz. Kizárólag rád.",
+        "Flipendoval döntöd hátra a testét, majd újabb ártásaid követik a többit. Átkaid sikeresen hátravetik az első hullámot, és kitörtök fenyegető gyűrűjükből. Nem használsz tüzet – nem érzed, hogy kontroll alatt tarthatnád ebben a száraz időben.",
+        "Bátyád módszeresen kikerülik, akik az utatokba állnak. Próbálod tartani a lépést vele, Des pedig szinte húz magával, hogy le ne maradj. Ahogy egyre mélyebbre merültök a méteres gazban és vad kukoricásban, úgy bukkannak fel újabb vállak és kezek a föld alól és a sűrű fűből.",
+        "Destination karja kicsúszik ujjaid közül. Csuklója után kapnál, de apád egy újabb teremtménye a megszámlálhatatlanból állja utadat.",
+        "A biztonságos terület, a házatok már látótávolságon belül van. Gyorsabban tudnál futni, ha nem Des keze után kéne kapkodnod, miközben tudod, hogy neki nem eshet baja. Az utat lerövidítheted, ha nem keresitek ugyanazt a kitaposott ösvényt, amin jöttetek, hanem egyenesen a ház felé szaladsz a kukoricáson át.",
+        "De a sűrű növényzet biztosan tele van velük, és a pálcádon – és Des távoli átkain túl – nincs semmi, ami megvédhetne téged. Biztonságosabb lenne vele együtt haladni."
       ],
       "choices": [
         {
           "id": "s1_escape_separate",
-          "text": "A gyorsabb kijutásért átvágsz egy másik kukoricasoron.",
+          "text": "Levágod az utat a kukoricasoron.",
           "next": "s1_eye_escape_separated",
           "tags": [
             "critical"
@@ -710,43 +778,48 @@
         },
         {
           "id": "s1_escape_stay_close",
-          "text": "Nem engeded el Destination karját, bármi történjék.",
+          "text": "Nem szakadsz el Destinationtől, bármi történjék.",
           "next": "s1_eye_escape_together",
           "tags": [
-            "normal"
+            "critical"
           ],
           "effects": {
             "set": {
               "escapeOutcome": "together",
               "eyeLossVariant": "escape-together"
             }
-          }
+          },
+          "effect": "critical"
         }
       ]
     },
     "s1_fire_attempt_normal": {
-      "title": "Tűz a száraz mezőn",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN KAPNAK LÁNGRA AZ ELSŐ INFERIUSOK. A TŰZ HATÁSOS ELLENÜK, DE A SZÁRAZ KUKORICAFÖLDÖN MINDEN VARÁZSLAT VESZÉLYESEN GYORSAN TERJED.]"
+        "Leválsz testvéredtől, hogy ő segítségért rohanjon.",
+        "Pálcád az elsőként érkező inferusra szegezed, és hagyod, hogy a lángok beborítsák a testét. Tesz még pár lépést, mielőtt összerogyna előtted. Ha nem is érzi a fájdalmat, ha nem is retten meg a tűztől, ez az egyetlen, ami tényleg és igazán hatékony ellenük.",
+        "Újabb inferus lép a helyére, de te már gyakorlott mozdulatokkal támadod meg, mielőtt ő támadna meg téged. Aggódsz a száraz növényzet miatt, nyilván pillanatok alatt lángra lobbanhat. Akkor pedig nem csak az inferusok fognak égni.",
+        "Megpróbálhatsz egy óvatos tűzkört emelni magad köré, amin nem tudnak behatolni, vagy kihasználhatod a tűz maximális erejét azért, hogy megvédd magad."
       ],
       "choices": [
         {
           "id": "s1_fire_ring",
-          "text": "Szűk tűzgyűrűt emelsz magatok köré.",
+          "text": "Szűk tűzgyűrűt emelsz magad köré.",
           "next": "s1_eye_fire_ring",
           "tags": [
-            "normal"
+            "critical"
           ],
           "effects": {
             "set": {
               "fireOutcome": "ring",
               "eyeLossVariant": "fire-ring"
             }
-          }
+          },
+          "effect": "critical"
         },
         {
           "id": "s1_fire_wild",
-          "text": "Szabadjára engeded a lángokat, hogy mindent elborítsanak.",
+          "text": "Szabadjára engeded a lángokat.",
           "next": "s1_eye_fire_chaos",
           "tags": [
             "critical"
@@ -761,21 +834,22 @@
         }
       ]
     },
-    "s1_escape_attempt_dejavu": {
-      "title": "Az ismert menekülés",
+    "s1_confringo_attempt_dejavu": {
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN EMLÉKSZEL, HOL SZAKADTATOK EL VAGY HOL PRÓBÁLTÁL DESTINATION MELLETT MARADNI. MOST TUDATOSAN MÁS LÉPÉSEKET TESZEL, DE AZ INFERIUSOK MOZGÁSA IS MEGVÁLTOZIK A DÖNTÉSEID MIATT.]"
+        "Pálcád már a kezedben van, mire az inferus válla is áttöri a falat. A téglák egyenként hullanak a padlóra, mögötte pedig újabb mozgást vélsz felfedezni. Nem egyedül jött.",
+        "Pálcád előre szegezed, a Confringo-t követő vörös fény pedig telibe találja az inferust. A csonttörés hangja mással összetéveszthetetlen. Még több tégla hullik a földre – talán ezzel csak nagyobb problémát okoztál, mint amiben eddig voltál.",
+        "Egyet meg tudtál állítani ugyan, de a következő pillanatban az egész falszakasz megreped."
       ],
       "choices": [
         {
           "id": "s1_escape_separate_dejavu",
-          "text": "Másik sort választasz, hogy elkerüld a korábbi támadót.",
+          "text": "Tűzkör idézése",
           "next": "s1_eye_escape_separated_dejavu",
           "tags": [
-            "secret",
             "critical"
           ],
-          "effect": "glitch",
+          "effect": "critical",
           "effects": {
             "set": {
               "escapeOutcome": "separated-dejavu",
@@ -785,12 +859,12 @@
         },
         {
           "id": "s1_escape_stay_close_dejavu",
-          "text": "Még szorosabban kapaszkodsz Destinationbe, mint az emlékeidben.",
+          "text": "Flipendo!",
           "next": "s1_eye_escape_together_dejavu",
           "tags": [
-            "secret"
+            "critical"
           ],
-          "effect": "glitch",
+          "effect": "critical",
           "effects": {
             "set": {
               "escapeOutcome": "together-dejavu",
@@ -800,20 +874,22 @@
         }
       ]
     },
-    "s1_fire_attempt_dejavu": {
-      "title": "Az ismert lángok",
+    "s1_glacius_attempt_dejavu": {
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN EMLÉKSZEL A TŰZ TERJEDÉSÉRE ÉS ARRA, HONNAN ÉRKEZETT A VÉGZETES TÁMADÁS. EZÚTTAL MÓDOSÍTOD A VARÁZSLAT ALAKJÁT VAGY IRÁNYÁT, DE A SZÁRAZ MEZŐ KISZÁMÍTHATATLANUL REAGÁL.]"
+        "Ezüstös-kék fény távozik pálcádból, egyenesen a betolakodóra. Tudod, hogy nem a jég a legjobb megoldás, de zárt térben tűzzel játszani olyan veszélyes, hogy talán jobban járnál még azzal is, ha csendben megvárnád, míg magukkal ragadnak.",
+        "A bejutni kívánó test egy szempillantás alatt megmerevedik a jégtől. Először azt hiszed, sikerült, néhány másodpercig úgy is tűnik. A mögötte tolakodó testek azonban egyszerűen kinyomják őt a résen, mint egy fogkrémet.",
+        "A fagyott test darabokra törik. A szemed láttára válik le karja, és jéggé dermedt maradványok csúfítják apád penész-szagú bunkerének dohos padlóját. Újabb inferusok érkeznek a résen megállíthatatlanul."
       ],
       "choices": [
         {
           "id": "s1_fire_ring_dejavu",
-          "text": "Más helyen és szűkebben zárod körbe magatokat tűzzel.",
+          "text": "Arresto Momentum!",
           "next": "s1_eye_fire_ring_dejavu",
           "tags": [
-            "secret"
+            "critical"
           ],
-          "effect": "glitch",
+          "effect": "critical",
           "effects": {
             "set": {
               "fireOutcome": "ring-dejavu",
@@ -823,13 +899,12 @@
         },
         {
           "id": "s1_fire_wild_dejavu",
-          "text": "Más irányba tereled a lángokat, hogy elkerüld a korábbi káoszt.",
+          "text": "Megfagyasztod alattuk a padlót.",
           "next": "s1_eye_fire_chaos_dejavu",
           "tags": [
-            "secret",
             "critical"
           ],
-          "effect": "glitch",
+          "effect": "critical",
           "effects": {
             "set": {
               "fireOutcome": "wildfire-dejavu",
@@ -840,10 +915,14 @@
       ]
     },
     "s1_eye_escape_separated": {
-      "title": "Elszakadva",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN SZAKADSZ EL DESTINATIONTŐL. AZ INFERIUSOK AZONNAL KÖRÜLVESZNEK, ÉS AZ EGYIKÜK FIZIKAI TÁMADÁSA VAGY A MENEKÜLÉS KÖZBENI ÜTKÖZÉS ELPUSZTÍTJA AZ EGYIK SZEMEDET.]",
-        "[DESTINATION VISSZAFORDUL ÉRTED, SAJÁT MEDÁLJA VÉDELMÉBEN ÁTVÁG KÖZTÜK, ÉS KIMENT A TESTEK KÖZÜL.]"
+        "Nem harcolsz a közétek ékelődő inferussal, és nem próbálod meg elkapni Destination karját.",
+        "Nincs olyan messze a ház, innen már látjátok a növényzet fölött, és ha egyenesen arra indulsz futva, akkor jóval korábban elérheted a védőbűbájok határát, mint a már bejárt ösvényeken.",
+        "Recsegnek és ropognak alattad a kukoricaszárak. Egy tarolóátokkal löksz félre egy újabb példányt, amelyik elállja az utadat, és játszi könnyedséggel ugrasz át egy földből kiálló kart. Des a nevedet kiáltja mögötted. Hallod pattanó átkainak hangját, egy épp a fejed mellett suhan el, hogy megvédjen a közelgő veszélytől.",
+        "Megrúgod a következő arcát, aki az utadba kerül. Hallod, hogy az állkapcsa eltörik, de nincs időd hátrafordulni, hogy jobban megnézd magadnak. Közel, egészen közel kerülsz a határhoz.",
+        "Ruhád, amit nem egy ilyen alkalomra kellett volna felvenned, beleakad egy makacsabb növénybe. Erősen rántasz rajta egyet, hogy kiszabadítsd magad, nem érdekes az se, ha tönkreteszed vele. Mindez azonban épp elég idő volt ahhoz, hogy feltartsd magad. A rád nehezedő, hirtelen súlytól a földre esel, és tehetetlenül visongasz és kapálózol, hogy engedjen el. A fájdalmat, amit átélsz, nem tudod mihez hasonlítani. Soha nem félted a halált, hiszen Dreadmoor vagy, elmondásotok szerint ti vagytok a Halál legnagyobb tisztelői – bár a Laveau-ház hallani sem akar rólatok - , mégis méltatlannak érzed, hogy így kell elragadjon téged a vég.",
+        "Egy fehér villanást érzékelsz csak, és az égető fájdalmat arcodban, amit megmagyarázni még nem vagy képes magadnak, mielőtt a világ elsötétül előtted."
       ],
       "choices": [
         {
@@ -851,45 +930,57 @@
           "text": "Destination hangját követed a sötétedő világban.",
           "next": "s1_cut_to_chapter_two",
           "tags": [
-            "critical"
+            "normal"
           ],
-          "effect": "critical",
           "effects": {
             "set": {
               "savedByDestination": true
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "effect": "critical-injury"
+      }
     },
     "s1_eye_escape_together": {
-      "title": "Egymás mellett",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN NEM SZAKADSZ EL DESTINATIONTŐL. AZ INFERIUSOK KIKERÜLIK ŐT, DE HOZZÁD ÍGY IS ELÉRNEK: EGY OLDALRÓL ÉRKEZŐ TEST, TÖRMELÉK VAGY KARMOLÁS ELPUSZTÍTJA AZ EGYIK SZEMEDET.]",
-        "[DESTINATION AZONNAL MAGÁHOZ HÚZ, ÉS A MEDÁLJA VÉDELMÉBEN KIVEZET A TÁMADÓK KÖZÜL.]"
+        "Darabokra robbantod a közétek álló inferust. Nem foglalkozol azzal, hogy ruhád a maradványaival szennyeződik. Majd lesz másik.",
+        "Nem szakadhatsz el a bátyádtól.",
+        "Bár a házatok látótávolságban van, a közvetlen út a vadkukoricáson át vezet, ami csak még több veszélyt rejteget számotokra. Vagyis hát számodra. Egyedül számodra.",
+        "Nem akarod elengedni őt többé. Járt utat járatlanra cserélni nem mindig érdemes, együtt haladtok hát visszafelé a már kitaposott ösvényen. Az utat Des vezeti előtted, te pedig azokat az inferusokat tartod távol, akik hátulról próbálnának megközelíteni titeket. ",
+        "Működik, úgy tűnik, működik… ",
+        "Apád teremtményei módszeresen kerülik Destinationt. Természetellenes mozdulatokkal állnak félre az útjából, mintha a bátyád nem lenne több, mint egy megkerülendő akadály. Belekapaszkodsz hátulról a ruhájába, mintha a rajta lógó medál téged is védhetne. Egyikük sem ér hozzád, azonban üldözőbe vesznek, amint elhaladtok mellettük.",
+        "Egyre közelebb vagytok a házhoz, közel a védőmágiák határához, ahol már biztonságban vagytok. Átkaid azonban egyre ritkábban érnek célba. Alig maradt már hely mögötted, ahová hátralökhetnéd őket. A kitaposott ösvényt megtöltik a feltápászkodó testek, és bármilyen gyorsak is vagytok, tőlük nem lehettek azok.",
+        "Ujjaid elengedik bátyád ruhájának szegletét. Kénytelen vagy, mert magukkal ragadnak. Behúzzák apró testedet maguk közé, és meg sem tudod mondani, hogy minek a fájdalmát érzed a legélesebben. Érzed, ahogy felpattan az ér a nyakadon, és azt, ahogyan a lábaid természetellenesen fordulnak ki alattad. Pálcád kiesik kezedből, arcodon pedig minden eddiginél élesebb, égetőbb fájdalmat érzel."
       ],
       "choices": [
         {
           "id": "s1_after_eye_escape_together",
-          "text": "Rábízod magad Destinationre.",
+          "text": "Apád és Destination hangjára bízod magad.",
           "next": "s1_cut_to_chapter_two",
           "tags": [
-            "critical"
+            "normal"
           ],
-          "effect": "critical",
           "effects": {
             "set": {
               "savedByDestination": true
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "effect": "critical-injury"
+      }
     },
     "s1_eye_fire_ring": {
-      "title": "A körön belül",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN ZÁRJA KI A TŰZGYŰRŰ AZ INFERIUSOK TÖBBSÉGÉT. A TERV MŰKÖDIK, DE EGY TEST MÁR A KÖRÖN BELÜL MARADT.]",
-        "[A FÜSTBEN ÉS A LÁNGOK FÉNYÉBEN KÉSŐN VESZED ÉSZRE. AZ INFERIUS TÁMADÁSA ELPUSZTÍTJA AZ EGYIK SZEMEDET.]"
+        "Legjobbnak tartod, ha nem kockáztatsz. Nem szeretnéd az egész birtokot lángokban látni, hisz még a Felsőházatok is tisztelte annyira apátok munkáját, hogy ne gyújtsanak fel mindent.",
+        "Pont ott csapnak fel a lángok, ahol kijelölted határát. Óvatos mozdulatokkal húzod magad köré a kört, és nem engeded továbbterjedni azt a száraz növényzeten. A vékony lángfalak a magasba csapnak, áthatolhatatlan akadályt állítva az inferusok számára. Kívül rekedt az összes, míg te a kör közepén maradsz. Az inferusokat sikerült feltartóztatnod.",
+        "Hosszas ideig kell fenntartanod a varázslatot, mire Destination hangját meghallod. Apáddal együtt tért vissza, hallod őket a nevedet kiáltani, a hőség azonban téged is megizzaszt, és eltorzítja érzékszerveidet. Nem tudod pontosan meghatározni, hogy pontosan hol lehet.",
+        "A sűrű füst egyre fojtogatóbbá válik, ahogyan azt belélegzed. Köhögni kezdesz, és a szemeid is könnyeznek; ruhaujjad arcod elé emeled, de már túl késő hozzá. A köhögéstől szakítod meg a varázslatot, a megidézett lángok eltűnnek, az egyik kívül rekedt inferus pedig sokkal gyorsabban támad, mint ahogyan bátyád vagy az apád reagálni tudnának."
       ],
       "choices": [
         {
@@ -897,36 +988,45 @@
           "text": "A tűz és a fájdalom összemosódik.",
           "next": "s1_cut_to_chapter_two",
           "tags": [
-            "critical"
-          ],
-          "effect": "critical"
+            "normal"
+          ]
         }
-      ]
+      ],
+      "presentation": {
+        "effect": "critical-injury"
+      }
     },
     "s1_eye_fire_chaos": {
-      "title": "Mindent felemésztő lángok",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN TERJED EL A TŰZ A TELJES KUKORICAFÖLDÖN. INFERIUSOK, GAZ, A RÉGI MELLÉKÉPÜLET ÉS REQUIEM ELHANYAGOLT FÖLDJE EGYARÁNT LÁNGRA KAP.]",
-        "[A KÁOSZBAN EGY INFERIUS, EGY FELCSAPÓ TÖRMELÉK VAGY A TŰZVARÁZSLAT VISSZACSAPÁSA ELPUSZTÍTJA AZ EGYIK SZEMEDET.]"
+        "Hasztalan mindet irányítani, ha az életed a tét. Meg se próbálod hát irányítani.",
+        "Végighúzod magad előtt a pálcád, és engeded továbbterjedni azt a kiszáradt, halott növényzeten át. Megcsapja az égett hús szaga az orrodat, ahogyan a lángok felkúsznak a holtak testére, de ugyanúgy átugranak a száraz gazra, felkúsznak a kukoricaszárakon, és felfalnak mindent, amit tudnak.",
+        "A birtok perceken belül lángokban áll. Számítottál rá, hogy a tűz majd gyorsan fog terjedni, de arra még te sem, hogy ennyire gyorsan. Égő testek botorkálnak a földeteken, de legalább nem feléd. Sorra omlanak össze a holtak, te pedig futsz, futni kezdesz a házatok felé.",
+        "A füst és a hőség végigmarja torkodat, ahogyan egyre közelebb és közelebb kerülsz. A távolban már látod apádat és Destinationt. Reméled, apád megbocsájt majd, hogy így tudtad csak igazán menteni magad.",
+        "Apád varázslattal próbál utat nyitni feléd, Des pedig úgy indul el feléd, mintha nem lenne holnap. Pálcáddal félresöpröd az utadba álló, élő kukoricaszárakat. Az egyik, ami szinte teljesen megszenesedett, éles törik ketté, felső része pedig arcodnak csapódik. Nincs időd arra, hogy félrefordítsd a fejed.",
+        "A törött szár hegyes vége egyenesen a szemedbe fúródik. Megtorpansz, és nem is érted még, mi történt. Elveszíted az egyensúlyod a parázsló földön, és mintha a tűz égetne, égetne téged a szemednél."
       ],
       "choices": [
         {
           "id": "s1_after_eye_fire_chaos",
-          "text": "A lángoló mező látványa féloldalasan kihuny.",
+          "text": "A lángoló mező látványa lassan elhalványodik.",
           "next": "s1_cut_to_chapter_two",
           "tags": [
-            "critical"
-          ],
-          "effect": "critical"
+            "normal"
+          ]
         }
-      ]
+      ],
+      "presentation": {
+        "effect": "critical-injury"
+      }
     },
     "s1_eye_escape_separated_dejavu": {
-      "title": "Másik sor, ugyanaz a vég",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN KERÜLÖD EL AZT A HELYET, AHOL EMLÉKEID SZERINT ELSZAKADTÁL DESTINATIONTŐL. EGY MÁSIK KUKORICASORT VÁLASZTASZ, DE EZZEL EGY MÁSIK INFERIUS ÚTJÁBA KERÜLSZ.]",
-        "[A SZEMED MÁS MÓDON, DE UGYANÚGY ELVÉSZ. DESTINATION VISSZAFORDUL ÉRTED ÉS KIMENT.]",
-        "[A FÁJDALOM KÖZBEN MEGÉRTED: NEM UGYANAZOK A MOZGÁSOK ISMÉTLŐDNEK, HANEM UGYANAZ A VÉGPONT TALÁL MAGÁNAK ÚJ UTAT. EZÚTTAL NEM KÜZDESZ EZ ELLEN TOVÁBB.]"
+        "Pálcád hegyéből sötét lángokat szórsz magad köré, hogy elzárd az utat közted és a támadóid között. Eleven falat emelsz magatok közé, hogy megvédhesd magad. Gondolkodás nélkül próbálnak átfutni a lángokon, amik azonban azonnal végigfutnak a rothadó testeken.",
+        "Apád teremtményei nem érzik a fájdalmat. Tudatuk sincs, amivel felfognák, hogy mi az.",
+        "Már hallod a bejárat felől, hogy Des visszaérkezett hozzád, talán épp apáddal, vagy a megtalált medállal. Biztos voltál benne, hogy sikerrel fog járni. Biztos voltál benne, hogy ezúttal minden másként lesz. Biztos voltál benne, hogy…",
+        "A test nem érez fájdalmat. Az égett hús szaga nem mozdít meg benned semmit. Az egyik teremtmény átjut a tűzfalon, kitartóan megy utánad, noha lángok borítják a testét. Teljes súlyával neked veti magát, megfeketedett ujjaival végigszántja arcodat, elvéve fél szemed világát ismét. Felüvöltesz a kíntól, és attól a felismeréstől, hogy sorsod talán eleve elrendeltetett. Nem tehetsz ellene semmit."
       ],
       "choices": [
         {
@@ -934,10 +1034,9 @@
           "text": "Elfogadod, hogy ezt nem tudtad elkerülni.",
           "next": "s1_cut_to_chapter_two",
           "tags": [
-            "secret",
             "critical"
           ],
-          "effect": "glitch",
+          "effect": "critical",
           "effects": {
             "set": {
               "savedByDestination": true,
@@ -945,25 +1044,28 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "effect": "critical-injury"
+      }
     },
     "s1_eye_escape_together_dejavu": {
-      "title": "Szorosabb kapaszkodás",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN MARADSZ DESTINATION MELLETT OTT IS, AHOL EMLÉKEID SZERINT KORÁBBAN ELSZAKADTATOK. AZ EREDETI TÁMADÁST VALÓBAN ELKERÜLÖD.]",
-        "[EGY MÁSIK TEST VAGY TÖRMELÉK AZONBAN OLDALRÓL ÉR, ÉS MÁS MÓDON PUSZTÍTJA EL UGYANAZT A SZEMEDET. DESTINATION AZONNAL KIMENT.]",
-        "[RÁJÖSSZ, HOGY A DÖNTÉSED NEM VOLT HIÁBAVALÓ: MÁS TÖRTÉNT, DESTINATION MÁSHOL ÁLL, ÉS MÉGIS IDE JUTOTTÁL. ELFOGADOD A VESZTESÉGET.]"
+        "Az átokkal most nem a falra célzol. A flipendo egyenesen az első előretörő inferus mellkasába csapódik. Hátralököd ugyan, de az ártás nem volt elég erős ahhoz, hogy teljesen megállítsa. Nincs most időd rá – a mögötte lévőre szegezed pálcádat, még mielőtt az kibújna a fal résén át.",
+        "Már hallod a bejárat felől, hogy Des visszaérkezett hozzád, talán épp apáddal, vagy a megtalált medállal. Biztos voltál benne, hogy sikerrel fog járni. Biztos voltál benne, hogy ezúttal minden másként lesz. Biztos voltál benne, hogy…",
+        "Az első inferus, akit megátkoztál, elég közel kerül hozzád ahhoz, hogy megtámadhasson. Kezedet ösztönösen arcod elé veted. Felsérti a bőröd körömtelen végű kezeivel, és kiveri a pálcád a kezedből. Hallod a csapóajtót kinyílni, csak egy kicsit kell kitartanod, hamarosan vége a rémálomnak.",
+        "De a sorsod elől nincs menekvés."
       ],
       "choices": [
         {
           "id": "s1_after_eye_escape_together_dejavu",
-          "text": "Nem próbálod többé visszaforgatni ezt a pillanatot.",
+          "text": "Minden újra megtörténik...",
           "next": "s1_cut_to_chapter_two",
           "tags": [
-            "secret",
             "critical"
           ],
-          "effect": "glitch",
+          "effect": "critical",
           "effects": {
             "set": {
               "savedByDestination": true,
@@ -971,530 +1073,1063 @@
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "effect": "critical-injury"
+      }
     },
     "s1_eye_fire_ring_dejavu": {
-      "title": "Átrajzolt kör",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN MÁSHOL ÉS MÁSKÉPP HÚZOD MEG A TŰZGYŰRŰT, HOGY AZ EMLÉKEIDBEN BENT MARADT INFERIUS EZÚTTAL KÍVÜL REKEDJEN. A TERV SIKERÜL.]",
-        "[EGY MÁSIK, A FÖLD ALATT REJTŐZŐ TEST AZONBAN A KÖR KÖZEPÉN TÖR ELŐ, ÉS ELPUSZTÍTJA AZ EGYIK SZEMEDET.]",
-        "[MÁR NEM LEP MEG. MEGVÁLTOZTATTAD AZ OKOT, DE NEM A VÉGET. ELFOGADOD, AMI KÖVETKEZIK.]"
+        "Nem állítod meg őket teljesen, de feltartod őket addig, amíg a segítség érkezik. Tudod, milyen gyorsan képesek mozogni, mégis csak apátok mágiája mozgatja őket. A varázslatod láthatatlan súlyként nehezedik rájuk, mozgásuk sebessége pedig drasztikusan lecsökken.",
+        "Már hallod a mozgolódást a csapóajtó felett. Biztos vagy a sikeredben, és biztos vagy benne, hogy sikerül élve megúsznod az egészet. Visszakiabálsz testvérednek és apádnak, hogy jól vagy.",
+        "Hiba volt.",
+        "A kar, ami az egyik inferusból vált le, bokádig settenkedett és a földre tarol. A lelassított inferusok beérnek; érzel egy harapást a lábadon, érzed a rád nehezedő súlyokat, amiktől hirtelen nagyon nehézzé válik lélegezni, és érzed azt is, hogy ismét az arcodhoz, a szemedhez nyúlnak."
       ],
       "choices": [
         {
           "id": "s1_after_eye_fire_ring_dejavu",
-          "text": "Leengeded a pálcádat.",
+          "text": "Ismered már a végzeted.",
           "next": "s1_cut_to_chapter_two",
           "tags": [
-            "secret",
             "critical"
           ],
-          "effect": "glitch",
+          "effect": "critical",
           "effects": {
             "set": {
               "acceptedEyeLoss": true
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "effect": "critical-injury"
+      }
     },
     "s1_eye_fire_chaos_dejavu": {
-      "title": "Másként terjedő tűz",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN TERELED MÁSFELÉ A LÁNGOKAT, HOGY ELKERÜLD AZ EMLÉKEIDBEN LÁTOTT TŰZVIHART. A KORÁBBI ÚTVONAL VALÓBAN NEM ÉG LE.]",
-        "[A SZÉL VAGY A FELZAVART INFERIUSOK MOZGÁSA MIATT A TŰZ ÚJ IRÁNYBÓL CSAP VISSZA. A KÁOSZ MÁSKÉNT ALAKUL, DE AZ EGYIK SZEMED UGYANÚGY ELVÉSZ.]",
-        "[NEM ÉRZED TÖBBÉ ÚGY, HOGY ROSSZUL VÁLASZTOTTÁL. A VÉGZET NEM A DÖNTÉSED BÜNTETÉSE VOLT. ELFOGADOD.]"
+        "A földre irányítod a pálcád. Megvárod, míg páran kilépnek, majd újabb ezüstös-kék fény fut végig a bunker kövein, a beázásokból összegyűlt víz pedig egy szempillantás alatt megdermed körülöttük.",
+        "Felkúszik a jég a bokájukra, ráfagy mezítelen lábszárukra, és odaköti őket a padlóhoz. Nyújtóznak feléd, de te a kijárat felé hátrálsz. Már úgyis hallod testvéred kétségbeesett kiabálását, hogy rendben vagy-e. Visszatért, talán apáddal, talán a medállal, de mindenképpen megmenekülsz.",
+        "Legalábbis röpke pillanatra ezt gondolod.",
+        "Az egyik inferus inkább eltöri a saját lábát, csak hogy végezhessen veled, a vélt betolakodóval. Nem számítasz rá, minden gyorsan és hirtelen történik, ahogyan felsőtestével neked veti magát. Ujjai, melyeken egy darab körmöt se számolsz össze, arcodnak feszülnek, hogy meggyalázzák azt. De végül is így igazságos. Ti, Dreadmoorok is meggyaláztátok az ő testét.",
+        "Feltörik mögötted az ajtót, Des hangját varázslatok követik, de túl késő már."
       ],
       "choices": [
         {
           "id": "s1_after_eye_fire_chaos_dejavu",
-          "text": "Hagyod, hogy a jelenet véget érjen.",
+          "text": "Van-e valódi hatásod sorsodra?",
           "next": "s1_cut_to_chapter_two",
           "tags": [
-            "secret",
             "critical"
           ],
-          "effect": "glitch",
+          "effect": "critical",
           "effects": {
             "set": {
               "acceptedEyeLoss": true
             }
           }
         }
-      ]
+      ],
+      "presentation": {
+        "effect": "critical-injury"
+      }
     },
     "s1_cut_to_chapter_two": {
-      "title": "CUT",
+      "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "[A KÉP A SZEMSÉRÜLÉS, A FÁJDALOM ÉS A KÁOSZ PILLANATÁBAN MEGSZAKAD. NE ÍRD LE MÉG A HAZAJUTÁST VAGY A GYÓGYÍTÁST; A KÖVETKEZŐ JELENET MÁR A MÁSODIK FEJEZETBEN KEZDŐDIK.]"
+        "Vérben ázva görnyedsz a földre, mialatt apádék gondoskodnak arról, hogy élve kijuthass innen."
       ],
       "choices": [
         {
           "id": "s1_cut_enter_chapter_two",
-          "text": "II. fejezet",
+          "text": "Kalandod itt véget ér...",
           "next": "s2_wake_after_attack",
           "tags": [
-            "critical"
-          ],
-          "effect": "critical"
+            "normal"
+          ]
         }
-      ]
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "eye-loss",
+          "date": "2006",
+          "icon": "◉",
+          "text": "Az inferusok támadása során elveszítette az egyik szemét."
+        }
+      }
     },
     "s2_wake_after_attack": {
-      "title": "II. szakasz — Az idegen szem",
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
-        "[IDE ÍRD AZ INTERMEZZO NYITÁNYÁT. A KARAKTER BEKÖTÖTT SZEMMEL ÉBRED, ÉS ÉRZÉKELI, HOGY IDEGEN VAN A HÁZBAN.]",
-        "Az anyja közli, hogy szerzett számára egy új szemet egy rendkívül erős látótól."
+        "Csendet hallasz. Most először igazán csendet.",
+        "Először azt gondolod, meghaltál. Különös módon soha nem gondoltál bele úgy igazán abba, hogy ez veled is bármikor megtörténhet, pedig ésszerű volna. Akárcsak a többi degenerált a családotokban, te is megszállottan tiszteled, sőt, szereted őt. Mégis hihetetlennek tűnik annak gondolata, hogy ténylegesen eljön érted a vég, mikor még ilyen fiatal vagy. Hiszen a huszadik életévedet is csak novemberben töltöd majd be.",
+        "Aztán eszedbe jut anyád és a betegsége. Anyád miattad nem fog soha megöregedni, miattad nem képes többet pálcát a kezében forgatni, és miattad nem mehet többet a fényre. Ezt nyíltan persze sosem éreztették veled; a te szüleid úgy gondolják, hogy felülemelkedtek az ilyen piti dolgokon, és azt is felfogják ép ésszel, hogy nem a te hibád Lucia betegsége. Mégis felelősnek érzed magad, mert a te világra jöveteled után romlott az állapota. Mintha egyenesen te átkoztad volna meg.",
+        "Érzed azonban virágos parfümének illatát, és hallod őt matatni a félhomályban.",
+        "Nem érzel semmilyen fájdalmat. Csak az emlékeid vívnak háborút benned, míg konszenzusra nem jutsz azzal kapcsolatban, hogy mi is történt. Minden nagyon zavaros, minden nagyon hirtelen történt. Hát és a szemed…"
       ],
       "choices": [
         {
-          "id": "s2_follow_mother",
-          "text": "Az anyád után lopakodsz.",
-          "next": "s2_witness_seer_murder",
+          "id": "s2_enter_normal_after_escape_separated",
+          "text": "Magadhoz térsz.",
+          "next": "s2_wake_normal",
+          "tags": [
+            "normal"
+          ],
+          "unlock": {
+            "type": "runChoice",
+            "id": "s1_after_eye_escape_separated"
+          },
+          "effects": {
+            "set": {
+              "chapterTwoRoute": "normal"
+            }
+          }
+        },
+        {
+          "id": "s2_enter_normal_after_escape_together",
+          "text": "Magadhoz térsz.",
+          "next": "s2_wake_normal",
+          "tags": [
+            "normal"
+          ],
+          "unlock": {
+            "type": "runChoice",
+            "id": "s1_after_eye_escape_together"
+          },
+          "effects": {
+            "set": {
+              "chapterTwoRoute": "normal"
+            }
+          }
+        },
+        {
+          "id": "s2_enter_normal_after_fire_ring",
+          "text": "Magadhoz térsz.",
+          "next": "s2_wake_normal",
+          "tags": [
+            "normal"
+          ],
+          "unlock": {
+            "type": "runChoice",
+            "id": "s1_after_eye_fire_ring"
+          },
+          "effects": {
+            "set": {
+              "chapterTwoRoute": "normal"
+            }
+          }
+        },
+        {
+          "id": "s2_enter_normal_after_fire_chaos",
+          "text": "Magadhoz térsz.",
+          "next": "s2_wake_normal",
+          "tags": [
+            "normal"
+          ],
+          "unlock": {
+            "type": "runChoice",
+            "id": "s1_after_eye_fire_chaos"
+          },
+          "effects": {
+            "set": {
+              "chapterTwoRoute": "normal"
+            }
+          }
+        },
+        {
+          "id": "s2_enter_dejavu_after_escape_separated_first_twin_discovery",
+          "text": "Újra magadhoz térsz.",
+          "next": "s2_wake_dejavu_first",
+          "tags": [
+            "normal"
+          ],
+          "effect": "normal",
+          "effects": {
+            "set": {
+              "chapterTwoRoute": "deja-vu",
+              "dejaVu": true,
+              "hiddenTwinPreviouslySeen": false
+            }
+          }
+        },
+        {
+          "id": "s2_enter_dejavu_after_escape_together_first_twin_discovery",
+          "text": "Újra magadhoz térsz.",
+          "next": "s2_wake_dejavu_first",
+          "tags": [
+            "normal"
+          ],
+          "effect": "normal",
+          "effects": {
+            "set": {
+              "chapterTwoRoute": "deja-vu",
+              "dejaVu": true,
+              "hiddenTwinPreviouslySeen": false
+            }
+          }
+        },
+        {
+          "id": "s2_enter_dejavu_after_fire_ring_first_twin_discovery",
+          "text": "Újra magadhoz térsz.",
+          "next": "s2_wake_dejavu_first",
+          "tags": [
+            "normal"
+          ],
+          "effect": "normal",
+          "effects": {
+            "set": {
+              "chapterTwoRoute": "deja-vu",
+              "dejaVu": true,
+              "hiddenTwinPreviouslySeen": false
+            }
+          }
+        },
+        {
+          "id": "s2_enter_dejavu_after_fire_chaos_first_twin_discovery",
+          "text": "Újra magadhoz térsz.",
+          "next": "s2_wake_dejavu_first",
+          "tags": [
+            "normal"
+          ],
+          "effect": "normal",
+          "effects": {
+            "set": {
+              "chapterTwoRoute": "deja-vu",
+              "dejaVu": true,
+              "hiddenTwinPreviouslySeen": false
+            }
+          }
+        }
+      ],
+      "media": {
+        "src": "images/story/chapter-anya.jpg",
+        "alt": "Sötét szoba a beavatkozás előtt",
+        "position": "center"
+      },
+      "presentation": {
+        "chapter": {
+          "roman": "II",
+          "label": "Fejezet",
+          "title": "Anya",
+          "duration": 4800
+        },
+        "chapterImage": true
+      }
+    },
+    "s2_wake_normal": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "Odakapsz hozzá, de azt puha kötés fedi. Érzed, hogy elveszítettél valamit, ami pótolhatatlan, és ha normális ember lennél, akkor most sokként érne téged a veszteség. Titeket azonban arra neveltek, hogy a veszteségeket az élet szerves részeként ismerjétek el. Végigsimítasz a kötésen egyszer, miután felülsz, és egyszerűen beletörődsz abba, hogy az életed megváltozik.",
+        "Anyád észreveszi, hogy mocorogsz. Abbahagyja a dolgok rendezgetését a szekrényeden – a házimanótoknak kifejezetten rossz az esztétikai érzéke, de mit is várunk egy bábtól, akinek önálló gondolata és akarata sincs - , és az ágyad szélére ül. Vékony, hideg ujjaival simogatni kezdi a hajad.",
+        "Meglepő, hogy egy ilyen helyzet mit ki nem tud hozni egy anyából. Olykor napok-hetek telnek el úgy, hogy szinte ki se mozdul az ágyából. A vámpír-kór, amivel apád létezésben tartja, nem képes meggyógyítani őt, csak az állapotromlását akadályozza tovább. Előfordul, hogy az utazásaitokon is otthon hagyjátok. Te ezt nem tudtad sokáig, de amikor apád úgy döntött, Indiába mentek vagy Dél-Amerikába, anyátok valójában több hónapos, közönséges emberek számára leginkább alváshoz hasonlító állapotban pihent mélyen egy koporsó alján, hogy a fájdalmak után regenerálódjon. Az elmúlt időszakot is nehezen élte meg – különösen az utazást az Atlanti Óceánon - , most is pihennie kéne. Ő mégis a te arcodat simogatja. Jó hírrel szolgál. Talált számodra egy új szemet, méghozzá nem is akármilyet. Egy rendkívül erős látóé volt, akinek a tekintete elmondása szerint olyan dolgokat is észrevett, amiket az Idő kereke még nem is döntött el véglegesen. Anyád úgy beszél róla, mintha csak egy új ékszert szerzett volna neked. Hüvelykujja gyengéden végigsimít a kötésed alján, és közli veled, hogy hamarosan újra látni fogsz. Természetesen nem kérdezi meg, hogy szeretnéd-e."
+      ],
+      "choices": [
+        {
+          "id": "s2_normal_ask_origin",
+          "text": "Megkérdezed, honnan szerezte.",
+          "next": "s2_origin_evasion_normal",
           "tags": [
             "normal"
           ],
           "effects": {
             "set": {
-              "followedMother": true
+              "questionedEyeOrigin": true
             }
           }
         },
         {
-          "id": "s2_remain_in_room",
-          "text": "A szobában maradsz, és hallgatózol.",
-          "next": "s2_hear_seer_death",
+          "id": "s2_normal_accept_decision",
+          "text": "Elfogadod a döntését, és várakozol.",
+          "next": "s2_preprocedure_normal",
           "tags": [
             "normal"
           ],
           "effects": {
             "set": {
-              "heardSeerDeath": true
+              "implantReaction": "accepted-without-questions"
+            }
+          }
+        }
+      ]
+    },
+    "s2_origin_evasion_normal": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "Fél szemed a fésülködő asztalod tükrére siklik. Anyádat természetesen nem látod benne, hisz neki nincs tükörképe. Saját, megcsonkított másod néz vissza rád, ahogyan anyád válaszát várod.",
+        "Az élet néha elvész, és néha ad. Válasza költői, de hiányzik belőle minden, ami konkrét. Nem is gondol arra, hogy ellenkezni kívánnál. Ruhaujjából egy bájitalt vesz elő, hogy biztosítson arról, az egészből semmit se fogsz érezni.",
+        "Sűrű, opálos folyadék mozdul a fiolában. Ahogyan felpattintja a dugót, édeskés illat terjed szét a szobában. Most is olyan gyengéden nyújtja feléd, mintha csak egy meghűlés elleni italról lenne szó."
+      ],
+      "choices": [
+        {
+          "id": "s2_normal_press_origin",
+          "text": "Tovább faggatózol.",
+          "next": "s2_origin_raven_normal",
+          "tags": [
+            "normal"
+          ],
+          "effects": {
+            "set": {
+              "pressedMotherForTruth": true
             }
           }
         },
         {
-          "id": "s2_follow_hidden_presence",
-          "text": "Nem az anyád után indulsz. A ház másik végéből áradó halott jelenlétet követed.",
-          "next": "s2_hidden_twin",
+          "id": "s2_normal_accept_evasion",
+          "text": "Elfogadod a választ, és várakozol.",
+          "next": "s2_preprocedure_normal",
+          "tags": [
+            "normal"
+          ],
+          "effects": {
+            "set": {
+              "implantReaction": "accepted-evasion"
+            }
+          }
+        }
+      ]
+    },
+    "s2_origin_raven_normal": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "Néhány másodpercig csend hull kettőtök közé, mielőtt anyád megadná magát. Ha ez az ára annak, hogy megnyugvást hozzon, kész azt számodra megadni.",
+        "Beszámol arról, hogy egy varjú hozta azt neki. Egyenesen hozzá érkezett azért, hogy felajánlja a szemet, mert ez volt a dolga. A látó már jóval korábban megjósolta saját halálát, és azáltal, hogy felfedte magát anyád előtt, az önbeteljesítő jóslatát teljesítette.",
+        "Anyád elmondása szerint a látó már olyan sérüléseket hordozott, amire nincs bájital és nincs mágia, mi megnyugvást hoz. Kegyelemdöfés volt, amit készséggel megadott annak, aki ezt kérte.",
+        "Újra a bájitalt nyújtja feléd. A látó történetes nem érdekes, amikor a tiéd csak most kezdődik el."
+      ],
+      "choices": [
+        {
+          "id": "s2_normal_accept_raven_story",
+          "text": "Elfogadod a magyarázatát, és várakozol.",
+          "next": "s2_preprocedure_normal",
+          "tags": [
+            "normal"
+          ],
+          "effects": {
+            "set": {
+              "motherEyeStory": "voluntary-raven-mercy"
+            }
+          }
+        }
+      ]
+    },
+    "s2_preprocedure_normal": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "Ujjaid rászorulnak anyád hideg kezére. Fájdalmad csillapították ugyan, de most érzed csak igazán, hogy valójában milyen gyenge is vagy. Magadra hagy, amíg a bájitalodat elfogyasztod."
+      ],
+      "choices": [
+        {
+          "id": "s2_normal_drink_potion",
+          "text": "Megiszod a bájitalt.",
+          "next": "s2_implant_normal",
+          "tags": [
+            "normal"
+          ],
+          "effects": {
+            "set": {
+              "procedureChoice": "waited"
+            }
+          }
+        },
+        {
+          "id": "s2_normal_follow_control_rod",
+          "text": "Mi ez a hang?",
+          "next": "s2_hidden_twin_normal",
           "tags": [
             "secret",
-            "special"
+            "special",
+            "critical"
           ],
           "effect": "glitch",
           "unlock": {
             "all": [
               {
-                "type": "runChoice",
-                "id": "s1_route_follow_des"
+                "type": "flag",
+                "key": "bookChoice",
+                "operator": "eq",
+                "value": "kutatnaplo"
               },
               {
-                "type": "runChoice",
-                "id": "s1_escape_stay_close"
+                "type": "flag",
+                "key": "retrievedItem",
+                "operator": "eq",
+                "value": "control-rod"
               }
             ]
           },
           "effects": {
             "set": {
-              "sawHiddenTwin": true
+              "hiddenTwinRoomFound": true,
+              "hiddenTwinDiscovery": "control-rod"
             }
           }
         }
       ]
     },
-    "s2_witness_seer_murder": {
-      "title": "A látó utolsó pillanata",
+    "s2_hidden_twin_normal": {
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN LESZ A KARAKTER SZEMTANÚJA A LÁTÓ HALÁLÁNAK ÉS A SZEM ELVÉTELÉNEK.]",
-        "Nyitva hagyhatod, hogy gyilkosság, kegyelemdöfés vagy korábbi alku történt-e."
+        "Artikulálatlan hangokat hallasz valahonnan nem túl messziről.",
+        "Először úgy gondolod, csak Destiny lehet az, aki eljött azért, hogy vigyázzon rád, és csak a fejed játszik veled egy olyan játékot, hogy érthetetlenné mossa át a beszédét. Visszateszed a dugót a bájitalta, és bizonytalan lépésekkel kimész a folyosóra. Hiába hívod bátyád, ő azonban nem válaszol nevére.",
+        "Követed a hangot. Attól félsz, hogy őt se kímélték az inferusok, és valahogyan mégis megsérült. Mi másért is óbégatna? ",
+        "Megtorpansz az egyik ajtónál, ahonnan a hangok szűrődnek ki. A kilincsre szorul a kezed; érzed, hogy azt valaki kívülről bezárta, azonban az már olyan gyenge, hogy a varázslatod egy szempillantás alatt kinyitja majd azt. Hallod a neszezést odabentről, te pedig ahogy közelebb hajolsz az ajtóhoz, ismét bátyád nevét kérdezed.",
+        "A nyöszörgés pár pillanatra elhalkul a túloldalon, de aztán kapkodó, szabálytalan légzések sora veszi át a helyét. Úgy döntesz, hogy…"
       ],
       "choices": [
         {
-          "id": "s2_hide_from_mother",
-          "text": "Elrejtőzöl, és végignézed.",
-          "next": "s2_after_seer_murder",
+          "id": "s2_normal_enter_hidden_twin_room",
+          "text": "Belépsz a helyiségbe.",
+          "next": "s2_hidden_twin_revealed_normal",
           "tags": [
-            "critical"
-          ],
-          "effect": "critical",
-          "effects": {
-            "set": {
-              "sawSeerMurder": true,
-              "confrontedMotherEarly": false
-            }
-          }
-        },
-        {
-          "id": "s2_confront_mother_at_murder",
-          "text": "Előlépsz, és kérdőre vonod az anyádat.",
-          "next": "s2_after_seer_murder",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical",
-          "effects": {
-            "set": {
-              "sawSeerMurder": true,
-              "confrontedMotherEarly": true
-            }
-          }
-        }
-      ]
-    },
-    "s2_after_seer_murder": {
-      "title": "A vérrel hozott ajándék",
-      "paragraphs": [
-        "[IDE ÍRD A GYILKOSSÁG UTÁNI RÖVID KÖVETKEZMÉNYT.]",
-        "A karakter tudja, hogy az új szem a látóé volt."
-      ],
-      "choices": [
-        {
-          "id": "s2_go_to_eye_offer_after_murder",
-          "text": "Szembenézel az anyáddal és azzal, amit hozott neked.",
-          "next": "s2_eye_offer",
-          "tags": [
-            "normal"
-          ]
-        }
-      ]
-    },
-    "s2_hear_seer_death": {
-      "title": "A falon túli hangok",
-      "paragraphs": [
-        "[IDE ÍRD, MIT HALL A KARAKTER A SZOBÁJÁBÓL: IDEGEN HANG, FÉM, EGY RÖVID SIKOLY, MAJD CSEND.]",
-        "Nem tudhatja biztosan, mi történt, csak azt, hogy az anyja véres ruhában tér vissza."
-      ],
-      "choices": [
-        {
-          "id": "s2_go_to_eye_offer_after_hearing",
-          "text": "Megvárod, hogy az anyád belépjen.",
-          "next": "s2_eye_offer",
-          "tags": [
-            "normal"
-          ]
-        }
-      ]
-    },
-    "s2_hidden_twin": {
-      "title": "A másik báty",
-      "paragraphs": [
-        "[IDE ÍRD A TALÁLKOZÁST A HALOTTNAK HITT IKERBÁTTYAL.]",
-        "Ugyanúgy néz ki, mint a családdal élő testvére, de nem beszél, nem mehet napra, és a jelenléte természetellenes."
-      ],
-      "choices": [
-        {
-          "id": "s2_reach_for_hidden_twin",
-          "text": "Megpróbálod megérinteni.",
-          "next": "s2_hidden_twin_interrupted",
-          "tags": [
-            "secret",
             "critical"
           ],
           "effect": "glitch",
           "effects": {
             "set": {
-              "hiddenTwinContact": true
+              "sawHiddenTwin": true,
+              "hiddenTwinEntered": true
             }
           }
         },
         {
-          "id": "s2_observe_hidden_twin",
-          "text": "Távolról figyeled, mielőtt észrevenne.",
-          "next": "s2_hidden_twin_interrupted",
+          "id": "s2_normal_turn_back_before_twin",
+          "text": "Inkább visszatérsz a szobádba, és megiszod a bájitalt.",
+          "next": "s2_implant_normal",
           "tags": [
-            "secret"
+            "critical"
           ],
-          "effect": "glitch",
+          "effect": "normal",
           "effects": {
             "set": {
-              "hiddenTwinContact": false
+              "hiddenTwinEntered": false,
+              "declinedHiddenTwinRoom": true,
+              "procedureChoice": "returned-and-drank"
             }
           }
         }
       ]
     },
-    "s2_hidden_twin_interrupted": {
-      "title": "A bezárt ajtó",
+    "s2_hidden_twin_revealed_normal": {
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN SZAKÍTJA FÉLBE VALAKI A TALÁLKOZÁST, ÉS HOGYAN KERÜL VISSZA A KARAKTER AZ ANYJÁHOZ.]"
+        "Egyenesen belököd az ajtót.",
+        "Sötét függönyökkel takart szobában találod magad. A szobában egyetlen ágy van, az alak mégis a földön kuporog hátát a falnak vetve. Mezítelenül terül el előtted valaki, akiről azt hiszed, hogy ismered. Egy pillanatra tényleg azt hiszed, hogy Destination az. Ugyanaz a szőke haj, ugyanazok a ragyogó szemek. Az arca azonban sokkal keskenyebb az övénél. Olyan, mintha egyenesen a rosszul sikerült, torz tükörképét látnád, ami kiszívta belőle az összes erőt. Bal karja természetellenesen simul saját testéhez, tartásában pedig látod az enyhe gerincferdülés jelét. Régi átokhegek futnak végig a nyakán, a csuklóján és a testén.",
+        "Megpróbál szólni hozzád, de csak artikulálatlan nyöszörgés hagyja el ezen szánalmas lény ajkait. Észreveszed lábán a láncot, mely ehhez a helyhez rögzíti őt, mint egy fenevadat.",
+        "A bátyád az. Tényleg a bátyád az.",
+        "Nem ő, hanem a másik.",
+        "Nincsenek emlékeid róla, de tudtad, hogy Destinationnek ikertestvére is született. Nem minden generációt áldott meg az Élet ikertestvérekkel, pedig az első Dreadmoorok is ikertestvérek, Malachias és Ysoria is ikrek voltak. Néha elfantáziáltál róla, hogy milyen lehetne, ha neked is lenne egy ikertestvéred, de ott volt neked Destiny, és nem kívánhatnál nála jobb testvért.",
+        "Néha tartottatok megemlékezéseket Desolationról. Úgy gondoltátok, hogy halott, szüleitek ezt mondták nektek. Mindig nagy szeretettel gondoltál arra az ideára, ami Desolation lehet. De bármit is képzeltél, bárhogy is gondoltad, az mégsem az, mint ez itt, előtted."
       ],
       "choices": [
         {
-          "id": "s2_go_to_eye_offer_after_twin",
-          "text": "Az anyád elé állsz.",
-          "next": "s2_eye_offer",
+          "id": "s2_normal_try_free_twin",
+          "text": "Megpróbálod kiszabadítani.",
+          "next": "s2_twin_attack_normal",
+          "tags": [
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "hiddenTwinReaction": "tried-to-free"
+            }
+          }
+        },
+        {
+          "id": "s2_normal_fear_twin",
+          "text": "Megrémülsz tőle, és hátrálni kezdesz.",
+          "next": "s2_twin_fear_normal",
+          "tags": [
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "hiddenTwinReaction": "feared"
+            }
+          }
+        }
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "hidden-twin-discovered",
+          "date": "II. fejezet",
+          "icon": "†",
+          "text": "Megtalálta a halottnak hitt bátyját a ház elzárt részében."
+        }
+      }
+    },
+    "s2_twin_attack_normal": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "Nem hagyhatod így itt. Naiv vagy – még nem rakod össze a képet, hogy a szüleid pontosan tisztában vannak Desolation nyomorával, hisz egyenesen ők taszították őt bele. Pedig nagyon is jól tudod, hogy apád lelkes az új kísérletekkel kapcsolatban. Azért az a sok kutatónapló és diafilm.",
+        "Pálcád a láncokra szegezed, Desolation tekintete azonban a kezedben lévő pálcára tapad. Nincs időd értelmezni a rémületet az arcán. Torkából kétségbeesett, könyörgő hang szakad fel, te pedig hiába próbálod megnyugtatni, hogy csak segíteni akarsz. Nem ért téged, nem érti, mit mondasz.",
+        "Aztán ahogy mozdítod a pálcádat, hogy kiszabadítsd, a sovány test neked ront. Fél kézzel üti le a karodat, a varázslatod pedig visszapattan a falról, hogy végleg keresztet vessen az ósdi, lemálló tapétának. Ujjai csuklód köré fonódnak, körmei a bőrödbe vájnak, majd amint elengedi, a torkod után kap. Mindkét kezével rászorít – az éppel, és azzal is, ami kissé mintha torznak hatna. Hüvelykujjai légcsövednek feszülnek, hátad pedig a falnak csapódik épp ott, ahová az átkod pattant. Hiába próbálod lefejteni magadról az ujjait, Desolation csak egyre kétségbeesetten kapaszkodik beléd. Erőtlenül hallatsz egy rekedt nyögést, de nem hat semmit az egész.",
+        "Anyád élesen csattanó hangja parancsol megálljt halálodnak – rövid időn belül kétszer is találkoztál családotok legfőbb múzsájával, és egyszer se vitt magával. Desolation azonnal elengedi a nyakad. Szó szerint félretaszít téged; a földre esel, levegő után kapkodsz, testvéred pedig összekuporodik a sarokban, mintha ezzel láthatatlanná tudna válni. Anyád jelenlétében rád se mer nézni.",
+        "Anyád úgy helyezkedik, hogy teljesen kitakarja előled bátyádat. Leguggol melléd, hűvös ujjait pedig az állad alá csúsztatja, hogy megnézze a sérülésed. Ahogy meggyőződött róla, hogy a sokkon kívül nincs további bajod, visszaparancsol a szobádba, hogy átess végre a procedúrán."
+      ],
+      "choices": [
+        {
+          "id": "s2_normal_return_after_twin_attack",
+          "text": "Visszamész vele a procedúrához.",
+          "next": "s2_implant_normal",
+          "tags": [
+            "normal"
+          ]
+        }
+      ],
+      "presentation": {
+        "effect": "hit"
+      }
+    },
+    "s2_twin_fear_normal": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "Túl sok ez neked. Pedig sok mindent elbír a gyomrod – Dreadmoor vagy, szinonimátok az abberáltság, főleg, ha az Alsóházból valóak vagytok, mint te magad. Eszedbe jut a kutatónapló, amit a polcon találtál, és a diasorok, amikre pár pillantást vetettél, mielőtt elvitted volna. Nem tudtad értelmezni őket, és nyilván nem is a bátyád lehetett azokon a képeken. Mégis érzed a hasonlóságokat.",
+        "Desolation látja, hogy figyeled. Megtesz feléd egy tétova lépést, a láncok azonban nem engedik őt tovább menni.",
+        "Hangokat hallasz a folyosó felől. Mielőtt még lehetőséged lenne hátrafordulni, anyád már ott van mögötted. Hideg kezét a válladra teszi. Nem kérdezi meg tőled, hogy mit keresel itt. Tudja, hogy érzed magadtól is, hogy nincs itt semmi keresnivalód. Szembe fordít saját magával, egy kósza tincset pedig kisöpör arcodból, mielőtt kedvesen megjegyezné, hogy elcsatangoltál. Szemed sarkából látod, hogy Desolation visszavonul a szoba egyik sarkába. Majd később talán eszedbe jut, hogy milyen rémültnek is tűnt valójában, amint megjelent itt anyád.",
+        "Becsukódik az ajtó mögötted, miután anyád azt mondja, ne törődj vele. Érzed, hogy nem fogtok erről beszélgetni. Visszakísér a szobádhoz, hogy megidd a bájitalodat a procedúra előtt."
+      ],
+      "choices": [
+        {
+          "id": "s2_normal_return_after_twin_fear",
+          "text": "Hagyod, hogy visszavezessen.",
+          "next": "s2_implant_normal",
           "tags": [
             "normal"
           ]
         }
       ]
     },
-    "s2_eye_offer": {
-      "title": "Az új szem",
+    "s2_implant_normal": {
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN MUTATJA MEG AZ ANYA A LÁTÓTÓL SZERZETT SZEMET.]",
-        "Bármelyik választás történik, a szem beültetése végül megtörténik."
+        "Óvatosan emeled ajkaidhoz a bájitalt. Anyád türelemre intett, így apró, kicsi kortyokat veszel csak a méz ízű, opálos színű bájitalból.",
+        "Ismét sötétedni kezd a világ. Még érzed, hogy tested elernyed az ágyon, és nagyjából magadnál vagy akkor is, amikor elvisznek téged valahova máshova, hogy végre találkozz velem, a valódi végzeteddel."
       ],
       "choices": [
         {
-          "id": "s2_accept_eye",
-          "text": "Beleegyezel a beültetésbe.",
-          "next": "s2_accept_eye_scene",
-          "tags": [
-            "normal"
-          ],
-          "effects": {
-            "set": {
-              "implantReaction": "accepted"
-            }
-          }
-        },
-        {
-          "id": "s2_demand_truth",
-          "text": "Előbb tudni akarod, honnan származik.",
-          "next": "s2_demand_truth_scene",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical",
-          "effects": {
-            "set": {
-              "implantReaction": "demanded-truth"
-            }
-          }
-        },
-        {
-          "id": "s2_refuse_eye",
-          "text": "Visszautasítod. Nem akarod magadban érezni ezt a szemet.",
-          "next": "s2_refuse_eye_scene",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical",
-          "effects": {
-            "set": {
-              "implantReaction": "refused"
-            }
-          }
-        }
-      ]
-    },
-    "s2_accept_eye_scene": {
-      "title": "Beleegyezés",
-      "paragraphs": [
-        "[IDE ÍRD AZ ÖNKÉNTESNEK TŰNŐ BEAVATKOZÁS ELŐKÉSZÍTÉSÉT.]"
-      ],
-      "choices": [
-        {
-          "id": "s2_accept_implant",
+          "id": "s2_normal_finish_implant",
           "text": "Lehunyod a megmaradt szemed.",
-          "next": "s2_eye_implanted_checkpoint",
+          "next": "s2_eye_implanted_normal",
           "tags": [
-            "critical"
+            "normal"
           ],
-          "effect": "critical"
+          "effects": {
+            "set": {
+              "eyeImplanted": true,
+              "implantRoute": "normal"
+            }
+          }
         }
       ]
     },
-    "s2_demand_truth_scene": {
-      "title": "Fél igazságok",
+    "s2_eye_implanted_normal": {
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
-        "[IDE ÍRD AZ ANYA MAGYARÁZATÁT VAGY HAZUGSÁGÁT A SZEM EREDETÉRŐL.]",
-        "A válasz nem akadályozza meg a beavatkozást."
+        "Nem érzel az egészből semmit.",
+        "Gondos kezek veszik le a kötést fejedről, és még gondosabbak, akik mágiával hozzád csatolnak engem. Még eszméletednél vagy, amikor először találkozol az én kékemmel, bár egészen biztos vagyok abban, hogy a perverz családod csinált velem valamit, és zöld lehettem ezelőtt.",
+        "Abban a pillanatban, hogy összekapcsolódunk, érzed, hogy velem valami nem természetes. Nem érzel sajátodnak, és még nem is láttad pedig önnön képmásod tükörben.",
+        "A következő napokat pihenéssel töltöd."
       ],
       "choices": [
         {
-          "id": "s2_truth_implant",
-          "text": "Nincs több időd kérdezni.",
-          "next": "s2_eye_implanted_checkpoint",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical"
-        }
-      ]
-    },
-    "s2_refuse_eye_scene": {
-      "title": "Tiltakozás",
-      "paragraphs": [
-        "[IDE ÍRD A TILTAKOZÁST. DÉJÀ VU ÚTVONALON A KARAKTER TUDJA, HOGY EZ A SZEM FOGJA KÍNOZNI ÉS A HALÁLÁBA KERGETNI.]",
-        "Az anya lefogja, elkábítja vagy más módon végrehajtja a beavatkozást."
-      ],
-      "choices": [
-        {
-          "id": "s2_forced_implant",
-          "text": "A sötétség ellen hiába küzdesz.",
-          "next": "s2_eye_implanted_checkpoint",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical"
-        }
-      ]
-    },
-    "s2_eye_implanted_checkpoint": {
-      "title": "A második tekintet",
-      "paragraphs": [
-        "[IDE ÍRD A MÁSODIK SZAKASZ KÖZÖS LEZÁRÁSÁT.]",
-        "Bármelyik útvonalat választotta az olvasó, a karakter megkapta az új szemet. Néhány nap telik el, mielőtt a látomások felerősödnek."
-      ],
-      "choices": [
-        {
-          "id": "s2_enter_visions",
+          "id": "s2_normal_enter_final_chapter",
           "text": "Néhány nappal később.",
-          "next": "s3_recovery",
+          "next": "s3_normal_recovery",
+          "tags": [
+            "normal"
+          ]
+        }
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "seer-eye-implanted",
+          "date": "II. fejezet",
+          "icon": "✦",
+          "text": "Anyja beültette az erős látótól származó idegen szemet."
+        }
+      }
+    },
+    "s2_wake_dejavu_first": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "Azonnal a kötéshez nyúlsz. Ismerős már a puha szövet ujjad alatt, mely elvesztett szemedet takarja. Megözönlenek téged az emlékek. Minden olyan ismerős, mintha mindez már megtörtént volna veled egyszer.",
+        "Nem csak azokra a pillanatokra emlékszel, amit az inferusokkal való viaskodások alatt töltöttél. Emlékszel a bájital mézédes ízére, amit anyád halott ujjai közül kapsz majd kezedhez. Emlékszel arra az első pillanatra, amikor megláttál engem a tükörben önmagadban. Emlékszel a képekre, amiket akartam, hogy általam láss, és emlékszel arra a fájdalomra is, amit önmagadnak okoztál, csak hogy megszabadulhass tőlem.",
+        "De én itt vagyok veled újra, mindkettőnk rettentő örömére.",
+        "Felülsz, még mielőtt anyád abbahagyná dolgaid rendezgetését a szekrényen. Már azelőtt hallod a tárgy koppanását, mielőtt az tényleg megtörténne, és készülsz arra is, hogy a régi matrac, amin fekszel, besüpped majd, ahogy leül melléd.",
+        "Egyenesen az arcára nézel. Hagyod, hogy vékony, hideg ujjai hozzáérjenek arcodhoz éppen ott, ahol emlékeidben is történt. Abban a másik életben megnyugtatott az anyai érintés, és elsöpörte belőled a bizonytalanságot. Most azonban csak azok a borzalmak jutnak eszedbe, amit az általa választott ajándéka okozott számodra.",
+        "Megelőzöd őt a beszédben, hisz úgyis tudod, mit akar majd mondani neked. Próbálod elmagyarázni neki, hogy mit fogok tenni veled. Az őrületbe foglak kergetni, ismét, mert az erőszakra, amit anyád elkövetett ellenem, az erőszak a méltó válasz. Újra bele foglak kergetni halálodba, és teszem meg ezt újra és újra. Megmutatok neked mindent abból, amire nem állsz készen, éhséget, fájdalmat és idegen gondolatokat fogok beléd szivárogtatni, míg fel nem adod újra."
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_protest_parasite_first",
+          "text": "Tiltakozol a parazita ellen.",
+          "next": "s2_dejavu_protest",
+          "tags": [
+            "normal"
+          ],
+          "effect": "normal",
+          "effects": {
+            "set": {
+              "implantReaction": "dejavu-refusal"
+            }
+          }
+        }
+      ]
+    },
+    "s2_wake_dejavu": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "Azonnal a kötéshez nyúlsz. Ismerős már a puha szövet ujjad alatt, mely elvesztett szemedet takarja. Megözönlenek téged az emlékek. Minden olyan ismerős, mintha mindez már megtörtént volna veled egyszer.",
+        "Nem csak azokra a pillanatokra emlékszel, amit az inferusokkal való viaskodások alatt töltöttél. Emlékszel a láncra kötött bátyádra a lezárt szobában, aki még beszélni se volt képes hozzád. Emlékszel a bájital mézédes ízére, amit anyád halott ujjai közül kapsz majd kezedhez. Emlékszel arra az első pillanatra, amikor megláttál engem a tükörben önmagadban. Emlékszel a képekre, amiket akartam, hogy általam láss, és emlékszel arra a fájdalomra is, amit önmagadnak okoztál, csak hogy megszabadulhass tőlem.",
+        "De én itt vagyok veled újra, mindkettőnk rettentő örömére.",
+        "Felülsz, még mielőtt anyád abbahagyná dolgaid rendezgetését a szekrényen. Már azelőtt hallod a tárgy koppanását, mielőtt az tényleg megtörténne, és készülsz arra is, hogy a régi matrac, amin fekszel, besüpped majd, ahogy leül melléd.",
+        "Egyenesen az arcára nézel. Hagyod, hogy vékony, hideg ujjai hozzáérjenek arcodhoz éppen ott, ahol emlékeidben is történt. Abban a másik életben megnyugtatott az anyai érintés, és elsöpörte belőled a bizonytalanságot. Most azonban csak azok a borzalmak jutnak eszedbe, amit az általa választott ajándéka okozott számodra.",
+        "Megelőzöd őt a beszédben, hisz úgyis tudod, mit akar majd mondani neked. Próbálod elmagyarázni neki, hogy mit fogok tenni veled. Az őrületbe foglak kergetni, ismét, mert az erőszakra, amit anyád elkövetett ellenem, az erőszak a méltó válasz. Újra bele foglak kergetni halálodba, és teszem meg ezt újra és újra. Megmutatok neked mindent abból, amire nem állsz készen, éhséget, fájdalmat és idegen gondolatokat fogok beléd szivárogtatni, míg fel nem adod újra. Elmeséled azt is, hogy tudsz Desolationról, és tudod, hogy melyik szobában tartja őt."
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_protest_parasite",
+          "text": "Tiltakozol a parazita ellen.",
+          "next": "s2_dejavu_protest",
+          "tags": [
+            "normal"
+          ],
+          "effect": "normal",
+          "effects": {
+            "set": {
+              "implantReaction": "dejavu-refusal"
+            }
+          }
+        }
+      ]
+    },
+    "s2_dejavu_protest": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "[A KARAKTER ELMONDJA, HOGY A SZEMET NEM ÖNKÉNT ADTÁK, HOGY A SZEM NEM AKARJA ŐT, ÉS HOGY EZT EGYSZER MÁR VÉGIGÉLTE.]",
+        "[MEGPRÓBÁLJA ELMAGYARÁZNI, HOGY A SZEM KÍNOZNI FOGJA, BELEKAPASZKODIK AZ EMLÉKEIBE, ÉS VÉGÜL A HALÁLÁBA KERGETI.]",
+        "[AZ ANYA A TILTAKOZÁST TRAUMÁNAK, LÁZÁLOMNAK VAGY LÁTOMÁSNAK TEKINTI. A FIGYELMEZTETÉS CSAK MÉG JOBBAN MEGGYŐZI ARRÓL, HOGY A BEAVATKOZÁST VÉGRE KELL HAJTANIA.]"
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_mother_insists",
+          "text": "Anyád nem enged a döntéséből.",
+          "next": "s2_preprocedure_dejavu",
+          "tags": [
+            "normal"
+          ],
+          "effect": "normal"
+        }
+      ]
+    },
+    "s2_preprocedure_dejavu": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "[A KARAKTER FELISMERI A BÁJITAL ÍZÉT, AZ ESZKÖZÖK HANGJÁT ÉS AZT A PILLANATOT, AMIKOR AZ ANYA RÖVID IDŐRE MAGÁRA HAGYJA.]",
+        "[TUDJA, HOGY HA MEGISSZA A BÁJITALT, A BEÜLTETÉS UGYANÚGY MEGTÖRTÉNIK. UGYANAKKOR MOST EMLÉKSZIK EGY NYITVA MARADÓ AJTÓRA ÉS A HÁZ ELZÁRT RÉSZÉRE.]"
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_drink_potion",
+          "text": "Megiszod a bájitalt, és megvárod a procedúra végét.",
+          "next": "s2_implant_dejavu",
+          "tags": [
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "procedureChoice": "dejavu-waited"
+            }
+          }
+        },
+        {
+          "id": "s2_dejavu_escape_first",
+          "text": "Megpróbálsz megszökni.",
+          "next": "s2_hidden_twin_dejavu_first",
+          "tags": [
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "hiddenTwinRoomFound": true,
+              "hiddenTwinDiscovery": "deja-vu-first"
+            }
+          }
+        }
+      ]
+    },
+    "s2_hidden_twin_dejavu_first": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "Artikulálatlan hangokat hallasz valahonnan nem túl messziről.",
+        "Először úgy gondolod, csak Destiny lehet az, aki eljött azért, hogy vigyázzon rád, és csak a fejed játszik veled egy olyan játékot, hogy érthetetlenné mossa át a beszédét. Visszateszed a dugót a bájitalta, és bizonytalan lépésekkel kimész a folyosóra. Hiába hívod bátyád, ő azonban nem válaszol nevére.",
+        "Követed a hangot. Attól félsz, hogy őt se kímélték az inferusok, és valahogyan mégis megsérült. Mi másért is óbégatna? ",
+        "Megtorpansz az egyik ajtónál, ahonnan a hangok szűrődnek ki. A kilincsre szorul a kezed; érzed, hogy azt valaki kívülről bezárta, azonban az már olyan gyenge, hogy a varázslatod egy szempillantás alatt kinyitja majd azt. Hallod a neszezést odabentről, te pedig ahogy közelebb hajolsz az ajtóhoz, ismét bátyád nevét kérdezed.",
+        "A nyöszörgés pár pillanatra elhalkul a túloldalon, de aztán kapkodó, szabálytalan légzések sora veszi át a helyét. Úgy döntesz, hogy…"
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_enter_hidden_twin_room_first",
+          "text": "Belépsz a helyiségbe.",
+          "next": "s2_hidden_twin_revealed_dejavu_first",
+          "tags": [
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "sawHiddenTwin": true,
+              "hiddenTwinEntered": true
+            }
+          }
+        },
+        {
+          "id": "s2_dejavu_turn_back_before_twin_first",
+          "text": "Inkább visszatérsz a szobádba, és megiszod a bájitalt.",
+          "next": "s2_implant_dejavu",
+          "tags": [
+            "critical"
+          ],
+          "effect": "normal",
+          "effects": {
+            "set": {
+              "hiddenTwinEntered": false,
+              "declinedHiddenTwinRoom": true,
+              "procedureChoice": "dejavu-first-returned-and-drank"
+            }
+          }
+        }
+      ]
+    },
+    "s2_hidden_twin_revealed_dejavu_first": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "Egyenesen belököd az ajtót.",
+        "Sötét függönyökkel takart szobában találod magad. A szobában egyetlen ágy van, az alak mégis a földön kuporog hátát a falnak vetve. Mezítelenül terül el előtted valaki, akiről azt hiszed, hogy ismered. Egy pillanatra tényleg azt hiszed, hogy Destination az. Ugyanaz a szőke haj, ugyanazok a ragyogó szemek. Az arca azonban sokkal keskenyebb az övénél. Olyan, mintha egyenesen a rosszul sikerült, torz tükörképét látnád, ami kiszívta belőle az összes erőt. Bal karja természetellenesen simul saját testéhez, tartásában pedig látod az enyhe gerincferdülés jelét. Régi átokhegek futnak végig a nyakán, a csuklóján és a testén.",
+        "Megpróbál szólni hozzád, de csak artikulálatlan nyöszörgés hagyja el ezen szánalmas lény ajkait. Észreveszed lábán a láncot, mely ehhez a helyhez rögzíti őt, mint egy fenevadat.",
+        "A bátyád az. Tényleg a bátyád az.",
+        "Nem ő, hanem a másik.",
+        "Nincsenek emlékeid róla, de tudtad, hogy Destinationnek ikertestvére is született. Nem minden generációt áldott meg az Élet ikertestvérekkel, pedig az első Dreadmoorok is ikertestvérek, Malachias és Ysoria is ikrek voltak. Néha elfantáziáltál róla, hogy milyen lehetne, ha neked is lenne egy ikertestvéred, de ott volt neked Destiny, és nem kívánhatnál nála jobb testvért.",
+        "Néha tartottatok megemlékezéseket Desolationról. Úgy gondoltátok, hogy halott, szüleitek ezt mondták nektek. Mindig nagy szeretettel gondoltál arra az ideára, ami Desolation lehet. De bármit is képzeltél, bárhogy is gondoltad, az mégsem az, mint ez itt, előtted."
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_try_free_twin_first",
+          "text": "Megpróbálod kiszabadítani.",
+          "next": "s2_twin_attack_dejavu_first",
+          "tags": [
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "hiddenTwinReaction": "dejavu-first-tried-to-free"
+            }
+          }
+        },
+        {
+          "id": "s2_dejavu_fear_twin_first",
+          "text": "Megrémülsz tőle, és hátrálni kezdesz.",
+          "next": "s2_twin_fear_dejavu_first",
+          "tags": [
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "hiddenTwinReaction": "dejavu-first-feared"
+            }
+          }
+        }
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "hidden-twin-discovered",
+          "date": "II. fejezet",
+          "icon": "†",
+          "text": "Megtalálta a halottnak hitt bátyját a ház elzárt részében."
+        }
+      }
+    },
+    "s2_twin_attack_dejavu_first": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "Nem hagyhatod így itt. Naiv vagy – még nem rakod össze a képet, hogy a szüleid pontosan tisztában vannak Desolation nyomorával, hisz egyenesen ők taszították őt bele. Pedig nagyon is jól tudod, hogy apád lelkes az új kísérletekkel kapcsolatban. Azért az a sok kutatónapló és diafilm.",
+        "Pálcád a láncokra szegezed, Desolation tekintete azonban a kezedben lévő pálcára tapad. Nincs időd értelmezni a rémületet az arcán. Torkából kétségbeesett, könyörgő hang szakad fel, te pedig hiába próbálod megnyugtatni, hogy csak segíteni akarsz. Nem ért téged, nem érti, mit mondasz.",
+        "Aztán ahogy mozdítod a pálcádat, hogy kiszabadítsd, a sovány test neked ront. Fél kézzel üti le a karodat, a varázslatod pedig visszapattan a falról, hogy végleg keresztet vessen az ósdi, lemálló tapétának. Ujjai csuklód köré fonódnak, körmei a bőrödbe vájnak, majd amint elengedi, a torkod után kap. Mindkét kezével rászorít – az éppel, és azzal is, ami kissé mintha torznak hatna. Hüvelykujjai légcsövednek feszülnek, hátad pedig a falnak csapódik épp ott, ahová az átkod pattant. Hiába próbálod lefejteni magadról az ujjait, Desolation csak egyre kétségbeesetten kapaszkodik beléd. Erőtlenül hallatsz egy rekedt nyögést, de nem hat semmit az egész.",
+        "Anyád élesen csattanó hangja parancsol megálljt halálodnak – rövid időn belül kétszer is találkoztál családotok legfőbb múzsájával, és egyszer se vitt magával. Desolation azonnal elengedi a nyakad. Szó szerint félretaszít téged; a földre esel, levegő után kapkodsz, testvéred pedig összekuporodik a sarokban, mintha ezzel láthatatlanná tudna válni. Anyád jelenlétében rád se mer nézni.",
+        "Anyád úgy helyezkedik, hogy teljesen kitakarja előled bátyádat. Leguggol melléd, hűvös ujjait pedig az állad alá csúsztatja, hogy megnézze a sérülésed. Ahogy meggyőződött róla, hogy a sokkon kívül nincs további bajod, visszaparancsol a szobádba, hogy átess végre a procedúrán."
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_return_after_twin_attack_first",
+          "text": "Visszamész vele a procedúrához.",
+          "next": "s2_implant_dejavu",
+          "tags": [
+            "normal"
+          ]
+        }
+      ],
+      "presentation": {
+        "effect": "hit"
+      }
+    },
+    "s2_twin_fear_dejavu_first": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "Túl sok ez neked. Pedig sok mindent elbír a gyomrod – Dreadmoor vagy, szinonimátok az abberáltság, főleg, ha az Alsóházból valóak vagytok, mint te magad. Eszedbe jut a kutatónapló, amit a polcon találtál, és a diasorok, amikre pár pillantást vetettél, mielőtt elvitted volna. Nem tudtad értelmezni őket, és nyilván nem is a bátyád lehetett azokon a képeken. Mégis érzed a hasonlóságokat.",
+        "Desolation látja, hogy figyeled. Megtesz feléd egy tétova lépést, a láncok azonban nem engedik őt tovább menni.",
+        "Hangokat hallasz a folyosó felől. Mielőtt még lehetőséged lenne hátrafordulni, anyád már ott van mögötted. Hideg kezét a válladra teszi. Nem kérdezi meg tőled, hogy mit keresel itt. Tudja, hogy érzed magadtól is, hogy nincs itt semmi keresnivalód. Szembe fordít saját magával, egy kósza tincset pedig kisöpör arcodból, mielőtt kedvesen megjegyezné, hogy elcsatangoltál. Szemed sarkából látod, hogy Desolation visszavonul a szoba egyik sarkába. Majd később talán eszedbe jut, hogy milyen rémültnek is tűnt valójában, amint megjelent itt anyád.",
+        "Becsukódik az ajtó mögötted, miután anyád azt mondja, ne törődj vele. Érzed, hogy nem fogtok erről beszélgetni. Visszakísér a szobádhoz, hogy megidd a bájitalodat a procedúra előtt."
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_return_after_twin_fear_first",
+          "text": "Hagyod, hogy visszavezessen.",
+          "next": "s2_implant_dejavu",
           "tags": [
             "normal"
           ]
         }
       ]
     },
-    "s3_recovery": {
-      "title": "III. szakasz — Amit a szem lát",
+    "s2_hidden_twin_dejavu": {
+      "title": "II. Fejezet — Anya",
       "paragraphs": [
-        "[IDE ÍRD A REGENERÁLÓDÁS NAPJAIT ÉS AZ ELSŐ, MÉG BIZONYTALAN LÁTOMÁSOKAT.]",
-        "A szem fizikailag gyógyul, de idegen emlékeket, lehetséges jövőket és szándékosan kegyetlen képeket mutat."
+        "[A KARAKTER EMLÉKEI ALAPJÁN JUT EL A HÁZ ELZÁRT RÉSZÉBE. FELISMERI AZ AJTÓT, ÉS MÁR A KINYITÁSA ELŐTT TUDJA, KIT REJTENEK MÖGÖTTE.]",
+        "[MOST MÉG VISSZAFORDULHAT. HA NEM LÉP BE, VISSZATÉRHET A SAJÁT SZOBÁJÁBA, MEGIHATJA A BÁJITALT, ÉS HAGYHATJA, HOGY A BEAVATKOZÁS ÚJRA MEGTÖRTÉNJEN.]"
       ],
       "choices": [
         {
-          "id": "s3_tell_mother",
-          "text": "Elmondod az anyádnak, mit látsz.",
-          "next": "s3_mother_response",
+          "id": "s2_dejavu_enter_hidden_twin_room",
+          "text": "Kinyitod az ajtót, és belépsz.",
+          "next": "s2_hidden_twin_revealed_dejavu",
           "tags": [
-            "normal"
+            "critical"
           ],
+          "effect": "glitch",
           "effects": {
             "set": {
-              "visionReaction": "told-mother"
+              "sawHiddenTwin": true,
+              "hiddenTwinEntered": true
             }
           }
         },
         {
-          "id": "s3_hide_visions",
-          "text": "Eltitkolod a látomásokat.",
-          "next": "s3_hide_visions_scene",
+          "id": "s2_dejavu_turn_back_before_twin",
+          "text": "Nem lépsz be. Visszatérsz a szobádba, és megiszod a bájitalt.",
+          "next": "s2_implant_dejavu",
+          "tags": [
+            "critical"
+          ],
+          "effect": "normal",
+          "effects": {
+            "set": {
+              "hiddenTwinEntered": false,
+              "declinedHiddenTwinRoom": true,
+              "procedureChoice": "dejavu-returned-and-drank"
+            }
+          }
+        }
+      ]
+    },
+    "s2_hidden_twin_revealed_dejavu": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "[A KARAKTER EMLÉKEI ALAPJÁN JUT EL A HÁZ ELZÁRT RÉSZÉBE. MÁR AZ AJTÓ KINYITÁSA ELŐTT TUDJA, HOGY DESTINATIONNEL AZONOS ARCOT FOG LÁTNI.]",
+        "[A HALOTTNAK HITT BÁTY EBBEN AZ ÉLETBEN IS OTT VAN: GYENGE, LEAMORTIZÁLT ÉS BESZÉDKÉPTELEN. A FELFEDEZÉS MOST AZT BIZONYÍTJA, HOGY A KORÁBBI EMLÉKEK NEM PUSZTA LÁTOMÁSOK VOLTAK.]"
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_try_free_twin",
+          "text": "Megpróbálod kiszabadítani.",
+          "next": "s2_twin_attack_dejavu",
           "tags": [
             "normal"
           ],
+          "effect": "normal",
           "effects": {
             "set": {
-              "visionReaction": "hidden"
+              "hiddenTwinReaction": "dejavu-tried-to-free"
             }
           }
         },
         {
-          "id": "s3_examine_eye",
-          "text": "Egyedül próbálod megvizsgálni és tesztelni a szemet.",
-          "next": "s3_examine_eye_scene",
+          "id": "s2_dejavu_fear_twin",
+          "text": "Megrémülsz tőle, és hátrálni kezdesz.",
+          "next": "s2_twin_fear_dejavu",
+          "tags": [
+            "normal"
+          ],
+          "effect": "normal",
+          "effects": {
+            "set": {
+              "hiddenTwinReaction": "dejavu-feared"
+            }
+          }
+        }
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "hidden-twin-discovered",
+          "date": "II. fejezet",
+          "icon": "†",
+          "text": "Megtalálta a halottnak hitt bátyját a ház elzárt részében."
+        }
+      }
+    },
+    "s2_twin_attack_dejavu": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "[A BÁTY A KISZABADÍTÁSI KÍSÉRLETRE RÁTÁMAD A KARAKTERRE ÉS FOJTOGATNI KEZDI. A KARAKTER EMLÉKSZIK A MOZDULATRA, DE ETTŐL MÉG NEM TUDJA MEGÁLLÍTANI.]",
+        "[AZ ANYA MEGMENTI. A BÁTY TŐLE MOST IS AZONNAL VISSZAHŐKÖL ÉS LÁTHATÓAN RETTEG.]",
+        "[AZ ANYA VISSZAVISZI A KARAKTERT A BEÜLTETÉSHEZ. A DÉJÀ VU ÚTVONAL NEM TÉR VISSZA A NORMÁL ÁGRA.]"
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_return_after_twin_attack",
+          "text": "Újra a procedúra elé kerülsz.",
+          "next": "s2_implant_dejavu",
+          "tags": [
+            "normal"
+          ],
+          "effect": "normal"
+        }
+      ],
+      "presentation": {
+        "effect": "hit"
+      }
+    },
+    "s2_twin_fear_dejavu": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "[A KARAKTER HÁTRÁL. AZ ANYA MEGTALÁLJA, MEGNYUGTATJA VAGY RÁHATÁSSAL ENGEDELMESSÉ TESZI.]",
+        "[A KARAKTER MÁR TUDJA, HOGY MAGYARÁZATOT NEM FOG KAPNI. AZ ANYA VISSZAVEZETI A BEÜLTETÉSHEZ.]",
+        "[A DÉJÀ VU ÚTVONAL NEM TÉR VISSZA A NORMÁL ÁGRA.]"
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_return_after_twin_fear",
+          "text": "Hagyod, hogy újra visszavezessen.",
+          "next": "s2_implant_dejavu",
+          "tags": [
+            "normal"
+          ],
+          "effect": "normal"
+        }
+      ]
+    },
+    "s2_implant_dejavu": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "[IDE ÍRD A SZEMBEÜLTETÉST A DÉJÀ VU NÉZŐPONTJÁBÓL. A KARAKTER ELŐRE ISMERI AZ ESZKÖZÖK HANGJÁT, A FÁJDALOM ÜTEMÉT ÉS AZT A PILLANATOT, AMIKOR A SZEM KAPCSOLÓDNI KEZD.]",
+        "[ÉRZI, HOGY A SZEM ELLENÁLL NEKI, ÉS MÁR A BEÜLTETÉS KÖZBEN TUDJA, HOGY A PROCEDÚRA SIKERÜLNI FOG.]"
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_finish_implant",
+          "text": "Hagyod, hogy a jelenet ismét végigfusson.",
+          "next": "s2_eye_implanted_dejavu",
+          "tags": [
+            "normal"
+          ],
+          "effect": "normal",
+          "effects": {
+            "set": {
+              "eyeImplanted": true,
+              "implantRoute": "deja-vu"
+            }
+          }
+        }
+      ]
+    },
+    "s2_eye_implanted_dejavu": {
+      "title": "II. Fejezet — Anya",
+      "paragraphs": [
+        "[A KARAKTER MÁR AZ ELSŐ FÉNYFOLTOKBÓL FELISMERI AZ IDEGEN SZEMET. TUDJA, HOGY NÉHÁNY NAPON BELÜL MEGKEZDŐDNEK A LÁTOMÁSOK.]",
+        "[EZÚTTAL NEM VÁRJA MEG, HOGY A PARAZITA FOKOZATOSAN FELFEDJE MAGÁT. MÁR TUDJA, MI KÖVETKEZIK.]"
+      ],
+      "choices": [
+        {
+          "id": "s2_dejavu_enter_final_chapter",
+          "text": "Elérkezik az ismert pillanat.",
+          "next": "s3_dejavu_recovery",
+          "tags": [
+            "normal"
+          ],
+          "effect": "normal"
+        }
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "seer-eye-implanted",
+          "date": "II. fejezet",
+          "icon": "✦",
+          "text": "Anyja beültette az erős látótól származó idegen szemet."
+        }
+      }
+    },
+    "s3_normal_recovery": {
+      "title": "III. Fejezet — Parazita",
+      "paragraphs": [
+        "[IDE ÍRD A GYÓGYULÁS NAPJAIT. KEZDETBEN AZ ÚJ SZEM JOBBAN LÁT, MINT AZ EREDETI: SÖTÉTBEN, FALAKON TÚLI MOZGÁSBAN ÉS MÁSOK KÖVETKEZŐ MOZDULATAIBAN IS ÉSZREVESZ RÉSZLETEKET.]",
+        "[EZUTÁN MEGJELENNEK A PARAZITA TÜNETEI: A SZEM AKKOR IS LÁT, AMIKOR LEHUNYOD; ÖNÁLLÓAN MOZOG A TÜKÖRBEN; IDEGEN EMLÉKEKET MUTAT; ÉS A SAJÁT FÉLELMEIDBŐL ÉPÍT LÁTOMÁSOKAT.]",
+        "[A KARAKTER FELISMERI, HOGY A SZEM IDEGPÁLYÁKON KERESZTÜL GYÖKERET ERESZTETT, OLVASSA AZ EMLÉKEIT, ÉS A FIGYELMÉBŐL, FÉLELMÉBŐL VAGY A HASZNÁLATÁBÓL TÁPLÁLKOZIK.]"
+      ],
+      "choices": [
+        {
+          "id": "s3_normal_tell_mother",
+          "text": "Elmondod az anyádnak, mit tesz veled a szem.",
+          "next": "s3_mother_binding_offer",
+          "tags": [
+            "critical"
+          ],
+          "effects": {
+            "set": {
+              "finalApproach": "mother"
+            }
+          },
+          "effect": "critical"
+        },
+        {
+          "id": "s3_normal_hide_and_endure",
+          "text": "Eltitkolod, és egyedül próbálod elviselni.",
+          "next": "s3_parasite_torment",
           "tags": [
             "critical"
           ],
           "effect": "critical",
           "effects": {
             "set": {
-              "visionReaction": "examined"
+              "finalApproach": "endure"
             }
           }
-        }
-      ]
-    },
-    "s3_mother_response": {
-      "title": "Az anya válasza",
-      "paragraphs": [
-        "[IDE ÍRD, MIT MOND AZ ANYA A LÁTOMÁSOKRÓL, ÉS MENNYIT ÁRUL EL A SZEM EREJÉRŐL.]"
-      ],
-      "choices": [
-        {
-          "id": "s3_accept_binding_help",
-          "text": "Engeded, hogy megpróbálja lezárni a szem erejét.",
-          "next": "ending_eye_bound",
-          "tags": [
-            "normal"
-          ]
         },
         {
-          "id": "s3_refuse_binding_help",
-          "text": "Nem engeded, hogy még egyszer hozzád érjen.",
-          "next": "s3_major_vision",
+          "id": "s3_normal_test_power",
+          "text": "Megpróbálod tudatosan használni a képességét.",
+          "next": "s3_harness_eye",
           "tags": [
-            "critical"
-          ],
-          "effect": "critical"
-        },
-        {
-          "id": "s3_accuse_mother",
-          "text": "A látó halálával szembesíted.",
-          "next": "s3_mother_truth",
-          "tags": [
-            "special",
             "critical"
           ],
           "effect": "critical",
-          "unlock": {
-            "type": "flag",
-            "key": "sawSeerMurder",
-            "operator": "eq",
-            "value": true
+          "effects": {
+            "set": {
+              "finalApproach": "power"
+            }
           }
-        }
-      ]
-    },
-    "s3_hide_visions_scene": {
-      "title": "A becsukott ajtó mögött",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN KÍNOZZA A SZEM TITOKBAN A KARAKTERT, ÉS HOGYAN MUTAT EGYRE SZEMÉLYESEBB KÉPEKET.]"
-      ],
-      "choices": [
-        {
-          "id": "s3_endure_in_silence",
-          "text": "Továbbra sem kérsz segítséget.",
-          "next": "s3_eye_torment",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical"
         },
         {
-          "id": "s3_seek_control",
-          "text": "Megpróbálod akarattal irányítani, mit mutasson.",
-          "next": "s3_major_vision",
-          "tags": [
-            "normal"
-          ]
-        }
-      ]
-    },
-    "s3_examine_eye_scene": {
-      "title": "Az idegen akarat",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN FEDEZI FEL A KARAKTER, HOGY A SZEM NEM PUSZTA ESZKÖZ: SZÁNDÉKOSAN VÁLOGATJA ÉS TORZÍTJA A KÉPEKET.]"
-      ],
-      "choices": [
-        {
-          "id": "s3_offer_eye_bargain",
-          "text": "Megpróbálsz alkut kötni vele.",
-          "next": "ending_eye_pact",
+          "id": "s3_normal_follow_twin_suffering",
+          "text": "Megkeresed, miért mutatja újra és újra a bezárt bátyád szenvedését.",
+          "next": "s3_twin_suffering",
           "tags": [
             "critical"
-          ],
-          "effect": "critical"
-        },
-        {
-          "id": "s3_force_deeper_vision",
-          "text": "Erővel kényszeríted, hogy mutassa meg az igazat.",
-          "next": "s3_major_vision",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical"
-        },
-        {
-          "id": "s3_follow_twin_trace",
-          "text": "A szemmel a házban rejtett bátyád nyomát keresed.",
-          "next": "s3_hidden_twin_truth",
-          "tags": [
-            "secret",
-            "special"
           ],
           "effect": "glitch",
           "unlock": {
@@ -1502,27 +2137,48 @@
             "key": "sawHiddenTwin",
             "operator": "eq",
             "value": true
+          },
+          "effects": {
+            "set": {
+              "finalApproach": "compassion"
+            }
           }
         }
-      ]
+      ],
+      "media": {
+        "src": "images/story/chapter-parazita.jpg",
+        "alt": "Az idegen szem nyugtalanító hangulatképe",
+        "position": "center"
+      },
+      "presentation": {
+        "chapter": {
+          "roman": "III",
+          "label": "Fejezet",
+          "title": "Parazita",
+          "duration": 4800
+        },
+        "chapterImage": true
+      }
     },
-    "s3_mother_truth": {
-      "title": "A látó ára",
+    "s3_mother_binding_offer": {
+      "title": "III. Fejezet — Parazita",
       "paragraphs": [
-        "[IDE ÍRD AZ ANYÁVAL VALÓ SZEMBESÍTÉST ÉS A LÁTÓ HALÁLÁNAK IGAZSÁGÁT VAGY EGY ÚJABB, BIZONYTALAN VÁLTOZATÁT.]"
+        "[AZ ANYA FELISMERI, HOGY A SZEM MÁR NEM TÁVOLÍTHATÓ EL BIZTONSÁGOSAN, DE A SAJÁT VÁMPÍRVÉRÉVEL ÉS EGY RITUÁLIS KÖTÉSSEL KORLÁTOZHATJA.]",
+        "[A KÖTÉS ELNÉMÍTHATJA A LÁTOMÁSOKAT, DE ÖSSZEKAPCSOLJA A KARAKTER ÉRZÉKELÉSÉT AZ ANYÁVAL. AZ ANYA KÉSŐBB A SZEMÉN KERESZTÜL LÁTHAT, ÉREZHETI A FÉLELMÉT, VAGY RÖVID IDŐRE A TEKINTETÉT IS IRÁNYÍTHATJA.]"
       ],
       "choices": [
         {
-          "id": "s3_believe_mother",
-          "text": "Elfogadod az anyád magyarázatát.",
-          "next": "ending_mother_of_eyes",
+          "id": "s3_accept_mother_binding",
+          "text": "Engeded, hogy magához kösse a szemet.",
+          "next": "ending_mother_leash",
           "tags": [
-            "normal"
-          ]
+            "critical"
+          ],
+          "effect": "critical"
         },
         {
-          "id": "s3_reject_mother_truth",
-          "text": "Nem hiszel neki, és a szemet kényszeríted válaszra.",
+          "id": "s3_refuse_mother_binding",
+          "text": "Nem engeded, hogy még egyszer rendelkezzen a tested felett.",
           "next": "s3_major_vision",
           "tags": [
             "critical"
@@ -1531,37 +2187,11 @@
         }
       ]
     },
-    "s3_hidden_twin_truth": {
-      "title": "Két egyforma arc",
+    "s3_parasite_torment": {
+      "title": "III. Fejezet — Parazita",
       "paragraphs": [
-        "[IDE ÍRD, MIT MUTAT A SZEM A HALOTTNAK HITT IKERBÁTYRÓL: MI TÖRTÉNT VELE, MIÉRT NEM BESZÉL, ÉS MIÉRT NEM ÉRHETI NAPFÉNY.]"
-      ],
-      "choices": [
-        {
-          "id": "s3_accept_hidden_twin_truth",
-          "text": "Elfogadod, amit láttál, és megkeresed őt.",
-          "next": "ending_hidden_twin",
-          "tags": [
-            "secret",
-            "critical"
-          ],
-          "effect": "glitch"
-        },
-        {
-          "id": "s3_turn_from_hidden_twin_truth",
-          "text": "Elfordulsz az igazságtól.",
-          "next": "s3_major_vision",
-          "tags": [
-            "normal"
-          ]
-        }
-      ]
-    },
-    "s3_eye_torment": {
-      "title": "A szem kegyetlensége",
-      "paragraphs": [
-        "[IDE ÍRD A LEGSZEMÉLYESEBB ÉS LEGGONOSZABB LÁTOMÁSOKAT, AMELYEKKEL A SZEM SZÁNDÉKOSAN KÍNOZZA A KARAKTERT.]",
-        "Itt válik elérhetővé a szem saját kezű eltávolítása."
+        "[A SZEM EGYRE SZEMÉLYESEBB LÁTOMÁSOKKAL KÍNOZZA A KARAKTERT. ÖSSZEKEVERI A VALÓS JÖVŐKET, LEHETSÉGES JÖVŐKET ÉS SZÁNDÉKOS HAZUGSÁGOKAT.]",
+        "[A KARAKTER FIZIKAILAG IS ÉRZI A PARAZITÁT: FINOM GYÖKEREK FUTNAK A SZEMÜREGBŐL AZ IDEGEK ÉS AZ AGY FELÉ. A SZEM MÁR NEM KÜLÖNÁLLÓ SZERV.]"
       ],
       "choices": [
         {
@@ -1572,175 +2202,44 @@
             "critical"
           ],
           "effect": "critical",
+          "effects": {
+            "set": {
+              "finalChoice": "remove-eye"
+            }
+          },
           "unlock": {
-            "type": "flag",
-            "key": "sawHiddenTwin",
-            "operator": "neq",
-            "value": true
+            "not": {
+              "type": "flag",
+              "key": "sawHiddenTwin",
+              "operator": "eq",
+              "value": true
+            }
           }
         },
         {
           "id": "s3_attempt_remove_eye_after_twin",
           "text": "Kiszeded magadból a szemet, bármi legyen is az ára.",
-          "next": "s3_remove_eye_stopped_by_twin",
+          "next": "s3_remove_eye_blocked_by_twin",
           "tags": [
             "critical"
           ],
           "effect": "critical",
-          "unlock": {
-            "type": "flag",
-            "key": "sawHiddenTwin",
-            "operator": "eq",
-            "value": true
-          }
-        },
-        {
-          "id": "s3_endure_torment",
-          "text": "Nem adod meg neki azt az örömöt, hogy megtörj.",
-          "next": "s3_major_vision",
-          "tags": [
-            "normal"
-          ]
-        }
-      ]
-    },
-    "s3_remove_eye_stopped_by_twin": {
-      "title": "A visszatartott kéz",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN EMELI A KARAKTER A KEZÉT A SAJÁT SZEMÉHEZ, ÉS HOGYAN KÉSZÜL ARRA, HOGY VÉGET VESSEN A KÍNZÁSNAK.]",
-        "[MIELŐTT VÉGIGVIHETNÉ, FELIDÉZŐDIK BENNE A HALOTTNAK HITT BÁTYJA: A BEZÁRT SZOBA, AZ ISMERŐS ARC ÉS A TUDAT, HOGY MÉG NEM ÉRTI, MI TÖRTÉNT VELE.]",
-        "[NEM KÜLSŐ ERŐ ÁLLÍTJA MEG. A KARAKTER EGYSZERŰEN NEM KÉPES MEGHALNI, AMÍG A TESTVÉRÉT OTT HAGYNÁ. LASSAN LEENGEDI A KEZÉT.]"
-      ],
-      "choices": [
-        {
-          "id": "s3_return_from_failed_removal",
-          "text": "Más megoldást kell találnod.",
-          "next": "s3_eye_torment_after_failed_removal",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical"
-        }
-      ]
-    },
-    "s3_eye_torment_after_failed_removal": {
-      "title": "A szem kegyetlensége",
-      "paragraphs": [
-        "[IDE ÍRD A RÖVID ÁTVEZETÉST: A SZEM TOVÁBBRA IS KÍNOZZA, DE A HALÁL MÁR NEM LEHET MENEKÜLÉSI ÚT.]"
-      ],
-      "choices": [
-        {
-          "id": "s3_endure_torment_after_twin",
-          "text": "Nem adod meg neki azt az örömöt, hogy megtörj.",
-          "next": "s3_major_vision",
-          "tags": [
-            "normal"
-          ]
-        }
-      ]
-    },
-    "s3_major_vision": {
-      "title": "A legerősebb látomás",
-      "paragraphs": [
-        "[IDE ÍRD A HOSSZÚ, KIEMELT LÁTOMÁST. A KARAKTER SAJÁT HOLTTESTÉT, EGY LEHETSÉGES HALÁLHELYZETET VAGY MÁS SZEMÉLYEK JÖVŐBELI VESZTESÉGÉT LÁTJA.]",
-        "A harmadik választás csak akkor jelenik meg, ha az olvasó kivárja a megadott időt."
-      ],
-      "choices": [
-        {
-          "id": "s3_break_vision",
-          "text": "Megpróbálod megszakítani a látomást.",
-          "next": "s3_after_broken_vision",
-          "tags": [
-            "normal"
-          ]
-        },
-        {
-          "id": "s3_follow_vision",
-          "text": "Tudatosan követed a látomás fonalát.",
-          "next": "s3_control_vision",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical"
-        },
-        {
-          "id": "s3_endure_complete_vision",
-          "text": "Nem fordulsz el. Hagyod, hogy mindent megmutasson.",
-          "next": "s3_own_death_vision",
-          "tags": [
-            "secret",
-            "critical"
-          ],
-          "effect": "glitch",
-          "unlock": {
-            "type": "waitOnNode",
-            "milliseconds": 25000
-          },
           "effects": {
             "set": {
-              "sawCompleteDeathVision": true
+              "finalChoice": "remove-eye"
             }
-          }
-        }
-      ]
-    },
-    "s3_after_broken_vision": {
-      "title": "A megszakított kép",
-      "paragraphs": [
-        "[IDE ÍRD, MIT VESZÍT VAGY MIT ŐRIZ MEG A KARAKTER, AMIKOR ERŐVEL KISZAKÍTJA MAGÁT A LÁTOMÁSBÓL.]"
-      ],
-      "choices": [
-        {
-          "id": "s3_ask_mother_to_bind",
-          "text": "Megkéred az anyádat, hogy zárja le a szemet.",
-          "next": "ending_eye_bound",
-          "tags": [
-            "normal"
-          ]
-        },
-        {
-          "id": "s3_remove_eye_after_vision",
-          "text": "Nem viseled tovább. Megpróbálod eltávolítani.",
-          "next": "ending_eye_removal_death",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical",
-          "unlock": {
-            "type": "flag",
-            "key": "sawHiddenTwin",
-            "operator": "neq",
-            "value": true
-          }
-        },
-        {
-          "id": "s3_attempt_remove_eye_after_vision_and_twin",
-          "text": "Nem viseled tovább. Megpróbálod eltávolítani.",
-          "next": "s3_remove_eye_after_vision_stopped_by_twin",
-          "tags": [
-            "critical"
-          ],
-          "effect": "critical",
+          },
           "unlock": {
             "type": "flag",
             "key": "sawHiddenTwin",
             "operator": "eq",
             "value": true
           }
-        }
-      ]
-    },
-    "s3_remove_eye_after_vision_stopped_by_twin": {
-      "title": "A félbehagyott mozdulat",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN PRÓBÁLJA A KARAKTER A MEGSZAKÍTOTT LÁTOMÁS UTÁN ELTÁVOLÍTANI A SZEMET.]",
-        "[A HALOTTNAK HITT BÁTYJA EMLÉKE MEGÁLLÍTJA. NEM TUDJA VÉGIGVINNI A MOZDULATOT, MERT MÁR TUDJA, HOGY VALAKI VÁR RÁ A HÁZBAN, AKIT NEM HAGYHAT MAGÁRA.]"
-      ],
-      "choices": [
+        },
         {
-          "id": "s3_return_to_binding_choice_after_twin",
-          "text": "Leengeded a kezed, és más segítséget keresel.",
-          "next": "s3_after_broken_vision_after_failed_removal",
+          "id": "s3_endure_until_major_vision",
+          "text": "Nem nyúlsz hozzá. Megvárod a következő látomást.",
+          "next": "s3_major_vision",
           "tags": [
             "critical"
           ],
@@ -1748,31 +2247,17 @@
         }
       ]
     },
-    "s3_after_broken_vision_after_failed_removal": {
-      "title": "A megszakított kép",
+    "s3_harness_eye": {
+      "title": "III. Fejezet — Parazita",
       "paragraphs": [
-        "[IDE ÍRD A RÖVID ÁTVEZETÉST: A SAJÁT KEZŰ ELTÁVOLÍTÁS NEM SIKERÜLT, EZÉRT A KARAKTERNEK A MEGMARADT LEHETŐSÉGHEZ KELL FORDULNIA.]"
+        "[A KARAKTER KÉRDÉSEKET TESZ FEL A SZEMNEK, EMBEREKRE NÉZVE JÖVŐKET KERES, ÉS MEGPRÓBÁLJA ELVÁLASZTANI A HASZNOS KÉPEKET A MANIPULÁCIÓTÓL.]",
+        "[A SZEM EGYRE TÖBB HATALMAT AD, DE CSERÉBE IDEGEN EMLÉKEKET, SZOKÁSOKAT ÉS KÉSŐBB AZ ELŐZŐ LÁTÓ SZEMÉLYISÉGÉNEK DARABJAIT ÜLTETI A KARAKTERBE.]",
+        "[MÁSIK LEHETŐSÉGKÉNT A SZEM OLYAN ESEMÉNYEKET MUTAT, AMELYEK CSAK AKKOR HALLGATNAK EL, HA A KARAKTER SAJÁT KEZŰLEG BETELJESÍTI ŐKET.]"
       ],
       "choices": [
         {
-          "id": "s3_ask_mother_to_bind_after_twin",
-          "text": "Megkéred az anyádat, hogy zárja le a szemet.",
-          "next": "ending_eye_bound",
-          "tags": [
-            "normal"
-          ]
-        }
-      ]
-    },
-    "s3_control_vision": {
-      "title": "A látó öröksége",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN PRÓBÁLJA A KARAKTER IRÁNYÍTANI A LÁTOMÁST, ÉS HOGYAN VÁLIK A SZEM EREJE RÉSZBEN HASZNÁLHATÓVÁ.]"
-      ],
-      "choices": [
-        {
-          "id": "s3_accept_seer_legacy",
-          "text": "Elfogadod a látó örökségét és megtanulsz együtt élni vele.",
+          "id": "s3_accept_seer_inheritance",
+          "text": "Befogadod az előző látó emlékeit a hatalmával együtt.",
           "next": "ending_seer_heir",
           "tags": [
             "critical"
@@ -1780,86 +2265,240 @@
           "effect": "critical"
         },
         {
-          "id": "s3_negotiate_with_eye",
-          "text": "Nem engedelmeskedsz neki, hanem feltételeket szabsz.",
-          "next": "ending_eye_pact",
+          "id": "s3_fulfill_eye_visions",
+          "text": "Valóra váltod a képeket, hogy a szem végre elhallgasson.",
+          "next": "ending_fulfiller",
           "tags": [
-            "special"
+            "critical"
           ],
-          "effect": "glitch"
+          "effect": "critical"
+        },
+        {
+          "id": "s3_stop_using_eye",
+          "text": "Nem adsz neki több feladatot. Megvárod, mit mutat magától.",
+          "next": "s3_major_vision",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical"
         }
       ]
     },
-    "s3_own_death_vision": {
-      "title": "A saját halálod",
+    "s3_twin_suffering": {
+      "title": "III. Fejezet — Parazita",
       "paragraphs": [
-        "[IDE ÍRD A TELJES, IDŐZÍTETT SECRET LÁTOMÁST A KARAKTER SAJÁT HALÁLÁRÓL.]",
-        "Maradjon bizonytalan, hogy biztos jövőt, elkerülhető lehetőséget vagy a szem szándékos hazugságát látta-e."
+        "[A SZEM NEMCSAK KÉPEKET, HANEM A BEZÁRT BÁTY TESTI ÉS ÉRZELMI SZENVEDÉSÉT IS ÁTADJA: A SÖTÉTSÉGET, AZ ÉHSÉGET, A BESZÉDKÉPTELENSÉGET, AZ ANYÁTÓL VALÓ RETTEGÉST ÉS DESTINATION LÉPTEIT A FALAKON TÚL.]",
+        "[A KARAKTER MEGÉRTI, HOGY A II. FEJEZETBENI TÁMADÁS NEM FELTÉTLENÜL ROSSZINDULAT VOLT. LEHETETT FÉLELEM, ZAVARTSÁG, ÉHSÉG VAGY BELÉ NEVELT REFLEX.]",
+        "[A SZEM EREJE LEHETŐVÉ TESZI, HOGY A KARAKTER OLYAN SZENVEDÉST IS ÉSZREVEGYEN, AMELYET MÁSOK ELREJTENEK VAGY NEM AKARNAK LÁTNI.]"
       ],
       "choices": [
         {
-          "id": "s3_accept_foreseen_death",
-          "text": "Megjegyzed minden részletét.",
-          "next": "ending_death_foreseen",
+          "id": "s3_offer_twin_company",
+          "text": "Lemész hozzá. Nem szabadítod ki és nem érinted meg; csak mellette maradsz.",
+          "next": "ending_what_others_dont_see",
           "tags": [
-            "secret",
             "critical"
           ],
           "effect": "glitch"
         },
         {
-          "id": "s3_tear_eye_out_after_death_vision",
+          "id": "s3_turn_away_from_twin_suffering",
+          "text": "Nem bírod tovább érezni. Elfordulsz tőle.",
+          "next": "s3_major_vision",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical"
+        }
+      ]
+    },
+    "s3_major_vision": {
+      "title": "III. Fejezet — Parazita",
+      "paragraphs": [
+        "[IDE ÍRD A HOSSZÚ, KIEMELT LÁTOMÁST. A SZEM ÖSSZEKEVERI A LÁTÓ HALÁLÁT, A KARAKTER SAJÁT LEHETSÉGES HALÁLÁT, A CSALÁDJA VESZTESÉGEIT ÉS OLYAN KÉPEKET, AMELYEK TALÁN MÉG NEM TÖRTÉNTEK MEG.]",
+        "[A SZEM ARRA SZÁMÍT, HOGY A KARAKTER MEGRÉMÜL, MEGSZAKÍTJA A KÉPET, SEGÍTSÉGET KÉR VAGY KÍSÉRLETET TESZ AZ ELTÁVOLÍTÁSÁRA.]",
+        "[A NEGYEDIK, HIDDEN VÁLASZTÁS CSAK HÉT PERC — 420000 EZREDMÁSODPERC — ELTELTE UTÁN JELENIK MEG.]"
+      ],
+      "choices": [
+        {
+          "id": "s3_break_vision_and_accept_binding",
+          "text": "Megszakítod a látomást, és elfogadod anyád segítségét.",
+          "next": "ending_mother_leash",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical"
+        },
+        {
+          "id": "s3_remove_eye_after_vision",
           "text": "Nem engeded, hogy még egyszer megmutassa. Kitéped magadból.",
           "next": "ending_eye_removal_death",
           "tags": [
-            "secret",
             "critical"
           ],
-          "effect": "glitch",
+          "effect": "critical",
+          "effects": {
+            "set": {
+              "finalChoice": "remove-eye-after-vision"
+            }
+          },
           "unlock": {
-            "type": "flag",
-            "key": "sawHiddenTwin",
-            "operator": "neq",
-            "value": true
+            "not": {
+              "type": "flag",
+              "key": "sawHiddenTwin",
+              "operator": "eq",
+              "value": true
+            }
           }
         },
         {
-          "id": "s3_attempt_tear_eye_out_after_twin",
+          "id": "s3_attempt_remove_eye_after_vision_and_twin",
           "text": "Nem engeded, hogy még egyszer megmutassa. Kitéped magadból.",
-          "next": "s3_death_vision_removal_stopped_by_twin",
+          "next": "s3_remove_eye_after_vision_blocked_by_twin",
           "tags": [
-            "secret",
             "critical"
           ],
-          "effect": "glitch",
+          "effect": "critical",
+          "effects": {
+            "set": {
+              "finalChoice": "remove-eye-after-vision"
+            }
+          },
           "unlock": {
             "type": "flag",
             "key": "sawHiddenTwin",
             "operator": "eq",
             "value": true
           }
-        }
-      ]
-    },
-    "s3_death_vision_removal_stopped_by_twin": {
-      "title": "A halál, amelyet nem választasz",
-      "paragraphs": [
-        "[IDE ÍRD, HOGYAN PRÓBÁLJA A KARAKTER A TELJES HALÁLLÁTOMÁS UTÁN KITÉPNI MAGÁBÓL A SZEMET.]",
-        "[A MOZGÁS KÖZBEN FELIDÉZŐDIK BENNE A BÁTYJA. A SAJÁT HALÁLA MÁR NEM CSAK RÓLA SZÓLNA: EGY MEGVÁLASZOLATLAN TITKOT ÉS EGY BEZÁRT TESTVÉRT IS MAGA MÖGÖTT HAGYNA.]",
-        "[KÉPTELEN VÉGIGVINNI. A HALÁLENDING EZEN AZ ÚTVONALON NEM TELJESÜL.]"
-      ],
-      "choices": [
+        },
         {
-          "id": "s3_return_to_death_vision_choices_after_twin",
-          "text": "Megjegyzed a látomás minden részletét.",
-          "next": "ending_death_foreseen",
+          "id": "s3_turn_vision_into_power",
+          "text": "Nem menekülsz előle. Megpróbálod a saját céljaidra használni.",
+          "next": "s3_harness_eye",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical"
+        },
+        {
+          "id": "s3_wait_for_eye_message",
+          "text": "Nem rémülsz meg. Türelmesen megvárod, mit akar valójában mutatni.",
+          "next": "s3_patient_revelation",
           "tags": [
             "secret",
             "critical"
           ],
+          "effect": "glitch",
+          "unlock": {
+            "type": "waitOnNode",
+            "milliseconds": 420000
+          },
+          "effects": {
+            "set": {
+              "waitedForEye": true
+            }
+          }
+        }
+      ]
+    },
+    "s3_patient_revelation": {
+      "title": "III. Fejezet — Parazita",
+      "paragraphs": [
+        "[MIVEL A KARAKTER NEM FORDUL EL ÉS NEM PRÓBÁLJA IRÁNYÍTANI, A SZEM ABBAHAGYJA A FÉLELEMKELTŐ VÁGÁSOKAT, ÉS EGYBEN MUTATJA MEG AZ ELŐZŐ LÁTÓ TÖRTÉNETÉT.]",
+        "[LÁTHATÓVÁ VÁLIK A LÁTÓ FOGSÁGA, A SZEM ÁTADÁSÁNAK VALÓDI KÖRÜLMÉNYE, AZ ANYA SZEREPE ÉS AZ A PILLANAT, AMIKOR A SZEM FELISMERTE AZ ÚJ HORDOZÓJÁT.]",
+        "[KIDERÜLHET, HOGY A PARAZITA EGYIK CÉLJA AZ VOLT, HOGY VALAKI VÉGRE TELJESEN VÉGIGNÉZZE ÉS MEGŐRIZZE AZ EMLÉKEIT. MARADJON BIZONYTALAN, HOGY EZ IGAZSÁG VAGY A SZEM LEGTÖKÉLETESEBB MANIPULÁCIÓJA.]"
+      ],
+      "choices": [
+        {
+          "id": "s3_accept_complete_memory",
+          "text": "Megőrzöd mindazt, amit megmutatott.",
+          "next": "ending_patient_witness",
+          "tags": [
+            "normal"
+          ],
           "effect": "glitch"
         }
       ]
+    },
+    "s3_dejavu_recovery": {
+      "title": "III. Fejezet — Parazita",
+      "paragraphs": [
+        "[A DÉJÀ VU ÚTVONALON NINCS LASSÚ FELFEDEZÉS. A KARAKTER TUDJA, HOGY A SZEM IDEGEKEN KERESZTÜL GYÖKERET ERESZT, OLVASSA AZ EMLÉKEIT, ÉS A FÉLELMEIBŐL ÉPÍT LÁTOMÁSOKAT.]",
+        "[TUDJA AZT IS, HOGY AZ ELŐZŐ ÉLETBEN AZ ELTÁVOLÍTÁSÁBA HALT BELE. MOST KÉT LEHETŐSÉGE MARAD: ÚJRA MEGKÍSÉRLI UGYANAZT, VAGY NEM ISMÉTLI MEG A HIBÁT.]",
+        "[ERRŐL A CSOMÓPONTRÓL KIZÁRÓLAG DÉJÀ VU ENDINGEK ÉRHETŐK EL.]"
+      ],
+      "choices": [
+        {
+          "id": "s3_dejavu_remove_again",
+          "text": "Ezúttal gyorsabban és pontosabban téped ki.",
+          "next": "ending_dejavu_loop_death",
+          "tags": [
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "finalChoice": "repeat-removal"
+            }
+          },
+          "unlock": {
+            "not": {
+              "type": "flag",
+              "key": "sawHiddenTwin",
+              "operator": "eq",
+              "value": true
+            }
+          }
+        },
+        {
+          "id": "s3_dejavu_attempt_remove_after_twin",
+          "text": "Ezúttal gyorsabban és pontosabban téped ki.",
+          "next": "s3_dejavu_remove_blocked_by_twin",
+          "tags": [
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "finalChoice": "repeat-removal"
+            }
+          },
+          "unlock": {
+            "type": "flag",
+            "key": "sawHiddenTwin",
+            "operator": "eq",
+            "value": true
+          }
+        },
+        {
+          "id": "s3_dejavu_choose_coexistence",
+          "text": "Nem ismétled meg. Megtanulsz együtt élni vele.",
+          "next": "ending_dejavu_coexist",
+          "tags": [
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "finalChoice": "coexist"
+            }
+          }
+        }
+      ],
+      "media": {
+        "src": "images/story/chapter-parazita.jpg",
+        "alt": "Az idegen szem nyugtalanító hangulatképe",
+        "position": "center"
+      },
+      "presentation": {
+        "chapter": {
+          "roman": "III",
+          "label": "Fejezet",
+          "title": "Parazita",
+          "duration": 4800
+        },
+        "chapterImage": true
+      }
     },
     "ending_eye_removal_death": {
       "type": "ending",
@@ -1867,62 +2506,297 @@
       "order": 1,
       "title": "A szem nélküli vég",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN SIKERÜL ELTÁVOLÍTANI AZ ÚJ SZEMET, DE A KARAKTER BELEHAL A VÉRZÉSBE, A MÁGIKUS SOKKBA VAGY A SZEMHEZ KÖTÖTT ERŐ ÖSSZEOMLÁSÁBA.]",
-        "Ez az ending oldja fel a következő végigjátszás elején a déjà vu Secret választást."
-      ]
+        "[A KARAKTER SAJÁT KEZŰLEG ELTÁVOLÍTJA AZ ÚJ SZEMET. A SZEM MÁR ÖSSZENŐTT AZ IDEGEKKEL, ÉS GYÖKEREI A KOPONYA BELSEJÉBE FUTNAK.]",
+        "[AZ ELTÁVOLÍTÁS SIKERÜL, DE A KARAKTER BELEHAL A VÉRZÉSBE, A MÁGIKUS SOKKBA, AZ AGYI SÉRÜLÉSBE VAGY ABBA, HOGY A PARAZITA MAGÁVAL TÉPI A HOZZÁ KÖTÖTT RÉSZEIT.]",
+        "Ez az ending oldja fel a következő végigjátszásban a Déjà Vu választást."
+      ],
+      "presentation": {
+        "effect": "death",
+        "timeline": {
+          "id": "ending-EYE_REMOVAL_DEATH",
+          "date": "Befejezés",
+          "icon": "†",
+          "text": "Befejezés: A szem nélküli vég."
+        },
+        "afterEndingTimeline": [],
+        "endingStyle": "death"
+      }
     },
-    "ending_death_foreseen": {
+    "ending_patient_witness": {
       "type": "ending",
-      "endingId": "DEATH_FORESEEN",
+      "endingId": "PATIENT_WITNESS",
       "order": 2,
-      "title": "A már ismert halál",
+      "title": "A tanú",
       "paragraphs": [
-        "[IDE ÍRD A BEFEJEZÉST, AMELYBEN A KARAKTER PONTOSAN EMLÉKSZIK A SAJÁT LEHETSÉGES HALÁLÁRA, DE NEM TUDJA, ELKERÜLHETŐ-E.]"
-      ]
+        "[A SZEM A TELJES TÖRTÉNET MEGMUTATÁSA UTÁN ELCSENDESÜL. A KARAKTER ÉLETBEN MARAD, DE AZ ELŐZŐ LÁTÓ EMLÉKEI VÉGLEG ÖSSZEKEVEREDNEK A SAJÁTJAIVAL.]",
+        "[NÉHA NEM TUDJA, MELYIKÜK ÉLETÉRE EMLÉKSZIK, ÉS A TÜKÖRBEN OLYKOR AZ ELŐZŐ HORDOZÓ NEVÉN SZÓLÍTJA MAGÁT.]",
+        "[MARADJON BIZONYTALAN, HOGY A SZEM MEGNYUGODOTT, VAGY EGYSZERŰEN ELÉRTE, AMIT AKART.]"
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "ending-PATIENT_WITNESS",
+          "date": "Befejezés",
+          "icon": "†",
+          "text": "Befejezés: A tanú."
+        },
+        "afterEndingTimeline": [],
+        "endingStyle": "revelation"
+      }
     },
-    "ending_eye_pact": {
+    "ending_dejavu_loop_death": {
       "type": "ending",
-      "endingId": "EYE_PACT",
+      "endingId": "DEJAVU_LOOP_DEATH",
       "order": 3,
-      "title": "Egyezség az idegennel",
+      "title": "Ugyanaz a vég",
       "paragraphs": [
-        "[IDE ÍRD AZ ALKUT A SZEMMEL. MARADJON KÉTSÉGES, HOGY A KARAKTER IRÁNYÍTJA-E A SZEMET, VAGY A SZEM IDOMÍTOTTA ŐT.]"
-      ]
+        "[A KARAKTER AZ ELŐZŐ HALÁL MINDEN RÉSZLETÉT ISMERI. MÁS ESZKÖZT, GYORSABB MOZGÁST VAGY ELŐKÉSZÍTETT VÉDELMET HASZNÁL, DE AZ ELTÁVOLÍTÁS EZÚTTAL IS HALÁLOS.]",
+        "[NEM UGYANAZ A HIBA ISMÉTLŐDIK MEG: AZ ELTÁVOLÍTÁS ÖNMAGÁBAN VÉGZETES, MERT A SZEM ADDIGRA MÁR A TEST RÉSZE.]",
+        "[A KÖR ÚJRA BEZÁRUL.]"
+      ],
+      "presentation": {
+        "effect": "death",
+        "timeline": {
+          "id": "ending-DEJAVU_LOOP_DEATH",
+          "date": "Befejezés",
+          "icon": "†",
+          "text": "Befejezés: Ugyanaz a vég."
+        },
+        "afterEndingTimeline": [],
+        "endingStyle": "death-loop"
+      }
     },
-    "ending_eye_bound": {
+    "ending_dejavu_coexist": {
       "type": "ending",
-      "endingId": "EYE_BOUND",
+      "endingId": "DEJAVU_COEXIST",
       "order": 4,
-      "title": "A lezárt tekintet",
+      "title": "Két tekintet",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN KORLÁTOZZA AZ ANYA RITUÁLISAN A SZEM EREJÉT, ÉS MILYEN ÁRAT FIZET ÉRTE A KARAKTER.]"
-      ]
+        "[A KARAKTER SZABÁLYOKAT ALAKÍT KI: NEM REAGÁL AZ ELSŐ LÁTOMÁSRA, FELJEGYZI A KÉPEKET, MÁS BIZONYÍTÉK NÉLKÜL NEM CSELEKSZIK, ÉS MEGTANULJA FELISMERNI A PARAZITA ÉHSÉGÉT ÉS MANIPULÁCIÓJÁT.]",
+        "[SE A KARAKTER, SE A SZEM NEM GYŐZ TELJESEN. EGYÜTT ÉLNEK, MIKÖZBEN FOLYAMATOSAN FIGYELIK EGYMÁST.]",
+        "[A ZÁRÓKÉPBEN AZ EGYIK SZEM A TÜKÖRKÉPET NÉZI, A MÁSIK PEDIG VALAMIT A KARAKTER VÁLLA MÖGÖTT, AMI MÉG NINCS OTT.]"
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "ending-DEJAVU_COEXIST",
+          "date": "Befejezés",
+          "icon": "†",
+          "text": "Befejezés: Két tekintet."
+        },
+        "afterEndingTimeline": [],
+        "endingStyle": "coexist"
+      }
+    },
+    "ending_mother_leash": {
+      "type": "ending",
+      "endingId": "MOTHER_LEASH",
+      "order": 5,
+      "title": "Az anya póráza",
+      "paragraphs": [
+        "[AZ ANYA VÁMPÍRVÉRREL ÉS RITUÁLIS KÖTÉSSEL ELNÉMÍTJA A SZEMET. A LÁTOMÁSOK MEGSZŰNNEK, A KARAKTER ÉLETBEN MARAD.]",
+        "[AZ ÁR: AZ ANYA BÁRMIKOR LÁTHAT A KARAKTER SZEMÉN KERESZTÜL, ÉRZI A FÉLELMÉT, ÉS TALÁN RÖVID IDŐRE A TEKINTETÉT IS IRÁNYÍTHATJA.]",
+        "[A ZÁRÓJELENETBEN A KARAKTER VALAMIT EL AKAR REJTENI ELŐLE, DE AZ ÚJ SZEM MAGÁTÓL AZ ANYA FELÉ FORDUL.]"
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "ending-MOTHER_LEASH",
+          "date": "Befejezés",
+          "icon": "†",
+          "text": "Befejezés: Az anya póráza."
+        },
+        "afterEndingTimeline": [],
+        "endingStyle": "control"
+      }
     },
     "ending_seer_heir": {
       "type": "ending",
       "endingId": "SEER_HEIR",
-      "order": 5,
+      "order": 6,
       "title": "A látó örököse",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN TANULJA MEG A KARAKTER HASZNÁLNI A SZEM EREJÉT, ÉS MIT VESZ ÁT AZ ELŐZŐ TULAJDONOSBÓL.]"
-      ]
+        "[A KARAKTER MEGTANULJA HASZNÁLNI A SZEM EREJÉT, ÉS EGYRE PONTOSABBAN LÁTJA A LEHETSÉGES JÖVŐKET.]",
+        "[KÖZBEN IDEGEN NYELVEN ÍR, AZ ELŐZŐ LÁTÓ KÉZÍRÁSÁT HASZNÁLJA, ISMERETLEN EMBEREKET ISMER FEL, ÉS SAJÁT GYERMEKKORÁNAK RÉSZLETEIT FELEJTI EL.]",
+        "[MARADJON BIZONYTALAN, HOGY ÖRÖKÖLTE A LÁTÓ EREJÉT, ÖSSZEOLVADT VELE, VAGY A HALOTT LÁTÓ TALÁLT MAGÁNAK ÚJ TESTET.]"
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "ending-SEER_HEIR",
+          "date": "2006",
+          "icon": "†",
+          "text": "Megtanulja használni a szem erejét."
+        },
+        "afterEndingTimeline": [
+          {
+            "id": "seerheir1",
+            "date": "2006",
+            "icon": "⌂",
+            "text": "A Felsőház utasítására belép a Noctua Tenbrosába. A beavatást bátyjával külünösebb nehézség nélkül, felkészülten teljesíti."
+          }
+        ],
+        "endingStyle": "ascension"
+      }
     },
-    "ending_hidden_twin": {
+    "ending_fulfiller": {
       "type": "ending",
-      "endingId": "HIDDEN_TWIN",
-      "order": 6,
-      "title": "A napfénytől elzárt testvér",
-      "paragraphs": [
-        "[IDE ÍRD A HALOTTNAK HITT IKERBÁTY IGAZSÁGÁNAK BEFEJEZÉSÉT.]"
-      ]
-    },
-    "ending_mother_of_eyes": {
-      "type": "ending",
-      "endingId": "MOTHER_OF_EYES",
+      "endingId": "FULFILLER",
       "order": 7,
-      "title": "Az anya igazsága",
+      "title": "A beteljesítő",
       "paragraphs": [
-        "[IDE ÍRD AZ ANYA, A LÁTÓ ÉS AZ ÚJ SZEM KÖZÖTTI ALKU VAGY BŰN VÉGSŐ FELTÁRÁSÁT.]"
+        "[A KARAKTER RÁJÖN, HOGY A SZEM BIZONYOS LÁTOMÁSAI CSAK AKKOR HALLGATNAK EL, HA Ő MAGA VALÓSÍTJA MEG ŐKET.]",
+        "[ELŐSZÖR KISEBB ESEMÉNYEKET RENDEZ MEG, KÉSŐBB EMBEREKET MANIPULÁL, VÉGÜL PEDIG MÁR ÁLDOZATOKAT IS KIVÁLASZT A SZEM NYUGALMÁÉRT.]",
+        "[A VÉGÉN A SZEM ÚJ KÉPET MUTAT VALAKIRŐL, AKIT A KARAKTER SZERET. Ő MÁR NEM KÉRDEZI MEG, IGAZ-E; CSAK ELKEZDI ELŐKÉSZÍTENI.]"
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "ending-FULFILLER",
+          "date": "Befejezés",
+          "icon": "†",
+          "text": "Befejezés: A beteljesítő."
+        },
+        "afterEndingTimeline": [],
+        "endingStyle": "corruption"
+      }
+    },
+    "ending_what_others_dont_see": {
+      "type": "ending",
+      "endingId": "WHAT_OTHERS_DONT_SEE",
+      "order": 8,
+      "title": "Amit más nem lát",
+      "paragraphs": [
+        "[A KARAKTER ÚJRA ÉS ÚJRA LEMEGY A BEZÁRT BÁTYJÁHOZ. NEM PRÓBÁLJA KISZABADÍTANI, NEM KÖVETEL FELISMERÉST, ÉS NEM ÉRINTI MEG; CSAK BESZÉL HOZZÁ ÉS TÁRSASÁGOT NYÚJT.]",
+        "[A VÁLTOZÁS LASSÚ. A BÁTY IDŐVEL FELISMERI A LÉPTEIT, KÖZELEBB ÜL, ÁTVESZ EGY TÁRGYAT, VAGY SAJÁT AKARATÁBÓL MEGÉRINTI A KEZÉT. NEM GYÓGYUL MEG CSODÁLATOSAN, DE MÁR NINCS TELJESEN EGYEDÜL.]",
+        "[A KARAKTER A SZEM HATALMÁT EZUTÁN ARRA HASZNÁLJA, HOGY ÉSZREVEGYE AZ ELREJTETT, KIMONDATLAN SZENVEDÉST, ÉS SEGÍTSEN AZOKNAK, AKIKET MÁSOK NEM LÁTNAK.]",
+        "[MARADJON BIZONYTALAN, HOGY A SZEM EGYÜTTÉRZÉST TANÍTOTT, VAGY EGYSZERŰEN RÁJÖTT, HOGY MÁSOK FÁJDALMÁN KERESZTÜL TEHETI MAGÁT NÉLKÜLÖZHETETLENNÉ.]"
+      ],
+      "presentation": {
+        "timeline": {
+          "id": "ending-WHAT_OTHERS_DONT_SEE",
+          "date": "Befejezés",
+          "icon": "†",
+          "text": "Befejezés: Amit más nem lát."
+        },
+        "afterEndingTimeline": [],
+        "endingStyle": "compassion"
+      }
+    },
+    "s3_remove_eye_blocked_by_twin": {
+      "title": "III. Fejezet — Parazita",
+      "paragraphs": [
+        "[IDE ÍRD, HOGYAN KÍSÉRLI MEG A KARAKTER KISZEDNI MAGÁBÓL A SZEMET, DE DESOLATION EMLÉKE MIATT NEM KÉPES VÉGIGVINNI. NEM HALHAT MEG ÚGY, HOGY A BÁTYJÁT A SZOBÁBAN HAGYJA.]",
+        "[LEENGEDI A KEZÉT. A HALÁL NEM TELJESÜL, ÉS MÁS MEGOLDÁST KELL VÁLASZTANIA.]"
+      ],
+      "choices": [
+        {
+          "id": "s3_return_to_torment_options_after_twin",
+          "text": "Más megoldást választasz.",
+          "next": "s3_parasite_torment_after_blocked_death",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical"
+        }
+      ]
+    },
+    "s3_parasite_torment_after_blocked_death": {
+      "title": "III. Fejezet — Parazita",
+      "paragraphs": [
+        "[RÖVID ÁTVEZETÉS: A SZEM TOVÁBB KÍNOZZA, DE A SAJÁT KEZŰ ELTÁVOLÍTÁS MÁR NEM LEHETSÉGES DÖNTÉS.]"
+      ],
+      "choices": [
+        {
+          "id": "s3_endure_until_major_vision_after_twin",
+          "text": "Nem nyúlsz hozzá. Megvárod a következő látomást.",
+          "next": "s3_major_vision",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical"
+        }
+      ]
+    },
+    "s3_remove_eye_after_vision_blocked_by_twin": {
+      "title": "III. Fejezet — Parazita",
+      "paragraphs": [
+        "[IDE ÍRD, HOGYAN PRÓBÁLJA A LÁTOMÁS UTÁN KITÉPNI A SZEMET, DE A BÁTYJA EMLÉKE MEGÁLLÍTJA. A MOZGÁST MEGKEZDI, DE NEM TUDJA BEFEJEZNI.]",
+        "[VISSZA KELL TÉRNIE A LÁTOMÁS UTÁN MEGMARADT TÖBBI LEHETŐSÉGHEZ.]"
+      ],
+      "choices": [
+        {
+          "id": "s3_return_to_major_vision_options_after_twin",
+          "text": "Más megoldást választasz.",
+          "next": "s3_major_vision_after_blocked_death",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical"
+        }
+      ]
+    },
+    "s3_major_vision_after_blocked_death": {
+      "title": "III. Fejezet — Parazita",
+      "paragraphs": [
+        "[RÖVID ÁTVEZETÉS: A HALÁL LEHETŐSÉGE KIESIK, DE A TÖBBI DÖNTÉS VÁLTOZATLANUL ELÉRHETŐ.]"
+      ],
+      "choices": [
+        {
+          "id": "s3_break_vision_and_accept_binding_after_twin",
+          "text": "Megszakítod a látomást, és elfogadod anyád segítségét.",
+          "next": "ending_mother_leash",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical"
+        },
+        {
+          "id": "s3_turn_vision_into_power_after_twin",
+          "text": "Nem menekülsz előle. Megpróbálod a saját céljaidra használni.",
+          "next": "s3_harness_eye",
+          "tags": [
+            "critical"
+          ],
+          "effect": "critical"
+        },
+        {
+          "id": "s3_wait_for_eye_message_after_twin",
+          "text": "Nem rémülsz meg. Türelmesen megvárod, mit akar valójában mutatni.",
+          "next": "s3_patient_revelation",
+          "tags": [
+            "secret",
+            "critical"
+          ],
+          "effect": "glitch",
+          "unlock": {
+            "type": "waitOnNode",
+            "milliseconds": 420000
+          },
+          "effects": {
+            "set": {
+              "waitedForEye": true
+            }
+          }
+        }
+      ]
+    },
+    "s3_dejavu_remove_blocked_by_twin": {
+      "title": "III. Fejezet — Parazita",
+      "paragraphs": [
+        "[IDE ÍRD, HOGYAN KÉSZÜL A KARAKTER A DÉJÀ VU SZÁLON ÚJRA ELTÁVOLÍTANI A SZEMET, DE DESOLATION FELFEDEZÉSE MIATT MÁR NEM KÉPES UGYANAZT A HALÁLT VÁLASZTANI.]",
+        "[MEGKÍSÉRLI, DE LEÁLL. A DÉJÀ VU HALÁLENDING NEM TELJESÜL.]"
+      ],
+      "choices": [
+        {
+          "id": "s3_dejavu_choose_coexistence_after_twin",
+          "text": "Nem ismétled meg. Megtanulsz együtt élni vele.",
+          "next": "ending_dejavu_coexist",
+          "tags": [
+            "critical"
+          ],
+          "effect": "glitch",
+          "effects": {
+            "set": {
+              "finalChoice": "coexist"
+            }
+          }
+        }
       ]
     }
   }
