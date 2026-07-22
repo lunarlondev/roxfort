@@ -37,9 +37,12 @@
   },
   "personality": {
     "description": [
-      "Leírás",
-      "Leírás",
-      "Leírás"
+      "Elegy nem szereti a morbidot. Nem tud szeretni valamit, aminek a fogalmával sincs tisztában. Gyermekkora óta szokva van a halálhoz, és mindenhez, ami ezzel kapcsolatos: csontok, ravatalok és halotti szertartások kísérték végig az életét, szülei kísérleteiről nem is beszélve. Nem voltak számukra tabuk, nem léteztek tilos kérdések, így sokkal jobban, sokkal hamarabb megtanulta megérteni és elfogadni az élet körforgását, melynek természetes része az elmúlás. Annak a kérdése, hogy hová tűnik a lélek a halálkor, számára ugyanolyan súlyú, mint az, hogy miért kell megmosni a kezüket étkezés előtt.",
+	  "Mindaz, amit benne, illetve az egész Dreadmoor családban bizarrnak tartanak, számára természetes, sőt! Elegy udvariasan visszautasítja az összes feltételezést. Nyilvánvalóan nem ők az őrültek, mindenki más az ebben a rohanó világban! Például a mai napig nem érti, miért jó az, hogy az emberek színes sálakban üvöltöznek néhány labda meg seprűn lovagló játékos miatt. És az se fér a fejébe, miért olyan fontos mindig az időjárásról beszélni, főleg az angoloknál. Kivéve persze, ha a bátyja ásást tervezett a… hát nem a kertben, hanem valahol. A nedves föld könnyebben megadja magát.",
+	  "Meg aztán ott vannak a köszönések. Még mindig azt hiszi, hogy a „hogy vagy?” kérdés őszinte érdeklődés. Naiv, gyermeki ártatlansággal ecseteli is a napját, ha valaki arra merészel vetemedni, hogy megkérdezi tőle.",
+	  "Kívülről talán könnyednek és alkalmazkodó természetűnek tűnik, mivel alapvetően csendes és visszahúzódóbb természetű. Valójában viszont sokkal makacsabb annál, mint amit mutat magáról. A legritkább esetekben fordul elő olyan, hogy nyíltan szembefordulna másokkal, jobban kedveli inkább kivárni a megfelelő alkalmat, és csak a megfelelő pillanatban beavatkozni, ha az szükséges.",
+	  "Nem kifejezetten fél a haláltól – az Alsóház egyedi neveltetése ugyebár. Jobban tart a kiszolgáltatottságtól és az irányítás elveszítésétől. Éppen ezért veszélyes rá, hogy nem igazán veszi komolyan a szülei által nyújtott fenyegetést. Azt azért már sejti, hogy valamit terveznek velük, de szülei hibáit egyszerűen képtelen szemellenző nélkül vizsgálni. Ez az erkölcsi vakság nem félelemből, hanem érzelmi önvédelemből fakad.",
+	  "A családja a halállal foglalkozik ugyan, azonban Elegy – akárcsak a legtöbb rokona – úgy gondol magára, mint az Élet legnagyobb tisztelőjére. Úgy gondolja, az élet nem azért csodálatos, mert az minden áron tiszta és érintetlen marad, hanem azért, mert minden áron fennmarad. A test pusztulása tehát nem jelenti az élet végét, csak egy új kezdetét. Emiatt nem érez ösztönös viszolygást a holttestektől, a betegségektől, de a test egyéb torzulásaitól sem."
     ],
     "prompts": [
       { "title": "Merengő", "label": "Legjobb emlék", "text": "Véletlenszerű, gyermekkori emlékek Destinationnel, például a nyári gyümölcsözések, a bújócskák a kriptákban, és amikor kígyótojásokat keltegettek titokban." },
@@ -56,7 +59,7 @@
     { "label": "Százfűlé-főzet", "value": "Sötétbordó, mézédes és selymes ital, de a vér, a hamu és a száraz föld ízével." },
     { "label": "Amortentia", "value": "Az illatok, amelyeket a karakter érezne." },
     { "label": "Titkok", "value": ["Látó képessége", "Tudja, hogy anyja hazudik néhány dologban, még se tesz ellene semmit", "Az összes Siofra által választott férjjelölt előtt szándékosan alkalmatlannak mutatja magát"], "wide": true },
-    { "label": "Azt beszélik, hogy…", "value": ["Kannibál", "A testvérével nem csak testvéri a viszonya", "Az apjával is közel állnak egymáshoz", "Sőt, inferussal is csinálta már", "Irigyli Destination tehetségét", "Irigyli anyja szépéségét", "A másik szemét egy hullából szedték ki"], "wide": true }
+    { "label": "Azt beszélik, hogy…", "value": ["Kannibál", "A testvérével nem csak testvéri a viszonya", "Az apjával is közel állnak egymáshoz", "Sőt, inferussal is csinálta már", "Irigyli Destination tehetségét", "Irigyli anyja szépéségét", "A másik szemét egy hullából szedték ki", "Ő az egyetlen boszorkány, aki nem tudja, mi az, hogy Trimágus Tusa"], "wide": true }
   ],
   "family": {
     "members": [
@@ -98,9 +101,8 @@
       { "label": "Avialany", "value": "Nastya Kreslina" }
     ],
     "description": [
-      "Megjelenés leírása 1",
-      "Megjelenés leírása 2",
-      "Megjelenés leírása 3"
+      "Nem valami magas, ám igen vékony és törékenynek tűnő termetű finom csontozatával, vékony csuklójával és feltűnően hosszú, pókszerű ujjaival. Mozdulatai valahogy nem tűnnek szabályosnak. Van benne egyfajta tanult kimértség, ami enyhén természetellenes hatást kölcsönöz neki.",
+	  "Arccsontjai élesen kirajzolódnak sápadt bőrén, piszkosszőke, szálegyenes haja pedig ellenáll szinte az összes göndörítő módszernek. Olykor kedveli a harsányabb sminkeket magára ölteni."
     ]
   },
   "knowledge": {
