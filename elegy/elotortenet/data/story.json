@@ -2,7 +2,7 @@
   "meta": {
     "id": "necromancer-eye-story",
     "version": 6,
-    "title": "Szemet szemért",
+    "title": "Előtörténet",
     "start": "s1_return_to_estate",
     "startButtonText": "Kezdjük az olvasást!",
     "startPrompt": "Ebben az előtörténetben Te döntesz arról, hogy mi történik, és Te irányíthatod a karaktert is - hasonlóan ahhoz, ahogyan korunk legnagyobb nekromágusa, Requiem Dreadmoor játszik a holtakkal.\n\nA karakter története ebből fakadóan zavaros és absztrakt; talán minden megtörtént a leírtak közül egyszerre. Talán egyik sem.\n\nAz Idővonal választásaid alapján alakul át.\n\nHárom titkos választás rejtőzik a sorok között. Egy, amit türelemmel oldasz fel, egy, amit meghozott döntéseid láttatnak veled, és egy, melyhez a Halál nyit látható ösvényt számodra.\n\nElrontott lépések esetében van lehetőséged visszalépni. Ezáltal az egyes történetvégek gyorsabban is teljesíthetőek, ennek ellenére legalább néhány alkalommal a teljes újrakezdést javaslom, hogy új utakat és új ismereteket fedezz fel. Egyes easter eggek is csak újrajátszás esetén jelennek meg."
