@@ -59,7 +59,7 @@
     { "label": "Százfűlé-főzet", "value": "Sötétbordó, mézédes és selymes ital, de a vér, a hamu és a száraz föld ízével." },
     { "label": "Amortentia", "value": "Az illatok, amelyeket a karakter érezne." },
     { "label": "Titkok", "value": ["Látó képessége", "Tudja, hogy anyja hazudik néhány dologban, még se tesz ellene semmit", "Az összes Siofra által választott férjjelölt előtt szándékosan alkalmatlannak mutatja magát"], "wide": true },
-    { "label": "Azt beszélik, hogy…", "value": ["Kannibál", "A testvérével nem csak testvéri a viszonya", "Az apjával is közel állnak egymáshoz", "Sőt, inferussal is csinálta már", "Irigyli Destination tehetségét", "Irigyli anyja szépéségét", "A másik szemét egy hullából szedték ki", "Ő az egyetlen boszorkány, aki nem tudja, mi az a Trimágus Tusa"], "wide": true }
+    { "label": "Azt beszélik, hogy…", "value": ["Kannibál", "A testvérével nem csak testvéri a viszonya", "Az apjával is közel állnak egymáshoz", "Sőt, inferussal is csinálta már", "Irigyli Destination tehetségét", "Irigyli anyja szépéségét", "Ő maga is vámpír, mint az anyja", "A másik szemét egy hullából szedték ki", "Ő az egyetlen boszorkány, aki nem tudja, mi az a Trimágus Tusa"], "wide": true }
   ],
   "family": {
     "members": [
