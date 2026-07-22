@@ -175,10 +175,9 @@
     "s1_radio_all_endings_reaction": {
       "title": "0. Fejezet: Nebraska",
       "paragraphs": [
-        "Nem nyúlsz többé a hangológombhoz. Elengeded, és megvárod, mit akar lejátszani neked a rádió.",
-        "Először csak sercegést hallasz. Aztán minden csatorna egyszerre talál rád. Felcsendül egy olasz szoprán; az éneket ásó tompa csapása vágja ketté. Óra ketyeg, kanál koccan egy üveg pereméhez, száraz kukoricaszárak zizegnek, és három tompa koppanás érkezik valahonnan a padló alól. Varjak szárnycsapása keveredik sercegő tűzzel, végül egy hang egyetlen nevet mond ki: Fortuna.",
-        "A rádió pontosan hét másodpercre elnémul. Amikor újra megszólal, már a helyi reggeli műsor megy rajta, mintha az előbbi adás sosem létezett volna.",
-        "Destination ekkor érkezik meg a nappaliba, nyomában Rigor Mortisszal. Egyikük sem kérdezi meg, miért nézed úgy a rádiót, mintha az éppen hozzád beszélt volna."
+        "Visszahúzod a kezed a hangológombról.",
+		"Rövid ideig csak sercegést hallasz. A statikus zajt aztán megszakítja a Carmina Burana. A kórus az O Fortuna-t énekli, de azt nem tudod rendesen kiélvezni, mert abba különféle zajok keverednek. Hallod egy óra ketyegését, a száraz kukoricaszárak zizegését, ahogyan elhaladsz mellettük, artikulálatlan nyöszörgést, egy ásó tompa puffanását, és egy madár szárnyainak csapását.",
+		"Ahogy véget ér a dal, már ismét a reggeli műsor megy rajta, ahol a Salem hagyatéka pártjának újabb sikereit éltetik."
       ],
       "choices": [
         {
