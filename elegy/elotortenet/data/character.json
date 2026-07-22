@@ -15,13 +15,13 @@
     { "label": "Születési idő", "value": "1987. 10. 31." },
     { "label": "Kor", "value": "18" },
     { "label": "Vér", "value": "arany" },
-    { "label": "Iskola", "value": "Mandragóra Gyógyítóképző Ispotály" },
+    { "label": "Iskola", "value": "augusztusban jelentkezik Felsőoktatásra" },
 	{ "label": "Szervezet", "value": "Noctua Tenebrosa" }
   ],
   "story": {
     "dataSource": "data/story.json",
-    "description": "Az előtörténet vizuális effekteket és interaktív elemeket tartalmaz.",
-    "warning": "halál bálványozása, szektás magatartás, grafikus erőszak, bodyhorror, halottgyalázás"
+    "description": "Az előtörténet vizuális effekteket és interaktív elemeket tartalmaz. A történet teljesen fiktív.",
+    "warning": "halál bálványozása, szektás magatartás, grafikus erőszak, bodyhorror, halottgyalázás, manipuláció, etikátlan emberkísérletek, gyermekbántalmazás, mindfuck"
   },
   "past": {
     "timeline": [
@@ -42,30 +42,30 @@
       "Leírás"
     ],
     "prompts": [
-      { "title": "Merengő", "label": "Legjobb emlék", "text": "A karakter legjobb emléke." },
+      { "title": "Merengő", "label": "Legjobb emlék", "text": "Véletlenszerű, gyermekkori emlékek Destinationnel, például a nyári gyümölcsözések, a bújócskák a kriptákban, és amikor kígyótojásokat keltegettek titokban." },
       { "title": "Merengő", "label": "Legrosszabb emlék", "text": "Az elvesztett szem utáni időszak." },
-      { "title": "Edevis tükre", "text": "Amit a karakter a tükörben látna." },
+      { "title": "Edevis tükre", "text": "Nincsenek azon kívül különösebb vágyai, mint hogy a szerettei legyenek boldogak és egészségesek, így őket látja benne így." },
       { "title": "Mumus", "text": "Egy ragyogó, kék szemet lát." }
     ]
   },
   "trivia": [
-    { "label": "Mindig", "value": ["első dolog", "második dolog", "harmadik dolog", "negyedik dolog", "ötödik dolog"] },
-    { "label": "Soha", "value": ["első dolog", "második dolog", "harmadik dolog", "negyedik dolog", "ötödik dolog"] },
-    { "label": "Hobbik", "value": "Amit a karakter szívesen csinál." },
-    { "label": "Malíciamutató", "value": "A karakter ellensége vagy ellenségei." },
-    { "label": "Százfűlé-főzet", "value": "A főzet íze, színe és állaga." },
+    { "label": "Mindig", "value": ["Destination", "halva (édesség)", "párbajvarázslatok gyakorlása", "csend és nyugalom", "éneklés"] },
+    { "label": "Soha", "value": ["kínzó látomások", "Desolation szenvedése", "nekrofil viccek", "small talk", "felesleges kegyetlenkedés"] },
+    { "label": "Hobbik", "value": "éneklés, hegedülés, séta a szabadban, új halállal kapcsolatos mágiák és szertartások megismerése" },
+    { "label": "Malíciamutató", "value": "A saját szüleit látná, de nem tudná megmagyarázni, miért. Hiszen szeretik." },
+    { "label": "Százfűlé-főzet", "value": "Sötétbordó, mézédes és selymes ital, de a vér, a hamu és a száraz föld ízével." },
     { "label": "Amortentia", "value": "Az illatok, amelyeket a karakter érezne." },
-    { "label": "Titkok", "value": ["Első titok.", "Második titok.", "További titkok tetszőleges számban."], "wide": true },
-    { "label": "Azt beszélik, hogy…", "value": ["Első pletyka.", "Második pletyka.", "További pletykák tetszőleges számban."], "wide": true }
+    { "label": "Titkok", "value": ["Látó képessége", "Tudja, hogy anyja hazudik néhány dologban, még se tesz ellene semmit", "Az összes Siofra által választott férjjelölt előtt szándékosan alkalmatlannak mutatja magát"], "wide": true },
+    { "label": "Azt beszélik, hogy…", "value": ["Kannibál", "A testvérével nem csak testvéri a viszonya", "Az apjával is közel állnak egymáshoz", "Sőt, inferussal is csinálta már", "Irigyli Destination tehetségét", "Irigyli anyja szépéségét", "A másik szemét egy hullából szedték ki"], "wide": true }
   ],
   "family": {
     "members": [
       { "role": "Apa", "name": "Requiem Dreadmoor", "age": "90 éves", "status": "aranyvérű", "image": "images/requiem.jpg", "description": "Senkinek ne legyen kétsége. Requiem Dreadmoort bátran nevezhetjük fekete mágusnak, és közülük is egy igen hatalmasnak. Van azonban, ami bőségesen elhatárolja őt a nagy nevektől. Requiemet hidegen hagyja a hatalom, nem akarja mindenféle ideológiákba bújtatva megváltani a világot, és egyáltalán nem érdekli az sem, hogy kinek milyen a vérstátusza. Ekrizdishez hasonlóan, akihez a család bármiféle bizonyíték nélkül szereti visszavezetni magát, az új ismeretekért és a tudásért műveli azt, amit, és nem azért, mert különösebb célja lenne vele. Tőle eltérően viszont legalább nem akar magányos maradni. Elegy a legfiatalabb gyermeke a kedvenc feleségétől, akiért megszállottan rajong. Talán úgy tűnhet, hogy így már nincs tér arra, hogy még többet osszon meg magából lányának, de ez távol áll a valóságtól. Saját kezűleg tanította szinte mindenre, ami mágiához köthető, vagy épp a legjobb mestereket kereste fel neki, és persze legfiatalabb fiának is. Szorosan tartja gyermekeit maga mellett - bár még nem biztos, hogy úgy kapják meg az örökségüket, ahogyan azt ők gondolnák." },
-      { "role": "Anya", "name": "Lucia Dreadmoor (née Orlyk)", "age": "xx éves", "status": "aranyvérű", "image": "images/lucia.jpg", "description": "Az anya leírása." },
-      { "role": "Testvér", "name": "Destination Dreadmoor", "age": "xx éves", "status": "aranyvérű", "image": "images/destination.jpg", "description": "Az első testvér leírása." },
-      { "role": "Testvér", "name": "Desolation Dreadmoor", "age": "xx éves", "status": "kvibli", "image": "images/desolation.jpg", "description": "Destination ikertestvére. Sajnos kviblinek született - bár a családfő így is talált módot arra, hogy hasznos legyen. Mindenkinek azt mondták, meghalt." },
+      { "role": "Anya", "name": "Lucia Dreadmoor (née Orlyk)", "age": "39 éves (20 éves kora óta vámpír)", "status": "aranyvérű", "image": "images/lucia.jpg", "description": "Még a varázslótársadalomban is bizarrnak számított Lucia Orlyk és Requiem Dreadmoor házassága. Nagy port kavart a dolog, pedig igazán természetes az, ha az aranyvérűek más aranyvérűekkel házasodnak. Senki nem tudta viszont biztosra, hogy mit akarhatott a fiatal, éppen csak nagykorú, huszadik életévét se betöltő Lucia Orlyk a nála jóval idősebb férfitól. Az 51 évnyi korkülönbség nem az egyetlen meghökkentő dolog persze. Az ukrán származású Orlyk-ház mindig a lovagiasság és a nemesség egyik szószólója volt, akik a Báthory család szárnysegédeiként segítették a sárkányokat. Ehhez képest az, hogy Lucia frigyre lépett a nekromantákkal, egyenesen a családja elleni legfőbb árulásnak és lázadásnak tűnt. Egyes pletykák szerint Requiem imperioval kényszerítette őt arra, hogy hozzámenjen, de ezek a pletykák természetesen alaptalanok. Ha még furcsa is, de Requiem és Lucia Dreadmoor tényleg szeretik egymást, és tényleg készek bármire azért, hogy az együtt töltött idejüket megnöveljék. Elegy hat hónapos volt, amikor a betegeskedő Luciát vámpírrá változtatták, hogy a betegsége ne romoljon tovább. Minden bizarr dolog ellenére amennyire képes volt, megadott mindent a két testvérnek, és apjukkal együtt dolgozott azon, hogy olyan környezetet teremtsenek nekik, amikben sikeresek lehetnek. Persze nem önös érdekektől mentesen." },
+      { "role": "Testvér", "name": "Destination Dreadmoor", "age": "21 éves", "status": "aranyvérű", "image": "images/destination.jpg", "description": "Nehezen lehet jobb testvért elképzelni, pedig Elegynek sok féltestvére van Requiem korábbi házasságaiból – és egy édestestvérük, de ő egy külön kategóriába sorolható. Neveltetésük során szüleik minden alkalommal elmondták, hogy egy testvért már elveszítettek csecsemő korában, így tehát muszáj vigyázniuk egymásra. Így is tesznek – nincs tér köztük viszálynak, és nincs tér másra, csak az őszinte, szívből érkező, mély szeretetre. A testvérek minden bizonnyal külső szemmel bizarrnak és furcsának tűnhetnek, az ő véleményük viszont az, hogy mindenki más a furcsa rajtuk kívül – főleg azok a testvérek, akik nem állnak egymáshoz olyan közel, mint ők ketten. Ő az, akihez bármikor bizalommal fordulhat, és ő az, akire bármikor számíthat. A kapcsolatuk megrendíthetetlen, nincs tér viszályra és nincs tér féltékenységre." },
+      { "role": "Testvér", "name": "Desolation Dreadmoor", "age": "21 éves", "status": "kvibli", "image": "images/desolation.jpg", "description": "Destination ikertestvére. Sajnos kviblinek született - bár a családfő így is talált módot arra, hogy hasznos legyen. Mindenkinek azt mondták, meghalt." },
       { "role": "Házimanó", "name": "Rigor Mortis", "image": "images/rigormortis.jpg", "description": "A család szeretett házimanója, akitől holta után se tudtak megválni. Egyszerű inferus bábként szolgálja tovább a családot, igaz, mágia nélkül." },
-	  { "role": "Távoli nagynéni", "name": "Siofra Mordrake (née Dreadmoor)", "image": "images/siofra.jpg", "description": "Felsőház" }
+	  { "role": "Távoli nagynéni", "name": "Siofra Mordrake (née Dreadmoor)", "age": "35 éves", "image": "images/siofra.jpg", "description": "A Felsőház prominens tagja, aki Elegyben és Destinyben látja azt a generációt, akik képesek lehetnek újra egyesíteni a Felsőházat az Alsóházzal. Kedveli a lányt, kéretlen tanácsaival se győzi ellátni őt, különösen férfiakkal kapcsolatban. Még szívesebben szeret férjjelölteket vadászni neki." }
 	],
     "history": [
       "A Dreadmoor család önbevallása alapján egészen a 15. század fekete mágusáig, Ekrizdisig szereti visszavezetni magát, holott az állítást igazolni és alátámasztani semmilyen módon se tudják. A mágiatörténelem jelenlegi álláspontja szerint Ekrizdis a saját magányába és a kísérleteibe őrült bele a szigetére épített erődítményében, amit ma Azkabannak neveznek. Vélhetően az állítás nem igaz, a család mégis büszkén ragaszkodik ehhez a narratívához – és kellően meggyőzőek az erre fogékonyak köreiben, akik szeretnek hinni a vérvonalak sötét dicsőségében.",
@@ -139,9 +139,9 @@
     ],
     "education": [
       { "label": "Iskola", "value": "magántanuló" },
-      { "label": "Felsőoktatás", "value": "Mandragóra" },
-      { "label": "Szak", "value": "szak neve" },
-      { "label": "Pálca típusa", "value": "hossz, fa, mag és egyéb tulajdonságok" }
+      { "label": "Felsőoktatás", "value": "augusztusban jelentkezik Felsőoktatásra" },
+      { "label": "Szak", "value": "augusztusban kiderül" },
+      { "label": "Pálca típusa", "value": "12 hüvelyk, kökény pálca thesztrál farokszőr maggal, közepesen rugalmas" }
     ]
   },
   "additional": [
