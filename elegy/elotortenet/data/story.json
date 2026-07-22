@@ -2852,8 +2852,12 @@
     "s3_remove_eye_blocked_by_twin": {
       "title": "III. Fejezet — Parazita",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN KÍSÉRLI MEG A KARAKTER KISZEDNI MAGÁBÓL A SZEMET, DE DESOLATION EMLÉKE MIATT NEM KÉPES VÉGIGVINNI. NEM HALHAT MEG ÚGY, HOGY A BÁTYJÁT A SZOBÁBAN HAGYJA.]",
-        "[LEENGEDI A KEZÉT. A HALÁL NEM TELJESÜL, ÉS MÁS MEGOLDÁST KELL VÁLASZTANIA.]"
+        "Inkább a halál? Vállalod újra? Hát legyen.",
+		"Csak az ágyadon ülsz fel. Túlságosan erőtlen vagy ahhoz, hogy elvánszorogj a fésülködő asztalodig. Különben is könnyebb, ha nem látod magad.",
+		"Talán ismét visszakerülsz ugyanarra a pontra majd, ezt nem tudhatod biztosra. De úgy érzed, ezen a ponton nincs veszítenivalód. Azt hitted, már nem fog remegni a kezed – mégis meg kell tartanod a csuklód, amikor arcodhoz emeled a pálcád, hogy a végzetes átkot használd önmagadon.",
+		"Destinationnek megírtál mindent a párnádra készített búcsúleveledben. A látomásaidat, amiket még meg se kaptál, és azt a furcsa deja vu érzést, ami az őrületbe taszított. Megírtad neki azt is, hogy mit tudtál meg Desolationról – nem érted, miért és hogyan, de életben van, éppen itt, mellettetek, és segítségre van szüksége. De tényleg egyedül hagynád bátyád egy ilyen teherrel?",
+		"Anyátok és apátok kedvtelve mondogatták, hogy mindig legyetek ott egymásnak, hiszen egy testvért már elveszítettetek. Nincs más, akiben feltétlenül bízhattok a hibáitok ellenére is, és nincs más, akihez fordulhattok, ha baj van. Ez a szemlélet tartotta össze ennyi ideig a Dreadmoorok Felső és Alsóházát is, dacára annak, hogy mennyire mások vagytok.",
+		"Leereszted a kezed, nem vagy rá képes."
       ],
       "choices": [
         {
