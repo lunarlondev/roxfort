@@ -18,7 +18,7 @@
       "choices": [
         {
           "id": "s1_radio_all_endings_echo",
-          "text": "Nem választasz adót. Megvárod, mit akar lejátszani neked a rádió.",
+          "text": "ΞЖѮϠҖӁӜӾѪҘҨԄԆӺϞϠҊӾ",
           "next": "s1_radio_all_endings_reaction",
           "tags": [
             "easter-egg",
@@ -82,7 +82,7 @@
         },
         {
           "id": "s1_radio_amman",
-          "text": "Megpróbálsz befogni egy ammáni varázsrádiót.",
+          "text": "Megpróbálsz befogni egy ammani varázsrádiót.",
           "next": "s1_radio_amman_reaction",
           "tags": [
             "normal"
@@ -2271,8 +2271,10 @@
     "s3_parasite_torment": {
       "title": "III. Fejezet — Parazita",
       "paragraphs": [
-        "[A SZEM EGYRE SZEMÉLYESEBB LÁTOMÁSOKKAL KÍNOZZA A KARAKTERT. ÖSSZEKEVERI A VALÓS JÖVŐKET, LEHETSÉGES JÖVŐKET ÉS SZÁNDÉKOS HAZUGSÁGOKAT.]",
-        "[A KARAKTER FIZIKAILAG IS ÉRZI A PARAZITÁT: FINOM GYÖKEREK FUTNAK A SZEMÜREGBŐL AZ IDEGEK ÉS AZ AGY FELÉ. A SZEM MÁR NEM KÜLÖNÁLLÓ SZERV.]"
+        "Először Desolationt mutatom meg neked.",
+		"Tudod, ő most is ott kuporog a földön. Olyan az arca, mint a bátyádnak, de sokkal csontosabb. Tartása hajlott a gerincferdüléstől, egyik karja pedig természetellenesen van befordulva az éveken át tartó, rossz tartástól. Zavarba hoz, hogy ennyire hasonlít Destinyre, mégis ennyire mások.",
+		"Látod aztán, hogy újra megfosztják őt a napfénytől. Képtelen szavakat formázni ajkaival, képtelen arra, hogy kifejezze magát, pedig az egyetlen bűne, hogy szörnyek családjába született, ahol nem kezelik őt emberként.",
+		"Aztán látod saját magad felette a bátyáddal. Nem Desolationnel, hanem a valódival, akit gyermekkorod óta ismersz, aki társad volt mindenben, akiben mindig megbízhatsz. Tartásotok megváltozott, mintha szüleitek mintáját vettétek volna fel. Hiányzik a tekintetetekből az ártatlan fény, ami még emberré változtatott titeket. Átveszitek szüleitek szerepét, és csak rosszabb, szörnyen rosszabb dolgokat műveltek vele, mint amit degenerált, pszichopata atyátok ki tudott találni."
       ],
       "choices": [
         {
@@ -2527,14 +2529,14 @@
     "s3_dejavu_recovery": {
       "title": "III. Fejezet — Parazita",
       "paragraphs": [
-        "[A DÉJÀ VU ÚTVONALON NINCS LASSÚ FELFEDEZÉS. A KARAKTER TUDJA, HOGY A SZEM IDEGEKEN KERESZTÜL GYÖKERET ERESZT, OLVASSA AZ EMLÉKEIT, ÉS A FÉLELMEIBŐL ÉPÍT LÁTOMÁSOKAT.]",
-        "[TUDJA AZT IS, HOGY AZ ELŐZŐ ÉLETBEN AZ ELTÁVOLÍTÁSÁBA HALT BELE. MOST KÉT LEHETŐSÉGE MARAD: ÚJRA MEGKÍSÉRLI UGYANAZT, VAGY NEM ISMÉTLI MEG A HIBÁT.]",
-        "[ERRŐL A CSOMÓPONTRÓL KIZÁRÓLAG DÉJÀ VU ENDINGEK ÉRHETŐK EL.]"
+        "Jól ismersz már, és jól ismered az elkövetkezendő napokat is, amiket lábadozással töltesz. Pontosan tudod, hogy mikor látogat majd meg ágyadnál anyád, apád és fivéred.",
+		"Anyád ismét a kötéseidet cseréli, naponta kétszer. Ugyanazokról a dolgokról mesél, és ugyanazokat mondja, mint ami emlékeidben él. Az első napokban megint nem látsz mást velem, csak halvány fényeket és mozgást. Napok telnek el, mire képes vagy megpillantani a saját kézfejedet – aztán a tükörképedet a fésülködő asztalodnál. Emlékszel arra, hogy mit tettél, és arra is, hogy milyen következményei voltak annak, ahogyan megszabadultál tőlem. Remegett a kezed, ahogyan pálcád önmagad ellen fordítottad, de az átkot így is kimondtad, mert te inkább kockáztattad a halált, mint hogy tovább tűrd a szenvedéseidet.",
+		"Még nem érkezett el az a pillanat, hogy az első látomásaidat újra átélhesd velem."
       ],
       "choices": [
         {
           "id": "s3_dejavu_remove_again",
-          "text": "Ezúttal gyorsabban és pontosabban téped ki.",
+          "text": "Nem várod meg a látomásokat. Inkább a halál.",
           "next": "ending_dejavu_loop_death",
           "tags": [
             "critical"
@@ -2556,7 +2558,7 @@
         },
         {
           "id": "s3_dejavu_attempt_remove_after_twin",
-          "text": "Ezúttal gyorsabban és pontosabban téped ki.",
+          "text": "Nem várod meg a látomásokat. Inkább a halál.",
           "next": "s3_dejavu_remove_blocked_by_twin",
           "tags": [
             "critical"
@@ -2576,7 +2578,7 @@
         },
         {
           "id": "s3_dejavu_choose_coexistence",
-          "text": "Nem ismétled meg. Megtanulsz együtt élni vele.",
+          "text": "Megtanulsz együtt élni velem.",
           "next": "ending_dejavu_coexist",
           "tags": [
             "critical"
@@ -2672,17 +2674,18 @@
       "order": 3,
       "title": "Ugyanaz a vég",
       "paragraphs": [
-        "[A KARAKTER AZ ELŐZŐ HALÁL MINDEN RÉSZLETÉT ISMERI. MÁS ESZKÖZT, GYORSABB MOZGÁST VAGY ELŐKÉSZÍTETT VÉDELMET HASZNÁL, DE AZ ELTÁVOLÍTÁS EZÚTTAL IS HALÁLOS.]",
-        "[NEM UGYANAZ A HIBA ISMÉTLŐDIK MEG: AZ ELTÁVOLÍTÁS ÖNMAGÁBAN VÉGZETES, MERT A SZEM ADDIGRA MÁR A TEST RÉSZE.]",
-        "[A KÖR ÚJRA BEZÁRUL.]"
+        "Inkább a halál? Vállalod újra? Hát legyen.",
+		"Csak az ágyadon ülsz fel. Túlságosan erőtlen vagy ahhoz, hogy elvánszorogj a fésülködő asztalodig. Különben is könnyebb, ha nem látod magad.",
+		"Talán ismét visszakerülsz ugyanarra a pontra majd, ezt nem tudhatod biztosra. De úgy érzed, ezen a ponton nincs veszítenivalód. Most nem remeg a kezed, amikor arcodhoz emeled a pálcád, és ki sem kell támasztanod csuklódat a másik kezeddel. Az átkot gyorsabban és pontosabban végzed el. Nem féled a halált – az életet féled a parazitával, aki mellett képtelen vagy megtartani a józan eszed.",
+		"Reméled, ha Destiny megtalálja a neki írt búcsúleveledet, akkor egyszer megbocsájt. Szeretnéd, mindennél jobban szeretnéd, ha ő helyezné el testedet sírhelyeden – és ha megtenne mindent azért, hogy ha marad is belőlem valami, engem valahol máshol hantoljanak el."
       ],
       "presentation": {
         "effect": "death",
         "timeline": {
           "id": "ending-DEJAVU_LOOP_DEATH",
-          "date": "Befejezés",
+          "date": "2006",
           "icon": "†",
-          "text": "Befejezés: Ugyanaz a vég."
+          "text": "Elegy halála. Búcsúüzenetet hagy bátyja számára, amiben elmagyarázza a történteket. Destination nem lép be a Noctuába, a gyászát kell feldolgoznia."
         },
         "afterEndingTimeline": [],
         "endingStyle": "death-loop"
@@ -2694,16 +2697,21 @@
       "order": 4,
       "title": "Két tekintet",
       "paragraphs": [
-        "[A KARAKTER SZABÁLYOKAT ALAKÍT KI: NEM REAGÁL AZ ELSŐ LÁTOMÁSRA, FELJEGYZI A KÉPEKET, MÁS BIZONYÍTÉK NÉLKÜL NEM CSELEKSZIK, ÉS MEGTANULJA FELISMERNI A PARAZITA ÉHSÉGÉT ÉS MANIPULÁCIÓJÁT.]",
-        "[SE A KARAKTER, SE A SZEM NEM GYŐZ TELJESEN. EGYÜTT ÉLNEK, MIKÖZBEN FOLYAMATOSAN FIGYELIK EGYMÁST.]",
-        "[A ZÁRÓKÉPBEN AZ EGYIK SZEM A TÜKÖRKÉPET NÉZI, A MÁSIK PEDIG VALAMIT A KARAKTER VÁLLA MÖGÖTT, AMI MÉG NINCS OTT.]"
+        "Visszateszed a pálcádat az éjjeli szekrényedre, és a kezedbe veszed a búcsúlevelet, amit Destinynek írtál mindazzal a magyarázkodással és bocsánatkéréssel, amit rá akartál hagyni.",
+		"Pennát fogsz a kezedbe, és egy könyvet teszel az öledbe, hogy kitámassza a leveled. Majd egyszerűen áthúzod az első sort. Aztán leírsz rá mindent, amire emlékszel. A legelső képeket, amiket mutattam neked, és körülírod azt a különös idegentest-érzetet is, amit nem tudsz hová sorolni. Leírod a korábban megtett döntéseidet, amire emlékszel, és azt is, hogy mit tudtál meg Desolationról, vagy épp a Varjúról. A pergamen hamar betelik; újat és újat kell elővenned, hogy rögzíts és feljegyezz mindent, amit csak tudsz.",
+		"Elérkeznek az első látomások, de valamivel kevésbé terhel meg. Képessé válsz arra, hogy valamelyest felülről szemléld a veled történteket, és arra is, hogy ne akarj azonnal cselekedni minden látomás után. Hetek múltán kezdesz ráérezni arra, hogy mely látomás lehet valódibb, mint a többi, és melyik az, amelyiket csak azért láttatom veled, hogy szórakozzak veled.",
+		"Sajnos nem vagy hajlandó az én feltételeim szerint játszani, először nem tetszenek a szabályaid. Újra és újra meggyötörlek a hasonló képekkel. Láttatom veled, hogy mit tettek, vagy mit fognak tenni Desolationnel, és láttatom veled azt is, hogy riad halálra Destiny egy egyszerű, mugli vidámparkban. Láttatom veled, hogy lángol anyád az ammani házatok konyhájában a napfényben, és azt is, miként ítélik el apádat jogosan mindazokért a szörnyűségekért, amiket művelt. Közelebb hozom az arcukat hozzád, még azt is végignézetem veled, Siofra miként veszíti el születendő gyermekét. Sikolyaik hangosabbak, és próbálom elhitetni veled, hogy minden perc, amikor nem cselekszel, nem teszel valamit, elvesztegetett idő, amit valami jobbra is fordíthatnál.",
+		"De te csak várakozol, és felírod a látomásokat. Olykor megpróbálod lerajzolni, hogy milyen szimbólumokat vagy képeket láttál. Előfordul az is, hogy nem emlékszel minden részletre, és olyan is, hogy kizárólag pár részletre emlékszel igazán.",
+		"Ellenőrzöd a képeket, amikor csak tudod. Néha igazam van, de a legtöbb esetben nem. Néha valóban ára van a késlekedésednek, és annak, hogy nem cselekszel. A türelmed azonban idővel megerősít. Megtanulod felismerni az éhségemet, és hogy mikor szeretnélek egyszerűen csak sürgetni, cserébe pontosabb és jobb képeket kapsz azokról az eseményekről, amiknek valóban van jelentőségük.",
+		"Siofra legifjabb gyermeke megszületik, szerencsére tökéletesen épen.",
+		"Már nem akarlak legyőzni téged, Elegy Dreadmoor, ahogyan te se kívánsz uralni engem. Megtanulunk egyek lenni, megtanulunk együtt élni. Örökké, közösen."
       ],
       "presentation": {
         "timeline": {
           "id": "ending-DEJAVU_COEXIST",
-          "date": "Befejezés",
+          "date": "2006",
           "icon": "†",
-          "text": "Befejezés: Két tekintet."
+          "text": "A Dreadmoor-testvérek az eredetileg kitűzött dátumhoz képest később, de teljesítik a Felsőház utasítását, és csatlakoznak a Noctuához. A beavatásuk zökkenőmentes volt, az akadályokat könnyedén vették."
         },
         "afterEndingTimeline": [],
         "endingStyle": "coexist"
@@ -2862,12 +2870,15 @@
     "s3_parasite_torment_after_blocked_death": {
       "title": "III. Fejezet — Parazita",
       "paragraphs": [
-        "[RÖVID ÁTVEZETÉS: A SZEM TOVÁBB KÍNOZZA, DE A SAJÁT KEZŰ ELTÁVOLÍTÁS MÁR NEM LEHETSÉGES DÖNTÉS.]"
+        "Először Desolationt mutatom meg neked.",
+		"Tudod, ő most is ott kuporog a földön. Olyan az arca, mint a bátyádnak, de sokkal csontosabb. Tartása hajlott a gerincferdüléstől, egyik karja pedig természetellenesen van befordulva az éveken át tartó, rossz tartástól. Zavarba hoz, hogy ennyire hasonlít Destinyre, mégis ennyire mások.",
+		"Látod aztán, hogy újra megfosztják őt a napfénytől. Képtelen szavakat formázni ajkaival, képtelen arra, hogy kifejezze magát, pedig az egyetlen bűne, hogy szörnyek családjába született, ahol nem kezelik őt emberként.",
+		"Aztán látod saját magad felette a bátyáddal. Nem Desolationnel, hanem a valódival, akit gyermekkorod óta ismersz, aki társad volt mindenben, akiben mindig megbízhatsz. Tartásotok megváltozott, mintha szüleitek mintáját vettétek volna fel. Hiányzik a tekintetetekből az ártatlan fény, ami még emberré változtatott titeket. Átveszitek szüleitek szerepét, és csak rosszabb, szörnyen rosszabb dolgokat műveltek vele, mint amit degenerált, pszichopata atyátok ki tudott találni."
       ],
       "choices": [
         {
           "id": "s3_endure_until_major_vision_after_twin",
-          "text": "Nem nyúlsz hozzá. Megvárod a következő látomást.",
+          "text": "Nem avatkozol be. Megvárod a következő látomást.",
           "next": "s3_major_vision",
           "tags": [
             "critical"
@@ -2945,13 +2956,17 @@
     "s3_dejavu_remove_blocked_by_twin": {
       "title": "III. Fejezet — Parazita",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN KÉSZÜL A KARAKTER A DÉJÀ VU SZÁLON ÚJRA ELTÁVOLÍTANI A SZEMET, DE DESOLATION FELFEDEZÉSE MIATT MÁR NEM KÉPES UGYANAZT A HALÁLT VÁLASZTANI.]",
-        "[MEGKÍSÉRLI, DE LEÁLL. A DÉJÀ VU HALÁLENDING NEM TELJESÜL.]"
+        "Inkább a halál? Vállalod újra? Hát legyen.",
+		"Csak az ágyadon ülsz fel. Túlságosan erőtlen vagy ahhoz, hogy elvánszorogj a fésülködő asztalodig. Különben is könnyebb, ha nem látod magad.",
+		"Talán ismét visszakerülsz ugyanarra a pontra majd, ezt nem tudhatod biztosra. De úgy érzed, ezen a ponton nincs veszítenivalód. Azt hitted, már nem fog remegni a kezed – mégis meg kell tartanod a csuklód, amikor arcodhoz emeled a pálcád, hogy a végzetes átkot használd önmagadon.",
+		"Destinationnek megírtál mindent a párnádra készített búcsúleveledben. A látomásaidat, amiket még meg se kaptál, és azt a furcsa deja vu érzést, ami az őrületbe taszított. Megírtad neki azt is, hogy mit tudtál meg Desolationról – nem érted, miért és hogyan, de életben van, éppen itt, mellettetek, és segítségre van szüksége. De tényleg egyedül hagynád bátyád egy ilyen teherrel?",
+		"Anyátok és apátok kedvtelve mondogatták, hogy mindig legyetek ott egymásnak, hiszen egy testvért már elveszítettetek. Nincs más, akiben feltétlenül bízhattok a hibáitok ellenére is, és nincs más, akihez fordulhattok, ha baj van. Ez a szemlélet tartotta össze ennyi ideig a Dreadmoorok Felső és Alsóházát is, dacára annak, hogy mennyire mások vagytok.",
+		"Leereszted a kezed, nem vagy rá képes."
       ],
       "choices": [
         {
           "id": "s3_dejavu_choose_coexistence_after_twin",
-          "text": "Nem ismétled meg. Megtanulsz együtt élni vele.",
+          "text": "Más megoldást kell keresned.",
           "next": "ending_dejavu_coexist",
           "tags": [
             "critical"
