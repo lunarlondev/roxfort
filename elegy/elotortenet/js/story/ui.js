@@ -231,6 +231,14 @@ export class StoryUI {
       button.classList.add("story-choice--special");
     }
 
+    if (tags.includes("easter-egg")) {
+      button.classList.add("story-choice--easter-egg");
+    }
+
+    if (tags.includes("completion")) {
+      button.classList.add("story-choice--completion");
+    }
+
     button.appendChild(
       createElement("span", "story-choice__label", choice.text)
     );
@@ -247,6 +255,13 @@ export class StoryUI {
 
     if (tags.includes("special")) {
       marks.push("különleges");
+    }
+
+    if (
+      tags.includes("easter-egg") ||
+      tags.includes("completion")
+    ) {
+      marks.push("⟦???⟧");
     }
 
     if (marks.length) {
