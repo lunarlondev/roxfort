@@ -212,7 +212,7 @@
       "title": "0. Fejezet: Nebraska",
       "paragraphs": [
         "Egy népszerű zenész, Lorcan d'Eath számát hallgatod a rádióból. Te is ismered a dalt – annak sikere átívelt az Óceánon, és eljutott még oda is, ahová Requiem Dreadmoor száműzte magát a Felsőház utasítására. Szádra veszed a dallamot, és együtt énekeled azt az énekessel. Meglehetősen felszabadítónak találod.",
-        "Még akkor is dúdolod a dalt, amikor az véget ért, és a műsorvezető hangja veszi azt át. A gyors időjárás jelentést követően a MACUSA legújabb intézkedéseit és a Salem Hagyatéka Párt sikereit hallgatod azokról a lépésekről, amiket a varázslótársadalom megóvása érdekében tesznek. Nem érted annyira a politikát, igazából nem is érdekel – ha engem kérdezel, ostoba vagy hozzá - , de tudod, hogy Siofra nénéd szeretné, ha részt vennél a játszmájukban.",
+        "Még akkor is dúdolod a dalt, amikor az véget ért, és a műsorvezető hangja veszi azt át. A gyors időjárás jelentést követően a MACUSA legújabb intézkedéseit és a Salem Hagyatéka Párt sikereit hallgatod azokról a lépésekről, amiket a varázslótársadalom megóvása érdekében tesznek. Nem érted annyira a politikát, igazából nem is érdekel – ha engem kérdezel, ostoba vagy hozzá - , de tudod, hogy Siofra nénéd szeretné, ha részt vennél a játszmájukban. Majd valami Trimágus Tusa elemzésébe fog bele, amit megint nem igazán értesz. Nem tudod, mi az. Örülsz, hogy aztán újra inkább egy számodra ismeretlen, de pörgős dal szólal fel a rádióban ezután.",
         "Bátyádra mosolyogsz dudorászás közben, amikor az betér a nappaliba, nyomában szerencsétlen házimanótokkal, akit képtelenek vagytok végre tisztességesen eltemetni."
       ],
       "choices": [
@@ -353,9 +353,9 @@
     "s1_attack_start": {
       "title": "I. Fejezet: Aratás",
       "paragraphs": [
-        "Csak egy pontatlan térképet kaptatok apátoktól, és egy-egy medált családotok pecsétjével. Kérdés nélkül inferiusokkal szennyezett földre vet titeket. Gondoskodása, hogy az ereklyével legalább nem tesz titeket teremtményei áldozatává, már majdnem azt feltételezi, hogy akár még érezhet is valamit gyermekei iránt.",
+        "Csak egy pontatlan térképet kaptatok apátoktól, és egy-egy medált családotok pecsétjével. Kérdés nélkül inferusokkal szennyezett földre vet titeket. Gondoskodása, hogy az ereklyével legalább nem tesz titeket teremtményei áldozatává, már majdnem azt feltételezi, hogy akár még érezhet is valamit gyermekei iránt.",
         "Bár valójában elég büszke rátok. Az élők közül ti vagytok a kedvenc teremtményei. Igazán kár lenne értetek.",
-        "Száraz, derékig érő gazban tapostok a terjedelmes birtokon. Ruhád széle beleakad az egyik elszáradt, összetöredezett kukoricaszárba. Senki földjén is lehetnétek, pedig ez a föld valójában a tiétek még akkor is, ha a Felsőház visszakövetelte azt tőletek. Apátok viszont annyi meglepetést ásott el a termőföld alá, hogy nem érte meg vesződniük vele. Egyszerűen elrejtették azt a magnixok elől, és erős védővarázslatokkal érték el azt, hogy illetéktelenek akkor se akarjanak a területre tévedni, ha valamiért hirtelen vonzónak találnák ezt a kietlenséget.",
+        "Száraz, nyakig érő gazban tapostok a terjedelmes birtokon. Ruhád széle beleakad az egyik elszáradt, összetöredezett kukoricaszárba. Senki földjén is lehetnétek, pedig ez a föld valójában a tiétek még akkor is, ha a Felsőház visszakövetelte azt tőletek azzal az ócska madárijesztővel együtt, ami valahogy kibírta az idő próbáját, és még mindig ott áll a kukoricás szélén. Apátok viszont annyi meglepetést ásott el a termőföld alá, hogy nem érte meg vesződniük vele. Egyszerűen elrejtették azt a magnixok elől, és erős védővarázslatokkal érték el azt, hogy illetéktelenek akkor se akarjanak a területre tévedni, ha valamiért hirtelen vonzónak találnák ezt a kietlenséget.",
         "Jól tudod, hogy a legtöbb inferus a föld alatt van – noha pár példány lomhán néz utánatok. Apátok pecsétje megvéd titeket, hisz sajátjaiként ismernek fel titeket. Vélhetően ha ez nem lenne rajtatok, már rég ti is halottak lennétek. Abba persze nem gondolsz bele, hogy mégis honnan szerzett ennyi testet, de az ilyen részletek felett rendszeresen elsikkadsz. Pedig apád fekete mágus, és oka van annak, hogy még a Felsőház se mutatkozik vele szívesen. A te szemedben viszont mégis csak az apád, akivel annyit utaztatok, aki megtanította neked használni a mágiát, és aki végérvényesen megdicséri a ruhát, amit magadra öltesz.",
         "Apátok is csak homályosan emlékszik arra, pontosan hogyan is néz ki az a lejáró, amire szüksége van. A korral jár, nem az igazi már, nem olyan, mint fénykorában. A térkép és Requiem emlékei szerint három tájékozódási pont segíthet titeket: egy régi, kiszáradt kút, melyben utoljára nagyapátok, Sepulcher Dreadmoor idejében csoboghatott élet; egy villám sújtotta fa, mely egykor apátok pálcájának fáját biztosította; valamint egy szélkerék, ami mára minden bizonnyal berozsdásodott.",
         "Több, mint ötven éve viszont, hogy apátok egyáltalán az államban járt. A térkép pontatlan, a táj pedig teljesen megváltozott az idők folyamán."
@@ -901,7 +901,7 @@
         },
         {
           "id": "s1_try_fire",
-          "text": "Tűzzel próbálod feltartóztatni az inferiusokat.",
+          "text": "Tűzzel próbálod feltartóztatni az inferusokat.",
           "next": "s1_fire_attempt_normal",
           "tags": [
             "critical"
@@ -2374,14 +2374,24 @@
     "s3_twin_suffering": {
       "title": "III. Fejezet — Parazita",
       "paragraphs": [
-        "[A SZEM NEMCSAK KÉPEKET, HANEM A BEZÁRT BÁTY TESTI ÉS ÉRZELMI SZENVEDÉSÉT IS ÁTADJA: A SÖTÉTSÉGET, AZ ÉHSÉGET, A BESZÉDKÉPTELENSÉGET, AZ ANYÁTÓL VALÓ RETTEGÉST ÉS DESTINATION LÉPTEIT A FALAKON TÚL.]",
-        "[A KARAKTER MEGÉRTI, HOGY A II. FEJEZETBENI TÁMADÁS NEM FELTÉTLENÜL ROSSZINDULAT VOLT. LEHETETT FÉLELEM, ZAVARTSÁG, ÉHSÉG VAGY BELÉ NEVELT REFLEX.]",
-        "[A SZEM EREJE LEHETŐVÉ TESZI, HOGY A KARAKTER OLYAN SZENVEDÉST IS ÉSZREVEGYEN, AMELYET MÁSOK ELREJTENEK VAGY NEM AKARNAK LÁTNI.]"
+        "Nem képekkel kezdem.",
+		"A hideget érzed magad körül, ám ezúttal nincs olyan takaró, amit magadra húzhatsz ellene. Egyenletes, állandó hűvösség vesz körül. Mert őt nem kísértik a napszakok, számára nincs éjjel és nappal, és nincsenek évszakok sem. Csoda, hogy neve van.",
+		"Még szép, hogy csoda. Anyádék imádták emlegetni a vacsoraasztalnál, hogy egy közös gyermeket már elveszítettek, ezért nektek Destinationnel nagyon, nagyon vigyáznotok kell egymásra.",
+		"De ki vigyáz Desolationra?",
+		"Ismered a rítust, tanúja voltál, amikor egyik féltestvéred világra hozta saját gyermekét. Jól tudod, hogy az újszülötteket nem sokkal világra jövetelük után alávetik ennek, hogy kiderüljön, milyen a gyermek mágikus potenciálja. Nem több ez a rítus számotokra, mintha csak azt néznétek meg, a csecsemő fiúnak született-e vagy lánynak.",
+		"Téged az egekig magasztaltak, nem csoda, hogy apád egyik kedvencévé váltál. Talán Siofra nénéd is ezért kedvel úgy igazán. Szeretne kiemelni, szeretné, ha inkább mihamarabb fognál egy jó férjet magadnak, hisz te magad vagy az egyik bizonyítéka annak, hogy vérvonalatok nem gyengült meg. Persze neked nincs terveid között a házasság, így kedvesen, de mindig elodázod Siofra nénéd ezen kérdéseit.",
+		"Tudod, mi történik azokkal, akik sikeresen, sőt, kimagaslóan teljesítik ezt a próbát, amire még azelőtt vetik alá őket, mielőtt összetett gondolatokat tudnának megfogalmazni. Hiszen még csak sírni tanultatok meg. De mi van azokkal, akiknél a mérleg nem mozdul, és akik rámutatnak vérvonalatok kudarcára?",
+		"Desolation kviblinek született, ezt már jól látod. Aztán látod a kísérleteket, amiket apád végrehajtott rajta. Meg se gyászolták. Testét nem bölcsőbe rakták Destiny mellé, és soha nem kapta meg azt az anyai ölelést, amit te vagy ő. Nem emelték magukhoz, ha nyugtalan volt, nem takarták be, és nem nyugtatták meg akkor, ha valami fájdalma volt.",
+		"Nem úgy, mint titeket.",
+		"Nem érzi az éhséget. Nem tudja, mi az, mert ő csak egy test, mely egy üvegfal mögött lebeg. Olykor változtattak valamit a folyadékban, amiben furcsa mód lélegezni is képes, apád pedig figyeli, miként változik az élő test a különböző, mágikus adalékok hatására. Apádnak az ott nem a tulajdon fia, hanem csak hús, ami adatokat szolgáltat neki – még az is, ha fájdalmat érez vagy megrémül valamitől. Kezét hosszú éveken át szorította oldalához, miközben hallgatta az üveg innenső oldaláról, hogy azok odakint beszélnek. Nem értette őket, a hangokat a folyadék eltorzította, és nem is hozzá beszéltek. Mert ő nem ember számukra, csak egy darab, élő hús.",
+		"Aztán hirtelen meg kell tanulnod lélegezni. Ijesztő a világ az üvegen kívül, amiből kihoztak, de amikor el kellett hagyjátok Ammant, apátok a legproblémásabb kísérleteit is magával kellett vigye. Valahogy sikerült eltitkolnia előletek, hogy harmadik édestestvéretek is veletek utazott Nebraskába, de ez igazán apróság azok után, hogy ennyi éven át azt gondoltátok, már réges-régen elhunyt csecsemő korában.",
+		"A gravitáció ránehezedett csontos testére, ahogyan abban a folyosó végi szobában kuporgott, ahol megtaláltad őt. Hisz alig tud járni is. Látod ismét, ahogyan anyádra néz, látod a rémületet a szemében, de talán nem is tudja, hogy ő az, aki világra hozta őt gyenge, beteges testével. Megtanult félni tőle, de nem tanulta meg felismerni benne saját anyját.",
+		"Mert a te anyád valójában sose volt az anyja."
       ],
       "choices": [
         {
           "id": "s3_offer_twin_company",
-          "text": "Lemész hozzá. Nem szabadítod ki és nem érinted meg; csak mellette maradsz.",
+          "text": "Elmész hozzá a testvéreddel.",
           "next": "ending_what_others_dont_see",
           "tags": [
             "critical"
@@ -2390,7 +2400,7 @@
         },
         {
           "id": "s3_turn_away_from_twin_suffering",
-          "text": "Nem bírod tovább érezni. Elfordulsz tőle.",
+          "text": "Nem bírod tovább nézni. Elfordulsz tőle.",
           "next": "s3_major_vision",
           "tags": [
             "critical"
@@ -2598,7 +2608,7 @@
       "type": "ending",
       "endingId": "EYE_REMOVAL_DEATH",
       "order": 1,
-      "title": "III. Fejezet — Parazita",
+      "title": "Megváltás",
       "paragraphs": [
         "Nem várod meg a holnapot. Ennek itt és most véget fogsz vetni, mindegy, mi az ára.",
         "Félig-meddig tudod kirántani magad a látomásból. Fél szemeddel a szobádat látod. Az ódon tapétát, amit nem kímélt a kor, a baldachinos ágyadhoz tartozó oszlopokat, és a fésülködő asztalodat, ahol a hajaddal és a sminkeddel foglalkozol, mióta Nebraskába jöttetek. Másik fél szemed azonban továbbra is egyszerre látja a vérvörös holdat és a napot. Egyszerre érzed az égő és a rothadó hús szagát. Kezed orrod elé emeled, hogy csillapítsd a hányingert, ami egészen szokatlan és újszerű élmény. Még soha nem voltál rosszul holttesttől, pedig láttál eleget. Segítettél balzsamozni a holtakat is szertartásokon.",
@@ -2614,7 +2624,7 @@
           "id": "ending-EYE_REMOVAL_DEATH",
           "date": "Befejezés",
           "icon": "†",
-          "text": "Befejezés: Szabad halál."
+          "text": "Befejezés: Megváltás."
         },
         "afterEndingTimeline": [
           {
@@ -2803,21 +2813,31 @@
       "type": "ending",
       "endingId": "WHAT_OTHERS_DONT_SEE",
       "order": 8,
-      "title": "Amit más nem lát",
+      "title": "Három testvér",
       "paragraphs": [
-        "[A KARAKTER ÚJRA ÉS ÚJRA LEMEGY A BEZÁRT BÁTYJÁHOZ. NEM PRÓBÁLJA KISZABADÍTANI, NEM KÖVETEL FELISMERÉST, ÉS NEM ÉRINTI MEG; CSAK BESZÉL HOZZÁ ÉS TÁRSASÁGOT NYÚJT.]",
-        "[A VÁLTOZÁS LASSÚ. A BÁTY IDŐVEL FELISMERI A LÉPTEIT, KÖZELEBB ÜL, ÁTVESZ EGY TÁRGYAT, VAGY SAJÁT AKARATÁBÓL MEGÉRINTI A KEZÉT. NEM GYÓGYUL MEG CSODÁLATOSAN, DE MÁR NINCS TELJESEN EGYEDÜL.]",
-        "[A KARAKTER A SZEM HATALMÁT EZUTÁN ARRA HASZNÁLJA, HOGY ÉSZREVEGYE AZ ELREJTETT, KIMONDATLAN SZENVEDÉST, ÉS SEGÍTSEN AZOKNAK, AKIKET MÁSOK NEM LÁTNAK.]",
-        "[MARADJON BIZONYTALAN, HOGY A SZEM EGYÜTTÉRZÉST TANÍTOTT, VAGY EGYSZERŰEN RÁJÖTT, HOGY MÁSOK FÁJDALMÁN KERESZTÜL TEHETI MAGÁT NÉLKÜLÖZHETETLENNÉ.]"
+        "Nem tudod tovább elviselni a gondolatot, hogy szenved.",
+		"Először megkeresed Destinyt. Folynak a könnyek arcodról, mialatt beszámolsz neki arról, hogy mit mutattam neked. Egész testedben remegsz, amíg megpróbálod elmesélni, amit láttál, de alig érteni a szavaidat. De persze ti igazán türelmesek vagytok egymással, hisz arra neveltek titeket, hogy legyetek ott mindig a másiknak, miután a másik bátyátok szüleitek önbevallása szerint elhunyt. Des nem sír veled, de ennek is az egyetlen oka az, hogy kettőtök közül valakinek tartania kell magát.",
+		"Folyton megbicsaklik a hangod, ahogyan belekezdesz. A verbális beszédet hátrahagyod, és inkább kettőtök néma nyelvét használod. Jelelni kezdesz neki, jelnyelven adod hát át azokat az információkat, amiket megtudtál.",
+		"Már aznap elmentek hozzá.",
+		"Ajtaján a zárat feloldjátok, hogy beléphessetek láncra kötött testvéretek szobájába. Azonnal felrezzen álmából, és artikulálatlan hangok közepette próbál kommunikálni. Hosszasan nézi ikertestvérének az arcát; az üvegfal túloldalán saját tükröződéséből ezek szerint lehet némi fogalma arról, hogy hogyan is néz ki.",
+		"Nem csináltok semmit. Csak leültök mellé tisztes távolságban, és egyszerűen ott vagytok vele némán. Fejed Destination vállára hajtod, és egy régi altatót dúdolsz, amit még anyádtól tanultál Ammanban.",
+		"A következő napon szüleitek elé járultok. Könyörögtök azért, hogy segítsenek rajta, vagy ha ők nem teszik meg, engedjék, hogy ti megtehessétek ezt."
       ],
       "presentation": {
         "timeline": {
           "id": "ending-WHAT_OTHERS_DONT_SEE",
-          "date": "Befejezés",
+          "date": "2006",
           "icon": "†",
-          "text": "Befejezés: Amit más nem lát."
+          "text": "Elegy és Destination megtalálják harmadik testvérüket, Desolationt. Szüleiktől kikönyörgik, hogy ha nem hajlandóak segíteni, legalább azt engedjék meg, hogy ők megtehessék ezt."
         },
-        "afterEndingTimeline": [],
+        "afterEndingTimeline": [
+		{
+            "id": "seerheir1",
+            "date": "2006",
+            "icon": "⌂",
+            "text": "A Felsőház utasítása ellenére nem lépnek be a Noctuába. Idejüket Desolation rehabilitására fordítják."
+          }
+		  ],
         "endingStyle": "compassion"
       }
     },
@@ -2859,8 +2879,9 @@
     "s3_remove_eye_after_vision_blocked_by_twin": {
       "title": "III. Fejezet — Parazita",
       "paragraphs": [
-        "[IDE ÍRD, HOGYAN PRÓBÁLJA A LÁTOMÁS UTÁN KITÉPNI A SZEMET, DE A BÁTYJA EMLÉKE MEGÁLLÍTJA. A MOZGÁST MEGKEZDI, DE NEM TUDJA BEFEJEZNI.]",
-        "[VISSZA KELL TÉRNIE A LÁTOMÁS UTÁN MEGMARADT TÖBBI LEHETŐSÉGHEZ.]"
+        "Megpróbálod. Igazán megpróbálod.",
+        "Másik kezeddel meg kell támasztanod csuklód a fésülködő asztalodon, hogy ne remegjen, amíg saját szemednek tartod a pálcád. Ismered az igét, tudod, mivel tudnál örökkön megszabadulni tőlem. De egyre csak arra tudsz gondolni, mi történik majd Desolationnel, ha te nem vagy ott, hogy segíts neki.",
+		"Képtelen vagy kimondani az igét. Nagyot sóhajtasz, ahogyan pálcás kezed leereszted."
       ],
       "choices": [
         {
@@ -2877,7 +2898,9 @@
     "s3_major_vision_after_blocked_death": {
       "title": "III. Fejezet — Parazita",
       "paragraphs": [
-        "[RÖVID ÁTVEZETÉS: A HALÁL LEHETŐSÉGE KIESIK, DE A TÖBBI DÖNTÉS VÁLTOZATLANUL ELÉRHETŐ.]"
+        "Megpróbálod. Igazán megpróbálod.",
+		"Másik kezeddel meg kell támasztanod csuklód a fésülködő asztalodon, hogy ne remegjen, amíg saját szemednek tartod a pálcád. Ismered az igét, tudod, mivel tudnál örökkön megszabadulni tőlem. De egyre csak arra tudsz gondolni, mi történik majd Desolationnel, ha te nem vagy ott, hogy segíts neki.",
+		"Képtelen vagy kimondani az igét. Nagyot sóhajtasz, ahogyan pálcás kezed leereszted."
       ],
       "choices": [
         {
