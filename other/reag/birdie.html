@@ -87,6 +87,11 @@ button,input,textarea { font:inherit; }
                     </label>
 
                     <label class="birdie-builder-field">
+                        <span class="birdie-builder-label">Név</span>
+                        <input class="birdie-builder-input" id="birdie-builder-name" type="text" placeholder="Karakter neve">
+                    </label>
+
+                    <label class="birdie-builder-field">
                         <span class="birdie-builder-label">Kép URL-je</span>
                         <input class="birdie-builder-input" id="birdie-builder-image" type="url" placeholder="https://...">
                         <small class="birdie-builder-help">Üresen hagyva világos placeholder jelenik meg.</small>
@@ -227,6 +232,7 @@ const birdieEmojiUrls = [
 
 const birdieDefaults = {
 title:"Ahol a madarak hazatérnek",
+name:"",
 image:"",
 quote:"A felhők sosem maradnak ugyanazok, mégis mindig felismerjük bennük az eget.",
 tw:"triggerek helye",
@@ -287,6 +293,7 @@ function birdieRenderEmojiGrid() {
 
 function birdieBuildTemplate(includeForumTags) {
     const rawTitle = document.getElementById("birdie-builder-title").value.trim();
+    const rawName = document.getElementById("birdie-builder-name").value.trim();
     const image = birdieEscapeCssUrl(document.getElementById("birdie-builder-image").value);
     const rawQuote = document.getElementById("birdie-builder-quote").value.trim();
     const rawTw = document.getElementById("birdie-builder-tw").value.trim();
@@ -295,6 +302,7 @@ function birdieBuildTemplate(includeForumTags) {
     const rawDialogueText = dialogueEditor.innerText.replace(/\u00a0/g," ").trim();
     const rawBodyText = bodyEditor.innerText.replace(/\u00a0/g," ").trim();
     const title = birdieEscapeText(rawTitle);
+    const name = birdieEscapeText(rawName);
     const quote = birdieEscapeText(rawQuote);
     const tw = birdieEscapeText(rawTw);
     const dialogue = rawDialogueText ? birdieNormalizeEditorHtml(dialogueEditor) : "";
@@ -302,6 +310,7 @@ function birdieBuildTemplate(includeForumTags) {
     const headerClass = image ? "birdie-header" : "birdie-header birdie-header-no-image";
     const imageHtml = image ? `<div class="birdie-image"><div class="birdie-image-placeholder"></div></div>` : "";
     const titleHtml = rawTitle ? `<h1 class="birdie-title">${title}</h1>` : "";
+    const nameHtml = rawName ? `<div class="birdie-name">${name}</div>` : "";
     const quoteHtml = rawQuote ? `<div class="birdie-quote">„${quote}”</div>` : "";
     const emojiHtml = birdieSelectedEmoji ? `<img class="birdie-emote" src="${birdieSelectedEmoji}" alt="Madár emoji">` : "";
     const twHtml = rawTw ? `<div class="birdie-tw"><span class="birdie-tw-label">TW</span><span class="birdie-tw-text">${tw}</span></div>` : "";
@@ -323,6 +332,7 @@ function birdieBuildTemplate(includeForumTags) {
 
         <div class="birdie-info">
             ${titleHtml}
+            ${nameHtml}
             ${quoteHtml}
             ${detailRowHtml}
         </div>
@@ -341,6 +351,7 @@ function birdieBuildTemplate(includeForumTags) {
 .birdie-image-placeholder { width:100%; height:168px; background-image:${imageBackground}; background-position:center; background-size:cover; filter:saturate(.82) contrast(.95); -webkit-mask-image:radial-gradient(ellipse at center,#000 43%,rgba(0,0,0,.96) 61%,transparent 84%); mask-image:radial-gradient(ellipse at center,#000 43%,rgba(0,0,0,.96) 61%,transparent 84%); }
 .birdie-info { min-width:0; display:flex; flex-direction:column; justify-content:center; }
 .birdie-title { margin:0 0 7px; color:#665e6e; font-family:"Oooh Baby","Segoe Script",cursive; font-size:39px; font-weight:400; line-height:.92; text-shadow:0 2px 0 rgba(255,255,255,.92); }
+.birdie-name { margin:0 0 8px; color:#c99379; font-size:9px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; }
 .birdie-quote { max-width:315px; padding-left:11px; border-left:2px solid rgba(201,147,121,.7); color:#7d7585; font-family:Georgia,"Times New Roman",serif; font-size:10.5px; line-height:1.52; }
 .birdie-detail-row { display:flex; align-items:flex-end; justify-content:space-between; gap:13px; margin-top:11px; }
 .birdie-emote { display:block; width:auto; max-width:54px; max-height:38px; object-fit:contain; opacity:.91; filter:drop-shadow(0 3px 3px rgba(98,83,105,.1)); }
@@ -464,6 +475,7 @@ function birdieDownloadCode() {
 
 function birdieReset() {
     document.getElementById("birdie-builder-title").value = birdieDefaults.title;
+    document.getElementById("birdie-builder-name").value = birdieDefaults.name;
     document.getElementById("birdie-builder-image").value = birdieDefaults.image;
     document.getElementById("birdie-builder-quote").value = birdieDefaults.quote;
     document.getElementById("birdie-builder-tw").value = birdieDefaults.tw;
