@@ -2155,9 +2155,9 @@
         "Csak akkor kezdődnek a furcsa dolgok, amikor már kezdesz ehhez hozzászokni. Hiába hunytad le a szemeid, továbbra is látod a szobát, ahol alszol. Megdörzsölöd szemhéjaidat és a hasadra fekszel, hátha akkor eltűnnek a képek, de nem szabadulsz attól, amit mutatok neked. A kép nem akar eltűnni.",
         "Másnap reggel a tükörbe nézve barátkozol új kinézeteddel. Mindig is kék szemet szerettél volna, ahogyan az Destinationnek is van, de te apád barnáit örökölted.",
         "Első pillantásra semmiben sem különbözöm a tükörben egy bármilyen másik szemgolyótól, ám amikor a hajadat kezded el fésülni, egy pillanatra oldalra mozdulok ki, teljesen függetlenül az eredeti szemedtől és az akaratodtól. Nem különösebben izgat egyébként sem, hogy mit akarsz.",
-        "Egy hét telik el az első valós látomásig. Éberen álmodsz, te még sem álomként éled meg az ott történteket, hanem úgy, mintha azok a saját emlékeid lennének. Biztosan tudod, hogy bár sok helyen jártál, de ezeken a helyeken soha, mégis úgy kapkodsz levegőért minden bevillanás után, mintha téged üldöztek volna az erdőben, vagy mintha te lettél volna a cruciatus átok hatása alatt. Pedig csak rövid képeket mutatok, egyszerű bevillanásokat, amik soha nem elegek ahhoz, hogy megértsd őket.",
+        "Egy hét telik el az első rémálomig. Éberen álmodsz, te még sem álomként éled meg az ott történteket, hanem úgy, mintha azok a saját emlékeid lennének. Biztosan tudod, hogy bár sok helyen jártál, de ezeken a helyeken soha, mégis úgy kapkodsz levegőért minden bevillanás után, mintha téged üldöztek volna az erdőben, vagy mintha te lettél volna a cruciatus átok hatása alatt. Pedig csak rövid képeket mutatok, egyszerű bevillanásokat, amik soha nem elegek ahhoz, hogy megértsd őket.",
         "Arról viszont gondoskodom, hogy a lehető legrosszabb pillanatban történjen minden.",
-        "Jól tűröd a képzelt fájdalmat. A pszichopata apád kiváló munkát végzett veled, elismerésem. De megtörni látszol, amikor olyan félelmet, haragot és szenvedést mutatok neked, ami nem távolról érkezik – egyenesen Desolation jövőjéből."
+        "Jól tűröd a képzelt fájdalmat. A pszichopata apád kiváló munkát végzett veled, elismerésem. Lassan mégis megtörni látszol."
       ],
       "choices": [
         {
@@ -2271,8 +2271,8 @@
     "s3_parasite_torment": {
       "title": "III. Fejezet — Parazita",
       "paragraphs": [
-        "Először Desolationt mutatom meg neked.",
-		"Tudod, ő most is ott kuporog a földön. Olyan az arca, mint a bátyádnak, de sokkal csontosabb. Tartása hajlott a gerincferdüléstől, egyik karja pedig természetellenesen van befordulva az éveken át tartó, rossz tartástól. Zavarba hoz, hogy ennyire hasonlít Destinyre, mégis ennyire mások.",
+        "Egy szőke, fiatal férfit, bátyád kiköpött mását mutatom meg neked.",
+		"A képzelgésben most is ott kuporog a földön. Olyan az arca, mint a bátyádnak, de sokkal csontosabb. Tartása hajlott a gerincferdüléstől, egyik karja pedig természetellenesen van befordulva az éveken át tartó, rossz tartástól. Zavarba hoz, hogy ennyire hasonlít Destinyre, mégis ennyire mások.",
 		"Látod aztán, hogy újra megfosztják őt a napfénytől. Képtelen szavakat formázni ajkaival, képtelen arra, hogy kifejezze magát, pedig az egyetlen bűne, hogy szörnyek családjába született, ahol nem kezelik őt emberként.",
 		"Aztán látod saját magad felette a bátyáddal. Nem Desolationnel, hanem a valódival, akit gyermekkorod óta ismersz, aki társad volt mindenben, akiben mindig megbízhatsz. Tartásotok megváltozott, mintha szüleitek mintáját vettétek volna fel. Hiányzik a tekintetetekből az ártatlan fény, ami még emberré változtatott titeket. Átveszitek szüleitek szerepét, és csak rosszabb, szörnyen rosszabb dolgokat műveltek vele, mint amit degenerált, pszichopata atyátok ki tudott találni."
       ],
@@ -2415,7 +2415,7 @@
       "title": "III. Fejezet — Parazita",
       "paragraphs": [
         "Nem tudod még, mit kezdj velem, és hogyan oldod meg a helyzeted.",
-        "Amiket a következő időszakban látsz, azt nehezen tudod szavakba önteni. Bátyád végignézi, ahogy kezdesz elsorvadni mellette, te pedig újra és újra végignézed az ő halálát – és a másik életét is. Aztán a következő álmatlan éjszakád is forgolódással telik csupán. Hét perc van éjfélig – a kintről beszűrődő holdfény tisztán mutatja számodra az időt, én pedig gondoskodom róla, hogy jól lásd.",
+        "Amiket a következő időszakban látsz, azt nehezen tudod szavakba önteni. Bátyád végignézi, ahogy kezdesz elsorvadni mellette, te pedig újra és újra végignézed az ő halálát. Aztán a következő álmatlan éjszakád is forgolódással telik csupán. Hét perc van éjfélig – a kintről beszűrődő holdfény tisztán mutatja számodra az időt, én pedig gondoskodom róla, hogy jól lásd.",
         "A következő pillanatban folyadékban úszol, mégis levegőt veszel belőle, mintha kopoltyúd lenne. Az érzés természetellenes, azonnal köhögnöd és fuldokolnod kell, amikor kirántod magad a látott képből. Csak rövid időre sikerül, a következő pillanatban ugyanis megint benne vagy.",
         "Magasan lebegsz a nebraskai ház felett, anyád pedig a szabadban, a napfényben táncol. Bőre először füstöl, majd lángra kap. Apád már a földön fekszik, saját inferusai gyalázzák, ami a testéből maradt. Nem segíthet rajtuk senki. Kiabálsz anyádnak, hogy menjen be, apádnak pedig, hogy harcoljon, de mind hasztalan.",
         "Majd az összes inferus rád emeli tekintetét.",
@@ -2510,7 +2510,7 @@
         "Ez egyszer azonban nem fordulsz el tőlem, mindegy, hány féle módon mutatom számodra szeretteid gyötrelmeit, vagy épp legrosszabb pillanatait. Holtjaid továbbra is körülötted táncolnak ebben a lázálomban, de nem hagyod, hogy a rémület felülemelkedjen rajta. Ezek a dolgok nem valósak, soha nem történtek meg, és az se biztos, hogy valaha meg fognak.",
         "A falióra mutatója éppen éjfélt mutat, amikor elengedlek gyötrelmes fogságodból.",
         "A képek megmerevednek, eltűnnek a síró és könyörgő hangok, amiket társítasz hozzájuk, benned azonban megszületik valami, amit nem tudsz nevén nevezni még. Arany színű fény világítja be a látótered, elmosva mindent a képekből, és apró, de fontos jelenetek sokaságát mutatom meg. Képes voltál nem megtörni alattam, Elegy Dreadmoor, így talán méltó vagy arra, hogy társak legyünk. Légy tanúja hát annak a valóságnak, amit senki sem elég erős látni!",
-        "Ezúttal nem a jövőbe, hanem a múltba kalauzollak el, hogy tanúja legyél egy látónak, ki Fortuna küldöttének gondolta magát. Látod, miként került egy brit varázsispotályba, ahol hosszas ideig tartották bent, mert elméje túl sérült volt ahhoz, hogy közösségbe engedjék.",
+        "A múltba kalauzollak el, hogy tanúja legyél egy látónak, ki Fortuna küldöttének gondolta magát. Látod, miként került egy brit varázsispotályba, ahol hosszas ideig tartották bent, mert elméje túl sérült volt ahhoz, hogy közösségbe engedjék.",
         "Emelkedett révületben érkezhettek látomásai, ezt látod a tekintetén. Látod az általa elkövetett gyilkosságokat, de látod azt is, hogy a látomásai késztetik őt erre. Nem vagy rá mérges, inkább szánod őt, ahogy minden látomásban saját, eleve elrendeltetett jövőjét látja. Talán olyan embereket távolított el, akik később szörnyűbb dolgot tehettek volna – ezt nem tudhatod, hogy valóság, vagy csak feloldozás.",
         "Naiv teremtményt látsz benne, ahogy egy tál spagettiért eladja magát és különleges adottságát. Látod aztán a Zsebkosz-köz felett repülni, majd azt, ahogyan leszáll egy erdőben, nem olyan messze egy kastélytól, hogy remeteként élje le életének utolsó szakaszát. Akkor és ott, életében először igazán szabadnak érezte magát. Énekhangjától libabőrös leszel, semmiképp se számítottál rá, hogy képes megtelíteni az erdőt a hangjával."
       ],
@@ -2655,7 +2655,7 @@
           "id": "ending-PATIENT_WITNESS",
           "date": "2006",
           "icon": "†",
-          "text": "Elegy befogadja azokat a látomásokat, amiket a szem meg akart mutatni neki. Megismeri a látó múltját és hozzákerülésének körülményeit."
+          "text": "Elegy befogadja a szem által közvetített emlékeket, élményeket, érzéseket. A szülők kísérlete arra, hogy átörökítsék a látó képességét, meghiúsul, ettől függetlenül Elegymegismeri a látó múltját és hozzákerülésének körülményeit."
         },
         "afterEndingTimeline": [
           {
@@ -2877,7 +2877,7 @@
         "Először Desolationt mutatom meg neked.",
 		"Tudod, ő most is ott kuporog a földön. Olyan az arca, mint a bátyádnak, de sokkal csontosabb. Tartása hajlott a gerincferdüléstől, egyik karja pedig természetellenesen van befordulva az éveken át tartó, rossz tartástól. Zavarba hoz, hogy ennyire hasonlít Destinyre, mégis ennyire mások.",
 		"Látod aztán, hogy újra megfosztják őt a napfénytől. Képtelen szavakat formázni ajkaival, képtelen arra, hogy kifejezze magát, pedig az egyetlen bűne, hogy szörnyek családjába született, ahol nem kezelik őt emberként.",
-		"Aztán látod saját magad felette a bátyáddal. Nem Desolationnel, hanem a valódival, akit gyermekkorod óta ismersz, aki társad volt mindenben, akiben mindig megbízhatsz. Tartásotok megváltozott, mintha szüleitek mintáját vettétek volna fel. Hiányzik a tekintetetekből az ártatlan fény, ami még emberré változtatott titeket. Átveszitek szüleitek szerepét, és csak rosszabb, szörnyen rosszabb dolgokat műveltek vele, mint amit degenerált, pszichopata atyátok ki tudott találni."
+		"Aztán látod saját magad felette a bátyáddal. Tartásotok megváltozott, mintha szüleitek mintáját vettétek volna fel. Hiányzik a tekintetetekből az ártatlan fény, ami még emberré változtatott titeket. Átveszitek szüleitek szerepét, és csak rosszabb, szörnyen rosszabb dolgokat műveltek vele, mint amit degenerált, pszichopata atyátok ki tudna találni."
       ],
       "choices": [
         {
