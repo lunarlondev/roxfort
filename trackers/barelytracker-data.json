@@ -1,0 +1,2187 @@
+{
+  "meta": {
+    "title": "Barely Human",
+    "subtitle": "játékkövető",
+    "intro": "A játékok összefoglalóját a Részletek gombra kattintva tekintheted meg. A Megnyitás gomb az eredeti játékhoz vezet.",
+    "initial": "B",
+    "motto": "barely human",
+    "frameImage": "https://i.imgur.com/dkvWHGc.png",
+    "iconImages": [
+      "https://i.imgur.com/fU03xFO.gif",
+      "https://i.imgur.com/wk2syZO.gif",
+      "https://i.imgur.com/IiIkwQH.gif"
+    ],
+    "defaultImage": "https://i.imgur.com/dkvWHGc.png",
+    "defaultCharacterImage": "https://i.imgur.com/fU03xFO.gif"
+  },
+  "categories": [
+    {
+      "id": "mult",
+      "title": "Múlt",
+      "open": false
+    },
+    {
+      "id": "2005-nyar",
+      "title": "2005 Nyár",
+      "open": false
+    },
+    {
+      "id": "2005-2006-tanev-1-felev",
+      "title": "2005/2006 Tanév | 1. félév",
+      "open": false
+    },
+    {
+      "id": "2005-2006-tanev-2-felev",
+      "title": "2005/2006 Tanév | 2. félév",
+      "open": false
+    },
+    {
+      "id": "2006-nyar",
+      "title": "2006 Nyár",
+      "open": false
+    },
+    {
+      "id": "idon-kivuli",
+      "title": "Időn kívüli",
+      "open": false
+    }
+  ],
+  "games": [
+    {
+      "id": "g001",
+      "categoryId": "mult",
+      "title": "bare to the bone",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Solace Barbon",
+          "image": "actors/barbon.jpg",
+          "featured": true
+        },
+		        {
+          "name": "Prudence Barbon",
+          "image": "actors/prudence.jpg",
+          "featured": true
+        }
+      ],
+      "topic": "előtörténet",
+      "date": "",
+      "location": "",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20373.msg126118.html#msg126118",
+      "image": "https://i.imgur.com/f52VsHA.png",
+      "triggerWarning": "Trigger warning: káros ideológiák, kereszténygyűlölet, illegális (ön)kísérletek",
+      "summary": "A karakterhez tartozó előtörténet, illetve a családi háttér leírása.",
+      "meta": {
+        "Név": "Solace Barbon"
+      }
+    },
+    {
+      "id": "g002",
+      "categoryId": "mult",
+      "title": "return to innocence",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Malachi Maddock",
+          "image": "actors/malachi.jpg",
+          "featured": true
+        }
+      ],
+      "topic": "",
+      "date": "2003. 01. 09. csütörtök",
+      "location": "",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20948.msg128336.html#msg128336",
+      "image": "https://i.imgur.com/s4VusEh.png",
+      "triggerWarning": "Trigger warning: bullying",
+      "summary": "Két, kamaszkorban lévő srác ígéretet tesznek egymásnak.",
+      "meta": {
+        "Név": "Malachi Maddock",
+        "Dátum": "2003. 01. 09. csütörtök"
+      }
+    },
+    {
+      "id": "g003",
+      "categoryId": "2005-nyar",
+      "title": "contemplative",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Sienna Scrimgeour",
+          "image": "actors/sienna.jpg",
+          "featured": true
+        }
+      ],
+      "topic": "",
+      "date": "2005. 07. 02. szombat",
+      "location": "Az Amerikai Egyesült Államok Pavilonja, Barcelona, Világkiállítás",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20379.msg126366.html#msg126366",
+      "image": "https://i.imgur.com/sEtA9ao.png",
+      "triggerWarning": "",
+      "summary": "Sienna megkörnyékezi Solace-t a világkiállításon az amerikaiak pavilonjánál.",
+      "meta": {
+        "Dátum": "2005. 07. 02. szombat",
+        "Helyszín": "Az Amerikai Egyesült Államok Pavilonja, Barcelona, Világkiállítás"
+      }
+    },
+    {
+  "id": "g004",
+  "categoryId": "2005-nyar",
+  "title": "666",
+  "status": "Lezárt",
+  "characters": [
+    {
+      "name": "Zaniah Ivutro",
+      "image": "actors/zaniah.jpg",
+      "featured": true
+    }
+  ],
+  "name": "Zaniah Ivutro",
+  "date": "2005. 07. 04. hétfő",
+  "location": "Playa de Cristal – tenger és fürdőzési terület",
+  "link": "https://www.roxfort.frpg.hu/index.php/topic,20349.msg126312/topicseen.html#msg126312",
+  "image": "https://i.imgur.com/pKJHj7k.png",
+  "triggerWarning": "",
+  "summary": "Egy tengerbe dobott pálca megmentése, egy rája és egy platformon meditáló druida esete.",
+  "meta": {
+    "Dátum": "2005. 07. 04. hétfő",
+    "Helyszín": "Playa de Cristal – tenger és fürdőzési terület"
+  }
+},
+    {
+      "id": "g005",
+      "categoryId": "2005-nyar",
+      "title": "bones they listen",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Malachi Maddock",
+          "image": "actors/malachi.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2005. 07. 07. csütörtök",
+      "location": "Tengerparti napágyak és napernyők, Barcelona, Világkiállítás",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20348.msg126271.html#msg126271",
+      "image": "https://i.imgur.com/ynFhANd.png",
+      "triggerWarning": "Trigger warning: erőszak, szerhasználat",
+      "summary": "Szer hatása alatt szégyenletes erőszakot követ el Malachi ellen.",
+      "meta": {
+        "Dátum": "2005. 07. 07. csütörtök",
+        "Helyszín": "Tengerparti napágyak és napernyők, Barcelona, Világkiállítás"
+      }
+    },
+    {
+      "id": "g006",
+      "categoryId": "2005-nyar",
+      "title": "vredesbyrd",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Anne-Rose Tuffin",
+          "image": "actors/annie.jpg",
+          "featured": true
+        },
+        {
+          "name": "Roxanne Montague",
+          "image": "actors/roxanne.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2005. 07. 15. péntek",
+      "location": "Homokvárzóna – Építőkörlet",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20355.msg126471.html#msg126471",
+      "image": "https://i.imgur.com/QybLvfQ.png",
+      "triggerWarning": "",
+      "summary": "Egy megrémült kneazle-nek köszönhetően megismeri a két Roxfortos lányt.",
+      "meta": {
+        "Dátum": "2005. 07. 15. péntek",
+        "Helyszín": "Homokvárzóna – Építőkörlet"
+      }
+    },
+    {
+      "id": "g007",
+      "categoryId": "2005-nyar",
+      "title": "are you a threat?",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Orville Morris",
+          "image": "actors/orville.jpg",
+          "featured": true
+        }
+      ],
+      "name": "Orville Morris",
+      "date": "2005. 08. 14. szombat",
+      "location": "Nagy Síkság, Középnyugat, USA",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20419.msg126713/topicseen.html#msg126713",
+      "image": "https://i.imgur.com/kkzBsbA.png",
+      "triggerWarning": "",
+      "summary": "A Trimágus Tusa hírére megosztják egymással tudásuk egy szeletét. Morris egy sötét varázslatot tanít Solacenak.",
+      "meta": {
+        "Dátum": "2005. 08. 14. szombat",
+        "Helyszín": "Nagy Síkság, Középnyugat, USA"
+      }
+    },
+    {
+      "id": "g008",
+      "categoryId": "2005-nyar",
+      "title": "slaughter glorified",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Eydis Sidthvordr",
+          "image": "actors/eydis.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2005. 08. 20. vasárnap",
+      "location": "Nagytavak vidéke, USA",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20423.msg126707.html#msg126707",
+      "image": "https://i.imgur.com/5HSBEHB.png",
+      "triggerWarning": "Trigger warning: grafikus erőszak",
+      "summary": "Az akromantula infesztáció hírére Solace maga akarja megoldani a problémát, hogy ezzel is a Tusára gyakoroljon. A szörnyvadász családból származó évfolyamtársával kerül össze a harcra.",
+      "meta": {
+        "Dátum": "2005. 08. 20. vasárnap",
+        "Helyszín": "Nagytavak vidéke, USA"
+      }
+    },
+    {
+      "id": "g009",
+      "categoryId": "2005-2006-tanev-1-felev",
+      "title": "SVK dolgozat",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Wesley Fawcett",
+          "image": "actors/wesley.jpg",
+          "featured": true
+        },
+        {
+          "name": "Eydis Sidthvordr",
+          "image": "actors/eydis.jpg",
+          "featured": false
+        },
+		        {
+          "name": "Nialen Travers",
+          "image": "actors/nialen.jpg",
+          "featured": false
+        },
+		{
+		"name": "Orville Morris",
+          "image": "actors/orville.jpg",
+          "featured": false
+        },
+				        {
+          "name": "Daphné d'Aboville",
+          "image": "actors/daph.jpg",
+          "featured": false
+        },
+						        {
+          "name": "Rokuro Ishida",
+          "image": "actors/rokuro.jpg",
+          "featured": false
+        },
+				    {
+          "name": "Élodie Roethlisberger",
+          "image": "actors/elodie.jpg",
+          "featured": false
+        },
+		{
+		"name": "Vianne M. Gardner",
+          "image": "actors/vianne.jpg",
+          "featured": false
+        },
+		{
+		"name": "Ophelia Langley",
+          "image": "actors/ophelia.jpg",
+          "featured": false
+        },
+		{
+		"name": "Alma L. Remington",
+          "image": "actors/alma.jpg",
+          "featured": false
+        },
+		{
+		"name": "Sebastien Lacroix",
+          "image": "actors/sebastien.jpg",
+          "featured": false
+        },
+		{
+		"name": "Inès de Saint-Vinant",
+          "image": "actors/ines.jpg",
+          "featured": false
+        },
+		{
+		"name": "Enver Nebelwald",
+          "image": "actors/enver.jpg",
+          "featured": false
+        },
+		{
+		"name": "Chikara Tetsuya",
+          "image": "actors/chikara.jpg",
+          "featured": false
+        },
+		{
+		"name": "Sienna Scrimgeour",
+          "image": "actors/sienna.jpg",
+          "featured": false
+        },
+		{
+		"name": "Zaniah Ivutro",
+          "image": "actors/zaniah.jpg",
+          "featured": false
+        },
+		{
+		"name": "Connor O'Hara",
+          "image": "actors/connor.jpg",
+          "featured": false
+        },
+		{
+		"name": "Vale Bate",
+          "image": "actors/vale.jpg",
+          "featured": false
+        },
+		{
+		"name": "Anne-Rose Tuffin",
+          "image": "actors/annie.jpg",
+          "featured": false
+        },
+		{
+		"name": "Holden Echohawk",
+          "image": "actors/holden.jpg",
+          "featured": false
+        },
+		{
+		"name": "Varvara Chernov",
+          "image": "actors/varvara.jpg",
+          "featured": false
+        },
+		{
+		"name": "Gemma Jenkins",
+          "image": "actors/gemma.jpg",
+          "featured": false
+        },
+		{
+		"name": "William Ashford",
+          "image": "actors/william.jpg",
+          "featured": false
+        },
+		{
+		"name": "Lucius Rheims",
+          "image": "actors/lucius.jpg",
+          "featured": false
+        },
+		{
+		"name": "Malachi Maddock",
+          "image": "actors/malachi.jpg",
+          "featured": false
+        },
+		{
+		"name": "Blaze Florance",
+          "image": "actors/blaze.jpg",
+          "featured": false
+        },
+		{
+		"name": "Miguel Fuentes",
+          "image": "actors/miguel.jpg",
+          "featured": false
+        },
+		{
+		"name": "Heliodora Haseltine",
+          "image": "actors/heliodora.jpg",
+          "featured": false
+        },
+		{
+		"name": "Zafira Tavish",
+          "image": "actors/zafira.jpg",
+          "featured": false
+        },
+		{
+		"name": "Orin Morgenstern",
+          "image": "actors/orin.jpg",
+          "featured": false
+        },
+		{
+		"name": "Soffi Lowe",
+          "image": "actors/soffi.jpg",
+          "featured": false
+        },
+		{
+		"name": "Elizabeth Rappaport",
+          "image": "actors/elizabeth.jpg",
+          "featured": false
+        },
+		{
+		"name": "Roxanne Montague",
+          "image": "actors/roxanne.jpg",
+          "featured": false
+        },
+		{
+		"name": "Lolita Delacour",
+          "image": "actors/lolita.jpg",
+          "featured": false
+        },
+		{
+		"name": "Venus Llewellyn",
+          "image": "actors/venus.jpg",
+          "featured": false
+        }
+      ],
+      "date": "2005. 09. 20. hétfő",
+      "location": "Roxfort, SVK tanterem",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,19960.msg127176.html#msg127176",
+      "image": "https://i.imgur.com/sh1wAlh.png",
+      "triggerWarning": "",
+      "summary": "Sor kerül arra a legendás szintfelmérő Sötét Varázslatok Kivédése dolgozatra.",
+      "meta": {
+        "Név": "Wesley Fawcett & hetedév",
+        "Dátum": "2005. 09. 20. hétfő",
+        "Helyszín": "Roxfort, SVK tanterem"
+      }
+    },
+    {
+      "id": "g010",
+      "categoryId": "2005-2006-tanev-1-felev",
+      "title": "fck me hard",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Sienna Scrimgeour",
+          "image": "actors/sienna.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2005. 09. 20. hétfő",
+      "location": "Roxfort, Kviddics pálya",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,19915.msg127310.html#msg127310",
+      "image": "https://i.imgur.com/ECd7r9q.png",
+      "triggerWarning": "Trigger warning: káros ideológiák",
+      "summary": "Sienna a Roxfortban konfrontálódik Solace-szal.",
+      "meta": {
+        "Dátum": "2005. 09. 20. hétfő",
+        "Helyszín": "Roxfort, Kviddics pálya"
+      }
+    },
+    {
+      "id": "g011",
+      "categoryId": "2005-2006-tanev-1-felev",
+      "title": "black sun",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Anne-Rose Tuffin",
+          "image": "actors/annie.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2005. 09. 09. péntek",
+      "location": "Roxfort, Nyilvános mágiatörténeti irattár",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,19902.msg127381/topicseen.html#msg127381",
+      "image": "https://i.imgur.com/esyD5Bn.png",
+      "triggerWarning": "",
+      "summary": "Újratalálkozás Barcelona után a roxforti irattárban.",
+      "meta": {
+        "Név": "Anne-Rose Tuffin",
+        "Dátum": "2005. 09. 09. péntek",
+        "Helyszín": "Roxfort, Nyilvános mágiatörténeti irattár"
+      }
+    },
+    {
+      "id": "g012",
+      "categoryId": "2005-2006-tanev-1-felev",
+      "title": "istud malum",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Miguel Fuentes",
+          "image": "actors/miguel.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2005. 09. 12. hétfő",
+      "location": "Roxfort, Hagrid kunyhója",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,19912.msg126995.html#msg126995",
+      "image": "https://i.imgur.com/YauoKGI.png",
+      "triggerWarning": "Trigger warning: drogmegjelenítés, káromkodás",
+      "summary": "Solace készséggel segít elrejteni Miguel illegálisan átutaztatott kellékeit. Az elrejtett dolgokat később titokban a mocsárban helyezi el.",
+      "meta": {
+        "Dátum": "2005. 09. 12. hétfő",
+        "Helyszín": "Roxfort, Hagrid kunyhója"
+      }
+    },
+    {
+      "id": "g013",
+      "categoryId": "2005-2006-tanev-1-felev",
+      "title": "psalm 69",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Malachi Maddock",
+          "image": "actors/malachi.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2005. 09. 14. szerda",
+      "location": "Roxfort, Hisztis Myrtle mosdója",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,19965.msg127360.html#msg127360",
+      "image": "https://i.imgur.com/SClbBHV.png",
+      "triggerWarning": "Trigger warning: erőszak",
+      "summary": "Kontrontálódás Malachival az ezt megelőző bántalmazást és bullyzást követően. Újabb egyezségre jutnak, miszerint a tanév során kerülik egymást még a tanórákon is.",
+      "meta": {
+        "Dátum": "2005. 09. 14. szerda",
+        "Helyszín": "Roxfort, Hisztis Myrtle mosdója"
+      }
+    },
+    {
+      "id": "g014",
+      "categoryId": "2005-2006-tanev-1-felev",
+      "title": "ouroboros",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Hagen Romanov",
+          "image": "actors/hagen.jpg",
+          "featured": true
+        },
+        {
+          "name": "Alma L. Remington",
+          "image": "actors/alma.jpg",
+          "featured": false
+        },
+		{
+          "name": "Holden Echohawk",
+          "image": "actors/holden.jpg",
+          "featured": false
+        },
+		{
+          "name": "Maisie Jackdaw",
+          "image": "actors/maisie.jpg",
+          "featured": false
+        },
+		{
+          "name": "Daphné d'Aboville",
+          "image": "actors/daph.jpg",
+          "featured": false
+        },
+		{
+          "name": "Chikara Tetsuya",
+          "image": "actors/chikara.jpg",
+          "featured": false
+        },
+		{
+          "name": "Gemma Jenkins",
+          "image": "actors/gemma.jpg",
+          "featured": false
+        },
+		{
+          "name": "Inès de Saint-Vinant",
+          "image": "actors/ines.jpg",
+          "featured": false
+        },
+		{
+          "name": "Varvara Chernov",
+          "image": "actors/varvara.jpg",
+          "featured": false
+        },
+		{
+          "name": "Siddhartha Suduri",
+          "image": "actors/sid.jpg",
+          "featured": false
+        },
+		{
+          "name": "Lolita Delacour",
+          "image": "actors/lolita.jpg",
+          "featured": false
+        },
+		{
+          "name": "Sebastien Lacroix",
+          "image": "actors/sebastien.jpg",
+          "featured": false
+        },
+		{
+          "name": "Rokuro Ishida",
+          "image": "actors/rokuro.jpg",
+          "featured": false
+        },
+		{
+          "name": "Ophelia Langley",
+          "image": "actors/ophelia.jpg",
+          "featured": false
+        },
+		{
+          "name": "Miguel Fuentes",
+          "image": "actors/miguel.jpg",
+          "featured": false
+        },
+		{
+          "name": "Anne-Rose Tuffin",
+          "image": "actors/annie.jpg",
+          "featured": false
+        },
+		{
+          "name": "Orin Morgenstern",
+          "image": "actors/orin.jpg",
+          "featured": false
+        },
+		{
+          "name": "María Teresa Salamanca",
+          "image": "actors/maria.jpg",
+          "featured": false
+        }
+      ],
+      "date": "2005. 09. 29. csütörtök",
+      "location": "Roxfort, Alkimista labor",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20708.msg127594.html#msg127594",
+      "image": "https://i.imgur.com/Iy8I8BM.png",
+      "triggerWarning": "",
+      "summary": "Romanov professzor alkímia órája. Téma az alkímiai ezüst.",
+      "meta": {
+        "Dátum": "2005. 09. 29. csütörtök",
+        "Helyszín": "Roxfort, Alkimista labor"
+      }
+    },
+    {
+      "id": "g015",
+      "categoryId": "2005-2006-tanev-1-felev",
+      "title": "butterfly effect",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Sienna Scrimgeour",
+          "image": "actors/sienna.jpg",
+          "featured": true
+        },
+		{
+          "name": "Revan Morgenstern",
+          "image": "actors/revan.jpg",
+          "featured": true
+        },
+		{
+          "name": "Anne-Rose Tuffin",
+          "image": "actors/annie.jpg",
+          "featured": true
+        },
+		{
+          "name": "Chikara Tetsuya",
+          "image": "actors/chikara.jpg",
+          "featured": true
+        },
+		{
+          "name": "Maribel Thorne",
+          "image": "actors/npcfemale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Bernard Barkley",
+          "image": "actors/npcmale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Elowen Dawlish",
+          "image": "actors/npcfemale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Connor O'Hara",
+          "image": "actors/connor.jpg",
+          "featured": true
+        },
+		{
+          "name": "Gemma Jenkins",
+          "image": "actors/gemma.jpg",
+          "featured": true
+        },
+		{
+          "name": "Heranoush Fletcher",
+          "image": "actors/hera.jpg",
+          "featured": true
+        },
+		{
+          "name": "Nialen Travers",
+          "image": "actors/nialen.jpg",
+          "featured": true
+        },
+		{
+          "name": "Connor O'Hara",
+          "image": "actors/connor.jpg",
+          "featured": true
+        },
+		{
+          "name": "Roxanne Montague",
+          "image": "actors/roxanne.jpg",
+          "featured": true
+        },
+		{
+          "name": "Blaze Florance",
+          "image": "actors/blaze.jpg",
+          "featured": true
+        },
+		{
+          "name": "Octavia Selwyn",
+          "image": "actors/npcfemale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Ophelia Langley",
+          "image": "actors/ophelia.jpg",
+          "featured": false
+        },
+		{
+          "name": "Holden Echohawk",
+          "image": "actors/holden.jpg",
+          "featured": false
+        },
+		{
+          "name": "Enver Nebelwald",
+          "image": "actors/enver.jpg",
+          "featured": false
+        },
+		{
+          "name": "Winthrop Hardy",
+          "image": "actors/winthrop.jpg",
+          "featured": false
+        },
+		{
+          "name": "Amycus Carrow",
+          "image": "actors/amy.jpg",
+          "featured": false
+        },
+		{
+          "name": "Hagen Romanov",
+          "image": "actors/hagen.jpg",
+          "featured": false
+        },
+		{
+          "name": "Liliya Romanov",
+          "image": "actors/liliya.jpg",
+          "featured": false
+        },
+		{
+          "name": "Daphné d'Aboville",
+          "image": "actors/daph.jpg",
+          "featured": false
+        },
+		{
+          "name": "Alma L. Remington",
+          "image": "actors/alma.jpg",
+          "featured": false
+        },
+		{
+          "name": "Elizabeth Rappaport",
+          "image": "actors/elizabeth.jpg",
+          "featured": false
+        },
+		{
+          "name": "Quennel Oakley",
+          "image": "actors/quennel.jpg",
+          "featured": false
+        },
+		{
+          "name": "Ginevra Weasley",
+          "image": "actors/ginny.jpg",
+          "featured": false
+        },
+		{
+          "name": "Siddhartha Suduri",
+          "image": "actors/sid.jpg",
+          "featured": false
+        },
+		{
+          "name": "Malachi Maddock",
+          "image": "actors/malachi.jpg",
+          "featured": false
+        },
+		{
+          "name": "Varvara Chernov",
+          "image": "actors/varvara.jpg",
+          "featured": false
+        },
+		{
+          "name": "Vianne M. Gardner",
+          "image": "actors/vianne.jpg",
+          "featured": false
+        },
+		{
+          "name": "Élodie Roethlisberger",
+          "image": "actors/elodie.jpg",
+          "featured": false
+        },
+		{
+          "name": "Eydis Sidthvordr",
+          "image": "actors/eydis.jpg",
+          "featured": false
+        },
+		{
+          "name": "Miguel Fuentes",
+          "image": "actors/miguel.jpg",
+          "featured": false
+        }
+      ],
+      "date": "2005. 10. 01. szombat",
+      "location": "Roxfort, Mardekár lelátók",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20824.msg127475.html#msg127475",
+      "image": "https://i.imgur.com/2z4yXHv.png",
+      "triggerWarning": "",
+      "summary": "Szurkolás a nézőtéren a Griffendél-Mardekár nyitómérkőzésén.",
+      "meta": {
+        "Dátum": "2005. 10. 01. szombat",
+        "Helyszín": "Roxfort, Mardekár lelátók"
+      }
+    },
+    {
+      "id": "g016",
+      "categoryId": "2005-2006-tanev-1-felev",
+      "title": "my name shall burn",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Sebastien Lacroix",
+          "image": "actors/sebastien.jpg",
+          "featured": false
+        },
+		{
+          "name": "Chikara Tetsuya",
+          "image": "actors/chikara.jpg",
+          "featured": false
+        },
+		{
+          "name": "Daphné d'Aboville",
+          "image": "actors/daph.jpg",
+          "featured": false
+        },
+		{
+          "name": "Vianne M. Gardner",
+          "image": "actors/vianne.jpg",
+          "featured": false
+        },
+		{
+          "name": "Zaniah Ivutro",
+          "image": "actors/zaniah.jpg",
+          "featured": false
+        },
+		{
+          "name": "Eydis Sidthvordr",
+          "image": "actors/eydis.jpg",
+          "featured": false
+        },
+		{
+          "name": "Lolita Delacour",
+          "image": "actors/lolita.jpg",
+          "featured": false
+        },
+		{
+          "name": "Inès de Saint-Vinant",
+          "image": "actors/ines.jpg",
+          "featured": false
+        },
+		{
+          "name": "Rokuro Ishida",
+          "image": "actors/rokuro.jpg",
+          "featured": false
+        },
+		{
+          "name": "Connor O'Hara",
+          "image": "actors/connor.jpg",
+          "featured": false
+        },
+		{
+          "name": "Vale Bate",
+          "image": "actors/vale.jpg",
+          "featured": false
+        },
+		{
+          "name": "Sienna Scrimgeour",
+          "image": "actors/sienna.jpg",
+          "featured": false
+        },
+		{
+          "name": "Varvara Chernov",
+          "image": "actors/varvara.jpg",
+          "featured": false
+        },
+		{
+          "name": "Orin Morgenstern",
+          "image": "actors/orin.jpg",
+          "featured": false
+        },
+		{
+          "name": "Siddhartha Suduri",
+          "image": "actors/sid.jpg",
+          "featured": false
+        },
+		{
+          "name": "Élodie Roethlisberger",
+          "image": "actors/elodie.jpg",
+          "featured": false
+        },
+		{
+          "name": "Malachi Maddock",
+          "image": "actors/malachi.jpg",
+          "featured": false
+        },
+		{
+          "name": "Miguel Fuentes",
+          "image": "actors/miguel.jpg",
+          "featured": false
+        },
+		{
+          "name": "Elizabeth Rappaport",
+          "image": "actors/elizabeth.jpg",
+          "featured": false
+        },
+		{
+          "name": "Holden Echohawk",
+          "image": "actors/holden.jpg",
+          "featured": false
+        },
+		{
+          "name": "Gemma Jenkins",
+          "image": "actors/gemma.jpg",
+          "featured": false
+        },
+		{
+          "name": "Minerva McGalagony",
+          "image": "actors/minerva.png",
+          "featured": false
+        }
+      ],
+      "date": "2005. 10. 14. péntek",
+      "location": "Roxfort, Nagyterem",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20828.msg127579.html#msg127579",
+      "image": "https://i.imgur.com/DZv18IJ.png",
+      "triggerWarning": "",
+      "summary": "",
+      "meta": {
+        "Dátum": "2005. 10. 14. péntek",
+        "Helyszín": "Roxfort, Nagyterem"
+      }
+    },
+    {
+      "id": "g017",
+      "categoryId": "2005-2006-tanev-1-felev",
+      "title": "morningstar",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Sienna Scrimgeour",
+          "image": "actors/sienna.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2005. 10. 29. szombat",
+      "location": "Roxmorts, Szellemszállás",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20842.msg127732.html#msg127732",
+      "image": "https://i.imgur.com/Us7haMg.png",
+      "triggerWarning": "Trigger warning: káros ideológiák",
+      "summary": "A Szellemszálláson lévő buli kezdetekor hátrahagyják a nézeteltéréseket, és rövid időre úgy tűnik, hogy akár ki is jöhetnének. Solace figyelmezteti Siennát Lucindáról.",
+      "meta": {
+        "Dátum": "2005. 10. 29. szombat",
+        "Helyszín": "Roxmorts, Szellemszállás"
+      }
+    },
+    {
+      "id": "g018",
+      "categoryId": "2005-2006-tanev-1-felev",
+      "title": "demiurge",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Anne-Rose Tuffin",
+          "image": "actors/annie.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2005. 10. 29. szombat",
+      "location": "Roxmorts, Szellemszállás",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20840.msg127775.html#msg127775",
+      "image": "https://i.imgur.com/6xQ65mu.png",
+      "triggerWarning": "Trigger warning: mentális problémák",
+      "summary": "Részegségből fakadó hülyeségeket beszélés és komfort keresés Annie szerencsétlenségére.",
+      "meta": {
+        "Dátum": "2005. 10. 29. szombat",
+        "Helyszín": "Roxmorts, Szellemszállás"
+      }
+    },
+    {
+      "id": "g019",
+      "categoryId": "2005-2006-tanev-1-felev",
+      "title": "portrait of the unfinished",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Lolita Delacour",
+          "image": "actors/lolita.jpg",
+          "featured": false
+        },
+		{
+          "name": "Lolita Delacour",
+          "image": "actors/lolita.jpg",
+          "featured": false
+        },
+		{
+          "name": "Heranoush Fletcher",
+          "image": "actors/hera.jpg",
+          "featured": false
+        },
+		{
+          "name": "Gemma Jenkins",
+          "image": "actors/gemma.jpg",
+          "featured": false
+        },
+		{
+          "name": "Sienna Scrimgeour",
+          "image": "actors/sienna.jpg",
+          "featured": true
+        },
+		{
+          "name": "Chikara Tetsuya",
+          "image": "actors/chikara.jpg",
+          "featured": true
+        },
+		{
+          "name": "Lolita Delacour",
+          "image": "actors/lolita.jpg",
+          "featured": false
+        },
+		{
+          "name": "Amycus Carrow",
+          "image": "actors/amy.jpg",
+          "featured": false
+        },
+		{
+          "name": "Daphné d'Aboville",
+          "image": "actors/daph.jpg",
+          "featured": false
+        },
+		{
+          "name": "Tommy Reese",
+          "image": "actors/tommy.jpg",
+          "featured": false
+        },
+		{
+          "name": "Skylar H. Devereaux",
+          "image": "actors/skylar.jpg",
+          "featured": false
+        },
+		{
+          "name": "Anne-Rose Tuffin",
+          "image": "actors/annie.jpg",
+          "featured": true
+        },
+		{
+          "name": "Rokuro Ishida",
+          "image": "actors/rokuro.jpg",
+          "featured": true
+        },
+		{
+          "name": "Inès de Saint-Vinant",
+          "image": "actors/ines.jpg",
+          "featured": true
+        },
+		{
+          "name": "Malachi Maddock",
+          "image": "actors/malachi.jpg",
+          "featured": false
+        }
+      ],
+      "date": "2005. 10. 29. szombat",
+      "location": "Roxmorts, Szellemszállás",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20846.msg127794.html#msg127794",
+      "image": "https://i.imgur.com/wCl63B7.png",
+      "triggerWarning": "Trigger warning: blaszfémia, testnedvek, horror, gyilkossági hajlam",
+      "summary": "A Szellemszállás halloweeni bulija halloweeni pokollá avanzsál át. Solace egy sötét varázslatot használ riadalmában. Sienna hasonló okok miatt rátámad.",
+      "meta": {
+        "Dátum": "2005. 10. 29. szombat",
+        "Helyszín": "Roxmorts, Szellemszállás"
+      }
+    },
+    {
+      "id": "g020",
+      "categoryId": "2005-2006-tanev-1-felev",
+      "title": "pálcák próbája",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Sienna Scrimgeour",
+          "image": "actors/sienna.jpg",
+          "featured": true
+        },
+        {
+          "name": "Connor O'Hara",
+          "image": "actors/connor.jpg",
+          "featured": true
+        },
+		{
+          "name": "Inès de Saint-Vinant",
+          "image": "actors/ines.jpg",
+          "featured": true
+        },
+		{
+          "name": "Vale Bate",
+          "image": "actors/vale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Lolita Delacour",
+          "image": "actors/lolita.jpg",
+          "featured": true
+        },
+		{
+          "name": "Rita Vitrol",
+          "image": "actors/rita.jpg",
+          "featured": true
+        },
+		{
+          "name": "Garrick Ollivander",
+          "image": "actors/npcmale.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2005. 10. 31. hétfő",
+      "location": "Roxfort, Trófeaterem",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,19946.msg127752.html#msg127752",
+      "image": "https://i.imgur.com/CVHicF2.png",
+      "triggerWarning": "",
+      "summary": "",
+      "meta": {
+        "Dátum": "2005. 10. 31. hétfő",
+        "Helyszín": "Roxfort, Trófeaterem"
+      }
+    },
+	{
+      "id": "e01",
+      "categoryId": "2005-2006-tanev-1-felev",
+      "title": "A Reggeli Próféta újságcikke a bajnokokról",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Sienna Scrimgeour",
+          "image": "actors/sienna.jpg",
+          "featured": true
+        },
+        {
+          "name": "Connor O'Hara",
+          "image": "actors/connor.jpg",
+          "featured": true
+        },
+		{
+          "name": "Inès de Saint-Vinant",
+          "image": "actors/ines.jpg",
+          "featured": true
+        },
+		{
+          "name": "Vale Bate",
+          "image": "actors/vale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Lolita Delacour",
+          "image": "actors/lolita.jpg",
+          "featured": true
+        },
+		{
+          "name": "Rita Vitrol",
+          "image": "actors/rita.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2005. 10. 31. hétfő",
+      "location": "A Reggeli Próféta hasábjai",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,13436.msg127953.html#msg127953",
+      "image": "https://i.imgur.com/KLqEpFz.png",
+      "triggerWarning": "",
+      "summary": "A Reggeli Próféta hozza le elsőként a bajnokok neveit. Solace félelme megtörténik, Barebone származása közismertté válik.",
+      "meta": {
+        "Dátum": "2005. 10. 31. hétfő",
+        "Helyszín": "A Reggeli Próféta hasábjai"
+      }
+    },
+    {
+      "id": "g021",
+      "categoryId": "2005-2006-tanev-1-felev",
+      "title": "sol niger",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Sienna Scrimgeour",
+          "image": "actors/sienna.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2005. 11. 03.csütörtök",
+      "location": "Roxfort, Déli Kilátó",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,19927.msg127887.html#msg127887",
+      "image": "https://i.imgur.com/gNatKDo.png",
+      "triggerWarning": "",
+      "summary": "Relatíve békés, bár furcsa hangulatban átbeszélik, ami a Pálcák Próbáján történt.",
+      "meta": {
+        "Dátum": "2005. 11. 03.csütörtök",
+        "Helyszín": "Roxfort, Déli Kilátó"
+      }
+    },
+    {
+      "id": "e05",
+      "categoryId": "2005-2006-tanev-1-felev",
+      "title": "same old madness",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Zafira Tavish",
+          "image": "actors/zafira.jpg",
+          "featured": true
+        },
+		{
+          "name": "Elara Whitcombe",
+          "image": "actors/npcfemale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Robert McLagen",
+          "image": "actors/npcmale.jpg",
+          "featured": true
+        },
+		{
+          "name": "William Ashford",
+          "image": "actors/william.jpg",
+          "featured": true
+        },
+		{
+          "name": "Soffi Lowe",
+          "image": "actors/soffi.jpg",
+          "featured": true
+        },
+		{
+          "name": "Siddhartha Suduri",
+          "image": "actors/sid.jpg",
+          "featured": true
+        },
+		{
+          "name": "Magnus Fairchild",
+          "image": "actors/npcmale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Holden Echohawk",
+          "image": "actors/holden.jpg",
+          "featured": true
+        },
+		{
+          "name": "Ophelia Langley",
+          "image": "actors/ophelia.jpg",
+          "featured": true
+        },
+		{
+          "name": "Amelia Thompson",
+          "image": "actors/npcfemale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Harry Whitmore",
+          "image": "actors/npcmale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Charlotte Davies",
+          "image": "actors/npcfemale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Hazel C. Baird",
+          "image": "actors/hazel.jpg",
+          "featured": true
+        },
+		{
+          "name": "Cole Tanner",
+          "image": "actors/npcmale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Connor O'Hara",
+          "image": "actors/connor.jpg",
+          "featured": false
+        },
+		{
+          "name": "Varvara Chernov",
+          "image": "actors/varvara.jpg",
+          "featured": true
+        },
+		{
+          "name": "Anne-Rose Tuffin",
+          "image": "actors/annie.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2005. 11. 03.csütörtök",
+      "location": "Roxfort, Kviddics lelátók",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20859.msg127826.html#msg127826",
+      "image": "https://i.pinimg.com/736x/71/f4/64/71f464c43502b4f649da1db037e055af.jpg",
+      "triggerWarning": "",
+      "summary": "Szurkolás a lelátókon a Hollóhát és a Hugrabug mérkőzésén.",
+      "meta": {
+        "Dátum": "2005. 11. 03. csütörtök",
+        "Helyszín": "Roxfort, Kviddics lelátók"
+      }
+    },
+    {
+      "id": "g022",
+      "categoryId": "2005-2006-tanev-1-felev",
+      "title": "disposable teens",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Connor O'Hara",
+          "image": "actors/connor.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2005. 11. 12. szombat",
+      "location": "Roxmorts, Csikóhal",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20079.0.html",
+      "image": "https://i.imgur.com/Eb8zkmV.png",
+      "triggerWarning": "",
+      "summary": "A két férfi bajnok kínos kocsmázásával lendíti fel a Csikóhal forgalmát.",
+      "meta": {
+        "Dátum": "2005. 11. 12. szombat",
+        "Helyszín": "Roxmorts, Csikóhal"
+      }
+    },
+	{
+      "id": "e06",
+      "categoryId": "2005-2006-tanev-1-felev",
+      "title": "puritania",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Adrian Madrigal",
+          "image": "actors/madrigal.jpg",
+          "featured": true
+        },
+		{
+          "name": "Amycus Carrow",
+          "image": "actors/amy.jpg",
+          "featured": false
+        },
+		{
+          "name": "Gemma Jenkins",
+          "image": "actors/gemma.jpg",
+          "featured": false
+        },
+		{
+          "name": "Orville Morris",
+          "image": "actors/orville.jpg",
+          "featured": false
+        },
+		{
+          "name": "Miguel Fuentes",
+          "image": "actors/miguel.jpg",
+          "featured": false
+        },
+		{
+          "name": "Vianne M. Gardner",
+          "image": "actors/vianne.jpg",
+          "featured": false
+        },
+		{
+          "name": "Connor O'Hara",
+          "image": "actors/connor.jpg",
+          "featured": false
+        },
+		{
+          "name": "Alma L. Remington",
+          "image": "actors/alma.jpg",
+          "featured": false
+        },
+		{
+          "name": "Elizabeth Rappaport",
+          "image": "actors/elizabeth.jpg",
+          "featured": false
+        },
+		{
+          "name": "Malachi Maddock",
+          "image": "actors/malachi.jpg",
+          "featured": false
+        },
+		{
+          "name": "Nialen Travers",
+          "image": "actors/nialen.jpg",
+          "featured": false
+        },
+		{
+          "name": "Ophelia Langley",
+          "image": "actors/ophelia.jpg",
+          "featured": false
+        },
+		{
+          "name": "Roxanne Montague",
+          "image": "actors/roxanne.jpg",
+          "featured": false
+        },
+		{
+          "name": "Zaniah Ivutro",
+          "image": "actors/zaniah.jpg",
+          "featured": false
+        },
+		{
+          "name": "Orin Morgenstern",
+          "image": "actors/orin.jpg",
+          "featured": true
+        },
+		{
+          "name": "Venus Llewellyn",
+          "image": "actors/venus.jpg",
+          "featured": true
+        },
+		{
+          "name": "Eydis Sidthvordr",
+          "image": "actors/eydis.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2005. 11. 24. péntek",
+      "location": "Roxfort, Bűbájtan terem",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20064.0.html",
+      "image": "https://i.pinimg.com/736x/de/c2/bb/dec2bbc418732a1877f47dab154518cc.jpg",
+      "triggerWarning": "Blaszfémia, kereszténygyűlölet, enyhe káromkodás, káros ideológiák",
+      "summary": "Madrigal professzor hálaadási helyettesítése bűbájtan órán.",
+      "meta": {
+        "Dátum": "2005. 11. 24. péntek",
+        "Helyszín": "Roxfort, Bűbájtan terem"
+      }
+    },
+    {
+      "id": "g023",
+      "categoryId": "2005-2006-tanev-1-felev",
+      "title": "az első próba",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Sienna Scrimgeour",
+          "image": "actors/sienna.jpg",
+          "featured": true
+        },
+        {
+          "name": "Connor O'Hara",
+          "image": "actors/connor.jpg",
+          "featured": true
+        },
+		{
+          "name": "Inès de Saint-Vinant",
+          "image": "actors/ines.jpg",
+          "featured": true
+        },
+		{
+          "name": "Vale Bate",
+          "image": "actors/vale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Lolita Delacour",
+          "image": "actors/lolita.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2005. 11. 27. szombat",
+      "location": "Roxfort, Birtok",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20912.0.html",
+      "image": "https://i.imgur.com/5ET0bcI.png",
+      "triggerWarning": "",
+      "summary": "Az Első Próbán egy gargoyle ellen kellett kiállnia, hogy megszerezze a nyakában lógó zsákot. Mivel a lényekkel szemben jelentős hátrányt szenved el, a próbát bár teljesíti, a teljesítménye nem jó. Politikai okok miatt igazságtalan pontozással harmadik helyet szerez, amivel kivívja mások haragját.",
+      "meta": {
+        "Dátum": "2005. 11. 27. szombat",
+        "Helyszín": "Roxfort, Birtok"
+      }
+    },
+    {
+      "id": "g024",
+      "categoryId": "2005-2006-tanev-1-felev",
+      "title": "heart made of glass",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Anne-Rose Tuffin",
+          "image": "actors/annie.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2005. 12. 12. hétfő",
+      "location": "Roxfort, Folyosók",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,19962.msg128392.html#msg128392",
+      "image": "https://i.imgur.com/XxjhKc0.png",
+      "triggerWarning": "",
+      "summary": "A téli szünet előtt felkéri Anniet, hogy legyen a partnere a januári Yule bálon.",
+      "meta": {
+        "Név": "Anne-Rose Tuffin",
+        "Dátum": "2005. 12. 12. hétfő",
+        "Helyszín": "Roxfort, Folyosók"
+      }
+    },
+    {
+      "id": "g025",
+      "categoryId": "2005-2006-tanev-2-felev",
+      "title": "apatē",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Malachi Maddock",
+          "image": "actors/malachi.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2006. 01. 9. hétfő",
+      "location": "Tiltott Rengeteg, Mély mocsár",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20703.msg128355.html#msg128355",
+      "image": "https://i.imgur.com/Mdf2H8P.png",
+      "triggerWarning": "Trigger warning: erőszakos tartalom, mentális problémák",
+      "summary": "Thaddeus Maddock imperioval kényszeríti fiát, hogy akadályozza meg Solacet a Második Próba előtt. Mivel a megfejteni való gömböt Solace nem hozza magával, az átok hatása alatt lévő Malachi lelkiekben töri őt össze.",
+      "meta": {
+        "Dátum": "2006. 01. 9. hétfő",
+        "Helyszín": "Tiltott Rengeteg, Mély mocsár"
+      }
+    },
+    {
+      "id": "g026",
+      "categoryId": "2005-2006-tanev-2-felev",
+      "title": "phobos & deimos",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "image": "actors/malachi.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2006. 01. 11. szerda",
+      "location": "A mágikus iskolabusz, Thunderbird hálóterem (fiúk)",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20689.msg128615.html#msg128615",
+      "image": "https://i.imgur.com/JOOVvOR.png",
+      "triggerWarning": "Trigger warning: bullying, súlyos mentális problémák és abúzus",
+      "summary": "Malachit Madrigal professzorra bízta, aki néhány nap pihenőt adott neki. Meglátogatja a szellemileg kifáradt, depressziós Malachit, és ráveszi arra, hogy a bálon jelenjen meg úgy, mintha minden rendben lenne.",
+      "meta": {
+        "Dátum": "2006. 01. 11. szerda",
+        "Helyszín": "A mágikus iskolabusz, Thunderbird hálóterem (fiúk)"
+      }
+    },
+    {
+      "id": "g027",
+      "categoryId": "2005-2006-tanev-2-felev",
+      "title": "no peace in the valley",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Anne-Rose Tuffin",
+          "image": "actors/annie.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2006. 01. 12. csütörtök",
+      "location": "A mágikus iskolabusz, Közösségi szoba",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20693.msg128632.html#msg128632",
+      "image": "https://i.imgur.com/Y8PA78z.png",
+      "triggerWarning": "",
+      "summary": "A bált megelőzően megajándékozza partnerét egy aprósággal, illetve gyakorolják a szükséges tánclépéseket.",
+      "meta": {
+        "Dátum": "2006. 01. 12. csütörtök",
+        "Helyszín": "A mágikus iskolabusz, Közösségi szoba"
+      }
+    },
+    {
+      "id": "g028",
+      "categoryId": "2005-2006-tanev-2-felev",
+      "title": "ursa major",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Anne-Rose Tuffin",
+          "image": "actors/annie.jpg",
+          "featured": true
+        },
+        {
+          "name": "Connor O'Hara",
+          "image": "actors/connor.jpg",
+          "featured": true
+        },
+        {
+          "name": "Gemma Jenkins",
+          "image": "actors/gemma.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2006. 01. 13. péntek 20:00",
+      "location": "Yule bál | Padok, asztalok",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20956.msg128633.html#msg128633",
+      "image": "https://i.imgur.com/ekmlCqb.png",
+      "triggerWarning": "",
+      "summary": "A két páros némi időt tölt el együtt a bálon kellemes hangulatban, távol a Próbák és egyéb problémák nyomásától.",
+      "meta": {
+        "Dátum": "2006. 01. 13. péntek 20:00",
+        "Helyszín": "Yule bál | Padok, asztalok"
+      }
+    },
+    {
+      "id": "g029",
+      "categoryId": "2005-2006-tanev-2-felev",
+      "title": "aurora borealis",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Gemma Jenkins",
+          "image": "actors/gemma.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2006. 01. 13. péntek 20:15",
+      "location": "Yule bál | Svédasztalok",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20957.msg128706.html#msg128706",
+      "image": "https://i.imgur.com/m8kLGY7.png",
+      "triggerWarning": "",
+      "summary": "Néhány közös fotót készítenek a bálon. Solace megjegyzi Gemmának, hogy neki kell kezdeményeznie, ha szeretné, ha közte és Connor között lenne valami.",
+      "meta": {
+        "Dátum": "2006. 01. 13. péntek 20:15",
+        "Helyszín": "Yule bál | Svédasztalok"
+      }
+    },
+    {
+      "id": "g030",
+      "categoryId": "2005-2006-tanev-2-felev",
+      "title": "Threshold Waltz",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Gwendolyn P. Jadisland",
+          "image": "actors/gwen.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2006. 01. 13. péntek 21:30",
+      "location": "Yule bál | Padok, asztalok",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20956.msg128567.html#msg128567",
+      "image": "https://i.imgur.com/cz2G3F9.png",
+      "triggerWarning": "",
+      "summary": "Solace egy rövid interjút ad az amerikaiak sajtósának, ahol inkább személyesebb dolgokat érintenek, mint a barátságok, önkép, és szerepvállalás a mágikus világban. Gwen utalást tesz arra, hogy álljon ki a magnix születésűek jogaiért, de ezt visszautasítja, mert nem ő a legjobb ember erre. Gwen véletlenül bepillantást nyer legilimenciával egy titkába.",
+      "meta": {
+        "Dátum": "2006. 01. 13. péntek 21:30",
+        "Helyszín": "Yule bál | Padok, asztalok"
+      }
+    },
+    {
+      "id": "g031",
+      "categoryId": "2005-2006-tanev-2-felev",
+      "title": "castor & pollux",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Anne-Rose Tuffin",
+          "image": "actors/annie.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2006. 01. 13. péntek 22:00",
+      "location": "Yule bál | Tánctér",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20957.msg128706.html#msg128706",
+      "image": "https://i.imgur.com/GAGB6WF.png",
+      "triggerWarning": "",
+      "summary": "A páros beszélget az interjú után.",
+      "meta": {
+        "Név": "Anne-Rose Tuffin",
+        "Dátum": "2006. 01. 13. péntek 22:00",
+        "Helyszín": "Yule bál | Tánctér"
+      }
+    },
+    {
+      "id": "g032",
+      "categoryId": "2005-2006-tanev-2-felev",
+      "title": "ibireo",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Vale Bate",
+          "image": "actors/vale.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2006. 01. 13. péntek 23:30",
+      "location": "Yule bál | Udvar",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20960.msg128666/topicseen.html#msg128666",
+      "image": "https://i.imgur.com/UxDjS8p.png",
+      "triggerWarning": "",
+      "summary": "Solace segítséget nyújt Valenek az Első Próbán szerzett gömb megfejtésére. Beajánlja számára Gwent, mint sajtóst, hiszen Vale sokkal jobban megfelel arra a szerepre, amit az újságírónő keres.",
+      "meta": {
+        "Dátum": "2006. 01. 13. péntek 23:30",
+        "Helyszín": "Yule bál | Udvar"
+      }
+    },
+	{
+      "id": "e02",
+      "categoryId": "2005-2006-tanev-2-felev",
+      "title": "A Reggeli Próféta újságcikke a Yule bálról",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Rita Vitrol",
+          "image": "actors/rita.jpg",
+          "featured": true
+        },
+		{
+          "name": "Anne-Rose Tuffin",
+          "image": "actors/annie.jpg",
+          "featured": true
+        },
+		{
+          "name": "Connor O'Hara",
+          "image": "actors/connor.jpg",
+          "featured": false
+        },
+		{
+          "name": "Gemma Jenkins",
+          "image": "actors/gemma.jpg",
+          "featured": false
+        },
+		{
+          "name": "Hazel C. Baird",
+          "image": "actors/hazel.jpg",
+          "featured": false
+        },
+		{
+          "name": "Sienna Scrimgeour",
+          "image": "actors/sienna.jpg",
+          "featured": true
+        },
+		{
+          "name": "Vale Bate",
+          "image": "actors/vale.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2006. 01. 14. szombat",
+      "location": "A Reggeli Próféta hasábjai",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,13436.msg128888.html#msg128888",
+      "image": "https://i.imgur.com/2VpRf5p.png",
+      "triggerWarning": "",
+      "summary": "A Reggeli Próféta új számában Solace botrányos, provokatív viselkedése is fókuszba kerül.",
+      "meta": {
+        "Dátum": "2006. 01. 14. szombat",
+        "Helyszín": "A Reggeli Próféta hasábjai"
+      }
+    },
+    {
+      "id": "g033",
+      "categoryId": "2005-2006-tanev-2-felev",
+      "title": "damned to live",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Malachi Maddock",
+          "image": "actors/malachi.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2006. 01- 15. vasárnap",
+      "location": "Roxfort, Gyengélkedő",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,21187.msg128986.html#msg128986",
+      "image": "https://i.pinimg.com/736x/c1/2d/1b/c12d1b00c927596f37b390c353c9a420.jpg",
+      "triggerWarning": "Trigger warning: öngyilkosság témája, mentális zavarok",
+      "summary": "Malachi öngyilkossági kísérlete, amihez ő is hozzájárult erős szavaival, megrendíti. Azonnal meglátogatja a gyengélkedőn. Elkezdik helyrerakni a kapcsolatukat.",
+      "meta": {
+        "Dátum": "2006. 01. 15. vasárnap",
+        "Helyszín": "Roxfort, Gyengélkedő"
+      }
+    },
+    {
+      "id": "g034",
+      "categoryId": "2005-2006-tanev-2-felev",
+      "title": "meet me in purgatory",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Orville Morris",
+          "image": "actors/orville.jpg",
+          "featured": true
+        },
+		{
+          "name": "Silas Robertson",
+          "image": "actors/npcmale.jpg",
+          "featured": false
+        }
+      ],
+      "date": "2006. 01. 17. kedd",
+      "location": "A móló és csónakház",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,19907.msg128945/topicseen.html#msg128945",
+      "image": "https://i.imgur.com/yq8oo3L.png",
+      "triggerWarning": "Trigger warning: erőszak megjelenítése, káros ideológiák",
+      "summary": "Orville nyomásgyakorlást hajt végre rajta némi erőszakkal és kínzással a próbán nyújtott teljesítménye és a bálon való viselkedése miatt.",
+      "meta": {
+        "Név": "Orville Morris",
+        "Dátum": "2006. 01. 17. kedd",
+        "Helyszín": "A móló és csónakház"
+      }
+    },
+    {
+      "id": "g035",
+      "categoryId": "2005-2006-tanev-2-felev",
+      "title": "a gradual decline in morale",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Lucinda Yaxley",
+          "image": "actors/lucinda.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2006. 01. 18. szerda",
+      "location": "Wampus hálóterem - fiúk",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20685.msg129018.html#msg129018",
+      "image": "https://i.imgur.com/VTMlkWZ.png",
+      "triggerWarning": "Trigger warning: káros ideológiák, zsarolás, erőszak említése",
+      "summary": "Lucinda folytatja a nyomásgyakorlást. Egyezséget ajánl Barbonnak, és felajánlja a tagság lehetőségét a Noctua sorai közé.",
+      "meta": {
+        "Dátum": "2006. 01. 18. szerda",
+        "Helyszín": "Wampus hálóterem - fiúk"
+      }
+    },
+    {
+      "id": "g036",
+      "categoryId": "2005-2006-tanev-2-felev",
+      "title": "meet real me",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Malachi Maddock",
+          "image": "actors/malachi.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2006. 01. 21. szombat",
+      "location": "Thunderbird hálóterem",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20689.msg129092.html#msg129092",
+      "image": "https://i.imgur.com/WwmXx95.png",
+      "triggerWarning": "Trigger warning: erőszak megjelenítése, káros ideológiák",
+      "summary": "Solace megosztja Malachival a Lucindával történteket. Úgy döntenek, hogy nem élnek tovább tagadásban az egymás iránti érzelmeiket illetően.",
+      "meta": {
+        "Dátum": "2006. 01. 21. szombat",
+        "Helyszín": "Thunderbird hálóterem"
+      }
+    },
+	{
+      "id": "e03",
+      "categoryId": "2005-2006-tanev-2-felev",
+      "title": "Cassius Yaxley Szenátor beszéde",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Cassius Yaxley",
+          "image": "actors/npcmale.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2006. 02. 01. szerda",
+      "location": "Boston",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20989.0.html",
+      "image": "https://i.pinimg.com/736x/ba/f7/cf/baf7cfff8c664be95d1e99f2925a8a19.jpg",
+      "triggerWarning": "Trigger warning: káros ideológiák",
+      "summary": "Cassius Yaxley a beszédében háborog Solace botrányai miatt.",
+      "meta": {
+        "Dátum": "2006. 02. 01. szerda",
+        "Helyszín": "Boston"
+      }
+    },
+
+	{
+      "id": "e07",
+      "categoryId": "2005-2006-tanev-2-felev",
+      "title": "nephilim",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Lucinda Yaxley",
+          "image": "actors/lucinda.jpg",
+          "featured": true
+        },
+        {
+          "name": "Orville Morris",
+          "image": "actors/orville.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2006. 02. 18. szombat",
+      "location": "Roxfort",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,21312.0.html",
+      "image": "https://i.pinimg.com/1200x/83/9e/eb/839eeb7f986e84b7ffcc3d06a19966b9.jpg",
+      "triggerWarning": "Trigger warning: káros ideológiák",
+      "summary": "Solace leteszi a megszeghetetlen esküt Lucindának.",
+      "meta": {
+        "Dátum": "2006. 02. 18. szombat",
+        "Helyszín": "Roxfort"
+      }
+    },
+    {
+      "id": "g037",
+      "categoryId": "2005-2006-tanev-2-felev",
+      "title": "A Második Próba",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Anne-Rose Tuffin",
+          "image": "actors/annie.jpg",
+          "featured": false
+        },
+		{
+          "name": "Vale Bate",
+          "image": "actors/vale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Heliodora Haseltine",
+          "image": "actors/heliodora.jpg",
+          "featured": false
+        },
+		{
+          "name": "Sienna Scrimgeour",
+          "image": "actors/sienna.jpg",
+          "featured": true
+        },
+		{
+          "name": "Skylar H. Devereaux",
+          "image": "actors/skylar.jpg",
+          "featured": false
+        },
+		{
+          "name": "Connor O'Hara",
+          "image": "actors/connor.jpg",
+          "featured": true
+        },
+		{
+          "name": "Gemma Jenkins",
+          "image": "actors/gemma.jpg",
+          "featured": false
+        },
+		{
+          "name": "Lolita Delacour",
+          "image": "actors/lolita.jpg",
+          "featured": true
+        },
+		{
+          "name": "Cryus Devereaux",
+          "image": "actors/cryus.jpg",
+          "featured": false
+        },
+		{
+          "name": "Inès de Saint-Vinant",
+          "image": "actors/ines.jpg",
+          "featured": true
+        },
+		{
+          "name": "Amycus Carrow",
+          "image": "actors/amy.jpg",
+          "featured": false
+        }
+      ],
+
+      "date": "2006. 02. 26. szombat",
+      "location": "Roxfort, A Titkok Kamrája",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,21231.msg129117/topicseen.html#msg129117",
+      "image": "https://i.imgur.com/A5AxMZ3.png",
+      "triggerWarning": "",
+      "summary": "A Második Próbára azzal az utasítással érkezik, hogy segítse azokat, akik beleillenek a szekta eszméjébe, de akadályozzon mindenkit, aki nem méltó a nézeteik szerint. A Próba legelején szabotálja Valet nagy nyilvánosság előtt. A Próbán kiemelkedő teljesítményt nyújt, elsőként szabadul a helyszínről túszával, és első helyet szerez a bírálatban.",
+      "meta": {
+        "Dátum": "2006. 02. 26. szombat",
+        "Helyszín": "Roxfort, A Titkok Kamrája"
+      }
+    },
+    {
+      "id": "g038",
+      "categoryId": "2005-2006-tanev-2-felev",
+      "title": "hybrid stigmata",
+      "status": "Aktív",
+      "characters": [
+        {
+          "name": "Lucinda Yaxley",
+          "image": "actors/lucinda.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2006. 03. 4. szombat",
+      "location": "Roxfort, Rúnatorony",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,19929.msg129425.html#msg129425",
+      "image": "https://i.imgur.com/kJMpI2u.png",
+      "triggerWarning": "Trigger warning: káros ideológiák",
+      "summary": "Lucinda segít felzárkózni a tanulmányaival, és némi jellemerősítő leckével is ellátja.",
+      "meta": {
+        "Dátum": "2006. 03. 4. szombat",
+        "Helyszín": "Roxfort, Rúnatorony"
+      }
+    },
+	{
+      "id": "g039",
+      "categoryId": "2005-2006-tanev-2-felev",
+      "title": "oxymoron",
+      "status": "Aktív",
+      "characters": [
+        {
+          "name": "Malachi Maddock",
+          "image": "actors/malachi.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2006. 05. 11. csütörtök",
+      "location": "Roxfort, Szükség Szobája",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,19961.msg129525.html#msg129525",
+      "image": "https://i.pinimg.com/1200x/ff/cb/dd/ffcbddce3fa2d62a22f213a5a001f6b6.jpg",
+      "triggerWarning": "",
+      "summary": "Malachinak megmutatja a Szükség Szobáját születésnapján.",
+      "meta": {
+        "Dátum": "2006. 05. 11. csütörtök",
+        "Helyszín": "Roxfort, Szükség Szobája"
+      }
+    },
+	{
+      "id": "g040",
+      "categoryId": "2005-2006-tanev-2-felev",
+      "title": "Team Calamity",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Hagen Romanov",
+          "image": "actors/hagen.jpg",
+          "featured": true
+        },
+		{
+          "name": "Daphné d'Aboville",
+          "image": "actors/daph.jpg",
+          "featured": false
+        },
+		{
+          "name": "Anne-Rose Tuffin",
+          "image": "actors/annie.jpg",
+          "featured": false
+        },
+		{
+          "name": "Rokuro Ishida",
+          "image": "actors/rokuro.jpg",
+          "featured": false
+        },
+		{
+          "name": "Solange Laveau",
+          "image": "actors/solange.jpg",
+          "featured": false
+        },
+		{
+          "name": "Ajax Ambrose",
+          "image": "actors/ajax.jpg",
+          "featured": false
+        },
+		{
+          "name": "Lucinda Yaxley",
+          "image": "actors/lucinda.jpg",
+          "featured": true
+        },
+		{
+          "name": "Lorian Grimmstark",
+          "image": "actors/lorian.jpg",
+          "featured": false
+        },
+		{
+          "name": "Gemma Jenkins",
+          "image": "actors/gemma.jpg",
+          "featured": false
+        },
+		{
+          "name": "Locket R. Grimmstark",
+          "image": "actors/locket.jpg",
+          "featured": false
+        },
+		{
+          "name": "Malachi Maddock",
+          "image": "actors/malachi.jpg",
+          "featured": true
+        },
+		{
+          "name": "William Ashford",
+          "image": "actors/william.jpg",
+          "featured": true
+        },
+		{
+          "name": "Hanni Haeni",
+          "image": "actors/hanni.jpg",
+          "featured": false
+        }
+      ],
+      "date": "2006. 05. 13. szombat",
+      "location": "Roxfort, Alkimista labor",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20708.msg129562.html#msg129562",
+      "image": "https://i.pinimg.com/736x/c9/69/51/c9695138c9a7c7aeb8207a7a40c3580a.jpg",
+      "triggerWarning": "Káromkodás, szégyenítés",
+      "summary": "Romanov professzor mediatika fakultatív óráján Lucindával és Williammel alkotnak egy nem túl empatikus csapatot.",
+      "meta": {
+        "Dátum": "2006. 05. 11. csütörtök",
+        "Helyszín": "Roxfort, Szükség Szobája"
+      }
+    },
+    {
+      "id": "g041",
+      "categoryId": "idon-kivuli",
+      "title": "burn",
+      "status": "Aktív",
+      "characters": [
+        {
+          "name": "Malachi Maddock",
+          "image": "actors/malachi.jpg",
+          "featured": true
+        }
+      ],
+      "location": "Mocsár, Tiltott Rengeteg",
+      "topic": "",
+      "date": "2005. 10. 31. hétfő - 2005. 11. 01. kedd",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,21276.0.html",
+      "image": "https://i.pinimg.com/736x/cf/ce/f9/cfcef9980bf5200eb1d0d97b43766f19.jpg",
+      "triggerWarning": "",
+      "summary": "Alternatív idősík, ahol a Tűz Serlege más bajnokokat választott magának.",
+      "meta": {
+        "Név": "Malachi Maddock",
+        "Dátum": "2005. 10. 31. hétfő - 2005. 11. 01. kedd"
+	  }
+      },
+	  {
+      "id": "g042",
+      "categoryId": "2005-2006-tanev-2-felev",
+      "title": "A Harmadik Próba",
+      "status": "Aktív",
+      "characters": [
+        {
+          "name": "Sienna Scrimgeour",
+          "image": "actors/sienna.jpg",
+          "featured": true
+        },
+        {
+          "name": "Connor O'Hara",
+          "image": "actors/connor.jpg",
+          "featured": true
+        },
+		{
+          "name": "Inès de Saint-Vinant",
+          "image": "actors/ines.jpg",
+          "featured": true
+        },
+		{
+          "name": "Vale Bate",
+          "image": "actors/vale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Lolita Delacour",
+          "image": "actors/lolita.jpg",
+          "featured": true
+        }
+      ],
+      "location": "Tiltott Rengeteg",
+      "topic": "",
+      "date": "2005. 10. 31. hétfő - 2005. 11. 01. kedd",
+      "location": "",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,21317.msg129629.html#msg129629",
+      "image": "https://i.pinimg.com/736x/bf/c9/02/bfc90267ffcf9a70ba7c35c5916fb104.jpg",
+      "triggerWarning": "mild káromkodás, szégyenítés, káros nézetek, vérmegjelenítés, erőszak",
+      "summary": "",
+      "meta": {
+        "Dátum": "2006. 05. 26. szombat"
+      }
+    }
+  ]
+}

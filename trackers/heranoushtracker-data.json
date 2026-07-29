@@ -1,0 +1,972 @@
+{
+  "profile": {
+    "name": "Heranoush Fletcher",
+    "role": "///gold covered in mud ///",
+    "portrait": "https://i.pinimg.com/1200x/d3/f8/60/d3f860b05ef362e22d66ba89948303f5.jpg"
+  },
+  "actorImagePath": "actors/",
+  "stats": [
+    {
+      "label": "MINDSET",
+      "value": 100,
+      "level": "high",
+      "readout": "MINDSET: OPTIMAL"
+    },
+    {
+      "label": "GOLD LUST",
+      "value": 85,
+      "level": "mid",
+      "readout": "GOLD LUST: ELEVATED"
+    },
+    {
+      "label": "AURA INTENSITY",
+      "value": 45,
+      "level": "unstable",
+      "readout": "AURA INTENSITY: STABLE / 45%"
+    }
+  ],
+  "categories": [
+    {
+      "id": "01-mult",
+      "title": "01 // Múlt",
+      "open": false,
+      "games": [
+        {
+          "id": "m01",
+          "title": "Előtörténet",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/26/0a/6b/260a6b3c7feaf13d8dfc3d3c6e032337.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,19745.0.html",
+          "actors": [
+		  {
+              "name": "Heranoush Fletcher",
+              "image": "actors/hera.jpg",
+              "featured": true
+            },
+			{
+              "name": "Dragomir Fletcher",
+              "image": "actors/npcmale.jpg",
+              "featured": false
+            },
+			{
+              "name": "Sevan Fletcher",
+              "image": "actors/npcfemale.jpg",
+              "featured": false
+            },
+			{
+              "name": "Armen Fletcher",
+              "image": "actors/npcmale.jpg",
+              "featured": false
+            },
+			{
+              "name": "Mundungus Fletcher",
+              "image": "actors/npcmale.jpg",
+              "featured": false
+            },
+			{
+              "name": "Karine Avanesyan",
+              "image": "actors/npcfemale.jpg",
+              "featured": false
+            }
+			],
+          "location": "",
+          "date": "",
+          "theme": "",
+          "description": "Előtörténet, mely bemutatja Hera múltját átfogóan, negyedév végéig, valamint betekintést nyújt a Fletcher család dinamikájába és bűnözői legendátiumába."
+        }
+      ]
+    },
+    {
+      "id": "02-2004-2005",
+      "title": "02 // 2004-2005",
+      "open": false,
+      "games": [
+        {
+          "id": "g001",
+          "title": "he hides in the shadow",
+          "status": "closed",
+          "image": "https://i.pinimg.com/1200x/d4/f9/a2/d4f9a2d90daa272a07943f39298ff92e.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,19759.0.html",
+          "actors": [
+            {
+              "name": "Winthrop Hardy",
+              "image": "actors/winthrop.jpg",
+              "featured": true
+            }
+          ],
+          "location": "Zsebpiszok-köz",
+          "date": "2004. december 31. péntek",
+          "theme": "",
+          "description": "Egy animágus rejtőzködik Fletcherék zsebkosz-közi lakásának padlásán."
+        },
+        {
+          "id": "g002",
+          "title": "with wind and gold",
+          "status": "closed",
+          "image": "https://i.pinimg.com/1200x/3b/63/ce/3b63ce923a0dd436e3c04b6bdb0d8d3f.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,19756.0.html",
+          "actors": [
+            {
+              "name": "Sienna Scrimgeour",
+              "image": "actors/sienna.jpg",
+              "featured": true
+            }
+          ],
+          "location": "Roxfort, Kviddics pálya",
+          "date": "2005 április 5. péntek",
+          "theme": "",
+          "description": "A következő tanév válogatójára készülve edzést kér a Griffendél csapatkapitányától."
+        },
+        {
+          "id": "g003",
+          "title": "hear me rawr",
+          "status": "closed",
+          "image": "https://media.tenor.com/FCONEtZs4tgAAAAM/yawn-cat.gif",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,19829.msg125363.html#msg125363",
+          "actors": [
+            {
+              "name": "Maisie Jackdaw",
+              "image": "actors/maisie.jpg",
+              "featured": true
+            },
+			{
+              "name": "Vivien M. Smithe",
+              "image": "actors/vivien.jpg",
+              "featured": true
+            },
+			{
+              "name": "Amycus Carrow",
+              "image": "actors/amy.jpg",
+              "featured": false
+            },
+			{
+              "name": "Skylar H. Devereaux",
+              "image": "actors/skylar.jpg",
+              "featured": false
+            }
+          ],
+          "location": "Roxfort, Kviddics lelátók",
+          "date": "2005. 05. 14. szombat",
+          "theme": "",
+          "description": ""
+        },
+        {
+          "id": "g004",
+          "title": "money money come to me",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/20/ea/e9/20eae9c81ff5823144853c78630bb159.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,19891.msg125564/topicseen.html#msg125564",
+          "actors": [
+            {
+              "name": "Owen Redway",
+              "image": "actors/owen.jpg",
+              "featured": true
+            },
+			{
+              "name": "Vivien M. Smithe",
+              "image": "actors/vivien.jpg",
+              "featured": false
+            },
+			{
+              "name": "Ophelia Langley",
+              "image": "actors/ophelia.jpg",
+              "featured": false
+            }
+          ],
+          "location": "Roxfort",
+          "date": "2005. 05. 21. szombat",
+          "theme": "",
+          "description": "A Roxfort pályaorientációs napján felettébb kétséges vállalkozási tippeket kap a Csikóhal tulajdonosától."
+        },
+        {
+          "id": "g005",
+          "title": "Darkness came for you",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/43/18/c0/4318c0c0f33b9d0e7091afab8b1c4c52.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20058.0.html",
+          "actors": [
+            {
+              "name": "Maisie Jackdaw",
+              "image": "actors/maisie.jpg",
+              "featured": true
+            }
+          ],
+          "location": "Roxfort, folyosók",
+          "date": "2005. június 12, vasárnap",
+          "theme": "",
+          "description": "A nyári szünet előtt sikeresen összeugranak a hugrabugos diákkal."
+        },
+        {
+          "id": "g006",
+          "title": "Hello-Kitty-boots on your neck girl core",
+          "status": "closed",
+          "image": "https://i.pinimg.com/1200x/4a/a1/1b/4aa11b22ed10bafe221c9e8aa4e38df9.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20347.msg126204.html#msg126204",
+          "actors": [
+            {
+              "name": "Chikara Tetsuya",
+              "image": "actors/chikara.jpg",
+              "featured": true
+            }
+          ],
+          "location": "Barcelona, El Sombracel",
+          "date": "2005. július 2, szombat",
+          "theme": "",
+          "description": "A villámlátogatása alatt a világkiállításon egy rövid fogadást kötnek Tetsuval."
+        }
+      ]
+    },
+    {
+      "id": "04-2005-2006",
+      "title": "04 // 2005-2006",
+      "open": false,
+      "games": [
+        {
+          "id": "g007",
+          "title": "I'm not a baddie, i'm just bad",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/72/6f/1c/726f1cde8031fce1bae3396dfe114327.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20096.msg127270.html#msg127270",
+          "actors": [
+            {
+              "name": "Gemma Jenkins",
+              "image": "actors/gemma.jpg",
+              "featured": true
+            }
+          ],
+          "location": "Roxfort Expressz",
+          "date": "2005. szeptember 1, csütörtök",
+          "theme": "",
+          "description": "A Roxfort Expresszen győzködi Gemmát arról, hogy jöjjön vissza fogónak a csapatba."
+        },
+        {
+          "id": "g008",
+          "title": "watch it all burn down, no SPF",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/b4/fe/59/b4fe591891e767d9434720dbaa400a6c.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,19896.msg127090.html#msg127090",
+          "actors": [
+            {
+              "name": "Minerva McGalagony",
+              "image": "actors/minerva.png",
+              "featured": true
+            },
+			{
+              "name": "Hagen Romanov",
+              "image": "actors/hagen.jpg",
+              "featured": false
+            },
+			{
+              "name": "Blaze Florance",
+              "image": "actors/blaze.jpg",
+              "featured": false
+            },
+			{
+              "name": "Ophelia Langley",
+              "image": "actors/ophelia.jpg",
+              "featured": false
+            },
+			{
+              "name": "Alma L. Remington",
+              "image": "actors/alma.jpg",
+              "featured": false
+            },
+			{
+              "name": "Maisie Jackdaw",
+              "image": "actors/maisie.jpg",
+              "featured": false
+            },
+			{
+              "name": "Holden Echohawk",
+              "image": "actors/holden.jpg",
+              "featured": false
+            },
+			{
+              "name": "Wesley Fawcett",
+              "image": "actors/wesley.jpg",
+              "featured": false
+            },
+			{
+              "name": "Roxanne Montague",
+              "image": "actors/roxanne.jpg",
+              "featured": true
+            },
+			{
+              "name": "Chikara Tetsuya",
+              "image": "actors/chikara.jpg",
+              "featured": false
+            },
+			{
+              "name": "Orin Morgenstern",
+              "image": "actors/orin.jpg",
+              "featured": false
+            },
+			{
+              "name": "Nialen Travers",
+              "image": "actors/nialen.jpg",
+              "featured": false
+            },
+			{
+              "name": "Sienna Scrimgeour",
+              "image": "actors/sienna.jpg",
+              "featured": false
+            },
+			{
+              "name": "Gemma Jenkins",
+              "image": "actors/gemma.jpg",
+              "featured": false
+            },
+			{
+              "name": "Soffi Lowe",
+              "image": "actors/soffi.jpg",
+              "featured": false
+            },
+			{
+              "name": "Anne-Rose Tuffin",
+              "image": "actors/annie.jpg",
+              "featured": false
+            },
+			{
+              "name": "Vivien M. Smithe",
+              "image": "actors/vivien.jpg",
+              "featured": true
+            }
+          ],
+          "location": "Roxfort, Nagyterem",
+          "date": "2005. szeptember 1, csütörtök",
+          "theme": "",
+          "description": "McGalagony bejelenti, hogy idén újra megrendezik a Trimágus Tusát."
+        },
+        {
+          "id": "g009",
+          "title": "I'm a drama queen, If I don't get what I want,then I freak",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/f3/30/54/f33054c22081885a9d9893fe38620464.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20769.0.html",
+          "actors": [
+            {
+              "name": "Connor O'Hara",
+              "image": "actors/connor.jpg",
+              "featured": true
+            },
+			{
+              "name": "Nialen Travers",
+              "image": "actors/nialen.jpg",
+              "featured": true
+            },
+			{
+              "name": "Gemma Jenkins",
+              "image": "actors/gemma.jpg",
+              "featured": true
+            },
+			{
+              "name": "Roxanne Montague",
+              "image": "actors/roxanne.jpg",
+              "featured": true
+            }
+          ],
+          "location": "Roxfort, Kviddicspálya",
+          "date": "2005. szeptember 10, szombat",
+          "theme": "",
+          "description": "Hera részt vesz az új tanév kviddics válogatóján, bekerül a Mardekár csapatába őrzőként."
+        },
+        {
+          "id": "g010",
+          "title": "Debute",
+          "status": "closed",
+          "image": "https://i.pinimg.com/1200x/3b/63/ce/3b63ce923a0dd436e3c04b6bdb0d8d3f.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20823.0.html",
+          "actors": [
+            {
+              "name": "Rolanda Hooch",
+              "image": "actors/npcfemale.jpg",
+              "featured": false
+            },
+			{
+              "name": "Maribel Thorne",
+              "image": "actors/npcfemale.jpg",
+              "featured": true
+            },
+			{
+              "name": "Anne-Rose Tuffin",
+              "image": "actors/annie.jpg",
+              "featured": true
+            },
+			{
+              "name": "Bernard Barkley",
+              "image": "actors/npcmale.jpg",
+              "featured": true
+            },
+			{
+              "name": "Chikara Tetsuya",
+              "image": "actors/chikara.jpg",
+              "featured": true
+            },
+			{
+              "name": "Sienna Scrimgeour",
+              "image": "actors/sienna.jpg",
+              "featured": true
+            },
+			{
+              "name": "Elowen Dawlish",
+              "image": "http://www.roxfort.frpg.hu/avatars/avatar_1780698920_7926.jpg",
+              "featured": true
+            },
+			{
+              "name": "Gemma Jenkins",
+              "image": "actors/gemma.jpg",
+              "featured": true
+            },
+			{
+              "name": "Nialen Travers",
+              "image": "actors/nialen.jpg",
+              "featured": true
+            },
+			{
+              "name": "Octavia Selwyn",
+              "image": "actors/npcfemale.jpg",
+              "featured": true
+            },
+			{
+              "name": "Connor O'Hara",
+              "image": "actors/connor.jpg",
+              "featured": true
+            },
+			{
+              "name": "Roxanne Montague",
+              "image": "actors/roxanne.jpg",
+              "featured": true
+            },
+			{
+              "name": "Blaze Florance",
+              "image": "actors/blaze.jpg",
+              "featured": true
+            }
+          ],
+          "location": "Roxfort, Kviddicspálya",
+          "date": "2005. október 1, szombat",
+          "theme": "",
+          "description": "Hera debütáló meccse. A tapasztaltabb és összeszokottabb griffendéles csapat megveri a Mardekárt."
+        },
+        {
+          "id": "g011",
+          "title": "Princesscore, But Make It Fatal",
+          "status": "closed",
+          "image": "https://i.pinimg.com/1200x/68/42/8e/68428ef2ef789998cc150ddf57544db1.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20837.msg127672.html#msg127672",
+          "actors": [
+            {
+              "name": "Chikara Tetsuya",
+              "image": "actors/chikara.jpg",
+              "featured": true
+            },
+			{
+              "name": "Vivien M. Smithe",
+              "image": "actors/vivien.jpg",
+              "featured": true
+            },
+			{
+              "name": "Hazel C. Baird",
+              "image": "actors/hazel.jpg",
+              "featured": true
+            }
+          ],
+          "location": "Roxmorts, Szellemszállás, padlás",
+          "date": "2005. október 29, szombat",
+          "theme": "",
+          "description": "A halloweeni bulin Hera egy rémtörténetet mesél el."
+        },
+        {
+          "id": "g012",
+          "title": "Portray of the Unfinished",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/90/49/31/90493167b2542e4e8d284c9f56883ec5.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20846.msg127674.html#msg127674",
+          "actors": [
+            {
+              "name": "Solace Barbon",
+              "image": "actors/barbon.jpg",
+              "featured": false
+            },
+			{
+              "name": "Lolita Delacour",
+              "image": "actors/lolita.jpg",
+              "featured": true
+            },
+			{
+              "name": "Gemma Jenkins",
+              "image": "actors/gemma.jpg",
+              "featured": true
+            },
+			{
+              "name": "Sienna Scrimgeour",
+              "image": "actors/sienna.jpg",
+              "featured": false
+            },
+			{
+              "name": "Chikara Tetsuya",
+              "image": "actors/chikara.jpg",
+              "featured": false
+            },
+			{
+              "name": "Amycus Carrow",
+              "image": "actors/amy.jpg",
+              "featured": false
+            },
+			{
+              "name": "Daphné d'Aboville",
+              "image": "actors/daph.jpg",
+              "featured": false
+            },
+			{
+              "name": "Tommy Reese",
+              "image": "actors/tommy.jpg",
+              "featured": true
+            },
+			{
+              "name": "Skylar H. Devereaux",
+              "image": "actors/skylar.jpg",
+              "featured": false
+            },
+			{
+              "name": "Anne-Rose Tuffin",
+              "image": "actors/annie.jpg",
+              "featured": false
+            },
+			{
+              "name": "Rokuro Ishida",
+              "image": "actors/rokuro.jpg",
+              "featured": false
+            },
+			{
+              "name": "Inès de Saint-Vinant",
+              "image": "actors/ines.jpg",
+              "featured": false
+            },
+			{
+              "name": "Malachi Maddock",
+              "image": "actors/malachi.jpg",
+              "featured": true
+            }
+          ],
+          "location": "Roxmorts, Szellemszállás",
+          "date": "2005. október 29, szombat",
+          "theme": "",
+          "description": "Egy arctalan portré játszmája."
+        },
+        {
+          "id": "g013",
+          "title": "Zero exits",
+          "status": "active",
+          "image": "https://i.pinimg.com/736x/a8/96/86/a896867da548f981349e250c5c7f9ceb.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20917.msg128144.html#msg128144",
+          "actors": [
+            {
+              "name": "Vivien M. Smithe",
+              "image": "actors/vivien.jpg",
+              "featured": true
+            }
+          ],
+          "location": "Roxfort, Lányhálók",
+          "date": "2005. november 4. péntek",
+          "theme": "",
+          "description": "Vivien vall a vérfarkasságáról. Fogadalmat és vérszerződést kötnek."
+        },
+        {
+          "id": "g013b",
+          "title": "Violence, Terror, Chaos",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/59/5b/2e/595b2ec15704dd62f014adbfa9a544a4.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20913.msg128150.html#msg128150",
+          "actors": [
+            {
+              "name": "Vivien M. Smithe",
+              "image": "actors/vivien.jpg",
+              "featured": true
+            },
+            {
+              "name": "Chikara Tetsuya",
+              "image": "actors/chikara.jpg",
+              "featured": true
+            }
+          ],
+          "location": "Roxfort, Tusa lelátók",
+          "date": "2005. november 26. szombat",
+          "theme": "",
+          "description": "Az Első Próba lelátóján Hera rossz hírt közöl barátainak."
+        },
+        {
+          "id": "g015",
+          "title": "Violence, Terror, Chaos II.",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/59/5b/2e/595b2ec15704dd62f014adbfa9a544a4.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20922.0.html",
+          "actors": [
+            {
+              "name": "Vivien M. Smithe",
+              "image": "actors/vivien.jpg",
+              "featured": true
+            },
+            {
+              "name": "Chikara Tetsuya",
+              "image": "chikara.jpg",
+              "featured": true
+            }
+          ],
+          "location": "Roxfort, Tusa lelátók",
+          "date": "2005. november 26. szombat",
+          "theme": "",
+          "description": "Az Első Próba lelátóján Hera rossz hírt közöl barátainak. Szülei a Halloweenen történtek miatt ki akarják iratni őt a Roxfortból."
+        },
+        {
+          "id": "g016",
+          "title": "spiderwebs",
+          "status": "closed",
+          "image": "https://i.pinimg.com/1200x/5c/88/a4/5c88a4ed2c31cb10b0fb1c5b28598ea2.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20919.msg128151.html#msg128151",
+          "actors": [
+            {
+              "name": "Oakley Quennel",
+              "image": "oakley.jpg",
+              "featured": false
+            }
+          ],
+          "location": "Roxfort, Bájitaltan tanterem",
+          "date": "2005. december 2. szerda",
+          "theme": "",
+          "description": "Egy óra után segítséget kér a házvezetőjétől a szülei miatti probléma megoldására."
+        },
+        {
+          "id": "g017",
+          "title": "i just can't pretend all this pain will end, no stopping",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/9d/71/00/9d7100d653d59033b724695a3b3be011.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20955.msg128534.html#msg128534",
+          "actors": [
+            {
+              "name": "Vivien Smithe",
+              "image": "vivien.jpg",
+              "featured": false
+            }
+          ],
+          "location": "Roxfort,Yule bál",
+          "date": "2006. 01. 13. péntek",
+          "theme": "",
+          "description": "Hera Vivient hívta el a bálba. Megköszöni neki, hogy kiállt mellette a szüleivel szemben."
+        },
+        {
+          "id": "g018",
+          "title": "cheerio serial thinker depressed",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/0d/b6/25/0db625220c5cf6b7b55c2cd6ff3f6929.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,20957.msg128830.html#msg128830",
+          "actors": [
+            {
+              "name": "Victor Holloway",
+              "image": "actors/npcmale.jpg",
+              "featured": false
+            }
+          ],
+          "location": "Roxfort, Yule bál",
+          "date": "2006. 01. 13. péntek",
+          "theme": "",
+          "description": ""
+        },
+        {
+          "id": "g019",
+          "title": "victory debute",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/18/ba/d7/18bad7828f6dfc613f5fb4bf36ff2975.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,21128.0.html",
+          "actors": [
+            {
+              "name": "Rolanda Hooch",
+              "image": "actors/npcfemale.jpg",
+              "featured": false
+            },
+			{
+              "name": "Gemma Jenkins",
+              "image": "actors/gemma.jpg",
+              "featured": true
+            },
+			{
+              "name": "Nialen Travers",
+              "image": "actors/nialen.jpg",
+              "featured": true
+            },
+			{
+              "name": "Octavia Selwyn",
+              "image": "actors/npcfemale.jpg",
+              "featured": true
+            },
+			{
+              "name": "Connor O'Hara",
+              "image": "actors/connor.jpg",
+              "featured": true
+            },
+			{
+              "name": "Elijah Shafiq",
+              "image": "actors/npcmale.jpg",
+              "featured": true
+            },
+			{
+              "name": "Blaze Florance",
+              "image": "actors/blaze.jpg",
+              "featured": true
+            },
+			{
+              "name": "Zafira Tavish",
+              "image": "actors/zafira.jpg",
+              "featured": true
+            },
+			{
+              "name": "Elara Whitcombe",
+              "image": "actors/npcfemale.jpg",
+              "featured": true
+            },
+			{
+              "name": "Robert McLagen",
+              "image": "actors/npcmale.jpg",
+              "featured": true
+            },
+			{
+              "name": "William Ashford",
+              "image": "actors/william.jpg",
+              "featured": true
+            },
+			{
+              "name": "Soffi Lowe",
+              "image": "actors/soffi.jpg",
+              "featured": true
+            },
+			{
+              "name": "Siddhartha Suduri",
+              "image": "actors/sid.jpg",
+              "featured": true
+            },
+			{
+              "name": "Magnus Fairchild",
+              "image": "actors/npcmale.jpg",
+              "featured": true
+            }
+          ],
+          "location": "Roxfort, Kviddicspálya",
+          "date": "2005. február 04. szombat",
+          "theme": "",
+          "description": "Mardekár-Hollóhát mérkőzés, Hera első győzelme."
+        },
+        {
+          "id": "g020",
+          "title": "pinkie swear? knife swear. that's better",
+          "status": "active",
+          "image": "https://i.pinimg.com/736x/01/3a/b3/013ab3e3f2c0dcdb34108559e81afaf3.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,19927.msg129416.html#msg129416",
+          "actors": [
+            {
+              "name": "Chikara Tetsuya",
+              "image": "chikara.jpg",
+              "featured": true
+            }
+          ],
+          "location": "Roxfort, Déli kilátó",
+          "date": "2005. február 04. szombat",
+          "theme": "",
+          "description": "Az első győzelem utáni első részegség. Hera vall Tetsunak a képességéről."
+        },
+        {
+          "id": "g021",
+          "title": "brunch, but make it mean",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/d2/57/d3/d257d3e43203f78f028a9cad241f6358.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,21232.msg129164.html#msg129164",
+          "actors": [
+            {
+              "name": "Hazel C. Baird",
+              "image": "actors/hazel.jpg",
+              "featured": true
+            },
+			{
+              "name": "Ajax Ambrose",
+              "image": "actors/ajax.jpg",
+              "featured": true
+            },
+			{
+              "name": "Vivien M. Smithe",
+              "image": "actors/vivien.jpg",
+              "featured": true
+            },
+			{
+              "name": "Imogen F. Sinclair",
+              "image": "actors/imogen.jpg",
+              "featured": true
+            },
+			{
+              "name": "Chikara Tetsuya",
+              "image": "actors/chikara.jpg",
+              "featured": true
+            }
+          ],
+          "location": "Roxfort, Tusa lelátók",
+          "date": "2005. február 26. szombat",
+          "theme": "",
+          "description": "A Második Próbán fail-bingót játszik az ötödévvel és Tetsuval kellemes brunch közben."
+        },
+        {
+          "id": "g022",
+          "title": "season final",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/1d/ca/aa/1dcaaa581c5d4419a6c9d6fe87c186dd.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,21282.0.html",
+          "actors": [
+            {
+              "name": "Rolanda Hooch",
+              "image": "actors/npcfemale.jpg",
+              "featured": false
+            },
+			{
+              "name": "Gemma Jenkins",
+              "image": "actors/gemma.jpg",
+              "featured": true
+            },
+			{
+              "name": "Nialen Travers",
+              "image": "actors/nialen.jpg",
+              "featured": true
+            },
+			{
+              "name": "Octavia Selwyn",
+              "image": "actors/npcfemale.jpg",
+              "featured": true
+            },
+			{
+              "name": "Connor O'Hara",
+              "image": "actors/connor.jpg",
+              "featured": true
+            },
+			{
+              "name": "Elijah Shafiq",
+              "image": "actors/npcmale.jpg",
+              "featured": true
+            },
+			{
+              "name": "Blaze Florance",
+              "image": "actors/blaze.jpg",
+              "featured": true
+            },
+			{
+              "name": "Julia Brown",
+              "image": "actors/npcfemale.jpg",
+              "featured": true
+            },
+			{
+              "name": "Amelia Thompson",
+              "image": "actors/npcfemale.jpg",
+              "featured": true
+            },
+			{
+              "name": "Holden Echohawk",
+              "image": "actors/holden.jpg",
+              "featured": true
+            },
+			{
+              "name": "Harry Whitmore",
+              "image": "actors/npcmale.jpg",
+              "featured": true
+            },
+			{
+              "name": "Charlotte Davies",
+              "image": "actors/npcfemale.jpg",
+              "featured": true
+            },
+			{
+              "name": "Hazel C. Baird",
+              "image": "actors/hazel.jpg",
+              "featured": true
+            },
+			{
+              "name": "Cole Tanner",
+              "image": "actors/npcmale.jpg",
+              "featured": true
+            }
+          ],
+          "location": "Roxfort, Kviddicspálya",
+          "date": "2005. április 01. szombat",
+          "theme": "",
+          "description": "Hera utolsó meccse a szezonban egy könnyű győzelemmel."
+        },
+		{
+          "id": "g023",
+          "title": "storm before seoul",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/1d/ca/aa/1dcaaa581c5d4419a6c9d6fe87c186dd.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,21282.0.html",
+          "actors": [
+            {
+              "name": "Vivien M. Smithe",
+              "image": "actors/vivien.jpg",
+              "featured": true
+            },
+			{
+              "name": "Chikara Tetsuya",
+              "image": "actors/chikara.jpg",
+              "featured": false
+            }
+          ],
+          "location": "Roxfort, Kviddicspálya",
+          "date": "2005. április 01. szombat",
+          "theme": "",
+          "description": "A szezon utolsó mérkőzése a Griffendél győzelmével a Hollóháttal szemben, azonban a Mardekár nyeri a kviddics kupát. Utoljára láthatják Tetsuyát, mielőtt leigazol egy külföldi csapatba. Heranoush betegen érkezik a szurkolásra."
+    },
+	{
+          "id": "g024",
+          "title": "The Official Post-Exam Grudge Session and Afterparty Roast",
+          "status": "closed",
+          "image": "https://i.pinimg.com/736x/10/3c/b5/103cb58b07ccfc7d977b09f24e93d62f.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,21282.0.html",
+          "actors": [
+            {
+              "name": "Vivien M. Smithe",
+              "image": "actors/vivien.jpg",
+              "featured": true
+            },
+			{
+              "name": "Chikara Tetsuya",
+              "image": "actors/chikara.jpg",
+              "featured": true
+            },
+			{
+              "name": "Ajax Ambrose",
+              "image": "actors/ajax.jpg",
+              "featured": true
+            },
+			{
+              "name": "Aurore Gjöldar",
+              "image": "actors/aurore.png",
+              "featured": true
+            },
+			{
+              "name": "Hazel C. Baird",
+              "image": "actors/hazel.jpg",
+              "featured": true
+            },
+			{
+              "name": "Imogen F. Sinclair",
+              "image": "actors/imogen.jpg",
+              "featured": true
+            }
+          ],
+          "location": "Roxfort, Kviddicspálya",
+          "date": "2005. április 01. szombat",
+          "theme": "",
+          "description": "Az ötödév (és Tetsu) kirage-elik az RBF vizsga fáradalmait."
+        }
+      ]
+    },
+    {
+      "id": "xx-idon-kivuli",
+      "title": "XX // Időn kívüli",
+      "open": false,
+      "games": []
+    }
+  ]
+}
