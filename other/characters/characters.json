@@ -1,19 +1,17 @@
 [
   {
-    "id": "elegy-dreadmoor",
+    "id": "001",
     "name": "Elegy Dreadmoor",
     "kicker": "Dreadmoor family · observer",
     "tagline": "Csendben figyel, kivár, majd pontosan ott avatkozik közbe, ahol a legjobban fáj.",
     "summary": "Visszahúzódónak és alkalmazkodónak látszik, valójában azonban makacs, rendkívül türelmes, és a saját erkölcsi szabályai szerint cselekszik. A családi örökség és egy idegen szem emlékei egyszerre húzzák több irányba.",
-    "image": "images/placeholder-01.svg",
-    "group": "Noctua",
+    "image": "images/elegy.jpg",
+    "group": "Sötét Varázsló",
     "era": "newgen",
     "facts": {
-      "Kor": "fiatal felnőtt",
-      "Származás": "Amman",
-      "Lakhely": "Nebraska",
-      "Vér": "kvibli",
-      "Magasság": "159 cm",
+      "Kor": "18",
+      "Származás": "Jordánia / USA",
+      "Vér": "aranyvérű",
       "Státusz": "aktív"
     },
     "links": {
@@ -25,12 +23,12 @@
     }
   },
   {
-    "id": "selene-ward",
-    "name": "Selene Ward",
+    "id": "002",
+    "name": "Tekla Orlyk",
     "kicker": "First era · old files",
     "tagline": "Egy régi történet túlélője, akit már csak a saját legendája üldöz.",
     "summary": "Az oldgen korszak egyik meghatározó karaktere. Hosszú története, sok kapcsolata és rengeteg lezárt játéka van; ma inkább archív alak, de a világ több pontján még mindig érződik a hatása.",
-    "image": "images/placeholder-02.svg",
+    "image": "images/tekla.jpg",
     "group": "Mardekár",
     "era": "oldgen",
     "facts": {
@@ -39,7 +37,7 @@
       "Lakhely": "London",
       "Pálca": "galagonya",
       "Patrónus": "holló",
-      "Státusz": "ritkán játszott"
+      "Státusz": "Aktív"
     },
     "links": {
       "profile": "https://example.com/selene/profile",
@@ -50,12 +48,12 @@
     }
   },
   {
-    "id": "cassian-vale",
-    "name": "Cassian Vale",
+    "id": "003",
+    "name": "Solace Barbon",
     "kicker": "Closed record · archive",
     "tagline": "Nem minden történet ér véget; van, amelyiket egyszerűen becsuknak.",
     "summary": "Leadott, lezárt karakter. A profilja és néhány fontosabb kapcsolata még megmaradt archívumnak, de már nem vesz részt aktív játékban.",
-    "image": "images/placeholder-03.svg",
+    "image": "images/solace.jpg",
     "group": "Civil",
     "era": "retired",
     "facts": {
@@ -75,12 +73,12 @@
     }
   },
   {
-    "id": "mira-halden",
-    "name": "Mira Halden",
+    "id": "004",
+    "name": "Solange Laveau",
     "kicker": "Second wave · field notes",
     "tagline": "Minden ajtót kinyit, még azt is, amelyik mögött semmi jó nem várja.",
     "summary": "Kíváncsi és meggondolatlan kutató, aki túl sok időt tölt elfeledett mágikus helyszíneken. Ritkán érkezik haza ugyanazzal a történettel, amellyel elindult.",
-    "image": "images/placeholder-01.svg",
+    "image": "images/solange.jpg",
     "group": "Hugrabug",
     "era": "oldgen",
     "facts": {
@@ -99,13 +97,37 @@
     }
   },
   {
-    "id": "rowan-voss",
-    "name": "Rowan Voss",
+    "id": "005",
+    "name": "Vianne M. Gardner",
     "kicker": "New blood · anomaly",
     "tagline": "Túl udvarias ahhoz, hogy veszélyesnek tűnjön, és túl veszélyes ahhoz, hogy udvarias maradjon.",
     "summary": "Újabb karakter, akinek a nyugodt felszíne alatt folyamatosan változnak a szabályok. Kapcsolatai egyszerre jelentik számára a legfőbb kapaszkodót és a legnagyobb kockázatot.",
-    "image": "images/placeholder-02.svg",
-    "group": "Hollóhát",
+    "image": "images/vianne.jpg",
+    "group": "Boszorkány",
+    "era": "newgen",
+    "facts": {
+      "Kor": "24",
+      "Foglalkozás": "gyógyító",
+      "Lakhely": "London",
+      "Vér": "félvér",
+      "Státusz": "aktív"
+    },
+    "links": {
+      "profile": "https://example.com/rowan/profile",
+      "history": "https://example.com/rowan/history",
+      "relations": "https://example.com/rowan/relations",
+      "treasure": null,
+      "games": "https://example.com/rowan/games"
+    }
+  },
+  {
+    "id": "006",
+    "name": "Heranoush Fletcher",
+    "kicker": "New blood · anomaly",
+    "tagline": "Túl udvarias ahhoz, hogy veszélyesnek tűnjön, és túl veszélyes ahhoz, hogy udvarias maradjon.",
+    "summary": "Újabb karakter, akinek a nyugodt felszíne alatt folyamatosan változnak a szabályok. Kapcsolatai egyszerre jelentik számára a legfőbb kapaszkodót és a legnagyobb kockázatot.",
+    "image": "images/hera.jpg",
+    "group": "Mardekár",
     "era": "newgen",
     "facts": {
       "Kor": "24",
