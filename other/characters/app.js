@@ -182,17 +182,6 @@ function renderCarousel() {
     const halo = document.createElement("span");
     halo.className = "character-orb__halo";
 
-    const lightOne = document.createElement("span");
-    lightOne.className = "character-orb__light character-orb__light--1";
-    lightOne.setAttribute("aria-hidden", "true");
-
-    const lightTwo = document.createElement("span");
-    lightTwo.className = "character-orb__light character-orb__light--2";
-    lightTwo.setAttribute("aria-hidden", "true");
-
-    const lightThree = document.createElement("span");
-    lightThree.className = "character-orb__light character-orb__light--3";
-    lightThree.setAttribute("aria-hidden", "true");
 
     const image = document.createElement("img");
     image.className = "character-orb__image";
@@ -211,7 +200,7 @@ function renderCarousel() {
     name.className = "character-orb__name";
     name.textContent = character.name;
 
-    halo.append(lightOne, lightTwo, lightThree, image, era);
+    halo.append(image, era);
     button.append(halo, name);
     button.addEventListener("click", () => {
       selectCharacter(index, { open: true });
