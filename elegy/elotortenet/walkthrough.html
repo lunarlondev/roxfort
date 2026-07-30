@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08070a">
+  <title>Elegy Dreadmoor - végigjátszás</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:wght@400;500;600&family=IM+Fell+DW+Pica+SC&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="walkthrough.css">
+</head>
+<body>
+  <main class="walkthrough">
+    <header class="hero">
+      <div class="hero__eyebrow">Elegy előtörténete</div>
+      <h1>Végigjátszás</h1>
+      <p>Válaszd ki a tetsző befejezést, hogy megjelenítsd az útvonalát!</p>
+    </header>
+
+    <aside class="panel canon-note" aria-label="Kánon befejezés">
+      <span class="canon-note__badge">CANON</span>
+      <div>
+        <strong>02 · A Tanú</strong>
+        <p>A ténylegesen megtörtént, canon befejezésnek ez számít. A karakter ebben a befejezésben nem kapja meg a látó képességét. A többiben igen, de azok nem történtek meg, csak alternatív valóságként kezelendőek.</p>
+      </div>
+    </aside>
+
+    <section class="panel ending-panel" aria-labelledby="endingPickerTitle">
+      <div class="section-heading">
+        <div>
+          <span>01</span>
+          <div>
+            <small>Befejezés</small>
+            <h2 id="endingPickerTitle">Befejezés kiválasztása</h2>
+          </div>
+        </div>
+      </div>
+      <div class="ending-picker" id="endingPicker"></div>
+    </section>
+
+    <section class="panel route-panel" aria-live="polite">
+      <div class="route-head">
+        <div class="route-head__title">
+          <span id="endingNumber">01</span>
+          <div>
+            <small>Biztos útvonal</small>
+            <h2 id="endingTitle">Megváltás</h2>
+          </div>
+        </div>
+
+        <div class="view-toggle" role="group" aria-label="Útvonal részletessége">
+          <button class="view-toggle__button is-active" data-view="short" type="button">Rövid</button>
+          <button class="view-toggle__button" data-view="full" type="button">Teljes</button>
+        </div>
+      </div>
+
+      <p class="route-summary" id="endingSummary"></p>
+      <div class="requirement-list" id="requirementList"></div>
+
+      <div class="route-meta">
+        <span id="stepCount">0 lépés</span>
+        <span>Részletekért kattints a lépésre.</span>
+      </div>
+
+      <div class="route" id="route"></div>
+
+      <div class="route-ending">
+        <span>VÉGE</span>
+        <strong id="endingResult">Megváltás</strong>
+      </div>
+    </section>
+
+    <details class="panel secrets-panel">
+      <summary>
+        <div class="section-heading section-heading--summary">
+          <div>
+            <span>02</span>
+            <div>
+              <small>Különleges</small>
+              <h2>Titkos utak és easter eggek</h2>
+            </div>
+          </div>
+          <b>7</b>
+        </div>
+      </summary>
+      <div class="secret-list" id="secretList"></div>
+    </details>
+  </main>
+
+  <script src="walkthrough.js"></script>
+</body>
+</html>
