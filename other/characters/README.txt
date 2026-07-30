@@ -1,68 +1,75 @@
-KARAKTERKONSTELLÁCIÓ – HASZNÁLAT
-================================
+KARAKTERARCHÍVUM – HASZNÁLAT
+============================
 
-FÁJLOK
-------
-index.html       – a felület váza
-styles.css       – teljes megjelenés és animációk
-app.js           – carousel, szűrés és adatlap működése
-characters.json  – itt kell szerkeszteni a karaktereket
-images/          – ide kerülhetnek a karakterképek
+Fájlok:
+- index.html
+- styles.css
+- app.js
+- characters.json
+- images/placeholder-01.svg stb.
 
-FONTOS
-------
-A külső oldal háttere teljesen átlátszó. Csak a megnyíló adatlapnak van saját,
-áttetsző panelje.
+1. KARAKTEREK SZERKESZTÉSE
+--------------------------
+Minden karakter a characters.json fájlban található.
+Egy új karakterhez másolj le egy teljes { ... } blokkot, majd írd át az adatokat.
 
-A felület alapállapotban körülbelül 284 px magas. A részletes adatlap ráúszik a
-carouselre, ezért megnyitáskor sem növeli meg jelentősen az iframe méretét.
+Kategóriák:
+- "oldgen"  = nagyon régi karakter
+- "newgen"  = az elmúlt két évben készült / aktív új generáció
+- "retired" = leadott, lezárt karakter („futottak még”)
 
-KARAKTER HOZZÁADÁSA
--------------------
-A characters.json fájlban másolj le egy teljes {...} blokkot, és írd át az adatokat.
-Az "era" értéke csak az alábbiak egyike legyen:
-
-newgen   – az elmúlt két évben létrehozott karakter
-oldgen   – nagyon régi karakter
-retired  – leadott / futottak még karakter
-
-Ha valamelyik link nem létezik, írj null értéket:
-
+Hiányzó link:
+A hiányzó link értéke legyen null, például:
 "treasure": null
 
-KÉPEK
------
-Helyi kép:
-"image": "images/karakter-neve.jpg"
+Képek:
+Tedd a képeket az images mappába, majd például:
+"image": "images/elegy.jpg"
 
-Külső kép:
-"image": "https://pelda.hu/kep.jpg"
+Egyedi szín:
+Minden karakter saját kiemelőszínt kaphat:
+"accent": "#a8bbbf"
 
-IFRAME PÉLDA
-------------
+2. HELYI MEGNYITÁS
+------------------
+A JSON betöltése miatt a teljes működéshez webszerver kell.
+Egyszerű lehetőség Python esetén a mappában:
+
+python -m http.server 8000
+
+Ezután:
+http://localhost:8000
+
+Sima dupla kattintásnál a böngésző biztonsági szabályai miatt előfordulhat,
+hogy a characters.json nem töltődik be; ilyenkor a beépített minta jelenik meg.
+
+3. IFRAME BEILLESZTÉS
+---------------------
+A fájlokat töltsd fel például GitHub Pagesre vagy saját tárhelyre.
+Ezután a fórumon használható minta:
+
 <iframe
   src="https://SAJAT-CIMED/index.html"
+  title="Karakterarchívum"
   width="100%"
-  height="300"
-  frameborder="0"
-  scrolling="no"
-  style="display:block;background:transparent;border:0;overflow:hidden;"
-></iframe>
+  height="780"
+  loading="lazy"
+  style="border:0; background:transparent;"
+  allowtransparency="true">
+</iframe>
 
-VEZÉRLÉS
---------
-– portréra kattintás: adatlap megnyitása
-– bal/jobb nyíl vagy A/D: karakterváltás
-– egérgörgő a portrésoron: karakterváltás
-– Enter: aktuális karakter adatlapja
-– Escape vagy ×: adatlap bezárása
-– mobilon a portrésor oldalra húzható
+Mobilon több hely kellhet. Ha a fórum engedi, 900–980 px iframe-magasság kényelmesebb.
 
-SZÍNEK
-------
-A teljes paletta a styles.css tetején, a :root blokkban módosítható:
+4. VEZÉRLÉS
+-----------
+- bal/jobb nyíl
+- A / D billentyű
+- egérgörgő a kártyán
+- mobilon vízszintes húzás
+- oldalsó vagy felső karakterindex
+- kategóriaszűrők
 
---wine: #7b3b4b;
---mist: #a8bbbf;
-
-Nincs karakterenkénti rikító színváltás; az egész felület egységes marad.
+5. ÁTLÁTSZÓ HÁTTÉR
+------------------
+A html, body és a külső alkalmazás háttere teljesen átlátszó.
+Csak a karakterkártyák és vezérlőpanelek kapnak saját, áttetsző felületet.
