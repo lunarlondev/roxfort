@@ -2,146 +2,163 @@
   {
     "id": "001",
     "name": "Elegy Dreadmoor",
-    "kicker": "Dreadmoor family · observer",
-    "tagline": "Csendben figyel, kivár, majd pontosan ott avatkozik közbe, ahol a legjobban fáj.",
-    "summary": "Visszahúzódónak és alkalmazkodónak látszik, valójában azonban makacs, rendkívül türelmes, és a saját erkölcsi szabályai szerint cselekszik. A családi örökség és egy idegen szem emlékei egyszerre húzzák több irányba.",
+    "kicker": "nekromágus",
+    "tagline": "I put the romance in necromancer.",
+    "summary": "Hírhedt nekromágusok leszármazottja, a Dreadmoorok Alsóházának tagja. A Felsőház benne és testvérében remélik, hogy sikerül velük újra egyesíteni a két házat.",
     "image": "images/elegy.jpg",
     "group": "Sötét Varázsló",
     "era": "newgen",
     "facts": {
       "Kor": "18",
-      "Származás": "Jordánia / USA",
+	  "Lakhely": "Nebraska, USA",
       "Vér": "aranyvérű",
-      "Státusz": "aktív"
+	  "Iskola": "magántanuló",
+	  "Pálca": "12 hüvelyk, kökény pálca thesztrál farokszőr maggal, közepesen rugalmas",
+	  "Különleges tehetség": "nekromágia, feketemágia",
+	  "PB": "Nastya Kreslina"
     },
     "links": {
-      "profile": "https://example.com/elegy/profile",
-      "history": "https://example.com/elegy/history",
-      "relations": "https://example.com/elegy/relations",
+      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=7944",
+      "history": "https://www.roxfort.frpg.hu/index.php/topic,21392.msg129955.html#msg129955",
+      "relations": null,
       "treasure": null,
-      "games": "https://example.com/elegy/games"
+      "games": null
     }
   },
   {
     "id": "002",
     "name": "Tekla Orlyk",
-    "kicker": "First era · old files",
-    "tagline": "Egy régi történet túlélője, akit már csak a saját legendája üldöz.",
-    "summary": "Az oldgen korszak egyik meghatározó karaktere. Hosszú története, sok kapcsolata és rengeteg lezárt játéka van; ma inkább archív alak, de a világ több pontján még mindig érződik a hatása.",
+    "kicker": "disobey",
+    "tagline": "We are proxies for your alienatedness",
+    "summary": "A szüleitől biztosan kapott már levelet az összes roxforti tanár. A bátyjával történt dolgok óta betegesen túlféltik. Igazán kiválóan hazudik.",
     "image": "images/tekla.jpg",
-    "group": "Mardekár",
+    "group": "Griffendél",
     "era": "oldgen",
     "facts": {
-      "Kor": "38",
-      "Foglalkozás": "ereklyevadász",
-      "Lakhely": "London",
-      "Pálca": "galagonya",
-      "Patrónus": "holló",
-      "Státusz": "Aktív"
+      "Kor": "15",
+	  "Iskola": "Roxfort",
+	  "Ház": "Griffendél",
+      "Évfolyam": "5",
+      "Lakhely": "Upper Slaughter, Cotswolds, UK",
+      "Pálca": "12 hüvelyk hegyi juhar pálca, rugalmas, magja sárkányszívizomhúr",
+	  "Különleges tehetség": "szemrebbenés nélküli hazudozás",
+	  "PB": "polnalyubi"
     },
     "links": {
-      "profile": "https://example.com/selene/profile",
-      "history": "https://example.com/selene/history",
-      "relations": "https://example.com/selene/relations",
-      "treasure": "https://example.com/selene/treasure",
-      "games": "https://example.com/selene/games"
+      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=7939",
+      "history": "https://www.roxfort.frpg.hu/index.php/topic,21366.msg129899.html#msg129899",
+      "relations": null,
+      "treasure": "https://www.roxfort.frpg.hu/index.php/board,1396.0.html",
+      "games": null
     }
   },
   {
     "id": "003",
     "name": "Solace Barbon",
-    "kicker": "Closed record · archive",
-    "tagline": "Nem minden történet ér véget; van, amelyiket egyszerűen becsuknak.",
-    "summary": "Leadott, lezárt karakter. A profilja és néhány fontosabb kapcsolata még megmaradt archívumnak, de már nem vesz részt aktív játékban.",
+    "kicker": "A Trimágus Tusa első amerikai bajnoka",
+    "tagline": "Bare to the Bone",
+    "summary": "A Trimágus csokibéka kártyák barna labubuja. Átoktörőnek készül.",
     "image": "images/solace.jpg",
-    "group": "Civil",
-    "era": "retired",
+    "group": "Griffendél Godrik Akadémia",
+    "era": "newgen",
     "facts": {
-      "Kor": "31",
-      "Foglalkozás": "újságíró",
-      "Lakhely": "Edinburgh",
+      "Kor": "18",
+      "Lakhely": "Ghostpine, Minnesota, USA",
       "Vér": "félvér",
-      "Állapot": "lezárt",
-      "Leadva": "2025"
+	  "Iskola": "Ilvermorny",
+	  "Ház": "Wampus",
+	  "Felsőoktatás": "Griffendél Godrik Akadémia",
+	  "Pálca": 	"12 hüvelyk, dió pálca, magja rougarou szőre, enyhén merev; Shikoba Wolfe munkája",
+	  "Különleges tehetség": "Mások kiborítása",
+	  "PB": "Thomas Tapy"
     },
     "links": {
-      "profile": "https://example.com/cassian/profile",
-      "history": null,
-      "relations": "https://example.com/cassian/relations",
-      "treasure": null,
-      "games": null
+      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3027",
+      "history": "https://www.roxfort.frpg.hu/index.php/topic,20373.msg126118.html#msg126118",
+      "relations": "https://www.roxfort.frpg.hu/index.php/topic,21106.msg128703/topicseen.html#msg128703",
+      "treasure": "https://www.roxfort.frpg.hu/index.php/board,1337.0.html",
+      "games": "https://www.roxfort.frpg.hu/index.php/topic,20510.0.html"
     }
   },
   {
     "id": "004",
     "name": "Solange Laveau",
-    "kicker": "Second wave · field notes",
-    "tagline": "Minden ajtót kinyit, még azt is, amelyik mögött semmi jó nem várja.",
-    "summary": "Kíváncsi és meggondolatlan kutató, aki túl sok időt tölt elfeledett mágikus helyszíneken. Ritkán érkezik haza ugyanazzal a történettel, amellyel elindult.",
+    "kicker": "Snake Mommy",
+    "tagline": "Who do you voodoo?",
+    "summary": "A Laveau-ház örököse, miután a hibájából a nála tehetségesebb ikertestvére elhunyt.",
     "image": "images/solange.jpg",
-    "group": "Hugrabug",
-    "era": "oldgen",
+    "group": "Noctua",
+    "era": "newgen",
     "facts": {
-      "Kor": "29",
-      "Foglalkozás": "kutató",
-      "Lakhely": "York",
-      "Patrónus": "vidra",
-      "Státusz": "szünetel"
+      "Kor": "18",
+      "Lakhely": "New Orleans, Louisiana, USA",
+	  "Vér": "arany",
+	  "Iskola": "Ilvermorny",
+	  "Ház": "Pukwudgie",
+	  "Pálca": "11 és ¾ hüvelyk kocsányos tölgyfa pálca szarvaskígyó szarvának a magjával",
+	  "Különleges tehetség": "voodoo",
+	  "PB": "Canelle Ferragu"
     },
     "links": {
-      "profile": "https://example.com/mira/profile",
-      "history": "https://example.com/mira/history",
-      "relations": null,
-      "treasure": "https://example.com/mira/treasure",
-      "games": null
+      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=7905",
+      "history": "https://www.roxfort.frpg.hu/index.php/topic,21211.msg129088/topicseen.html#msg129088",
+      "relations": "https://www.roxfort.frpg.hu/index.php/topic,21263.msg129246.html#msg129246",
+      "treasure": "https://www.roxfort.frpg.hu/index.php/board,1377.0.html",
+      "games": "https://www.roxfort.frpg.hu/index.php/topic,21311.0.html"
     }
   },
   {
     "id": "005",
     "name": "Vianne M. Gardner",
-    "kicker": "New blood · anomaly",
-    "tagline": "Túl udvarias ahhoz, hogy veszélyesnek tűnjön, és túl veszélyes ahhoz, hogy udvarias maradjon.",
-    "summary": "Újabb karakter, akinek a nyugodt felszíne alatt folyamatosan változnak a szabályok. Kapcsolatai egyszerre jelentik számára a legfőbb kapaszkodót és a legnagyobb kockázatot.",
+    "kicker": "What's on your mind?",
+    "tagline": "Pretty in Pink",
+    "summary": "Szőke. Cheerleader. Legilimentor.",
     "image": "images/vianne.jpg",
     "group": "Boszorkány",
     "era": "newgen",
     "facts": {
-      "Kor": "24",
-      "Foglalkozás": "gyógyító",
-      "Lakhely": "London",
-      "Vér": "félvér",
-      "Státusz": "aktív"
+      "Lakhely": "Berkeley, CAL, USA",
+	  "Vér": "félvér",
+	  "Kor": "18",
+      "Iskola": "Ilvermorny",
+	  "Ház": "Horny Serpent",
+      "Pálca": "10 hüvelyk, ezüsthárc, White River-i szörny tüskéje",
+	  "Különleges tehetség": "született legilimentor",
+	  "PB": "Sabrina Carpenter"
     },
     "links": {
-      "profile": "https://example.com/rowan/profile",
-      "history": "https://example.com/rowan/history",
-      "relations": "https://example.com/rowan/relations",
-      "treasure": null,
-      "games": "https://example.com/rowan/games"
+      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3041",
+      "history": "https://www.roxfort.frpg.hu/index.php/topic,20965.msg128462.html#msg128462",
+      "relations": "https://www.roxfort.frpg.hu/index.php/topic,21109.0.html",
+      "treasure": "https://www.roxfort.frpg.hu/index.php/board,1340.0.html",
+      "games": "https://www.roxfort.frpg.hu/index.php/topic,20538.0.html"
     }
   },
   {
     "id": "006",
     "name": "Heranoush Fletcher",
-    "kicker": "New blood · anomaly",
-    "tagline": "Túl udvarias ahhoz, hogy veszélyesnek tűnjön, és túl veszélyes ahhoz, hogy udvarias maradjon.",
-    "summary": "Újabb karakter, akinek a nyugodt felszíne alatt folyamatosan változnak a szabályok. Kapcsolatai egyszerre jelentik számára a legfőbb kapaszkodót és a legnagyobb kockázatot.",
+    "kicker": "IRL Kuromi· pukkancs",
+    "tagline": "Everything I do is goals",
+    "summary": "152 cm tömör veszélyhalmaz, future varázsmaffia boss.",
     "image": "images/hera.jpg",
     "group": "Mardekár",
     "era": "newgen",
     "facts": {
-      "Kor": "24",
-      "Foglalkozás": "gyógyító",
-      "Lakhely": "London",
+      "Kor": "16",",
+	  ,
       "Vér": "félvér",
-      "Státusz": "aktív"
+	  "Iskola": "Roxfort",
+	  "Ház": "Mardekár",
+	  "Pálca": "9,5 hüvelyk, közönséges dió sárkányszívizomhúr maggal, nagyon rugalmas",
+	  "Különleges tehetség": "született legilimentor, de csak hazugságokat szimatol", "fotografikus memória", "zseni",
+	  "PB": "Ann Kuleshova"
     },
     "links": {
-      "profile": "https://example.com/rowan/profile",
-      "history": "https://example.com/rowan/history",
-      "relations": "https://example.com/rowan/relations",
-      "treasure": null,
-      "games": "https://example.com/rowan/games"
+      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3002",
+      "history": "https://www.roxfort.frpg.hu/index.php/topic,19745.msg125048.html#msg125048",
+      "relations": "https://www.roxfort.frpg.hu/index.php/topic,19748.msg125067.html#msg125067",
+      "treasure": "https://www.roxfort.frpg.hu/index.php/board,1256.0.html",
+      "games": "https://www.roxfort.frpg.hu/index.php/topic,19758.msg125115/topicseen.html#msg125115"
     }
   }
 ]

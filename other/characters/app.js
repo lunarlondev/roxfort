@@ -8,9 +8,9 @@ const FILTERS = [
 ];
 
 const ERA_LABELS = {
-  newgen: "Newgen · elmúlt 2 év",
-  oldgen: "Oldgen · régi karakter",
-  retired: "Futottak még · leadott"
+  newgen: "Newgen",
+  oldgen: "Oldgen",
+  retired: "Futottak még"
 };
 
 const LINK_TYPES = [
