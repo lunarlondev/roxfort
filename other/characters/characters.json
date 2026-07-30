@@ -10,12 +10,12 @@
     "era": "newgen",
     "facts": {
       "Kor": "18",
-	  "Lakhely": "Nebraska, USA",
+      "Lakhely": "Nebraska, USA",
       "Vér": "aranyvérű",
-	  "Iskola": "magántanuló",
-	  "Pálca": "12 hüvelyk, kökény pálca thesztrál farokszőr maggal, közepesen rugalmas",
-	  "Különleges tehetség": "nekromágia, feketemágia",
-	  "PB": "Nastya Kreslina"
+      "Iskola": "magántanuló",
+      "Pálca": "12 hüvelyk, kökény pálca thesztrál farokszőr maggal, közepesen rugalmas",
+      "Különleges tehetség": "nekromágia, feketemágia",
+      "PB": "Nastya Kreslina"
     },
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=7944",
@@ -36,13 +36,13 @@
     "era": "oldgen",
     "facts": {
       "Kor": "15",
-	  "Iskola": "Roxfort",
-	  "Ház": "Griffendél",
+      "Iskola": "Roxfort",
+      "Ház": "Griffendél",
       "Évfolyam": "5",
       "Lakhely": "Upper Slaughter, Cotswolds, UK",
       "Pálca": "12 hüvelyk hegyi juhar pálca, rugalmas, magja sárkányszívizomhúr",
-	  "Különleges tehetség": "szemrebbenés nélküli hazudozás",
-	  "PB": "polnalyubi"
+      "Különleges tehetség": "szemrebbenés nélküli hazudozás",
+      "PB": "polnalyubi"
     },
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=7939",
@@ -65,12 +65,12 @@
       "Kor": "18",
       "Lakhely": "Ghostpine, Minnesota, USA",
       "Vér": "félvér",
-	  "Iskola": "Ilvermorny",
-	  "Ház": "Wampus",
-	  "Felsőoktatás": "Griffendél Godrik Akadémia",
-	  "Pálca": 	"12 hüvelyk, dió pálca, magja rougarou szőre, enyhén merev; Shikoba Wolfe munkája",
-	  "Különleges tehetség": "Mások kiborítása",
-	  "PB": "Thomas Tapy"
+      "Iskola": "Ilvermorny",
+      "Ház": "Wampus",
+      "Felsőoktatás": "Griffendél Godrik Akadémia",
+      "Pálca": "12 hüvelyk, dió pálca, magja rougarou szőre, enyhén merev; Shikoba Wolfe munkája",
+      "Különleges tehetség": "Mások kiborítása",
+      "PB": "Thomas Tapy"
     },
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3027",
@@ -92,12 +92,12 @@
     "facts": {
       "Kor": "18",
       "Lakhely": "New Orleans, Louisiana, USA",
-	  "Vér": "arany",
-	  "Iskola": "Ilvermorny",
-	  "Ház": "Pukwudgie",
-	  "Pálca": "11 és ¾ hüvelyk kocsányos tölgyfa pálca szarvaskígyó szarvának a magjával",
-	  "Különleges tehetség": "voodoo",
-	  "PB": "Canelle Ferragu"
+      "Vér": "arany",
+      "Iskola": "Ilvermorny",
+      "Ház": "Pukwudgie",
+      "Pálca": "11 és ¾ hüvelyk kocsányos tölgyfa pálca szarvaskígyó szarvának a magjával",
+      "Különleges tehetség": "voodoo",
+      "PB": "Canelle Ferragu"
     },
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=7905",
@@ -118,13 +118,13 @@
     "era": "newgen",
     "facts": {
       "Lakhely": "Berkeley, CAL, USA",
-	  "Vér": "félvér",
-	  "Kor": "18",
+      "Vér": "félvér",
+      "Kor": "18",
       "Iskola": "Ilvermorny",
-	  "Ház": "Horny Serpent",
+      "Ház": "Horny Serpent",
       "Pálca": "10 hüvelyk, ezüsthárc, White River-i szörny tüskéje",
-	  "Különleges tehetség": "született legilimentor",
-	  "PB": "Sabrina Carpenter"
+      "Különleges tehetség": "született legilimentor",
+      "PB": "Sabrina Carpenter"
     },
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3041",
@@ -144,14 +144,13 @@
     "group": "Mardekár",
     "era": "newgen",
     "facts": {
-      "Kor": "16",",
-	  ,
+      "Kor": "16",
       "Vér": "félvér",
-	  "Iskola": "Roxfort",
-	  "Ház": "Mardekár",
-	  "Pálca": "9,5 hüvelyk, közönséges dió sárkányszívizomhúr maggal, nagyon rugalmas",
-	  "Különleges tehetség": "született legilimentor, de csak hazugságokat szimatol", "fotografikus memória", "zseni",
-	  "PB": "Ann Kuleshova"
+      "Iskola": "Roxfort",
+      "Ház": "Mardekár",
+      "Pálca": "9,5 hüvelyk, közönséges dió sárkányszívizomhúr maggal, nagyon rugalmas",
+      "Különleges tehetség": "született legilimentor, de csak hazugságokat szimatol; fotografikus memória; zseni",
+      "PB": "Ann Kuleshova"
     },
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3002",
