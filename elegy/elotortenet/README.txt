@@ -9,3 +9,5 @@ Módosítások:
 
 Használat:
 A walkthrough.html, walkthrough.css és walkthrough.js fájlokat tartsd ugyanabban a mappában.
+
+- A belső jelenetcím minden olvasói szövegből kikerült.
