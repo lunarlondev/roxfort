@@ -1,0 +1,125 @@
+[
+  {
+    "id": "elegy-dreadmoor",
+    "name": "Elegy Dreadmoor",
+    "kicker": "Dreadmoor family · observer",
+    "tagline": "Csendben figyel, kivár, majd pontosan ott avatkozik közbe, ahol a legjobban fáj.",
+    "summary": "Visszahúzódónak és alkalmazkodónak látszik, valójában azonban makacs, rendkívül türelmes, és a saját erkölcsi szabályai szerint cselekszik. A családi örökség és egy idegen szem emlékei egyszerre húzzák több irányba.",
+    "image": "images/placeholder-01.svg",
+    "group": "Noctua",
+    "era": "newgen",
+    "facts": {
+      "Kor": "fiatal felnőtt",
+      "Származás": "Amman",
+      "Lakhely": "Nebraska",
+      "Vér": "kvibli",
+      "Magasság": "159 cm",
+      "Státusz": "aktív"
+    },
+    "links": {
+      "profile": "https://example.com/elegy/profile",
+      "history": "https://example.com/elegy/history",
+      "relations": "https://example.com/elegy/relations",
+      "treasure": null,
+      "games": "https://example.com/elegy/games"
+    }
+  },
+  {
+    "id": "selene-ward",
+    "name": "Selene Ward",
+    "kicker": "First era · old files",
+    "tagline": "Egy régi történet túlélője, akit már csak a saját legendája üldöz.",
+    "summary": "Az oldgen korszak egyik meghatározó karaktere. Hosszú története, sok kapcsolata és rengeteg lezárt játéka van; ma inkább archív alak, de a világ több pontján még mindig érződik a hatása.",
+    "image": "images/placeholder-02.svg",
+    "group": "Mardekár",
+    "era": "oldgen",
+    "facts": {
+      "Kor": "38",
+      "Foglalkozás": "ereklyevadász",
+      "Lakhely": "London",
+      "Pálca": "galagonya",
+      "Patrónus": "holló",
+      "Státusz": "ritkán játszott"
+    },
+    "links": {
+      "profile": "https://example.com/selene/profile",
+      "history": "https://example.com/selene/history",
+      "relations": "https://example.com/selene/relations",
+      "treasure": "https://example.com/selene/treasure",
+      "games": "https://example.com/selene/games"
+    }
+  },
+  {
+    "id": "cassian-vale",
+    "name": "Cassian Vale",
+    "kicker": "Closed record · archive",
+    "tagline": "Nem minden történet ér véget; van, amelyiket egyszerűen becsuknak.",
+    "summary": "Leadott, lezárt karakter. A profilja és néhány fontosabb kapcsolata még megmaradt archívumnak, de már nem vesz részt aktív játékban.",
+    "image": "images/placeholder-03.svg",
+    "group": "Civil",
+    "era": "retired",
+    "facts": {
+      "Kor": "31",
+      "Foglalkozás": "újságíró",
+      "Lakhely": "Edinburgh",
+      "Vér": "félvér",
+      "Állapot": "lezárt",
+      "Leadva": "2025"
+    },
+    "links": {
+      "profile": "https://example.com/cassian/profile",
+      "history": null,
+      "relations": "https://example.com/cassian/relations",
+      "treasure": null,
+      "games": null
+    }
+  },
+  {
+    "id": "mira-halden",
+    "name": "Mira Halden",
+    "kicker": "Second wave · field notes",
+    "tagline": "Minden ajtót kinyit, még azt is, amelyik mögött semmi jó nem várja.",
+    "summary": "Kíváncsi és meggondolatlan kutató, aki túl sok időt tölt elfeledett mágikus helyszíneken. Ritkán érkezik haza ugyanazzal a történettel, amellyel elindult.",
+    "image": "images/placeholder-01.svg",
+    "group": "Hugrabug",
+    "era": "oldgen",
+    "facts": {
+      "Kor": "29",
+      "Foglalkozás": "kutató",
+      "Lakhely": "York",
+      "Patrónus": "vidra",
+      "Státusz": "szünetel"
+    },
+    "links": {
+      "profile": "https://example.com/mira/profile",
+      "history": "https://example.com/mira/history",
+      "relations": null,
+      "treasure": "https://example.com/mira/treasure",
+      "games": null
+    }
+  },
+  {
+    "id": "rowan-voss",
+    "name": "Rowan Voss",
+    "kicker": "New blood · anomaly",
+    "tagline": "Túl udvarias ahhoz, hogy veszélyesnek tűnjön, és túl veszélyes ahhoz, hogy udvarias maradjon.",
+    "summary": "Újabb karakter, akinek a nyugodt felszíne alatt folyamatosan változnak a szabályok. Kapcsolatai egyszerre jelentik számára a legfőbb kapaszkodót és a legnagyobb kockázatot.",
+    "image": "images/placeholder-02.svg",
+    "group": "Hollóhát",
+    "era": "newgen",
+    "facts": {
+      "Kor": "24",
+      "Foglalkozás": "gyógyító",
+      "Lakhely": "London",
+      "Vér": "félvér",
+      "Státusz": "aktív"
+    },
+    "links": {
+      "profile": "https://example.com/rowan/profile",
+      "history": "https://example.com/rowan/history",
+      "relations": "https://example.com/rowan/relations",
+      "treasure": null,
+      "games": "https://example.com/rowan/games"
+    }
+  }
+]

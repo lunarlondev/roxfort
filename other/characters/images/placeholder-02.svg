@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200">
+  <defs><linearGradient id="g" x1="1" y1="0" x2="0" y2="1"><stop stop-color="#291d31"/><stop offset="1" stop-color="#11131b"/></linearGradient><filter id="n"><feTurbulence baseFrequency=".9" numOctaves="2"/><feBlend mode="overlay" in="SourceGraphic"/></filter></defs>
+  <rect width="900" height="1200" fill="url(#g)"/>
+  <path d="M0 250 900 0v260L0 510Z" fill="#d88aff" opacity=".11"/>
+  <ellipse cx="460" cy="350" rx="160" ry="205" fill="#332b39"/>
+  <path d="M260 360c25-240 350-290 395-15-120-50-246-48-395 15Z" fill="#111118"/>
+  <path d="M180 1050c55-310 165-520 280-520s250 210 290 520" fill="#16141d"/>
+  <rect width="900" height="1200" filter="url(#n)" opacity=".22"/>
+  <text x="54" y="1120" fill="#fff" opacity=".7" font-family="monospace" font-size="34">PORTRAIT // 02</text>
+</svg>
