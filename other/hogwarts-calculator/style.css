@@ -1,16 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Quicksand:wght@400;600;700&display=swap");
+
 :root {
-  color-scheme: light dark;
-  --host-font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --host-font-size: 16px;
-  --host-text-color: CanvasText;
-  --host-bg-color: Canvas;
-  --host-accent-color: currentColor;
+  color-scheme: dark;
+  --host-font-family: "Quicksand", monospace;
+  --host-font-size: 11px;
+  --host-text-color: #BAB088;
+  --host-bg-color: #2e2017;
+  --host-accent-color: #9B783D;
   --host-radius: 16px;
-  --card-bg: color-mix(in srgb, var(--host-bg-color) 94%, var(--host-text-color) 6%);
-  --soft-bg: color-mix(in srgb, var(--host-bg-color) 88%, var(--host-text-color) 12%);
-  --border-color: color-mix(in srgb, var(--host-text-color) 22%, transparent);
-  --muted-color: color-mix(in srgb, var(--host-text-color) 68%, transparent);
-  --accent-soft: color-mix(in srgb, var(--host-accent-color) 12%, transparent);
+  --card-bg: #2e2017;
+  --soft-bg: rgb(186 176 136 / 0.045);
+  --border-color: rgb(186 176 136 / 0.24);
+  --muted-color: rgb(186 176 136 / 0.78);
+  --accent-soft: rgb(155 120 61 / 0.09);
   --gap: 14px;
 }
 
@@ -19,13 +21,13 @@
 }
 
 html {
-  background: transparent;
+  background: #2e2017;
 }
 
 body {
   margin: 0;
   min-width: 0;
-  background: transparent;
+  background: #2e2017;
   color: var(--host-text-color);
   font-family: var(--host-font-family);
   font-size: var(--host-font-size);
@@ -38,8 +40,8 @@ body {
   padding: clamp(14px, 4vw, 22px);
   border: 1px solid var(--border-color);
   border-radius: var(--host-radius);
-  background: var(--card-bg);
-  box-shadow: 0 10px 30px rgb(0 0 0 / 0.08);
+  background: #2e2017;
+  box-shadow: none;
 }
 
 .calculator__header {
@@ -53,18 +55,23 @@ p {
 }
 
 h1 {
-  font: inherit;
-  font-size: clamp(1.25rem, 4vw, 1.75rem);
-  font-weight: 750;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  color: #BAB088;
+  font-family: "Oswald", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 h2 {
-  font: inherit;
-  font-size: 1.08em;
-  font-weight: 750;
-  line-height: 1.25;
+  color: #BAB088;
+  font-family: "Oswald", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .calculator__header p {
@@ -149,7 +156,7 @@ small {
 }
 
 .data-block {
-  background: color-mix(in srgb, var(--host-bg-color) 97%, var(--host-text-color) 3%);
+  background: transparent;
 }
 
 .section-label {
@@ -224,6 +231,27 @@ small {
 .entry__description {
   margin-top: 4px;
   font-size: 0.9em;
+}
+
+
+/* Különleges események: dátum kiemelve, eseményleírás normál szöveggel. */
+#eventsList .entry__meta {
+  color: #9B783D;
+  font-family: "Quicksand", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.45;
+  text-transform: none;
+}
+
+#eventsList .entry__title {
+  margin-top: 3px;
+  color: #BAB088;
+  font-family: "Quicksand", monospace;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 [hidden] {
