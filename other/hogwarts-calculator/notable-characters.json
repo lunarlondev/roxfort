@@ -1,0 +1,8 @@
+{
+  "characters": [],
+  "_example": {
+    "name": "Karakter neve",
+    "firstSchoolYear": 2006,
+    "note": "Opcionális rövid megjegyzés."
+  }
+}

@@ -1,7 +1,12 @@
 const birthDateInput = document.querySelector('#birthDate');
 const schoolYearInput = document.querySelector('#schoolYear');
+const schoolYearPreview = document.querySelector('#schoolYearPreview');
 const resultText = document.querySelector('#resultText');
 const resultDetails = document.querySelector('#resultDetails');
+const eventsStatus = document.querySelector('#eventsStatus');
+const eventsList = document.querySelector('#eventsList');
+const charactersStatus = document.querySelector('#charactersStatus');
+const charactersList = document.querySelector('#charactersList');
 
 const YEAR_LABELS = {
   1: 'elsőéves',
@@ -13,109 +18,260 @@ const YEAR_LABELS = {
   7: 'hetedéves',
 };
 
-const ZODIAC_SIGNS = [
-  { name: 'Bak', from: [12, 22], to: [1, 19] },
-  { name: 'Vízöntő', from: [1, 20], to: [2, 18] },
-  { name: 'Halak', from: [2, 19], to: [3, 20] },
-  { name: 'Kos', from: [3, 21], to: [4, 19] },
-  { name: 'Bika', from: [4, 20], to: [5, 20] },
-  { name: 'Ikrek', from: [5, 21], to: [6, 20] },
-  { name: 'Rák', from: [6, 21], to: [7, 22] },
-  { name: 'Oroszlán', from: [7, 23], to: [8, 22] },
-  { name: 'Szűz', from: [8, 23], to: [9, 22] },
-  { name: 'Mérleg', from: [9, 23], to: [10, 22] },
-  { name: 'Skorpió', from: [10, 23], to: [11, 21] },
-  { name: 'Nyilas', from: [11, 22], to: [12, 21] },
-];
+const HOST_STYLE_MAP = {
+  fontFamily: '--host-font-family',
+  fontSize: '--host-font-size',
+  textColor: '--host-text-color',
+  backgroundColor: '--host-bg-color',
+  accentColor: '--host-accent-color',
+  radius: '--host-radius',
+};
 
-function parseLocalDate(value) {
+let specialEvents = [];
+let notableCharacters = [];
+let eventsLoadFailed = false;
+let charactersLoadFailed = false;
+
+function parseBirthMonth(value) {
   if (!value) return null;
 
-  const [year, month, day] = value.split('-').map(Number);
-  if (!year || !month || !day) return null;
-
-  const date = new Date(year, month - 1, day);
-  const isValid =
-    date.getFullYear() === year &&
-    date.getMonth() === month - 1 &&
-    date.getDate() === day;
-
-  return isValid ? { year, month, day } : null;
-}
-
-function parseSchoolYear(value) {
-  const cleaned = value.trim();
-  const match = cleaned.match(/^(\d{4})\s*\/\s*(\d{4})$/);
-
+  const match = value.match(/^(\d{4})-(\d{2})$/);
   if (!match) return null;
 
-  const startYear = Number(match[1]);
-  const endYear = Number(match[2]);
+  const year = Number(match[1]);
+  const month = Number(match[2]);
 
-  if (endYear !== startYear + 1) return null;
-
-  return { startYear, endYear };
+  if (!Number.isInteger(year) || month < 1 || month > 12) return null;
+  return { year, month };
 }
 
-function isOnOrBeforeAugust31(dateParts) {
-  return dateParts.month < 8 || (dateParts.month === 8 && dateParts.day <= 31);
+function parseSchoolYearStart(value) {
+  const cleaned = String(value).trim();
+  if (!/^\d{4}$/.test(cleaned)) return null;
+
+  const startYear = Number(cleaned);
+  if (!Number.isInteger(startYear) || startYear < 1000 || startYear > 9998) return null;
+
+  return startYear;
 }
 
 function getFirstHogwartsStartYear(birthDate) {
-  return birthDate.year + (isOnOrBeforeAugust31(birthDate) ? 11 : 12);
-}
-
-function isInRange(month, day, from, to) {
-  const current = month * 100 + day;
-  const start = from[0] * 100 + from[1];
-  const end = to[0] * 100 + to[1];
-
-  if (start <= end) {
-    return current >= start && current <= end;
-  }
-
-  return current >= start || current <= end;
-}
-
-function getZodiacSign(dateParts) {
-  return ZODIAC_SIGNS.find((sign) =>
-    isInRange(dateParts.month, dateParts.day, sign.from, sign.to)
-  )?.name;
+  return birthDate.year + (birthDate.month <= 8 ? 11 : 12);
 }
 
 function formatSchoolYear(startYear) {
   return `${startYear}/${startYear + 1}`;
 }
 
-function calculate() {
-  const birthDate = parseLocalDate(birthDateInput.value);
-  const schoolYear = parseSchoolYear(schoolYearInput.value);
+function updateSchoolYearPreview() {
+  const startYear = parseSchoolYearStart(schoolYearInput.value);
+  schoolYearPreview.textContent = startYear ? `/${startYear + 1}` : '/—';
+}
+
+function clearList(listElement) {
+  listElement.replaceChildren();
+  listElement.hidden = true;
+}
+
+function appendEntry(listElement, eyebrow, title, description = '') {
+  const item = document.createElement('li');
+  item.className = 'entry';
+
+  const meta = document.createElement('p');
+  meta.className = 'entry__meta';
+  meta.textContent = eyebrow;
+
+  const heading = document.createElement('p');
+  heading.className = 'entry__title';
+  heading.textContent = title;
+
+  item.append(meta, heading);
+
+  if (description) {
+    const details = document.createElement('p');
+    details.className = 'entry__description';
+    details.textContent = description;
+    item.append(details);
+  }
+
+  listElement.append(item);
+}
+
+function renderEvents(startYear) {
+  clearList(eventsList);
+
+  if (!startYear) {
+    eventsStatus.textContent = 'Adj meg egy érvényes tanévet.';
+    return;
+  }
+
+  if (eventsLoadFailed) {
+    eventsStatus.textContent = 'A special-events.json fájlt nem sikerült betölteni.';
+    return;
+  }
+
+  const matchingEvents = specialEvents
+    .filter((item) => Number(item.schoolYear) === startYear)
+    .sort((a, b) => String(a.date).localeCompare(String(b.date), 'hu'));
+
+  if (matchingEvents.length === 0) {
+    eventsStatus.textContent = `A ${formatSchoolYear(startYear)}-es tanévhez nincs rögzített különleges esemény.`;
+    return;
+  }
+
+  eventsStatus.textContent = `${formatSchoolYear(startYear)} – ${matchingEvents.length} esemény`;
+  eventsList.hidden = false;
+
+  for (const item of matchingEvents) {
+    appendEntry(eventsList, String(item.date || 'Dátum nélkül'), String(item.event || 'Névtelen esemény'));
+  }
+}
+
+function getCohortRelation(characterStartYear, ownStartYear) {
+  const difference = characterStartYear - ownStartYear;
+
+  if (difference === -1) return 'egy évfolyammal feljebb';
+  if (difference === 0) return 'azonos évfolyam';
+  if (difference === 1) return 'egy évfolyammal lejjebb';
+  return null;
+}
+
+function getYearStatus(firstStartYear, selectedStartYear) {
+  const schoolYearNumber = selectedStartYear - firstStartYear + 1;
+
+  if (schoolYearNumber < 1) return 'ebben a tanévben még nem roxfortos';
+  if (schoolYearNumber > 7) return 'ebben a tanévben már végzett';
+  return `ebben a tanévben ${YEAR_LABELS[schoolYearNumber]}`;
+}
+
+function renderCharacters(birthDate, selectedStartYear) {
+  clearList(charactersList);
 
   if (!birthDate) {
-    resultText.textContent = 'Adj meg egy születési dátumot.';
+    charactersStatus.textContent = 'Adj meg egy születési évet és hónapot.';
+    return;
+  }
+
+  if (charactersLoadFailed) {
+    charactersStatus.textContent = 'A notable-characters.json fájlt nem sikerült betölteni.';
+    return;
+  }
+
+  const ownStartYear = getFirstHogwartsStartYear(birthDate);
+  const nearbyCharacters = notableCharacters
+    .map((item) => ({
+      ...item,
+      firstSchoolYear: Number(item.firstSchoolYear),
+    }))
+    .filter((item) => Number.isInteger(item.firstSchoolYear))
+    .map((item) => ({
+      ...item,
+      relation: getCohortRelation(item.firstSchoolYear, ownStartYear),
+    }))
+    .filter((item) => item.relation)
+    .sort((a, b) => a.firstSchoolYear - b.firstSchoolYear || String(a.name).localeCompare(String(b.name), 'hu'));
+
+  if (nearbyCharacters.length === 0) {
+    charactersStatus.textContent = `A karakter első lehetséges tanéve ${formatSchoolYear(ownStartYear)}; ehhez nincs rögzített nevezetes karakter a közeli évfolyamokon.`;
+    return;
+  }
+
+  charactersStatus.textContent = `A karakter első lehetséges tanéve: ${formatSchoolYear(ownStartYear)}.`;
+  charactersList.hidden = false;
+
+  for (const item of nearbyCharacters) {
+    const status = selectedStartYear ? getYearStatus(item.firstSchoolYear, selectedStartYear) : '';
+    const descriptionParts = [status, item.note].filter(Boolean);
+
+    appendEntry(
+      charactersList,
+      item.relation,
+      String(item.name || 'Névtelen karakter'),
+      descriptionParts.join(' · ')
+    );
+  }
+}
+
+function calculate() {
+  updateSchoolYearPreview();
+
+  const birthDate = parseBirthMonth(birthDateInput.value);
+  const schoolYearStart = parseSchoolYearStart(schoolYearInput.value);
+
+  renderEvents(schoolYearStart);
+  renderCharacters(birthDate, schoolYearStart);
+
+  if (!birthDate) {
+    resultText.textContent = 'Adj meg egy születési évet és hónapot.';
     resultDetails.textContent = '';
     return;
   }
 
-  if (!schoolYear) {
-    resultText.textContent = 'A tanév formátuma nem jó.';
-    resultDetails.textContent = 'Példa: 2006/2007. A második évszámnak eggyel nagyobbnak kell lennie.';
+  if (!schoolYearStart) {
+    resultText.textContent = 'A tanév kezdőéve nem megfelelő.';
+    resultDetails.textContent = 'Négyjegyű évszámot adj meg, például: 2006.';
     return;
   }
 
   const firstStartYear = getFirstHogwartsStartYear(birthDate);
-  const hogwartsYear = schoolYear.startYear - firstStartYear + 1;
-  const zodiac = getZodiacSign(birthDate);
+  const hogwartsYear = schoolYearStart - firstStartYear + 1;
 
   if (hogwartsYear < 1) {
-    resultText.textContent = `Még nem lenne roxfortos. Horoszkóp: ${zodiac}.`;
+    resultText.textContent = 'A karakter ebben a tanévben még nem lenne roxfortos.';
   } else if (hogwartsYear > 7) {
-    resultText.textContent = `Már végzett volna. Horoszkóp: ${zodiac}.`;
+    resultText.textContent = 'A karakter ebben a tanévben már végzett volna.';
   } else {
-    resultText.textContent = `A karakter ${YEAR_LABELS[hogwartsYear]} lenne. Horoszkóp: ${zodiac}.`;
+    resultText.textContent = `A karakter ${YEAR_LABELS[hogwartsYear]} lenne a ${formatSchoolYear(schoolYearStart)}-es tanévben.`;
   }
 
-  resultDetails.textContent = `Első lehetséges roxforti tanéve: ${formatSchoolYear(firstStartYear)}. A számítás szerint az adott tanév szeptember 1-je előtt, legkésőbb augusztus 31-ig kell betöltenie a 11-et.`;
+  resultDetails.textContent = `Első lehetséges roxforti tanéve: ${formatSchoolYear(firstStartYear)}. A szeptember–december között születettek a következő év szeptemberében, a január–augusztus között születettek a születési évükhöz képest tizenegy évvel később kezdhetnek.`;
+}
+
+async function loadJsonData() {
+  const [eventsResult, charactersResult] = await Promise.allSettled([
+    fetch('special-events.json', { cache: 'no-store' }).then((response) => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
+    }),
+    fetch('notable-characters.json', { cache: 'no-store' }).then((response) => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
+    }),
+  ]);
+
+  if (eventsResult.status === 'fulfilled') {
+    specialEvents = Array.isArray(eventsResult.value)
+      ? eventsResult.value
+      : Array.isArray(eventsResult.value.events)
+        ? eventsResult.value.events
+        : [];
+  } else {
+    eventsLoadFailed = true;
+  }
+
+  if (charactersResult.status === 'fulfilled') {
+    notableCharacters = Array.isArray(charactersResult.value)
+      ? charactersResult.value
+      : Array.isArray(charactersResult.value.characters)
+        ? charactersResult.value.characters
+        : [];
+  } else {
+    charactersLoadFailed = true;
+  }
+
+  calculate();
+}
+
+function applyHostStyles(styles) {
+  if (!styles || typeof styles !== 'object') return;
+
+  const root = document.documentElement;
+  for (const [key, cssVariable] of Object.entries(HOST_STYLE_MAP)) {
+    const value = styles[key];
+    if (typeof value === 'string' && value.trim()) {
+      root.style.setProperty(cssVariable, value.trim());
+    }
+  }
 }
 
 function importHostStylesWhenPossible() {
@@ -125,28 +281,27 @@ function importHostStylesWhenPossible() {
     const parentWindow = window.parent;
     const iframeStyles = parentWindow.getComputedStyle(window.frameElement);
     const parentRootStyles = parentWindow.getComputedStyle(parentWindow.document.documentElement);
+
+    applyHostStyles({
+      fontFamily: iframeStyles.fontFamily || parentRootStyles.fontFamily,
+      fontSize: iframeStyles.fontSize || parentRootStyles.fontSize,
+      textColor: iframeStyles.color || parentRootStyles.color,
+      backgroundColor:
+        iframeStyles.backgroundColor !== 'rgba(0, 0, 0, 0)'
+          ? iframeStyles.backgroundColor
+          : parentRootStyles.backgroundColor,
+    });
+
     const root = document.documentElement;
-
-    const fontFamily = iframeStyles.fontFamily || parentRootStyles.fontFamily;
-    const fontSize = iframeStyles.fontSize || parentRootStyles.fontSize;
-    const color = iframeStyles.color || parentRootStyles.color;
-    const backgroundColor = iframeStyles.backgroundColor || parentRootStyles.backgroundColor;
-
-    if (fontFamily) root.style.setProperty('--host-font-family', fontFamily);
-    if (fontSize) root.style.setProperty('--host-font-size', fontSize);
-    if (color) root.style.setProperty('--host-text-color', color);
-    if (backgroundColor && backgroundColor !== 'rgba(0, 0, 0, 0)') {
-      root.style.setProperty('--host-bg-color', backgroundColor);
-    }
-
     for (const propertyName of parentRootStyles) {
       if (propertyName.startsWith('--')) {
         root.style.setProperty(propertyName, parentRootStyles.getPropertyValue(propertyName));
       }
     }
   } catch (error) {
-    // Cross-origin iframe esetén a szülőoldal stílusai nem olvashatók.
-    // Ilyenkor a CSS-ben megadott biztonságos alapstílusok maradnak érvényben.
+    // Eltérő domainről beágyazott iframe esetén a böngésző nem engedi
+    // a szülőoldal stílusainak közvetlen kiolvasását. Ilyenkor postMessage
+    // segítségével adhatók át az engedélyezett stílusértékek.
   }
 }
 
@@ -158,11 +313,17 @@ function notifyParentAboutHeight() {
   );
 }
 
+window.addEventListener('message', (event) => {
+  if (event.data?.type !== 'hogwarts-year-calculator:theme') return;
+  applyHostStyles(event.data.styles);
+});
+
 birthDateInput.addEventListener('input', calculate);
 schoolYearInput.addEventListener('input', calculate);
 
 importHostStylesWhenPossible();
 calculate();
+loadJsonData();
 
 if ('ResizeObserver' in window) {
   new ResizeObserver(notifyParentAboutHeight).observe(document.documentElement);

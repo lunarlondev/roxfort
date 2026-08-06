@@ -1,0 +1,8 @@
+{
+  "events": [],
+  "_example": {
+    "schoolYear": 2006,
+    "date": "2007-03-14",
+    "event": "Az esemény rövid leírása. A date mező lehet csak évszám is, például: 2007."
+  }
+}

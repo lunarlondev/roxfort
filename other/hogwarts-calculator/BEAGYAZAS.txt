@@ -1,0 +1,30 @@
+IFRAME-STÍLUSOK
+
+Az iframe dokumentuma nem örökli automatikusan a befogadó oldal CSS-ét.
+
+1. Azonos domain esetén a script megpróbálja kiolvasni a befogadó oldal alap betűtípusát, betűméretét, szöveg- és háttérszínét, valamint a gyökérelemen beállított CSS-változókat.
+
+2. Eltérő domain esetén a böngésző biztonsági szabályai ezt megakadályozzák. Ilyenkor a befogadó oldal postMessage segítségével adhat át stílusokat:
+
+const iframe = document.querySelector('#hogwartsCalculator');
+
+iframe.addEventListener('load', () => {
+  iframe.contentWindow.postMessage({
+    type: 'hogwarts-year-calculator:theme',
+    styles: {
+      fontFamily: 'Georgia, serif',
+      fontSize: '16px',
+      textColor: '#2f2933',
+      backgroundColor: '#f7f2eb',
+      accentColor: '#7b3b4b',
+      radius: '14px'
+    }
+  }, 'https://AZ-IFRAME-DOMAINJE');
+});
+
+A támogatott kulcsok:
+fontFamily, fontSize, textColor, backgroundColor, accentColor, radius
+
+A kalkulátor a magasságát is elküldi a szülőoldalnak:
+{ type: 'hogwarts-year-calculator:resize', height: 1234 }
+Ezt a befogadó oldalon figyelve az iframe magassága automatikusan állítható.

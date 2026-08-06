@@ -11,35 +11,60 @@
   <main class="calculator" aria-labelledby="calculator-title">
     <header class="calculator__header">
       <h1 id="calculator-title">Roxfort évfolyam kalkulátor</h1>
-      <p>Válaszd ki a karakter születési dátumát és a vizsgált tanévet.</p>
+      <p>Add meg a karakter születési évét és hónapját, valamint a vizsgált tanév szeptemberi kezdőévét.</p>
     </header>
 
     <form class="form" novalidate>
       <div class="field">
-        <label for="birthDate">Születési dátum</label>
-        <input id="birthDate" name="birthDate" type="date" autocomplete="bday" required>
+        <label for="birthDate">Születési év és hónap</label>
+        <input id="birthDate" name="birthDate" type="month" autocomplete="bday" required>
+        <small>A pontos napot nem szükséges megadni.</small>
       </div>
 
       <div class="field">
-        <label for="schoolYear">Tanév</label>
-        <input
-          id="schoolYear"
-          name="schoolYear"
-          type="text"
-          inputmode="numeric"
-          value="2006/2007"
-          placeholder="pl. 2006/2007"
-          pattern="^[0-9]{4}\/[0-9]{4}$"
-          required
-        >
-        <small>Formátum: ÉÉÉÉ/ÉÉÉÉ</small>
+        <label for="schoolYear">A tanév szeptemberi éve</label>
+        <div class="school-year-input">
+          <input
+            id="schoolYear"
+            name="schoolYear"
+            type="number"
+            inputmode="numeric"
+            min="1000"
+            max="9998"
+            step="1"
+            value="2006"
+            placeholder="pl. 2006"
+            required
+          >
+          <output id="schoolYearPreview" for="schoolYear" aria-live="polite">/2007</output>
+        </div>
+        <small>Elég az első évszám: a 2006/2007-es tanévhez például csak 2006-ot írj.</small>
       </div>
     </form>
 
     <section class="result" aria-live="polite" aria-atomic="true">
-      <p class="result__label">Eredmény</p>
-      <p id="resultText" class="result__text">Adj meg egy születési dátumot.</p>
+      <p class="section-label">Eredmény</p>
+      <p id="resultText" class="result__text">Adj meg egy születési évet és hónapot.</p>
       <p id="resultDetails" class="result__details"></p>
+      <p class="result__notice">A számítás megszakítás nélküli iskolai előmenetelt feltételez. Rendkívüli esemény – például egy betegség miatt kihagyott tanév – módosíthatja az eredményt.</p>
+    </section>
+
+    <section class="data-block" aria-labelledby="events-title">
+      <div class="data-block__header">
+        <p class="section-label">Idővonal</p>
+        <h2 id="events-title">Különleges események</h2>
+      </div>
+      <p id="eventsStatus" class="data-block__status">Az események betöltése…</p>
+      <ul id="eventsList" class="entry-list" hidden></ul>
+    </section>
+
+    <section class="data-block" aria-labelledby="characters-title">
+      <div class="data-block__header">
+        <p class="section-label">Évfolyamok</p>
+        <h2 id="characters-title">Nevezetes karakterek</h2>
+      </div>
+      <p id="charactersStatus" class="data-block__status">Adj meg egy születési évet és hónapot.</p>
+      <ul id="charactersList" class="entry-list" hidden></ul>
     </section>
   </main>
 
