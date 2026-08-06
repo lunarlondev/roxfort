@@ -66,6 +66,11 @@
     "note": "Ebben az évben kezd az úgynevezett Béke Évfolyam."
   },
   {
+    "name": "Chikara Tetsuya",
+    "firstSchoolYear": 1998,
+    "note": "Egészségügyi okok miatt kihagy egy évet, a Béke Évfolyamához csatlakozik vissza folytatni tanulmányait."
+  },
+  {
     "name": "Heranoush Fletcher",
     "firstSchoolYear": 2001,
     "note": ""
@@ -74,6 +79,21 @@
     "name": "Vivien M. Smithe",
     "firstSchoolYear": 2001,
     "note": ""
+  },
+  {
+    "name": "Hazel C. Baird",
+    "firstSchoolYear": 2001,
+    "note": ""
+  },
+  {
+    "name": "Ajax Ambrose",
+    "firstSchoolYear": 2001,
+    "note": ""
+  },
+  {
+    "name": "Imogen F. Sinclair",
+    "firstSchoolYear": 2000,
+    "note": "Egy tanévet tragédia miatt kihagy, az eggyel alatta lévő évfolyamhoz csatlakozik."
   },
   ]
 }
