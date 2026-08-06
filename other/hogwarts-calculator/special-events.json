@@ -49,7 +49,222 @@
   {
     "schoolYear": 1991,
     "date": "1992 június",
-    "event": "Letartóztatják Sirius Blacket."
+    "event": "Harry és barátai megszerzik a Bölcsek Kövét."
+  },
+  {
+    "schoolYear": 1992,
+    "date": "1992 szeptember",
+    "event": "Megnyílik a Titkok Kamrája."
+  },
+  {
+    "schoolYear": 1992,
+    "date": "1993 május",
+    "event": "Harry belép a Titkok kamrájába."
+  },
+  {
+    "schoolYear": 1993,
+    "date": "1993 nyár",
+    "event": "Sirius Black megszökik az Azkabanból, ezt körözés követi a muglik világában is."
+  },
+  {
+    "schoolYear": 1993,
+    "date": "1993 szeptember",
+    "event": "Dementorok lepik el az iskola környékét, ellenőrzik a Roxfort Expresszt is."
+  },
+  {
+    "schoolYear": 1993,
+    "date": "1994 június",
+    "event": "Elhangzik Trelawney második jóslata Harryről."
+  },
+  {
+    "schoolYear": 1993,
+    "date": "1994 június",
+    "event": "Kiderül, hogy Peter Pettigrew él, de sikerül megszöknie. Siriusnak menekülnie kell Csikócsőrrel együtt."
+  },
+  {
+    "schoolYear": 1994,
+    "date": "1994 augusztus",
+    "event": "A Kviddics Világkupa döntőt az írek nyernek a bolgárokkal szemben. A lerombolt sátortábor felett megjelenik a Sötét jegy."
+  },
+  {
+    "schoolYear": 1994,
+    "date": "1994 október",
+    "event": "Roxfort rendezi a Trimágus Tusát, megérkeznek a másik két iskola tanulói is. Harry lesz a negyedik versenyző."
+  },
+  {
+    "schoolYear": 1994,
+    "date": "1995 június",
+    "event": "A Trimágus Tusa harmadik fordulójának napján meghal Cedric Diggory, Voldemort visszatér az élők közé."
+  },
+  {
+    "schoolYear": 1994,
+    "date": "1995 június",
+    "event": "Mordonról kiderül, hogy valójában az ifj. Barty Kupor volt, aki korábban megölte az apját, valamint segédkezett Voldemort visszatérésében. Megkapja a Dementor csókot."
+  },
+  {
+    "schoolYear": 1994,
+    "date": "1995 június",
+    "event": "Nem hivatalosan megkezdődik a Második Varázslók háborúja."
+  },
+  {
+    "schoolYear": 1995,
+    "date": "1995 szeptember",
+    "event": "Dolores Umbridge tanítja a Sötét Varázslatok Kivédését Minisztériumi rendelkezésre."
+  },
+  {
+    "schoolYear": 1995,
+    "date": "1995 október",
+    "event": "Megalapítják a Dumbledore Seregét."
+  },
+  {
+    "schoolYear": 1995,
+    "date": "1996 január",
+    "event": "Bellatrix Lestrange és még néhány halálfaló megszökik az Azkabanból."
+  },
+  {
+    "schoolYear": 1995,
+    "date": "1996 április",
+    "event": "Dumbledore elhagyja a Roxfortot."
+  },
+  {
+    "schoolYear": 1995,
+    "date": "1996 június",
+    "event": "Támadás a Mágiaügyi Minisztériumban, ami után Dumbledore visszatér a Roxfortba."
+  },
+  {
+    "schoolYear": 1995,
+    "date": "1996 június",
+    "event": "Cornelius Caramel elismeri Voldemort visszatértét, ezzel hivatalosan is elkezdődik a második Varázslók háborúja."
+  },
+  {
+    "schoolYear": 1996,
+    "date": "1997 június",
+    "event": "Piton megöli Dumbledore-t az Asztronómia toronyban. Közben az iskolát feldúlja néhány halálfaló."
+  },
+  {
+    "schoolYear": 1996,
+    "date": "1997 július",
+    "event": "Eltemetik Dumbledore-t. További halálfalók szöknek meg az Azkabanból."
+  },
+  {
+    "schoolYear": 1997,
+    "date": "1997 augusztus",
+    "event": "Megölik Rufus Scrimgeourt, az aktuális Mágiaügyi Minisztert. Voldemort helyére a maga emberét ülteti."
+  },
+  {
+    "schoolYear": 1997,
+    "date": "1998 április",
+    "event": "Meghal Gellert Grindelwald - legalábbis hivatalosan."
+  },
+  {
+    "schoolYear": 1997,
+    "date": "1998 május",
+    "event": "Harry, Ron és Hermione betörnek a Gringottsba, kiszabadítják az ottani sárkányt."
+  },
+  {
+    "schoolYear": 1997,
+    "date": "1998 május 2",
+    "event": "Lezajlik a Roxfort ostroma, amelyben Harry megöli Voldemortot. Ezzel zárul a második Varázslók háborúja."
+  },
+  {
+    "schoolYear": 1997,
+    "date": "1998 május",
+    "event": "Kinevezik Kingsley Shackleboltot Mágiaügyi Miniszterré, Minerva McGalagonyt pedig a Roxfort igazgatójává."
+  },
+  {
+    "schoolYear": 1997,
+    "date": "1998 május",
+    "event": "Megkezdődik a halálfalók üldözése, majd Winzengamot elé állításuk. Az Azkabanban aurorok veszik át a dementorok helyét."
+  },
+  {
+    "schoolYear": 1998,
+    "date": "1998 nyár",
+    "event": "Országosan elkezdik helyreállítani a háború okozta károkat, köztük a Roxfortot is, hogy szeptemberben a diákok megkezdhessék a tanulmányaikat. Nagy nemzetközi összefogás az iskola helyrehozásáért."
+  },
+  {
+    "schoolYear": 1998,
+    "date": "1998 szeptember",
+    "event": "Az iskolakezdésre egy csapat gyanús diák érkezik a Roxfortba, a Süveg beosztja őket. (Hírnök plot)"
+  },
+  {
+    "schoolYear": 1998,
+    "date": "1999",
+    "event": "A tanév második felében a titokzatos diákok egy csoportja megkísérli ellopni Dumbledore pálcáját - az eset után többségüket kirúgják. A maradó diákokat szigorúan ellenőrzik."
+  },
+  {
+    "schoolYear": 1999,
+    "date": "1999 október 31",
+    "event": "Halloween estéjén egy ismeretlen személy vagy csoport tőrbe csal több embert a Szellemszálláson, közöttük Roxfortos diákokat is. A fenyegetés forrásakét később a magát Rendnek nevező csoportot azonosítják."
+  },
+  {
+    "schoolYear": 1999,
+    "date": "1999",
+    "event": "Felállítják a Mágikus Szeszélyügyi Főosztályt a Minisztérium keretein belül."
+  },
+  {
+    "schoolYear": 1999,
+    "date": "2000 február 14",
+    "event": "Valentin-nap alkalmából a híres Vénusz Kertjébe szerveznek romantikus programot. A rózsák között azonban elszabadul a pokol, a Mágikus Szeszélyt okolták ezért is."
+  },
+  {
+    "schoolYear": 1999,
+    "date": "2000",
+    "event": "Több épületben, főleg az Abszol úton, a Zsebpiszok közben, a Minisztériumban és Roxmortsban furcsa mágikus jelenségek szabadultak el. A Kutatóközpont embereket küldött a helyszínre vizsgálódni."
+  },
+  {
+    "schoolYear": 1999,
+    "date": "2000",
+    "event": "Júliusban a Három Seprűben szervezett illuzionista est alkalmával a jelenlévőket elkábították - a támadókat a helyszínre érkező aurorok megállították. Ezt követően számuk megnő a nyilvános, valamint hivatalos eseményeken. A Szeszélyügy vizsgálatot folytat az ügyben."
+  },
+  {
+    "schoolYear": 2000,
+    "date": "2001 február",
+    "event": "Megtartják az Imbolc bált Roxmortsban, amely kisebb felforduláshoz vezet, miután kigyullad a jósnő sátra, és csuklyások jelennek meg a területen."
+  },
+  {
+    "schoolYear": 2001,
+    "date": "2001 október",
+    "event": "A Minisztérium elrendeli a szabadlábon lévő ex-halálfalók kihallgatását, remélve, hogy ezáltal kiderítenek valamiféle információt a támadások kapcsán. Ez nem vezet eredményre."
+  },
+  {
+    "schoolYear": 2001,
+    "date": "2002 január 12",
+    "event": "Robbanás történt a Zsebpiszok közben, az Édes Mérgek kocsmában. A helyszín sokáig felújítás alatt áll."
+  },
+  {
+    "schoolYear": 2002,
+    "date": "2002 december",
+    "event": "Az Adventi Vásáron hatalmas tűz üt ki az Abszol úton, melynek kiinduló pontja az első vasárnapon meggyújtott adveni koszorú volt. Annak lángjai gyorsan átterjedtek a bódékra, veszélybe sodorva minden jelenlévő életét. Végül csak anyagi kár keletkezik. Minden bizonnyal a Szeszély a felelős mindezért, bár sokan a Rendet okolják. Megint mások az épp regnáló hatalmat."
+  },
+  {
+    "schoolYear": 2003,
+    "date": "2003",
+    "event": "Izlandon zavargásokról számolnak be a hírek: Gellert Grindelwald követőinek eddigi hátországa feloszlik, rengeteg máguscsalád sarja távozik pánikszerűen. Az angol Mágiaügyi Minisztérium információkhoz jut Grindelwald megkísérelt visszatérésével kapcsolatban."
+  },
+  {
+    "schoolYear": 2003,
+    "date": "2003 nyár",
+    "event": "Harold Macmillan auror-főparancsnok a Roxfort tanári karának teljes kivizsgálását, kihallgatását rendelte el."
+  },
+  {
+    "schoolYear": 2003,
+    "date": "2004",
+    "event": "Bár a mágikus szeszélyként azonosított jelenség nem tűnt el, a Rend tevékenységét a Minisztérium sikeresen felszámolta. A nyomozás jelenleg is zajlik."
+  },
+  {
+    "schoolYear": 2004,
+    "date": "2004",
+    "event": "Az év végére nyilvánvalóvá válik, hogy a Szeszélyügyi szegmens átszervezést igényel a Misztériumügyön belül, így az egy kisebb csoportként működik tovább."
+  },
+  {
+    "schoolYear": 2005,
+    "date": "2005",
+    "event": "A július elsején kezdődő Mágikus Világkiállításnak idén Barcelona ad otthont. Az Ilvermorny és a Beauxbatons diákjai innen hazautazva szereznek tudomást először a következő tanévben megtartásra kerülő Trimágus Tusáról. A Roxfort diákjai számára ez az információ nem nyilvános még."
+  },
+  {
+    "schoolYear": 2005,
+    "date": "2005 szeptember",
+    "event": "Megérkezik az Ilvermorny és a Beauxbatons delegációja a Roxfortba."
   },
   ]
 }
