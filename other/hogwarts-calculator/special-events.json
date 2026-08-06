@@ -1,8 +1,55 @@
 {
-  "events": [],
-  "_example": {
-    "schoolYear": 2006,
-    "date": "2007-03-14",
-    "event": "Az esemény rövid leírása. A date mező lehet csak évszám is, például: 2007."
-  }
+  "events": [
+  {
+    "schoolYear": 1926,
+    "date": "1926",
+    "event": "Göthe Salamander New Yorkba utazik"
+  },
+  {
+    "schoolYear": 1926,
+    "date": "1926",
+    "event": "Tom Rowle Denem születése"
+  },
+    {
+    "schoolYear": 1927,
+    "date": "1927",
+    "event": "Gellert Grindelwald megszökik a MAGUCA fogságából, Párizsba utazik, hogy mozgalmát kiszélesítse."
+  },
+
+  {
+    "schoolYear": 1945,
+    "date": "1945",
+    "event": "Albus Dumbledore legyőzi Gellert Grindelwaldot."
+  },
+  {
+    "schoolYear": 1947,
+    "date": "1947",
+    "event": "Göthe Salamander megalkotja a Vérfarkas regisztrációs törvényt."
+  },
+  {
+    "schoolYear": 1970,
+    "date": "1970",
+    "event": "Megkezdődik az Első Varázslóháború Voldemort és követői, a halálfalók ellen."
+  },
+  {
+    "schoolYear": 1970,
+    "date": "1980",
+    "event": "Sybill Trelawney elárulja a jóslatot Dumbledore-nak Harryről és Voldemortról."
+  },
+  {
+    "schoolYear": 1981,
+    "date": "1981 október 31",
+    "event": "Voldemort megöli Lily és James Pottert. Harry túléli."
+  },
+  {
+    "schoolYear": 1981,
+    "date": "1981",
+    "event": "Letartóztatják Sirius Blacket."
+  },
+  {
+    "schoolYear": 1991,
+    "date": "1992 június",
+    "event": "Letartóztatják Sirius Blacket."
+  },
+  ]
 }

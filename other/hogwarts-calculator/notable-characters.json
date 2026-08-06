@@ -1,8 +1,59 @@
 {
-  "characters": [],
-  "_example": {
-    "name": "Karakter neve",
-    "firstSchoolYear": 2006,
-    "note": "Opcionális rövid megjegyzés."
+  "characters": [
+  {
+    "name": "Tom Rowle Denem",
+    "firstSchoolYear": 1938,
+    "note": "aka Lord Voldemort"
+  },
+  {
+    "name": "Harry Potter",
+    "firstSchoolYear": 1991,
+    "note": ""
+  },
+  {
+    "name": "Ronals Weasley",
+    "firstSchoolYear": 1991,
+    "note": ""
+  },
+  {
+    "name": "Hermione Granger",
+    "firstSchoolYear": 1991,
+    "note": ""
+  },
+  {
+    "name": "Draco Malfoy",
+    "firstSchoolYear": 1991,
+    "note": ""
+  },
+  {
+    "name": "Hagen Romanov",
+    "firstSchoolYear": 1998,
+    "note": "Ötödévesként kezdi, Hírnök plot."
+  },
+  {
+    "name": "Liliya Romanov",
+    "firstSchoolYear": 1998,
+    "note": "Ötödévesként kezdi, Hírnök plot."
+  },
+  {
+    "name": "Irina Romanov",
+    "firstSchoolYear": 1998,
+    "note": "Negyedévesként kezdi, Hírnök plot."
+  },
+  {
+    "name": "Adser Møvrede",
+    "firstSchoolYear": 1998,
+    "note": "Ötödévesként kezdi, Hírnök plot."
+  },
+  {
+    "name": "Greis Møvrede",
+    "firstSchoolYear": 1998,
+    "note": "Ötödévesként kezdi, Hírnök plot."
+  },
+  {
+    "name": "Zenia Møvrede",
+    "firstSchoolYear": 1998,
+    "note": "Hetedévesként kezdi, Hírnök plot."
   }
+  ]
 }

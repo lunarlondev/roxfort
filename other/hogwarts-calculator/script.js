@@ -224,7 +224,7 @@ function calculate() {
     resultText.textContent = `A karakter ${YEAR_LABELS[hogwartsYear]} lenne a ${formatSchoolYear(schoolYearStart)}-es tanévben.`;
   }
 
-  resultDetails.textContent = `Első lehetséges roxforti tanéve: ${formatSchoolYear(firstStartYear)}. A szeptember–december között születettek a következő év szeptemberében, a január–augusztus között születettek a születési évükhöz képest tizenegy évvel később kezdhetnek.`;
+  resultDetails.textContent = `Első roxforti tanévét ekkor kezdte meg: ${formatSchoolYear(firstStartYear)}. `;
 }
 
 async function loadJsonData() {
