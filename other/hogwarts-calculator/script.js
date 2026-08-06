@@ -18,14 +18,7 @@ const YEAR_LABELS = {
   7: 'hetedéves',
 };
 
-const HOST_STYLE_MAP = {
-  fontFamily: '--host-font-family',
-  fontSize: '--host-font-size',
-  textColor: '--host-text-color',
-  backgroundColor: '--host-bg-color',
-  accentColor: '--host-accent-color',
-  radius: '--host-radius',
-};
+
 
 let specialEvents = [];
 let notableCharacters = [];
@@ -224,7 +217,7 @@ function calculate() {
     resultText.textContent = `A karakter ${YEAR_LABELS[hogwartsYear]} lenne a ${formatSchoolYear(schoolYearStart)}-es tanévben.`;
   }
 
-  resultDetails.textContent = `Első roxforti tanévét ekkor kezdte meg: ${formatSchoolYear(firstStartYear)}. `;
+  resultDetails.textContent = `Első lehetséges roxforti tanéve: ${formatSchoolYear(firstStartYear)}. A szeptember–december között születettek a következő év szeptemberében, a január–augusztus között születettek a születési évükhöz képest tizenegy évvel később kezdhetnek.`;
 }
 
 async function loadJsonData() {
@@ -262,49 +255,6 @@ async function loadJsonData() {
   calculate();
 }
 
-function applyHostStyles(styles) {
-  if (!styles || typeof styles !== 'object') return;
-
-  const root = document.documentElement;
-  for (const [key, cssVariable] of Object.entries(HOST_STYLE_MAP)) {
-    const value = styles[key];
-    if (typeof value === 'string' && value.trim()) {
-      root.style.setProperty(cssVariable, value.trim());
-    }
-  }
-}
-
-function importHostStylesWhenPossible() {
-  try {
-    if (window.parent === window || !window.frameElement) return;
-
-    const parentWindow = window.parent;
-    const iframeStyles = parentWindow.getComputedStyle(window.frameElement);
-    const parentRootStyles = parentWindow.getComputedStyle(parentWindow.document.documentElement);
-
-    applyHostStyles({
-      fontFamily: iframeStyles.fontFamily || parentRootStyles.fontFamily,
-      fontSize: iframeStyles.fontSize || parentRootStyles.fontSize,
-      textColor: iframeStyles.color || parentRootStyles.color,
-      backgroundColor:
-        iframeStyles.backgroundColor !== 'rgba(0, 0, 0, 0)'
-          ? iframeStyles.backgroundColor
-          : parentRootStyles.backgroundColor,
-    });
-
-    const root = document.documentElement;
-    for (const propertyName of parentRootStyles) {
-      if (propertyName.startsWith('--')) {
-        root.style.setProperty(propertyName, parentRootStyles.getPropertyValue(propertyName));
-      }
-    }
-  } catch (error) {
-    // Eltérő domainről beágyazott iframe esetén a böngésző nem engedi
-    // a szülőoldal stílusainak közvetlen kiolvasását. Ilyenkor postMessage
-    // segítségével adhatók át az engedélyezett stílusértékek.
-  }
-}
-
 function notifyParentAboutHeight() {
   const height = document.documentElement.scrollHeight;
   window.parent?.postMessage(
@@ -313,15 +263,9 @@ function notifyParentAboutHeight() {
   );
 }
 
-window.addEventListener('message', (event) => {
-  if (event.data?.type !== 'hogwarts-year-calculator:theme') return;
-  applyHostStyles(event.data.styles);
-});
-
 birthDateInput.addEventListener('input', calculate);
 schoolYearInput.addEventListener('input', calculate);
 
-importHostStylesWhenPossible();
 calculate();
 loadJsonData();
 
