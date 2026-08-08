@@ -10,36 +10,20 @@ const FILTERS = [
   { id: "adult", label: "Felnőtt karakterek", type: "stage" }
 ];
 
-const LINK_TYPES = [
-  { key: "profile", label: "Profil" },
-  { key: "history", label: "Előtörténet" },
-  { key: "relations", label: "Kapcsolatok" },
-  { key: "treasure", label: "Kincses" },
-  { key: "games", label: "Játéklista" }
-];
-
 const state = {
   allCharacters: [],
   visibleCharacters: [],
   activeFilter: "all",
-  selectedId: null,
   points: []
 };
 
 const elements = {
-  app: document.querySelector("#constellationApp"),
   filterBar: document.querySelector("#filterBar"),
   visibleCount: document.querySelector("#visibleCount"),
   sky: document.querySelector("#constellationSky"),
   lines: document.querySelector("#constellationLines"),
   characterField: document.querySelector("#characterField"),
-  emptyState: document.querySelector("#emptyState"),
-  detailPlaceholder: document.querySelector("#detailPlaceholder"),
-  detailCard: document.querySelector("#detailCard"),
-  characterImage: document.querySelector("#characterImage"),
-  characterName: document.querySelector("#characterName"),
-  characterGroups: document.querySelector("#characterGroups"),
-  characterLinks: document.querySelector("#characterLinks")
+  emptyState: document.querySelector("#emptyState")
 };
 
 initialize();
@@ -79,6 +63,9 @@ function isValidCharacter(character) {
 function normalizeCharacter(character, index) {
   const era = String(character.era || "newgen").trim().toLowerCase();
   const stage = String(character.stage || "adult").trim().toLowerCase();
+  const profile = typeof character.links?.profile === "string"
+    ? character.links.profile.trim()
+    : "";
 
   return {
     id: String(character.id || index + 1),
@@ -86,12 +73,10 @@ function normalizeCharacter(character, index) {
     image: String(character.image || "images/placeholder-01.svg").trim(),
     groups: Array.isArray(character.groups)
       ? character.groups.map(String).map((value) => value.trim()).filter(Boolean)
-      : [String(character.group || "").trim()].filter(Boolean),
+      : [],
     era: ["newgen", "oldgen", "retired"].includes(era) ? era : "newgen",
     stage: ["hogwarts", "higher", "adult"].includes(stage) ? stage : "adult",
-    links: character.links && typeof character.links === "object"
-      ? character.links
-      : {}
+    profile
   };
 }
 
@@ -99,7 +84,6 @@ function applyFilter(filterId, { initial = false } = {}) {
   const filter = FILTERS.find((item) => item.id === filterId) || FILTERS[0];
 
   state.activeFilter = filter.id;
-  state.selectedId = null;
 
   const matches = filter.type === "all"
     ? [...state.allCharacters]
@@ -110,7 +94,6 @@ function applyFilter(filterId, { initial = false } = {}) {
 
   renderFilters();
   renderConstellation({ initial });
-  clearDetail();
   updateCount();
 
   window.requestAnimationFrame(reportHeight);
@@ -165,20 +148,32 @@ function renderConstellation({ initial = false } = {}) {
 
   state.visibleCharacters.forEach((character, index) => {
     const point = state.points[index];
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "character-star";
-    button.dataset.id = character.id;
-    button.dataset.era = character.era;
-    button.dataset.stage = character.stage;
-    button.style.setProperty("--x", `${point.x}%`);
-    button.style.setProperty("--y", `${point.y}%`);
-    button.style.setProperty("--delay", `${-(Math.random() * 5).toFixed(2)}s`);
-    button.style.setProperty("--duration", `${(4.8 + Math.random() * 2.8).toFixed(2)}s`);
-    button.style.setProperty("--drift-x", `${(-3 + Math.random() * 6).toFixed(1)}px`);
-    button.style.setProperty("--drift-y", `${(-3 + Math.random() * 6).toFixed(1)}px`);
-    button.style.setProperty("--arrival-delay", `${initial ? 30 + index * 55 : index * 45}ms`);
-    button.setAttribute("aria-label", character.name);
+    const star = character.profile
+      ? document.createElement("a")
+      : document.createElement("span");
+
+    star.className = `character-star${character.profile ? "" : " is-disabled"}`;
+    star.dataset.id = character.id;
+    star.dataset.era = character.era;
+    star.dataset.stage = character.stage;
+    star.dataset.tooltipSide = point.x > 62 ? "left" : "right";
+    star.style.setProperty("--x", `${point.x}%`);
+    star.style.setProperty("--y", `${point.y}%`);
+    star.style.setProperty("--delay", `${-(Math.random() * 5).toFixed(2)}s`);
+    star.style.setProperty("--duration", `${(4.8 + Math.random() * 2.8).toFixed(2)}s`);
+    star.style.setProperty("--drift-x", `${(-3 + Math.random() * 6).toFixed(1)}px`);
+    star.style.setProperty("--drift-y", `${(-3 + Math.random() * 6).toFixed(1)}px`);
+    star.style.setProperty("--arrival-delay", `${initial ? 30 + index * 55 : index * 45}ms`);
+
+    if (character.profile) {
+      star.href = character.profile;
+      star.target = "_blank";
+      star.rel = "noopener noreferrer";
+      star.setAttribute("aria-label", `${character.name} profiljának megnyitása új lapon`);
+    } else {
+      star.setAttribute("aria-label", `${character.name} – nincs profil-link megadva`);
+      star.setAttribute("aria-disabled", "true");
+    }
 
     const halo = document.createElement("span");
     halo.className = "character-star__halo";
@@ -196,10 +191,24 @@ function renderConstellation({ initial = false } = {}) {
     label.textContent = character.name;
 
     halo.appendChild(image);
-    button.append(halo, label);
-    button.addEventListener("click", () => selectCharacter(character.id));
+    star.append(halo, label);
 
-    elements.characterField.appendChild(button);
+    if (character.groups.length) {
+      const tooltip = document.createElement("span");
+      tooltip.className = "character-star__tooltip";
+      tooltip.setAttribute("role", "tooltip");
+
+      character.groups.forEach((group) => {
+        const item = document.createElement("span");
+        item.className = "character-star__tooltip-item";
+        item.textContent = group;
+        tooltip.appendChild(item);
+      });
+
+      star.appendChild(tooltip);
+    }
+
+    elements.characterField.appendChild(star);
   });
 
   renderLines();
@@ -246,83 +255,8 @@ function buildConnections(points) {
   return [...edges].map((edge) => edge.split(":").map(Number));
 }
 
-function selectCharacter(id) {
-  const character = state.visibleCharacters.find((item) => item.id === id);
-  if (!character) return;
-
-  state.selectedId = id;
-
-  [...elements.characterField.querySelectorAll(".character-star")].forEach((button) => {
-    const isSelected = button.dataset.id === id;
-    button.classList.toggle("is-selected", isSelected);
-    button.setAttribute("aria-pressed", String(isSelected));
-  });
-
-  renderDetail(character);
-}
-
-function renderDetail(character) {
-  elements.detailCard.classList.remove("is-entering");
-  void elements.detailCard.offsetWidth;
-
-  elements.characterImage.src = character.image;
-  elements.characterImage.alt = character.name;
-  elements.characterImage.onerror = () => {
-    elements.characterImage.onerror = null;
-    elements.characterImage.src = "images/placeholder-01.svg";
-  };
-
-  elements.characterName.textContent = character.name;
-  renderGroups(character.groups);
-  renderLinks(character.links);
-
-  elements.detailPlaceholder.hidden = true;
-  elements.detailCard.hidden = false;
-  elements.detailCard.classList.add("is-entering");
-
-  window.requestAnimationFrame(reportHeight);
-}
-
-function renderGroups(groups) {
-  elements.characterGroups.replaceChildren();
-
-  groups.forEach((group) => {
-    const chip = document.createElement("span");
-    chip.textContent = group;
-    elements.characterGroups.appendChild(chip);
-  });
-
-  elements.characterGroups.hidden = groups.length === 0;
-}
-
-function renderLinks(links) {
-  elements.characterLinks.replaceChildren();
-
-  LINK_TYPES.forEach(({ key, label }) => {
-    const url = typeof links?.[key] === "string" ? links[key].trim() : "";
-    if (!url) return;
-
-    const anchor = document.createElement("a");
-    anchor.className = "character-link";
-    anchor.href = url;
-    anchor.target = "_blank";
-    anchor.rel = "noopener noreferrer";
-    anchor.textContent = label;
-    elements.characterLinks.appendChild(anchor);
-  });
-
-  elements.characterLinks.hidden = elements.characterLinks.childElementCount === 0;
-}
-
-function clearDetail() {
-  elements.detailCard.hidden = true;
-  elements.detailCard.classList.remove("is-entering");
-  elements.detailPlaceholder.hidden = false;
-}
-
 function updateCount() {
-  const total = state.visibleCharacters.length;
-  elements.visibleCount.textContent = `${total} karakter`;
+  elements.visibleCount.textContent = `${state.visibleCharacters.length} karakter`;
 }
 
 function generateConstellationPoints(count) {
@@ -332,8 +266,8 @@ function generateConstellationPoints(count) {
   const minDistance = Math.max(13, 25 - count * 1.35);
   const minX = 11;
   const maxX = 89;
-  const minY = 13;
-  const maxY = 87;
+  const minY = 14;
+  const maxY = 86;
 
   for (let index = 0; index < count; index += 1) {
     let candidate = null;
@@ -398,7 +332,6 @@ function showLoadError() {
     message.textContent = "A characters.json fájl nem tölthető be vagy hibás.";
   }
   elements.emptyState.hidden = false;
-  clearDetail();
   reportHeight();
 }
 
