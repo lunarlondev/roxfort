@@ -87,7 +87,6 @@
       "Mágiaügyi Minisztérium",
       "OMEN",
       "Legilimentor",
-      "Ilvermorny",
       "Horned Serpent",
       "Félvér"
     ],
@@ -107,9 +106,9 @@
     "name": "Heranoush Fletcher",
     "image": "images/hera.jpg",
     "groups": [
-      "Mardekár",
       "Hatodév",
       "Őrző",
+	  "Legilimentor",
       "Félvér"
     ],
     "era": "newgen",
@@ -130,9 +129,8 @@
     "name": "Ophelia Langley",
     "image": "images/oph.jpg",
     "groups": [
-      "Roxfort",
-      "Hugrabug",
-      "Griffendél Godrik Akadémia"
+      "Griffendél Godrik Akadémia",
+	  "Mugli születésű"
     ],
     "era": "newgen",
     "stage": "higher",
@@ -140,8 +138,7 @@
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=2976"
     },
     "schools": [
-      "hogwarts",
-      "other"
+      "hogwarts"
     ],
     "houses": [
       "hufflepuff"
@@ -154,12 +151,11 @@
     "image": "images/hagen.jpg",
     "groups": [
       "Durmstrang",
-      "Roxfort",
-      "Mardekár",
       "Alkimista",
       "Medimágus",
       "Ex-hírnök",
-      "Tanár"
+      "Tanár",
+	  "Aranyvérű"
     ],
     "era": "oldgen",
     "stage": "adult",
@@ -180,7 +176,6 @@
     "name": "Élodie Roethlisberger",
     "image": "images/elod.jpg",
     "groups": [
-      "Beauxbatons",
       "Mandragóra Gyógyítóképző Ispotály",
       "Botanika specialista",
       "Negyedvér óriás"
@@ -191,8 +186,7 @@
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3028"
     },
     "schools": [
-      "beauxbatons",
-      "other"
+      "beauxbatons"
     ],
     "houses": [],
     "gender": "female"
@@ -202,10 +196,9 @@
     "name": "Aubrey Chaisty",
     "image": "images/aub.jpg",
     "groups": [
-      "Roxfort",
-      "Hugrabug",
       "MMM Magasiskola",
-      "Énekes"
+      "Énekes",
+	  "Mugli születésű"
     ],
     "era": "oldgen",
     "stage": "adult",
@@ -214,7 +207,6 @@
     },
     "schools": [
       "hogwarts",
-      "other"
     ],
     "houses": [
       "hufflepuff"
@@ -229,7 +221,8 @@
       "Mágiaügyi Minisztérium",
       "Unspeakable",
       "Tanár",
-      "Rúnaspecialista"
+      "Rúnaspecialista",
+	  "Aranyvérű"
     ],
     "era": "oldgen",
     "stage": "adult",
@@ -247,7 +240,8 @@
     "name": "Katriona Edevane",
     "image": "images/kat.jpg",
     "groups": [
-      "NJK"
+      "NJK",
+	  "Félvér"
     ],
     "era": "retired",
     "stage": "adult",
@@ -255,9 +249,11 @@
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=2133"
     },
     "schools": [
-      "other"
+      "hogwarts"
     ],
-    "houses": [],
+    "houses": [
+	"slytherin"
+	],
     "gender": "female"
   },
   {
@@ -265,7 +261,9 @@
     "name": "Lathan J. Quinton",
     "image": "images/lathan.png",
     "groups": [
-      "NJK"
+      "NJK",
+	  "Mágiaügyi Minisztérium",
+	  "Aranyvérű"
     ],
     "era": "retired",
     "stage": "adult",
@@ -273,9 +271,11 @@
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=2994"
     },
     "schools": [
-      "other"
+      "hogwarts"
     ],
-    "houses": [],
+    "houses": [
+	"ravenclaw"
+	],
     "gender": "male"
   },
   {
@@ -283,8 +283,8 @@
     "name": "Philomene Flamel",
     "image": "images/phil.png",
     "groups": [
-      "Beauxbatons",
-      "Újságíró"
+      "Újságíró",
+	  "Aranyvérű"
     ],
     "era": "retired",
     "stage": "adult",
@@ -302,10 +302,9 @@
     "name": "Clarice Edevane",
     "image": "images/clar.jpg",
     "groups": [
-      "Roxfort",
-      "Mardekár",
-      "HolyHead Harpies",
-      "Fogó"
+      "Holyhead Harpies",
+      "Fogó",
+	  "Félvér"
     ],
     "era": "retired",
     "stage": "adult",
@@ -325,13 +324,10 @@
     "name": "Winthrop Hardy",
     "image": "images/winthrop.jpg",
     "groups": [
-      "Roxfort",
-      "Mardekár",
       "MMM Magasiskola",
       "Operaénekes",
       "Látó",
-      "Animágus",
-      "Sötét Varázsló"
+      "Animágus"
     ],
     "era": "retired",
     "stage": "adult",
@@ -339,8 +335,7 @@
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=2322"
     },
     "schools": [
-      "hogwarts",
-      "other"
+      "hogwarts"
     ],
     "houses": [
       "slytherin"
