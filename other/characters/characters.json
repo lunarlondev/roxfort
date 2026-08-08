@@ -4,7 +4,8 @@
     "name": "Elegy Dreadmoor",
     "image": "images/elegy.jpg",
     "groups": [
-      "Sötét Varázsló"
+      "Griffendél Godrik Akadémia",
+	  "Sötét Varázsló"
     ],
     "era": "newgen",
     "stage": "adult",
@@ -21,9 +22,10 @@
     "name": "Tekla Orlyk",
     "image": "images/tekla.jpg",
     "groups": [
-      "Griffendél"
+      "Griffendél",
+	  "Ötödév"
     ],
-    "era": "oldgen",
+    "era": "newgen",
     "stage": "hogwarts",
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=7939",
@@ -38,10 +40,12 @@
     "name": "Solace Barbon",
     "image": "images/solace.jpg",
     "groups": [
-      "Griffendél Godrik Akadémia"
+      "Ilvermorny",
+	  "Wampus",
+	  "Trimágus Bajnok"
     ],
     "era": "newgen",
-    "stage": "higher",
+    "stage": "adult",
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3027",
       "history": "https://www.roxfort.frpg.hu/index.php/topic,20373.msg126118.html#msg126118",
@@ -55,10 +59,12 @@
     "name": "Solange Laveau",
     "image": "images/solange.jpg",
     "groups": [
-      "Noctua"
+	"Ilvermorny",
+	"Pukwudgie",
+	"Noctua Tenebrosa"
     ],
     "era": "newgen",
-    "stage": "adult",
+    "stage": "higher",
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=7905",
       "history": "https://www.roxfort.frpg.hu/index.php/topic,21211.msg129088/topicseen.html#msg129088",
@@ -72,7 +78,10 @@
     "name": "Vianne M. Gardner",
     "image": "images/vianne.jpg",
     "groups": [
-      "Boszorkány"
+      "Mágiaügyi Minisztérium",
+	  "Legilimentor",
+	  "Ilvermorny",
+	  "Horned Serpent"
     ],
     "era": "newgen",
     "stage": "adult",
