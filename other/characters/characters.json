@@ -5,61 +5,79 @@
     "image": "images/elegy.jpg",
     "groups": [
       "Griffendél Godrik Akadémia",
-	  "Sötét Varázsló",
-	  "Aranyvérű"
+      "Aranyvérű"
     ],
     "era": "newgen",
     "stage": "higher",
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=7944"
-    }
+    },
+    "schools": [
+      "other"
+    ],
+    "houses": [],
+    "gender": "female"
   },
   {
     "id": "002",
     "name": "Tekla Orlyk",
     "image": "images/tekla.jpg",
     "groups": [
-      "Griffendél",
-	  "Ötödév",
-	  "Aranyvérű"
+      "Ötödév",
+      "Aranyvérű"
     ],
     "era": "newgen",
-    "stage": "hogwarts",
+    "stage": "student",
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=7939"
-    }
+    },
+    "schools": [
+      "Roxfort"
+    ],
+    "houses": [
+      "Griffendél"
+    ],
+    "gender": "female"
   },
   {
     "id": "003",
     "name": "Solace Barbon",
     "image": "images/solace.jpg",
     "groups": [
-      "Ilvermorny",
-	  "Wampus",
-	  "Trimágus Bajnok",
-	  "Félvér"
+      "Wampus",
+      "Trimágus Bajnok",
+      "Félvér"
     ],
     "era": "newgen",
     "stage": "adult",
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3027"
-    }
+    },
+    "schools": [
+      "Ilvermorny"
+    ],
+    "houses": [],
+    "gender": "male"
   },
   {
     "id": "004",
     "name": "Solange Laveau",
     "image": "images/solange.jpg",
     "groups": [
-	"Ilvermorny",
-	"Pukwudgie",
-	"Voodoo gyakorló",
-	"Aranyvérű"
+      "Pukwudgie",
+      "Voodoo gyakorló",
+      "Aranyvérű"
     ],
     "era": "newgen",
     "stage": "higher",
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=7905"
-    }
+    },
+    "schools": [
+      "Ilvermorny"
+    ],
+    "houses": [],
+    "gender": "female"
   },
   {
     "id": "005",
@@ -67,17 +85,22 @@
     "image": "images/vianne.jpg",
     "groups": [
       "Mágiaügyi Minisztérium",
-	  "OMEN",
-	  "Legilimentor",
-	  "Ilvermorny",
-	  "Horned Serpent",
-	  "Félvér"
+      "OMEN",
+      "Legilimentor",
+      "Ilvermorny",
+      "Horned Serpent",
+      "Félvér"
     ],
     "era": "newgen",
     "stage": "adult",
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3041"
-    }
+    },
+    "schools": [
+      "ilvermorny"
+    ],
+    "houses": [],
+    "gender": "female"
   },
   {
     "id": "006",
@@ -85,49 +108,72 @@
     "image": "images/hera.jpg",
     "groups": [
       "Mardekár",
-	  "Hatodév",
-	  "Őrző",
-	  "Félvér"
+      "Hatodév",
+      "Őrző",
+      "Félvér"
     ],
     "era": "newgen",
-    "stage": "hogwarts",
+    "stage": "student",
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3002"
-    }
+    },
+    "schools": [
+      "hogwarts"
+    ],
+    "houses": [
+      "slytherin"
+    ],
+    "gender": "female"
   },
-    {
+  {
     "id": "007",
     "name": "Ophelia Langley",
     "image": "images/oph.jpg",
     "groups": [
-	"Roxfort",
+      "Roxfort",
       "Hugrabug",
-	  "Griffendél Godrik Akadémia"
+      "Griffendél Godrik Akadémia"
     ],
     "era": "newgen",
     "stage": "higher",
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=2976"
-    }
+    },
+    "schools": [
+      "hogwarts",
+      "other"
+    ],
+    "houses": [
+      "hufflepuff"
+    ],
+    "gender": "female"
   },
-      {
+  {
     "id": "008",
     "name": "Hagen Romanov",
     "image": "images/hagen.jpg",
     "groups": [
       "Durmstrang",
-	  "Roxfort",
-	  "Mardekár",
-	  "Alkimista",
-	  "Medimágus",
-	  "Ex-hírnök",
-	  "Tanár"
+      "Roxfort",
+      "Mardekár",
+      "Alkimista",
+      "Medimágus",
+      "Ex-hírnök",
+      "Tanár"
     ],
     "era": "oldgen",
     "stage": "adult",
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=2273"
-    }
+    },
+    "schools": [
+      "hogwarts",
+      "other"
+    ],
+    "houses": [
+      "slytherin"
+    ],
+    "gender": "male"
   },
   {
     "id": "009",
@@ -135,15 +181,21 @@
     "image": "images/elod.jpg",
     "groups": [
       "Beauxbatons",
-	  "Mandragóra Gyógyítóképző Ispotály",
-	  "Botanika specialista",
-	  "Negyedvér óriás"
+      "Mandragóra Gyógyítóképző Ispotály",
+      "Botanika specialista",
+      "Negyedvér óriás"
     ],
     "era": "newgen",
     "stage": "higher",
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3028"
-    }
+    },
+    "schools": [
+      "beauxbatons",
+      "other"
+    ],
+    "houses": [],
+    "gender": "female"
   },
   {
     "id": "010",
@@ -151,105 +203,148 @@
     "image": "images/aub.jpg",
     "groups": [
       "Roxfort",
-	  "Hugrabug",
-	  "MMM Magasiskola",
-	  "Énekes"
+      "Hugrabug",
+      "MMM Magasiskola",
+      "Énekes"
     ],
     "era": "oldgen",
     "stage": "adult",
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=1503"
-    }
+    },
+    "schools": [
+      "hogwarts",
+      "other"
+    ],
+    "houses": [
+      "hufflepuff"
+    ],
+    "gender": "female"
   },
   {
     "id": "012",
     "name": "Jimmy Kipp Quinton",
     "image": "images/kipp.jpg",
     "groups": [
-	"Mágiaügyi Minisztérium",
-	"Unspeakable",
+      "Mágiaügyi Minisztérium",
+      "Unspeakable",
       "Tanár",
-	  "Rúnaspecialista"
+      "Rúnaspecialista"
     ],
     "era": "oldgen",
     "stage": "adult",
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=2133"
-    }
+    },
+    "schools": [
+      "other"
+    ],
+    "houses": [],
+    "gender": "male"
   },
   {
     "id": "013",
     "name": "Katriona Edevane",
     "image": "images/kat.jpg",
     "groups": [
-	"NJK"
+      "NJK"
     ],
     "era": "retired",
     "stage": "adult",
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=2133"
-    }
+    },
+    "schools": [
+      "other"
+    ],
+    "houses": [],
+    "gender": "female"
   },
   {
     "id": "014",
     "name": "Lathan J. Quinton",
     "image": "images/lathan.png",
     "groups": [
-	"NJK"
+      "NJK"
     ],
     "era": "retired",
     "stage": "adult",
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=2994"
-    }
+    },
+    "schools": [
+      "other"
+    ],
+    "houses": [],
+    "gender": "male"
   },
   {
     "id": "015",
     "name": "Philomene Flamel",
     "image": "images/phil.png",
     "groups": [
-	"Beauxbatons",
-	"Újságíró"
+      "Beauxbatons",
+      "Újságíró"
     ],
     "era": "retired",
     "stage": "adult",
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3033"
-    }
+    },
+    "schools": [
+      "beauxbatons"
+    ],
+    "houses": [],
+    "gender": "female"
   },
   {
     "id": "016",
     "name": "Clarice Edevane",
     "image": "images/clar.jpg",
     "groups": [
-	"Roxfort",
-	"Mardekár",
-	"HolyHead Harpies",
-	"Fogó"
+      "Roxfort",
+      "Mardekár",
+      "HolyHead Harpies",
+      "Fogó"
     ],
     "era": "retired",
     "stage": "adult",
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=1844"
-    }
+    },
+    "schools": [
+      "hogwarts"
+    ],
+    "houses": [
+      "slytherin"
+    ],
+    "gender": "female"
   },
   {
     "id": "017",
     "name": "Winthrop Hardy",
     "image": "images/winthrop.jpg",
     "groups": [
-	"Roxfort",
-	"Mardekár",
-	"MMM Magasiskola",
-	"Operaénekes",
-	"Látó",
-	"Animágus",
-	"Sötét Varázsló"
+      "Roxfort",
+      "Mardekár",
+      "MMM Magasiskola",
+      "Operaénekes",
+      "Látó",
+      "Animágus",
+      "Sötét Varázsló"
     ],
     "era": "retired",
     "stage": "adult",
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=2322"
-    }
+    },
+    "schools": [
+      "hogwarts",
+      "other"
+    ],
+    "houses": [
+      "slytherin"
+    ],
+    "gender": "male"
   }
 ]

@@ -1,20 +1,66 @@
 "use strict";
 
-const FILTERS = [
-  { id: "all", label: "Mind", type: "all" },
-  { id: "newgen", label: "Newgen", type: "era" },
-  { id: "oldgen", label: "Oldgen", type: "era" },
-  { id: "retired", label: "Futottak még", type: "era" },
-  { id: "hogwarts", label: "Roxfortos diákok", type: "stage" },
-  { id: "higher", label: "Felsőoktatásban tanulók", type: "stage" },
-  { id: "adult", label: "Nem tanuló", type: "stage" }
+const FILTER_ROWS = [
+  {
+    type: "era",
+    label: "Generáció",
+    options: [
+      { id: "all", label: "Mind" },
+      { id: "oldgen", label: "Oldgen" },
+      { id: "newgen", label: "Newgen" },
+      { id: "retired", label: "Futottak még" }
+    ]
+  },
+  {
+    type: "stage",
+    label: "Tanulmányok",
+    options: [
+      { id: "student", label: "Diákok" },
+      { id: "higher", label: "Egyetemisták" },
+      { id: "adult", label: "Egyéb" }
+    ]
+  },
+  {
+    type: "school",
+    label: "Iskola",
+    options: [
+      { id: "hogwarts", label: "Roxfort" },
+      { id: "ilvermorny", label: "Ilvermorny" },
+      { id: "beauxbatons", label: "Beauxbatons" },
+      { id: "other", label: "Egyéb" }
+    ]
+  },
+  {
+    type: "house",
+    label: "Roxforti ház",
+    options: [
+      { id: "gryffindor", label: "Griffendél" },
+      { id: "ravenclaw", label: "Hollóhát" },
+      { id: "hufflepuff", label: "Hugrabug" },
+      { id: "slytherin", label: "Mardekár" }
+    ]
+  },
+  {
+    type: "gender",
+    label: "Nem",
+    options: [
+      { id: "male", label: "Férfi" },
+      { id: "female", label: "Nő" },
+      { id: "other", label: "Egyéb" }
+    ]
+  }
 ];
 
 const state = {
   allCharacters: [],
   visibleCharacters: [],
-  activeEra: "newgen",
-  activeStage: null,
+  activeFilters: {
+    era: "newgen",
+    stage: null,
+    school: null,
+    house: null,
+    gender: null
+  },
   points: []
 };
 
@@ -63,7 +109,9 @@ function isValidCharacter(character) {
 
 function normalizeCharacter(character, index) {
   const era = String(character.era || "newgen").trim().toLowerCase();
-  const stage = String(character.stage || "adult").trim().toLowerCase();
+  const rawStage = String(character.stage || "adult").trim().toLowerCase();
+  const stage = rawStage === "hogwarts" ? "student" : rawStage;
+  const gender = String(character.gender || "other").trim().toLowerCase();
   const profile = typeof character.links?.profile === "string"
     ? character.links.profile.trim()
     : "";
@@ -72,37 +120,44 @@ function normalizeCharacter(character, index) {
     id: String(character.id || index + 1),
     name: String(character.name || "Névtelen karakter").trim(),
     image: String(character.image || "images/placeholder-01.svg").trim(),
-    groups: Array.isArray(character.groups)
-      ? character.groups.map(String).map((value) => value.trim()).filter(Boolean)
-      : [],
+    groups: normalizeList(character.groups),
     era: ["newgen", "oldgen", "retired"].includes(era) ? era : "newgen",
-    stage: ["hogwarts", "higher", "adult"].includes(stage) ? stage : "adult",
+    stage: ["student", "higher", "adult"].includes(stage) ? stage : "adult",
+    schools: normalizeAllowedList(character.schools, ["hogwarts", "ilvermorny", "beauxbatons", "other"]),
+    houses: normalizeAllowedList(character.houses, ["gryffindor", "ravenclaw", "hufflepuff", "slytherin"]),
+    gender: ["male", "female", "other"].includes(gender) ? gender : "other",
     profile
   };
 }
 
-function applyFilter(filterId) {
-  const filter = FILTERS.find((item) => item.id === filterId);
-  if (!filter) return;
+function normalizeList(value) {
+  return Array.isArray(value)
+    ? value.map(String).map((item) => item.trim()).filter(Boolean)
+    : [];
+}
 
-  if (filter.type === "all") {
-    state.activeEra = null;
-    state.activeStage = null;
-  } else if (filter.type === "era") {
-    state.activeEra = filter.id;
-  } else if (filter.type === "stage") {
-    state.activeStage = state.activeStage === filter.id ? null : filter.id;
+function normalizeAllowedList(value, allowed) {
+  return normalizeList(value)
+    .map((item) => item.toLowerCase())
+    .filter((item) => allowed.includes(item));
+}
+
+function applyFilter(type, filterId) {
+  if (!(type in state.activeFilters)) return;
+
+  if (type === "era" && filterId === "all") {
+    state.activeFilters.era = null;
+  } else {
+    state.activeFilters[type] = state.activeFilters[type] === filterId
+      ? null
+      : filterId;
   }
 
   applyFilters();
 }
 
 function applyFilters({ initial = false } = {}) {
-  const matches = state.allCharacters.filter((character) => {
-    const eraMatches = !state.activeEra || character.era === state.activeEra;
-    const stageMatches = !state.activeStage || character.stage === state.activeStage;
-    return eraMatches && stageMatches;
-  });
+  const matches = state.allCharacters.filter((character) => characterMatches(character));
 
   state.visibleCharacters = shuffle(matches);
   state.points = generateConstellationPoints(state.visibleCharacters.length);
@@ -114,49 +169,63 @@ function applyFilters({ initial = false } = {}) {
   window.requestAnimationFrame(reportHeight);
 }
 
+function characterMatches(character, filters = state.activeFilters) {
+  if (filters.era && character.era !== filters.era) return false;
+  if (filters.stage && character.stage !== filters.stage) return false;
+  if (filters.school && !character.schools.includes(filters.school)) return false;
+  if (filters.house && !character.houses.includes(filters.house)) return false;
+  if (filters.gender && character.gender !== filters.gender) return false;
+  return true;
+}
+
 function renderFilters() {
   elements.filterBar.replaceChildren();
 
-  FILTERS.forEach((filter, index) => {
-    if (index === 4) {
-      const divider = document.createElement("span");
-      divider.className = "filters__divider";
-      divider.setAttribute("aria-hidden", "true");
-      elements.filterBar.appendChild(divider);
-    }
+  FILTER_ROWS.forEach((row) => {
+    const rowElement = document.createElement("div");
+    rowElement.className = `filters__row filters__row--${row.type}`;
+    rowElement.setAttribute("role", "group");
+    rowElement.setAttribute("aria-label", row.label);
 
-    const count = state.allCharacters.filter((character) => {
-      if (filter.type === "all") return true;
-      if (filter.type === "era") {
-        return character.era === filter.id
-          && (!state.activeStage || character.stage === state.activeStage);
-      }
-      return character.stage === filter.id
-        && (!state.activeEra || character.era === state.activeEra);
-    }).length;
+    row.options.forEach((filter) => {
+      const isAll = row.type === "era" && filter.id === "all";
+      const isActive = isAll
+        ? !state.activeFilters.era
+        : state.activeFilters[row.type] === filter.id;
 
-    const isActive = filter.type === "all"
-      ? !state.activeEra && !state.activeStage
-      : filter.type === "era"
-        ? state.activeEra === filter.id
-        : state.activeStage === filter.id;
+      const count = countForFacet(row.type, filter.id);
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = `filter-button${isActive ? " is-active" : ""}`;
+      button.setAttribute("aria-pressed", String(isActive));
+      button.dataset.filterType = row.type;
+      button.dataset.filter = filter.id;
 
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = `filter-button${isActive ? " is-active" : ""}`;
-    button.setAttribute("aria-pressed", String(isActive));
-    button.dataset.filter = filter.id;
+      const text = document.createElement("span");
+      text.textContent = filter.label;
 
-    const text = document.createElement("span");
-    text.textContent = filter.label;
+      const countSpan = document.createElement("small");
+      countSpan.textContent = String(count);
 
-    const countSpan = document.createElement("small");
-    countSpan.textContent = String(count);
+      button.append(text, countSpan);
+      button.addEventListener("click", () => applyFilter(row.type, filter.id));
+      rowElement.appendChild(button);
+    });
 
-    button.append(text, countSpan);
-    button.addEventListener("click", () => applyFilter(filter.id));
-    elements.filterBar.appendChild(button);
+    elements.filterBar.appendChild(rowElement);
   });
+}
+
+function countForFacet(type, filterId) {
+  const filters = { ...state.activeFilters };
+
+  if (type === "era" && filterId === "all") {
+    filters.era = null;
+  } else {
+    filters[type] = filterId;
+  }
+
+  return state.allCharacters.filter((character) => characterMatches(character, filters)).length;
 }
 
 function renderConstellation({ initial = false } = {}) {

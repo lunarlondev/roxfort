@@ -8,74 +8,81 @@ Fájlok:
 - characters.json
 - images/...
 
-1. KARAKTEREK
--------------
-A characters.json egy karaktere:
+1. SZŰRŐK
+----------
+A szűrők öt külön sorban jelennek meg, és a különböző sorok egymással kombinálhatók.
+Alapállapotban a Newgen aktív.
+
+1. sor – generáció:
+- Mind
+- Oldgen
+- Newgen
+- Futottak még
+
+2. sor – tanulmányi státusz (`stage`):
+- `student` = Diákok
+- `higher` = Egyetemisták
+- `adult` = Egyéb
+
+3. sor – iskola (`schools`):
+- `hogwarts` = Roxfort
+- `ilvermorny` = Ilvermorny
+- `beauxbatons` = Beauxbatons
+- `other` = Egyéb
+
+4. sor – roxforti ház (`houses`):
+- `gryffindor` = Griffendél
+- `ravenclaw` = Hollóhát
+- `hufflepuff` = Hugrabug
+- `slytherin` = Mardekár
+
+5. sor – nem (`gender`):
+- `male` = Férfi
+- `female` = Nő
+- `other` = Egyéb
+
+Egy soron belül egyszerre legfeljebb egy szűrő aktív. Az aktív gombra újra kattintva
+az adott sor szűrése kikapcsolható. A „Mind” kizárólag a generációs szűrést oldja fel.
+
+Példa: Newgen + Egyetemisták + Ilvermorny + Nő egyszerre is használható.
+
+2. KARAKTEREK JSON-JA
+----------------------
+Példa:
 
 {
   "id": "001",
   "name": "Elegy Dreadmoor",
   "image": "images/elegy.jpg",
-  "groups": [
-    "Sötét Varázsló",
-    "rövid fontos információ",
-    "másik rövid információ"
-  ],
+  "groups": ["Sötét Varázsló", "Aranyvérű"],
   "era": "newgen",
-  "stage": "adult",
+  "stage": "higher",
+  "schools": ["other"],
+  "houses": [],
+  "gender": "female",
   "links": {
-    "profile": "https://...",
-    "history": "https://...",
-    "relations": null,
-    "treasure": null,
-    "games": null
+    "profile": "https://..."
   }
 }
 
-A konstelláció nézetben jelenleg kizárólag a links.profile mező használatos.
-Karakterre kattintva ez a profil-link nyílik meg új böngészőfülön.
+A `schools` és `houses` tömb, tehát egy karakter több releváns kategóriához is
+tartozhat. Például egy Roxfortot és más intézményt is megjárt karakter:
 
-A groups egy lista rövid, fontos információkkal. Ezek a karakter portréja fölé
-húzva jelennek meg egy kis tooltipben. A lista tetszőleges számú rövid elemet
-tartalmazhat.
+"schools": ["hogwarts", "other"]
 
-Példa:
-"groups": ["Mardekár", "16 éves", "született legilimentor"]
-
-2. SZŰRŐK
----------
-era:
-- "newgen"
-- "oldgen"
-- "retired"
-
-stage:
-- "hogwarts" = Roxfortos diák
-- "higher"   = felsőoktatásban tanul
-- "adult"    = nem tanuló karakter
-
-Alapállapotban a Newgen szűrő aktív.
-Az era és stage szűrők egyszerre használhatók, tehát például a Newgen +
-Roxfortos diákok kombináció csak a mindkét feltételnek megfelelő karaktereket mutatja.
-A Mind gomb minden szűrést töröl. Az aktív stage szűrőre újra kattintva az a
-szűrés kikapcsolható. Minden szűrőváltáskor a látható karakterek sorrendje és
-a konstelláció pozíciói újra randomizálódnak.
+A `groups` továbbra is csak a hover tooltip rövid információit tartalmazza;
+a szűrés nem ebből próbál következtetni.
 
 3. KONSTELLÁCIÓ
 ---------------
-A karakterek kör alakú portréként jelennek meg egy legfeljebb 550 px széles
-csillagmezőben. A rendszer minden kirajzoláskor új pozíciókat választ, majd a
-közeli pontokat csillagkép-vonalakkal összeköti.
-
-A portrék finoman lebegnek.
+A karakterek random sorrendben és random csillagképben jelennek meg. Minden
+szűrőváltás újrarendezi őket. A portrék finoman lebegnek.
 
 Hover / billentyűzetes fókusz:
-- megjelennek a character.groups elemei
+- megjelennek a `groups` elemei
 
 Kattintás:
-- a character.links.profile új böngészőfülön nyílik meg
-
-Nincs külön adatlap, alsó profilpanel vagy felugró ablak.
+- a `links.profile` új böngészőfülön nyílik meg
 
 4. HELYI MEGNYITÁS
 ------------------
@@ -88,17 +95,17 @@ http://localhost:8000
 
 5. IFRAME
 ---------
-Példa:
+A több szűrősor miatt érdemes nagyobb magasságot adni:
 
 <iframe
   src="https://SAJAT-CIMED/index.html"
   title="Karakterarchívum"
   width="100%"
-  height="540"
+  height="650"
   loading="lazy"
   style="border:0; background:transparent;"
   allowtransparency="true">
 </iframe>
 
-Az app postMessage-ben továbbra is elküldi a tartalom aktuális magasságát:
+Az app postMessage-ben továbbra is elküldi az aktuális tartalommagasságot:
 type: "character-roster-height"
