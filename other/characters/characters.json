@@ -5,16 +5,13 @@
     "image": "images/elegy.jpg",
     "groups": [
       "Griffendél Godrik Akadémia",
-	  "Sötét Varázsló"
+	  "Sötét Varázsló",
+	  "Aranyvérű"
     ],
     "era": "newgen",
     "stage": "higher",
     "links": {
-      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=7944",
-      "history": "https://www.roxfort.frpg.hu/index.php/topic,21392.msg129955.html#msg129955",
-      "relations": null,
-      "treasure": null,
-      "games": null
+      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=7944"
     }
   },
   {
@@ -23,16 +20,13 @@
     "image": "images/tekla.jpg",
     "groups": [
       "Griffendél",
-	  "Ötödév"
+	  "Ötödév",
+	  "Aranyvérű"
     ],
     "era": "newgen",
     "stage": "hogwarts",
     "links": {
-      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=7939",
-      "history": "https://www.roxfort.frpg.hu/index.php/topic,21366.msg129899.html#msg129899",
-      "relations": null,
-      "treasure": "https://www.roxfort.frpg.hu/index.php/board,1396.0.html",
-      "games": null
+      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=7939"
     }
   },
   {
@@ -42,16 +36,13 @@
     "groups": [
       "Ilvermorny",
 	  "Wampus",
-	  "Trimágus Bajnok"
+	  "Trimágus Bajnok",
+	  "Félvér"
     ],
     "era": "newgen",
     "stage": "adult",
     "links": {
-      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3027",
-      "history": "https://www.roxfort.frpg.hu/index.php/topic,20373.msg126118.html#msg126118",
-      "relations": "https://www.roxfort.frpg.hu/index.php/topic,21106.msg128703/topicseen.html#msg128703",
-      "treasure": "https://www.roxfort.frpg.hu/index.php/board,1337.0.html",
-      "games": "https://www.roxfort.frpg.hu/index.php/topic,20510.0.html"
+      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3027"
     }
   },
   {
@@ -61,16 +52,13 @@
     "groups": [
 	"Ilvermorny",
 	"Pukwudgie",
-	"Noctua Tenebrosa"
+	"Voodoo gyakorló",
+	"Aranyvérű"
     ],
     "era": "newgen",
     "stage": "higher",
     "links": {
-      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=7905",
-      "history": "https://www.roxfort.frpg.hu/index.php/topic,21211.msg129088/topicseen.html#msg129088",
-      "relations": "https://www.roxfort.frpg.hu/index.php/topic,21263.msg129246.html#msg129246",
-      "treasure": "https://www.roxfort.frpg.hu/index.php/board,1377.0.html",
-      "games": "https://www.roxfort.frpg.hu/index.php/topic,21311.0.html"
+      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=7905"
     }
   },
   {
@@ -79,18 +67,16 @@
     "image": "images/vianne.jpg",
     "groups": [
       "Mágiaügyi Minisztérium",
+	  "OMEN",
 	  "Legilimentor",
 	  "Ilvermorny",
-	  "Horned Serpent"
+	  "Horned Serpent",
+	  "Félvér"
     ],
     "era": "newgen",
     "stage": "adult",
     "links": {
-      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3041",
-      "history": "https://www.roxfort.frpg.hu/index.php/topic,20965.msg128462.html#msg128462",
-      "relations": "https://www.roxfort.frpg.hu/index.php/topic,21109.0.html",
-      "treasure": "https://www.roxfort.frpg.hu/index.php/board,1340.0.html",
-      "games": "https://www.roxfort.frpg.hu/index.php/topic,20538.0.html"
+      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3041"
     }
   },
   {
@@ -98,16 +84,97 @@
     "name": "Heranoush Fletcher",
     "image": "images/hera.jpg",
     "groups": [
-      "Mardekár"
+      "Mardekár",
+	  "Hatodév",
+	  "Őrző",
+	  "Félvér"
     ],
     "era": "newgen",
     "stage": "hogwarts",
     "links": {
-      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3002",
-      "history": "https://www.roxfort.frpg.hu/index.php/topic,19745.msg125048.html#msg125048",
-      "relations": "https://www.roxfort.frpg.hu/index.php/topic,19748.msg125067.html#msg125067",
-      "treasure": "https://www.roxfort.frpg.hu/index.php/board,1256.0.html",
-      "games": "https://www.roxfort.frpg.hu/index.php/topic,19758.msg125115/topicseen.html#msg125115"
+      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3002"
     }
   }
+    {
+    "id": "007",
+    "name": "Ophelia Langley",
+    "image": "images/oph.jpg",
+    "groups": [
+	"Roxfort",
+      "Hugrabug",
+	  "Griffendél Godrik Akadémia"
+    ],
+    "era": "newgen",
+    "stage": "higher",
+    "links": {
+      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=2976"
+    }
+  },
+      {
+    "id": "008",
+    "name": "Hagen Romanov",
+    "image": "images/oph.jpg",
+    "groups": [
+      "Durmstrang",
+	  "Roxfort",
+	  "Mardekár",
+	  "Alkimista",
+	  "Medimágus",
+	  "Ex-hírnök",
+	  "Tanár"
+    ],
+    "era": "oldgen",
+    "stage": "adult",
+    "links": {
+      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=2273"
+    }
+  },
+  {
+    "id": "009",
+    "name": "Élodie Roethlisberger",
+    "image": "images/elod.jpg",
+    "groups": [
+      "Beauxbatons",
+	  "Mandragóra Gyógyítóképző és Ispotály",
+	  "Botanika specialista",
+	  "Negyedvér óriás"
+    ],
+    "era": "newgen",
+    "stage": "higher",
+    "links": {
+      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3028"
+    }
+  },
+  {
+    "id": "010",
+    "name": "Aubrey Chaisty",
+    "image": "images/aub.jpg",
+    "groups": [
+      "Roxfort",
+	  "Hugrabug",
+	  "MMM Magasiskola",
+	  "Énekes"
+    ],
+    "era": "oldgen",
+    "stage": "adult",
+    "links": {
+      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=1503"
+    }
+  },
+  {
+    "id": "012",
+    "name": "Jimmy Kipp Quinton",
+    "image": "images/kipp.jpg",
+    "groups": [
+	"Mágiaügyi Minisztérium",
+	"Unspeakable",
+      "Tanár",
+	  "Rúnaspecialista"
+    ],
+    "era": "oldgen",
+    "stage": "adult",
+    "links": {
+      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=2133"
+    }
+  },
 ]
