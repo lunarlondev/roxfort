@@ -35,7 +35,7 @@
       "Roxfort"
     ],
     "houses": [
-      "Griffendél"
+      "gryffindor"
     ],
     "gender": "female"
   },
@@ -54,7 +54,7 @@
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3027"
     },
     "schools": [
-      "Ilvermorny"
+      "ilvermorny"
     ],
     "houses": [],
     "gender": "male"
@@ -65,7 +65,7 @@
     "image": "images/solange.jpg",
     "groups": [
       "Pukwudgie",
-      "Voodoo gyakorló",
+      "Voodoo specialista",
       "Aranyvérű"
     ],
     "era": "newgen",
@@ -74,7 +74,7 @@
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=7905"
     },
     "schools": [
-      "Ilvermorny"
+      "ilvermorny"
     ],
     "houses": [],
     "gender": "female"
