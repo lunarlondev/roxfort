@@ -216,5 +216,40 @@
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3033"
     }
+  },
+  {
+    "id": "016",
+    "name": "Clarice Edevane",
+    "image": "images/clar.jpg",
+    "groups": [
+	"Roxfort",
+	"Mardekár",
+	"HolyHead Harpies",
+	"Fogó"
+    ],
+    "era": "retired",
+    "stage": "adult",
+    "links": {
+      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=1844"
+    }
+  },
+  {
+    "id": "017",
+    "name": "Winthrop Hardy",
+    "image": "images/winthrop.jpg",
+    "groups": [
+	"Roxfort",
+	"Mardekár",
+	"MMM Magasiskola",
+	"Operaénekes",
+	"Látó",
+	"Animágus",
+	"Sötét Varázsló"
+    ],
+    "era": "retired",
+    "stage": "adult",
+    "links": {
+      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=2322"
+    }
   }
 ]
