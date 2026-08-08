@@ -203,7 +203,14 @@ function initializeSpaceBackground() {
 
     projected.forEach(({ star, x, y, nearness }) => {
       const twinkle = reducedMotion.matches ? 1 : 0.88 + Math.sin(now * 0.0012 + star.phase) * 0.12;
-      const alpha = (0.14 + nearness * 0.68) * twinkle;
+
+      // A canvas szélén kifutó fényudvar különben keskeny, világos
+      // csíkként tud megjelenni. Az utolsó 30 px-ben finoman elhalványítjuk.
+      const edgeDistance = Math.min(x, field.width - x, y, field.height - y);
+      const edgeFade = Math.max(0, Math.min(1, edgeDistance / 30));
+      if (edgeFade <= 0) return;
+
+      const alpha = (0.14 + nearness * 0.68) * twinkle * edgeFade;
       const radius = 0.42 + star.size * (0.42 + nearness * 0.72);
       const wineStar = star.warmth > 0.93;
       const red = wineStar ? 190 : 220;
