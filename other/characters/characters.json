@@ -94,7 +94,7 @@
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3002"
     }
-  }
+  },
     {
     "id": "007",
     "name": "Ophelia Langley",
@@ -113,7 +113,7 @@
       {
     "id": "008",
     "name": "Hagen Romanov",
-    "image": "images/oph.jpg",
+    "image": "images/hagen.jpg",
     "groups": [
       "Durmstrang",
 	  "Roxfort",
@@ -200,7 +200,7 @@
     "era": "retired",
     "stage": "adult",
     "links": {
-      "profile": "https://www.roxfort.frpg.hu/index.php/topic,19606.0.html"
+      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=2994"
     }
   },
   {
@@ -214,7 +214,7 @@
     "era": "retired",
     "stage": "adult",
     "links": {
-      "profile": "https://www.roxfort.frpg.hu/index.php/topic,19606.0.html"
+      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=3033"
     }
   }
 ]
