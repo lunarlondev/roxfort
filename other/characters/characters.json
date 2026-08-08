@@ -176,5 +176,45 @@
     "links": {
       "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=2133"
     }
+  },
+  {
+    "id": "013",
+    "name": "Katriona Edevane",
+    "image": "images/kat.jpg",
+    "groups": [
+	"NJK"
+    ],
+    "era": "retired",
+    "stage": "adult",
+    "links": {
+      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=2133"
+    }
+  },
+  {
+    "id": "014",
+    "name": "Lathan J. Quinton",
+    "image": "images/lathan.png",
+    "groups": [
+	"NJK"
+    ],
+    "era": "retired",
+    "stage": "adult",
+    "links": {
+      "profile": "https://www.roxfort.frpg.hu/index.php/topic,19606.0.html"
+    }
+  },
+  {
+    "id": "015",
+    "name": "Philomene Flamel",
+    "image": "images/phil.png",
+    "groups": [
+	"Beauxbatons",
+	"Újságíró"
+    ],
+    "era": "retired",
+    "stage": "adult",
+    "links": {
+      "profile": "https://www.roxfort.frpg.hu/index.php/topic,19606.0.html"
+    }
   }
 ]
