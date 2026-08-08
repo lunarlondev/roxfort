@@ -52,11 +52,14 @@ era:
 stage:
 - "hogwarts" = Roxfortos diák
 - "higher"   = felsőoktatásban tanul
-- "adult"    = felnőtt / nem diák karakter
+- "adult"    = nem tanuló karakter
 
-A szűrők egymástól független, egykattintásos nézetek.
-Minden szűrőváltáskor a látható karakterek sorrendje és a konstelláció
-pozíciói újra randomizálódnak.
+Alapállapotban a Newgen szűrő aktív.
+Az era és stage szűrők egyszerre használhatók, tehát például a Newgen +
+Roxfortos diákok kombináció csak a mindkét feltételnek megfelelő karaktereket mutatja.
+A Mind gomb minden szűrést töröl. Az aktív stage szűrőre újra kattintva az a
+szűrés kikapcsolható. Minden szűrőváltáskor a látható karakterek sorrendje és
+a konstelláció pozíciói újra randomizálódnak.
 
 3. KONSTELLÁCIÓ
 ---------------
@@ -91,7 +94,7 @@ Példa:
   src="https://SAJAT-CIMED/index.html"
   title="Karakterarchívum"
   width="100%"
-  height="440"
+  height="540"
   loading="lazy"
   style="border:0; background:transparent;"
   allowtransparency="true">

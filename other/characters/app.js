@@ -7,13 +7,14 @@ const FILTERS = [
   { id: "retired", label: "Futottak még", type: "era" },
   { id: "hogwarts", label: "Roxfortos diákok", type: "stage" },
   { id: "higher", label: "Felsőoktatásban tanulók", type: "stage" },
-  { id: "adult", label: "Felnőtt karakterek", type: "stage" }
+  { id: "adult", label: "Nem tanuló", type: "stage" }
 ];
 
 const state = {
   allCharacters: [],
   visibleCharacters: [],
-  activeFilter: "all",
+  activeEra: "newgen",
+  activeStage: null,
   points: []
 };
 
@@ -42,7 +43,7 @@ async function initialize() {
       .filter(isValidCharacter)
       .map(normalizeCharacter);
 
-    applyFilter("all", { initial: true });
+    applyFilters({ initial: true });
   } catch (error) {
     console.error("A karakterlista nem tölthető be:", error);
     showLoadError();
@@ -80,14 +81,28 @@ function normalizeCharacter(character, index) {
   };
 }
 
-function applyFilter(filterId, { initial = false } = {}) {
-  const filter = FILTERS.find((item) => item.id === filterId) || FILTERS[0];
+function applyFilter(filterId) {
+  const filter = FILTERS.find((item) => item.id === filterId);
+  if (!filter) return;
 
-  state.activeFilter = filter.id;
+  if (filter.type === "all") {
+    state.activeEra = null;
+    state.activeStage = null;
+  } else if (filter.type === "era") {
+    state.activeEra = filter.id;
+  } else if (filter.type === "stage") {
+    state.activeStage = state.activeStage === filter.id ? null : filter.id;
+  }
 
-  const matches = filter.type === "all"
-    ? [...state.allCharacters]
-    : state.allCharacters.filter((character) => character[filter.type] === filter.id);
+  applyFilters();
+}
+
+function applyFilters({ initial = false } = {}) {
+  const matches = state.allCharacters.filter((character) => {
+    const eraMatches = !state.activeEra || character.era === state.activeEra;
+    const stageMatches = !state.activeStage || character.stage === state.activeStage;
+    return eraMatches && stageMatches;
+  });
 
   state.visibleCharacters = shuffle(matches);
   state.points = generateConstellationPoints(state.visibleCharacters.length);
@@ -110,14 +125,26 @@ function renderFilters() {
       elements.filterBar.appendChild(divider);
     }
 
-    const count = filter.type === "all"
-      ? state.allCharacters.length
-      : state.allCharacters.filter((character) => character[filter.type] === filter.id).length;
+    const count = state.allCharacters.filter((character) => {
+      if (filter.type === "all") return true;
+      if (filter.type === "era") {
+        return character.era === filter.id
+          && (!state.activeStage || character.stage === state.activeStage);
+      }
+      return character.stage === filter.id
+        && (!state.activeEra || character.era === state.activeEra);
+    }).length;
+
+    const isActive = filter.type === "all"
+      ? !state.activeEra && !state.activeStage
+      : filter.type === "era"
+        ? state.activeEra === filter.id
+        : state.activeStage === filter.id;
 
     const button = document.createElement("button");
     button.type = "button";
-    button.className = `filter-button${state.activeFilter === filter.id ? " is-active" : ""}`;
-    button.setAttribute("aria-pressed", String(state.activeFilter === filter.id));
+    button.className = `filter-button${isActive ? " is-active" : ""}`;
+    button.setAttribute("aria-pressed", String(isActive));
     button.dataset.filter = filter.id;
 
     const text = document.createElement("span");
@@ -262,45 +289,47 @@ function updateCount() {
 function generateConstellationPoints(count) {
   if (!count) return [];
 
+  const width = Math.max(elements.sky.clientWidth, 320);
+  const height = Math.max(elements.sky.clientHeight, 390);
+  const edgeX = 47;
+  const edgeY = 44;
+  const targetDistance = count <= 6 ? 104 : count <= 10 ? 92 : count <= 14 ? 82 : 74;
   const points = [];
-  const minDistance = Math.max(13, 25 - count * 1.35);
-  const minX = 11;
-  const maxX = 89;
-  const minY = 14;
-  const maxY = 86;
 
   for (let index = 0; index < count; index += 1) {
-    let candidate = null;
-    let attempts = 0;
+    let bestCandidate = null;
+    let bestNearestDistance = -1;
 
-    while (attempts < 180) {
-      const next = {
-        x: minX + Math.random() * (maxX - minX),
-        y: minY + Math.random() * (maxY - minY)
+    for (let attempt = 0; attempt < 420; attempt += 1) {
+      const xPx = edgeX + Math.random() * Math.max(1, width - edgeX * 2);
+      const yPx = edgeY + Math.random() * Math.max(1, height - edgeY * 2);
+      const candidate = {
+        x: (xPx / width) * 100,
+        y: (yPx / height) * 100
       };
 
-      const isFarEnough = points.every((point) => distance(point, next) >= minDistance);
-      if (isFarEnough) {
-        candidate = next;
-        break;
+      const nearestDistance = points.length
+        ? Math.min(...points.map((point) => pixelDistance(point, candidate, width, height)))
+        : Infinity;
+
+      if (nearestDistance > bestNearestDistance) {
+        bestCandidate = candidate;
+        bestNearestDistance = nearestDistance;
       }
-      attempts += 1;
+
+      if (nearestDistance >= targetDistance) break;
     }
 
-    if (!candidate) {
-      const angle = (Math.PI * 2 * index) / Math.max(count, 1) + Math.random() * 0.45;
-      const radiusX = 28 + Math.random() * 7;
-      const radiusY = 25 + Math.random() * 8;
-      candidate = {
-        x: 50 + Math.cos(angle) * radiusX,
-        y: 50 + Math.sin(angle) * radiusY
-      };
-    }
-
-    points.push(candidate);
+    points.push(bestCandidate || { x: 50, y: 50 });
   }
 
   return points;
+}
+
+function pixelDistance(a, b, width, height) {
+  const dx = ((a.x - b.x) / 100) * width;
+  const dy = ((a.y - b.y) / 100) * height;
+  return Math.hypot(dx, dy);
 }
 
 function distance(a, b) {
