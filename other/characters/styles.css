@@ -45,11 +45,12 @@ img { display: block; max-width: 100%; }
 .filter-button.is-active::before { width: 8px; opacity: 1; }
 .filter-button.is-active::after { opacity: 1; transform: translateX(-50%) scale(1); }
 
-.sky { position: relative; height: 430px; overflow: hidden; border-top: 1px solid rgba(168, 187, 191, 0.08); border-bottom: 1px solid rgba(168, 187, 191, 0.08); background: linear-gradient(180deg, rgba(8, 11, 13, 0.08), rgba(20, 23, 26, 0.05) 45%, rgba(8, 10, 12, 0.08)); }
-.sky::before, .sky::after { content: ""; position: absolute; border-radius: 50%; pointer-events: none; }
-.sky::before { left: 14%; top: 14%; width: 210px; height: 210px; background: radial-gradient(circle, rgba(168, 187, 191, 0.045), transparent 68%); filter: blur(2px); }
-.sky::after { right: 4%; bottom: 4%; width: 180px; height: 180px; background: radial-gradient(circle, rgba(123, 59, 75, 0.07), transparent 68%); filter: blur(3px); }
-.sky__chart { position: absolute; z-index: 0; inset: 6% 4%; pointer-events: none; opacity: 0.45; background:
+.sky { position: relative; height: 430px; overflow: hidden; border-top: 1px solid rgba(168, 187, 191, 0.09); border-bottom: 1px solid rgba(168, 187, 191, 0.09); background: radial-gradient(ellipse at 50% 44%, rgba(23, 29, 33, 0.58), rgba(8, 11, 14, 0.78) 72%, rgba(5, 7, 9, 0.88)); }
+.sky::before, .sky::after { content: ""; position: absolute; z-index: 0; border-radius: 50%; pointer-events: none; }
+.sky::before { left: 8%; top: 5%; width: 270px; height: 270px; background: radial-gradient(circle, rgba(168, 187, 191, 0.055), transparent 69%); filter: blur(8px); }
+.sky::after { right: -2%; bottom: -8%; width: 240px; height: 240px; background: radial-gradient(circle, rgba(123, 59, 75, 0.09), transparent 70%); filter: blur(10px); }
+.sky__space { position: absolute; z-index: 0; inset: 0; display: block; width: 100%; height: 100%; pointer-events: none; opacity: 0.94; }
+.sky__chart { position: absolute; z-index: 1; inset: 6% 4%; pointer-events: none; opacity: 0.19; background:
   radial-gradient(circle at 52% 48%, transparent 0 28%, rgba(168, 187, 191, 0.055) 28.2% 28.45%, transparent 28.7% 44%, rgba(168, 187, 191, 0.035) 44.15% 44.35%, transparent 44.6%),
   linear-gradient(117deg, transparent 0 49.85%, rgba(168, 187, 191, 0.035) 50%, transparent 50.15%),
   linear-gradient(23deg, transparent 0 49.85%, rgba(123, 59, 75, 0.045) 50%, transparent 50.15%);
@@ -59,40 +60,12 @@ img { display: block; max-width: 100%; }
 .sky__chart::before { width: 260px; height: 115px; left: 12%; top: 29%; transform: rotate(18deg); }
 .sky__chart::after { width: 175px; height: 260px; right: 8%; top: 12%; transform: rotate(-24deg); border-color: rgba(123, 59, 75, 0.045); }
 
-.sky__stars { position: absolute; z-index: 0; inset: -8%; pointer-events: none; opacity: 0.62; background-image:
-  radial-gradient(circle, rgba(217, 227, 228, 0.55) 0 0.7px, transparent 1px),
-  radial-gradient(circle, rgba(168, 187, 191, 0.3) 0 0.65px, transparent 0.95px);
-  background-size: 47px 43px, 79px 71px;
-  background-position: 7px 13px, 29px 37px;
-  animation: starsDriftFar 34s linear infinite alternate;
-}
-.sky__stars::before, .sky__stars::after { content: ""; position: absolute; inset: 0; pointer-events: none; }
-.sky__stars::before { opacity: 0.55; background-image:
-  radial-gradient(circle, rgba(217, 227, 228, 0.58) 0 1px, transparent 1.35px),
-  radial-gradient(circle, rgba(168, 97, 115, 0.42) 0 0.9px, transparent 1.3px);
-  background-size: 113px 97px, 151px 127px;
-  background-position: 19px 31px, 73px 9px;
-  animation: starsDriftMid 25s ease-in-out infinite alternate;
-}
-.sky__stars::after { opacity: 0.62; background:
-  radial-gradient(circle at 8% 18%, rgba(217, 227, 228, 0.72) 0 1px, transparent 1.6px),
-  radial-gradient(circle at 24% 72%, rgba(168, 187, 191, 0.48) 0 1px, transparent 1.5px),
-  radial-gradient(circle at 42% 11%, rgba(217, 227, 228, 0.55) 0 1.15px, transparent 1.7px),
-  radial-gradient(circle at 67% 31%, rgba(168, 187, 191, 0.42) 0 1px, transparent 1.5px),
-  radial-gradient(circle at 79% 67%, rgba(217, 227, 228, 0.64) 0 1.1px, transparent 1.65px),
-  radial-gradient(circle at 93% 17%, rgba(168, 97, 115, 0.5) 0 1px, transparent 1.6px),
-  radial-gradient(circle at 94% 88%, rgba(217, 227, 228, 0.48) 0 1px, transparent 1.5px);
-  animation: starsPulse 7s ease-in-out infinite alternate;
-}
-.sky__meteor { position: absolute; z-index: 1; top: 11%; left: -18%; width: 90px; height: 1px; pointer-events: none; opacity: 0; transform: rotate(-18deg); background: linear-gradient(90deg, transparent, rgba(217, 227, 228, 0.18), rgba(217, 227, 228, 0.78)); box-shadow: 32px 0 12px rgba(168, 187, 191, 0.16); animation: meteorPass 19s linear infinite; }
-.sky__meteor::after { content: ""; position: absolute; right: -1px; top: -1.5px; width: 4px; height: 4px; border-radius: 50%; background: rgba(238, 241, 241, 0.95); box-shadow: 0 0 9px rgba(217, 227, 228, 0.75); }
-
-.sky__lines { position: absolute; z-index: 1; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.sky__lines { position: absolute; z-index: 2; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
 .sky__lines line { stroke: rgba(168, 187, 191, 0.56); stroke-width: 0.95; stroke-linecap: round; stroke-dasharray: 4 5; vector-effect: non-scaling-stroke; opacity: var(--line-opacity, 0.34); filter: drop-shadow(0 0 2px rgba(168, 187, 191, 0.08)); transition: opacity 190ms ease, stroke 190ms ease, stroke-width 190ms ease, filter 190ms ease; animation: lineAppear 900ms ease var(--line-delay) both; }
 .sky.is-connection-highlighted .sky__lines line { opacity: 0.1; }
 .sky.is-connection-highlighted .sky__lines line.is-active { stroke: rgba(217, 227, 228, 0.9); stroke-width: 1.45; opacity: 0.92; filter: drop-shadow(0 0 4px rgba(168, 187, 191, 0.5)) drop-shadow(0 0 8px rgba(123, 59, 75, 0.25)); }
 
-.sky__characters { position: absolute; z-index: 2; inset: 0; }
+.sky__characters { position: absolute; z-index: 3; inset: 0; }
 .character-star { --x: 50%; --y: 50%; --delay: 0s; --duration: 6s; --drift-x: 2px; --drift-y: 2px; --arrival-delay: 0ms; --portrait-size: 50px; position: absolute; left: var(--x); top: var(--y); display: grid; justify-items: center; gap: 4px; width: 86px; padding: 0; color: #909ca0; cursor: pointer; transform: translate(-50%, -50%) scale(0.72); opacity: 0; animation: starArrive 480ms cubic-bezier(.2,.8,.2,1) var(--arrival-delay) forwards; }
 .character-star__halo { position: relative; display: grid; place-items: center; width: calc(var(--portrait-size) + 10px); height: calc(var(--portrait-size) + 10px); border-radius: 50%; animation: starFloat var(--duration) ease-in-out var(--delay) infinite alternate; }
 .character-star__halo::before { content: ""; position: absolute; inset: -5px; border: 1px solid rgba(168, 187, 191, 0.14); border-radius: 50%; transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease; }
@@ -135,11 +108,7 @@ img { display: block; max-width: 100%; }
 @keyframes starArrive { from { opacity: 0; transform: translate(-50%, -50%) scale(0.72); filter: blur(2px); } to { opacity: 1; transform: translate(-50%, -50%) scale(1); filter: blur(0); } }
 @keyframes starFloat { 0% { transform: translate(0, 0); } 100% { transform: translate(var(--drift-x), var(--drift-y)); } }
 @keyframes lineAppear { from { stroke-dashoffset: 22; } to { stroke-dashoffset: 0; } }
-@keyframes starsDriftFar { from { transform: translate3d(-5px, -3px, 0); } to { transform: translate3d(8px, 6px, 0); } }
-@keyframes starsDriftMid { from { transform: translate3d(4px, -5px, 0); } to { transform: translate3d(-7px, 7px, 0); } }
-@keyframes starsPulse { from { opacity: 0.36; filter: brightness(0.82); } to { opacity: 0.72; filter: brightness(1.08); } }
 @keyframes orbitTurn { to { transform: scale(1) rotate(360deg); } }
-@keyframes meteorPass { 0%, 63% { opacity: 0; transform: translateX(0) translateY(0) rotate(-18deg); } 64% { opacity: 0; } 66% { opacity: 0.82; } 71% { opacity: 0; transform: translateX(690px) translateY(205px) rotate(-18deg); } 100% { opacity: 0; transform: translateX(690px) translateY(205px) rotate(-18deg); } }
 
 @media (max-width: 470px) {
   .constellation { padding-inline: 7px; }

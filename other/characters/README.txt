@@ -70,3 +70,11 @@ Példa:
 
 Az app postMessage-ben elküldi az aktuális magasságot:
 type: "character-roster-height"
+
+
+6. MOZGÓ CSILLAGHÁTTÉR
+-----------------------
+A csillagmező canvas-alapú, perspektivikus 3D pontfelhő. A háttér lassan forog,
+így a pontok mérete és fényereje a mélység szerint változik. A karaktereket
+összekötő SVG-konstellációs vonalak ettől függetlenül a canvas fölött maradnak.
+A prefers-reduced-motion rendszerbeállítást a háttér is figyelembe veszi.

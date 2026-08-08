@@ -68,6 +68,7 @@ const elements = {
   filterBar: document.querySelector("#filterBar"),
   visibleCount: document.querySelector("#visibleCount"),
   sky: document.querySelector("#constellationSky"),
+  spaceCanvas: document.querySelector("#spaceCanvas"),
   lines: document.querySelector("#constellationLines"),
   characterField: document.querySelector("#characterField"),
   emptyState: document.querySelector("#emptyState")
@@ -76,6 +77,8 @@ const elements = {
 initialize();
 
 async function initialize() {
+  initializeSpaceBackground();
+
   try {
     const response = await fetch("characters.json", { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -96,6 +99,150 @@ async function initialize() {
   }
 
   window.addEventListener("resize", reportHeight);
+}
+
+function initializeSpaceBackground() {
+  const canvas = elements.spaceCanvas;
+  if (!canvas) return;
+
+  const context = canvas.getContext("2d", { alpha: true });
+  if (!context) return;
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const field = {
+    width: 0,
+    height: 0,
+    dpr: 1,
+    stars: [],
+    frame: 0,
+    previousTime: performance.now()
+  };
+
+  function signedRandom() {
+    return Math.random() - Math.random();
+  }
+
+  function createStars() {
+    const area = field.width * field.height;
+    const count = Math.max(135, Math.min(205, Math.round(area / 1150)));
+
+    field.stars = Array.from({ length: count }, () => ({
+      x: signedRandom() * 4.25,
+      y: signedRandom() * 3.45,
+      z: signedRandom() * 2.45,
+      size: 0.55 + Math.random() * 1.2,
+      warmth: Math.random(),
+      phase: Math.random() * Math.PI * 2
+    }));
+  }
+
+  function resizeCanvas() {
+    const rect = elements.sky.getBoundingClientRect();
+    field.width = Math.max(1, rect.width);
+    field.height = Math.max(1, rect.height);
+    field.dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+    canvas.width = Math.round(field.width * field.dpr);
+    canvas.height = Math.round(field.height * field.dpr);
+    canvas.style.width = `${field.width}px`;
+    canvas.style.height = `${field.height}px`;
+    context.setTransform(field.dpr, 0, 0, field.dpr, 0, 0);
+    createStars();
+    drawSpace(performance.now(), true);
+  }
+
+  function rotateStar(star, angleX, angleY) {
+    const cosY = Math.cos(angleY);
+    const sinY = Math.sin(angleY);
+    const x = star.x * cosY - star.z * sinY;
+    const z = star.x * sinY + star.z * cosY;
+    star.x = x;
+    star.z = z;
+
+    const cosX = Math.cos(angleX);
+    const sinX = Math.sin(angleX);
+    const y = star.y * cosX - star.z * sinX;
+    const nextZ = star.y * sinX + star.z * cosX;
+    star.y = y;
+    star.z = nextZ;
+  }
+
+  function drawSpace(now, staticFrame = false) {
+    const elapsed = Math.min(34, Math.max(0, now - field.previousTime));
+    field.previousTime = now;
+
+    context.clearRect(0, 0, field.width, field.height);
+
+    const animate = !reducedMotion.matches && !staticFrame;
+    const turnY = animate ? elapsed * 0.000075 : 0;
+    const turnX = animate ? Math.sin(now * 0.00016) * elapsed * 0.0000065 : 0;
+    const focal = Math.min(field.width, field.height) * 0.92;
+    const cameraDistance = 5.55;
+    const centerX = field.width / 2;
+    const centerY = field.height / 2;
+
+    const projected = [];
+
+    field.stars.forEach((star) => {
+      if (animate) rotateStar(star, turnX, turnY);
+
+      const depth = star.z + cameraDistance;
+      if (depth <= 0.55) return;
+
+      const scale = focal / depth;
+      const x = centerX + star.x * scale;
+      const y = centerY + star.y * scale;
+
+      if (x < -20 || x > field.width + 20 || y < -20 || y > field.height + 20) return;
+
+      const nearness = Math.max(0, Math.min(1, (cameraDistance + 2.45 - depth) / 4.9));
+      projected.push({ star, x, y, nearness });
+    });
+
+    projected.sort((a, b) => a.nearness - b.nearness);
+
+    projected.forEach(({ star, x, y, nearness }) => {
+      const twinkle = reducedMotion.matches ? 1 : 0.88 + Math.sin(now * 0.0012 + star.phase) * 0.12;
+      const alpha = (0.14 + nearness * 0.68) * twinkle;
+      const radius = 0.42 + star.size * (0.42 + nearness * 0.72);
+      const wineStar = star.warmth > 0.93;
+      const red = wineStar ? 190 : 220;
+      const green = wineStar ? 132 : 231;
+      const blue = wineStar ? 151 : 233;
+
+      if (nearness > 0.72) {
+        context.beginPath();
+        context.fillStyle = `rgba(${red}, ${green}, ${blue}, ${alpha * 0.13})`;
+        context.arc(x, y, radius * 3.3, 0, Math.PI * 2);
+        context.fill();
+      }
+
+      context.beginPath();
+      context.fillStyle = `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+      context.arc(x, y, radius, 0, Math.PI * 2);
+      context.fill();
+    });
+  }
+
+  function loop(now) {
+    drawSpace(now);
+    field.frame = window.requestAnimationFrame(loop);
+  }
+
+  const observer = typeof ResizeObserver === "function"
+    ? new ResizeObserver(resizeCanvas)
+    : null;
+
+  observer?.observe(elements.sky);
+  if (!observer) window.addEventListener("resize", resizeCanvas);
+
+  reducedMotion.addEventListener?.("change", () => {
+    field.previousTime = performance.now();
+    drawSpace(field.previousTime, true);
+  });
+
+  resizeCanvas();
+  field.frame = window.requestAnimationFrame(loop);
 }
 
 function isValidCharacter(character) {
