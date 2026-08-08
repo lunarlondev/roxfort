@@ -187,6 +187,14 @@ function renderFilters() {
     rowElement.setAttribute("role", "group");
     rowElement.setAttribute("aria-label", row.label);
 
+    const rowLabel = document.createElement("span");
+    rowLabel.className = "filters__row-label";
+    rowLabel.textContent = row.label;
+    rowLabel.setAttribute("aria-hidden", "true");
+
+    const rowOptions = document.createElement("span");
+    rowOptions.className = "filters__row-options";
+
     row.options.forEach((filter) => {
       const isAll = row.type === "era" && filter.id === "all";
       const isActive = isAll
@@ -209,9 +217,10 @@ function renderFilters() {
 
       button.append(text, countSpan);
       button.addEventListener("click", () => applyFilter(row.type, filter.id));
-      rowElement.appendChild(button);
+      rowOptions.appendChild(button);
     });
 
+    rowElement.append(rowLabel, rowOptions);
     elements.filterBar.appendChild(rowElement);
   });
 }
@@ -250,6 +259,7 @@ function renderConstellation({ initial = false } = {}) {
 
     star.className = `character-star${character.profile ? "" : " is-disabled"}`;
     star.dataset.id = character.id;
+    star.dataset.index = String(index);
     star.dataset.era = character.era;
     star.dataset.stage = character.stage;
     star.dataset.tooltipSide = point.x > 62 ? "left" : "right";
@@ -260,6 +270,7 @@ function renderConstellation({ initial = false } = {}) {
     star.style.setProperty("--drift-x", `${(-3 + Math.random() * 6).toFixed(1)}px`);
     star.style.setProperty("--drift-y", `${(-3 + Math.random() * 6).toFixed(1)}px`);
     star.style.setProperty("--arrival-delay", `${initial ? 30 + index * 55 : index * 45}ms`);
+    star.style.setProperty("--portrait-size", `${(46 + Math.random() * 8).toFixed(1)}px`);
 
     if (character.profile) {
       star.href = character.profile;
@@ -274,6 +285,10 @@ function renderConstellation({ initial = false } = {}) {
     const halo = document.createElement("span");
     halo.className = "character-star__halo";
 
+    const orbit = document.createElement("span");
+    orbit.className = "character-star__orbit";
+    orbit.setAttribute("aria-hidden", "true");
+
     const image = document.createElement("img");
     image.src = character.image;
     image.alt = "";
@@ -286,7 +301,7 @@ function renderConstellation({ initial = false } = {}) {
     label.className = "character-star__name";
     label.textContent = character.name;
 
-    halo.appendChild(image);
+    halo.append(orbit, image);
     star.append(halo, label);
 
     if (character.groups.length) {
@@ -304,6 +319,11 @@ function renderConstellation({ initial = false } = {}) {
       star.appendChild(tooltip);
     }
 
+    star.addEventListener("pointerenter", () => highlightConnections(index));
+    star.addEventListener("pointerleave", clearConnectionHighlight);
+    star.addEventListener("focus", () => highlightConnections(index));
+    star.addEventListener("blur", clearConnectionHighlight);
+
     elements.characterField.appendChild(star);
   });
 
@@ -318,14 +338,34 @@ function renderLines() {
   connections.forEach(([fromIndex, toIndex], index) => {
     const from = state.points[fromIndex];
     const to = state.points[toIndex];
-
     const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+
     line.setAttribute("x1", from.x);
     line.setAttribute("y1", from.y);
     line.setAttribute("x2", to.x);
     line.setAttribute("y2", to.y);
-    line.style.setProperty("--line-delay", `${index * 55}ms`);
+    line.dataset.from = String(fromIndex);
+    line.dataset.to = String(toIndex);
+    line.style.setProperty("--line-delay", `${120 + index * 55}ms`);
+    line.style.setProperty("--line-opacity", `${(0.28 + Math.random() * 0.18).toFixed(2)}`);
     elements.lines.appendChild(line);
+  });
+}
+
+function highlightConnections(characterIndex) {
+  elements.sky.classList.add("is-connection-highlighted");
+
+  elements.lines.querySelectorAll("line").forEach((line) => {
+    const isConnected = Number(line.dataset.from) === characterIndex
+      || Number(line.dataset.to) === characterIndex;
+    line.classList.toggle("is-active", isConnected);
+  });
+}
+
+function clearConnectionHighlight() {
+  elements.sky.classList.remove("is-connection-highlighted");
+  elements.lines.querySelectorAll("line.is-active").forEach((line) => {
+    line.classList.remove("is-active");
   });
 }
 

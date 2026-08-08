@@ -1,111 +1,72 @@
-KARAKTERARCHÍVUM – KONSTELLÁCIÓS NÉZET
-=======================================
+KARAKTERARCHÍVUM – KONSTELLÁCIÓS NÉZET v6
+==========================================
 
 Fájlok:
 - index.html
 - styles.css
 - app.js
 - characters.json
-- images/...
+- images/... (a meglévő saját képmappád)
 
-1. SZŰRŐK
+ÚJDONSÁGOK
 ----------
-A szűrők öt külön sorban jelennek meg, és a különböző sorok egymással kombinálhatók.
-Alapállapotban a Newgen aktív.
+- Erősebben látható valódi konstellációs vonalak.
+- Hover/fókusz esetén az adott karakterhez tartozó vonalak felizzanak, a többi elhalványul.
+- Többrétegű, lassan mozgó csillagtér.
+- Halvány csillagászati körívek és segédvonalak a háttérben.
+- Ritka, finom fénycsík/hullócsillag animáció.
+- A portrék mérete enyhén randomizált, ezért természetesebb a konstelláció.
+- Hoverkor két apró fénypont kering a portré körül.
+- A groups mezők klasszikus tooltip helyett csillagászati annotációként jelennek meg,
+  a portréhoz kapcsolódó kis vezérvonallal.
+- A szűrősorok külön, halvány kategórianévvel jelennek meg.
+- Az aktív szűrőket kis csillag és finom glow emeli ki.
 
-1. sor – generáció:
-- Mind
-- Oldgen
-- Newgen
-- Futottak még
+SZŰRŐK
+------
+A szűrők soronként egy-egy dimenziót jelentenek, és a külön sorok kombinálhatók:
+- Generáció: Mind / Oldgen / Newgen / Futottak még
+- Tanulmányok: Diákok / Egyetemisták / Egyéb
+- Iskola: Roxfort / Ilvermorny / Beauxbatons / Egyéb
+- Roxforti ház: Griffendél / Hollóhát / Hugrabug / Mardekár
+- Nem: Férfi / Nő / Egyéb
 
-2. sor – tanulmányi státusz (`stage`):
-- `student` = Diákok
-- `higher` = Egyetemisták
-- `adult` = Egyéb
+Alapállapot: Newgen.
+Egy aktív gombra újra kattintva az adott szűrés kikapcsolható.
+A Mind csak a generáció szűrését törli.
 
-3. sor – iskola (`schools`):
-- `hogwarts` = Roxfort
-- `ilvermorny` = Ilvermorny
-- `beauxbatons` = Beauxbatons
-- `other` = Egyéb
+KARAKTER JSON
+-------------
+A hoveren megjelenő rövid információk továbbra is a groups tömbből jönnek.
+A profilra kattintva a links.profile nyílik meg új böngészőfülön.
 
-4. sor – roxforti ház (`houses`):
-- `gryffindor` = Griffendél
-- `ravenclaw` = Hollóhát
-- `hufflepuff` = Hugrabug
-- `slytherin` = Mardekár
-
-5. sor – nem (`gender`):
-- `male` = Férfi
-- `female` = Nő
-- `other` = Egyéb
-
-Egy soron belül egyszerre legfeljebb egy szűrő aktív. Az aktív gombra újra kattintva
-az adott sor szűrése kikapcsolható. A „Mind” kizárólag a generációs szűrést oldja fel.
-
-Példa: Newgen + Egyetemisták + Ilvermorny + Nő egyszerre is használható.
-
-2. KARAKTEREK JSON-JA
-----------------------
-Példa:
-
-{
-  "id": "001",
-  "name": "Elegy Dreadmoor",
-  "image": "images/elegy.jpg",
-  "groups": ["Sötét Varázsló", "Aranyvérű"],
+A szűréshez használt kulcsok például:
   "era": "newgen",
-  "stage": "higher",
-  "schools": ["other"],
-  "houses": [],
-  "gender": "female",
-  "links": {
-    "profile": "https://..."
-  }
-}
+  "stage": "student",
+  "schools": ["hogwarts"],
+  "houses": ["gryffindor"],
+  "gender": "female"
 
-A `schools` és `houses` tömb, tehát egy karakter több releváns kategóriához is
-tartozhat. Például egy Roxfortot és más intézményt is megjárt karakter:
+Megengedett fő értékek:
+- era: newgen / oldgen / retired
+- stage: student / higher / adult
+- schools: hogwarts / ilvermorny / beauxbatons / other
+- houses: gryffindor / ravenclaw / hufflepuff / slytherin
+- gender: male / female / other
 
-"schools": ["hogwarts", "other"]
-
-A `groups` továbbra is csak a hover tooltip rövid információit tartalmazza;
-a szűrés nem ebből próbál következtetni.
-
-3. KONSTELLÁCIÓ
----------------
-A karakterek random sorrendben és random csillagképben jelennek meg. Minden
-szűrőváltás újrarendezi őket. A portrék finoman lebegnek.
-
-Hover / billentyűzetes fókusz:
-- megjelennek a `groups` elemei
-
-Kattintás:
-- a `links.profile` új böngészőfülön nyílik meg
-
-4. HELYI MEGNYITÁS
-------------------
-A JSON betöltéséhez webszerver szükséges. A mappában például:
-
-python -m http.server 8000
-
-Majd:
-http://localhost:8000
-
-5. IFRAME
----------
-A több szűrősor miatt érdemes nagyobb magasságot adni:
+IFRAME
+------
+Példa:
 
 <iframe
   src="https://SAJAT-CIMED/index.html"
   title="Karakterarchívum"
   width="100%"
-  height="650"
+  height="610"
   loading="lazy"
   style="border:0; background:transparent;"
   allowtransparency="true">
 </iframe>
 
-Az app postMessage-ben továbbra is elküldi az aktuális tartalommagasságot:
+Az app postMessage-ben elküldi az aktuális magasságot:
 type: "character-roster-height"
