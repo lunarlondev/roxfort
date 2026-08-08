@@ -20,63 +20,38 @@
           <h1>Karaktereim</h1>
         </div>
       </div>
-      <span class="constellation__count" id="visibleCount">0 / 0</span>
+      <span class="constellation__count" id="visibleCount">0 karakter</span>
     </header>
 
-    <nav class="filters" id="filterBar" aria-label="Karakterkategóriák"></nav>
+    <nav class="filters" id="filterBar" aria-label="Karakterszűrők"></nav>
 
-    <section class="orbit" aria-label="Karakterválasztó">
-      <div class="orbit__line" aria-hidden="true"></div>
+    <section class="sky" id="constellationSky" aria-label="Karakterkonstelláció">
+      <svg class="sky__lines" id="constellationLines" aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none"></svg>
+      <div class="sky__stars" aria-hidden="true"></div>
+      <div class="sky__characters" id="characterField"></div>
 
-      <button class="orbit__arrow orbit__arrow--previous" id="previousButton" type="button" aria-label="Előző karakter">
-        <span aria-hidden="true">‹</span>
-      </button>
-
-      <div class="orbit__viewport" id="orbitViewport">
-        <div class="orbit__track" id="characterTrack"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <span aria-hidden="true">◇</span>
+        <p>Ebben a kategóriában még nincs karakter.</p>
       </div>
-
-      <button class="orbit__arrow orbit__arrow--next" id="nextButton" type="button" aria-label="Következő karakter">
-        <span aria-hidden="true">›</span>
-      </button>
     </section>
 
-    <footer class="constellation__footer">
-      <span id="activeName">Válassz karaktert</span>
-      <span>Kattints a portréra az adatlaphoz</span>
-    </footer>
+    <section class="character-detail" id="characterDetail" aria-live="polite">
+      <div class="character-detail__placeholder" id="detailPlaceholder">
+        <span aria-hidden="true">✦</span>
+        <p>Válassz egy karaktert a konstellációból.</p>
+      </div>
 
-    <section class="detail-layer" id="detailLayer" hidden aria-hidden="true">
-      <button class="detail-layer__backdrop" id="detailBackdrop" type="button" aria-label="Adatlap bezárása"></button>
-
-      <article class="detail-card" id="detailCard" role="dialog" aria-modal="true" aria-labelledby="characterName">
-        <button class="detail-card__close" id="closeDetailButton" type="button" aria-label="Adatlap bezárása">×</button>
-
-        <div class="detail-card__portrait">
+      <article class="character-detail__card" id="detailCard" hidden>
+        <div class="character-detail__portrait">
           <img id="characterImage" src="" alt="">
-          <span class="detail-card__generation" id="characterGeneration">—</span>
         </div>
-
-        <div class="detail-card__content">
-          <div class="detail-card__eyebrow">
-            <span id="characterGroup">—</span>
-            <span aria-hidden="true">◆</span>
-            <span id="characterKicker">—</span>
-          </div>
-
+        <div class="character-detail__content">
           <h2 id="characterName">Karakter neve</h2>
-          <p class="detail-card__tagline" id="characterTagline">—</p>
-          <p class="detail-card__summary" id="characterSummary">—</p>
-
-          <dl class="facts" id="characterFacts"></dl>
+          <div class="character-groups" id="characterGroups"></div>
           <div class="character-links" id="characterLinks" aria-label="Karakter linkjei"></div>
         </div>
       </article>
-    </section>
-
-    <section class="empty-state" id="emptyState" hidden>
-      <span aria-hidden="true">◇</span>
-      <p>Ebben a kategóriában még nincs karakter.</p>
     </section>
   </main>
 

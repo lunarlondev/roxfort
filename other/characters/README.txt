@@ -1,75 +1,88 @@
-KARAKTERARCHÍVUM – HASZNÁLAT
-============================
+KARAKTERARCHÍVUM – KONSTELLÁCIÓS NÉZET
+=======================================
 
 Fájlok:
 - index.html
 - styles.css
 - app.js
 - characters.json
-- images/placeholder-01.svg stb.
+- images/...
 
-1. KARAKTEREK SZERKESZTÉSE
---------------------------
-Minden karakter a characters.json fájlban található.
-Egy új karakterhez másolj le egy teljes { ... } blokkot, majd írd át az adatokat.
+1. KARAKTEREK
+-------------
+A characters.json egy karaktere:
 
-Kategóriák:
-- "oldgen"  = nagyon régi karakter
-- "newgen"  = az elmúlt két évben készült / aktív új generáció
-- "retired" = leadott, lezárt karakter („futottak még”)
+{
+  "id": "001",
+  "name": "Elegy Dreadmoor",
+  "image": "images/elegy.jpg",
+  "groups": ["Sötét Varázsló"],
+  "era": "newgen",
+  "stage": "adult",
+  "links": {
+    "profile": "https://...",
+    "history": "https://...",
+    "relations": null,
+    "treasure": null,
+    "games": null
+  }
+}
 
-Hiányzó link:
-A hiányzó link értéke legyen null, például:
-"treasure": null
+Az adatpanel csak ezt mutatja:
+- kép
+- név
+- csoportok
+- létező linkek
 
-Képek:
-Tedd a képeket az images mappába, majd például:
-"image": "images/elegy.jpg"
+A null vagy üres linkek egyáltalán nem jelennek meg.
 
-Egyedi szín:
-Minden karakter saját kiemelőszínt kaphat:
-"accent": "#a8bbbf"
+2. SZŰRŐK
+---------
+era:
+- "newgen"
+- "oldgen"
+- "retired"
 
-2. HELYI MEGNYITÁS
+stage:
+- "hogwarts" = Roxfortos diák
+- "higher"   = felsőoktatásban tanul
+- "adult"    = felnőtt / nem diák karakter
+
+A szűrők egymástól független, egykattintásos nézetek.
+Minden szűrőváltáskor a látható karakterek sorrendje és a konstelláció
+pozíciói újra randomizálódnak.
+
+3. KONSTELLÁCIÓ
+---------------
+A karakterek kör alakú portréként jelennek meg egy 550 px-nél nem szélesebb
+csillagmezőben. A rendszer minden kirajzoláskor új pozíciókat választ,
+majd a közeli pontokat csillagkép-vonalakkal összeköti.
+
+A portrék finoman lebegnek. Karakterre kattintva az alsó, fix helyű adatpanel
+animációval frissül. Nincs carousel és nincs felugró ablak.
+
+4. HELYI MEGNYITÁS
 ------------------
-A JSON betöltése miatt a teljes működéshez webszerver kell.
-Egyszerű lehetőség Python esetén a mappában:
+A JSON betöltéséhez webszerver szükséges. A mappában például:
 
 python -m http.server 8000
 
-Ezután:
+Majd:
 http://localhost:8000
 
-Sima dupla kattintásnál a böngésző biztonsági szabályai miatt előfordulhat,
-hogy a characters.json nem töltődik be; ilyenkor a beépített minta jelenik meg.
-
-3. IFRAME BEILLESZTÉS
----------------------
-A fájlokat töltsd fel például GitHub Pagesre vagy saját tárhelyre.
-Ezután a fórumon használható minta:
+5. IFRAME
+---------
+Példa:
 
 <iframe
   src="https://SAJAT-CIMED/index.html"
   title="Karakterarchívum"
   width="100%"
-  height="780"
+  height="560"
   loading="lazy"
   style="border:0; background:transparent;"
   allowtransparency="true">
 </iframe>
 
-Mobilon több hely kellhet. Ha a fórum engedi, 900–980 px iframe-magasság kényelmesebb.
-
-4. VEZÉRLÉS
------------
-- bal/jobb nyíl
-- A / D billentyű
-- egérgörgő a kártyán
-- mobilon vízszintes húzás
-- oldalsó vagy felső karakterindex
-- kategóriaszűrők
-
-5. ÁTLÁTSZÓ HÁTTÉR
-------------------
-A html, body és a külső alkalmazás háttere teljesen átlátszó.
-Csak a karakterkártyák és vezérlőpanelek kapnak saját, áttetsző felületet.
+Az app postMessage-ben továbbra is elküldi a tartalom aktuális magasságát:
+type: "character-roster-height"

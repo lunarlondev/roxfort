@@ -1,17 +1,14 @@
 "use strict";
 
 const FILTERS = [
-  { id: "all", label: "Mind" },
-  { id: "newgen", label: "Newgen" },
-  { id: "oldgen", label: "Oldgen" },
-  { id: "retired", label: "Futottak még" }
+  { id: "all", label: "Mind", type: "all" },
+  { id: "newgen", label: "Newgen", type: "era" },
+  { id: "oldgen", label: "Oldgen", type: "era" },
+  { id: "retired", label: "Futottak még", type: "era" },
+  { id: "hogwarts", label: "Roxfortos diákok", type: "stage" },
+  { id: "higher", label: "Felsőoktatásban tanulók", type: "stage" },
+  { id: "adult", label: "Felnőtt karakterek", type: "stage" }
 ];
-
-const ERA_LABELS = {
-  newgen: "Newgen · elmúlt 2 év",
-  oldgen: "Oldgen · régi karakter",
-  retired: "Futottak még · leadott"
-};
 
 const LINK_TYPES = [
   { key: "profile", label: "Profil" },
@@ -25,41 +22,29 @@ const state = {
   allCharacters: [],
   visibleCharacters: [],
   activeFilter: "all",
-  currentIndex: 0,
-  detailOpen: false,
-  wheelLocked: false
+  selectedId: null,
+  points: []
 };
 
 const elements = {
   app: document.querySelector("#constellationApp"),
   filterBar: document.querySelector("#filterBar"),
   visibleCount: document.querySelector("#visibleCount"),
-  activeName: document.querySelector("#activeName"),
-  orbitViewport: document.querySelector("#orbitViewport"),
-  characterTrack: document.querySelector("#characterTrack"),
-  previousButton: document.querySelector("#previousButton"),
-  nextButton: document.querySelector("#nextButton"),
-  detailLayer: document.querySelector("#detailLayer"),
-  detailBackdrop: document.querySelector("#detailBackdrop"),
+  sky: document.querySelector("#constellationSky"),
+  lines: document.querySelector("#constellationLines"),
+  characterField: document.querySelector("#characterField"),
+  emptyState: document.querySelector("#emptyState"),
+  detailPlaceholder: document.querySelector("#detailPlaceholder"),
   detailCard: document.querySelector("#detailCard"),
-  closeDetailButton: document.querySelector("#closeDetailButton"),
   characterImage: document.querySelector("#characterImage"),
-  characterGeneration: document.querySelector("#characterGeneration"),
-  characterGroup: document.querySelector("#characterGroup"),
-  characterKicker: document.querySelector("#characterKicker"),
   characterName: document.querySelector("#characterName"),
-  characterTagline: document.querySelector("#characterTagline"),
-  characterSummary: document.querySelector("#characterSummary"),
-  characterFacts: document.querySelector("#characterFacts"),
-  characterLinks: document.querySelector("#characterLinks"),
-  emptyState: document.querySelector("#emptyState")
+  characterGroups: document.querySelector("#characterGroups"),
+  characterLinks: document.querySelector("#characterLinks")
 };
 
 initialize();
 
 async function initialize() {
-  bindEvents();
-
   try {
     const response = await fetch("characters.json", { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -78,65 +63,8 @@ async function initialize() {
     console.error("A karakterlista nem tölthető be:", error);
     showLoadError();
   }
-}
 
-function bindEvents() {
-  elements.previousButton.addEventListener("click", () => stepCharacter(-1));
-  elements.nextButton.addEventListener("click", () => stepCharacter(1));
-  elements.closeDetailButton.addEventListener("click", closeDetail);
-  elements.detailBackdrop.addEventListener("click", closeDetail);
-
-  document.addEventListener("keydown", (event) => {
-    const target = event.target;
-    const isTyping = target instanceof HTMLInputElement
-      || target instanceof HTMLTextAreaElement
-      || target instanceof HTMLSelectElement;
-
-    if (isTyping) return;
-
-    if (event.key === "Escape" && state.detailOpen) {
-      event.preventDefault();
-      closeDetail();
-      return;
-    }
-
-    if (["ArrowLeft", "a", "A"].includes(event.key)) {
-      event.preventDefault();
-      stepCharacter(-1);
-    }
-
-    if (["ArrowRight", "d", "D"].includes(event.key)) {
-      event.preventDefault();
-      stepCharacter(1);
-    }
-
-    if (event.key === "Enter" && !state.detailOpen && state.visibleCharacters.length) {
-      event.preventDefault();
-      openDetail();
-    }
-  });
-
-  elements.orbitViewport.addEventListener("wheel", (event) => {
-    if (state.visibleCharacters.length < 2 || state.wheelLocked || state.detailOpen) return;
-
-    const delta = Math.abs(event.deltaX) > Math.abs(event.deltaY)
-      ? event.deltaX
-      : event.deltaY;
-
-    if (Math.abs(delta) < 12) return;
-
-    event.preventDefault();
-    state.wheelLocked = true;
-    stepCharacter(delta > 0 ? 1 : -1);
-    window.setTimeout(() => {
-      state.wheelLocked = false;
-    }, 360);
-  }, { passive: false });
-
-  window.addEventListener("resize", () => {
-    centerActiveOrb({ smooth: false });
-    reportHeight();
-  });
+  window.addEventListener("resize", reportHeight);
 }
 
 function isValidCharacter(character) {
@@ -149,22 +77,18 @@ function isValidCharacter(character) {
 }
 
 function normalizeCharacter(character, index) {
-  const normalizedEra = String(character.era || "newgen").trim().toLowerCase();
+  const era = String(character.era || "newgen").trim().toLowerCase();
+  const stage = String(character.stage || "adult").trim().toLowerCase();
 
   return {
     id: String(character.id || index + 1),
     name: String(character.name || "Névtelen karakter").trim(),
-    kicker: String(character.kicker || "").trim(),
-    tagline: String(character.tagline || "").trim(),
-    summary: String(character.summary || "Nincs még összefoglaló megadva.").trim(),
     image: String(character.image || "images/placeholder-01.svg").trim(),
-    group: String(character.group || "Nincs csoport megadva").trim(),
-    era: ["newgen", "oldgen", "retired"].includes(normalizedEra)
-      ? normalizedEra
-      : "newgen",
-    facts: character.facts && typeof character.facts === "object"
-      ? character.facts
-      : {},
+    groups: Array.isArray(character.groups)
+      ? character.groups.map(String).map((value) => value.trim()).filter(Boolean)
+      : [String(character.group || "").trim()].filter(Boolean),
+    era: ["newgen", "oldgen", "retired"].includes(era) ? era : "newgen",
+    stage: ["hogwarts", "higher", "adult"].includes(stage) ? stage : "adult",
     links: character.links && typeof character.links === "object"
       ? character.links
       : {}
@@ -172,198 +96,175 @@ function normalizeCharacter(character, index) {
 }
 
 function applyFilter(filterId, { initial = false } = {}) {
-  state.activeFilter = filterId;
-  state.visibleCharacters = filterId === "all"
+  const filter = FILTERS.find((item) => item.id === filterId) || FILTERS[0];
+
+  state.activeFilter = filter.id;
+  state.selectedId = null;
+
+  const matches = filter.type === "all"
     ? [...state.allCharacters]
-    : state.allCharacters.filter((character) => character.era === filterId);
-  state.currentIndex = 0;
+    : state.allCharacters.filter((character) => character[filter.type] === filter.id);
 
-  closeDetail({ restoreFocus: false });
+  state.visibleCharacters = shuffle(matches);
+  state.points = generateConstellationPoints(state.visibleCharacters.length);
+
   renderFilters();
-  renderCarousel();
-  updateInterface();
+  renderConstellation({ initial });
+  clearDetail();
+  updateCount();
 
-  window.requestAnimationFrame(() => {
-    centerActiveOrb({ smooth: !initial });
-    reportHeight();
-  });
+  window.requestAnimationFrame(reportHeight);
 }
 
 function renderFilters() {
   elements.filterBar.replaceChildren();
 
-  FILTERS.forEach((filter) => {
-    const count = filter.id === "all"
+  FILTERS.forEach((filter, index) => {
+    if (index === 4) {
+      const divider = document.createElement("span");
+      divider.className = "filters__divider";
+      divider.setAttribute("aria-hidden", "true");
+      elements.filterBar.appendChild(divider);
+    }
+
+    const count = filter.type === "all"
       ? state.allCharacters.length
-      : state.allCharacters.filter((character) => character.era === filter.id).length;
+      : state.allCharacters.filter((character) => character[filter.type] === filter.id).length;
 
     const button = document.createElement("button");
     button.type = "button";
     button.className = `filter-button${state.activeFilter === filter.id ? " is-active" : ""}`;
     button.setAttribute("aria-pressed", String(state.activeFilter === filter.id));
+    button.dataset.filter = filter.id;
 
-    const label = document.createTextNode(filter.label);
-    const countSpan = document.createElement("span");
-    countSpan.className = "filter-button__count";
+    const text = document.createElement("span");
+    text.textContent = filter.label;
+
+    const countSpan = document.createElement("small");
     countSpan.textContent = String(count);
 
-    button.append(label, countSpan);
+    button.append(text, countSpan);
     button.addEventListener("click", () => applyFilter(filter.id));
     elements.filterBar.appendChild(button);
   });
 }
 
-function renderCarousel() {
-  elements.characterTrack.replaceChildren();
+function renderConstellation({ initial = false } = {}) {
+  elements.characterField.replaceChildren();
+  elements.lines.replaceChildren();
+
+  const hasCharacters = state.visibleCharacters.length > 0;
+  elements.emptyState.hidden = hasCharacters;
+
+  if (!hasCharacters) {
+    elements.sky.classList.add("is-empty");
+    return;
+  }
+
+  elements.sky.classList.remove("is-empty");
 
   state.visibleCharacters.forEach((character, index) => {
+    const point = state.points[index];
     const button = document.createElement("button");
     button.type = "button";
-    button.className = "character-orb";
-    button.dataset.index = String(index);
+    button.className = "character-star";
+    button.dataset.id = character.id;
     button.dataset.era = character.era;
-    button.style.setProperty("--float-delay", `${-(index % 6) * 0.55}s`);
-    button.setAttribute("aria-label", `${character.name} adatlapjának megnyitása`);
+    button.dataset.stage = character.stage;
+    button.style.setProperty("--x", `${point.x}%`);
+    button.style.setProperty("--y", `${point.y}%`);
+    button.style.setProperty("--delay", `${-(Math.random() * 5).toFixed(2)}s`);
+    button.style.setProperty("--duration", `${(4.8 + Math.random() * 2.8).toFixed(2)}s`);
+    button.style.setProperty("--drift-x", `${(-3 + Math.random() * 6).toFixed(1)}px`);
+    button.style.setProperty("--drift-y", `${(-3 + Math.random() * 6).toFixed(1)}px`);
+    button.style.setProperty("--arrival-delay", `${initial ? 30 + index * 55 : index * 45}ms`);
+    button.setAttribute("aria-label", character.name);
 
     const halo = document.createElement("span");
-    halo.className = "character-orb__halo";
+    halo.className = "character-star__halo";
 
     const image = document.createElement("img");
-    image.className = "character-orb__image";
     image.src = character.image;
     image.alt = "";
-    image.loading = index < 5 ? "eager" : "lazy";
+    image.loading = index < 6 ? "eager" : "lazy";
     image.addEventListener("error", () => {
       image.src = "images/placeholder-01.svg";
     }, { once: true });
 
-    const era = document.createElement("span");
-    era.className = "character-orb__era";
-    era.setAttribute("aria-hidden", "true");
+    const label = document.createElement("span");
+    label.className = "character-star__name";
+    label.textContent = character.name;
 
-    const name = document.createElement("span");
-    name.className = "character-orb__name";
-    name.textContent = character.name;
+    halo.appendChild(image);
+    button.append(halo, label);
+    button.addEventListener("click", () => selectCharacter(character.id));
 
-    halo.append(image, era);
-    button.append(halo, name);
-    button.addEventListener("click", () => selectCharacter(index, { open: true }));
+    elements.characterField.appendChild(button);
+  });
 
-    elements.characterTrack.appendChild(button);
+  renderLines();
+}
+
+function renderLines() {
+  if (state.points.length < 2) return;
+
+  const connections = buildConnections(state.points);
+
+  connections.forEach(([fromIndex, toIndex], index) => {
+    const from = state.points[fromIndex];
+    const to = state.points[toIndex];
+
+    const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    line.setAttribute("x1", from.x);
+    line.setAttribute("y1", from.y);
+    line.setAttribute("x2", to.x);
+    line.setAttribute("y2", to.y);
+    line.style.setProperty("--line-delay", `${index * 55}ms`);
+    elements.lines.appendChild(line);
   });
 }
 
-function updateInterface() {
-  const total = state.visibleCharacters.length;
-  const hasCharacters = total > 0;
+function buildConnections(points) {
+  const edges = new Set();
 
-  elements.emptyState.hidden = hasCharacters;
-  elements.orbitViewport.hidden = !hasCharacters;
-  elements.previousButton.hidden = !hasCharacters;
-  elements.nextButton.hidden = !hasCharacters;
+  points.forEach((point, index) => {
+    const neighbors = points
+      .map((other, otherIndex) => ({
+        index: otherIndex,
+        distance: otherIndex === index ? Infinity : distance(point, other)
+      }))
+      .sort((a, b) => a.distance - b.distance)
+      .slice(0, points.length < 5 ? 1 : 2);
 
-  elements.visibleCount.textContent = hasCharacters
-    ? `${String(state.currentIndex + 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}`
-    : "00 / 00";
-
-  if (!hasCharacters) {
-    elements.activeName.textContent = "Nincs találat";
-    reportHeight();
-    return;
-  }
-
-  const character = state.visibleCharacters[state.currentIndex];
-  elements.activeName.textContent = character.name;
-  elements.previousButton.disabled = total < 2;
-  elements.nextButton.disabled = total < 2;
-
-  updateOrbStates();
-
-  if (state.detailOpen) renderDetail(character);
-  reportHeight();
-}
-
-function updateOrbStates() {
-  const buttons = [...elements.characterTrack.querySelectorAll(".character-orb")];
-  const total = buttons.length;
-
-  buttons.forEach((button, index) => {
-    const directDistance = Math.abs(index - state.currentIndex);
-    const wrappedDistance = total > 2
-      ? Math.min(directDistance, total - directDistance)
-      : directDistance;
-    const isActive = index === state.currentIndex;
-
-    button.classList.toggle("is-active", isActive);
-    button.setAttribute("aria-current", isActive ? "true" : "false");
-    button.style.setProperty("--distance", String(Math.min(wrappedDistance, 4)));
+    neighbors.forEach((neighbor) => {
+      const a = Math.min(index, neighbor.index);
+      const b = Math.max(index, neighbor.index);
+      edges.add(`${a}:${b}`);
+    });
   });
+
+  return [...edges].map((edge) => edge.split(":").map(Number));
 }
 
-function selectCharacter(index, { open = false } = {}) {
-  const total = state.visibleCharacters.length;
-  if (!total) return;
-
-  state.currentIndex = ((index % total) + total) % total;
-  updateInterface();
-  centerActiveOrb();
-
-  if (open) openDetail();
-}
-
-function stepCharacter(direction) {
-  if (state.visibleCharacters.length < 2) return;
-  selectCharacter(state.currentIndex + direction);
-}
-
-function centerActiveOrb({ smooth = true } = {}) {
-  const active = elements.characterTrack.querySelector(".character-orb.is-active");
-  if (!active || elements.orbitViewport.hidden) return;
-
-  const viewportRect = elements.orbitViewport.getBoundingClientRect();
-  const activeRect = active.getBoundingClientRect();
-  const offset = (activeRect.left + activeRect.width / 2)
-    - (viewportRect.left + viewportRect.width / 2);
-
-  elements.orbitViewport.scrollBy({
-    left: offset,
-    behavior: smooth ? "smooth" : "auto"
-  });
-}
-
-function openDetail() {
-  const character = state.visibleCharacters[state.currentIndex];
+function selectCharacter(id) {
+  const character = state.visibleCharacters.find((item) => item.id === id);
   if (!character) return;
 
-  state.detailOpen = true;
-  renderDetail(character);
-  elements.detailLayer.hidden = false;
-  elements.detailLayer.setAttribute("aria-hidden", "false");
-  document.body.classList.add("detail-is-open");
+  state.selectedId = id;
 
-  window.requestAnimationFrame(() => {
-    elements.closeDetailButton.focus({ preventScroll: true });
-    reportHeight();
+  [...elements.characterField.querySelectorAll(".character-star")].forEach((button) => {
+    const isSelected = button.dataset.id === id;
+    button.classList.toggle("is-selected", isSelected);
+    button.setAttribute("aria-pressed", String(isSelected));
   });
-}
 
-function closeDetail({ restoreFocus = true } = {}) {
-  if (!state.detailOpen && elements.detailLayer.hidden) return;
-
-  state.detailOpen = false;
-  elements.detailLayer.hidden = true;
-  elements.detailLayer.setAttribute("aria-hidden", "true");
-  document.body.classList.remove("detail-is-open");
-
-  if (restoreFocus) {
-    const activeOrb = elements.characterTrack.querySelector(".character-orb.is-active");
-    activeOrb?.focus({ preventScroll: true });
-  }
-
-  reportHeight();
+  renderDetail(character);
 }
 
 function renderDetail(character) {
+  elements.detailCard.classList.remove("is-entering");
+  void elements.detailCard.offsetWidth;
+
   elements.characterImage.src = character.image;
   elements.characterImage.alt = character.name;
   elements.characterImage.onerror = () => {
@@ -371,37 +272,27 @@ function renderDetail(character) {
     elements.characterImage.src = "images/placeholder-01.svg";
   };
 
-  elements.characterGeneration.textContent = ERA_LABELS[character.era] || character.era;
-  elements.characterGroup.textContent = character.group || "—";
-  elements.characterKicker.textContent = character.kicker || "—";
   elements.characterName.textContent = character.name;
-  elements.characterTagline.textContent = character.tagline || "—";
-  elements.characterSummary.textContent = character.summary || "—";
-
-  renderFacts(character.facts);
+  renderGroups(character.groups);
   renderLinks(character.links);
+
+  elements.detailPlaceholder.hidden = true;
+  elements.detailCard.hidden = false;
+  elements.detailCard.classList.add("is-entering");
+
+  window.requestAnimationFrame(reportHeight);
 }
 
-function renderFacts(facts) {
-  elements.characterFacts.replaceChildren();
+function renderGroups(groups) {
+  elements.characterGroups.replaceChildren();
 
-  const entries = Object.entries(facts || {})
-    .filter(([key, value]) => key.trim() && value !== null && value !== undefined && String(value).trim());
-
-  entries.forEach(([label, value]) => {
-    const wrapper = document.createElement("div");
-    wrapper.className = "fact";
-
-    const term = document.createElement("dt");
-    term.textContent = label;
-
-    const description = document.createElement("dd");
-    description.textContent = String(value);
-    description.title = String(value);
-
-    wrapper.append(term, description);
-    elements.characterFacts.appendChild(wrapper);
+  groups.forEach((group) => {
+    const chip = document.createElement("span");
+    chip.textContent = group;
+    elements.characterGroups.appendChild(chip);
   });
+
+  elements.characterGroups.hidden = groups.length === 0;
 }
 
 function renderLinks(links) {
@@ -409,37 +300,106 @@ function renderLinks(links) {
 
   LINK_TYPES.forEach(({ key, label }) => {
     const url = typeof links?.[key] === "string" ? links[key].trim() : "";
+    if (!url) return;
 
-    if (url) {
-      const anchor = document.createElement("a");
-      anchor.className = "character-link";
-      anchor.href = url;
-      anchor.target = "_blank";
-      anchor.rel = "noopener noreferrer";
-      anchor.textContent = label;
-      elements.characterLinks.appendChild(anchor);
-      return;
+    const anchor = document.createElement("a");
+    anchor.className = "character-link";
+    anchor.href = url;
+    anchor.target = "_blank";
+    anchor.rel = "noopener noreferrer";
+    anchor.textContent = label;
+    elements.characterLinks.appendChild(anchor);
+  });
+
+  elements.characterLinks.hidden = elements.characterLinks.childElementCount === 0;
+}
+
+function clearDetail() {
+  elements.detailCard.hidden = true;
+  elements.detailCard.classList.remove("is-entering");
+  elements.detailPlaceholder.hidden = false;
+}
+
+function updateCount() {
+  const total = state.visibleCharacters.length;
+  elements.visibleCount.textContent = `${total} karakter`;
+}
+
+function generateConstellationPoints(count) {
+  if (!count) return [];
+
+  const points = [];
+  const minDistance = Math.max(13, 25 - count * 1.35);
+  const minX = 11;
+  const maxX = 89;
+  const minY = 13;
+  const maxY = 87;
+
+  for (let index = 0; index < count; index += 1) {
+    let candidate = null;
+    let attempts = 0;
+
+    while (attempts < 180) {
+      const next = {
+        x: minX + Math.random() * (maxX - minX),
+        y: minY + Math.random() * (maxY - minY)
+      };
+
+      const isFarEnough = points.every((point) => distance(point, next) >= minDistance);
+      if (isFarEnough) {
+        candidate = next;
+        break;
+      }
+      attempts += 1;
     }
 
-    const disabled = document.createElement("span");
-    disabled.className = "character-link is-disabled";
-    disabled.textContent = label;
-    disabled.setAttribute("aria-disabled", "true");
-    elements.characterLinks.appendChild(disabled);
-  });
+    if (!candidate) {
+      const angle = (Math.PI * 2 * index) / Math.max(count, 1) + Math.random() * 0.45;
+      const radiusX = 28 + Math.random() * 7;
+      const radiusY = 25 + Math.random() * 8;
+      candidate = {
+        x: 50 + Math.cos(angle) * radiusX,
+        y: 50 + Math.sin(angle) * radiusY
+      };
+    }
+
+    points.push(candidate);
+  }
+
+  return points;
+}
+
+function distance(a, b) {
+  return Math.hypot(a.x - b.x, a.y - b.y);
+}
+
+function shuffle(items) {
+  const copy = [...items];
+
+  for (let index = copy.length - 1; index > 0; index -= 1) {
+    const randomIndex = Math.floor(Math.random() * (index + 1));
+    [copy[index], copy[randomIndex]] = [copy[randomIndex], copy[index]];
+  }
+
+  return copy;
 }
 
 function showLoadError() {
   state.allCharacters = [];
   state.visibleCharacters = [];
+  state.points = [];
+
   renderFilters();
-  renderCarousel();
-  updateInterface();
+  renderConstellation();
+  updateCount();
 
   const message = elements.emptyState.querySelector("p");
   if (message) {
     message.textContent = "A characters.json fájl nem tölthető be vagy hibás.";
   }
+  elements.emptyState.hidden = false;
+  clearDetail();
+  reportHeight();
 }
 
 function reportHeight() {
