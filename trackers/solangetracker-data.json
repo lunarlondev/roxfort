@@ -294,7 +294,7 @@
       "id": "g04",
       "categoryId": "year-2005-2006",
       "title": "Feels like the end of the world",
-      "status": "Aktív",
+      "status": "Lezárt",
       "characters": [
         {
           "name": "Elspeth Mordrake",
@@ -314,6 +314,254 @@
       "summary": "Elsie súlyos válságon megy keresztül.",
       "tags": [
         "Tiniterhesség"
+      ]
+    },
+	{
+      "id": "g05",
+      "categoryId": "year-2005-2006",
+      "title": "It'll get worse",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Elspeth Mordrake",
+          "image": "actors/elspeth.jpg",
+          "featured": true
+        },
+        {
+          "name": "Lucinda Yaxley",
+          "image": "actors/lucinda.jpg",
+          "featured": true
+        },
+		{
+          "name": "Nathaniel Nox",
+          "image": "actors/nathaniel.jpg",
+          "featured": true
+        },
+		{
+          "name": "Orville Morris",
+          "image": "actors/orville.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2006. május 27., szombat",
+      "location": "Roxfort, Tiltott Rengeteg, Lelátók",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,21318.msg129881.html#msg129881",
+      "image": "https://i.pinimg.com/1200x/d7/df/9a/d7df9a151b3679eebc7a915322c33218.jpg",
+      "summary": "A Harmadik Próba nézése közben Elsie egy látomást közöl számára vele kapcsolatban.",
+      "tags": [
+        "Tiniterhesség"
+      ]
+    },
+	{
+      "id": "g06",
+      "categoryId": "summer-2006",
+      "title": "erzulie",
+      "status": "Folyamatban",
+      "characters": [
+        {
+          "name": "Malachi Maddock",
+          "image": "actors/malachi.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2006. július 1., szombat",
+      "location": "New Orleans, Louisiana, USA",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,21424.0.html",
+      "image": "https://i.pinimg.com/1200x/d7/87/56/d787569800e154868e5ca3e6b796d0b2.jpg",
+      "summary": "Kényszerházasságot köt Malachi Maddock-kal.",
+      "tags": [
+        "Kényszerházasság", "Rasszizmus"
+      ]
+    },
+	{
+      "id": "g07",
+      "categoryId": "summer-2006",
+      "title": "What happens in Vegas",
+      "status": "Folyamatban",
+      "characters": [
+        {
+          "name": "Elspeth Mordrake",
+          "image": "actors/elspeth.jpg",
+          "featured": true
+        },
+        {
+          "name": "Lucinda Yaxley",
+          "image": "actors/lucinda.jpg",
+          "featured": true
+        },
+		{
+          "name": "Nathaniel Nox",
+          "image": "actors/nathaniel.jpg",
+          "featured": true
+        },
+		{
+          "name": "Orville Morris",
+          "image": "actors/orville.jpg",
+          "featured": true
+        },
+		{
+          "name": "Malachi Maddock",
+          "image": "actors/malachi.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2006. július 24., szombat",
+      "location": "Morris birtok, Texas, USA",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,21434.0.html",
+      "image": "https://i.pinimg.com/1200x/0e/bd/e8/0ebde8519b6ff2fb048a819218bae5ac.jpg",
+      "summary": "Lucinda & Orville esküvője",
+      "tags": [
+        "Kényszerházasság", "Rasszizmus"
+      ]
+    },
+	{
+      "id": "g08",
+      "categoryId": "summer-2006",
+      "title": "What happens in Vegas",
+      "status": "Folyamatban",
+      "characters": [
+        {
+          "name": "Elspeth Mordrake",
+          "image": "actors/elspeth.jpg",
+          "featured": true
+        },
+        {
+          "name": "Lucinda Yaxley",
+          "image": "actors/lucinda.jpg",
+          "featured": true
+        },
+		{
+          "name": "Nathaniel Nox",
+          "image": "actors/nathaniel.jpg",
+          "featured": true
+        },
+		{
+          "name": "Orville Morris",
+          "image": "actors/orville.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2006. július 24., szombat",
+      "location": "Las Vegas, Nevada, USA",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,21439.msg130182.html#msg130182",
+      "image": "https://i.pinimg.com/1200x/0e/bd/e8/0ebde8519b6ff2fb048a819218bae5ac.jpg",
+      "summary": "Elsie látomása alapján Solange és Orville megtudják Lucinda és Nathaniel tervét az Elnök elleni merényletről. Szembesítik őket a látomással, amiben elbuknak. Segítséget ajánlanak fel. Az ötösfogat vérszerződést köt a titok megtartása érdekében.",
+      "tags": [
+        "Kényszerházasság", "Rasszizmus"
+      ]
+    },
+	{
+      "id": "g09",
+      "categoryId": "past",
+      "title": "jazz funeral",
+      "status": "Lezárt",
+      "characters": [
+        {
+          "name": "Elspeth Mordrake",
+          "image": "actors/elspeth.jpg",
+          "featured": true
+        },
+        {
+          "name": "Lucinda Yaxley",
+          "image": "actors/lucinda.jpg",
+          "featured": true
+        },
+		{
+          "name": "Nathaniel Nox",
+          "image": "actors/nathaniel.jpg",
+          "featured": true
+        },
+		{
+          "name": "Orville Morris",
+          "image": "actors/orville.jpg",
+          "featured": true
+        },
+		{
+          "name": "Naya Laveau",
+          "image": "https://lunarlondev.github.io/roxfort/solange/images/naya.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2005. június 29., csütörtök",
+      "location": "Las Vegas, Nevada, USA",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,20405.msg129883.html#msg129883",
+      "image": "https://i.pinimg.com/736x/8b/18/ad/8b18ad8755e3880703fc4b6896aa0641.jpg",
+      "summary": "Naya Laveau temetése.",
+      "tags": [
+        "Gyász"
+      ]
+    },
+	{
+      "id": "g10",
+      "categoryId": "summer-2006",
+      "title": "unapologetic",
+      "status": "Folyamatban",
+      "characters": [
+        {
+          "name": "Ajax Ambrose",
+          "image": "actors/ajax.jpg",
+          "featured": true
+        }
+      ],
+      "date": "2005. augusztus 5., szombat",
+      "location": "A Négy Ház Tere, Kviddics Világbajnokság, Grand Kanyon, USA",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,21381.msg130151.html#msg130151",
+      "image": "https://i.pinimg.com/1200x/ea/e7/58/eae758747ea0eadc2c8bc3db11c880cd.jpg",
+      "summary": "Vendégül látja Ajaxet rövid időre a nyárra, és megismerteti vele közös kultúrájuk egy részét a világkupán.",
+      "tags": [
+        "Rasszizmus"
+      ]
+    },
+	{
+      "id": "g11",
+      "categoryId": "summer-2006",
+      "title": "to kill a president",
+      "status": "Folyamatban",
+      "characters": [
+        {
+          "name": "Elspeth Mordrake",
+          "image": "actors/elspeth.jpg",
+          "featured": false
+        },
+        {
+          "name": "Lucinda Yaxley",
+          "image": "actors/lucinda.jpg",
+          "featured": false
+        },
+		{
+          "name": "Nathaniel Nox",
+          "image": "actors/nathaniel.jpg",
+          "featured": true
+        },
+		{
+          "name": "Orville Morris",
+          "image": "actors/orville.jpg",
+          "featured": false
+        },
+		{
+          "name": "Malachi Maddock",
+          "image": "actors/malachi.jpg",
+          "featured": false
+        },
+		{
+          "name": "Thaddeus Maddock",
+          "image": "actors/npcmale.jpg",
+          "featured": true
+        },
+		{
+          "name": "Cassius Yaxley",
+          "image": "actors/npcmale.jpg",
+          "featured": true
+        }
+		
+      ],
+      "date": "2005. augusztus 12., szombat",
+      "location": "Világkupa Lounge, Kviddics Világbajnokság, Grand Kanyon, USA",
+      "link": "https://www.roxfort.frpg.hu/index.php/topic,21378.msg130187.html#msg130187",
+      "image": "https://i.pinimg.com/736x/ec/c8/c5/ecc8c543d9bf7729d4445455537b1427.jpg",
+      "summary": "Elkövetik a merényletet az amerikai elnök ellen.",
+      "tags": [
+        "Rasszizmus", "Kényszerházasság", "Gyilkosság"
       ]
     }
   ]
