@@ -37,7 +37,7 @@
       "characters": [
         {
           "name": "Naya Laveau",
-          "image": "images/naya.jpg",
+          "image": "https://lunarlondev.github.io/roxfort/solange/images/naya.jpg",
           "featured": true
         },
         {
@@ -59,12 +59,12 @@
         },
         {
           "name": "Jackson",
-          "image": "images/jackson.jpg",
+          "image": "https://lunarlondev.github.io/roxfort/solange/images/jackson.jpg",
           "featured": true
         },
         {
           "name": "Damballah",
-          "image": "images/damballah.jpg",
+          "image": "https://lunarlondev.github.io/roxfort/solange/images/damballah.jpg",
           "featured": true
         }
       ],
