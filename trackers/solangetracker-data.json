@@ -26,6 +26,11 @@
       "id": "outside-time",
       "title": "Időn kívüli",
       "open": false
+    },
+	{
+      "id": "summer-2006",
+      "title": "2006 nyara",
+      "open": false
     }
   ],
   "games": [
