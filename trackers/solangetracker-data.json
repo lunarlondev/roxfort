@@ -10,17 +10,17 @@
     {
       "id": "past",
       "title": "Múlt",
-      "open": true
+      "open": false
     },
     {
       "id": "year-2005-2006",
       "title": "2005/2006 tanév",
-      "open": true
+      "open": false
     },
 		{
       "id": "summer-2006",
       "title": "2006 nyara",
-      "open": false
+      "open": true
     },
     {
       "id": "year-2006-2007",
