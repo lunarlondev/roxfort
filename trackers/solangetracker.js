@@ -68,7 +68,7 @@ function solangetrackerStatusLabel(status){
 }
 
 function solangetrackerDefaultImage(){
-  return solangetrackerState.data?.meta?.defaultImage || "images/gif/kkny.gif";
+  return solangetrackerState.data?.meta?.defaultImage || "https://lunarlondev.github.io/roxfort/solange/images/gif/kkny.gif";
 }
 
 function solangetrackerDefaultCharacterImage(){
