@@ -17,6 +17,11 @@
       "title": "2005/2006 tanév",
       "open": true
     },
+		{
+      "id": "summer-2006",
+      "title": "2006 nyara",
+      "open": false
+    },
     {
       "id": "year-2006-2007",
       "title": "2006/2007 tanév",
@@ -25,11 +30,6 @@
     {
       "id": "outside-time",
       "title": "Időn kívüli",
-      "open": false
-    },
-	{
-      "id": "summer-2006",
-      "title": "2006 nyara",
       "open": false
     }
   ],
@@ -381,7 +381,7 @@
 	{
       "id": "g07",
       "categoryId": "summer-2006",
-      "title": "What happens in Vegas",
+      "title": "Mégnincsneve",
       "status": "Aktív",
       "characters": [
         {
