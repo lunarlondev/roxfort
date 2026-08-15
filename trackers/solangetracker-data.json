@@ -204,7 +204,7 @@
       "id": "g03",
       "categoryId": "year-2005-2006",
       "title": "Loko kezei",
-      "status": "Aktív",
+      "status": "Lezárt",
       "characters": [
         {
           "name": "Hagen Romanov",
@@ -361,7 +361,7 @@
       "id": "g06",
       "categoryId": "summer-2006",
       "title": "erzulie",
-      "status": "Folyamatban",
+      "status": "Aktív",
       "characters": [
         {
           "name": "Malachi Maddock",
@@ -382,7 +382,7 @@
       "id": "g07",
       "categoryId": "summer-2006",
       "title": "What happens in Vegas",
-      "status": "Folyamatban",
+      "status": "Aktív",
       "characters": [
         {
           "name": "Elspeth Mordrake",
@@ -423,7 +423,7 @@
       "id": "g08",
       "categoryId": "summer-2006",
       "title": "What happens in Vegas",
-      "status": "Folyamatban",
+      "status": "Aktív",
       "characters": [
         {
           "name": "Elspeth Mordrake",
@@ -500,7 +500,7 @@
       "id": "g10",
       "categoryId": "summer-2006",
       "title": "unapologetic",
-      "status": "Folyamatban",
+      "status": "Aktív",
       "characters": [
         {
           "name": "Ajax Ambrose",
@@ -521,7 +521,7 @@
       "id": "g11",
       "categoryId": "summer-2006",
       "title": "to kill a president",
-      "status": "Folyamatban",
+      "status": "Aktív",
       "characters": [
         {
           "name": "Elspeth Mordrake",
