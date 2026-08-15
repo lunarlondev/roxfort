@@ -3,8 +3,8 @@
     "title": "Solange Laveau",
     "subtitle": "játékkövető",
     "intro": "A játékok összefoglalóját a Részletek gombra kattintva tekintheted meg. Az egyes játékokra a Megnyitás gomb megnyomása után lehet tovább menni.",
-    "heroImage": "images/snake2.jpg",
-    "defaultImage": "images/gif/kkny.gif"
+    "heroImage": "https://lunarlondev.github.io/roxfort/solange/images/snake2.jpg",
+    "defaultImage": "https://lunarlondev.github.io/roxfort/solange/images/gif/kkny.gif"
   },
   "categories": [
     {
@@ -42,20 +42,20 @@
         },
         {
           "name": "Nathaniel Nox",
-          "image": "images/actors/nathaniel.jpg",
+          "image": "actors/nathaniel.jpg",
           "featured": true
         },
         {
           "name": "Lucinda Yaxley",
-          "image": "images/actors/lucinda.jpg"
+          "image": "actors/lucinda.jpg"
         },
         {
           "name": "Elspeth Mordrake",
-          "image": "images/actors/elspeth.jpg"
+          "image": "actors/elspeth.jpg"
         },
         {
           "name": "Orville Morris",
-          "image": "images/actors/orville.jpg"
+          "image": "actors/orville.jpg"
         },
         {
           "name": "Jackson",
@@ -89,47 +89,47 @@
       "characters": [
         {
           "name": "Solace Barbon",
-          "image": "images/actors/barbon.jpg",
+          "image": "actors/barbon.jpg",
           "featured": true
         },
         {
           "name": "Vale Bate",
-          "image": "images/actors/vale.jpg",
+          "image": "actors/vale.jpg",
           "featured": true
         },
         {
           "name": "Lucinda Yaxley",
-          "image": "images/actors/lucinda.jpg",
+          "image": "actors/lucinda.jpg",
           "featured": true
         },
         {
           "name": "Orville Morris",
-          "image": "images/actors/orville.jpg",
+          "image": "actors/orville.jpg",
           "featured": true
         },
         {
           "name": "Nathaniel Nox",
-          "image": "images/actors/nathaniel.jpg",
+          "image": "actors/nathaniel.jpg",
           "featured": true
         },
         {
           "name": "Elspeth Mordrake",
-          "image": "images/actors/elspeth.jpg",
+          "image": "actors/elspeth.jpg",
           "featured": true
         },
         {
           "name": "Vianne M. Gardner",
-          "image": "images/actors/vianne.jpg",
+          "image": "actors/vianne.jpg",
           "featured": false
         },
         {
           "name": "Varvara Chernov",
-          "image": "images/actors/varvara.jpg",
+          "image": "actors/varvara.jpg",
           "featured": false
         },
         {
           "name": "Malachi Maddock",
-          "image": "images/actors/malachi.jpg",
+          "image": "actors/malachi.jpg",
           "featured": false
         }
       ],
@@ -151,37 +151,37 @@
       "characters": [
         {
           "name": "Lucinda Yaxley",
-          "image": "images/actors/lucinda.jpg",
+          "image": "actors/lucinda.jpg",
           "featured": true
         },
         {
           "name": "Nathaniel Nox",
-          "image": "images/actors/nathaniel.jpg",
+          "image": "actors/nathaniel.jpg",
           "featured": true
         },
         {
           "name": "Elspeth Mordrake",
-          "image": "images/actors/elspeth.jpg",
+          "image": "actors/elspeth.jpg",
           "featured": true
         },
         {
           "name": "Solace Barbon",
-          "image": "images/actors/barbon.jpg",
+          "image": "actors/barbon.jpg",
           "featured": true
         },
         {
           "name": "Vale Bate",
-          "image": "images/actors/vale.jpg",
+          "image": "actors/vale.jpg",
           "featured": false
         },
         {
           "name": "Varvara Chernov",
-          "image": "images/actors/varvara.jpg",
+          "image": "actors/varvara.jpg",
           "featured": false
         },
 		        {
           "name": "Vianne M. Gardner",
-          "image": "images/actors/vianne.jpg",
+          "image": "actors/vianne.jpg",
           "featured": false
         }
       ],
@@ -203,77 +203,77 @@
       "characters": [
         {
           "name": "Hagen Romanov",
-          "image": "images/actors/hagen.jpg",
+          "image": "actors/hagen.jpg",
           "featured": true
         },
         {
           "name": "Ajax Ambrose",
-          "image": "images/actors/ajax.jpg",
+          "image": "actors/ajax.jpg",
           "featured": true
         },
         {
           "name": "Madam Pomfrey",
-          "image": "images/actors/pomfrey.jpg",
+          "image": "actors/pomfrey.jpg",
           "featured": false
         },
         {
           "name": "Daphné d'Aboville",
-          "image": "images/actors/daph.jpg",
+          "image": "actors/daph.jpg",
           "featured": false
         },
         {
           "name": "Malachi Maddock",
-          "image": "images/actors/malachi.jpg",
+          "image": "actors/malachi.jpg",
           "featured": false
         },
         {
           "name": "Rokuro Ishida",
-          "image": "images/actors/rokuro.jpg",
+          "image": "actors/rokuro.jpg",
           "featured": false
         },
         {
           "name": "Anne-Rose Tuffin",
-          "image": "images/actors/annie.jpg",
+          "image": "actors/annie.jpg",
           "featured": false
         },
         {
           "name": "Solace Barbon",
-          "image": "images/actors/barbon.jpg",
+          "image": "actors/barbon.jpg",
           "featured": false
         },
         {
           "name": "Lucinda Yaxley",
-          "image": "images/actors/lucinda.jpg",
+          "image": "actors/lucinda.jpg",
           "featured": false
         },
         {
           "name": "William Ashford",
-          "image": "images/actors/william.jpg",
+          "image": "actors/william.jpg",
           "featured": false
         },
         {
           "name": "Lorian Grimmstark",
-          "image": "images/actors/lorian.jpg",
+          "image": "actors/lorian.jpg",
           "featured": false
         },
         {
           "name": "Locket R. Grimmstark",
-          "image": "images/actors/locket.jpg",
+          "image": "actors/locket.jpg",
           "featured": false
         },
         {
           "name": "Hanni Haeni",
-          "image": "images/actors/hanni.jpg",
+          "image": "actors/hanni.jpg",
           "featured": false
         },
         {
           "name": "Gemma Jenkins",
-          "image": "images/actors/gemma.jpg",
+          "image": "actors/gemma.jpg",
           "featured": false
         },
         {
           "name": "Connor O'Hara",
-          "image": "images/actors/connor.jpg",
+          "image": "actors/connor.jpg",
           "featured": false
         }
       ],
@@ -298,12 +298,12 @@
       "characters": [
         {
           "name": "Elspeth Mordrake",
-          "image": "images/actors/elspeth.jpg",
+          "image": "actors/elspeth.jpg",
           "featured": true
         },
         {
           "name": "Lucinda Yaxley",
-          "image": "images/actors/lucinda.jpg",
+          "image": "actors/lucinda.jpg",
           "featured": true
         }
       ],
