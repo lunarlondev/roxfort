@@ -342,5 +342,27 @@
       "slytherin"
     ],
     "gender": "male"
+  },
+  {
+    "id": "018",
+    "name": "Tesseract Ncguka",
+    "image": "images/tesseract.jpg",
+    "groups": [
+      "Hollóhát",
+	  "Tanulóklub vezetője",
+	  "Mugli születésű"
+    ],
+    "era": "newgen",
+    "stage": "student",
+    "links": {
+      "profile": "https://www.roxfort.frpg.hu/index.php?action=profile;u=7951"
+    },
+    "schools": [
+      "hogwarts"
+    ],
+    "houses": [
+      "ravenclaw"
+    ],
+    "gender": "male"
   }
 ]
