@@ -1,0 +1,17 @@
+[
+  {
+    "id": "miguel",
+    "name": "Miguel Alejandro de la Vega",
+    "image": "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/miguel.jpg"
+  },
+  {
+    "id": "rokuro",
+    "name": "Rokuro Takahashi-Kisaragi",
+    "image": "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/rokuro.jpg"
+  },
+  {
+    "id": "gemma",
+    "name": "Gemma",
+    "image": "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/gemma.jpg"
+  }
+]

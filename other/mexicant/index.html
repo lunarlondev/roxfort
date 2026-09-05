@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Játékkód generátor</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Oswald:wght@400;500;600;700&family=Permanent+Marker&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+* { box-sizing:border-box; }
+
+body { margin:0; background:#151311; color:#eee4d7; font-family:'Inter',sans-serif; }
+
+.generator { width:min(1180px,calc(100% - 30px)); margin:30px auto 70px; }
+
+.generator-head { margin-bottom:25px; }
+
+.generator-head h1 { margin:0; font-family:'DM Serif Display',serif; font-size:34px; font-weight:400; }
+
+.generator-head p { margin:7px 0 0; max-width:700px; color:#92877c; font-size:13px; line-height:1.6; }
+
+.generator-layout { display:grid; grid-template-columns:minmax(310px,1fr) 520px; gap:28px; align-items:start; }
+
+.generator-panel { padding:22px; background:#201d1a; border:1px solid #332d28; border-radius:13px; }
+
+.generator-section { margin-bottom:24px; }
+
+.generator-section:last-child { margin-bottom:0; }
+
+.generator-label { display:block; margin-bottom:7px; color:#bd9c78; font-size:10px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; }
+
+.generator-input { width:100%; height:43px; padding:0 12px; border:1px solid #413831; border-radius:7px; outline:none; background:#171412; color:#eee4d7; font-family:'Inter',sans-serif; font-size:13px; transition:.2s ease; }
+
+.generator-input:focus { border-color:#a63b2c; box-shadow:0 0 0 3px rgba(166,59,44,.13); }
+
+.generator-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+
+.character-count { margin-bottom:10px; color:#776d64; font-size:11px; }
+
+.character-list { display:grid; grid-template-columns:repeat(3,1fr); gap:9px; }
+
+.character-card { position:relative; min-width:0; padding:7px; border:1px solid #3b342e; border-radius:9px; background:#191614; cursor:pointer; transition:.2s ease; user-select:none; }
+
+.character-card:hover { transform:translateY(-2px); border-color:#725345; }
+
+.character-card.selected { border-color:#b24432; background:#2a1c18; box-shadow:0 0 0 2px rgba(178,68,50,.14); }
+
+.character-photo { width:100%; aspect-ratio:1/1; overflow:hidden; border-radius:6px; background:#29231f; }
+
+.character-photo img { width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(.5) sepia(.12); transition:.2s ease; }
+
+.character-card.selected .character-photo img { filter:none; }
+
+.character-name { margin-top:7px; color:#b7aca2; font-size:10px; line-height:1.25; text-align:center; overflow-wrap:anywhere; }
+
+.character-card.selected .character-name { color:#f2dfc8; }
+
+.character-check { position:absolute; top:3px; right:3px; width:22px; height:22px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:#a63b2c; color:white; font-size:12px; font-weight:700; opacity:0; transform:scale(.7); transition:.2s ease; }
+
+.character-card.selected .character-check { opacity:1; transform:scale(1); }
+
+.selected-order { display:flex; flex-wrap:wrap; gap:5px; margin-top:10px; min-height:22px; }
+
+.selected-pill { padding:4px 7px; border-radius:20px; background:#33241f; color:#d9bba1; font-size:9px; }
+
+.generator-actions { display:flex; gap:8px; margin-top:24px; }
+
+.generator-button { min-height:42px; padding:0 16px; border:0; border-radius:7px; cursor:pointer; font-family:'Inter',sans-serif; font-size:12px; font-weight:700; transition:.2s ease; }
+
+.generator-button.primary { flex:1; background:#a63b2c; color:white; }
+
+.generator-button.primary:hover { background:#bc4937; }
+
+.generator-button.secondary { background:#302a25; color:#b9aea4; }
+
+.generator-button.secondary:hover { background:#3b342e; }
+
+.preview-column { position:sticky; top:20px; }
+
+.preview-label { margin:0 0 10px 4px; color:#776d64; font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
+
+.preview-frame { padding:10px; overflow:hidden; border:1px solid #332d28; border-radius:13px; background:#0e0d0c; }
+
+.preview-inner { width:500px; max-width:100%; margin:auto; transform-origin:top center; }
+
+.code-section { margin-top:28px; }
+
+.code-head { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:9px; }
+
+.code-head span { color:#bd9c78; font-size:10px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; }
+
+.copy-state { color:#7eaa84; font-size:11px; opacity:0; transition:.2s ease; }
+
+.copy-state.show { opacity:1; }
+
+.code-output { width:100%; height:280px; padding:15px; resize:vertical; border:1px solid #332d28; border-radius:9px; outline:none; background:#0d0c0b; color:#c6bbb0; font:11px/1.55 Consolas,Monaco,monospace; }
+
+@media(max-width:950px) {
+.generator-layout { grid-template-columns:1fr; }
+.preview-column { position:relative; top:auto; }
+}
+
+@media(max-width:520px) {
+.generator-grid { grid-template-columns:1fr; }
+.character-list { grid-template-columns:repeat(2,1fr); }
+.generator { width:calc(100% - 16px); margin-top:15px; }
+.generator-panel { padding:16px; }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="generator">
+
+<div class="generator-head">
+<h1>Játékkód generátor</h1>
+<p>Töltsd ki az adatokat, válaszd ki a résztvevőket, majd másold ki az elkészült fórumkódot.</p>
+</div>
+
+<div class="generator-layout">
+
+<div>
+
+<div class="generator-panel">
+
+<div class="generator-section">
+<label class="generator-label" for="gameTitle">Cím</label>
+<input class="generator-input" id="gameTitle" type="text" value="Elveszett útvonalak" placeholder="Játék címe">
+</div>
+
+<div class="generator-section">
+<label class="generator-label" for="gameSubtitle">Alcím</label>
+<input class="generator-input" id="gameSubtitle" type="text" value="Nincs több menekülés" placeholder="Alcím">
+</div>
+
+<div class="generator-section">
+
+<div class="generator-grid">
+
+<div>
+<label class="generator-label" for="gameCategory">Kategória</label>
+<select class="generator-input" id="gameCategory">
+<option value="Előzmény">Előzmény</option>
+<option value="Főszál">Főszál</option>
+<option value="Közjáték" selected>Közjáték</option>
+<option value="Epilógus">Epilógus</option>
+</select>
+</div>
+
+<div>
+<label class="generator-label" for="gameDate">Dátum</label>
+<input class="generator-input" id="gameDate" type="date" value="2026-08-17">
+</div>
+
+</div>
+
+</div>
+
+<div class="generator-section">
+<label class="generator-label" for="gameLocation">Helyszín</label>
+<input class="generator-input" id="gameLocation" type="text" value="London, Anglia" placeholder="pl. London, Anglia">
+</div>
+
+<div class="generator-section">
+
+<label class="generator-label">Résztvevők</label>
+
+<div class="character-count" id="characterCount">Karakterek betöltése...</div>
+
+<div class="character-list" id="characterList"></div>
+
+<div class="selected-order" id="selectedOrder"></div>
+
+</div>
+
+<div class="generator-actions">
+<button class="generator-button secondary" id="resetButton" type="button">Alaphelyzet</button>
+<button class="generator-button primary" id="copyButton" type="button">Kód másolása</button>
+</div>
+
+</div>
+
+</div>
+
+<div class="preview-column">
+
+<div class="preview-label">Élő előnézet</div>
+
+<div class="preview-frame">
+<div class="preview-inner" id="preview"></div>
+</div>
+
+</div>
+
+</div>
+
+<div class="code-section">
+
+<div class="code-head">
+<span>Generált kód</span>
+<span class="copy-state" id="copyState">Másolva ✓</span>
+</div>
+
+<textarea class="code-output" id="codeOutput" readonly></textarea>
+
+</div>
+
+</div>
+
+<script>
+
+const FALLBACK_CHARACTERS = [
+    {
+        id: "miguel",
+        name: "Miguel Alejandro de la Vega",
+        image: "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/miguel.jpg"
+    },
+    {
+        id: "rokuro",
+        name: "Rokuro Takahashi-Kisaragi",
+        image: "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/rokuro.jpg"
+    },
+    {
+        id: "gemma",
+        name: "Gemma",
+        image: "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/gemma.jpg"
+    }
+];
+
+let characters = [];
+let selectedCharacters = [];
+
+const gameTitle = document.getElementById("gameTitle");
+const gameSubtitle = document.getElementById("gameSubtitle");
+const gameCategory = document.getElementById("gameCategory");
+const gameDate = document.getElementById("gameDate");
+const gameLocation = document.getElementById("gameLocation");
+
+const characterList = document.getElementById("characterList");
+const characterCount = document.getElementById("characterCount");
+const selectedOrder = document.getElementById("selectedOrder");
+
+const preview = document.getElementById("preview");
+const codeOutput = document.getElementById("codeOutput");
+
+const copyButton = document.getElementById("copyButton");
+const resetButton = document.getElementById("resetButton");
+const copyState = document.getElementById("copyState");
+
+const POST_CSS = `
+.mx-wrap { width:100%; max-width:500px; margin:35px auto; position:relative; min-height:960px; color:#2b1d17; font-family:'Oswald',sans-serif; overflow:visible; isolation:isolate; }
+.mx-wrap * { box-sizing:border-box; }
+.mx-bg { position:absolute; inset:0; z-index:-10; background:#ead9bc url('https://i.imgur.com/POBNiue.png') 74% /cover no-repeat; border-radius:8px; }
+.mx-bg:after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(255,247,232,.04) 0%,rgba(255,247,232,.11) 100%); border-radius:8px; }
+.mx-quetz { position:absolute; left:17px; top:45px; width:170px; z-index:8; pointer-events:none; filter:drop-shadow(4px 8px 8px rgba(58,34,20,.16)); }
+.mx-stamp { position:absolute; right:16px; top:500px; width:92px; z-index:9; transform:rotate(12deg); opacity:.78; pointer-events:none; mix-blend-mode:multiply; }
+.mx-chili { position:absolute; right:18px; bottom:118px; width:78px; z-index:12; transform:rotate(12deg); pointer-events:none; filter:drop-shadow(4px 6px 6px rgba(47,25,15,.22)); }
+.mx-type { position:relative; z-index:20; display:inline-block; margin:86px 0 0 96px; padding:7px 16px 6px 16px; background:#a63b2c; color:#f6dfb3; font-size:11px; font-weight:700; letter-spacing:2.2px; text-transform:uppercase; transform:rotate(-4deg); box-shadow:5px 5px 0 #d69c45; }
+.mx-collage { position:relative; z-index:10; height:294px; margin-top:28px; }
+.mx-photo { position:absolute; overflow:hidden; background:#c69a67; box-shadow:0 12px 20px rgba(54,31,17,.25); }
+.mx-photo img { width:100%; height:100%; display:block; object-fit:cover; filter:saturate(.82) contrast(1.05) sepia(.08); transition:.45s ease; }
+.mx-photo:hover img { filter:saturate(1.08) contrast(1.03); transform:scale(1.04); }
+.mx-photofill { width:100%; height:100%; background:linear-gradient(135deg,rgba(57,125,119,.86) 0%,rgba(221,180,102,.88) 48%,rgba(170,59,44,.88) 100%); opacity:.68; }
+.mx-main { width:228px; height:188px; left:96px; top:24px; z-index:6; transform:rotate(2deg); clip-path:polygon(2% 5%,97% 0,100% 90%,91% 100%,5% 96%,0 17%); }
+.mx-small1 { width:132px; height:148px; left:26px; top:118px; z-index:9; transform:rotate(-7deg); clip-path:polygon(6% 0,100% 7%,93% 96%,9% 100%,0 17%); }
+.mx-small2 { width:108px; height:126px; right:86px; top:136px; z-index:7; transform:rotate(8deg); clip-path:polygon(0 9%,90% 0,100% 83%,83% 100%,5% 94%); }
+.mx-titlebox { position:relative; z-index:20; width:300px; margin:-2px 0 0 102px; transform:rotate(-1deg); }
+.mx-title { margin:0; font-family:'DM Serif Display',serif; font-size:48px; line-height:.82; font-weight:400; color:#262019; letter-spacing:-1.5px; text-transform:uppercase; text-shadow:3px 3px 0 #e6bc67; }
+.mx-title em { color:#a53628; font-style:normal; }
+.mx-chapter { position:relative; z-index:20; display:inline-block; max-width:250px; margin:16px 0 0 112px; padding:7px 14px 8px 14px; background:rgba(245,232,201,.8); color:#3c281d; font-family:'DM Serif Display',serif; font-size:20px; line-height:1.05; transform:rotate(-2deg); box-shadow:3px 4px 0 rgba(166,59,44,.28); }
+.mx-info { position:relative; z-index:20; width:250px; margin:20px 0 0 112px; display:flex; gap:22px; align-items:flex-start; flex-wrap:wrap; }
+.mx-infoitem { position:relative; min-width:108px; padding-top:9px; border-top:2px solid rgba(96,61,37,.24); }
+.mx-label { display:block; color:#a1392b; font-size:8px; font-weight:700; letter-spacing:2px; text-transform:uppercase; }
+.mx-value { display:block; margin-top:3px; color:#38271d; font-family:'DM Serif Display',serif; font-size:15px; line-height:1.1; }
+.mx-participants { position:relative; z-index:20; margin-top:44px; min-height:220px; }
+.mx-parttitle { display:inline-block; margin-left:92px; padding:4px 13px 5px 13px; background:#d69b43; color:#43271c; font-family:'Permanent Marker',cursive; font-size:16px; transform:rotate(-3deg); box-shadow:4px 4px 0 rgba(154,53,40,.65); }
+.mx-people { display:flex; justify-content:flex-start; align-items:flex-start; gap:4px; margin-top:16px; padding:0 62px 0 94px; }
+.mx-person { width:74px; position:relative; flex:0 0 74px; transition:.28s ease; }
+.mx-person:nth-child(1) { transform:rotate(-5deg); }
+.mx-person:nth-child(2) { transform:rotate(2deg) translateY(-6px); }
+.mx-person:nth-child(3) { transform:rotate(6deg); }
+.mx-personpic { width:74px; height:80px; overflow:hidden; background:#dfc18f; clip-path:polygon(5% 2%,95% 0,100% 89%,83% 100%,7% 94%,0 12%); box-shadow:0 7px 12px rgba(64,38,21,.25); }
+.mx-personpic img { width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(.62) sepia(.2) saturate(.72) contrast(1.08); transition:.3s ease; }
+.mx-personname { position:absolute; left:50%; top:72px; z-index:10; min-width:88px; max-width:165px; padding:6px 8px; background:#efe0ba; color:#37241c; font-size:9px; line-height:1.08; font-weight:600; letter-spacing:.15px; text-align:center; transform:translateX(-50%); box-shadow:2px 3px 0 rgba(123,65,37,.2); white-space:normal; word-break:break-word; overflow-wrap:anywhere; opacity:.9; transition:.28s ease; }
+.mx-person:hover { z-index:60; transform:translateY(-9px) rotate(0deg) scale(1.12); }
+.mx-person:hover .mx-personpic img { filter:grayscale(0) sepia(0) saturate(1.08) contrast(1.03); transform:scale(1.07); }
+.mx-person:hover .mx-personname { top:64px; max-width:190px; padding:7px 10px; background:#a6382b; color:#fff0cb; opacity:1; box-shadow:4px 5px 0 #d59c48; }
+.mx-footmark { position:absolute; left:108px; bottom:8px; width:150px; height:22px; border-bottom:2px dashed rgba(39,105,101,.38); border-radius:50%; z-index:-1; transform:rotate(-6deg); }
+`;
+
+function escapeHtml(value) {
+    return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+}
+
+function formatDate(value) {
+
+    if (!value) return "";
+
+    const months = [
+        "január",
+        "február",
+        "március",
+        "április",
+        "május",
+        "június",
+        "július",
+        "augusztus",
+        "szeptember",
+        "október",
+        "november",
+        "december"
+    ];
+
+    const parts = value.split("-");
+
+    const year = Number(parts[0]);
+    const month = Number(parts[1]);
+    const day = Number(parts[2]);
+
+    return `${year}. ${months[month - 1]} ${day}.`;
+
+}
+
+function splitTitle(title) {
+
+    const words = title.trim().split(/\s+/).filter(Boolean);
+
+    if (words.length <= 1) {
+        return {
+            first: words[0] || "",
+            second: ""
+        };
+    }
+
+    const totalLength = words.reduce((sum, word) => sum + word.length, 0);
+
+    let currentLength = 0;
+    let splitIndex = 1;
+    let smallestDifference = Infinity;
+
+    words.forEach((word, index) => {
+
+        if (index === words.length - 1) return;
+
+        currentLength += word.length;
+
+        const difference = Math.abs(totalLength / 2 - currentLength);
+
+        if (difference < smallestDifference) {
+            smallestDifference = difference;
+            splitIndex = index + 1;
+        }
+
+    });
+
+    return {
+        first: words.slice(0, splitIndex).join(" "),
+        second: words.slice(splitIndex).join(" ")
+    };
+
+}
+
+function buildPeopleHtml() {
+
+    return selectedCharacters.map(id => {
+
+        const character = characters.find(item => item.id === id);
+
+        if (!character) return "";
+
+        return `
+<div class="mx-person">
+<div class="mx-personpic">
+<img src="${escapeHtml(character.image)}" alt="">
+</div>
+<div class="mx-personname">${escapeHtml(character.name)}</div>
+</div>`;
+
+    }).join("\n");
+
+}
+
+function buildForumCode() {
+
+    const title = splitTitle(gameTitle.value);
+
+    const titleMarkup = title.second
+        ? `${escapeHtml(title.first)}<br><em>${escapeHtml(title.second)}</em>`
+        : escapeHtml(title.first);
+
+    const peopleHtml = buildPeopleHtml();
+
+    return `[html]
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Oswald:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+<style>
+${POST_CSS}
+</style>
+
+<div class="mx-wrap">
+
+<div class="mx-bg"></div>
+
+<img class="mx-quetz" src="https://i.imgur.com/pNLYMVj.png" alt="">
+<img class="mx-stamp" src="https://i.imgur.com/jhW3XqE.png" alt="">
+<img class="mx-chili" src="https://i.imgur.com/jL47B7a.png" alt="">
+
+<div class="mx-type">${escapeHtml(gameCategory.value)}</div>
+
+<div class="mx-collage">
+
+<div class="mx-photo mx-main">
+<div class="mx-photofill"></div>
+</div>
+
+<div class="mx-photo mx-small1">
+<div class="mx-photofill"></div>
+</div>
+
+<div class="mx-photo mx-small2">
+<div class="mx-photofill"></div>
+</div>
+
+</div>
+
+<div class="mx-titlebox">
+<h2 class="mx-title">${titleMarkup}</h2>
+</div>
+
+<div class="mx-chapter">${escapeHtml(gameSubtitle.value)}</div>
+
+<div class="mx-info">
+
+<div class="mx-infoitem">
+<span class="mx-label">Dátum</span>
+<span class="mx-value">${escapeHtml(formatDate(gameDate.value))}</span>
+</div>
+
+<div class="mx-infoitem">
+<span class="mx-label">Helyszín</span>
+<span class="mx-value">${escapeHtml(gameLocation.value)}</span>
+</div>
+
+</div>
+
+<div class="mx-participants">
+
+<div class="mx-parttitle">Résztvevők</div>
+
+<div class="mx-people">
+${peopleHtml}
+</div>
+
+<div class="mx-footmark"></div>
+
+</div>
+
+</div>
+[/html]`;
+
+}
+
+function updatePreview() {
+
+    const code = buildForumCode();
+
+    codeOutput.value = code;
+
+    const previewCode = code
+        .replace(/^\[html\]/, "")
+        .replace(/\[\/html\]$/, "");
+
+    preview.innerHTML = previewCode;
+
+}
+
+function renderCharacters() {
+
+    characterList.innerHTML = "";
+
+    characters.forEach(character => {
+
+        const selected = selectedCharacters.includes(character.id);
+
+        const card = document.createElement("div");
+
+        card.className = `character-card${selected ? " selected" : ""}`;
+
+        card.innerHTML = `
+            <div class="character-check">✓</div>
+            <div class="character-photo">
+                <img src="${escapeHtml(character.image)}" alt="${escapeHtml(character.name)}">
+            </div>
+            <div class="character-name">${escapeHtml(character.name)}</div>
+        `;
+
+        card.addEventListener("click", () => toggleCharacter(character.id));
+
+        characterList.appendChild(card);
+
+    });
+
+    characterCount.textContent = `${selectedCharacters.length} résztvevő kiválasztva`;
+
+    selectedOrder.innerHTML = selectedCharacters.map(id => {
+
+        const character = characters.find(item => item.id === id);
+
+        if (!character) return "";
+
+        return `<span class="selected-pill">${escapeHtml(character.name)}</span>`;
+
+    }).join("");
+
+}
+
+function toggleCharacter(id) {
+
+    const index = selectedCharacters.indexOf(id);
+
+    if (index >= 0) {
+        selectedCharacters.splice(index, 1);
+    } else {
+        selectedCharacters.push(id);
+    }
+
+    renderCharacters();
+    updatePreview();
+
+}
+
+function resetGenerator() {
+
+    gameTitle.value = "Elveszett útvonalak";
+    gameSubtitle.value = "Nincs több menekülés";
+    gameCategory.value = "Közjáték";
+    gameDate.value = "2026-08-17";
+    gameLocation.value = "London, Anglia";
+
+    selectedCharacters = [];
+
+    renderCharacters();
+    updatePreview();
+
+}
+
+async function copyCode() {
+
+    const code = codeOutput.value;
+
+    try {
+
+        await navigator.clipboard.writeText(code);
+
+    } catch {
+
+        codeOutput.focus();
+        codeOutput.select();
+        document.execCommand("copy");
+
+    }
+
+    copyState.classList.add("show");
+
+    window.setTimeout(() => {
+        copyState.classList.remove("show");
+    }, 1800);
+
+}
+
+async function loadCharacters() {
+
+    try {
+
+        const response = await fetch("characters.json", {
+            cache: "no-store"
+        });
+
+        if (!response.ok) {
+            throw new Error("characters.json nem tölthető be.");
+        }
+
+        const data = await response.json();
+
+        if (!Array.isArray(data)) {
+            throw new Error("Hibás JSON formátum.");
+        }
+
+        characters = data;
+
+    } catch (error) {
+
+        console.warn("Fallback karakterlista használata:", error);
+
+        characters = FALLBACK_CHARACTERS;
+
+    }
+
+    renderCharacters();
+    updatePreview();
+
+}
+
+[
+    gameTitle,
+    gameSubtitle,
+    gameCategory,
+    gameDate,
+    gameLocation
+].forEach(element => {
+
+    element.addEventListener("input", updatePreview);
+    element.addEventListener("change", updatePreview);
+
+});
+
+copyButton.addEventListener("click", copyCode);
+resetButton.addEventListener("click", resetGenerator);
+
+loadCharacters();
+
+</script>
+
+</body>
+</html>
