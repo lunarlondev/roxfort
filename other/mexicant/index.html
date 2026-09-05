@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
 
 <meta charset="UTF-8">
@@ -39,6 +40,14 @@ body { margin:0; background:#151311; color:#eee4d7; font-family:'Inter',sans-ser
 
 .generator-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
 
+.image-inputs { display:flex; flex-direction:column; gap:9px; }
+
+.image-field { display:flex; align-items:center; gap:9px; }
+
+.image-number { width:30px; flex:0 0 30px; color:#b65340; font-family:'Oswald',sans-serif; font-size:11px; font-weight:700; letter-spacing:1px; }
+
+.image-field .generator-input { flex:1; min-width:0; }
+
 .character-count { margin-bottom:10px; color:#776d64; font-size:11px; }
 
 .character-list { display:grid; grid-template-columns:repeat(3,1fr); gap:9px; }
@@ -59,7 +68,7 @@ body { margin:0; background:#151311; color:#eee4d7; font-family:'Inter',sans-ser
 
 .character-card.selected .character-name { color:#f2dfc8; }
 
-.character-check { position:absolute; top:3px; right:3px; width:22px; height:22px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:#a63b2c; color:white; font-size:12px; font-weight:700; opacity:0; transform:scale(.7); transition:.2s ease; }
+.character-check { position:absolute; top:3px; right:3px; width:22px; height:22px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:#a63b2c; color:white; font-size:12px; font-weight:700; opacity:0; transform:scale(.7); transition:.2s ease; z-index:5; }
 
 .character-card.selected .character-check { opacity:1; transform:scale(1); }
 
@@ -85,7 +94,7 @@ body { margin:0; background:#151311; color:#eee4d7; font-family:'Inter',sans-ser
 
 .preview-frame { padding:10px; overflow:hidden; border:1px solid #332d28; border-radius:13px; background:#0e0d0c; }
 
-.preview-inner { width:500px; max-width:100%; margin:auto; transform-origin:top center; }
+.preview-inner { width:500px; max-width:100%; margin:auto; }
 
 .code-section { margin-top:28px; }
 
@@ -93,7 +102,7 @@ body { margin:0; background:#151311; color:#eee4d7; font-family:'Inter',sans-ser
 
 .code-head span { color:#bd9c78; font-size:10px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; }
 
-.copy-state { color:#7eaa84; font-size:11px; opacity:0; transition:.2s ease; }
+.copy-state { color:#7eaa84 !important; opacity:0; transition:.2s ease; }
 
 .copy-state.show { opacity:1; }
 
@@ -121,7 +130,7 @@ body { margin:0; background:#151311; color:#eee4d7; font-family:'Inter',sans-ser
 
 <div class="generator-head">
 <h1>Játékkód generátor</h1>
-<p>Töltsd ki az adatokat, válaszd ki a résztvevőket, majd másold ki az elkészült fórumkódot.</p>
+<p>Töltsd ki az adatokat, add meg a három játékképet, válaszd ki a résztvevőket, majd másold ki az elkészült fórumkódot.</p>
 </div>
 
 <div class="generator-layout">
@@ -146,6 +155,7 @@ body { margin:0; background:#151311; color:#eee4d7; font-family:'Inter',sans-ser
 
 <div>
 <label class="generator-label" for="gameCategory">Kategória</label>
+
 <select class="generator-input" id="gameCategory">
 <option value="Előzmény">Előzmény</option>
 <option value="Főszál">Főszál</option>
@@ -166,6 +176,31 @@ body { margin:0; background:#151311; color:#eee4d7; font-family:'Inter',sans-ser
 <div class="generator-section">
 <label class="generator-label" for="gameLocation">Helyszín</label>
 <input class="generator-input" id="gameLocation" type="text" value="London, Anglia" placeholder="pl. London, Anglia">
+</div>
+
+<div class="generator-section">
+
+<label class="generator-label">Játékképek</label>
+
+<div class="image-inputs">
+
+<div class="image-field">
+<span class="image-number">01</span>
+<input class="generator-input game-image-input" id="gameImage1" type="url" placeholder="Első kép URL-je">
+</div>
+
+<div class="image-field">
+<span class="image-number">02</span>
+<input class="generator-input game-image-input" id="gameImage2" type="url" placeholder="Második kép URL-je">
+</div>
+
+<div class="image-field">
+<span class="image-number">03</span>
+<input class="generator-input game-image-input" id="gameImage3" type="url" placeholder="Harmadik kép URL-je">
+</div>
+
+</div>
+
 </div>
 
 <div class="generator-section">
@@ -243,6 +278,10 @@ const gameCategory = document.getElementById("gameCategory");
 const gameDate = document.getElementById("gameDate");
 const gameLocation = document.getElementById("gameLocation");
 
+const gameImage1 = document.getElementById("gameImage1");
+const gameImage2 = document.getElementById("gameImage2");
+const gameImage3 = document.getElementById("gameImage3");
+
 const characterList = document.getElementById("characterList");
 const characterCount = document.getElementById("characterCount");
 const selectedOrder = document.getElementById("selectedOrder");
@@ -306,7 +345,9 @@ function escapeHtml(value) {
 
 function formatDate(value) {
 
-    if (!value) return "";
+    if (!value) {
+        return "";
+    }
 
     const months = [
         "január",
@@ -352,7 +393,9 @@ function splitTitle(title) {
 
     words.forEach((word, index) => {
 
-        if (index === words.length - 1) return;
+        if (index === words.length - 1) {
+            return;
+        }
 
         currentLength += word.length;
 
@@ -372,13 +415,27 @@ function splitTitle(title) {
 
 }
 
+function buildGameImage(url) {
+
+    const cleanUrl = url.trim();
+
+    if (!cleanUrl) {
+        return `<div class="mx-photofill"></div>`;
+    }
+
+    return `<img src="${escapeHtml(cleanUrl)}" alt="">`;
+
+}
+
 function buildPeopleHtml() {
 
     return selectedCharacters.map(id => {
 
         const character = characters.find(item => item.id === id);
 
-        if (!character) return "";
+        if (!character) {
+            return "";
+        }
 
         return `
 <div class="mx-person">
@@ -402,6 +459,10 @@ function buildForumCode() {
 
     const peopleHtml = buildPeopleHtml();
 
+    const image1 = buildGameImage(gameImage1.value);
+    const image2 = buildGameImage(gameImage2.value);
+    const image3 = buildGameImage(gameImage3.value);
+
     return `[html]
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Oswald:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
 
@@ -422,15 +483,15 @@ ${POST_CSS}
 <div class="mx-collage">
 
 <div class="mx-photo mx-main">
-<div class="mx-photofill"></div>
+${image1}
 </div>
 
 <div class="mx-photo mx-small1">
-<div class="mx-photofill"></div>
+${image2}
 </div>
 
 <div class="mx-photo mx-small2">
-<div class="mx-photofill"></div>
+${image3}
 </div>
 
 </div>
@@ -500,25 +561,35 @@ function renderCharacters() {
 
         card.innerHTML = `
             <div class="character-check">✓</div>
+
             <div class="character-photo">
                 <img src="${escapeHtml(character.image)}" alt="${escapeHtml(character.name)}">
             </div>
+
             <div class="character-name">${escapeHtml(character.name)}</div>
         `;
 
-        card.addEventListener("click", () => toggleCharacter(character.id));
+        card.addEventListener("click", () => {
+            toggleCharacter(character.id);
+        });
 
         characterList.appendChild(card);
 
     });
 
-    characterCount.textContent = `${selectedCharacters.length} résztvevő kiválasztva`;
+    if (selectedCharacters.length === 0) {
+        characterCount.textContent = "Nincs kiválasztott résztvevő";
+    } else {
+        characterCount.textContent = `${selectedCharacters.length} résztvevő kiválasztva`;
+    }
 
     selectedOrder.innerHTML = selectedCharacters.map(id => {
 
         const character = characters.find(item => item.id === id);
 
-        if (!character) return "";
+        if (!character) {
+            return "";
+        }
 
         return `<span class="selected-pill">${escapeHtml(character.name)}</span>`;
 
@@ -549,6 +620,10 @@ function resetGenerator() {
     gameDate.value = "2026-08-17";
     gameLocation.value = "London, Anglia";
 
+    gameImage1.value = "";
+    gameImage2.value = "";
+    gameImage3.value = "";
+
     selectedCharacters = [];
 
     renderCharacters();
@@ -568,6 +643,7 @@ async function copyCode() {
 
         codeOutput.focus();
         codeOutput.select();
+
         document.execCommand("copy");
 
     }
@@ -595,14 +671,14 @@ async function loadCharacters() {
         const data = await response.json();
 
         if (!Array.isArray(data)) {
-            throw new Error("Hibás JSON formátum.");
+            throw new Error("A characters.json nem tömb.");
         }
 
         characters = data;
 
     } catch (error) {
 
-        console.warn("Fallback karakterlista használata:", error);
+        console.warn("A characters.json nem érhető el, fallback karakterlista használata.", error);
 
         characters = FALLBACK_CHARACTERS;
 
@@ -618,7 +694,10 @@ async function loadCharacters() {
     gameSubtitle,
     gameCategory,
     gameDate,
-    gameLocation
+    gameLocation,
+    gameImage1,
+    gameImage2,
+    gameImage3
 ].forEach(element => {
 
     element.addEventListener("input", updatePreview);
@@ -634,4 +713,5 @@ loadCharacters();
 </script>
 
 </body>
+
 </html>
