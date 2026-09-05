@@ -332,8 +332,8 @@ const POST_CSS = `
 .mx-person:hover .mx-personpic { transform:scale(1.12); }
 .mx-person:hover .mx-personpic img { filter:grayscale(0) sepia(0) saturate(1.08) contrast(1.03); transform:scale(1.07); }
 .mx-person:hover .mx-personname { background:#a6382b; color:#fff0cb; opacity:1; box-shadow:4px 5px 0 #d59c48; }
-
-
+.mx-footmark { position:absolute; left:108px; bottom:8px; width:150px; height:22px; border-bottom:2px dashed rgba(39,105,101,.38); border-radius:50%; z-index:-1; transform:rotate(-6deg); }
+`;
 
 function escapeHtml(value) {
     return String(value ?? "")
