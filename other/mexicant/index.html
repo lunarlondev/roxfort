@@ -40,14 +40,6 @@ body { margin:0; background:#151311; color:#eee4d7; font-family:'Inter',sans-ser
 
 .generator-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
 
-.image-inputs { display:flex; flex-direction:column; gap:9px; }
-
-.image-field { display:flex; align-items:center; gap:9px; }
-
-.image-number { width:30px; flex:0 0 30px; color:#b65340; font-family:'Oswald',sans-serif; font-size:11px; font-weight:700; letter-spacing:1px; }
-
-.image-field .generator-input { flex:1; min-width:0; }
-
 .character-count { margin-bottom:10px; color:#776d64; font-size:11px; }
 
 .character-list { display:grid; grid-template-columns:repeat(3,1fr); gap:9px; }
@@ -68,7 +60,7 @@ body { margin:0; background:#151311; color:#eee4d7; font-family:'Inter',sans-ser
 
 .character-card.selected .character-name { color:#f2dfc8; }
 
-.character-check { position:absolute; top:3px; right:3px; width:22px; height:22px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:#a63b2c; color:white; font-size:12px; font-weight:700; opacity:0; transform:scale(.7); transition:.2s ease; z-index:5; }
+.character-check { position:absolute; top:3px; right:3px; width:22px; height:22px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:#a63b2c; color:#fff; font-size:12px; font-weight:700; opacity:0; transform:scale(.7); transition:.2s ease; z-index:5; }
 
 .character-card.selected .character-check { opacity:1; transform:scale(1); }
 
@@ -80,7 +72,7 @@ body { margin:0; background:#151311; color:#eee4d7; font-family:'Inter',sans-ser
 
 .generator-button { min-height:42px; padding:0 16px; border:0; border-radius:7px; cursor:pointer; font-family:'Inter',sans-serif; font-size:12px; font-weight:700; transition:.2s ease; }
 
-.generator-button.primary { flex:1; background:#a63b2c; color:white; }
+.generator-button.primary { flex:1; background:#a63b2c; color:#fff; }
 
 .generator-button.primary:hover { background:#bc4937; }
 
@@ -154,6 +146,7 @@ body { margin:0; background:#151311; color:#eee4d7; font-family:'Inter',sans-ser
 <div class="generator-grid">
 
 <div>
+
 <label class="generator-label" for="gameCategory">Kategória</label>
 
 <select class="generator-input" id="gameCategory">
@@ -162,11 +155,14 @@ body { margin:0; background:#151311; color:#eee4d7; font-family:'Inter',sans-ser
 <option value="Közjáték" selected>Közjáték</option>
 <option value="Epilógus">Epilógus</option>
 </select>
+
 </div>
 
 <div>
+
 <label class="generator-label" for="gameDate">Dátum</label>
 <input class="generator-input" id="gameDate" type="date" value="2026-08-17">
+
 </div>
 
 </div>
@@ -176,31 +172,6 @@ body { margin:0; background:#151311; color:#eee4d7; font-family:'Inter',sans-ser
 <div class="generator-section">
 <label class="generator-label" for="gameLocation">Helyszín</label>
 <input class="generator-input" id="gameLocation" type="text" value="London, Anglia" placeholder="pl. London, Anglia">
-</div>
-
-<div class="generator-section">
-
-<label class="generator-label">Játékképek</label>
-
-<div class="image-inputs">
-
-<div class="image-field">
-<span class="image-number">01</span>
-<input class="generator-input game-image-input" id="gameImage1" type="url" placeholder="Első kép URL-je">
-</div>
-
-<div class="image-field">
-<span class="image-number">02</span>
-<input class="generator-input game-image-input" id="gameImage2" type="url" placeholder="Második kép URL-je">
-</div>
-
-<div class="image-field">
-<span class="image-number">03</span>
-<input class="generator-input game-image-input" id="gameImage3" type="url" placeholder="Harmadik kép URL-je">
-</div>
-
-</div>
-
 </div>
 
 <div class="generator-section">
@@ -254,18 +225,43 @@ body { margin:0; background:#151311; color:#eee4d7; font-family:'Inter',sans-ser
 const FALLBACK_CHARACTERS = [
     {
         id: "miguel",
-        name: "Miguel Alejandro de la Vega",
+        name: "Miguel Fuentes",
         image: "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/miguel.jpg"
     },
     {
         id: "rokuro",
-        name: "Rokuro Takahashi-Kisaragi",
+        name: "Rokuro Ishida-d'Aboville",
         image: "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/rokuro.jpg"
     },
     {
         id: "gemma",
-        name: "Gemma",
+        name: "Gemma Jenkins",
         image: "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/gemma.jpg"
+    },
+    {
+        id: "daph",
+        name: "Daphné Ishida-d'Aboville",
+        image: "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/daph.jpg"
+    },
+    {
+        id: "varv",
+        name: "Varvara Chernov",
+        image: "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/varvara.jpg"
+    },
+    {
+        id: "vi",
+        name: "Vianne M. Gardner",
+        image: "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/vianne.jpg"
+    },
+    {
+        id: "connie",
+        name: "Connor O'Hara",
+        image: "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/connor.jpg"
+    },
+    {
+        id: "alma",
+        name: "Alma L. Remington",
+        image: "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/alma.jpg"
     }
 ];
 
@@ -277,10 +273,6 @@ const gameSubtitle = document.getElementById("gameSubtitle");
 const gameCategory = document.getElementById("gameCategory");
 const gameDate = document.getElementById("gameDate");
 const gameLocation = document.getElementById("gameLocation");
-
-const gameImage1 = document.getElementById("gameImage1");
-const gameImage2 = document.getElementById("gameImage2");
-const gameImage3 = document.getElementById("gameImage3");
 
 const characterList = document.getElementById("characterList");
 const characterCount = document.getElementById("characterCount");
@@ -300,31 +292,26 @@ const POST_CSS = `
 .mx-bg:after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(255,247,232,.04) 0%,rgba(255,247,232,.11) 100%); border-radius:8px; }
 .mx-quetz { position:absolute; left:17px; top:45px; width:170px; z-index:8; pointer-events:none; filter:drop-shadow(4px 8px 8px rgba(58,34,20,.16)); }
 .mx-stamp { position:absolute; right:16px; top:500px; width:92px; z-index:9; transform:rotate(12deg); opacity:.78; pointer-events:none; mix-blend-mode:multiply; }
-.mx-chili { position:absolute; right:18px; bottom:118px; width:78px; z-index:12; transform:rotate(12deg); pointer-events:none; filter:drop-shadow(4px 6px 6px rgba(47,25,15,.22)); }
+.mx-chili { position:absolute; right:18px; bottom:90px; width:78px; z-index:12; transform:rotate(12deg); pointer-events:none; filter:drop-shadow(4px 6px 6px rgba(47,25,15,.22)); }
 .mx-type { position:relative; z-index:20; display:inline-block; margin:86px 0 0 96px; padding:7px 16px 6px 16px; background:#a63b2c; color:#f6dfb3; font-size:11px; font-weight:700; letter-spacing:2.2px; text-transform:uppercase; transform:rotate(-4deg); box-shadow:5px 5px 0 #d69c45; }
-.mx-collage { position:relative; z-index:10; height:294px; margin-top:28px; }
-.mx-photo { position:absolute; overflow:hidden; background:#c69a67; box-shadow:0 12px 20px rgba(54,31,17,.25); }
-.mx-photo img { width:100%; height:100%; display:block; object-fit:cover; filter:saturate(.82) contrast(1.05) sepia(.08); transition:.45s ease; }
-.mx-photo:hover img { filter:saturate(1.08) contrast(1.03); transform:scale(1.04); }
-.mx-photofill { width:100%; height:100%; background:linear-gradient(135deg,rgba(57,125,119,.86) 0%,rgba(221,180,102,.88) 48%,rgba(170,59,44,.88) 100%); opacity:.68; }
-.mx-main { width:228px; height:188px; left:96px; top:24px; z-index:6; transform:rotate(2deg); clip-path:polygon(2% 5%,97% 0,100% 90%,91% 100%,5% 96%,0 17%); }
-.mx-small1 { width:132px; height:148px; left:26px; top:118px; z-index:9; transform:rotate(-7deg); clip-path:polygon(6% 0,100% 7%,93% 96%,9% 100%,0 17%); }
-.mx-small2 { width:108px; height:126px; right:86px; top:136px; z-index:7; transform:rotate(8deg); clip-path:polygon(0 9%,90% 0,100% 83%,83% 100%,5% 94%); }
-.mx-titlebox { position:relative; z-index:20; width:300px; margin:-2px 0 0 102px; transform:rotate(-1deg); }
+.mx-titlebox { position:relative; z-index:20; width:340px; margin:245px 0 0 82px; transform:rotate(-1deg); }
 .mx-title { margin:0; font-family:'DM Serif Display',serif; font-size:48px; line-height:.82; font-weight:400; color:#262019; letter-spacing:-1.5px; text-transform:uppercase; text-shadow:3px 3px 0 #e6bc67; }
 .mx-title em { color:#a53628; font-style:normal; }
-.mx-chapter { position:relative; z-index:20; display:inline-block; max-width:250px; margin:16px 0 0 112px; padding:7px 14px 8px 14px; background:rgba(245,232,201,.8); color:#3c281d; font-family:'DM Serif Display',serif; font-size:20px; line-height:1.05; transform:rotate(-2deg); box-shadow:3px 4px 0 rgba(166,59,44,.28); }
-.mx-info { position:relative; z-index:20; width:250px; margin:20px 0 0 112px; display:flex; gap:22px; align-items:flex-start; flex-wrap:wrap; }
+.mx-chapter { position:relative; z-index:20; display:inline-block; max-width:280px; margin:17px 0 0 102px; padding:7px 14px 8px 14px; background:rgba(245,232,201,.8); color:#3c281d; font-family:'DM Serif Display',serif; font-size:20px; line-height:1.05; transform:rotate(-2deg); box-shadow:3px 4px 0 rgba(166,59,44,.28); }
+.mx-info { position:relative; z-index:20; width:260px; margin:22px 0 0 102px; display:flex; gap:22px; align-items:flex-start; flex-wrap:wrap; }
 .mx-infoitem { position:relative; min-width:108px; padding-top:9px; border-top:2px solid rgba(96,61,37,.24); }
 .mx-label { display:block; color:#a1392b; font-size:8px; font-weight:700; letter-spacing:2px; text-transform:uppercase; }
 .mx-value { display:block; margin-top:3px; color:#38271d; font-family:'DM Serif Display',serif; font-size:15px; line-height:1.1; }
-.mx-parttitle { display:inline-block; margin-left:92px; padding:4px 13px 5px 13px; background:#d69b43; color:#43271c; font-family:'Permanent Marker',cursive; font-size:16px; transform:rotate(-3deg); box-shadow:4px 4px 0 rgba(154,53,40,.65); }
-.mx-participants { position:relative; z-index:20; margin-top:44px; min-height:220px; padding-bottom:35px; }
-.mx-people { display:flex; flex-wrap:wrap; justify-content:flex-start; align-items:flex-start; gap:28px 8px; margin-top:16px; padding:0 62px 0 94px; }
+.mx-participants { position:relative; z-index:20; margin-top:45px; min-height:220px; padding-bottom:55px; }
+.mx-parttitle { display:inline-block; margin-left:88px; padding:4px 13px 5px 13px; background:#d69b43; color:#43271c; font-family:'Permanent Marker',cursive; font-size:16px; transform:rotate(-3deg); box-shadow:4px 4px 0 rgba(154,53,40,.65); }
+.mx-people { display:flex; flex-wrap:wrap; justify-content:flex-start; align-items:flex-start; gap:32px 8px; margin-top:16px; padding:0 105px 0 88px; }
 .mx-person { width:74px; position:relative; flex:0 0 74px; transition:transform .28s ease; }
-.mx-person:nth-child(1) { transform:rotate(-5deg); }
-.mx-person:nth-child(2) { transform:rotate(2deg) translateY(-6px); }
-.mx-person:nth-child(3) { transform:rotate(6deg); }
+.mx-person:nth-child(6n+1) { transform:rotate(-5deg); }
+.mx-person:nth-child(6n+2) { transform:rotate(2deg) translateY(-5px); }
+.mx-person:nth-child(6n+3) { transform:rotate(5deg); }
+.mx-person:nth-child(6n+4) { transform:rotate(-3deg); }
+.mx-person:nth-child(6n+5) { transform:rotate(4deg) translateY(-4px); }
+.mx-person:nth-child(6n+6) { transform:rotate(-2deg); }
 .mx-personpic { width:74px; height:80px; overflow:hidden; background:#dfc18f; clip-path:polygon(5% 2%,95% 0,100% 89%,83% 100%,7% 94%,0 12%); box-shadow:0 7px 12px rgba(64,38,21,.25); transition:transform .28s ease; }
 .mx-personpic img { width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(.62) sepia(.2) saturate(.72) contrast(1.08); transition:filter .3s ease,transform .3s ease; }
 .mx-personname { position:absolute; left:50%; top:72px; z-index:10; min-width:88px; max-width:165px; padding:6px 8px; background:#efe0ba; color:#37241c; font-size:9px; line-height:1.08; font-weight:600; letter-spacing:.15px; text-align:center; transform:translateX(-50%); transform-origin:center top; box-shadow:2px 3px 0 rgba(123,65,37,.2); white-space:normal; word-break:normal; overflow-wrap:anywhere; opacity:.9; transition:background .28s ease,color .28s ease,box-shadow .28s ease,opacity .28s ease; }
@@ -332,7 +319,7 @@ const POST_CSS = `
 .mx-person:hover .mx-personpic { transform:scale(1.12); }
 .mx-person:hover .mx-personpic img { filter:grayscale(0) sepia(0) saturate(1.08) contrast(1.03); transform:scale(1.07); }
 .mx-person:hover .mx-personname { background:#a6382b; color:#fff0cb; opacity:1; box-shadow:4px 5px 0 #d59c48; }
-.mx-footmark { position:absolute; left:108px; bottom:8px; width:150px; height:22px; border-bottom:2px dashed rgba(39,105,101,.38); border-radius:50%; z-index:-1; transform:rotate(-6deg); }
+.mx-footmark { position:absolute; left:102px; bottom:18px; width:150px; height:22px; border-bottom:2px dashed rgba(39,105,101,.38); border-radius:50%; z-index:-1; transform:rotate(-6deg); }
 `;
 
 function escapeHtml(value) {
@@ -416,18 +403,6 @@ function splitTitle(title) {
 
 }
 
-function buildGameImage(url) {
-
-    const cleanUrl = url.trim();
-
-    if (!cleanUrl) {
-        return `<div class="mx-photofill"></div>`;
-    }
-
-    return `<img src="${escapeHtml(cleanUrl)}" alt="">`;
-
-}
-
 function buildPeopleHtml() {
 
     return selectedCharacters.map(id => {
@@ -460,10 +435,6 @@ function buildForumCode() {
 
     const peopleHtml = buildPeopleHtml();
 
-    const image1 = buildGameImage(gameImage1.value);
-    const image2 = buildGameImage(gameImage2.value);
-    const image3 = buildGameImage(gameImage3.value);
-
     return `[html]
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Oswald:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
 
@@ -480,22 +451,6 @@ ${POST_CSS}
 <img class="mx-chili" src="https://i.imgur.com/jL47B7a.png" alt="">
 
 <div class="mx-type">${escapeHtml(gameCategory.value)}</div>
-
-<div class="mx-collage">
-
-<div class="mx-photo mx-main">
-${image1}
-</div>
-
-<div class="mx-photo mx-small1">
-${image2}
-</div>
-
-<div class="mx-photo mx-small2">
-${image3}
-</div>
-
-</div>
 
 <div class="mx-titlebox">
 <h2 class="mx-title">${titleMarkup}</h2>
@@ -621,10 +576,6 @@ function resetGenerator() {
     gameDate.value = "2026-08-17";
     gameLocation.value = "London, Anglia";
 
-    gameImage1.value = "";
-    gameImage2.value = "";
-    gameImage3.value = "";
-
     selectedCharacters = [];
 
     renderCharacters();
@@ -695,10 +646,7 @@ async function loadCharacters() {
     gameSubtitle,
     gameCategory,
     gameDate,
-    gameLocation,
-    gameImage1,
-    gameImage2,
-    gameImage3
+    gameLocation
 ].forEach(element => {
 
     element.addEventListener("input", updatePreview);
