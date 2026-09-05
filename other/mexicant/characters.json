@@ -1,17 +1,47 @@
 [
   {
     "id": "miguel",
-    "name": "Miguel Alejandro de la Vega",
+    "name": "Miguel Fuentes",
     "image": "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/miguel.jpg"
   },
   {
     "id": "rokuro",
-    "name": "Rokuro Takahashi-Kisaragi",
+    "name": "Rokuro Ishida-d'Aboville",
     "image": "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/rokuro.jpg"
   },
   {
     "id": "gemma",
-    "name": "Gemma",
+    "name": "Gemma Jenkins",
     "image": "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/gemma.jpg"
+  },
+  {
+    "id": "daph",
+    "name": "Daphné Ishida-d'Aboville",
+    "image": "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/daph.jpg"
+  },
+  {
+    "id": "varv",
+    "name": "Varvara Chernov",
+    "image": "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/varvara.jpg"
+  },
+  {
+    "id": "vi",
+    "name": "Vianne M. Gardner",
+    "image": "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/vianne.jpg"
+  },
+  {
+    "id": "connie",
+    "name": "Connor O'Hara",
+    "image": "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/connor.jpg"
+  },
+  {
+    "id": "alma",
+    "name": "Alma L. Remington",
+    "image": "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/alma.jpg"
+  },
+  {
+    "id": "alma",
+    "name": "Alma L. Remington",
+    "image": "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/alma.jpg"
   }
 ]
