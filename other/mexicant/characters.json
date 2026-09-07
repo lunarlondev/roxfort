@@ -2,46 +2,56 @@
   {
     "id": "miguel",
     "name": "Miguel Fuentes",
-    "image": "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/miguel.jpg"
+    "image": "https://lunarlondev.github.io/roxfort/trackers/actors/miguel.jpg"
   },
   {
     "id": "rokuro",
     "name": "Rokuro Ishida-d'Aboville",
-    "image": "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/rokuro.jpg"
+    "image": "https://lunarlondev.github.io/roxfort/trackers/actors/rokuro.jpg"
   },
   {
     "id": "gemma",
     "name": "Gemma Jenkins",
-    "image": "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/gemma.jpg"
+    "image": "https://lunarlondev.github.io/roxfort/trackers/actors/gemma.jpg"
   },
   {
     "id": "daph",
     "name": "Daphné Ishida-d'Aboville",
-    "image": "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/daph.jpg"
+    "image": "https://lunarlondev.github.io/roxfort/trackers/actors/daph.jpg"
   },
   {
     "id": "varv",
     "name": "Varvara Chernov",
-    "image": "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/varvara.jpg"
+    "image": "https://lunarlondev.github.io/roxfort/trackers/actors/varvara.jpg"
   },
   {
     "id": "vi",
     "name": "Vianne M. Gardner",
-    "image": "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/vianne.jpg"
+    "image": "https://lunarlondev.github.io/roxfort/trackers/actors/vianne.jpg"
   },
   {
     "id": "connie",
     "name": "Connor O'Hara",
-    "image": "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/connor.jpg"
+    "image": "https://lunarlondev.github.io/roxfort/trackers/connor.jpg"
   },
   {
     "id": "alma",
     "name": "Alma L. Remington",
-    "image": "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/alma.jpg"
+    "image": "https://lunarlondev.github.io/roxfort/trackers/actors/alma.jpg"
   },
   {
     "id": "barb",
     "name": "Solace Barebone",
-    "image": "https://lunarlondev.github.io/roxfort/Vianne/tracker/actors/barbon.jpg"
+    "image": "https://lunarlondev.github.io/roxfort/trackers/actors/barbon.jpg"
+  },
+  {
+    "id": "tetsu",
+    "name": "Chikara Tetsuya",
+    "image": "https://lunarlondev.github.io/roxfort/trackers/actors/chikara.jpg"
+  },
+  {
+    "id": "viv",
+    "name": "Vivien M. Smithe",
+    "image": "https://lunarlondev.github.io/roxfort/trackers/actors/vivien.jpg"
   }
 ]
