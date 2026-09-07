@@ -53,5 +53,10 @@
     "id": "viv",
     "name": "Vivien M. Smithe",
     "image": "https://lunarlondev.github.io/roxfort/trackers/actors/vivien.jpg"
+  },
+  {
+    "id": "solange",
+    "name": "Solange Laveau",
+    "image": "https://lunarlondev.github.io/roxfort/trackers/actors/solange.jpg"
   }
 ]
