@@ -1,0 +1,129 @@
+{
+  "profile": {
+    "name": "Tekla",
+    "label": "game archive",
+    "subtitle": "your thoughts can shape reality // játékkövető",
+    "number": "01",
+    "portrait": "https://i.pinimg.com/1200x/39/87/7c/39877c0b5a2959e4e991aca1b7010a93.jpg"
+  },
+  "actorImagePath": "actors/",
+  "categories": [
+    {
+      "id": "past",
+      "title": "Múlt",
+      "open": true,
+      "games": [
+        {
+          "id": "past-01",
+          "title": "Előtörténet",
+          "status": "closed",
+          "image": "https://i.pinimg.com/1200x/39/87/7c/39877c0b5a2959e4e991aca1b7010a93.jpg",
+          "url": "",
+          "actors": [
+            {
+              "name": "Tekla",
+              "image": "",
+              "featured": true
+            },
+            {
+              "name": "Mintaszereplő",
+              "image": "",
+              "featured": false
+            }
+          ],
+          "location": "Helyszín",
+          "date": "Dátum",
+          "theme": "Előtörténet",
+          "description": "Minta leírás. A tracker minden tartalmi eleme ebből a JSON fájlból szerkeszthető.",
+          "tags": [
+            "lore",
+            "minta"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "year-01",
+      "title": "2005/2006 tanév",
+      "open": true,
+      "games": [
+        {
+          "id": "game-01",
+          "title": "Első mintajáték",
+          "status": "active",
+          "image": "https://i.pinimg.com/736x/77/48/04/774804e548bf86bbc5d85aeb00f26b20.jpg",
+          "url": "https://www.roxfort.frpg.hu/",
+          "actors": [
+            {
+              "name": "Tekla",
+              "image": "",
+              "featured": true
+            },
+            {
+              "name": "Másik szereplő",
+              "image": "",
+              "featured": true
+            }
+          ],
+          "location": "Roxfort",
+          "date": "2006. február",
+          "theme": "Minta téma",
+          "description": "Az aktív játék mintája. A portrékra kattintva a teljes tracker az adott szereplő játékaira szűrhető.",
+          "tags": [
+            "aktív",
+            "példa"
+          ]
+        },
+        {
+          "id": "game-02",
+          "title": "Második mintajáték",
+          "status": "closed",
+          "image": "https://i.pinimg.com/1200x/39/87/7c/39877c0b5a2959e4e991aca1b7010a93.jpg",
+          "url": "",
+          "actors": [
+            {
+              "name": "Tekla",
+              "image": "",
+              "featured": true
+            }
+          ],
+          "location": "London",
+          "date": "2006. március",
+          "theme": "",
+          "description": "Lezárt játék mintája.",
+          "tags": [
+            "lezárt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "outside-time",
+      "title": "Időn kívüli",
+      "open": false,
+      "games": [
+        {
+          "id": "game-03",
+          "title": "Félbehagyott szál",
+          "status": "paused",
+          "image": "https://i.pinimg.com/736x/77/48/04/774804e548bf86bbc5d85aeb00f26b20.jpg",
+          "url": "",
+          "actors": [
+            {
+              "name": "Mintaszereplő",
+              "image": "",
+              "featured": true
+            }
+          ],
+          "location": "",
+          "date": "",
+          "theme": "",
+          "description": "Szünetelő játék mintája.",
+          "tags": [
+            "szünetel"
+          ]
+        }
+      ]
+    }
+  ]
+}
