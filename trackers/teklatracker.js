@@ -8,8 +8,7 @@
     status: "all",
     query: "",
     actor: null,
-    openCategories: new Set(),
-    openDetails: new Set()
+    openCategories: new Set()
   };
 
   let data = null;
@@ -38,7 +37,6 @@
     const filterButton = event.target.closest("[data-filter]");
     const actorButton = event.target.closest("[data-actor]");
     const clearActor = event.target.closest("[data-clear-actor]");
-    const detailButton = event.target.closest("[data-detail-id]");
 
     if (filterButton) {
       rememberOpenCategories();
@@ -62,21 +60,6 @@
       return;
     }
 
-    if (detailButton) {
-      const id = detailButton.dataset.detailId;
-      if (state.openDetails.has(id)) state.openDetails.delete(id);
-      else state.openDetails.add(id);
-
-      const card = detailButton.closest(".teklatracker-card");
-      const isOpen = state.openDetails.has(id);
-
-      if (card) {
-        card.classList.toggle("is-expanded", isOpen);
-        detailButton.textContent = isOpen ? "Részletek zárása" : "Részletek";
-      } else {
-        render();
-      }
-    }
   });
 
   root.addEventListener("input", (event) => {
@@ -146,8 +129,6 @@
     image.alt = profile.name || "Tekla";
     photo.appendChild(image);
 
-    const number = el("div", "teklatracker-number", profile.number || "01");
-
     const heading = el("div", "teklatracker-heading");
     const kicker = el("span", "teklatracker-kicker", profile.label || "game archive");
     const title = document.createElement("h1");
@@ -168,7 +149,7 @@
     const subtitle = el("div", "teklatracker-subtitle", profile.subtitle || "játékkövető");
     heading.append(kicker, title, subtitle);
 
-    hero.append(photo, number, heading, renderHeroStats());
+    hero.append(photo, heading, renderHeroStats());
     return hero;
   }
 
@@ -180,7 +161,7 @@
 
     const stats = el("div", "teklatracker-hero-stats");
     stats.append(
-      statBox(visible.length, "látható"),
+      statBox(visible.length, "találat"),
       statBox(active, "aktív"),
       statBox(closed, "lezárt")
     );
@@ -288,8 +269,6 @@
   function renderCard(game) {
     const status = statusKey(game.status);
     const article = el("article", "teklatracker-card");
-    if (state.openDetails.has(game.id)) article.classList.add("is-expanded");
-
     const visual = el("div", "teklatracker-card-visual");
     const image = document.createElement("img");
     image.src = game.image || data.profile?.portrait || "";
@@ -324,42 +303,20 @@
       actors.appendChild(button);
     });
 
-    const actions = el("div", "teklatracker-actions");
-
-    const detailsButton = el(
-      "button",
-      "teklatracker-action",
-      state.openDetails.has(game.id) ? "Részletek zárása" : "Részletek"
-    );
-    detailsButton.type = "button";
-    detailsButton.dataset.detailId = game.id;
-    actions.appendChild(detailsButton);
+    cardData.append(title, meta);
+    if (actors.childElementCount) cardData.appendChild(actors);
 
     if (game.url) {
+      const actions = el("div", "teklatracker-actions");
       const link = el("a", "teklatracker-action primary", "Megnyitás");
       link.href = game.url;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
       actions.appendChild(link);
+      cardData.appendChild(actions);
     }
 
-    cardData.append(title, meta);
-    if (actors.childElementCount) cardData.appendChild(actors);
-    cardData.appendChild(actions);
-
-    const extra = el("div", "teklatracker-extra");
-    const description = document.createElement("p");
-    description.textContent = game.description || "Ehhez a játékhoz még nincs részletes leírás megadva.";
-    extra.appendChild(description);
-
-    const tags = Array.isArray(game.tags) ? game.tags.filter(Boolean) : [];
-    if (tags.length) {
-      const tagBox = el("div", "teklatracker-tags");
-      tags.forEach((tag) => tagBox.appendChild(el("span", "teklatracker-tag", tag)));
-      extra.appendChild(tagBox);
-    }
-
-    article.append(visual, cardData, extra);
+    article.append(visual, cardData);
     return article;
   }
 
