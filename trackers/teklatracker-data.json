@@ -10,7 +10,7 @@
     {
       "id": "past",
       "title": "Múlt",
-      "open": true,
+      "open": false,
       "games": [
         {
           "id": "past-01",
@@ -39,7 +39,7 @@
     {
       "id": "year-01",
       "title": "2006/2007 tanév",
-      "open": true,
+      "open": false,
       "games": [
         {
           "id": "game-01",
