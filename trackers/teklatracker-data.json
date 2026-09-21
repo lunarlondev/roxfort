@@ -3,7 +3,7 @@
     "name": "Tekla",
     "label": "game archive",
     "subtitle": "your thoughts can shape reality // játékkövető",
-    "portrait": "https://i.pinimg.com/1200x/39/87/7c/39877c0b5a2959e4e991aca1b7010a93.jpg"
+    "portrait": "https://i.pinimg.com/1200x/45/b4/c5/45b4c593b41452f19f539f3e755e2511.jpg"
   },
   "actorImagePath": "actors/",
   "categories": [
@@ -16,16 +16,16 @@
           "id": "past-01",
           "title": "Előtörténet",
           "status": "closed",
-          "image": "https://i.pinimg.com/1200x/39/87/7c/39877c0b5a2959e4e991aca1b7010a93.jpg",
-          "url": "",
+          "image": "https://i.pinimg.com/1200x/08/a8/ec/08a8ec3fc39d6668a81634a3d7e20329.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,21366.msg129899.html#msg129899",
           "actors": [
             {
-              "name": "Tekla",
+              "name": "Tekla Orlyk",
               "image": "",
               "featured": true
             },
             {
-              "name": "Mintaszereplő",
+              "name": "Giles Orlyk",
               "image": "",
               "featured": false
             }
