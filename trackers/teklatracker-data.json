@@ -67,7 +67,7 @@
           ]
         },
 		{
-          "id": "game-01",
+          "id": "game-02",
           "title": "No Improper Questions",
           "status": "active",
           "image": "https://i.pinimg.com/736x/9a/4e/6e/9a4e6e01a887cbeda5edc4e1cce90942.jpg",
@@ -123,7 +123,7 @@
           ]
         },
         {
-          "id": "game-02",
+          "id": "game-03",
           "title": "No Wandering After Dark",
           "status": "active",
           "image": "https://i.pinimg.com/1200x/cf/f1/44/cff1444ef12b6def41b34ce47393e7f8.jpg",
