@@ -67,7 +67,7 @@
           "actors": [
             {
               "name": "Quennel Oakley",
-              "image": "",
+              "image": "actors/oakley.jpg",
               "featured": true
             },
 			{
@@ -92,7 +92,7 @@
             },
 			{
               "name": "Hazel C. Baird",
-              "image": "",
+              "image": "actors/hazel.jpg",
               "featured": false
             },
 			{
