@@ -1,9 +1,9 @@
 {
   "profile": {
-    "name": "Tekla",
-    "label": "game archive",
-    "subtitle": "your thoughts can shape reality // játékkövető",
-    "portrait": "https://i.pinimg.com/1200x/45/b4/c5/45b4c593b41452f19f539f3e755e2511.jpg"
+    "name": "Tekla Orlyk",
+    "label": "játéklista",
+    "subtitle": "házi szabályok és tiltások",
+    "portrait": "https://i.pinimg.com/1200x/ef/78/22/ef782209b939c3812b5324fbb3efb9f3.jpg"
   },
   "actorImagePath": "actors/",
   "categories": [
@@ -33,10 +33,6 @@
           "location": "Helyszín",
           "date": "1990-től",
           "theme": "NJK Előtörténet",
-          "description": "",
-          "tags": [
-            "előtörténet"
-          ]
         }
       ]
     },
@@ -61,10 +57,6 @@
           "location": "Upper Slaughter, Cotswolds",
           "date": "2006. július 14. péntek",
           "theme": "",
-          "description": "",
-          "tags": [
-            ""
-          ]
         },
 		{
           "id": "game-02",
@@ -116,11 +108,7 @@
           ],
           "location": "Roxfort, Bájital tanterem",
           "date": "2006. szeptember 15. péntek",
-          "theme": "",
-          "description": "",
-          "tags": [
-            "tanóra"
-          ]
+          "theme": "Tanóra",
         },
         {
           "id": "game-03",
@@ -138,10 +126,6 @@
           "location": "Roxfort, Folyosók",
           "date": "2006. október 7. szombat",
           "theme": "",
-          "description": "",
-          "tags": [
-            ""
-          ]
         }
       ]
     },
