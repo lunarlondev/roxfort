@@ -32,7 +32,7 @@
           ],
           "location": "Helyszín",
           "date": "1990-től",
-          "theme": "NJK Előtörténet",
+          "theme": "NJK Előtörténet"
         }
       ]
     },
@@ -56,7 +56,7 @@
           ],
           "location": "Upper Slaughter, Cotswolds",
           "date": "2006. július 14. péntek",
-          "theme": "",
+          "theme": ""
         },
 		{
           "id": "game-02",
@@ -108,7 +108,7 @@
           ],
           "location": "Roxfort, Bájital tanterem",
           "date": "2006. szeptember 15. péntek",
-          "theme": "Tanóra",
+          "theme": "Tanóra"
         },
         {
           "id": "game-03",
@@ -125,7 +125,7 @@
           ],
           "location": "Roxfort, Folyosók",
           "date": "2006. október 7. szombat",
-          "theme": "",
+          "theme": ""
         }
       ]
     },
