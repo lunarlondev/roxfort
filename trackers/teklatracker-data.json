@@ -14,7 +14,7 @@
       "games": [
         {
           "id": "past-01",
-          "title": "Előtörténet",
+          "title": "You Must Do As We Tell",
           "status": "closed",
           "image": "https://i.pinimg.com/1200x/08/a8/ec/08a8ec3fc39d6668a81634a3d7e20329.jpg",
           "url": "https://www.roxfort.frpg.hu/index.php/topic,21366.msg129899.html#msg129899",
@@ -30,7 +30,7 @@
               "featured": false
             }
           ],
-          "location": "Helyszín",
+          "location": "",
           "date": "1990-től",
           "theme": "NJK Előtörténet"
         }
