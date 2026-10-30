@@ -169,6 +169,11 @@
               "name": "Caroline Krämer",
               "image": "",
               "featured": false
+            },
+			{
+              "name": "Matthew Báthory-Burke",
+              "image": "",
+              "featured": false
             }
           ],
           "location": "Roxfort, Bájital tanterem",
@@ -208,6 +213,11 @@
             },
 			{
               "name": "Enzo MacRae",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Matthew Báthory-Burke",
               "image": "",
               "featured": false
             }
