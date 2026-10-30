@@ -1,3 +1,227 @@
+{
+  "profile": {
+    "name": "Tekla Orlyk",
+    "label": "játéklista",
+    "subtitle": "házi szabályok és tiltások",
+    "portrait": "https://i.pinimg.com/1200x/ef/78/22/ef782209b939c3812b5324fbb3efb9f3.jpg"
+  },
+  "actorImagePath": "actors/",
+  "categories": [
+    {
+      "id": "past",
+      "title": "Múlt",
+      "open": false,
+      "games": [
+        {
+          "id": "past-01",
+          "title": "You Must Do As We Tell",
+          "status": "closed",
+          "image": "https://i.pinimg.com/1200x/08/a8/ec/08a8ec3fc39d6668a81634a3d7e20329.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,21366.msg129899.html#msg129899",
+          "actors": [
+            {
+              "name": "Tekla Orlyk",
+              "image": "",
+              "featured": true
+            },
+            {
+              "name": "Giles Orlyk",
+              "image": "",
+              "featured": false
+            }
+          ],
+          "location": "",
+          "date": "1990-től",
+          "theme": "NJK Előtörténet"
+        }
+      ]
+    },
+    {
+      "id": "year-01",
+      "title": "2006/2007 tanév",
+      "open": false,
+      "games": [
+        {
+          "id": "game-01",
+          "title": "No Pets Allowed",
+          "status": "active",
+          "image": "https://i.pinimg.com/1200x/79/6a/a9/796aa9f12c31801473bf3c44a71d3484.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,21403.0.html",
+          "actors": [
+            {
+              "name": "Giles Orlyk",
+              "image": "",
+              "featured": true
+            }
+          ],
+          "location": "Upper Slaughter, Cotswolds",
+          "date": "2006. július 14. péntek",
+          "theme": ""
+        },
+		{
+          "id": "game-02",
+          "title": "No Improper Questions",
+          "status": "active",
+          "image": "https://i.pinimg.com/736x/9a/4e/6e/9a4e6e01a887cbeda5edc4e1cce90942.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,21510.msg131137/topicseen.html#msg131137",
+          "actors": [
+            {
+              "name": "Quennel Oakley",
+              "image": "actors/oakley.jpg",
+              "featured": true
+            },
+			{
+              "name": "Ian McEvan",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Tesseract Ngcuka",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Tikhon A. Donne",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Meadowlark Mulberry",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Hazel C. Baird",
+              "image": "actors/hazel.jpg",
+              "featured": false
+            },
+			{
+              "name": "Basile de Lys",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Hanni Haeni",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Locket R. Grimmstark",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Theresa L. Valaoritis",
+              "image": "actors/theresa.jpg",
+              "featured": false
+            },
+			{
+              "name": "Saoirse O'Valley",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Ajax Ambrose",
+              "image": "actors/ajax.jpg",
+              "featured": false
+            },
+			{
+              "name": "Heranoush Fletcher",
+              "image": "actors/hera.jpg",
+              "featured": false
+            },
+			{
+              "name": "Lorian Grimmstark",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Ancalla Glasmont",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Elowen Dawlish",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Perseus Czerny",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Erwin Mulciber",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Octavia Warrington",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Pommeline de Lys",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Caroline Krämer",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Matthew Báthory-Burke",
+              "image": "",
+              "featured": false
+            }
+          ],
+          "location": "Roxfort, Bájital tanterem",
+          "date": "2006. szeptember 15. péntek",
+          "theme": "Tanóra"
+        },
+        {
+          "id": "game-03",
+          "title": "No Wandering After Dark",
+          "status": "active",
+          "image": "https://i.pinimg.com/1200x/cf/f1/44/cff1444ef12b6def41b34ce47393e7f8.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,21542.msg131136/topicseen.html#msg131136",
+          "actors": [
+            {
+              "name": "Enzo MacRae",
+              "image": "",
+              "featured": true
+            }
+          ],
+          "location": "Roxfort, Folyosók",
+          "date": "2006. október 7. szombat",
+          "theme": ""
+        },
+	{
+          "id": "game-04",
+          "title": "No Unsupervised Parties",
+          "status": "active",
+          "image": "https://i.pinimg.com/736x/39/95/68/399568ea4e0d6a2c6ca57a66160df52a.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,22228.msg131294.html#msg131294",
+          "actors": [
+            {
+              "name": "Theresa L. Valaoritis",
+              "image": "actors/theresa.jpg",
+              "featured": false
+            },
+			{
+              "name": "Enzo MacRae",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Matthew Báthory-Burke",
+              "image": "",
+              "featured": false
+            }
+          ],
+          "location": "Szellemszállás",
+          "date": "2006. október 31. kedd",
           "theme": ""
         },
 			{
