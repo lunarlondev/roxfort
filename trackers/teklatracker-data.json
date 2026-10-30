@@ -104,6 +104,71 @@
               "name": "Hanni Haeni",
               "image": "",
               "featured": false
+            },
+			{
+              "name": "Locket R. Grimmstark",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Theresa L. Valaoritis",
+              "image": "actors/theresa.jpg",
+              "featured": false
+            },
+			{
+              "name": "Saoirse O'Valley",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Ajax Ambrose",
+              "image": "actors/ajax.jpg",
+              "featured": false
+            },
+			{
+              "name": "Heranoush Fletcher",
+              "image": "actors/hera.jpg",
+              "featured": false
+            },
+			{
+              "name": "Lorian Grimmstark",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Ancalla Glasmont",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Elowen Dawlish",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Perseus Czerny",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Erwin Mulciber",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Octavia Warrington",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Pommeline de Lys",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Caroline Krämer",
+              "image": "",
+              "featured": false
             }
           ],
           "location": "Roxfort, Bájital tanterem",
@@ -125,6 +190,127 @@
           ],
           "location": "Roxfort, Folyosók",
           "date": "2006. október 7. szombat",
+          "theme": ""
+        }
+      ]
+    },
+	{
+          "id": "game-04",
+          "title": "No Unsupervised Parties",
+          "status": "active",
+          "image": "https://i.pinimg.com/736x/39/95/68/399568ea4e0d6a2c6ca57a66160df52a.jpg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,22228.msg131294.html#msg131294",
+          "actors": [
+            {
+              "name": "Theresa L. Valaoritis",
+              "image": "actors/theresa.jpg",
+              "featured": false
+            },
+			{
+              "name": "Enzo MacRae",
+              "image": "",
+              "featured": false
+            }
+          ],
+          "location": "Szellemszállás",
+          "date": "2006. október 31. kedd",
+          "theme": ""
+        },
+			{
+          "id": "game-05",
+          "title": "Don't Miss Curfew",
+          "status": "active",
+          "image": "https://i.imgur.com/N8zMdvq.jpeg",
+          "url": "https://www.roxfort.frpg.hu/index.php/topic,22237.msg131287.html#msg131287",
+          "actors": [
+            {
+              "name": "Lorian Grimmstark",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Tikhon A. Donne",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Tesseract Ngcuka",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Meadowlark Mulberry",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Theresa L. Valaoritis",
+              "image": "actors/theresa.jpg",
+              "featured": false
+            },
+			{
+              "name": "Heranoush Fletcher",
+              "image": "actors/hera.jpg",
+              "featured": false
+            },
+			{
+              "name": "Basile de Lys",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Hanni Haeni",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Hazel C. Baird",
+              "image": "actors/hazel.jpg",
+              "featured": false
+            },
+			{
+              "name": "Ancalla Glasmont",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Elowen Dawlish",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Perseus Czerny",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Ian A. McEwan",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Octavia Warrington",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Locket R. Grimmstark",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Saoirse O'Valley",
+              "image": "",
+              "featured": false
+            },
+			{
+              "name": "Ajax Ambrose",
+              "image": "actors/ajax.jpg",
+              "featured": false
+            }
+          ],
+          "location": "Szellemszállás",
+          "date": "2006. október 31. kedd",
           "theme": ""
         }
       ]
